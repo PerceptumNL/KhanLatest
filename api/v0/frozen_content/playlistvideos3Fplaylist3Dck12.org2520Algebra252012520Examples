@@ -1,0 +1,2458 @@
+[
+    {
+        "next_video": "3Po3nfITsok", 
+        "video_position": 1, 
+        "description": null, 
+        "title": "Variable Expressions", 
+        "views": 49347, 
+        "related_videos": [
+            "3Po3nfITsok"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 747, 
+        "ka_url": "http://www.khanacademy.org/video/variable-expressions?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "aoXUWSwiDzE", 
+        "keywords": "Variable, Expressions, CC_6_EE_2, CC_6_EE_2_c", 
+        "date_added": "2011-02-20 16:36:13", 
+        "youtube_url": "http://www.youtube.com/watch?v=aoXUWSwiDzE&feature=youtube_gdata_player", 
+        "prev_video": "", 
+        "readable_id": "variable-expressions"
+    }, 
+    {
+        "next_video": "rUT0pa87m7E", 
+        "video_position": 2, 
+        "description": "ck12 example", 
+        "title": "Order of Operations Example", 
+        "views": 21691, 
+        "related_videos": [
+            "aoXUWSwiDzE", 
+            "rUT0pa87m7E"
+        ], 
+        "playlist_titles": [
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 863, 
+        "ka_url": "http://www.khanacademy.org/video/order-of-operations-example?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "3Po3nfITsok", 
+        "keywords": "Order, Of, Operations", 
+        "date_added": "2011-02-20 16:36:13", 
+        "youtube_url": "http://www.youtube.com/watch?v=3Po3nfITsok&feature=youtube_gdata_player", 
+        "prev_video": "aoXUWSwiDzE", 
+        "readable_id": "order-of-operations-example"
+    }, 
+    {
+        "next_video": "hJ-_OoCHTks", 
+        "video_position": 3, 
+        "description": null, 
+        "title": "Patterns and Equations", 
+        "views": 11891, 
+        "related_videos": [
+            "3Po3nfITsok", 
+            "hJ-_OoCHTks"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 798, 
+        "ka_url": "http://www.khanacademy.org/video/patterns-and-equations?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "rUT0pa87m7E", 
+        "keywords": "Patterns, And, Equations, CC_7_EE_4, CC_39336_A-CED_1", 
+        "date_added": "2011-02-20 16:36:13", 
+        "youtube_url": "http://www.youtube.com/watch?v=rUT0pa87m7E&feature=youtube_gdata_player", 
+        "prev_video": "3Po3nfITsok", 
+        "readable_id": "patterns-and-equations"
+    }, 
+    {
+        "next_video": "O0uUVH8dRiU", 
+        "video_position": 4, 
+        "description": null, 
+        "title": "Equations and Inequalities", 
+        "views": 15206, 
+        "related_videos": [
+            "rUT0pa87m7E", 
+            "O0uUVH8dRiU"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 971, 
+        "ka_url": "http://www.khanacademy.org/video/equations-and-inequalities?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "hJ-_OoCHTks", 
+        "keywords": "Equations, And, Inequalities, CC_7_EE_4, CC_39336_A-REI_3", 
+        "date_added": "2011-02-20 16:36:13", 
+        "youtube_url": "http://www.youtube.com/watch?v=hJ-_OoCHTks&feature=youtube_gdata_player", 
+        "prev_video": "rUT0pa87m7E", 
+        "readable_id": "equations-and-inequalities"
+    }, 
+    {
+        "next_video": "jQ-fS2lsslU", 
+        "video_position": 5, 
+        "description": null, 
+        "title": "Domain and Range of a Function", 
+        "views": 57056, 
+        "related_videos": [
+            "hJ-_OoCHTks", 
+            "jQ-fS2lsslU"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 772, 
+        "ka_url": "http://www.khanacademy.org/video/domain-and-range-of-a-function?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "O0uUVH8dRiU", 
+        "keywords": "Function, Domain, Range, CC_39336_F-IF_5", 
+        "date_added": "2011-02-20 16:36:13", 
+        "youtube_url": "http://www.youtube.com/watch?v=O0uUVH8dRiU&feature=youtube_gdata_player", 
+        "prev_video": "hJ-_OoCHTks", 
+        "readable_id": "domain-and-range-of-a-function"
+    }, 
+    {
+        "next_video": "Xz6rT9k8ftg", 
+        "video_position": 6, 
+        "description": null, 
+        "title": "Functions as Graphs", 
+        "views": 19825, 
+        "related_videos": [
+            "O0uUVH8dRiU", 
+            "Xz6rT9k8ftg"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 575, 
+        "ka_url": "http://www.khanacademy.org/video/functions-as-graphs?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "jQ-fS2lsslU", 
+        "keywords": "Functions, As, Graphs, CC_8_F_1, CC_39336_F-IF_7_b", 
+        "date_added": "2011-02-20 16:36:13", 
+        "youtube_url": "http://www.youtube.com/watch?v=jQ-fS2lsslU&feature=youtube_gdata_player", 
+        "prev_video": "O0uUVH8dRiU", 
+        "readable_id": "functions-as-graphs"
+    }, 
+    {
+        "next_video": "SpDIXJ2I2D4", 
+        "video_position": 7, 
+        "description": null, 
+        "title": "Word Problem Solving Plan 1", 
+        "views": 20829, 
+        "related_videos": [
+            "jQ-fS2lsslU", 
+            "SpDIXJ2I2D4"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 612, 
+        "ka_url": "http://www.khanacademy.org/video/word-problem-solving-plan-1?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "Xz6rT9k8ftg", 
+        "keywords": "Problem, Solving, Plan, CC_39336_A-CED_1", 
+        "date_added": "2011-02-20 16:36:13", 
+        "youtube_url": "http://www.youtube.com/watch?v=Xz6rT9k8ftg&feature=youtube_gdata_player", 
+        "prev_video": "jQ-fS2lsslU", 
+        "readable_id": "word-problem-solving-plan-1"
+    }, 
+    {
+        "next_video": "kyu-IQ-gBIg", 
+        "video_position": 8, 
+        "description": null, 
+        "title": "Word Problem Solving Strategies", 
+        "views": 15354, 
+        "related_videos": [
+            "Xz6rT9k8ftg", 
+            "kyu-IQ-gBIg"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 771, 
+        "ka_url": "http://www.khanacademy.org/video/word-problem-solving-strategies?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "SpDIXJ2I2D4", 
+        "keywords": "Problem, Solving, Strategies, CC_39336_A-CED_2", 
+        "date_added": "2011-02-20 16:36:13", 
+        "youtube_url": "http://www.youtube.com/watch?v=SpDIXJ2I2D4&feature=youtube_gdata_player", 
+        "prev_video": "Xz6rT9k8ftg", 
+        "readable_id": "word-problem-solving-strategies"
+    }, 
+    {
+        "next_video": "BKEtsv9MbyY", 
+        "video_position": 9, 
+        "description": null, 
+        "title": "Integers and Rational Numbers", 
+        "views": 20323, 
+        "related_videos": [
+            "SpDIXJ2I2D4", 
+            "BKEtsv9MbyY"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 780, 
+        "ka_url": "http://www.khanacademy.org/video/integers-and-rational-numbers?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "kyu-IQ-gBIg", 
+        "keywords": "Integers, And, Rational, Numbers, CC_6_NS_6, CC_6_NS_6_a, CC_6_NS_6_c", 
+        "date_added": "2011-02-20 16:36:13", 
+        "youtube_url": "http://www.youtube.com/watch?v=kyu-IQ-gBIg&feature=youtube_gdata_player", 
+        "prev_video": "SpDIXJ2I2D4", 
+        "readable_id": "integers-and-rational-numbers"
+    }, 
+    {
+        "next_video": "lLIo4kGRBEw", 
+        "video_position": 10, 
+        "description": null, 
+        "title": "Addition of Rational  Numbers", 
+        "views": 9169, 
+        "related_videos": [
+            "kyu-IQ-gBIg", 
+            "lLIo4kGRBEw"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 460, 
+        "ka_url": "http://www.khanacademy.org/video/addition-of-rational--numbers?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "BKEtsv9MbyY", 
+        "keywords": "Addition, of, Rational, Numbers, CC_5_NF_1, CC_7_NS_1", 
+        "date_added": "2011-02-20 16:36:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=BKEtsv9MbyY&feature=youtube_gdata_player", 
+        "prev_video": "kyu-IQ-gBIg", 
+        "readable_id": "addition-of-rational--numbers"
+    }, 
+    {
+        "next_video": "lBi9bwz08EY", 
+        "video_position": 11, 
+        "description": null, 
+        "title": "Subraction of Rational Numbers", 
+        "views": 4982, 
+        "related_videos": [
+            "BKEtsv9MbyY", 
+            "lBi9bwz08EY"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 622, 
+        "ka_url": "http://www.khanacademy.org/video/subraction-of-rational-numbers?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "lLIo4kGRBEw", 
+        "keywords": "Subraction, Of, Rational, Numbers, CC_5_NF_1, CC_7_NS_1", 
+        "date_added": "2011-02-20 16:36:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=lLIo4kGRBEw&feature=youtube_gdata_player", 
+        "prev_video": "BKEtsv9MbyY", 
+        "readable_id": "subraction-of-rational-numbers"
+    }, 
+    {
+        "next_video": "ewEorPD4kdA", 
+        "video_position": 12, 
+        "description": null, 
+        "title": "Multiplication of Rational Numbers", 
+        "views": 7551, 
+        "related_videos": [
+            "lLIo4kGRBEw", 
+            "ewEorPD4kdA"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 536, 
+        "ka_url": "http://www.khanacademy.org/video/multiplication-of-rational-numbers?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "lBi9bwz08EY", 
+        "keywords": "Multiplication, Of, Rational, Numbers, CC_7_NS_2", 
+        "date_added": "2011-02-20 16:36:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=lBi9bwz08EY&feature=youtube_gdata_player", 
+        "prev_video": "lLIo4kGRBEw", 
+        "readable_id": "multiplication-of-rational-numbers"
+    }, 
+    {
+        "next_video": "I0b5-7UuwQ8", 
+        "video_position": 13, 
+        "description": "ck12 Distributive Property example", 
+        "title": "Distributive Property Example 1", 
+        "views": 17797, 
+        "related_videos": [
+            "lBi9bwz08EY", 
+            "I0b5-7UuwQ8"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 339, 
+        "ka_url": "http://www.khanacademy.org/video/distributive-property-example-1?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "ewEorPD4kdA", 
+        "keywords": "Distributive, Property", 
+        "date_added": "2011-02-20 16:36:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=ewEorPD4kdA&feature=youtube_gdata_player", 
+        "prev_video": "lBi9bwz08EY", 
+        "readable_id": "distributive-property-example-1"
+    }, 
+    {
+        "next_video": "BpBh8gvMifs", 
+        "video_position": 14, 
+        "description": null, 
+        "title": "Division of Rational Numbers", 
+        "views": 8078, 
+        "related_videos": [
+            "ewEorPD4kdA", 
+            "BpBh8gvMifs"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 500, 
+        "ka_url": "http://www.khanacademy.org/video/division-of-rational-numbers?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "I0b5-7UuwQ8", 
+        "keywords": "DivisionOfRationalNumbers, CC_7_NS_2", 
+        "date_added": "2011-02-20 16:36:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=I0b5-7UuwQ8&feature=youtube_gdata_player", 
+        "prev_video": "ewEorPD4kdA", 
+        "readable_id": "division-of-rational-numbers"
+    }, 
+    {
+        "next_video": "s1QN7sSfBM8", 
+        "video_position": 15, 
+        "description": null, 
+        "title": "Square Roots and Real Numbers", 
+        "views": 33998, 
+        "related_videos": [
+            "I0b5-7UuwQ8", 
+            "s1QN7sSfBM8"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 619, 
+        "ka_url": "http://www.khanacademy.org/video/square-roots-and-real-numbers?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "BpBh8gvMifs", 
+        "keywords": "Square, Roots, and, Real, Numbers, CC_8_EE_2", 
+        "date_added": "2011-02-20 16:36:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=BpBh8gvMifs&feature=youtube_gdata_player", 
+        "prev_video": "I0b5-7UuwQ8", 
+        "readable_id": "square-roots-and-real-numbers"
+    }, 
+    {
+        "next_video": "9DxrF6Ttws4", 
+        "video_position": 16, 
+        "description": null, 
+        "title": "Problem Solving Word Problems 2", 
+        "views": 9074, 
+        "related_videos": [
+            "BpBh8gvMifs", 
+            "9DxrF6Ttws4"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 740, 
+        "ka_url": "http://www.khanacademy.org/video/problem-solving-word-problems-2?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "s1QN7sSfBM8", 
+        "keywords": "Problem, Solving, Word, Problems, CC_39336_A-CED_2", 
+        "date_added": "2011-02-20 16:36:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=s1QN7sSfBM8&feature=youtube_gdata_player", 
+        "prev_video": "BpBh8gvMifs", 
+        "readable_id": "problem-solving-word-problems-2"
+    }, 
+    {
+        "next_video": "tuVd355R-OQ", 
+        "video_position": 17, 
+        "description": "One Step Equations", 
+        "title": "One Step Equations", 
+        "views": 17108, 
+        "related_videos": [
+            "s1QN7sSfBM8", 
+            "tuVd355R-OQ"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 750, 
+        "ka_url": "http://www.khanacademy.org/video/one-step-equations?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "9DxrF6Ttws4", 
+        "keywords": "One, Step, Equations, CC_39336_A-REI_3", 
+        "date_added": "2011-02-20 16:36:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=9DxrF6Ttws4&feature=youtube_gdata_player", 
+        "prev_video": "s1QN7sSfBM8", 
+        "readable_id": "one-step-equations"
+    }, 
+    {
+        "next_video": "a5uNoOnEy_A", 
+        "video_position": 18, 
+        "description": "Two-Step Equations", 
+        "title": "Two-Step Equations", 
+        "views": 13409, 
+        "related_videos": [
+            "9DxrF6Ttws4", 
+            "a5uNoOnEy_A"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 830, 
+        "ka_url": "http://www.khanacademy.org/video/two-step-equations?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "tuVd355R-OQ", 
+        "keywords": "Two, Step, Equations, CC_39336_A-REI_3", 
+        "date_added": "2011-02-20 16:36:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=tuVd355R-OQ&feature=youtube_gdata_player", 
+        "prev_video": "9DxrF6Ttws4", 
+        "readable_id": "two-step-equations"
+    }, 
+    {
+        "next_video": "xMsG9hvqzbY", 
+        "video_position": 19, 
+        "description": "Multi-Step Equations", 
+        "title": "Multi-Step Equations", 
+        "views": 12618, 
+        "related_videos": [
+            "tuVd355R-OQ", 
+            "xMsG9hvqzbY"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 901, 
+        "ka_url": "http://www.khanacademy.org/video/multi-step-equations?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "a5uNoOnEy_A", 
+        "keywords": "Multi, Step, Equations, CC_39336_A-REI_3", 
+        "date_added": "2011-02-20 16:36:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=a5uNoOnEy_A&feature=youtube_gdata_player", 
+        "prev_video": "tuVd355R-OQ", 
+        "readable_id": "multi-step-equations"
+    }, 
+    {
+        "next_video": "WfqgFBGet7s", 
+        "video_position": 20, 
+        "description": "Equations with Variables on Both Sides", 
+        "title": "Equations with Variables on Both Sides", 
+        "views": 14943, 
+        "related_videos": [
+            "a5uNoOnEy_A", 
+            "WfqgFBGet7s"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 568, 
+        "ka_url": "http://www.khanacademy.org/video/equations-with-variables-on-both-sides?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "xMsG9hvqzbY", 
+        "keywords": "Variables, On, Both, Sides, equations, CC_39336_A-REI_3", 
+        "date_added": "2011-02-20 16:36:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=xMsG9hvqzbY&feature=youtube_gdata_player", 
+        "prev_video": "a5uNoOnEy_A", 
+        "readable_id": "equations-with-variables-on-both-sides"
+    }, 
+    {
+        "next_video": "GfNB14D55gQ", 
+        "video_position": 21, 
+        "description": "Ratio and Proportion", 
+        "title": "Ratio and Proportion", 
+        "views": 28170, 
+        "related_videos": [
+            "xMsG9hvqzbY", 
+            "GfNB14D55gQ"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 625, 
+        "ka_url": "http://www.khanacademy.org/video/ratio-and-proportion?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "WfqgFBGet7s", 
+        "keywords": "Ratio, And, Proportion, CC_6_RP_3", 
+        "date_added": "2011-02-20 16:36:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=WfqgFBGet7s&feature=youtube_gdata_player", 
+        "prev_video": "xMsG9hvqzbY", 
+        "readable_id": "ratio-and-proportion"
+    }, 
+    {
+        "next_video": "1LtBcfk1uHg", 
+        "video_position": 22, 
+        "description": null, 
+        "title": "Scale and Indirect Measurement", 
+        "views": 7609, 
+        "related_videos": [
+            "WfqgFBGet7s", 
+            "1LtBcfk1uHg"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 644, 
+        "ka_url": "http://www.khanacademy.org/video/scale-and-indirect-measurement?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "GfNB14D55gQ", 
+        "keywords": "Scale, And, Indirect, Measurement, CC_6_RP_3", 
+        "date_added": "2011-02-20 16:36:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=GfNB14D55gQ&feature=youtube_gdata_player", 
+        "prev_video": "WfqgFBGet7s", 
+        "readable_id": "scale-and-indirect-measurement"
+    }, 
+    {
+        "next_video": "LRKMoqrMbGw", 
+        "video_position": 23, 
+        "description": "Percent Problems from Chapter 3 of ck12.org Algebra I textbook", 
+        "title": "Percent Problems", 
+        "views": 28647, 
+        "related_videos": [
+            "GfNB14D55gQ", 
+            "LRKMoqrMbGw"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 855, 
+        "ka_url": "http://www.khanacademy.org/video/percent-problems?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "1LtBcfk1uHg", 
+        "keywords": "algebra, percent, word, problems, CC_6_RP_3_c, CC_39336_A-CED_1", 
+        "date_added": "2011-02-20 16:36:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=1LtBcfk1uHg&feature=youtube_gdata_player", 
+        "prev_video": "GfNB14D55gQ", 
+        "readable_id": "percent-problems"
+    }, 
+    {
+        "next_video": "VhNkWdLGpmA", 
+        "video_position": 24, 
+        "description": "Word problem solving strategies from chapter 3 of ck12.org Algebra I book", 
+        "title": "Word Problem Solving 3", 
+        "views": 8647, 
+        "related_videos": [
+            "1LtBcfk1uHg", 
+            "VhNkWdLGpmA"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 666, 
+        "ka_url": "http://www.khanacademy.org/video/word-problem-solving-3?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "LRKMoqrMbGw", 
+        "keywords": "algebra, word, problem, CC_39336_A-CED_1", 
+        "date_added": "2011-02-20 16:36:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=LRKMoqrMbGw&feature=youtube_gdata_player", 
+        "prev_video": "1LtBcfk1uHg", 
+        "readable_id": "word-problem-solving-3"
+    }, 
+    {
+        "next_video": "6zixwWZ88tk", 
+        "video_position": 25, 
+        "description": null, 
+        "title": "The Coordinate Plane", 
+        "views": 12546, 
+        "related_videos": [
+            "LRKMoqrMbGw", 
+            "6zixwWZ88tk"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 410, 
+        "ka_url": "http://www.khanacademy.org/video/the-coordinate-plane?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "VhNkWdLGpmA", 
+        "keywords": "The, Coordinate, Plane, CC_6_G_3, CC_6_NS_6_c", 
+        "date_added": "2011-02-20 16:36:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=VhNkWdLGpmA&feature=youtube_gdata_player", 
+        "prev_video": "LRKMoqrMbGw", 
+        "readable_id": "the-coordinate-plane"
+    }, 
+    {
+        "next_video": "rgvysb9emcQ", 
+        "video_position": 26, 
+        "description": null, 
+        "title": "Graphing Using Intercepts", 
+        "views": 11008, 
+        "related_videos": [
+            "VhNkWdLGpmA", 
+            "rgvysb9emcQ"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 738, 
+        "ka_url": "http://www.khanacademy.org/video/graphing-using-intercepts?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "6zixwWZ88tk", 
+        "keywords": "GraphsOfLinearEquations", 
+        "date_added": "2011-02-20 16:36:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=6zixwWZ88tk&feature=youtube_gdata_player", 
+        "prev_video": "VhNkWdLGpmA", 
+        "readable_id": "graphing-using-intercepts"
+    }, 
+    {
+        "next_video": "Iqws-qzyZwc", 
+        "video_position": 27, 
+        "description": null, 
+        "title": "Graphs of Linear Equations", 
+        "views": 19919, 
+        "related_videos": [
+            "6zixwWZ88tk", 
+            "Iqws-qzyZwc"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 790, 
+        "ka_url": "http://www.khanacademy.org/video/graphs-of-linear-equations?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "rgvysb9emcQ", 
+        "keywords": "Graphs, Of, Linear, Equations, CC_39336_A-CED_2, CC_39336_F-IF_7_a", 
+        "date_added": "2011-02-20 16:36:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=rgvysb9emcQ&feature=youtube_gdata_player", 
+        "prev_video": "6zixwWZ88tk", 
+        "readable_id": "graphs-of-linear-equations"
+    }, 
+    {
+        "next_video": "9wOalujeZf4", 
+        "video_position": 28, 
+        "description": null, 
+        "title": "Slope and Rate of Change", 
+        "views": 18246, 
+        "related_videos": [
+            "rgvysb9emcQ", 
+            "9wOalujeZf4"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 822, 
+        "ka_url": "http://www.khanacademy.org/video/slope-and-rate-of-change?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "Iqws-qzyZwc", 
+        "keywords": "SlopeAndRateOfChange, CC_8_EE_6, CC_39336_F-IF_6", 
+        "date_added": "2011-02-20 16:36:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=Iqws-qzyZwc&feature=youtube_gdata_player", 
+        "prev_video": "rgvysb9emcQ", 
+        "readable_id": "slope-and-rate-of-change"
+    }, 
+    {
+        "next_video": "9M-B5qU7ezY", 
+        "video_position": 29, 
+        "description": null, 
+        "title": "Graphs Using Slope-Intercept Form", 
+        "views": 10470, 
+        "related_videos": [
+            "Iqws-qzyZwc", 
+            "9M-B5qU7ezY"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 671, 
+        "ka_url": "http://www.khanacademy.org/video/graphs-using-slope-intercept-form?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "9wOalujeZf4", 
+        "keywords": "Graphs, Using, Slope, Intercept, Form, CC_39336_F-IF_7_a", 
+        "date_added": "2011-02-20 16:36:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=9wOalujeZf4&feature=youtube_gdata_player", 
+        "prev_video": "Iqws-qzyZwc", 
+        "readable_id": "graphs-using-slope-intercept-form"
+    }, 
+    {
+        "next_video": "EmTvdKkAUtE", 
+        "video_position": 30, 
+        "description": "Direct Variation Models", 
+        "title": "Direct Variation Models", 
+        "views": 8929, 
+        "related_videos": [
+            "9wOalujeZf4", 
+            "EmTvdKkAUtE"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 671, 
+        "ka_url": "http://www.khanacademy.org/video/direct-variation-models?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "9M-B5qU7ezY", 
+        "keywords": "Direct, Variation, Models, CC_39336_F-LE_1_b", 
+        "date_added": "2011-02-20 16:36:16", 
+        "youtube_url": "http://www.youtube.com/watch?v=9M-B5qU7ezY&feature=youtube_gdata_player", 
+        "prev_video": "9wOalujeZf4", 
+        "readable_id": "direct-variation-models"
+    }, 
+    {
+        "next_video": "5EdbPz1ZVn0", 
+        "video_position": 31, 
+        "description": "Linear Function Graphs", 
+        "title": "Linear Function Graphs", 
+        "views": 14135, 
+        "related_videos": [
+            "9M-B5qU7ezY", 
+            "5EdbPz1ZVn0"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 709, 
+        "ka_url": "http://www.khanacademy.org/video/linear-function-graphs?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "EmTvdKkAUtE", 
+        "keywords": "Linear, Function, Graphs, CC_39336_F-IF_7_a", 
+        "date_added": "2011-02-20 16:36:16", 
+        "youtube_url": "http://www.youtube.com/watch?v=EmTvdKkAUtE&feature=youtube_gdata_player", 
+        "prev_video": "9M-B5qU7ezY", 
+        "readable_id": "linear-function-graphs"
+    }, 
+    {
+        "next_video": "5fkh01mClLU", 
+        "video_position": 32, 
+        "description": "Word Problem Solving 4", 
+        "title": "Word Problem Solving 4", 
+        "views": 6315, 
+        "related_videos": [
+            "EmTvdKkAUtE", 
+            "5fkh01mClLU"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 605, 
+        "ka_url": "http://www.khanacademy.org/video/word-problem-solving-4?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "5EdbPz1ZVn0", 
+        "keywords": "Word, Problem, Solving", 
+        "date_added": "2011-02-20 16:36:16", 
+        "youtube_url": "http://www.youtube.com/watch?v=5EdbPz1ZVn0&feature=youtube_gdata_player", 
+        "prev_video": "EmTvdKkAUtE", 
+        "readable_id": "word-problem-solving-4"
+    }, 
+    {
+        "next_video": "zqCokP2vDGo", 
+        "video_position": 33, 
+        "description": "Linear Equations in Slope Intercept Form", 
+        "title": "Linear Equations in Slope Intercept Form", 
+        "views": 23582, 
+        "related_videos": [
+            "5EdbPz1ZVn0", 
+            "zqCokP2vDGo"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 898, 
+        "ka_url": "http://www.khanacademy.org/video/linear-equations-in-slope-intercept-form?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "5fkh01mClLU", 
+        "keywords": "Linear, Equations, in, Slope, Intercept, Form, CC_8_EE_6, CC_8_F_3, CC_8_F_4", 
+        "date_added": "2011-02-20 16:36:16", 
+        "youtube_url": "http://www.youtube.com/watch?v=5fkh01mClLU&feature=youtube_gdata_player", 
+        "prev_video": "5EdbPz1ZVn0", 
+        "readable_id": "linear-equations-in-slope-intercept-form"
+    }, 
+    {
+        "next_video": "BaQXFstxCMo", 
+        "video_position": 34, 
+        "description": "Linear Equations in Point Slope Form", 
+        "title": "Linear Equations in Point Slope Form", 
+        "views": 16527, 
+        "related_videos": [
+            "5fkh01mClLU", 
+            "BaQXFstxCMo"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 578, 
+        "ka_url": "http://www.khanacademy.org/video/linear-equations-in-point-slope-form?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "zqCokP2vDGo", 
+        "keywords": "Linear, Equations, in, Point, Slope, Form, CC_39336_F-IF_7_a", 
+        "date_added": "2011-02-20 16:36:16", 
+        "youtube_url": "http://www.youtube.com/watch?v=zqCokP2vDGo&feature=youtube_gdata_player", 
+        "prev_video": "5fkh01mClLU", 
+        "readable_id": "linear-equations-in-point-slope-form"
+    }, 
+    {
+        "next_video": "9hryH94KFJA", 
+        "video_position": 35, 
+        "description": "Linear Equations in Standard Form", 
+        "title": "Linear Equations in Standard Form", 
+        "views": 21890, 
+        "related_videos": [
+            "zqCokP2vDGo", 
+            "9hryH94KFJA"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 608, 
+        "ka_url": "http://www.khanacademy.org/video/linear-equations-in-standard-form?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "BaQXFstxCMo", 
+        "keywords": "Linear, Equations, in, Standard, Form, CC_39336_F-IF_7_a", 
+        "date_added": "2011-02-20 16:36:16", 
+        "youtube_url": "http://www.youtube.com/watch?v=BaQXFstxCMo&feature=youtube_gdata_player", 
+        "prev_video": "zqCokP2vDGo", 
+        "readable_id": "linear-equations-in-standard-form"
+    }, 
+    {
+        "next_video": "OhUkMQtBGmE", 
+        "video_position": 36, 
+        "description": "Equations of Parallel and Perpendicular Lines", 
+        "title": "Equations of Parallel and Perpendicular Lines", 
+        "views": 16626, 
+        "related_videos": [
+            "BaQXFstxCMo", 
+            "OhUkMQtBGmE"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 553, 
+        "ka_url": "http://www.khanacademy.org/video/equations-of-parallel-and-perpendicular-lines?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "9hryH94KFJA", 
+        "keywords": "Equations, of, Parallel, and, Perpendicular, Lines", 
+        "date_added": "2011-02-20 16:36:16", 
+        "youtube_url": "http://www.youtube.com/watch?v=9hryH94KFJA&feature=youtube_gdata_player", 
+        "prev_video": "BaQXFstxCMo", 
+        "readable_id": "equations-of-parallel-and-perpendicular-lines"
+    }, 
+    {
+        "next_video": "aVDiAGZmcPo", 
+        "video_position": 37, 
+        "description": "Fitting a Line to Data", 
+        "title": "Fitting a Line to Data", 
+        "views": 6834, 
+        "related_videos": [
+            "9hryH94KFJA", 
+            "aVDiAGZmcPo"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 468, 
+        "ka_url": "http://www.khanacademy.org/video/fitting-a-line-to-data?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "OhUkMQtBGmE", 
+        "keywords": "Fitting, Line, to, Data, CC_8_SP_2, CC_8_SP_3", 
+        "date_added": "2011-02-20 16:36:16", 
+        "youtube_url": "http://www.youtube.com/watch?v=OhUkMQtBGmE&feature=youtube_gdata_player", 
+        "prev_video": "9hryH94KFJA", 
+        "readable_id": "fitting-a-line-to-data"
+    }, 
+    {
+        "next_video": "Gjv25aOuD00", 
+        "video_position": 38, 
+        "description": "Predicting with Linear Models", 
+        "title": "Predicting with Linear Models", 
+        "views": 5223, 
+        "related_videos": [
+            "OhUkMQtBGmE", 
+            "Gjv25aOuD00"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 706, 
+        "ka_url": "http://www.khanacademy.org/video/predicting-with-linear-models?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "aVDiAGZmcPo", 
+        "keywords": "Predicting, with, Linear, Models", 
+        "date_added": "2011-02-20 16:36:16", 
+        "youtube_url": "http://www.youtube.com/watch?v=aVDiAGZmcPo&feature=youtube_gdata_player", 
+        "prev_video": "OhUkMQtBGmE", 
+        "readable_id": "predicting-with-linear-models"
+    }, 
+    {
+        "next_video": "UTs4uZhu5t8", 
+        "video_position": 39, 
+        "description": "Using a Linear Model", 
+        "title": "Using a Linear Model", 
+        "views": 4903, 
+        "related_videos": [
+            "aVDiAGZmcPo", 
+            "UTs4uZhu5t8"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 734, 
+        "ka_url": "http://www.khanacademy.org/video/using-a-linear-model?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "Gjv25aOuD00", 
+        "keywords": "Using, Linear, Model", 
+        "date_added": "2011-02-20 16:36:16", 
+        "youtube_url": "http://www.youtube.com/watch?v=Gjv25aOuD00&feature=youtube_gdata_player", 
+        "prev_video": "aVDiAGZmcPo", 
+        "readable_id": "using-a-linear-model"
+    }, 
+    {
+        "next_video": "PNXozoJWsWc", 
+        "video_position": 40, 
+        "description": "Inequalities Using Addition and Subtraction", 
+        "title": "Inequalities Using Addition and Subtraction", 
+        "views": 13597, 
+        "related_videos": [
+            "Gjv25aOuD00", 
+            "PNXozoJWsWc"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 468, 
+        "ka_url": "http://www.khanacademy.org/video/inequalities-using-addition-and-subtraction?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "UTs4uZhu5t8", 
+        "keywords": "Inequalities, Using, Addition, and, Subtraction, CC_39336_A-REI_3", 
+        "date_added": "2011-02-20 16:36:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=UTs4uZhu5t8&feature=youtube_gdata_player", 
+        "prev_video": "Gjv25aOuD00", 
+        "readable_id": "inequalities-using-addition-and-subtraction"
+    }, 
+    {
+        "next_video": "xOxvyeSl0uA", 
+        "video_position": 41, 
+        "description": "Inequalities Using Multiplication and Division", 
+        "title": "Inequalities Using Multiplication and Division", 
+        "views": 11327, 
+        "related_videos": [
+            "UTs4uZhu5t8", 
+            "xOxvyeSl0uA"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 627, 
+        "ka_url": "http://www.khanacademy.org/video/inequalities-using-multiplication-and-division?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "PNXozoJWsWc", 
+        "keywords": "Inequalities, Using, Multiplication, and, Division, CC_39336_A-REI_3", 
+        "date_added": "2011-02-20 16:36:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=PNXozoJWsWc&feature=youtube_gdata_player", 
+        "prev_video": "UTs4uZhu5t8", 
+        "readable_id": "inequalities-using-multiplication-and-division"
+    }, 
+    {
+        "next_video": "A3xPhzs-KBI", 
+        "video_position": 42, 
+        "description": "Compound Inequalities", 
+        "title": "Multi-Step Inequalities", 
+        "views": 9145, 
+        "related_videos": [
+            "PNXozoJWsWc", 
+            "A3xPhzs-KBI"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 482, 
+        "ka_url": "http://www.khanacademy.org/video/multi-step-inequalities?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "xOxvyeSl0uA", 
+        "keywords": "Compound, Inequalities", 
+        "date_added": "2011-02-20 16:36:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=xOxvyeSl0uA&feature=youtube_gdata_player", 
+        "prev_video": "PNXozoJWsWc", 
+        "readable_id": "multi-step-inequalities"
+    }, 
+    {
+        "next_video": "u6zDpUL5RkU", 
+        "video_position": 43, 
+        "description": "Compound Inequalities", 
+        "title": "Compound Inequalities", 
+        "views": 14610, 
+        "related_videos": [
+            "xOxvyeSl0uA", 
+            "u6zDpUL5RkU"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 705, 
+        "ka_url": "http://www.khanacademy.org/video/compound-inequalities?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "A3xPhzs-KBI", 
+        "keywords": "Compound, Inequalities, CC_6_EE_8, CC_6_NS_6_c, CC_6_NS_7_a, CC_7_EE_4, CC_7_EE_4_b, CC_39336_A-CED_1, CC_39336_A-CED_3, CC_39336_A-REI_3", 
+        "date_added": "2011-02-20 16:36:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=A3xPhzs-KBI&feature=youtube_gdata_player", 
+        "prev_video": "xOxvyeSl0uA", 
+        "readable_id": "compound-inequalities"
+    }, 
+    {
+        "next_video": "iI_2Piwn_og", 
+        "video_position": 44, 
+        "description": "Absolute Value Equations", 
+        "title": "Absolute Value Equations", 
+        "views": 13135, 
+        "related_videos": [
+            "A3xPhzs-KBI", 
+            "iI_2Piwn_og"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 641, 
+        "ka_url": "http://www.khanacademy.org/video/absolute-value-equations?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "u6zDpUL5RkU", 
+        "keywords": "Absolute, Value, Equations", 
+        "date_added": "2011-02-20 16:36:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=u6zDpUL5RkU&feature=youtube_gdata_player", 
+        "prev_video": "A3xPhzs-KBI", 
+        "readable_id": "absolute-value-equations"
+    }, 
+    {
+        "next_video": "unSBFwK881s", 
+        "video_position": 45, 
+        "description": "Absolute Value Inequalities", 
+        "title": "Absolute Value Inequalities", 
+        "views": 20787, 
+        "related_videos": [
+            "u6zDpUL5RkU", 
+            "unSBFwK881s"
+        ], 
+        "playlist_titles": [
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 793, 
+        "ka_url": "http://www.khanacademy.org/video/absolute-value-inequalities?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "iI_2Piwn_og", 
+        "keywords": "Absolute, Value, Inequalities", 
+        "date_added": "2011-02-20 16:36:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=iI_2Piwn_og&feature=youtube_gdata_player", 
+        "prev_video": "u6zDpUL5RkU", 
+        "readable_id": "absolute-value-inequalities"
+    }, 
+    {
+        "next_video": "5a6zpfl50go", 
+        "video_position": 46, 
+        "description": "Graphing Inequalities", 
+        "title": "Graphing Inequalities", 
+        "views": 11850, 
+        "related_videos": [
+            "iI_2Piwn_og", 
+            "5a6zpfl50go"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 483, 
+        "ka_url": "http://www.khanacademy.org/video/graphing-inequalities?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "unSBFwK881s", 
+        "keywords": "Graphing, Inequalities", 
+        "date_added": "2011-02-20 16:36:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=unSBFwK881s&feature=youtube_gdata_player", 
+        "prev_video": "iI_2Piwn_og", 
+        "readable_id": "graphing-inequalities"
+    }, 
+    {
+        "next_video": "V7H1oUHXPkg", 
+        "video_position": 47, 
+        "description": "Solving Linear Systems by Graphing", 
+        "title": "Solving Linear Systems by Graphing", 
+        "views": 12444, 
+        "related_videos": [
+            "unSBFwK881s", 
+            "V7H1oUHXPkg"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 510, 
+        "ka_url": "http://www.khanacademy.org/video/solving-linear-systems-by-graphing?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "5a6zpfl50go", 
+        "keywords": "Solving, Linear, Systems, by, Graphing, CC_8_EE_8_a, CC_39336_A-REI_11, CC_39336_A-REI_6", 
+        "date_added": "2011-02-20 16:36:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=5a6zpfl50go&feature=youtube_gdata_player", 
+        "prev_video": "unSBFwK881s", 
+        "readable_id": "solving-linear-systems-by-graphing"
+    }, 
+    {
+        "next_video": "vA-55wZtLeE", 
+        "video_position": 48, 
+        "description": "Solving Linear Systems by Substitution", 
+        "title": "Solving Linear Systems by Substitution", 
+        "views": 23029, 
+        "related_videos": [
+            "5a6zpfl50go", 
+            "vA-55wZtLeE"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 561, 
+        "ka_url": "http://www.khanacademy.org/video/solving-linear-systems-by-substitution?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "V7H1oUHXPkg", 
+        "keywords": "Solving, Linear, Systems, by, Substitution, CC_8_EE_8_b, CC_39336_A-REI_6", 
+        "date_added": "2011-02-20 16:36:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=V7H1oUHXPkg&feature=youtube_gdata_player", 
+        "prev_video": "5a6zpfl50go", 
+        "readable_id": "solving-linear-systems-by-substitution"
+    }, 
+    {
+        "next_video": "wYrxKGt_bLg", 
+        "video_position": 49, 
+        "description": "Solving Systems of Equations by Elimination", 
+        "title": "Solving Systems of Equations by Elimination", 
+        "views": 27270, 
+        "related_videos": [
+            "V7H1oUHXPkg", 
+            "wYrxKGt_bLg"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 764, 
+        "ka_url": "http://www.khanacademy.org/video/solving-systems-of-equations-by-elimination?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "vA-55wZtLeE", 
+        "keywords": "Solving, Systems, of, Equations, by, Elimination, CC_8_EE_8_b, CC_39336_A-REI_5, CC_39336_A-REI_6", 
+        "date_added": "2011-02-20 16:36:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=vA-55wZtLeE&feature=youtube_gdata_player", 
+        "prev_video": "V7H1oUHXPkg", 
+        "readable_id": "solving-systems-of-equations-by-elimination"
+    }, 
+    {
+        "next_video": "5qkyuHIE2GM", 
+        "video_position": 50, 
+        "description": "Solving Systems of Equations by Multiplication", 
+        "title": "Solving Systems of Equations by Multiplication", 
+        "views": 12566, 
+        "related_videos": [
+            "vA-55wZtLeE", 
+            "5qkyuHIE2GM"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 721, 
+        "ka_url": "http://www.khanacademy.org/video/solving-systems-of-equations-by-multiplication?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "wYrxKGt_bLg", 
+        "keywords": "Solving, Systems, of, Equations, by, Multiplication, CC_39336_A-REI_6", 
+        "date_added": "2011-02-20 16:36:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=wYrxKGt_bLg&feature=youtube_gdata_player", 
+        "prev_video": "vA-55wZtLeE", 
+        "readable_id": "solving-systems-of-equations-by-multiplication"
+    }, 
+    {
+        "next_video": "5xQqwgS3O4U", 
+        "video_position": 51, 
+        "description": "Special Types of Linear Systems", 
+        "title": "Special Types of Linear Systems", 
+        "views": 7260, 
+        "related_videos": [
+            "wYrxKGt_bLg", 
+            "5xQqwgS3O4U"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 918, 
+        "ka_url": "http://www.khanacademy.org/video/special-types-of-linear-systems?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "5qkyuHIE2GM", 
+        "keywords": "Special, Types, of, Linear, Systems, CC_39336_A-REI_6", 
+        "date_added": "2011-02-20 16:36:50", 
+        "youtube_url": "http://www.youtube.com/watch?v=5qkyuHIE2GM&feature=youtube_gdata_player", 
+        "prev_video": "wYrxKGt_bLg", 
+        "readable_id": "special-types-of-linear-systems"
+    }, 
+    {
+        "next_video": "zM_p7tfWvLU", 
+        "video_position": 52, 
+        "description": "Systems of Linear Inequalities", 
+        "title": "Systems of Linear Inequalities", 
+        "views": 9480, 
+        "related_videos": [
+            "5qkyuHIE2GM", 
+            "zM_p7tfWvLU"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 532, 
+        "ka_url": "http://www.khanacademy.org/video/systems-of-linear-inequalities?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "5xQqwgS3O4U", 
+        "keywords": "Systems, of, Linear, Inequalities, CC_39336_A-REI_12", 
+        "date_added": "2011-02-20 16:36:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=5xQqwgS3O4U&feature=youtube_gdata_player", 
+        "prev_video": "5qkyuHIE2GM", 
+        "readable_id": "systems-of-linear-inequalities"
+    }, 
+    {
+        "next_video": "AR1uqNbjM5s", 
+        "video_position": 53, 
+        "description": "Exponent Properties Involving Products", 
+        "title": "Exponent Properties Involving Products", 
+        "views": 11211, 
+        "related_videos": [
+            "5xQqwgS3O4U", 
+            "AR1uqNbjM5s"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 840, 
+        "ka_url": "http://www.khanacademy.org/video/exponent-properties-involving-products?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "zM_p7tfWvLU", 
+        "keywords": "Exponent, Properties, Involving, Products, CC_8_EE_1, CC_39336_A-SSE_3_c", 
+        "date_added": "2011-02-20 16:36:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=zM_p7tfWvLU&feature=youtube_gdata_player", 
+        "prev_video": "5xQqwgS3O4U", 
+        "readable_id": "exponent-properties-involving-products"
+    }, 
+    {
+        "next_video": "tOuCdKqO6-s", 
+        "video_position": 54, 
+        "description": "Exponent Properties Involving Quotients", 
+        "title": "Exponent Properties Involving Quotients", 
+        "views": 9159, 
+        "related_videos": [
+            "zM_p7tfWvLU", 
+            "tOuCdKqO6-s"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 562, 
+        "ka_url": "http://www.khanacademy.org/video/exponent-properties-involving-quotients?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "AR1uqNbjM5s", 
+        "keywords": "Exponent, Properties, Involving, Quotients, CC_8_EE_1, CC_39336_A-SSE_3_c", 
+        "date_added": "2011-02-20 16:36:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=AR1uqNbjM5s&feature=youtube_gdata_player", 
+        "prev_video": "zM_p7tfWvLU", 
+        "readable_id": "exponent-properties-involving-quotients"
+    }, 
+    {
+        "next_video": "i6lfVUp5RW8", 
+        "video_position": 55, 
+        "description": "Zero, Negative, and Fractional Exponents", 
+        "title": "Zero, Negative, and Fractional Exponents", 
+        "views": 21173, 
+        "related_videos": [
+            "AR1uqNbjM5s", 
+            "i6lfVUp5RW8"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 844, 
+        "ka_url": "http://www.khanacademy.org/video/zero--negative--and-fractional-exponents?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "tOuCdKqO6-s", 
+        "keywords": "Zero, Negative, and, Fractional, Exponents, CC_39336_A-SSE_3_c", 
+        "date_added": "2011-02-20 16:36:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=tOuCdKqO6-s&feature=youtube_gdata_player", 
+        "prev_video": "AR1uqNbjM5s", 
+        "readable_id": "zero--negative--and-fractional-exponents"
+    }, 
+    {
+        "next_video": "6WMZ7J0wwMI", 
+        "video_position": 56, 
+        "description": "Scientific Notation", 
+        "title": "Scientific Notation", 
+        "views": 18071, 
+        "related_videos": [
+            "tOuCdKqO6-s", 
+            "6WMZ7J0wwMI"
+        ], 
+        "playlist_titles": [
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 686, 
+        "ka_url": "http://www.khanacademy.org/video/scientific-notation?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "i6lfVUp5RW8", 
+        "keywords": "Scientific, Notation", 
+        "date_added": "2011-02-20 16:36:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=i6lfVUp5RW8&feature=youtube_gdata_player", 
+        "prev_video": "tOuCdKqO6-s", 
+        "readable_id": "scientific-notation"
+    }, 
+    {
+        "next_video": "AXAMVxaxjDg", 
+        "video_position": 57, 
+        "description": "Exponential Growth Functions", 
+        "title": "Exponential Growth Functions", 
+        "views": 21941, 
+        "related_videos": [
+            "i6lfVUp5RW8", 
+            "AXAMVxaxjDg"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 461, 
+        "ka_url": "http://www.khanacademy.org/video/exponential-growth-functions?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "6WMZ7J0wwMI", 
+        "keywords": "Exponential, Growth, Functions, CC_39336_F-IF_8_b, CC_39336_F-LE_1_c", 
+        "date_added": "2011-02-20 16:36:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=6WMZ7J0wwMI&feature=youtube_gdata_player", 
+        "prev_video": "i6lfVUp5RW8", 
+        "readable_id": "exponential-growth-functions"
+    }, 
+    {
+        "next_video": "pXo0bG4iAyg", 
+        "video_position": 58, 
+        "description": "Exponential Decay Functions", 
+        "title": "Exponential Decay Functions", 
+        "views": 13518, 
+        "related_videos": [
+            "6WMZ7J0wwMI", 
+            "pXo0bG4iAyg"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 651, 
+        "ka_url": "http://www.khanacademy.org/video/exponential-decay-functions?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "AXAMVxaxjDg", 
+        "keywords": "Exponential, Decay, Functions, CC_39336_A-SSE_3_c, CC_39336_F-IF_8_b, CC_39336_F-LE_1_c", 
+        "date_added": "2011-02-20 16:36:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=AXAMVxaxjDg&feature=youtube_gdata_player", 
+        "prev_video": "6WMZ7J0wwMI", 
+        "readable_id": "exponential-decay-functions"
+    }, 
+    {
+        "next_video": "m5Tf6vgoJtQ", 
+        "video_position": 59, 
+        "description": "Geometric Sequences (Introduction)", 
+        "title": "Geometric Sequences (Introduction)", 
+        "views": 18211, 
+        "related_videos": [
+            "AXAMVxaxjDg", 
+            "m5Tf6vgoJtQ"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 645, 
+        "ka_url": "http://www.khanacademy.org/video/geometric-sequences--introduction?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "pXo0bG4iAyg", 
+        "keywords": "Geometric, Sequences, (Introduction), CC_39336_A-SSE_4", 
+        "date_added": "2011-02-20 16:36:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=pXo0bG4iAyg&feature=youtube_gdata_player", 
+        "prev_video": "AXAMVxaxjDg", 
+        "readable_id": "geometric-sequences--introduction"
+    }, 
+    {
+        "next_video": "ZgFXL6SEUiI", 
+        "video_position": 60, 
+        "description": "Word Problem Solving- Exponential Growth and Decay", 
+        "title": "Word Problem Solving- Exponential Growth and Decay", 
+        "views": 17074, 
+        "related_videos": [
+            "pXo0bG4iAyg", 
+            "ZgFXL6SEUiI"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 441, 
+        "ka_url": "http://www.khanacademy.org/video/word-problem-solving--exponential-growth-and-decay?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "m5Tf6vgoJtQ", 
+        "keywords": "Word, Problem, Solving, Exponential, Growth, and, Decay", 
+        "date_added": "2011-02-20 16:36:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=m5Tf6vgoJtQ&feature=youtube_gdata_player", 
+        "prev_video": "pXo0bG4iAyg", 
+        "readable_id": "word-problem-solving--exponential-growth-and-decay"
+    }, 
+    {
+        "next_video": "fGThIRpWEE4", 
+        "video_position": 61, 
+        "description": "Addition and Subtraction of Polynomials", 
+        "title": "Addition and Subtraction of Polynomials", 
+        "views": 15729, 
+        "related_videos": [
+            "m5Tf6vgoJtQ", 
+            "fGThIRpWEE4"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 959, 
+        "ka_url": "http://www.khanacademy.org/video/addition-and-subtraction-of-polynomials?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "ZgFXL6SEUiI", 
+        "keywords": "Addition, and, Subtraction, of, Polynomials, CC_39336_A-APR_1", 
+        "date_added": "2011-02-20 16:36:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=ZgFXL6SEUiI&feature=youtube_gdata_player", 
+        "prev_video": "m5Tf6vgoJtQ", 
+        "readable_id": "addition-and-subtraction-of-polynomials"
+    }, 
+    {
+        "next_video": "bFtjG45-Udk", 
+        "video_position": 62, 
+        "description": "Multiplication of Polynomials", 
+        "title": "Multiplication of Polynomials", 
+        "views": 16206, 
+        "related_videos": [
+            "ZgFXL6SEUiI", 
+            "bFtjG45-Udk"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 589, 
+        "ka_url": "http://www.khanacademy.org/video/multiplication-of-polynomials?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "fGThIRpWEE4", 
+        "keywords": "Multiplication, of, Polynomials, CC_39336_A-APR_1", 
+        "date_added": "2011-02-20 16:36:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=fGThIRpWEE4&feature=youtube_gdata_player", 
+        "prev_video": "ZgFXL6SEUiI", 
+        "readable_id": "multiplication-of-polynomials"
+    }, 
+    {
+        "next_video": "zxz0WNVnF38", 
+        "video_position": 63, 
+        "description": "Special Products of Binomials", 
+        "title": "Special Products of Binomials", 
+        "views": 9543, 
+        "related_videos": [
+            "fGThIRpWEE4", 
+            "zxz0WNVnF38"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 636, 
+        "ka_url": "http://www.khanacademy.org/video/special-products-of-binomials?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "bFtjG45-Udk", 
+        "keywords": "Special, Products, of, Binomials, CC_39336_A-APR_5", 
+        "date_added": "2011-02-20 16:36:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=bFtjG45-Udk&feature=youtube_gdata_player", 
+        "prev_video": "fGThIRpWEE4", 
+        "readable_id": "special-products-of-binomials"
+    }, 
+    {
+        "next_video": "eF6zYNzlZKQ", 
+        "video_position": 64, 
+        "description": "Polynomial Equations in Factored Form", 
+        "title": "Polynomial Equations in Factored Form", 
+        "views": 25696, 
+        "related_videos": [
+            "bFtjG45-Udk", 
+            "eF6zYNzlZKQ"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 569, 
+        "ka_url": "http://www.khanacademy.org/video/polynomial-equations-in-factored-form?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "zxz0WNVnF38", 
+        "keywords": "Polynomial, Equations, in, Factored, Form, CC_39336_A-APR_3", 
+        "date_added": "2011-02-20 16:36:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=zxz0WNVnF38&feature=youtube_gdata_player", 
+        "prev_video": "bFtjG45-Udk", 
+        "readable_id": "polynomial-equations-in-factored-form"
+    }, 
+    {
+        "next_video": "BI_jmI4xRus", 
+        "video_position": 65, 
+        "description": "Factoring Quadratic Expressions", 
+        "title": "Factoring Quadratic Expressions", 
+        "views": 48955, 
+        "related_videos": [
+            "zxz0WNVnF38", 
+            "BI_jmI4xRus"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 990, 
+        "ka_url": "http://www.khanacademy.org/video/factoring-quadratic-expressions?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "eF6zYNzlZKQ", 
+        "keywords": "Factoring, Quadratic, Expressions, CC_39336_A-REI_4_b, CC_39336_A-SSE_3_a, CC_39336_F-IF_8_a", 
+        "date_added": "2011-02-20 16:36:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=eF6zYNzlZKQ&feature=youtube_gdata_player", 
+        "prev_video": "zxz0WNVnF38", 
+        "readable_id": "factoring-quadratic-expressions"
+    }, 
+    {
+        "next_video": "X7B_tH4O-_s", 
+        "video_position": 66, 
+        "description": "Factoring Special Products", 
+        "title": "Factoring Special Products", 
+        "views": 19120, 
+        "related_videos": [
+            "eF6zYNzlZKQ", 
+            "X7B_tH4O-_s"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 608, 
+        "ka_url": "http://www.khanacademy.org/video/factoring-special-products?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "BI_jmI4xRus", 
+        "keywords": "Factoring, Special, Products, CC_39336_A-REI_4_b, CC_39336_A-SSE_3_a, CC_39336_F-IF_8_a", 
+        "date_added": "2011-02-20 16:36:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=BI_jmI4xRus&feature=youtube_gdata_player", 
+        "prev_video": "eF6zYNzlZKQ", 
+        "readable_id": "factoring-special-products"
+    }, 
+    {
+        "next_video": "RjkTEyO5Zso", 
+        "video_position": 67, 
+        "description": "Factor by Grouping and Factoring Completely", 
+        "title": "Factor by Grouping and Factoring Completely", 
+        "views": 28507, 
+        "related_videos": [
+            "BI_jmI4xRus", 
+            "RjkTEyO5Zso"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 837, 
+        "ka_url": "http://www.khanacademy.org/video/factor-by-grouping-and-factoring-completely?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "X7B_tH4O-_s", 
+        "keywords": "Factor, by, Grouping, and, Factoring, Completely, CC_39336_A-REI_4_b, CC_39336_A-SSE_2, CC_39336_F-IF_8_a", 
+        "date_added": "2011-02-20 16:36:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=X7B_tH4O-_s&feature=youtube_gdata_player", 
+        "prev_video": "BI_jmI4xRus", 
+        "readable_id": "factor-by-grouping-and-factoring-completely"
+    }, 
+    {
+        "next_video": "JHUju_Qkqbg", 
+        "video_position": 68, 
+        "description": "Graphs of Quadratic Functions", 
+        "title": "Graphs of Quadratic Functions", 
+        "views": 20921, 
+        "related_videos": [
+            "X7B_tH4O-_s", 
+            "JHUju_Qkqbg"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 965, 
+        "ka_url": "http://www.khanacademy.org/video/graphs-of-quadratic-functions?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "RjkTEyO5Zso", 
+        "keywords": "Graphs, of, Quadratic, Functions", 
+        "date_added": "2011-02-20 16:36:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=RjkTEyO5Zso&feature=youtube_gdata_player", 
+        "prev_video": "X7B_tH4O-_s", 
+        "readable_id": "graphs-of-quadratic-functions"
+    }, 
+    {
+        "next_video": "55G8037gsKY", 
+        "video_position": 69, 
+        "description": "Solving Quadratic Equations by Graphing", 
+        "title": "Solving Quadratic Equations by Graphing", 
+        "views": 12513, 
+        "related_videos": [
+            "RjkTEyO5Zso", 
+            "55G8037gsKY"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 651, 
+        "ka_url": "http://www.khanacademy.org/video/solving-quadratic-equations-by-graphing?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "JHUju_Qkqbg", 
+        "keywords": "Solving, Quadratic, Equations, by, Graphing, CC_39336_F-IF_7_a", 
+        "date_added": "2011-02-20 16:36:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=JHUju_Qkqbg&feature=youtube_gdata_player", 
+        "prev_video": "RjkTEyO5Zso", 
+        "readable_id": "solving-quadratic-equations-by-graphing"
+    }, 
+    {
+        "next_video": "bNQY0z76M5A", 
+        "video_position": 70, 
+        "description": "Solving Quadratic Equations by Square Roots", 
+        "title": "Solving Quadratic Equations by Square Roots", 
+        "views": 16435, 
+        "related_videos": [
+            "JHUju_Qkqbg", 
+            "bNQY0z76M5A"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 663, 
+        "ka_url": "http://www.khanacademy.org/video/solving-quadratic-equations-by-square-roots?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "55G8037gsKY", 
+        "keywords": "Solving, Quadratic, Equations, by, Square, Roots, CC_39336_A-REI_4_b", 
+        "date_added": "2011-02-20 16:36:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=55G8037gsKY&feature=youtube_gdata_player", 
+        "prev_video": "JHUju_Qkqbg", 
+        "readable_id": "solving-quadratic-equations-by-square-roots"
+    }, 
+    {
+        "next_video": "i7idZfS8t8w", 
+        "video_position": 71, 
+        "description": "Solving Quadratic Equations by Completing the Square", 
+        "title": "Solving Quadratic Equations by Completing the Square", 
+        "views": 18568, 
+        "related_videos": [
+            "55G8037gsKY", 
+            "i7idZfS8t8w"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 846, 
+        "ka_url": "http://www.khanacademy.org/video/solving-quadratic-equations-by-completing-the-square?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "bNQY0z76M5A", 
+        "keywords": "Solving, Quadratic, Equations, by, Completing, the, Square, CC_39336_A-REI_4_b, CC_39336_A-SSE_3_b", 
+        "date_added": "2011-02-20 16:36:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=bNQY0z76M5A&feature=youtube_gdata_player", 
+        "prev_video": "55G8037gsKY", 
+        "readable_id": "solving-quadratic-equations-by-completing-the-square"
+    }, 
+    {
+        "next_video": "r3SEkdtpobo", 
+        "video_position": 72, 
+        "description": "Using the Quadratic Formula", 
+        "title": "Using the Quadratic Formula", 
+        "views": 21764, 
+        "related_videos": [
+            "bNQY0z76M5A", 
+            "r3SEkdtpobo"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 992, 
+        "ka_url": "http://www.khanacademy.org/video/using-the-quadratic-formula?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "i7idZfS8t8w", 
+        "keywords": "Using, the, Quadratic, Formula, CC_39336_A-REI_4_b", 
+        "date_added": "2011-02-20 16:36:53", 
+        "youtube_url": "http://www.youtube.com/watch?v=i7idZfS8t8w&feature=youtube_gdata_player", 
+        "prev_video": "bNQY0z76M5A", 
+        "readable_id": "using-the-quadratic-formula"
+    }, 
+    {
+        "next_video": "JBSDQLZtjFo", 
+        "video_position": 73, 
+        "description": "Proof of Quadratic Formula", 
+        "title": "Proof of Quadratic Formula", 
+        "views": 6801, 
+        "related_videos": [
+            "i7idZfS8t8w", 
+            "JBSDQLZtjFo"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 464, 
+        "ka_url": "http://www.khanacademy.org/video/proof-of-quadratic-formula?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "r3SEkdtpobo", 
+        "keywords": "Proof, of, Quadratic, Formula, CC_39336_A-REI_4_a", 
+        "date_added": "2011-02-20 16:36:53", 
+        "youtube_url": "http://www.youtube.com/watch?v=r3SEkdtpobo&feature=youtube_gdata_player", 
+        "prev_video": "i7idZfS8t8w", 
+        "readable_id": "proof-of-quadratic-formula"
+    }, 
+    {
+        "next_video": "CxEFOozrMSE", 
+        "video_position": 74, 
+        "description": "Discriminant of Quadratic Equations", 
+        "title": "Discriminant of Quadratic Equations", 
+        "views": 10471, 
+        "related_videos": [
+            "r3SEkdtpobo", 
+            "CxEFOozrMSE"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 614, 
+        "ka_url": "http://www.khanacademy.org/video/discriminant-of-quadratic-equations?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "JBSDQLZtjFo", 
+        "keywords": "Discriminant, of, Quadratic, Equations, CC_39336_A-REI_4_b", 
+        "date_added": "2011-02-20 16:36:53", 
+        "youtube_url": "http://www.youtube.com/watch?v=JBSDQLZtjFo&feature=youtube_gdata_player", 
+        "prev_video": "r3SEkdtpobo", 
+        "readable_id": "discriminant-of-quadratic-equations"
+    }, 
+    {
+        "next_video": "o1npPDCq-4M", 
+        "video_position": 75, 
+        "description": "Linear, Quadratic, and Exponential Models", 
+        "title": "Linear, Quadratic, and Exponential Models", 
+        "views": 6989, 
+        "related_videos": [
+            "JBSDQLZtjFo", 
+            "o1npPDCq-4M"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 495, 
+        "ka_url": "http://www.khanacademy.org/video/linear--quadratic--and-exponential-models?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "CxEFOozrMSE", 
+        "keywords": "Linear, Quadratic, and, Exponential, Models, CC_39336_F-LE_1, CC_39336_F-LE_1_a", 
+        "date_added": "2011-02-20 16:36:53", 
+        "youtube_url": "http://www.youtube.com/watch?v=CxEFOozrMSE&feature=youtube_gdata_player", 
+        "prev_video": "JBSDQLZtjFo", 
+        "readable_id": "linear--quadratic--and-exponential-models"
+    }, 
+    {
+        "next_video": "s8PKFcrrbNQ", 
+        "video_position": 76, 
+        "description": "Using y=x^2 to give a sense of why the change in the change of y (or the change in the slope) is constant", 
+        "title": "Identifying Quadratic Models", 
+        "views": 4439, 
+        "related_videos": [
+            "CxEFOozrMSE", 
+            "s8PKFcrrbNQ"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 485, 
+        "ka_url": "http://www.khanacademy.org/video/identifying-quadratic-models?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "o1npPDCq-4M", 
+        "keywords": "quadratic, model, algebra", 
+        "date_added": "2011-02-20 16:36:53", 
+        "youtube_url": "http://www.youtube.com/watch?v=o1npPDCq-4M&feature=youtube_gdata_player", 
+        "prev_video": "CxEFOozrMSE", 
+        "readable_id": "identifying-quadratic-models"
+    }, 
+    {
+        "next_video": "z_hEVWSkQHo", 
+        "video_position": 77, 
+        "description": "Identifying Exponential Models", 
+        "title": "Identifying Exponential Models", 
+        "views": 3336, 
+        "related_videos": [
+            "o1npPDCq-4M", 
+            "z_hEVWSkQHo"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 240, 
+        "ka_url": "http://www.khanacademy.org/video/identifying-exponential-models?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "s8PKFcrrbNQ", 
+        "keywords": "Identifying, Exponential, Models, CC_39336_F-LE_1", 
+        "date_added": "2011-02-20 16:36:53", 
+        "youtube_url": "http://www.youtube.com/watch?v=s8PKFcrrbNQ&feature=youtube_gdata_player", 
+        "prev_video": "o1npPDCq-4M", 
+        "readable_id": "identifying-exponential-models"
+    }, 
+    {
+        "next_video": "outcfkh69U0", 
+        "video_position": 78, 
+        "description": "Using a calculator to perform a quadratic regression", 
+        "title": "Quadratic Regression", 
+        "views": 7652, 
+        "related_videos": [
+            "s8PKFcrrbNQ", 
+            "outcfkh69U0"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 557, 
+        "ka_url": "http://www.khanacademy.org/video/quadratic-regression?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "z_hEVWSkQHo", 
+        "keywords": "Quadratic, Regression, CC_39336_F-IF_7_a", 
+        "date_added": "2011-02-20 16:36:53", 
+        "youtube_url": "http://www.youtube.com/watch?v=z_hEVWSkQHo&feature=youtube_gdata_player", 
+        "prev_video": "s8PKFcrrbNQ", 
+        "readable_id": "quadratic-regression"
+    }, 
+    {
+        "next_video": "iX7ivCww2ws", 
+        "video_position": 79, 
+        "description": "Graphs of Square Root Functions", 
+        "title": "Graphs of Square Root Functions", 
+        "views": 8969, 
+        "related_videos": [
+            "z_hEVWSkQHo", 
+            "iX7ivCww2ws"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 901, 
+        "ka_url": "http://www.khanacademy.org/video/graphs-of-square-root-functions?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "outcfkh69U0", 
+        "keywords": "Graphs, of, Square, Root, Functions, CC_39336_F-BF_3, CC_39336_F-IF_7_b", 
+        "date_added": "2011-02-20 16:36:53", 
+        "youtube_url": "http://www.youtube.com/watch?v=outcfkh69U0&feature=youtube_gdata_player", 
+        "prev_video": "z_hEVWSkQHo", 
+        "readable_id": "graphs-of-square-root-functions"
+    }, 
+    {
+        "next_video": "VWlFMfPVmkU", 
+        "video_position": 80, 
+        "description": "Radical Expressions with Higher Roots", 
+        "title": "Radical Expressions with Higher Roots", 
+        "views": 24739, 
+        "related_videos": [
+            "outcfkh69U0", 
+            "VWlFMfPVmkU"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 526, 
+        "ka_url": "http://www.khanacademy.org/video/radical-expressions-with-higher-roots?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "iX7ivCww2ws", 
+        "keywords": "Radical, Expressions, with, Higher, Roots", 
+        "date_added": "2011-02-20 16:36:53", 
+        "youtube_url": "http://www.youtube.com/watch?v=iX7ivCww2ws&feature=youtube_gdata_player", 
+        "prev_video": "outcfkh69U0", 
+        "readable_id": "radical-expressions-with-higher-roots"
+    }, 
+    {
+        "next_video": "gY5TvlHg4Vk", 
+        "video_position": 81, 
+        "description": "More Simplifying Radical Expressions", 
+        "title": "More Simplifying Radical Expressions", 
+        "views": 21012, 
+        "related_videos": [
+            "iX7ivCww2ws", 
+            "gY5TvlHg4Vk"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 477, 
+        "ka_url": "http://www.khanacademy.org/video/more-simplifying-radical-expressions?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "VWlFMfPVmkU", 
+        "keywords": "More, Simplifying, Radical, Expressions", 
+        "date_added": "2011-02-20 16:36:54", 
+        "youtube_url": "http://www.youtube.com/watch?v=VWlFMfPVmkU&feature=youtube_gdata_player", 
+        "prev_video": "iX7ivCww2ws", 
+        "readable_id": "more-simplifying-radical-expressions"
+    }, 
+    {
+        "next_video": "711pdW8TbbY", 
+        "video_position": 82, 
+        "description": "How to Rationalize a Denominator", 
+        "title": "How to Rationalize a Denominator", 
+        "views": 20964, 
+        "related_videos": [
+            "VWlFMfPVmkU", 
+            "711pdW8TbbY"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 618, 
+        "ka_url": "http://www.khanacademy.org/video/how-to-rationalize-a-denominator?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "gY5TvlHg4Vk", 
+        "keywords": "How, to, Rationalize, Denominator", 
+        "date_added": "2011-02-20 16:36:54", 
+        "youtube_url": "http://www.youtube.com/watch?v=gY5TvlHg4Vk&feature=youtube_gdata_player", 
+        "prev_video": "VWlFMfPVmkU", 
+        "readable_id": "how-to-rationalize-a-denominator"
+    }, 
+    {
+        "next_video": "dKuk8PybYs4", 
+        "video_position": 83, 
+        "description": "Extraneous Solutions to Radical Equations", 
+        "title": "Extraneous Solutions to Radical Equations", 
+        "views": 8592, 
+        "related_videos": [
+            "gY5TvlHg4Vk", 
+            "dKuk8PybYs4"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 670, 
+        "ka_url": "http://www.khanacademy.org/video/extraneous-solutions-to-radical-equations?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "711pdW8TbbY", 
+        "keywords": "Extraneous, Solutions, to, Radical, Equations, CC_39336_A-REI_2", 
+        "date_added": "2011-02-20 16:36:54", 
+        "youtube_url": "http://www.youtube.com/watch?v=711pdW8TbbY&feature=youtube_gdata_player", 
+        "prev_video": "gY5TvlHg4Vk", 
+        "readable_id": "extraneous-solutions-to-radical-equations"
+    }, 
+    {
+        "next_video": "5pqzmUxOw_E", 
+        "video_position": 84, 
+        "description": "Radical Equation Examples", 
+        "title": "Radical Equation Examples", 
+        "views": 7905, 
+        "related_videos": [
+            "711pdW8TbbY", 
+            "5pqzmUxOw_E"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 316, 
+        "ka_url": "http://www.khanacademy.org/video/radical-equation-examples?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "dKuk8PybYs4", 
+        "keywords": "Radical, Equation, Examples, CC_39336_A-REI_2", 
+        "date_added": "2011-02-20 16:36:54", 
+        "youtube_url": "http://www.youtube.com/watch?v=dKuk8PybYs4&feature=youtube_gdata_player", 
+        "prev_video": "711pdW8TbbY", 
+        "readable_id": "radical-equation-examples"
+    }, 
+    {
+        "next_video": "AEIzy1kNRqo", 
+        "video_position": 85, 
+        "description": "More Involved Radical Equation Example", 
+        "title": "More Involved Radical Equation Example", 
+        "views": 4316, 
+        "related_videos": [
+            "dKuk8PybYs4", 
+            "AEIzy1kNRqo"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 714, 
+        "ka_url": "http://www.khanacademy.org/video/more-involved-radical-equation-example?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "5pqzmUxOw_E", 
+        "keywords": "More, Involved, Radical, Equation, Example, CC_39336_A-REI_2", 
+        "date_added": "2011-02-20 16:36:54", 
+        "youtube_url": "http://www.youtube.com/watch?v=5pqzmUxOw_E&feature=youtube_gdata_player", 
+        "prev_video": "dKuk8PybYs4", 
+        "readable_id": "more-involved-radical-equation-example"
+    }, 
+    {
+        "next_video": "nyZuite17Pc", 
+        "video_position": 86, 
+        "description": "Pythagorean Theorem", 
+        "title": "Pythagorean Theorem", 
+        "views": 20322, 
+        "related_videos": [
+            "5pqzmUxOw_E", 
+            "nyZuite17Pc"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 783, 
+        "ka_url": "http://www.khanacademy.org/video/pythagorean-theorem?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "AEIzy1kNRqo", 
+        "keywords": "Pythagorean, Theorem, CC_8_G_7", 
+        "date_added": "2011-02-20 16:36:54", 
+        "youtube_url": "http://www.youtube.com/watch?v=AEIzy1kNRqo&feature=youtube_gdata_player", 
+        "prev_video": "5pqzmUxOw_E", 
+        "readable_id": "pythagorean-theorem"
+    }, 
+    {
+        "next_video": "Ez_-RwV9WVo", 
+        "video_position": 87, 
+        "description": "How to find the distance between lines using the Pythagorean Formula", 
+        "title": "Distance Formula", 
+        "views": 28752, 
+        "related_videos": [
+            "AEIzy1kNRqo", 
+            "Ez_-RwV9WVo"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 579, 
+        "ka_url": "http://www.khanacademy.org/video/distance-formula?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "nyZuite17Pc", 
+        "keywords": "Distance, formula, points, pythagorean, CC_8_G_8", 
+        "date_added": "2011-02-20 16:36:54", 
+        "youtube_url": "http://www.youtube.com/watch?v=nyZuite17Pc&feature=youtube_gdata_player", 
+        "prev_video": "AEIzy1kNRqo", 
+        "readable_id": "distance-formula"
+    }, 
+    {
+        "next_video": "r382kfkqAF4", 
+        "video_position": 88, 
+        "description": "Midpoint Formula", 
+        "title": "Midpoint Formula", 
+        "views": 21524, 
+        "related_videos": [
+            "nyZuite17Pc", 
+            "r382kfkqAF4"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 401, 
+        "ka_url": "http://www.khanacademy.org/video/midpoint-formula?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "Ez_-RwV9WVo", 
+        "keywords": "Midpoint, Formula", 
+        "date_added": "2011-02-20 16:36:54", 
+        "youtube_url": "http://www.youtube.com/watch?v=Ez_-RwV9WVo&feature=youtube_gdata_player", 
+        "prev_video": "nyZuite17Pc", 
+        "readable_id": "midpoint-formula"
+    }, 
+    {
+        "next_video": "GrynkZB3E7M", 
+        "video_position": 89, 
+        "description": "Visual Pythagorean Theorem Proof - some basic geometry required", 
+        "title": "Visual Pythagorean Theorem Proof", 
+        "views": 9259, 
+        "related_videos": [
+            "Ez_-RwV9WVo", 
+            "GrynkZB3E7M"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 530, 
+        "ka_url": "http://www.khanacademy.org/video/visual-pythagorean-theorem-proof?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "r382kfkqAF4", 
+        "keywords": "Visual, Pythagorean, Theorem, Proof, CC_8_G_6", 
+        "date_added": "2011-02-20 16:36:54", 
+        "youtube_url": "http://www.youtube.com/watch?v=r382kfkqAF4&feature=youtube_gdata_player", 
+        "prev_video": "Ez_-RwV9WVo", 
+        "readable_id": "visual-pythagorean-theorem-proof"
+    }, 
+    {
+        "next_video": "E4HAYd0QnRc", 
+        "video_position": 90, 
+        "description": "Average or Central Tendency: Arithmetic Mean, Median, and Mode", 
+        "title": "Average or Central Tendency: Arithmetic Mean, Median, and Mode", 
+        "views": 38690, 
+        "related_videos": [
+            "r382kfkqAF4", 
+            "E4HAYd0QnRc"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 541, 
+        "ka_url": "http://www.khanacademy.org/video/average-or-central-tendency--arithmetic-mean--median--and-mode?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "GrynkZB3E7M", 
+        "keywords": "average, central, tendency, mean, median, mode, CC_6_SP_2, CC_6_SP_3, CC_6_SP_5_c", 
+        "date_added": "2011-02-20 16:36:54", 
+        "youtube_url": "http://www.youtube.com/watch?v=GrynkZB3E7M&feature=youtube_gdata_player", 
+        "prev_video": "r382kfkqAF4", 
+        "readable_id": "average-or-central-tendency--arithmetic-mean--median--and-mode"
+    }, 
+    {
+        "next_video": "OaJXJduRiIE", 
+        "video_position": 91, 
+        "description": "Range, Variance and Standard Deviation as Measures of Dispersion", 
+        "title": "Range, Variance and Standard Deviation as Measures of Dispersion", 
+        "views": 18804, 
+        "related_videos": [
+            "GrynkZB3E7M", 
+            "OaJXJduRiIE"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 754, 
+        "ka_url": "http://www.khanacademy.org/video/range--variance-and-standard-deviation-as-measures-of-dispersion?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "E4HAYd0QnRc", 
+        "keywords": "Range, Variance, and, Standard, Deviation, CC_6_SP_5_c", 
+        "date_added": "2011-02-20 16:36:55", 
+        "youtube_url": "http://www.youtube.com/watch?v=E4HAYd0QnRc&feature=youtube_gdata_player", 
+        "prev_video": "GrynkZB3E7M", 
+        "readable_id": "range--variance-and-standard-deviation-as-measures-of-dispersion"
+    }, 
+    {
+        "next_video": "4eLJGG2Ad30", 
+        "video_position": 92, 
+        "description": "Stem and Leaf Plots", 
+        "title": "Stem and Leaf Plots", 
+        "views": 15422, 
+        "related_videos": [
+            "E4HAYd0QnRc", 
+            "4eLJGG2Ad30"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 405, 
+        "ka_url": "http://www.khanacademy.org/video/stem-and-leaf-plots?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "OaJXJduRiIE", 
+        "keywords": "Stem, and, Leaf, Plots, CC_6_SP_4", 
+        "date_added": "2011-02-20 16:36:55", 
+        "youtube_url": "http://www.youtube.com/watch?v=OaJXJduRiIE&feature=youtube_gdata_player", 
+        "prev_video": "E4HAYd0QnRc", 
+        "readable_id": "stem-and-leaf-plots"
+    }, 
+    {
+        "next_video": "BXq5TFLvsVw", 
+        "video_position": 93, 
+        "description": "Histograms", 
+        "title": "Histograms", 
+        "views": 12956, 
+        "related_videos": [
+            "OaJXJduRiIE", 
+            "BXq5TFLvsVw"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 368, 
+        "ka_url": "http://www.khanacademy.org/video/histograms?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "4eLJGG2Ad30", 
+        "keywords": "Histograms, CC_6_SP_4", 
+        "date_added": "2011-02-20 16:36:55", 
+        "youtube_url": "http://www.youtube.com/watch?v=4eLJGG2Ad30&feature=youtube_gdata_player", 
+        "prev_video": "OaJXJduRiIE", 
+        "readable_id": "histograms"
+    }, 
+    {
+        "next_video": "AQFZuih2odo", 
+        "video_position": 94, 
+        "description": "Box-and-whisker Plot", 
+        "title": "Box-and-whisker Plot", 
+        "views": 21055, 
+        "related_videos": [
+            "4eLJGG2Ad30", 
+            "AQFZuih2odo"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 794, 
+        "ka_url": "http://www.khanacademy.org/video/box-and-whisker-plot?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "BXq5TFLvsVw", 
+        "keywords": "Box, Whisker, Plot, diagram, CC_6_SP_4", 
+        "date_added": "2011-02-20 16:36:55", 
+        "youtube_url": "http://www.youtube.com/watch?v=BXq5TFLvsVw&feature=youtube_gdata_player", 
+        "prev_video": "4eLJGG2Ad30", 
+        "readable_id": "box-and-whisker-plot"
+    }, 
+    {
+        "next_video": "2N62v_63SBo", 
+        "video_position": 95, 
+        "description": "Proportionality", 
+        "title": "Proportionality", 
+        "views": 5812, 
+        "related_videos": [
+            "BXq5TFLvsVw", 
+            "2N62v_63SBo"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 1023, 
+        "ka_url": "http://www.khanacademy.org/video/proportionality?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "AQFZuih2odo", 
+        "keywords": "Proportionality, CC_7_RP_2, CC_7_RP_2_b, CC_7_RP_3, CC_39336_A-CED_4", 
+        "date_added": "2011-02-20 16:36:55", 
+        "youtube_url": "http://www.youtube.com/watch?v=AQFZuih2odo&feature=youtube_gdata_player", 
+        "prev_video": "BXq5TFLvsVw", 
+        "readable_id": "proportionality"
+    }, 
+    {
+        "next_video": "ReEMqdZEEX0", 
+        "video_position": 96, 
+        "description": "Asymptotes of Rational Functions", 
+        "title": "Asymptotes of Rational Functions", 
+        "views": 36732, 
+        "related_videos": [
+            "AQFZuih2odo", 
+            "ReEMqdZEEX0"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 1266, 
+        "ka_url": "http://www.khanacademy.org/video/asymptotes-of-rational-functions?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "2N62v_63SBo", 
+        "keywords": "Asymptotes, of, Rational, Functions, CC_39336_F-IF_7_d", 
+        "date_added": "2011-02-20 16:36:55", 
+        "youtube_url": "http://www.youtube.com/watch?v=2N62v_63SBo&feature=youtube_gdata_player", 
+        "prev_video": "AQFZuih2odo", 
+        "readable_id": "asymptotes-of-rational-functions"
+    }, 
+    {
+        "next_video": "p7ycTWq6BFk", 
+        "video_position": 97, 
+        "description": "Another Rational Function Graph Example", 
+        "title": "Another Rational Function Graph Example", 
+        "views": 13600, 
+        "related_videos": [
+            "2N62v_63SBo", 
+            "p7ycTWq6BFk"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 500, 
+        "ka_url": "http://www.khanacademy.org/video/another-rational-function-graph-example?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "ReEMqdZEEX0", 
+        "keywords": "Another, Rational, Function, Graph, Example, CC_39336_F-IF_7_d", 
+        "date_added": "2011-02-20 16:36:55", 
+        "youtube_url": "http://www.youtube.com/watch?v=ReEMqdZEEX0&feature=youtube_gdata_player", 
+        "prev_video": "2N62v_63SBo", 
+        "readable_id": "another-rational-function-graph-example"
+    }, 
+    {
+        "next_video": "FXgV9ySNusc", 
+        "video_position": 98, 
+        "description": "A Third Example of Graphing a Rational Function", 
+        "title": "A Third Example of Graphing a Rational Function", 
+        "views": 9269, 
+        "related_videos": [
+            "ReEMqdZEEX0", 
+            "FXgV9ySNusc"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 691, 
+        "ka_url": "http://www.khanacademy.org/video/a-third-example-of-graphing-a-rational-function?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "p7ycTWq6BFk", 
+        "keywords": "Third, Example, of, Graphing, Rational, Function, CC_39336_F-IF_7_d", 
+        "date_added": "2011-02-20 16:36:55", 
+        "youtube_url": "http://www.youtube.com/watch?v=p7ycTWq6BFk&feature=youtube_gdata_player", 
+        "prev_video": "ReEMqdZEEX0", 
+        "readable_id": "a-third-example-of-graphing-a-rational-function"
+    }, 
+    {
+        "next_video": "7Uos1ED3KHI", 
+        "video_position": 99, 
+        "description": "Polynomial Division", 
+        "title": "Polynomial Division", 
+        "views": 23374, 
+        "related_videos": [
+            "p7ycTWq6BFk", 
+            "7Uos1ED3KHI"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 729, 
+        "ka_url": "http://www.khanacademy.org/video/polynomial-division?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "FXgV9ySNusc", 
+        "keywords": "Polynomial, Division, CC_39336_A-APR_2", 
+        "date_added": "2011-02-20 16:36:55", 
+        "youtube_url": "http://www.youtube.com/watch?v=FXgV9ySNusc&feature=youtube_gdata_player", 
+        "prev_video": "p7ycTWq6BFk", 
+        "readable_id": "polynomial-division"
+    }, 
+    {
+        "next_video": "x_5hDLe8UL0", 
+        "video_position": 100, 
+        "description": "Simplifying Rational Expressions", 
+        "title": "Simplifying Rational Expressions Introduction", 
+        "views": 21700, 
+        "related_videos": [
+            "FXgV9ySNusc", 
+            "x_5hDLe8UL0"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 922, 
+        "ka_url": "http://www.khanacademy.org/video/simplifying-rational-expressions-introduction?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "7Uos1ED3KHI", 
+        "keywords": "Simplifying, Rational, Expressions", 
+        "date_added": "2011-02-20 16:36:55", 
+        "youtube_url": "http://www.youtube.com/watch?v=7Uos1ED3KHI&feature=youtube_gdata_player", 
+        "prev_video": "FXgV9ySNusc", 
+        "readable_id": "simplifying-rational-expressions-introduction"
+    }, 
+    {
+        "next_video": "nWEso_M7By4", 
+        "video_position": 101, 
+        "description": "Multiplying and Dividing Rational Expressions", 
+        "title": "Multiplying and Dividing Rational Expressions", 
+        "views": 12150, 
+        "related_videos": [
+            "7Uos1ED3KHI", 
+            "nWEso_M7By4"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 559, 
+        "ka_url": "http://www.khanacademy.org/video/multiplying-and-dividing-rational-expressions?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "x_5hDLe8UL0", 
+        "keywords": "Multiplying, and, Dividing, Rational, Expressions, CC_39336_A-APR_7", 
+        "date_added": "2011-02-20 16:37:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=x_5hDLe8UL0&feature=youtube_gdata_player", 
+        "prev_video": "7Uos1ED3KHI", 
+        "readable_id": "multiplying-and-dividing-rational-expressions"
+    }, 
+    {
+        "next_video": "euyg3SwS2lU", 
+        "video_position": 102, 
+        "description": "Adding Rational Expressions Example 1", 
+        "title": "Adding Rational Expressions Example 1", 
+        "views": 9929, 
+        "related_videos": [
+            "x_5hDLe8UL0", 
+            "euyg3SwS2lU"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 227, 
+        "ka_url": "http://www.khanacademy.org/video/adding-rational-expressions-example-1?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "nWEso_M7By4", 
+        "keywords": "Adding, Rational, Expressions, Example, CC_39336_A-APR_7", 
+        "date_added": "2011-02-20 16:37:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=nWEso_M7By4&feature=youtube_gdata_player", 
+        "prev_video": "x_5hDLe8UL0", 
+        "readable_id": "adding-rational-expressions-example-1"
+    }, 
+    {
+        "next_video": "4VO-BgDgAHE", 
+        "video_position": 103, 
+        "description": "Adding Rational Expressions Example 2", 
+        "title": "Adding Rational Expressions Example 2", 
+        "views": 5639, 
+        "related_videos": [
+            "nWEso_M7By4", 
+            "4VO-BgDgAHE"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 400, 
+        "ka_url": "http://www.khanacademy.org/video/adding-rational-expressions-example-2?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "euyg3SwS2lU", 
+        "keywords": "Adding, Rational, Expressions, Example, CC_39336_A-APR_7", 
+        "date_added": "2011-02-20 16:37:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=euyg3SwS2lU&feature=youtube_gdata_player", 
+        "prev_video": "nWEso_M7By4", 
+        "readable_id": "adding-rational-expressions-example-2"
+    }, 
+    {
+        "next_video": "6eqgIZyXgK8", 
+        "video_position": 104, 
+        "description": "Adding Rational Expressions Example 3", 
+        "title": "Adding Rational Expressions Example 3", 
+        "views": 4332, 
+        "related_videos": [
+            "euyg3SwS2lU", 
+            "6eqgIZyXgK8"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 383, 
+        "ka_url": "http://www.khanacademy.org/video/adding-rational-expressions-example-3?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "4VO-BgDgAHE", 
+        "keywords": "Adding, Rational, Expressions, Example, CC_39336_A-APR_7", 
+        "date_added": "2011-02-20 16:37:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=4VO-BgDgAHE&feature=youtube_gdata_player", 
+        "prev_video": "euyg3SwS2lU", 
+        "readable_id": "adding-rational-expressions-example-3"
+    }, 
+    {
+        "next_video": "u28w46QrE0Q", 
+        "video_position": 105, 
+        "description": "Solving Rational Equations", 
+        "title": "Solving Rational Equations", 
+        "views": 12619, 
+        "related_videos": [
+            "4VO-BgDgAHE", 
+            "u28w46QrE0Q"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 777, 
+        "ka_url": "http://www.khanacademy.org/video/solving-rational-equations?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "6eqgIZyXgK8", 
+        "keywords": "Solving, Rational, Equations, CC_39336_A-REI_2", 
+        "date_added": "2011-02-20 16:37:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=6eqgIZyXgK8&feature=youtube_gdata_player", 
+        "prev_video": "4VO-BgDgAHE", 
+        "readable_id": "solving-rational-equations"
+    }, 
+    {
+        "next_video": "nabw6v93Xns", 
+        "video_position": 106, 
+        "description": "Two more examples of solving rational equations", 
+        "title": "Two more examples of solving rational equations", 
+        "views": 5355, 
+        "related_videos": [
+            "6eqgIZyXgK8", 
+            "nabw6v93Xns"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 598, 
+        "ka_url": "http://www.khanacademy.org/video/two-more-examples-of-solving-rational-equations?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "u28w46QrE0Q", 
+        "keywords": "Two, more, examples, of, solving, rational, equations, CC_39336_A-REI_2", 
+        "date_added": "2011-02-20 16:37:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=u28w46QrE0Q&feature=youtube_gdata_player", 
+        "prev_video": "6eqgIZyXgK8", 
+        "readable_id": "two-more-examples-of-solving-rational-equations"
+    }, 
+    {
+        "next_video": "", 
+        "video_position": 107, 
+        "description": "Surveys and Samples", 
+        "title": "Surveys and Samples", 
+        "views": 6757, 
+        "related_videos": [
+            "u28w46QrE0Q"
+        ], 
+        "playlist_titles": [
+            "Algebra 1", 
+            "ck12.org Algebra 1 Examples"
+        ], 
+        "duration": 729, 
+        "ka_url": "http://www.khanacademy.org/video/surveys-and-samples?playlist=ck12.org+Algebra+1+Examples", 
+        "youtube_id": "nabw6v93Xns", 
+        "keywords": "Surveys, and, Samples", 
+        "date_added": "2011-02-20 16:37:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=nabw6v93Xns&feature=youtube_gdata_player", 
+        "prev_video": "u28w46QrE0Q", 
+        "readable_id": "surveys-and-samples"
+    }
+]

@@ -1,0 +1,49 @@
+{% if badge %}
+    <div class="achievement-badge category-{{badge.badge_category}} {% if user_badge or badge.is_owned %}achievement-badge-owned{% endif %} {% if badge.is_goal %}goal-badge{% endif %}" title="{{ extended_description|escape }}" {% if badge.is_goal %}data-objectives='{{ badge.goal_objectives() }}'{% endif %}>
+        <div id="outline-box">
+        <img src="{{ badge.icon_src }}" id="badge-icon"/>
+        {% if user_badge and badge.badge_context_type %}
+            <div class="achievement-count">x{{ user_badge.count }}</div>
+        {% endif %}
+        <div class="achievement-text">
+        <div class="achievement-title">{{ badge.description|escape }}{% if frequency %} <span class="frequency">(x{{ frequency }})</span>{% endif %}</div>
+        <div class="achievement-desc {% if not user_badge %}achievement-desc-no-count{% endif %}">
+            {% if badge.is_retired %}
+                This badge has been <span class="badge-context-retired">retired</span>!
+                You get to keep it forever, but nobody else can earn it.
+            {% else %}
+                {% if user_badge %}
+                    Last achieved {{ user_badge.date|timesince_ago }}
+                    {% if user_badge.count > 1 %}
+                        in
+                        {% for context_name in badges.visible_context_names(user_badge) %}
+                            <strong>{{ context_name|escape }}</strong>{% if not loop.last %},{% endif %}
+                        {% endfor %}
+                        {% for context_name in badges.hidden_context_names(user_badge) %}
+                            {% if loop.first %}
+                            <span class="badge-context-hidden-link"><a href="#" onclick="Badges.showMoreContext(this);return false;">and also in<span class="ellipsis">...</span></a></span>
+                            <span class="badge-context-hidden" style="display:none;">
+                            {% endif %}
+                                <strong>{{ context_name|escape }}</strong>{% if not loop.last %},{% endif %}
+                            {% if loop.last %}</span>{% endif %}
+                        {% endfor %}
+                    {% else %}
+                        {% for context_name in badges.visible_context_names(user_badge) %}
+                            in <strong>{{ context_name|escape }}</strong>
+                        {% endfor %}
+                    {% endif %}
+                {% else %}
+                    {{ extended_description|escape }}
+                {% endif %}
+            {% endif %}
+        </div>
+        </div>
+        {% if can_become_goal %}
+        <div class="add-goal">
+          + &emsp; Goal
+        </div>
+        {% endif %}
+        {% if badge.points %}<div class="energy-points-badge">{{ badge.points }}</div>{% endif %}
+        </div>
+    </div>
+{% endif %}

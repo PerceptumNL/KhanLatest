@@ -1,0 +1,15 @@
+<li class="activity-badge clearfix">
+    <div class="ach-text">
+        <div class="clearfix">
+            <span class="activity-image"></span>
+            <div class="description">
+                Earned <a href="{{profileRoot}}achievements" data-category="{{badge.badgeCategory}}" class="badge-link category-{{badge.badgeCategory}}">{{badge.description}}</a> {{#unless badge.hideContext}}{{#if userBadge.targetContextName}}for {{ userBadge.targetContextName }}{{/if}}{{/unless}}
+            </div>
+        </div>
+        <div class="activity-controls clearfix">
+            <span class="time timeago" title="{{dt}}">{{dt}}</span>
+            {{> shared_share-links badge}}
+        </div>
+    </div>
+
+</li>

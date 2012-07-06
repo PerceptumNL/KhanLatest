@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/239/trunk/java/test/com/google/appengine/tools/mapreduce
+END
+StubRecordReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/StubRecordReader.java
+END
+EndToEndTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/226/trunk/java/test/com/google/appengine/tools/mapreduce/EndToEndTest.java
+END
+DatastoreMutationPoolTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/DatastoreMutationPoolTest.java
+END
+QuotaConsumerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/QuotaConsumerTest.java
+END
+MockClock.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/221/trunk/java/test/com/google/appengine/tools/mapreduce/MockClock.java
+END
+StubInputFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/StubInputFormat.java
+END
+AppEngineJobContextTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/226/trunk/java/test/com/google/appengine/tools/mapreduce/AppEngineJobContextTest.java
+END
+DatastoreRecordReaderTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/DatastoreRecordReaderTest.java
+END
+StubInputSplit.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/223/trunk/java/test/com/google/appengine/tools/mapreduce/StubInputSplit.java
+END
+SerializerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/239/trunk/java/test/com/google/appengine/tools/mapreduce/SerializerTest.java
+END
+MapReduceServletTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/221/trunk/java/test/com/google/appengine/tools/mapreduce/MapReduceServletTest.java
+END
+ConfigurationTemplatePreprocessorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/ConfigurationTemplatePreprocessorTest.java
+END
+AppEngineMapperTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/AppEngineMapperTest.java
+END
+BlobstoreRecordReaderTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/BlobstoreRecordReaderTest.java
+END
+RangeRecordReaderTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/RangeRecordReaderTest.java
+END
+DatastoreInputFormatTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/DatastoreInputFormatTest.java
+END
+StringSplitUtilTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/StringSplitUtilTest.java
+END
+DatastoreSerializationUtilTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/DatastoreSerializationUtilTest.java
+END
+StubMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/221/trunk/java/test/com/google/appengine/tools/mapreduce/StubMapper.java
+END
+QuotaManagerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/QuotaManagerTest.java
+END
+BlobstoreInputFormatTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/BlobstoreInputFormatTest.java
+END
+InputStreamIteratorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/InputStreamIteratorTest.java
+END
+RangeInputFormatTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/RangeInputFormatTest.java
+END
+MapReduceXmlTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/MapReduceXmlTest.java
+END
+BlobstoreInputSplitTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/207/trunk/java/test/com/google/appengine/tools/mapreduce/BlobstoreInputSplitTest.java
+END
+MockRequestFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/226/trunk/java/test/com/google/appengine/tools/mapreduce/MockRequestFactory.java
+END
+AllTests.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/239/trunk/java/test/com/google/appengine/tools/mapreduce/AllTests.java
+END

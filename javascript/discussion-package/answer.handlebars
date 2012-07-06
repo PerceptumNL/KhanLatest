@@ -1,0 +1,34 @@
+<div class="answer_container" id="{{key}}" data-key="{{key}}">
+    <div class="answer {{#if appearsAsDeleted}}deleted{{/if}}">
+        {{> vote-controls}}
+        <span>{{formatContent content}}</span>
+    </div>
+
+    <div class="answer_sig sig">
+        <a class="author-nickname" data-user-id="{{authorUserId}}">{{authorNickname}}</a> answered
+        <a class="timeago" href="?qa_expand_key={{questionKey}}" title="{{date}}">{{date}}</a>
+        {{> flag-controls}}
+
+        {{#if showModControls}}
+        {{> mod-controls}}
+        {{/if}}
+
+        {{> author-controls}}
+
+        {{#if showProfilePromo}}
+            {{> visit-profile-promo}}
+        {{/if}}
+    </div>
+
+    <div class="answer_controls_container" style="display: none;">
+        <div class="answer_add_controls feedback_add_controls">
+            <div class="controls">
+                <input class="simple-button answer_submit"
+                       type="button" 
+                       value="Edit this answer" />
+                or <a href="javascript:void(0)" class="answer_cancel control">Cancel</a>
+            </div>
+            <div class="clearFloat">&nbsp;</div>
+        </div>
+    </div>
+</div>

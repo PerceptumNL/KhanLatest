@@ -1,0 +1,42 @@
+<div class="layer backdrop whiteout"></div>
+<div class="layer controls">
+    <form class="popout">
+        <a class="close" href="javascript: void 0">&times;</a>
+        <h2>{{title}}</h2>
+        <p>Let's see if you can add matrices. What is \(C + D\)?</p>
+
+        $$
+            C =
+            \begin{bmatrix}
+            32 & 11 \\
+            12 & 25
+            \end{bmatrix}
+            \hspace{20pt}
+            D =
+            \begin{bmatrix}
+            48 & 12 \\
+            1 & 0
+            \end{bmatrix}
+        $$
+
+        <div style="text-align: center">
+            \( C + D = \)
+
+            <table class="matrix-input" name="answer">
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="?" style="width: 2em"></td>
+                        <td><input type="text" placeholder="?" style="width: 2em"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="?" style="width: 2em"></td>
+                        <td><input type="text" placeholder="?" style="width: 2em"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        {{>submit-area}}
+    </form>
+</div>

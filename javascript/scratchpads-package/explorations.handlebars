@@ -1,0 +1,25 @@
+{{#each scratchpadGroups}}
+    <h3 class="info-box">
+        <div class="difficulty-icon-{{difficulty}}"></div>
+        <div class="difficulty-header">{{difficultyText}}</div>
+    </h3>
+    <ul class="scratchpad-list">
+        {{#each scratchpads}}
+        <li>
+            <a href="{{showUrl}}">
+                <div class="scratchpad-thumbnail">
+                    <img src="{{imageUrl}}">
+                    {{#if displayDifficulty}}
+                    <span class="scratchpad-difficulty-{{difficulty}}">
+                        {{difficultyText}}
+                    </span>
+                    {{/if}}
+                </div>
+                <h4>
+                    {{title}}
+                </h4>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+{{/each}}

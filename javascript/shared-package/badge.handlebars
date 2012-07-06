@@ -1,0 +1,13 @@
+<div class="achievement-badge category-{{badgeCategory}} {{#if isOwned}}achievement-badge-owned{{/if}}" title="{{safeExtendedDescription}}" {{#if canBecomeGoal}}data-objectives='{{objectives}}'{{/if}}>
+  <div id="outline-box">
+  <img src="{{iconSrc}}" id="badge-icon"/>
+  <div class="achievement-text">
+  <div class="achievement-title">{{description}}</div>
+  <div class="achievement-desc achievement-desc-no-count">
+    {{safeExtendedDescription}}
+  </div>
+  </div>
+  {{#if canBecomeGoal }}<div class="add-goal">+ &emsp; Goal</div>{{/if}}
+  {{#if points}}<div class="energy-points-badge">{{points}}</div>{{/if}}
+  </div>
+</div>

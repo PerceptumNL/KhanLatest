@@ -1,0 +1,39 @@
+<div id="vital-statistics">
+    <div id="stats-charts" class="fancy-scrollbar -ce-capture">
+        <div id="graph-control-container">
+            <div id="graph-container">
+                <div class="vital-statistics-description">
+                    <div class="activity">
+                        Shows how much work you're doing each day.
+                        {{#graph-date-picker-wrapper graph="activity"}}
+                            {{> profile_graph-date-picker}}
+                        {{/graph-date-picker-wrapper}}
+                    </div>
+                    <div class="focus">
+                        Shows how well you've focused on skills and topic areas.
+                        {{#graph-date-picker-wrapper graph="focus"}}
+                            {{> profile_graph-date-picker}}
+                        {{/graph-date-picker-wrapper}}
+                    </div>
+                    <div class="skill-progress">
+                        Shows which skills you've worked on and completed.
+                        <span class="graph-options">
+                            <span class="progress-legend exercise-color started">Started</span>
+                            <span class="progress-legend exercise-color proficient">Proficient</span>
+                            <span class="progress-legend exercise-color review light">Review</span>
+                            <span class="progress-legend exercise-color struggling">Struggling</span>
+                        </span>
+                    </div>
+                    <div class="skill-progress-over-time">
+                        Shows how many skills you've completed over time.
+                    </div>
+                    <div class="problems">
+                        Click a bar to view more detailed problem information.
+                    </div>
+                </div>
+                <div id="graph-progress-bar" class="throbber-progress-bar"></div>
+                <div id="graph-content"></div>
+            </div>
+        </div>
+    </div>
+</div>

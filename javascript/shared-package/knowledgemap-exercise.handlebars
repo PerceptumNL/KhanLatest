@@ -1,0 +1,13 @@
+<div class="exercise-badge">
+    <div class="skill-status" data-id="{{name}}">
+
+        <span class="pan-to simple-button" data-id="name" style="display:none;"><img src="/images/map-target.png" title="Show in map" alt="Show in map"></span>
+
+        <h4 class="skill-bar-title">
+            {{#with states}}{{> shared_small-exercise-icon}}{{/with}}
+            <a href="{{url}}" class="visited-no-recolor {{#if disabled}}disabled{{/if}}" title='Practice problems in the "{{display_name}}" skill.'>{{display_name}}</a>
+            <img class="exercise-goal-icon" style="display: none" src="/images/flag.png">
+        </h4>
+        {{{skill-bar progress 0 states}}}
+    </div>
+</div>

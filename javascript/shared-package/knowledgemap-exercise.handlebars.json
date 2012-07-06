@@ -1,0 +1,31 @@
+{
+    "status": "Suggested",
+    "display_name": "Addition 1",
+    "name": "addition_1",
+    "prereqs": [],
+    "h_position": 0,
+    "states": {
+        "suggested": true,
+        "struggling": false,
+        "proficient": false,
+        "reviewing": false
+    },
+    "points": "",
+    "v_position": 5,
+    "longest_streak": 0,
+    "progress": 0,
+    "goal_req": false,
+    "progress_display": "0%",
+    "recent": true,
+    "admin": false,
+    "x": 5,
+    "y": 0,
+    "lowercaseName": "addition 1",
+    "iconUrl": null,
+    "isSuggested": true,
+    "className": "nodeLabel exercise",
+    "url": "/exercise/addition_1",
+    "preferredZoom": 8,
+    "nodeType": "exercise",
+    "disabled": false
+}

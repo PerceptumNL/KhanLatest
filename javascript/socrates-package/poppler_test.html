@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script src="../shared-package/jquery.js"></script>
+  <link rel="stylesheet" href="../test/qunit.css">
+  <script src="../test/qunit.js"></script>
+  <script src="../../khan-exercises/utils/underscore.js"></script>
+  <script src="poppler.js"></script>
+
+  <script>
+
+var run = function(poppler, start, end, step) {
+  start = Math.floor(start/step);
+  end = (end-start)/step;
+
+  for (var i = start; i <= end; i++) {
+    poppler.trigger(i*step);
+  }
+};
+
+  $(document).ready(function() {
+
+module("simple");
+
+test("should trigger events in order", function() {
+  var poppler = new Poppler();
+  var results = [];
+  for (var i = 5; i>=1; i--) {
+    poppler.add(i, (function(i) { return function() { results.push(i); }; })(i));
+  }
+  equal(poppler.events.length, 5, "should insert the right number of events");
+
+  var eventTimes = _.map(poppler.events, function(el) { return el.time; });
+  deepEqual(eventTimes, [1,2,3,4,5], "events should be inserted maintaining order");
+
+  run(poppler, 0, 5, 0.1);
+
+  equal(results.length, 5, "should trigger all events");
+  deepEqual(results, [1, 2, 3, 4, 5], "should trigger events in correct order");
+});
+
+test("should fire with initial event", function() {
+  var poppler = new Poppler();
+  var results = [];
+
+  for (var i = 0; i<2; i++) {
+    poppler.add(i, (function(i) { return function() { results.push(i); }; })(i));
+  }
+
+  run(poppler, 0, 2, 0.1);
+
+  deepEqual(results, [0, 1], "all events present");
+});
+
+test("should work with events that are higher res than triggers", function() {
+  var poppler = new Poppler();
+  var results = [];
+
+  poppler.add(0, function() { results.push(0)});
+  poppler.add(0.01, function() { results.push(0.01)});
+
+  run(poppler, 0, 1, 0.1);
+
+  deepEqual(results, [0, 0.01]);
+});
+
+module("blocking");
+
+test("should support sync events", function() {
+  var poppler = new Poppler();
+  var results = [];
+
+  poppler.add(0, function() {
+    results.push(0);
+    return true; // block next events until I say so
+  });
+  poppler.add(0, function() { results.push(1); });
+
+  poppler.trigger(0);
+  poppler.trigger(0);
+
+  deepEqual(results, [0], "second trigger should be ignored");
+
+  poppler.resumeEvents();
+  deepEqual(results, [0, 1], "when resumed, rest of events should fire");
+
+  poppler.trigger(0);
+  deepEqual(results, [0, 1], "when no more events are left, we're done");
+});
+
+test("should not repeat event when expecting next in sequence", function() {
+  var poppler = new Poppler();
+  var results = [];
+
+  // two sequential events
+  poppler.add(1, function() {
+    results.push(0);
+    return true; // block next events until I say so
+  });
+  poppler.add(2, function() { results.push(1); });
+
+  // trigger the first event
+  poppler.trigger(0);
+  poppler.trigger(1);
+  deepEqual(results, [0], "first event triggers");
+
+  poppler.trigger(1);
+  deepEqual(results, [0], "duplicate triggers are ignored");
+
+  poppler.resumeEvents();
+  poppler.trigger(0);
+  poppler.trigger(1);
+  deepEqual(results, [0], "event should not be triggered once exited")
+
+  poppler.trigger(2);
+  deepEqual(results, [0, 1], "only now should second event fire")
+});
+
+test("should repeat event if there was a seek", function() {
+  var poppler = new Poppler();
+  var results = [];
+
+  // two sequential events
+  poppler.add(1, function() {
+    results.push(0);
+    return true; // block next events until I say so
+  });
+  poppler.add(2, function() { results.push(1); });
+
+  // trigger the first event
+  poppler.trigger(0);
+  poppler.trigger(1);
+  deepEqual(results, [0], "first event triggers");
+
+  poppler.trigger(1);
+  deepEqual(results, [0], "duplicate triggers are ignored");
+
+  poppler.resumeEvents();
+  poppler.trigger(0);
+  poppler.trigger(1);
+  deepEqual(results, [0], "event should not be triggered once exited")
+
+  // now explicity seek backwards. event should fire again now.
+  poppler.seek(0);
+  poppler.trigger(0);
+  poppler.trigger(1);
+  deepEqual(results, [0, 0], "first event triggers again");
+});
+
+});
+  </script>
+
+</head>
+<body>
+  <h1 id="qunit-header">Poppler unit tests</h1>
+  <h2 id="qunit-banner"></h2>
+  <div id="qunit-testrunner-toolbar"></div>
+  <h2 id="qunit-userAgent"></h2>
+  <ol id="qunit-tests"></ol>
+  <div id="qunit-fixture">test markup, will be hidden</div>
+</body>
+</html>

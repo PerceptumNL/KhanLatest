@@ -1,0 +1,85 @@
+{% import 'macros/app.html' as app %}
+
+<!DOCTYPE html>
+<html xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+        <title>{% block pagetitle %}{% endblock pagetitle %}</title>
+        {{ js_css_packages.css_package("shared") }}
+
+        {% block pagecss %}
+        {% endblock pagecss %}
+
+        {{ app.globals(username, is_mobile_capable, logged_in_user_profile) }}
+
+        {{ js_css_packages.js_package("shared") }}
+
+        {% block pagescript %}
+        {% endblock pagescript %}
+
+    </head>
+    <!--[if lt IE 7]>  <body class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+    <!--[if IE 7]>     <body class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+    <!--[if IE 8]>     <body class="ie ie8 lte9 lte8"> <![endif]-->
+    <!--[if IE 9]>     <body class="ie ie9 lte9"> <![endif]-->
+    <!--[if gt IE 9]>  <body> <![endif]-->
+    <!--[if !IE]><!--> <body> <!--<![endif]-->
+
+        <style>
+
+            .container-fluid {
+                min-height: 100%;
+                padding: 0;
+            }
+
+            .container-fluid .header {
+                background-color: #1d1f20;
+                border-bottom: 15px solid #70c448;
+            }
+
+            .container-fluid .header img {
+                display: block;
+                height: 90px;
+            }
+
+            .container-fluid > .content {
+                padding: 20px;
+            }
+
+        </style>
+
+        {# Make script-requiring elements visible. #}
+        <script>document.writeln('<style scoped type="text/css">a[href="#"], .requires_script { visibility: visible; }</style>');</script>
+
+        {# Facebook connect root #}
+        <div id="fb-root" style="display: none"></div>
+
+        <div class="container-fluid">
+            <div class="header">
+                <a href="/labs"><img src="/images/labs/banner.png"></a>
+                {% block sidebarcontent %}
+                {% endblock sidebarcontent %}
+            </div>
+            <div class="content">
+                {% block pagecontent %}
+                {% endblock pagecontent %}
+            </div>
+        </div>
+
+        {% block bottompagescript %}
+        {% endblock bottompagescript %}
+
+        <script type="text/javascript">
+            {# GA #}
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+    </body>
+
+</html>
+
+

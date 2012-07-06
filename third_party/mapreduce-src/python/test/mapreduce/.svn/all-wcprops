@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/313/trunk/python/test/mapreduce
+END
+quota_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/124/trunk/python/test/mapreduce/quota_test.py
+END
+mapreduce_pipeline_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/279/trunk/python/test/mapreduce/mapreduce_pipeline_test.py
+END
+shuffler_end_to_end_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/288/trunk/python/test/mapreduce/shuffler_end_to_end_test.py
+END
+output_writers_end_to_end_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/302/trunk/python/test/mapreduce/output_writers_end_to_end_test.py
+END
+end_to_end_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/312/trunk/python/test/mapreduce/end_to_end_test.py
+END
+combiner_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/279/trunk/python/test/mapreduce/combiner_test.py
+END
+handlers_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/313/trunk/python/test/mapreduce/handlers_test.py
+END
+model_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/271/trunk/python/test/mapreduce/model_test.py
+END
+input_readers_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/311/trunk/python/test/mapreduce/input_readers_test.py
+END
+base_handler_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/220/trunk/python/test/mapreduce/base_handler_test.py
+END
+namespace_range_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/159/trunk/python/test/mapreduce/namespace_range_test.py
+END
+mapper_pipeline_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/268/trunk/python/test/mapreduce/mapper_pipeline_test.py
+END
+util_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/279/trunk/python/test/mapreduce/util_test.py
+END
+shuffler_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/270/trunk/python/test/mapreduce/shuffler_test.py
+END
+large_mapreduce_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/259/trunk/python/test/mapreduce/large_mapreduce_test.py
+END
+output_writers_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/299/trunk/python/test/mapreduce/output_writers_test.py
+END
+control_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/291/trunk/python/test/mapreduce/control_test.py
+END
+status_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/267/trunk/python/test/mapreduce/status_test.py
+END
+context_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/312/trunk/python/test/mapreduce/context_test.py
+END
+main_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/124/trunk/python/test/mapreduce/main_test.py
+END

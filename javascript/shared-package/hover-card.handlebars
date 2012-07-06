@@ -1,0 +1,42 @@
+<div class="hover-card-container {{#if isPrivate}}private{{/if}}">
+    <div class="hover-card-triangle"></div>
+    <div class="hover-card-content-container vertical-shadow">
+        <div class="hover-card-content clearfix">
+            {{#if messageOnly}}
+                <div class="hover-card-message">
+                    {{#if isPrivate}}
+                        This person does not have a public profile,
+                        but you can view their
+                        <a href="{{profileRoot}}discussion">discussion history</a>.
+                    {{else}}
+                        Finding profile information...
+                    {{/if}}
+                </div>
+            {{else}}
+                <div class="avatar-pic-container">
+                    <img src="{{avatarSrc}}" style="width: 50px; height: 50px;">
+                </div>
+                <div class="user-info">
+                    {{#unless isPrivate}}
+                        <span class="nickname">
+                            <a href="{{profileRoot}}discussion">{{nickname}}</a>
+                        </span>
+                    {{/unless}}
+                    <div class="badge-container">
+                        {{#each publicBadges}}
+                            {{#if this}}
+                                {{#with this}}
+                                    <img src="{{icons.small}}" alt="{{description}}" title="{{description}}">
+                                {{/with}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="user-stats">
+                    <div class="points"><span style="font-size: 150%">{{commafy points}}</span> <span style="color: #999">points</span></div>
+                    <div class="join-date">Joined <abbr class="timeago" title="{{dateJoined}}">{{dateJoined}}</abbr></div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

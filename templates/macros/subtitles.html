@@ -1,0 +1,14 @@
+{% macro interactive_transcript(subtitles_json) -%}
+    {% if subtitles_json %}
+    {# TODO: this should be an ol but conflicts badly with style from default.css #}
+    <div class="subtitles-container desktop-only">
+        <ul itemprop="transcript" class="subtitles">
+            {% for sub in subtitles_json %}
+            <li data-time="{{ sub.start_time }}">
+                <a href="javascript:void(0)" data-fmttime="{{ (sub.start_time // 60) | int }}:{{ "%02d"|format(sub.start_time % 60) }}">{{ sub.text|trim|e }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+{%- endmacro %}

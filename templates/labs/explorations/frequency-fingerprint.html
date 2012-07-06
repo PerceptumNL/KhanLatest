@@ -1,0 +1,69 @@
+{% extends "labs/template-slim.html" %}
+
+{% block pagescript %}
+{{ js_css_packages.js_package("highcharts") }}
+{{ js_css_packages.css_package("bootstrap") }}
+<script>{% include "labs/explorations/frequency-fingerprint.js" %}</script>
+
+<style>
+    .breadcrumb a {
+        color: #678d00;
+    }
+
+    .row {
+        margin-bottom: 20px;
+        margin-top:    20px;
+    }
+
+    .row:first-child {
+        margin-top: 0;
+    }
+
+    #chart {
+        height: 225px;
+    }
+
+    form {
+        display: block;
+    }
+</style>
+{% endblock pagescript %}
+
+{% block pagetitle %}Frequency Fingerprint | Khan Academy Labs{% endblock pagetitle %}
+
+{% block pagecontent %}
+<div class="row">
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li><a href="/labs">Labs</a> <span class="divider">/</span></li>
+            <li><a href="/labs/explorations">Explorations</a> <span class="divider">/</span></li>
+            <li>Frequency Fingerprint</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <h1>Frequency Fingerprint</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <p>Type a few sentences of text and watch your frequency fingerprint emerge!</p>
+        <textarea style="width: 50%;" autofocus></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <div id="chart"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <p>To learn more, <a href="/science/brit-cruise/cryptography/v/caesar-cipher">watch a video</a> on the Caeser cipher.</p>
+    </div>
+</div>
+{% endblock pagecontent %}

@@ -1,0 +1,99 @@
+@import "../shared-package/mixins.less";
+@import "../shared-package/variables.less";
+
+/* This file contains all css used for the positioning of the points pill, gear
+ * menu and share menu that appears below a video. */
+
+span.extra-link-bar {
+    /* todo(dmnd) the dropdown menu is has a weird horizontal alignment due to
+    this float  */
+    float: right;
+    margin-bottom: 10px;
+    position: relative;
+    /* Ensure dropdown appears on top of Q&A sort order css-menu */
+    z-index: 1000;
+
+    /* ensure elements are spaced out correctly */
+    .dropdown-toggle,
+    .dropdown-menu,
+    .share-link,
+    .video-energy-points {
+        margin-left: 5px;
+    }
+
+    .dropdown-toggle,
+    .video-energy-points {
+        display: inline-block;
+        line-height: 22px;
+        padding: 2px 5px 3px;
+    }
+
+    .dropdown-toggle {
+        [class^="icon-"],
+        [class*=" icon-"] {
+            margin: 0 3px;
+        }
+    }
+
+    .video-energy-points {
+        /* make this element the same height as the other ones */
+        border: 1px solid transparent;
+        float: none;
+    }
+
+    /* todo(dmnd) these widths can probably be handled more generally with js */
+    .dropdown.options > .dropdown-menu {
+        width: 160px;
+    }
+    .dropdown.share > .dropdown-menu {
+        width: 85px;
+    }
+
+    .dropdown-menu {
+        /* todo(dmnd) why is this needed? */
+        margin-top: -1px;
+
+        li {
+            > a,
+            > label {
+                display: block;
+                padding: 2px 8px;
+                white-space: nowrap;
+            }
+            /* todo(dmnd) these checkboxes are a bit vertically misaligned.
+            Soon they'll be replaced with iOS on off widgets. */
+            input {
+                float: right;
+                margin: 6px 2px;
+            }
+
+            [class^="icon-"],
+            [class*=" icon-"] {
+                float: right;
+                width: auto;
+            }
+
+            .icon-large:before {
+                width: auto;
+            }
+        }
+    }
+
+    .share.dropdown {
+        display: inline-block;
+        position: relative;
+    }
+
+    /* todo(dmnd) these styles are quite generic and may be better located
+    elsewhere */
+    .disabled,
+    .disabled label,
+    .disabled a {
+        color: #ccc !important;
+        cursor: not-allowed;
+    }
+
+    input[disabled] {
+        cursor: not-allowed;
+    }
+}

@@ -1,0 +1,85 @@
+{% extends "page_template.html" %}
+{% import 'macros/login_buttons.html' as login_macros %}
+
+{# This is the initial registration form that asks a user for their birthdate
+    and e-mail. All other fields about the user are collected after they
+    verify ownership of their e-mail address in completesignup.html #}
+
+{% block meta_page_title %}Sign Up | {% endblock meta_page_title %}
+{% block pagetitle %}{% endblock pagetitle %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("bootstrap-grids") }}
+    {{ js_css_packages.css_package("login") }}
+{% endblock pagecss %}
+
+{% block pagecontent %}
+<article id="page-root">
+    <div class="signup-container card-case vertical-shadow">
+        <form method="POST" class="auth-form" id="signup-form" action="/signup">
+        {% if continue_url %}
+        <input type="hidden" name="continue" value="{{ continue_url|escape }}">
+        {% endif %}
+
+        <h3>First time using Khan Academy?</h3>
+        <div class="pw-signup container">
+            <div class="field-container row-fluid">
+                <label class="field-label span4" for="email">Email</label>
+                <input id="email" name="email" type="email" class="simple-input ui-corner-all span4" value="{{ values['email']|escape }}">
+                <div class="field-error span4" id="error-text"></div>
+            </div>
+
+            <div class="field-container row-fluid">
+                <label class="field-label span4" for="birthday">Birthday</label>
+                <div id="birthday-picker" class="span4" data-date="{{ values['birthdate']|escape }}">{# contents filled by JS #}</div>
+
+                {# Note that the actual name of the field sent to the server is "birthdate"
+                   (it is a hidden input populated by the JS) #}
+            </div>
+
+            <div class="field-container row-fluid">
+                <span class="span8 simple-input-container submit-button-container">
+                    <input type="button" id="submit-button" name="signup" value="Get started" class="simple-button green">
+                </span>
+            </div>
+        </div>
+
+        <div class="horizontal-separator">
+            <span class="separator-text">OR</span>
+        </div>
+
+
+        <h3>Already using Google or Facebook to login to Khan Academy?</h3>
+        <div class="providers container">
+            <h4>Log in with</h4>
+            <div class="row-fluid">
+                <div class="span4">
+                    {# The google_url has the continue_url already embedded in it #}
+                    {{ login_macros.google_button(google_url) }}
+                </div>
+
+                <div class="span4">
+                    {{ login_macros.facebook_button(App.facebook_app_secret) }}
+                </div>
+
+                <div class="providers-info span4">...and then we'll create your Khan Academy username and password for your account.</div>
+            </div>
+        </div>
+
+        </form>
+    </div>
+</article>
+{% endblock pagecontent %}
+
+{% block bottompagescript %}
+    {{ js_css_packages.js_package("login") }}
+    <script>
+    $(function() {
+        Login.initSignupPage({
+            'continue': "{{ continue_url|escapejs }}"
+        });
+    });
+    </script>
+{% endblock bottompagescript %}
+
+

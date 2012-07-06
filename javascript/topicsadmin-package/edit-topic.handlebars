@@ -1,0 +1,86 @@
+<div>
+  <img src="/images/leaf.png" width="49" height="43" style="vertical-align: middle">
+  <input type="text" name="title" class="node-title simple-input ui-corner-all blur-on-esc" value="{{ model.title }}">
+  <a href="javascript:" data-id="save" class="save-button item-action simple-button disabled">Save</a>
+</div>
+
+<div>
+  <a href="javascript:" data-id="add_new_topic" class="item-action left-align simple-button blue">Add subtopic</a>
+
+  <a href="javascript:" data-id="add_new_video" class="item-action left-align separated simple-button blue">Add new video</a>
+  <a href="javascript:" data-id="add_existing_video" class="item-action left-align simple-button blue">Add existing video</a>
+
+  <a href="javascript:" data-id="add_new_exercise" class="item-action left-align separated simple-button blue">Add new exercise</a>
+  <a href="javascript:" data-id="add_existing_exercise" class="item-action left-align simple-button blue">Add existing exercise</a>
+
+  <a href="javascript:" data-id="add_new_url" class="item-action left-align separated simple-button blue">Add new URL</a>
+
+  <a href="javascript:" data-id="delete_topic" class="item-action left-align separated simple-button blue">Delete topic</a>
+  <a href="javascript:" data-id="ungroup_topic" class="item-action left-align separated simple-button blue">Ungroup topic</a>
+</div>
+<div style="clear: both" />
+
+<div style="padding: 9px 23px;">
+  <div>
+    <table class="node-properties">
+
+      <tr>
+        {{#if version.edit}}
+          <td colspan="2">Changes are saved to the <strong>editing version</strong> of the site when you click the Save button above.</td>
+        {{else}}
+          <td colspan="2">Changes cannot be made to this version. Only the editing version can be changed.</td>
+        {{/if}}
+      </tr>
+
+      <tr>
+        <td style="font-weight:bold;">View</td>
+        <td style="padding-bottom:9px;">
+          <a href="{{ model.ka_url }}" target="_blank">Open {{ model.title }} in new tab</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="font-weight:bold;">Standalone Title</td>
+        <td style="padding-bottom:9px;">
+          <input type="text" name="standalone_title" value="{{ model.standalone_title }}" maxlength="128"/><br/>
+          <em>Title that is displayed when this topic is displayed on its own, not in the context of the topic tree.</em>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="font-weight:bold;">Slug</td>
+        <td style="padding-bottom:9px;">
+          <input type="text" name="id" value="{{ model.id }}" class="short" maxlength="32"/><br/>
+          <em>Short identifier used as a key for the API and in URLs linking to this topic</em>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="font-weight:bold;">Hidden</td>
+        <td style="padding-bottom:9px;">
+          <input type="checkbox" name="hide" {{#if model.hide }}checked{{/if}} /><br/>
+          <em>If checked, this topic will not be visible on the site.</em>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="font-weight:bold;">Description</td>
+        <td style="padding-bottom:9px;">
+          <textarea name="description" rows = 5 cols=60>{{ model.description }}</textarea><br/>
+          <em>Description text visible in topic listings</em>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="font-weight:bold;">Tags</td>
+        <td style="padding-bottom:9px;">
+          <div class="tags-list"></div>
+
+          <input class="add-tag" type="text" value="" maxlength="32" placeholder="- Add tag" class="placeholder short" /> 
+          <a href="javascript:" data-id="add-tag" class="item-action simple-button">Add</a>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+</div>

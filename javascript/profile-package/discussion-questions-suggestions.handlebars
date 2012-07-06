@@ -1,0 +1,11 @@
+{{#if hasWatchedVideos}}
+    Do you have any questions about these recently watched videos?
+{{else}}
+    After you <a href="/#browse">watch a video</a>, you can ask questions related to it. You can start by watching some suggested videos for you:
+{{/if}}
+
+<div class="discussion-message-body">
+    {{#each videos}}
+        <a class="discussion-message-item" href="{{url}}">{{name}}</a>
+    {{/each}}
+</div>

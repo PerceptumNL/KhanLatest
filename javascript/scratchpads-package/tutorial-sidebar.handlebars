@@ -1,0 +1,16 @@
+<h2>Tutorials</h2>
+{{#each scratchpadGroups}}
+    <h4>
+        {{difficultyText}}
+        <div class="difficulty-icon-{{difficulty}}"></div>
+    </h4>
+    <ul>
+        {{#each scratchpads}}
+        <li>
+            <a href="{{showUrl}}">
+                {{title}}
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+{{/each}}

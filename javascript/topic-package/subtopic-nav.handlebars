@@ -1,0 +1,20 @@
+<ul>
+  <li data-id="">
+    <a class="subtopic-link" data-tag="Topic Page Nav Root Topic" href="/{{ topic_info.extended_slug }}" data-id="">
+      <h2 class='topic-heading'>{{ topic_info.topic.standalone_title }}</h2>
+      <div class="right-arrow"></div>
+    </a>
+  </li>
+  {{#if topic_info.subtopics }}
+  <li class="subheading"><span>Topics</span></li>
+  {{#each topic_info.subtopics }}
+    <li data-id="{{ id }}">
+      <a class="subtopic-link" data-tag="Topic Page Nav Subtopic" href="/{{ ../../topic_info.extended_slug }}/{{ id }}" data-id="{{ id }}">
+        {{ title }}
+        <div class="right-arrow"></div>
+      </a>
+    </li>
+  {{/each}}
+  {{/if}}
+</ul>
+

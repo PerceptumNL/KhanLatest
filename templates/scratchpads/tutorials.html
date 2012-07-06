@@ -1,0 +1,28 @@
+{% extends "scratchpads/page_template.html" %}
+
+{% block pagetitle %}{{pagetitle}} | Khan Academy{% endblock %}
+
+{% block pagecss %}
+{{ js_css_packages.css_package("bootstrap-grids") }}
+{{ js_css_packages.css_package("scratchpads") }}
+{% endblock pagecss %}
+
+{% block explorecontent %}
+<h2 class='main-headline {{selected_id}}'>{{pagetitle}}</h2>
+<div id='scratchpads'>
+</div>
+{% endblock explorecontent %}
+
+{% block bottompagescript %}
+{{ js_css_packages.js_package("scratchpads") }}
+<script>
+new ScratchpadListView({
+    el: $('#scratchpads')[0],
+    collection: new ScratchpadList(ENV.tutorialScratchpads, {parse: true}),
+    sortBy: function(s) {
+        // Sort the scratchpads primarily by difficulty, secondarily by title
+        return [s.get('difficulty'), s.get('title')];
+    }
+}).render();
+</script>
+{% endblock bottompagescript %}

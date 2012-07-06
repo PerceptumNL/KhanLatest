@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+        <title>Stories | Khan Academy</title>
+        {{ js_css_packages.css_package("shared") }}
+        {{ js_css_packages.css_package("stories") }}
+
+        {% block pagescript %}
+        {% endblock pagescript %}
+
+        <meta property="og:title" content="Real, unedited stories from Khan Academy users" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://www.khanacademy.org/stories" />
+        <meta property="og:image" content="http://www.khanacademy.org/images/large-tree-transparent.png" />
+        <meta property="og:site_name" content="The Khan Academy" />
+        <meta property="fb:admins" content="1305017" />
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-6742635-1']);
+            _gaq.push(['_setDomainName', '.khanacademy.org']);
+            _gaq.push(['_trackPageview']);
+            _gaq.push(['_trackPageLoadTime']);
+
+            {# For OER Analytics #}
+            _gaq.push(['ht._setAccount', 'UA-5033010-1']);
+            _gaq.push(['ht._setDomainName', '.khanacademy.org']);
+            _gaq.push(['ht._trackPageview']);
+        </script>
+
+    </head>
+    <!--[if lt IE 7]>  <body class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+    <!--[if IE 7]>     <body class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+    <!--[if IE 8]>     <body class="ie ie8 lte9 lte8"> <![endif]-->
+    <!--[if IE 9]>     <body class="ie ie9 lte9"> <![endif]-->
+    <!--[if gt IE 9]>  <body> <![endif]-->
+    <!--[if !IE]><!--> <body> <!--<![endif]-->
+        <div class="stories-header">
+            <div class="container">
+                {% block headercontent %}
+                {% endblock headercontent %}
+            </div>
+        </div>
+        <div class="stories-submit" style="display:none;">
+            <div class="container">
+                {% block submitcontent %}
+                {% endblock submitcontent %}
+            </div>
+        </div>
+        <div class="stories-body">
+            <div class="container">
+                {% block pagecontent %}
+                {% endblock pagecontent %}
+            </div>
+        </div>
+        <div class="stories-footer">
+            <div class="container">
+                <div class="span16">
+                    <a href="/"><img src="/images/khan-logo-vertical-transparent-small.png"></a>
+                </div>
+            </div>
+        </div>
+
+        {{ js_css_packages.js_package("shared") }}
+        {{ js_css_packages.js_package("stories") }}
+
+        {% block bottompagescript %}
+        {% endblock bottompagescript %}
+
+        <script type="text/javascript">
+            {# GA #}
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+    </body>
+
+</html>
+

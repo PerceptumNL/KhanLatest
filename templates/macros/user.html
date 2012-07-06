@@ -1,0 +1,86 @@
+{% macro user_info(username, user_data, login_url, logout_url) -%}
+    {{ badges.badge_counts(user_data) }}
+    {{ user_points(user_data) }}
+    {{ username_and_notification(username, user_data, login_url, logout_url) }}
+{%- endmacro %}
+
+{% macro badges_and_points(user_data) -%}
+    {{ badges.badge_counts(user_data) }}
+    {{ user_points(user_data) }}
+{%- endmacro %}
+
+{% macro user_points(user_data, points=0) -%}
+    {% if user_data %}
+        {% if user_data.is_demo %}
+            {% set profile_root = '/logout?continue=/profile' %}
+            {% set points = 0 %}
+        {% else %}
+            {% set profile_root = user_data.profile_root %}
+            {% set points = user_data.points %}
+        {% endif %}
+    {% else %}
+        {% set profile_root = '/profile/' %}
+        {% set points = 0 %}
+    {% endif %}
+    <span id="user-points-container">{{ user_points_content(profile_root, points) }}</span>
+{%- endmacro %}
+
+{% macro user_points_content(profile_root, points) -%}
+<span title="{{ points|thousands_separated }} energy points" class="energy-points-badge" onclick="location.href='{{profile_root}}'" {% if not points %} style="display: none" {% endif %}>{{ points|thousands_separated }}</span>
+{%- endmacro %}
+
+{% macro username_and_notification(username, user_data, login_url, logout_url) -%}
+{% if user_data %}
+    {% if user_data.is_demo %}
+        {% set profile_root = '/logout?continue=/profile' %}
+        {% set count = 0 %}
+    {% else %}
+        {% set profile_root = user_data.profile_root %}
+        {% set count = user_data.feedback_notification_count() %}
+    {% endif %}
+{% else %}
+    {% set profile_root = '/profile/' %}
+    {% set count = 0 %}
+{% endif %}
+{% if count %}
+<a class="user-notification" href="{{profile_root}}discussion/notifications" title="New updates to {{count}} question{{count|pluralize}}">
+    <span class="icon">
+        <span class="notification-bubble">
+            {{ count }}
+        </span>
+    </span>
+</a>
+{% endif %}
+
+<span class="dropdown">
+    <span class="username_and_notification dropdown-toggle">
+        <a href="{{profile_root}}" {% if user_data.is_demo %}class="show-demo-dialog"{% endif %}><img class="user-avatar" src="{{ avatars.get_src_for_user(user_data) }}"><span class="user-name">{{username|escape}}</span><span class="caret"></span></a>
+    </span>
+    <ul class="dropdown-menu no-submenus">
+        {% if user_data.is_phantom %}
+        <li><a class="dropdown-link" href="{{login_url}}">Log in to save</a></li>
+        {% endif %}
+
+        <li><a class="dropdown-link{% if user_data.is_demo %} show-demo-dialog{% endif %}" href="{{profile_root}}">Visit profile</a></li>
+
+        {% if user_data.has_password() and not user_data.is_child_account() %}
+        <li><a class="dropdown-link" href="{{profile_root}}settings">Change settings</a></li>
+        {% endif %}
+
+        <!-- Facebook's JS logout requires the page_logout ID -->
+        <li><a id="page_logout" href="{{logout_url}}">Logout</a></li>
+    </ul>
+</span>
+{%- endmacro %}
+
+{% macro user_video_css(user_data) -%}
+    {% if user_data %}
+    {% if not user_data.is_demo %}
+    <link rel='stylesheet' type='text/css' href='/user_video_css?version={{ user_data.uservideocss_version }}&id={{ user_data.user_id }}' />
+    {% endif %}
+    {% endif %}
+{%- endmacro %}
+
+{% macro possible_points_badge(points, possible_points, logged_in=True) -%}
+<div class="video-energy-points"{% if logged_in %} title="{{ points }} Energy Points earned for watching this video"{% else %} title="You're earning points for watching this video. Sign in to keep them"{% endif %}><span class="video-energy-points-current">{{ points }}</span> of {{ possible_points }}</div>
+{%- endmacro %}

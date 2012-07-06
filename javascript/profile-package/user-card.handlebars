@@ -1,0 +1,64 @@
+<div class="user-info vertical-shadow clearfix">
+    <div class="basic-user-info" style="float: left;">
+      <div class="avatar-pic-container{{#if isEditable}} editable{{/if}}" style="float:left;" >
+        <img src="{{avatarSrc}}" id="avatar-pic" class="avatar-pic" >
+      </div>
+      <div class="user-deets">
+          {{#if isPhantom}}
+             <a href="{{toLoginRedirectHref "/profile"}}" class="simple-button green">Log in to claim your profile</a>
+          {{else}}
+          <div class="nickname-container{{#if isFullyEditable}} fully-editable{{/if}}">
+              <span class="nickname">{{nickname}}</span>
+          </div>
+          {{/if}}
+          <div>
+              <span>Joined <abbr class="timeago" title="{{dateJoined}}">{{dateJoined}}</abbr></span>
+          </div>
+          <div class="basic-stats clearfix">
+              <div class="simple-stat">
+                  <img class="summary-icon star" src="/images/profile-icons/inset-star.png">
+                  <div class="stat-text">{{countExercisesProficient}}<span class="stat-divider">/</span>{{countExercises}}</div>
+              </div>
+              <div class="simple-stat">
+                  <img class="summary-icon" src="/images/profile-icons/inset-camera.png">
+                  <div class="stat-text">{{countVideosCompleted}}<span class="stat-divider">/</span>{{countVideos}}</div>
+              </div>
+              <div class="simple-stat"><span title="{{commafy points}} energy points" class="energy-points-badge" style="float:none; display:block; margin-bottom: 1px; margin-top: 2px; padding:0; line-height: 20px;">{{commafy points}}</span> Energy Points</div>
+          </div>
+          <div class="user-profile-controls clearfix">
+          {{#if isEditable}}
+            <span class="dropdown">
+              <span class="dropdown-toggle">
+                Edit profile
+                <span class="caret"></span>
+              </span>
+              <ul class="dropdown-menu no-submenus">
+                  {{#if isFullyEditable}}
+                  <li><a class="edit-basic-info" href="javascript:void(0)">Edit basic info</a></li>
+                  {{/if}}
+                  <li><a class="edit-display-case" href="javascript:void(0)">Edit display case</a></li>
+                  <li><a class="edit-avatar" href="javascript:void(0)">Edit avatar</a></li>
+                  {{#if isFullyEditable}}
+                  <li><a class="edit-visibility" href="javascript:void(0)">Toggle privacy setting</a></li>
+                  {{/if}}
+              </ul>
+            </span>
+          {{else}}
+            <!--
+              {{#unless isSelf}}<a href="javascript:void(0)" class="add-remove-coach simple-button" style="{{#if isCoachingLoggedInUser}} display: none;{{/if}}">Add as a coach</a>{{/unless}}
+              <a href="javascript:void(0)" class="add-remove-coach simple-button" style="{{#unless isCoachingLoggedInUser}} display: none;{{/unless}}">Remove as a coach</a>
+              -->
+          {{/if}}
+          </div>
+      </div>
+    </div>
+    <div class="sticker-book">
+    </div>
+
+</div>
+{{#if isFullyEditable}}
+<a href="javascript:void(0)"
+    class="edit-visibility visibility-toggler {{#if isPublic}}public{{else}}private{{/if}}">Profile is {{#if isPublic}}public{{else}}private{{/if}}</a>
+<div id="username-picker-container" class="modal fade hide" style="display: none;">
+</div>
+{{/if}}

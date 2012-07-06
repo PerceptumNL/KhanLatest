@@ -1,0 +1,56 @@
+{% extends "labs/template.html" %}
+
+{% block pagescript %}
+{{ js_css_packages.css_package("bootstrap") }}
+<style>
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    ul {
+        margin-bottom: 10px;
+        margin-left:   35px;
+    }
+
+    .row {
+        margin-bottom: 20px;
+        margin-top:    20px;
+    }
+
+    .row:first-child {
+        margin-top: 0;
+    }
+</style>
+{% endblock pagescript %}
+
+{% block pagetitle %}Explorations | Khan Academy Labs{% endblock pagetitle %}
+
+{% block pagecontent %}
+<div class="row">
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li><a href="/labs">Labs</a> <span class="divider">/</span></li>
+            <li>Explorations</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <h1>Explorations</h1>
+        <p>Build your intuition of key concepts through these interactive explorations.</p>
+
+        <h2>Cryptography</h2>
+        <ul>
+            <li><p><a href="/labs/explorations/frequency-stability">Frequency Stability</a><br>
+                Do you think you can accurately mimic a coin flip?</p></li>
+            <li><p><a href="/labs/explorations/frequency-fingerprint">Frequency Fingerprint</a><br>
+                Watch your frequency fingerprint emerge in real-time!</p></li>
+            <li><p><a href="/labs/explorations/perfect-secrecy">Perfect Secrecy</a><br>
+                Explore how random shift sequences absorb your fingerprint.</p></li>
+            <li><p><a href="/labs/explorations/pseudorandom-walk">Random vs. Pseudorandom Walks</a><br>
+                Explore how seed size affects the period of a pseudorandom sequence.</p></li>
+        </ul>
+    </div>
+</div>
+{% endblock pagecontent %}

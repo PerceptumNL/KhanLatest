@@ -1,0 +1,16 @@
+{% extends "page_template.html" %}
+
+{% block pagecontent %}
+
+<div id="devpanel" style="padding: 9px 23px;">
+  <div>
+      <h2>Upload Discovery Lab students status file</h2>
+          Upload a CSV file which maps student emails to Discovery Lab admission status
+          <form id="upload" method="POST" action="/summer/admin/updatestudentstatus" enctype="multipart/form-data" style="display: block; margin: 22px 0">
+          <input id="status_file" name="status_file" type="file" /><br><br>
+          <input id="upload" type="submit" value="Update Discovery Lab Students Status" />
+          </form>
+  </div>
+</div>
+
+{% endblock pagecontent %}

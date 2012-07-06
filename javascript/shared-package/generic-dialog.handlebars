@@ -1,0 +1,18 @@
+<div class="generic-dialog modal fade hide">
+    <div class="modal-header">
+        <span class="generic-title">{{ title }}</span><a href="javascript:void(0)" class="close-button close">x</a>
+    </div>
+    <div class="modal-body">
+        <p class="generic-message">{{{ message }}}</p>
+    </div>
+
+    <div class="modal-footer">
+        {{#each buttons}}
+          {{#if button_color}}
+              <a class="generic-button simple-button {{ button_color }}" href="javascript:void(0)" data-id="{{ title }}">{{ title }}</a>
+          {{else}}
+              <a class="generic-button simple-button blue" href="javascript:void(0)" data-id="{{ title }}">{{ title }}</a>
+          {{/if}}
+        {{/each}}
+    </div>
+</div>

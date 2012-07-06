@@ -1,0 +1,27 @@
+<div class="graph-picker">
+    Coaches have access to all of your Khan Academy data.
+    <ul class="tabrow">
+        <li>
+            Your student id is {{identifier}}
+        </li>
+    </ul>
+</div>
+{{#if isMutable}}
+<div class="col1">
+    <div class="coaches-section">
+        <h2>Add a coach</h2>
+        <input id="coach-email" class="blur-on-esc" placeholder="Coach id" type="text">
+        <span id="add-coach" class="simple-button">Add coach</span>
+        <img class="coach-throbber" style="display: none" src="/images/throbber.gif">
+
+        <div class="notification error" style="display: none;"></div>
+    </div>
+</div>
+{{/if}}
+
+<div class="col2">
+    <div class="coaches-section">
+        <h2>Your coaches</h2>
+        <div id="coach-list-container"></div>
+    </div>
+</div>

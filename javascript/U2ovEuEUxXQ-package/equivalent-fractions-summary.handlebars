@@ -1,0 +1,26 @@
+<div class="layer backdrop whiteout"></div>
+<div class="layer controls">
+    <form class="popout">
+        <a class="close" href="javascript: void 0">&times;</a>
+        <h2>{{title}}</h2>
+        $$
+            A = \frac{3}{9}
+            \hspace{20pt}
+            B = \frac{15}{45}
+            \hspace{20pt}
+            C = \frac{2}{6}
+            \hspace{20pt}
+            D = \frac{1}{4}
+        $$
+        <p>Which of the above fractions are equivalent?</p>
+        <p>Check all that apply.</p>
+
+        <label class="checkbox inline"><input type="checkbox" name="answer"> A and B</label>
+        <label class="checkbox inline"><input type="checkbox" name="answer"> A and D</label>
+        <label class="checkbox inline"><input type="checkbox" name="answer"> A and C</label>
+        <label class="checkbox inline"><input type="checkbox" name="answer"> C and D</label>
+        <label class="checkbox inline"><input type="checkbox" name="answer"> All are equivalent</label>
+
+        {{>submit-area}}
+    </form>
+</div>

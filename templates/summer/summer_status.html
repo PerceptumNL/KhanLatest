@@ -1,0 +1,66 @@
+{% extends "page_template.html" %}
+{% block pagesubmenu %}
+    <span class="breadcrumbs_nav">
+        <a href="http://www.khanacademy.org">Home</a>
+    </span>
+{% endblock pagesubmenu %}
+			
+{% block pagecontent %}
+
+<div id="summer_status" style="padding: 9px 23px;">
+  <div>
+    <h2>Khan Academy Discovery Lab Application Status</h2>
+    {% if authenticated %}
+        {% if nickname %}
+            Logged in as: <u>{{ nickname|escape }}</u><br>
+        {% else %}
+            Logged in as: <u>{{ user_email|escape }}</u><br>
+        {% endif %}
+    {% if is_parent %}
+    You have applied for {{ students|length }} student(s). Please check back periodically for status of your students'
+    application.  We will notify you regarding your status as soon as possible, no later than March 1st, 2012.
+    <br><br>
+    {% else %}
+    Your application has been received, please keep checking back periodically for status of your application.
+    We will notify you regarding your status as soon as possible, no later than March 1st, 2012.
+    <br><br>
+    {% endif %}
+    <table width="810" cellspacing="5" border="0">
+        <tr>
+            <td><b>Student Name</b></td>
+            <td><b>Student Email</b></td>
+            <td><b>Application status</b></td>
+            <td><b>Application Fee</b></td>
+            <td><b>Tuition</b></td>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.first_name|escape }} {{ student.last_name|escape }}</td>
+            <td>{{ student.email|escape }}</td>
+            <td>{{ student.application_status|escape }}</td>
+            <td>{{ student.processing_fee|escape }}
+            {% if student.processing_fee_paid %}
+                (paid)
+            {% else %}
+                (<a href="/summer/application?make_payment=1&user_email={{ user_email|escape }}&student_email={{ student.email|escape }}&is_parent={{ is_parent|escape }}">pay now</a>)
+            {% endif %}
+            </td>
+            {% if student.accepted %}
+                <td>{{ student.tuition|escape }}
+                {% if student.tuition_paid %}
+                    (paid)
+                {% else %}
+                    (<a href="/summer/tuition">pay now</a>)
+                {% endif %}
+            {% else %}
+            <td>N/A</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <a id="auth_link" class="authenticate-user" href="{{login_url|escape}}">Log in to your Khan Academy account</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock pagecontent %}

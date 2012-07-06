@@ -1,0 +1,1 @@
+<span id="user-points-container">{% block user_points_block%}<span title="{{ points|thousands_separated }} energy points" class="energy-points-badge" onclick="location.href='/profile'" style="{% if not points %}display: none;{% endif %} cursor:pointer;">{{ points|thousands_separated }}</span>{% endblock %}</span>

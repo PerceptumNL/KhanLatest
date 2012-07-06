@@ -1,0 +1,208 @@
+.breadcrumbs_nav {
+    font-weight: bold;
+}
+#video_dropdown {
+    text-indent: 0;
+    padding-left: 5px;
+}
+#video_dropdown .ui-button {
+    display: block;
+}
+#video_menu {
+    position: relative;
+}
+#video_menu ol {
+    z-index: 2;
+    position: absolute;
+    right: 3px;
+    top: 5px;
+}
+#video_dropdown ol {
+    max-height: 20em;
+    padding-left: 3em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    list-style: outside decimal;
+}
+#video_dropdown li {
+    white-space: nowrap;
+    font-weight: normal;
+    padding: 3px 0;
+}
+#video_dropdown li[data-selected=selected] a {
+    font-weight: bold;
+}
+#video_dropdown .ui-button-text, #video_dropdown .ui-menu-item a {
+    font-weight: normal;
+    line-height: inherit;
+    padding: 0px 25px 0px 1ex;
+}
+#video_dropdown .ui-menu-item a {
+    padding: 0px 25px 0px 0px;
+}
+#video_dropdown a:visited {
+    color: #DD6900;
+}
+#video_dropdown a:link:hover, #video_dropdown a:link:focus, #video_dropdown a:visited:hover, #video_dropdown a:visited:focus {
+    color: #DD6900;
+}
+.prev_next_nav {
+    display: block;
+    margin-top: 2em;
+}
+.prev_next_nav a {
+    text-decoration: none;
+}
+.prev_next_nav a:hover {
+    text-decoration: underline;
+}
+#prev_video {
+    display: block;
+    float: left;
+    margin-right: 1em;
+    text-align: left;
+    background: url(/images/list-item-black-left.png) no-repeat 0 6px;
+    padding-left: 10px;
+}
+    #prev_video a .vid-progress {
+        margin-left: 5px;
+    }
+#topics {
+    display: block;
+    float: left;
+}
+#next_video {
+    display: block;
+    float: right;
+    margin-left: 1em;
+    text-align: right;
+    background: url(/images/list-item-black.png) no-repeat 100% 6px;
+    padding-right: 10px;
+}
+    #next_video a .vid-progress {
+          margin: 0 3px 0 2px;
+      }
+
+#youtube_blocked {
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+    color: red;
+    font-weight: bold;
+    clear: both;
+    padding-top: 1em;
+}
+.video #description {
+    padding-top: 18px;
+}
+    .video #description .title-header {
+        display: block;
+        font-size: 15px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .video #description .title-header .long-description {
+        color: #555;
+        font-weight: normal;
+        position: relative;
+        top: -1px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+#page_sub_nav .breadcrumbs_nav a {
+    text-decoration: none;
+}
+#page_sub_nav .breadcrumbs_nav #video_menu {
+    text-transform: none;
+}
+#page_sub_nav .breadcrumbs_nav #video_dropdown {
+    position: relative;
+    top: -1px;
+}
+
+.youtube-video {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.youtube-video object {
+    display: block;
+}
+
+.subtitles-warning {
+    display: none;
+    margin-left: 256px;
+    padding-left: 8px;
+    line-height: 17px;
+}
+
+/* .cleanslate is something unisubs uses to "display: block !important;"; this
+ * gets around it */
+.cleanslate.display-none-important {
+    display: none !important;
+}
+
+
+/* Interactive transcript widget */
+
+.subtitles-container {
+    display: none;
+    clear: both;
+    margin: 10px 0;
+    padding: 5px 0;
+    border: 1px solid #bbb;
+
+    -webkit-box-shadow: inset 0 0 10px #CCC;
+    -moz-box-shadow: inset 0 0 10px #CCC;
+    box-shadow: inset 0 0 10px #CCC;
+}
+
+.subtitles {
+    max-height: 200px;
+    padding: 0 5px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    /* JavaScript needs the child element's offsetTop relative to .subtitles */
+    position: relative;
+}
+
+.subtitles a,
+/* to override a:link/visited:focus styles from default.css */
+.subtitles a:visited:focus,
+.subtitles a:link:focus {
+    color: #333;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height:1.6em;
+    padding: 0 5px;
+}
+
+.subtitles a:before {
+    content: attr(data-fmttime);
+    color: #759243;
+    display: inline-block;
+    width: 35px;
+}
+
+.subtitles a:hover:before {
+    color: #fafafa;
+}
+
+.subtitles .active a {
+    background-color: #d3ddb6;
+    font-weight: bold;
+}
+
+.subtitles a:hover,
+/* to override a:link/visited:hover styles from default.css */
+.subtitles a:visited:hover,
+.subtitles a:link:hover {
+    background-color: #9db63b;
+    color: #fafafa;
+    text-decoration: none;
+}

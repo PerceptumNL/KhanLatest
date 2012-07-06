@@ -1,0 +1,19 @@
+<div class="signup-success-dialog modal fade hide">
+    <div class="modal-body">
+        <h3 class="email-header">We've {{#if resendDetected}}re-{{/if}}sent you a message at</h3>
+        <div class="email">{{email}}</div>
+
+        <img src="/images/hand-tree.png" class="tree">
+        <div class="instructions">
+            {{#if resendDetected }}
+                Check your spam folder if the message doesn't arrive in your inbox soon.
+            {{else}}
+                Follow the link in that message to create your Khan Academy username and password.
+            {{/if}}
+        </div>
+
+        {{#if token}}
+        <div class="debug">token for debugging: <a href="/completesignup?token={{token}}">{{token}}</a></div>
+        {{/if}}
+    </div>
+</div>

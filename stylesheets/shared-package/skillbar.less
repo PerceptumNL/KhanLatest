@@ -1,0 +1,80 @@
+.skill-bar {
+    margin-bottom: 15px;
+    height: 15px;
+    padding: 0px;
+    position: relative;
+    border: 1px solid #bbb;
+
+    .border-radius(4px);
+    .box-shadow(inset 0 0 4px rgba(0,0,0,0.3);
+}
+.skill-bar .description {
+    position: relative;
+    color: #fff;
+    line-height: 17px; /* This needs to be adjusted if you adjust the skill-bar height */
+    padding-left: 10px;
+    z-index: 2;
+}
+.skill-bar .fill {
+    display: block;
+    height: 100%;
+    .border-radius(3px);
+    #gradient > .vertical(rgb(43,194,83),rgb(84,240,84));
+    .box-shadow(~"inset 0 2px 9px  rgba(255,255,255,0.3)");
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-bar .fill.gray {
+    #gradient > .vertical(#ddd, #ccc);
+}
+.skill-bar .fill.green {
+    #gradient > .vertical(#8aba08, #6e9700);
+}
+.skill-bar .fill.blue {
+    #gradient > .vertical(lighten(#0080C9, 10%), #0080C9);
+}
+.skill-bar .fill.orange {
+    #gradient > .vertical(#F46626, #E35D22);
+}
+.skill-bar .fill.gray {
+    position: relative;
+    top: -100%;
+}
+.skill-bar .fill.blue,
+.skill-bar .fill.orange {
+    position: relative;
+    top: -200%;
+}
+
+.skill-bar-title {
+    margin: 0 0 5px 25px;
+}
+    .skill-bar-title .small-exercise-icon {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        margin: 0 0 0 -25px;
+    }
+    .skill-bar-title .disabled {
+        cursor: not-allowed;
+    }
+
+.small-exercise-icon.node-complete    { background: url(/images/node-complete-20.png); /*! data-uri(/images/node-complete-20.png) */ }
+.small-exercise-icon.node-review      { background: url(/images/node-review-20.png); /*! data-uri(/images/node-review-20.png) */ }
+.small-exercise-icon.node-suggested   { background: url(/images/node-suggested-20.png); /*! data-uri(/images/node-suggested-20.png) */ }
+.small-exercise-icon.node-not-started { background: url(/images/node-not-started-20.png); /*! data-uri(/images/node-not-started-20.png) */ }
+
+.topic-exercise-badge {
+    float: left;
+}
+    .topic-exercise-badge .topic-exercise-image {
+        display: block;
+    }
+.topic-exercise-image {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin: -10px auto 0;
+	.border-radius(20px);
+}

@@ -1,0 +1,30 @@
+{{#if justEarnedProficiency}}
+
+<span class="small-exercise-icon node-complete" data-desc="You just earned proficiency in this skill"></span>
+
+{{else}}
+
+{{#if reviewing}}
+
+<span class="small-exercise-icon node-review" data-desc="You've earned proficiency in this skill. We think it's time for you to review it, because either it's been a while or you recently had some trouble."></span>
+
+{{else}}
+
+{{#if proficient}}
+
+<span class="small-exercise-icon node-complete" data-desc="You've earned proficiency in this skill"></span>
+
+{{else}}
+
+{{#if suggested}}
+
+<span class="small-exercise-icon node-suggested" data-desc="You've completed all the pre-requisites for this skill, so we think you're ready for it"></span>
+
+{{else}}
+
+<span class="small-exercise-icon node-not-started" data-desc="This is a skill you can practice"></span>
+
+{{/if}}
+{{/if}}
+{{/if}}
+{{/if}}

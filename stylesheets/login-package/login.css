@@ -1,0 +1,558 @@
+#page_sub_nav { display: none; }
+
+#page-root {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+form.auth-form {
+    /* TODO(benkomalo): vertically position this and make it flex. */
+    position: relative;
+    display: block;
+}
+
+.login-container.card-case {
+    margin: 6em auto;
+    padding: 2em 1em;
+    width: 740px;
+    white-space: nowrap;
+}
+
+.providers,
+.pw-login {
+    display: inline-block;
+    vertical-align: top;
+    height: 250px;
+}
+
+.login-container .providers {
+    text-align: center;
+}
+
+.pw-login {
+    width: 430px;
+}
+.pw-login h3 {
+    text-align: left;
+    margin-bottom: 2em;
+}
+
+.pw-login-contents {
+    text-align: right;
+    width: 430px;
+}
+
+#page-root .vertical-separator {
+    width: 1px;
+    height: 250px;
+    margin: 0 2em;
+    border-left: 1px solid #ccc;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+.separator-text {
+    color: #444;
+    font-family: "MuseoSans300", sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2px;
+    background: #eee;
+    display: inline-block;
+    padding: 0.7em;
+    position: relative;
+}
+
+.vertical-separator .separator-text {
+    top: 50%;
+    margin-top: -0.5em;
+    margin-left: -1.5em;
+}
+
+#page-root .horizontal-separator {
+    height: 1px;
+    margin: 2em auto;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.horizontal-separator .separator-text {
+    position: relative;
+    display: inline-block;
+    padding: 0 0.5em;
+    top: -0.7em;
+}
+
+
+h2.login-title {
+    text-align: center;
+    margin-bottom: 2em;
+}
+a:visited {
+    color: #0075b1;
+}
+
+.providers .provider {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 200px;
+    height: 78px;
+    border-bottom-color: #aaa;
+    border-right-color: #bbb;
+
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+    -moz-box-shadow: 2px 2px 5px #ccc;
+    -webkit-box-shadow: 2px 2px 5px #ccc;
+    box-shadow: 2px 2px 5px #ccc;
+
+    cursor: pointer;
+}
+
+.providers .provider .img-container {
+    display: table-cell;
+    vertical-align: middle;
+    height: 85px;
+}
+.providers .provider img {
+    margin: 0 10px;
+}
+
+.providers .provider:hover,
+.providers .provider:active {
+    border-color: #aaa;
+    left: 2px;
+    top: 2px;
+
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.field-container {
+    margin: 0.5em 0;
+}
+
+#login-fail-message {
+    margin: 0 0.5em; /* same as horizontal margins of field-container */
+}
+
+.field-label {
+    color: #333;
+    font-family: "MuseoSans500", sans-serif;
+    font-size: 14px;
+}
+
+.field-error {
+    color: red;
+}
+
+.auth-form .simple-input {
+    font-size: 14px;
+    padding: 0.1em 0.3em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.auth-form .field-label,
+.auth-form .field-error {
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    /* to vertically align it with the simple-input text, since the input
+     * has border width */
+    padding: 0.2em 0;
+}
+
+#forgot-pw-form .field-label,
+#login-form .field-label {
+    margin-right: 0.5em;
+}
+
+
+.auth-form .simple-input:focus {
+    -webkit-box-shadow: 0 0 8px rgba(115, 152, 44, .5);
+    -moz-box-shadow: 0 0 8px rgba(115, 152, 44, .5);
+    box-shadow: 0 0 8px rgba(115, 152, 44, .5);
+    outline: none;
+}
+
+.auth-form .simple-input:disabled {
+    color: #999;
+}
+
+/* TODO(benkomalo): possibly make this a standard for the site. */
+.auth-form select.simple-input {
+    /* Work around a webkit "bug" where box shadows don't work unless you
+     * disable webkit-appearance. That removes the dropdown icon though. */
+    -webkit-appearance: none;
+
+    background: #fafafa url("/images/dropdown.png") no-repeat right center;
+}
+
+.auth-form .simple-input#gender {
+    width: 8em;
+}
+
+.auth-form .simple-input.birth-month,
+.auth-form .simple-input.birth-day,
+.auth-form .simple-input.birth-year {
+    /* intentionally using the trailing 4 as the rounding works
+     * better given the current values */
+    width: 33.333334%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.password-label {
+    margin-top: 0.4em;
+    display: inline-block;
+}
+.password-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: -3px;
+}
+#forgot-hint {
+    font-size: 90%;
+    color: #678d00;
+
+    /* HACK(benkomalo): need to left-align with password field, so we apply a left
+     * padding equal to the password-label's margin-box-width */
+    margin-right: 6.5em;
+}
+
+.pw-login-contents #submit-button {
+    float: right;
+}
+
+.pw-login-contents img.tree {
+    float: left;
+    padding-left: 2em;
+}
+
+.signup-prompt-container {
+    margin-top: 4em;
+}
+
+.signup-prompt {
+    color: #666;
+}
+a.signup-link {
+    color: #678d00;
+}
+
+
+#birthday-picker {
+    text-align: center;
+}
+
+.signup-container.card-case {
+    margin: 6em auto;
+    padding: 2em 4em;
+    width: 650px;
+}
+.signup-container .pw-signup {
+    width: 640px;
+}
+
+.completesignup-contents .field-label,
+.signup-container .field-label {
+    text-align: right;
+}
+
+.signup-container .simple-input {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.signup-container .providers {
+    width: 640px;
+    height: auto;
+}
+
+.signup-container .providers h4 {
+    margin-bottom: 0.5em;
+}
+
+.signup-container .providers-info {
+    font-family: "MuseoSans500", sans-serif;
+    font-size: 14px;
+    margin-top: 0.5em;
+}
+
+.signup-container .submit-button-container {
+    margin-top: 0.5em;
+    text-align: right;
+}
+
+.signup-container #error-text {
+    /* semi hack - while the text may be multiple lines, we don't want it to affect
+     * the layout (since we know there is space below it), so force it to be a fixed
+     * height and just "bleed" outside of its layout container */
+    height: 1em;
+}
+
+/* completesignup specific styles */
+
+.create-child-iframe-container,
+.completesignup-iframe-container {
+    width: 560px;
+    margin: 6em auto;
+}
+
+.completesignup-container.card-case {
+    padding: 15px;
+    width: 525px;
+}
+
+.completesignup-contents,
+.completesignup-contents .auth-form {
+    width: 523px;
+}
+.completesignup-contents img.tree {
+    float: left;
+    margin-right: 1em;
+}
+
+.completesignup-contents h3 {
+    font-family: "MuseoSans300", sans-serif;
+    vertical-align: middle;
+}
+
+.create-child.completesignup-contents h3 {
+    /* HACK(benkomalo): help vertical align this. */
+    padding-top: 1.5em;
+}
+.create-child.completesignup-contents .icon {
+    font-size: 16px;
+}
+
+.completesignup-contents .auth-form {
+    /* To clear the floated img of the tree */
+    clear: both;
+}
+
+.completesignup-contents .tos-area {
+    display: inline-block;
+    width: 18em;
+    line-height: 16px;
+    font-size: 11px;
+    text-align: right;
+    margin-right: 2em;
+    vertical-align: middle;
+}
+.create-child.completesignup-contents .tos-area {
+    width: 225px;
+    margin-right: 2px;
+}
+.create-child.completesignup-contents .field-info {
+    font-size: 11px;
+    line-height: 16px;
+}
+.create-child .login-warning {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.create-child .login-warning .button-container {
+    margin: 14px 24px 0 0;
+    float: right;
+}
+
+.completesignup-contents .submit-container {
+    margin-top: 2em;
+}
+.completesignup-contents .submit-container,
+.completesignup-contents .field-error {
+    text-align: right;
+}
+
+.completesignup-contents .error-container {
+    margin-top: 4px;
+}
+
+.completesignup-contents .field-error {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* Settings page styles */
+
+#pw-change-form {
+    margin-top: 0;
+    position: relative;
+    width: 380px;
+}
+
+#pw-change-form img.tree {
+    float: left;
+}
+
+#pw-change-form h4 {
+    margin-top: 1.5em;
+    margin-left: 1em;
+    float: left;
+}
+
+#pw-change-form .pw-change-table {
+    width: 380px;
+    margin: 0 auto;
+}
+
+#pw-change-form .input-label-cell {
+    padding: 0.5em 2em 0.5em 0;
+    text-align: right;
+}
+
+#pw-change-form .simple-input {
+    width: 100%;
+}
+
+#pw-change-form .submit-container {
+    text-align: right;
+}
+
+#pw-change-form .message-container {
+    /* Always reserve room for it, even if it's empty */
+    height: 1em;
+    text-align: right;
+}
+
+#pw-change-form .success {
+    color: green;
+}
+
+#pw-change-form .error {
+    color: red;
+}
+
+/* Dialog shown after step 1 of sign up */
+.signup-success-dialog.modal.fade.in {
+    width: 450px;
+    left: 50%;
+    margin-left: -200px;
+    position: absolute;
+    top: 150px;
+    background-color: #eee;
+}
+
+.signup-success-dialog .modal-body {
+    padding: 2em 4em;
+}
+
+.signup-success-dialog .email-header {
+    font-family: "MuseoSans300", sans-serif;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.signup-success-dialog .email {
+    font-family: "MuseoSans500", sans-serif;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+}
+
+.signup-success-dialog .instructions {
+    font-family: "MuseoSans500", sans-serif;
+    display: inline-block;
+    font-size: 16px;
+    width: 15em;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+
+/* Forgot-password related styles */
+
+.forgot-pw-container.card-case {
+    margin: 6em auto;
+    padding: 3em 2em;
+    width: 340px;
+}
+
+.forgot-pw-container .auth-form {
+    text-align: right;
+}
+
+.forgot-pw-container img.tree {
+    float: left;
+}
+
+.forgot-pw-container h4 {
+    margin-bottom: 0.5em;
+}
+
+.forgot-pw-container h5.email {
+    text-align: center;
+}
+
+.forgot-pw-container .instructions {
+    margin-top: 1em;
+    margin-left: 100px; /* enough to clear the left-floated tree */
+}
+
+
+.forgot-pw-container #email {
+    width: 13em;
+}
+
+.forgot-pw-error-container.card-case,
+.forgot-pw-signup-container.card-case {
+    margin: 6em auto;
+    padding: 2em;
+    width: 640px;
+}
+
+.forgot-pw-error-container.card-case {
+    font-family: "MuseoSans300", sans-serif;
+    font-size: 14px;
+    margin-bottom: 2em;
+    background-color: #f6e8e2;
+    border-color: #f8bca3;
+}
+
+.forgot-pw-signup-container.card-case {
+    margin-top: 0;
+}
+
+.forgot-pw-signup-container .providers {
+    height: auto;
+}
+
+.forgot-pw-signup-container .providers-info {
+    display: inline-block;
+    position: relative;
+    top: -1em;
+    font-family: "MuseoSans500", sans-serif;
+    font-size: 14px;
+    margin-left: 1em;
+    width: 14em;
+}
+
+.pw-reset-container.card-case {
+    margin: 6em auto;
+    padding: 1.5em;
+    width: 400px;
+}
+
+
+/* A gray-background, rounded corner "card look" */
+.card-case {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    border-background-clip: padding-box;
+    background: #eee;
+}
+

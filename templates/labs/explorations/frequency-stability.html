@@ -1,0 +1,83 @@
+{% extends "labs/template-slim.html" %}
+
+{% block pagescript %}
+{{ js_css_packages.js_package("highcharts") }}
+{{ js_css_packages.css_package("bootstrap") }}
+<script>{% include "labs/explorations/frequency-stability.js" %}</script>
+
+<style>
+    .breadcrumb a {
+        color: #678d00;
+    }
+
+    .btn {
+        width: 10%;
+    }
+
+    .row {
+        margin-bottom: 20px;
+    }
+
+    #chart1,
+    #chart2,
+    #chart3 {
+        height: 225px;
+    }
+
+    form {
+        display: block;
+    }
+</style>
+{% endblock pagescript %}
+
+{% block pagetitle %}Frequency Stability | Khan Academy Labs{% endblock pagetitle %}
+
+{% block pagecontent %}
+<div class="row">
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li><a href="/labs">Labs</a> <span class="divider">/</span></li>
+            <li><a href="/labs/explorations">Explorations</a> <span class="divider">/</span></li>
+            <li>Frequency Stability</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <h1>Frequency Stability</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <p>Try and fake a coin flip. Close your eyes and input a long list of 0's and 1's. How uniform are you?</p>
+
+        <form class="form-inline" style="text-align: center;">
+           <input style="width: 70%;" autofocus>
+           <a class="btn" id="random">Random</a>
+           <a class="btn">Reset</a>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span4">
+        <div id="chart1"></div>
+    </div>
+
+    <div class="span4">
+        <div id="chart2"></div>
+    </div>
+
+    <div class="span4">
+        <div id="chart3"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+        <p>To learn more, <a href="/science/brit-cruise/cryptography/v/frequency-stability">watch a video</a> on frequency stability.</p>
+    </div>
+</div>
+{% endblock pagecontent %}

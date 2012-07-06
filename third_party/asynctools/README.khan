@@ -1,0 +1,10 @@
+This is taken from
+   http://code.google.com/p/asynctools
+with a local change to fix
+   http://code.google.com/p/asynctools/issues/detail?id=14
+
+Other than the local change, this is the same as r33.
+
+I could create an svn subrepo, and acutally pull the changes from
+google code, but given that this code hasn't been updated since 2009,
+I think just copying it into our source tree will work fine.

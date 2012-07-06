@@ -1,0 +1,72 @@
+@import "./variables.less";
+@import "./mixins.less";
+@import "../scratchpads-package/variables.less";
+
+.headline-container {
+    position: relative;
+
+    .new-scratchpad {
+        position: absolute;
+        right: 12px;
+        top: 20px;
+    }
+}
+
+.main-headline.show-explorations {
+    float: left;
+}
+
+ul.scratchpad-list {
+    list-style: none;
+    margin-left: -30px;
+    overflow: hidden;
+    padding-top: 20px;
+    text-align: center;
+
+    li {
+        float: left;
+        margin-bottom: 20px;
+        margin-left: 30px;
+
+        .scratchpad-thumbnail {
+            .size(200px, 200px);
+
+            border: 1px solid @grayLight;
+            position: relative;
+
+            img {
+                .size(200px, 200px);
+            }
+
+            [class*="scratchpad-difficulty-"] {
+                bottom: 0;
+                color: black;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }
+
+            .scratchpad-difficulty-10 {
+                background-color: fadeout(@scratchpadDifficulty10Color, 20%);
+            }
+
+            .scratchpad-difficulty-20 {
+                background-color: fadeout(@scratchpadDifficulty20Color, 20%);
+            }
+
+            .scratchpad-difficulty-30 {
+                background-color: fadeout(@scratchpadDifficulty30Color, 20%);
+            }
+
+            .scratchpad-difficulty-40 {
+                background-color: fadeout(@scratchpadDifficulty40Color, 20%);
+            }
+        }
+
+        h4 {
+            width: 200px;
+            .text-overflow();
+        }
+    }
+}
+

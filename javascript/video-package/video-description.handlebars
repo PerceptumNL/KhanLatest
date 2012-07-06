@@ -1,0 +1,35 @@
+{{#if topic}}
+<link itemprop="url" href="{{ topic.extended_slug }}/v/{{ video.readable_id }}">
+{{/if}}
+{{#if video.button_top_exercise }}
+<a href="{{ video.button_top_exercise.url }}" class="practice simple-button green desktop-only" title="Test your understanding with an exercise">Practice this concept</a>
+{{/if}}
+{{#if video.extra_properties }}
+{{#if video.extra_properties.explore_url }}
+<a href="{{ video.extra_properties.explore_url }}" class="practice simple-button green desktop-only" title="Extend your understanding with an exploration">Explore this concept</a>
+{{/if}}
+{{/if}}
+<h1 class="title-header">
+    {{#if loading}}<img src='/images/throbber.gif' />{{/if}}
+    <span itemprop="name" class="title desktop-only">{{ video.title }}</span>
+{{#if video.description }}
+    <span class="long-description"><span class="desktop-only">: </span><span itemprop="description">{{ video.description }}</span></span>
+{{/if}}
+</h1>
+
+{{#if video.related_exercises }}
+<div class="related-content visited-no-recolor">
+  <span class="related-content-title">Related exercises:</span>
+  <ul class="related-exercise-list">
+    {{#each video.related_exercises }}
+    <li>
+      <a href="{{ url }}" title="{{ name }}">{{ name }}</a>
+      {{#unless last}}
+      <span class="separator">, </span>
+      {{/unless}}
+    </li>
+    {{/each}}
+  </ul>
+</div>
+{{/if}}
+

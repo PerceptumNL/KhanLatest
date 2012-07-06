@@ -1,0 +1,43 @@
+{% extends "discussion/mod/mod_template.html" %}
+
+{% block panelcontent %}
+
+<h2>Banned users</h2>
+<br/>
+<strong>Banned users' discussion posts are automatically hidden from the rest of the community.</strong>
+<br/><br/>
+
+{% if banned_user_data_list.count() %}
+<table class="feedback_list">
+    {% for user_data in banned_user_data_list %}
+        <tr>
+            <td>
+                {{ user_data.email|escape }}
+            </td>
+            <td width="100%">
+                <form method="POST" action="/discussion/mod/bannedlist">
+                    <input type="hidden" name="banned" value="0" />
+                    <input type="hidden" name="user" value="{{user_data.email|escape}}" />
+                    <input type="submit" value="Remove"/>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% else %}
+    No banned users.
+{% endif %}
+
+<br/></br>
+
+<h3>Ban a user</h3>
+Enter a user's email address below (e.g. "user@gmail.com") to ban them from discussions in our community.<br/>
+<form method="POST" action="/discussion/mod/bannedlist">
+    <input type="hidden" name="banned" value="1" />
+    <input type="text" name="user" value="" />
+    <input type="submit" value="Lay down the ban hammer"/>
+</form>
+
+{% endblock panelcontent %}
+
+

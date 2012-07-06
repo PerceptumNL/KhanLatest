@@ -1,0 +1,139 @@
+{% extends "page_template.html" %}
+{% block pagescript %}
+<style>
+	#styleguide{ padding-top:30px; }
+	#styleguide p{ width:310px}
+	small { font-size:10px; }
+	small:before{ content:"("}
+	small:after{ content:")"}
+	.boxxy{ display:-webkit-box; width:1200px}
+	.text{width:400px;}
+	.colors{width:800px;}
+	.buttons {display:-webkit-box;}
+	.buttons figure {margin-right:20px;}
+  code {font-size: small; font-family:monospace;}
+</style>
+{% endblock pagescript %}
+{% block pagetitle %}Style Guide{% endblock pagetitle %}
+{% block pagecontent %}
+<article id="styleguide">
+	<h1>Khan Academy <strong>| Style Guide</strong> <br><small>font: normal normal 25px/22px MuseoSans-500; color:#111;</small></h1>
+
+    <div class="boxxy">
+      <section class="text">
+        <h2>Headings & Body Text <br><small>font: normal normal 20px/22px MuseoSans-500; color:#111; </small></h2>
+        <p>All body text is <br><small>font: 14px/22px "Helvetica Neue",helvetica, sans-serif;</small></p>
+        <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don’t know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I’m breaking now. We said we’d say it was the snow that killed the other two, but it wasn’t. Nature is lethal but it doesn’t hold a candle to man.</p>
+
+        <p><span class="ellipsis" style="display:block">using <code>.ellipsis</code> will give you a single line ellipsified bit of text. Isn't that wild?<br><small>class="ellipsis" style="display:[ inline-block | block ];"</small></p>
+        <p><code>.ellipsis</code> crops arbitrary text to a single line. You will <strong>need to set a <code>width</code> and display: (inline-)block</strong> (or a width must be set on the element up the chain) otherwise it will 100% not work. Inspect the above for an example.</p>
+
+      </section>
+      <section class="colors">
+        <h2>Links</h2>
+        <p>All links / list items on the video library are effectively styled <br><small>font: 12px/18px Helvetica Neue, Helvetica, Arial, sans-serif;</small>
+        <ul>
+          <li class="visited-no-recolor"><a href="./" onclick="javascript:return false;">Links are</a> <small>color: #005987;</small></a>
+          <li ><a href="./" onclick="javascript:return false;" onclick="javascript:return false;">Visited (and :hovered) Links are</a> <small>color: #678D00;</small></a>
+        </ul>
+        <h2 class="section-headline">Buttons</h2>
+        <div class="buttons">
+          <figure>
+            <div class="simple-button action-gradient primary"> Primary </div>
+            <figcaption><small>class="simple-button primary"</small></figcaption>
+          </figure>
+
+          <figure>
+            <div class="simple-button action-gradient "> Standard </div>
+            <figcaption><small>class="simple-button"</small></figcaption>
+          </figure>
+
+          <figure>
+            <div class="simple-button secondary"> Secondary </div>
+            <figcaption><small>class="simple-button secondary"</small></figcaption>
+          </figure>
+
+          <figure>
+            <div class="simple-button warning"> Warning </div>
+            <figcaption><small>class="simple-button warning"</small></figcaption>
+          </figure>
+        </div>
+
+        <h2 class="section-headline">Toggled Buttons</h2>
+        <div class="buttons">
+          <figure>
+            <div class="simple-button toggled primary"> Primary </div>
+            <figcaption><small>class="simple-button toggled primary"</small></figcaption>
+          </figure>
+
+          <figure>
+            <div class="simple-button toggled"> Standard </div>
+            <figcaption><small>class="simple-button toggled"</small></figcaption>
+          </figure>
+
+          <figure>
+            <div class="simple-button toggled secondary"> Secondary </div>
+            <figcaption><small>class="simple-button toggled secondary"</small></figcaption>
+          </figure>
+
+          <figure>
+            <div class="simple-button toggled warning"> Warning </div>
+            <figcaption><small>class="simple-button toggled warning"</small></figcaption>
+          </figure>
+        </div>
+
+        <h2 class="section-headline">Disabled Buttons</h2>
+        <div class="buttons">
+          <figure>
+            <div class="simple-button disabled primary"> Primary </div>
+            <figcaption><small>class="simple-button disabled primary"</small></figcaption>
+          </figure>
+
+          <figure>
+            <div class="simple-button disabled"> Standard </div>
+            <figcaption><small>class="simple-button disabled"</small></figcaption>
+          </figure>
+
+          <figure>
+            <div class="simple-button disabled secondary"> Secondary </div>
+            <figcaption><small>class="simple-button disabled secondary"</small></figcaption>
+          </figure>
+
+          <figure>
+            <div class="simple-button disabled warning"> Warning </div>
+            <figcaption><small>class="simple-button disabled warning"</small></figcaption>
+          </figure>
+        </div>
+
+        <h2 class="section-headline">Alerts</h2>
+        <figure>
+            <figcaption>containing div: <small>class="alert alert-info"</small></figcaption>
+            <figcaption>&#215; <small>&amp;#215;</small> to dismiss: <small>class="close" data-dismiss="alert"</small></figcaption>
+            <figcaption>link style: <small>class="alert-link"</small></figcaption>
+            <div class="alert alert-info">
+                <span class="close" data-dismiss="alert">&#215;</span>
+                <div><strong>Whoa there, space cowboy!</strong></div>
+                <div>Check out <a class="alert-link" href="javascript:void(0);">
+                    this link (style)</a>.
+                </div>
+            </div>
+        </figure>
+        <figure>
+            <figcaption><small>class="alert alert-warning"</small></figcaption>
+            <div class="alert alert-warning">
+                <span class="close" data-dismiss="alert">&#215;</span>
+                <div>We don't use these other flavors in too many (or any?) other
+                    places, but they exist thanks to bootstrap. This reminds me of
+                    lemon sorbet.</div>
+            </div>
+        </figure>
+        <figure>
+            <figcaption><small>class="alert alert-error"</small></figcaption>
+            <div class="alert alert-error">
+                <div>Perhaps more of a strawberry sorbet? The user cannot dismiss
+                    this alert!</div>
+            </div>
+        </figure>
+      </section>
+</article>
+{% endblock pagecontent %}

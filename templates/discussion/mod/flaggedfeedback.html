@@ -1,0 +1,40 @@
+{% extends "discussion/mod/mod_template.html" %}
+
+{% block panelcontent %}
+<div class="feedback-list-container">
+    <div class="tabrow-container">
+        Go go power rangers!
+        <ul class="tabrow">
+            <li class="selected" data-type="question">
+                <a href="javascript:void(0);">Questions</a>
+            </li>
+            <li data-type="answer">
+                <a href="javascript:void(0);">Answers</a>
+            </li>
+            <li data-type="comment">
+                <a href="javascript:void(0);">Comments</a>
+            </li>
+        </ul>
+    </div>
+    <h2 class="feedback-group-header">
+        <span class="feedback-sort-links">
+            <a data-value="1" class="selected" href="javascript:void(0);">
+                Heuristics</a>
+            <a data-value="2" href="javascript:void(0);">Votes</a>
+        </span>
+    </h2>
+    <div id="feedback-list"></div>
+    <input class="load-more simple-button" type="button" value="View more items">
+</div>
+{% endblock panelcontent %}
+
+{% block bottompagescript %}
+    {{ js_css_packages.js_package("moderation") }}
+    {{ js_css_packages.js_package("discussion") }}
+    <script>
+        $(function() {
+            Moderation.init();
+            new Moderation.Queue().show();
+        });
+    </script>
+{% endblock bottompagescript %}

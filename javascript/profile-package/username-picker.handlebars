@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <a href="#" class="close-button close">x</a><h3>Edit basic info</h3>
+</div>
+<div class="modal-body">
+    <div class="notification info" style="display: none;">
+        In order to make your profile public, we need you to pick a username.
+    </div>
+    <div class="notification error" style="display: none;">
+        If you change your username, you cannot get your old one back for 120 days.
+    </div>
+    <div class="username-picker">
+        <div class="row nickname-row">
+            <div class="labels">
+                <label for="nickname">Real Name:</label>
+            </div>
+            <div class="inputs">
+                <input type="text" value="{{nickname}}" class="nickname" id="nickname"><span class="sidenote"></span>
+                <p class="input-description">
+                    This is how your name will appear around Khan Academy, and how your friends and coaches will recognize you.
+                </p>
+            </div>
+        </div>
+        <div class="row username-row">
+            <div class="labels">
+                <label for="username">Username:</label>
+            </div>
+            <div class="inputs">
+                <input type="text" value="{{username}}" class="username" id="username"><span class="sidenote"></span>
+                <p class="input-description">
+                    Your username will appear in your Khan Academy address.
+                </p>
+                <p class="input-description">
+                    http://www.khanacademy.org/profile/<span class="example-username">{{username}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer" style="text-align: right;">
+    <input id="cancel-profile-info" type="button" class="simple-button" value="Cancel">
+    <input id="save-profile-info" type="button" class="simple-button green" value="Save">
+</div>

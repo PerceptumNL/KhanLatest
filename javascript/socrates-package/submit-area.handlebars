@@ -1,0 +1,16 @@
+<div class="submit-area">
+    {{#if explainUrl}}
+    <a class="explain simple-button" href="{{explainUrl}}"><i class="icon-backward"></i> Explain again</a>
+    {{/if}}
+    <button type="submit" class="submit simple-button green">Submit</button>
+    <span class="alert alert-success">
+        <img class="face" src="/khan-exercises/css/images/face-smiley.gif">
+        Correct!
+    </span>
+    <span class="alert alert-error">
+        <img class="face" src="/khan-exercises/css/images/face-sad.gif">
+        Incorrect
+        <a class="see-answer" href="javascript: void 0">See Answer</a>
+    </span>
+    <a class="skip simple-button" href="javascript:void 0">Skip <i class="icon-forward"></i></a>
+</div>

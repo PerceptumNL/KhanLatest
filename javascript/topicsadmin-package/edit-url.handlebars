@@ -1,0 +1,59 @@
+<div>
+  <img src="/images/link-icon.png" width="75" height="64" style="vertical-align: middle">
+  <input type="text" name="title" class="node-title simple-input ui-corner-all blur-on-esc" value="{{ model.title }}">
+  <a href="javascript:" data-id="save" class="save-button item-action simple-button disabled">Save</a>
+</div>
+
+{{#if oldValues.title }}<span class="old-value">Old value: <input type="text" disabled value="{{ oldValues.title }}" maxlength="32"/></span><br/>{{/if}}
+
+<div>
+  <a href="javascript:" data-id="remove_item" class="item-action left-align simple-button blue">Remove from topic</a>
+</div>
+<div style="clear: both" />
+
+<div style="padding: 9px 23px;">
+  <div>
+    <table class="node-properties">
+
+      <tr>
+        <td colspan="2">Changes are saved to the <b>live version</b> of the site when you click the Save button above.</td>
+      </tr>
+
+      <tr>
+        <td style="font-weight:bold;">View</td>
+        <td style="padding-bottom:9px;">
+          <a href="{{ model.url }}" target="_blank">Open {{ model.title }} in new tab</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="font-weight:bold;">URL</td>
+        <td style="padding-bottom:9px;">
+          <input type="text" name="url" value="{{ model.url }}" maxlength="256"/><br/>
+          {{#if oldValues.url }}<span class="old-value">Old value: <input type="text" disabled value="{{ oldValues.url }}" maxlength="256"/></span><br/>{{/if}}
+          <em>URL to link to</em>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="font-weight:bold;">Tags</td>
+        <td style="padding-bottom:9px;">
+          <div class="tags-list"></div>
+
+          <input class="add-tag" type="text" value="" maxlength="32" placeholder="- Add tag" class="placeholder short" /> 
+          <a href="javascript:" data-id="add-tag" class="item-action simple-button">Add</a>
+          <br/>
+
+          {{#if oldValues.tags}}
+            {{#each oldValues.tags}}
+              <span class="old-value">Old value: <input type="text" disabled value="{{ this }}" maxlength="256"/></span><br/>
+            {{/each}}
+          {{/if}}
+
+          <em>Terms to include when indexing this video for searching</em>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="layer backdrop whiteout"></div>
+<div class="layer controls">
+    <form class="popout">
+        <a class="close" href="javascript:void 0">&times;</a>
+        <h2>{{title}}</h2>
+        <p>What are the dimensions of this matrix?</p>
+
+        $$
+            M =
+            \begin{bmatrix}
+            5 & 0 & 0 & 1 & 5 \\
+            4 & 8 & 78 & 77 & 10 \\
+            1 & 1 & 2 & 3 & 2 \\
+            1 & 5 & 10 & 65 & 98
+            \end{bmatrix}
+        $$
+
+        <p>
+            \(M\) is a
+            <input type="text" name="rows" placeholder="?" style="width: 2em">
+            by
+            <input type="text" name="cols" placeholder="?" style="width: 2em">
+            matrix.
+        </p>
+
+        {{>submit-area}}
+    </form>
+</div>

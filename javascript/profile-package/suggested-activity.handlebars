@@ -1,0 +1,47 @@
+<!-- TODO(marcia): Clean up to involve less copy paste action, also ach-text's is more of a container and not achievement text.-->
+<div class="activity-list">
+    <ul>
+    {{#each exercises}}
+        <li class="activity-exercise clearfix">
+            <div class="ach-text">
+                <span class="activity-image"><img src="{{topicIcon}}"></span>
+                <a class="covering-link"  href="{{url}}">
+                    <span></span>
+                </a>
+                <span class="ellipsis">
+                  <a class="foreground-link" title="{{name}}" href="{{url}}">
+                      {{name}}
+                  </a>
+                   <small class="topic-name">in {{topic}}</small>
+                </span>
+                <div class="skill-bar-container">{{{skill-bar progress}}}</div>
+                <div class="suggested-activity-controls">
+                    <a class="foreground-link" href="{{url}}">
+                        <span class="simple-button">Rock out</span>
+                    </a>
+                </div>
+            </div>
+        </li>
+    {{/each}}
+
+    {{#each videos}}
+        <li class="activity-video clearfix">
+            <div class="ach-text">
+                <span class="activity-image"></span>
+                <a class="covering-link" href="{{url}}">
+                    <span></span>
+                </a>
+                <a class="ellipsis foreground-link" title="{{name}}" href="{{url}}">
+                    {{name}}
+                </a>
+                <div class="skill-bar-container">{{{skill-bar progress}}}</div>
+                <div class="suggested-activity-controls">
+                    <a class="foreground-link" href="{{url}}">
+                        <span class="simple-button">Watch on</span>
+                    </a>
+                 </div>
+            </div>
+        </li>
+    {{/each}}
+    </ul>
+</div>

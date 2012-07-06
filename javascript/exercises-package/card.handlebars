@@ -1,0 +1,19 @@
+<div id="card-cid-{{cid}}" class="card-container">
+    <div class="card-container-inner">
+        <div class="card">
+            {{#if frontVisible}}
+            <div class="card-front card-face">
+                <span>
+                    {{#if leavesAvailable}}
+                        {{> card-leaves}}
+                    {{/if}}
+                </span>
+            </div>
+            {{else}}
+            <div class="card-back card-face">
+                &nbsp;
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

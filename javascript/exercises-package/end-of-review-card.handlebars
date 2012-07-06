@@ -1,0 +1,17 @@
+<div class="end-of-stack-info">
+    <div class="title clearfix">
+        {{#if reviewsLeft}}
+        <h2>You have {{pluralize reviewsLeft "skill"}} left to review...</h2>
+        {{else}}
+        <h2>You're done reviewing!</h2>
+        {{/if}}
+    </div>
+    <div class="stack-controls">
+        {{#if reviewsLeft}}
+        <input type="button" class="take-a-break to-dashboard simple-button left" value="Pick something else to work on"><input type="button" class="more-stacks default-action simple-button green right" value="Keep reviewing!">
+        {{else}}
+        <input type="button" class="take-a-break to-dashboard default-action simple-button left" value="Head back to your exercise dashboard">
+        {{/if}}
+    </div>
+</div>
+

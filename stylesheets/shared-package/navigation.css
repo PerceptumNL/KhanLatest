@@ -1,0 +1,49 @@
+/* For shared navigation elements */
+
+/* Filtering controls for profile page and moderation queue */
+.tabrow-container {
+    margin: 22px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    font-size: 13px;
+}
+
+.tabrow {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    line-height: 24px;
+    height: 26px;
+    float: right;
+}
+
+.tabrow li {
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    padding: 0 10px;
+}
+
+.tabrow li.selected {
+    background: #FFF;
+    color: #333;
+    z-index: 2;
+    border-bottom-color: #FFF;
+    position: relative;
+}
+
+.tabrow li.selected:after {
+    content: " ";
+    position: absolute;
+    z-index: 3;
+    width: 0;
+    height: 15px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #CCC;
+    left: 50%;
+    margin-left: -7px;
+    bottom: -3px;
+    display: block;
+}

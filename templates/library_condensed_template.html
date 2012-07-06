@@ -1,0 +1,38 @@
+<div id="library">
+  <div id="library-content">
+    <div data-role="header" class="library-content-header">
+      <h2 class='topic-heading topic-heading-first root-topic'>{{root_topic.standalone_title|escape}}</h2>
+    </div>
+    <div data-role="content" class="library-content-list">
+    {% if root_topic.description %}
+      <p class='topic-desc'>{{root_topic.description}}</p>
+    {% endif %}
+    </div>
+    <div class="topic-spacer"></div>
+
+    {% for topic in topics %}
+    <div class="topic-condensed">
+      <h2><a href="{{ topic.topic_page_url }}" data-tag="Search Topic Results">{{ topic.standalone_title|escape }}</a></h2>
+
+      {% if topic.description %}
+      <div class="topic-description">{{ topic.description|escape }}</div>
+      {% endif %}
+
+      {% if topic.subtopics %}
+      <ul>
+        {% for child_topic in topic.subtopics %}
+        <li>
+          <a href="{{ topic.topic_page_url }}#{{ child_topic.id }}" data-tag="Search Topic Results" class="topic-result"><span class="searchresulthighlight">{{ child_topic.title|escape }}</span></a>
+        </li>
+        {% endfor %}
+      </ul>
+      <div style="clear: both"></div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+<!-- Topic tree version: #{{ version_id }}, published {{ version_date }} -->
+

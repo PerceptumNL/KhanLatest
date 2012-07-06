@@ -1,0 +1,47 @@
+<div>
+  <div data-role="header" class="main-header clearfix">
+    <div class="topic-video thumbnail_td">
+      <a href="{{ topic_info.marquee_video.href }}" data-tag="Topic Page Root Featured" data-youtube-id="{{ topic_info.marquee_video.youtube_id }}" class="thumbnail_link modal-video">
+        <div class="thumb" style="background-image:url('{{ topic_info.marquee_video.thumb_urls.hq }}')"></div>
+        <div class="thumbnail_container">
+          <div class="thumbnail_label"><div class="thumbnail_desc">{{{ topic_info.marquee_video.desc_html }}}</div><div class="thumbnail_teaser">{{{ topic_info.marquee_video.teaser_html }}}</div></div>
+        </div>
+      </a>
+    </div>
+    <div class="topic-info">
+      <div class='topic-title'>{{ topic_info.topic.title }}</div>
+      <div class='topic-desc'>{{{ topic_info.topic.description }}}</div>
+    </div>
+  </div>
+  <div class="subtopic-header">Topics</div>
+  <div class="subtopic-list-container">
+  <div class="subtopics-list first">
+    {{#each subtopicsA }}
+      <div class="subtopic thumbnail_td {{#if notFirst }}not-first{{else}}first{{/if}}">
+        <a class="subtopic-link-and-scroll" data-tag="Topic Page Root Subtopic" href="/{{ ../topic_info.extended_slug }}/{{ id }}" data-id="{{ id }}">
+          <div class="thumb" style="background-image:url('{{ thumbnail_link.thumb_urls.hq }}')"></div>
+        <div class="topic-info">
+          <div class="topic-title">{{ title }}</div>
+          <div class="topic-description">{{{ ellipsis description description_truncate_length }}}</div>
+          <div class="topic-video-count">Browse {{ child_count }} videos</div>
+        </div>  
+        </a>
+      </div>
+    {{/each}}
+  </div>
+  <div class="subtopics-list second">
+    {{#each subtopicsB }}
+      <div class="subtopic thumbnail_td {{#if notFirst }}not-first{{else}}first{{/if}}">
+        <a class="subtopic-link-and-scroll" data-tag="Topic Page Root Subtopic" href="/{{ ../topic_info.extended_slug }}/{{ id }}" data-id="{{ id }}">
+          <div class="thumb" style="background-image:url('{{ thumbnail_link.thumb_urls.hq }}')"></div>
+        <div class="topic-info">
+          <div class="topic-title">{{ title }}</div>
+          <div class="topic-description">{{{ ellipsis description description_truncate_length }}}</div>
+          <div class="topic-video-count">Browse {{ child_count }} videos</div>
+        </div>  
+        </a>
+      </div>
+    {{/each}}
+  </div>
+  </div>
+</div>

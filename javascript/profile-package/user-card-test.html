@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<!-- Unit tests and demos for user card -->
+<html>
+<head>
+<script src="../testbase.js"></script>
+<script src="../shared-package/jquery.timeago.js"></script>
+<script src="user-card.js"></script>
+<link rel="stylesheet" type="text/css" href="../../stylesheets/shared-package/default.css"></link>
+<link rel="stylesheet" type="text/css" href="../../stylesheets/profile-package/profile.css"></link>
+<script>
+var SAMPLE_PROFILE_DATA = {
+    "avatarName": "warp_ray",
+    "avatarSrc": "http://www.trinigamers.com/forums/images/avatars/warp_ray_128.gif",
+    "countExercisesProficient": 20,
+    "countVideosCompleted": 10,
+    "dateJoined": "2011-11-16T23:55:12Z",
+    "email": "curious@george.com",
+    "isCoachingLoggedInUser": false,
+    "nickname": "curious george",
+    "points": 10,
+    "publicBadges": []
+};
+
+KA_TEST.loadTemplates([
+    "profile.user-card"
+    ], function() {
+        UserCardView.countVideos = 100;
+        UserCardView.countExercises = 200;
+        var datas = [ {}, SAMPLE_PROFILE_DATA ];
+        $.each(datas, function(index, data) {
+            var model = new ProfileModel(data),
+                view = new UserCardView({model: model}),
+                jel = $("<div>").addClass("user-info-container")
+                        .append(view.render().el)
+                        .css("margin", 20),
+                jelClear = $("<div>").css("clear", "both");
+
+            $("body").append(jel)
+                .append(jelClear);
+        });
+});
+
+</script>
+</head>
+
+<body></body>
+
+</html>

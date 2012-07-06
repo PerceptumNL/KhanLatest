@@ -1,0 +1,26 @@
+<div class="layer backdrop whiteout"></div>
+<div class="layer controls">
+    <form class="popout">
+        <a class="close" href="javascript: void 0">&times;</a>
+        <h2>{{title}}</h2>
+        <p>When you defined matrix addition in the <a href="#defining-matrix-addition">previous question</a>, did A + B turn out to be the same thing as B + A? In other words, was your definition of matrix addition commutative?</p>
+        $$
+            A =
+            \begin{bmatrix}
+            3 & -1 \\
+            2 & 0
+            \end{bmatrix}
+            \hspace{20pt}
+            B =
+            \begin{bmatrix}
+            -7 & 2 \\
+            3 & 5
+            \end{bmatrix}
+        $$
+
+        <label class="radio inline"><input type="radio" name="answer" value="yes"> Yes</label>
+        <label class="radio inline"><input type="radio" name="answer" value="no"> No</label>
+
+        {{>submit-area}}
+    </form>
+</div>

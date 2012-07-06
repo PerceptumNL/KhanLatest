@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Khan Academy</title>
+        {{ js_css_packages.css_package("shared") }}
+        {{ js_css_packages.css_package("bootstrap-grids") }}
+        {{ js_css_packages.css_package("login") }}
+    </head>
+    <body>
+        <div class="create-child completesignup-container card-case vertical-shadow">
+            <div class="create-child completesignup-contents">
+            <img src="/images/hand-tree.png" width="75" height="75" class="tree">
+            <h3>Create <strong>your child's</strong> Khan Academy login.</h3>
+
+            <form method="POST" class="auth-form container" id="create-child-form">
+            {% if transfer_token %}
+            <input type="hidden" name="transfer_token" id="type-input" value={{transfer_token.value}}>
+            {% endif %}
+
+            <div class="field-container row-fluid">
+                <label class="field-label span4" for="birthday">Birthday</label>
+                <div id="birthday-picker" class="span6" data-date="{{ values['birthdate']|escape }}">{# contents filled by JS #}</div>
+
+                {# Note that the actual name of the field sent to the server is "birthdate"
+                   (it is a hidden input populated by the JS) #}
+            </div>
+
+            <div class="field-container row-fluid">
+                <label class="field-label span4" for="gender">Male/Female (optional)</label>
+                <select id="gender" name="gender" class="simple-input ui-corner-all span6">
+                    <option value="unspecified" {% if values['gender'] == 'unspecified' %}selected{% endif %}> </option>
+                    <option value="male" {% if values['gender'] == 'male' %}selected{% endif %}>Male</option>
+                    <option value="female" {% if values['gender'] == 'female' %}selected{% endif %}>Female</option>
+                </select>
+            </div>
+
+            <div class="field-container row-fluid">
+                <label class="field-label span4" for="username">Child's username</label>
+                <input id="username" name="username" class="simple-input ui-corner-all span6" value="{{ values['username']|escape }}">
+            </div>
+
+            <div class="field-container row-fluid">
+                <label class="field-label span4" for="password">Child's password</label>
+                <input id="password" name="password" type="password" class="simple-input ui-corner-all span6">
+                <span class="span2">
+                    <i class="icon icon-question-sign" title="Your child's password can only be changed by you."></i>
+                </span>
+            </div>
+
+            <div class="field-container row-fluid">
+                <span class="span4" style="text-align: right">
+                    <input type="checkbox" value="1" name="allow-coaches" id="allow-coaches">
+                </span>
+                <span class="span6">
+                    <label for="allow-coaches">Allow your child to add other coaches</label>
+                </span>
+                <span class="span2">
+                    <i class="icon icon-question-sign" title="Coaches can see your child's activity on the site, including all exercises and videos they do. You can always change this restriction later."></i>
+                </span>
+            </div>
+
+            <div class="error-container row-fluid">
+                {# Whitespace included so that the layout doesn't change if text is added/removed #}
+                <div class="field-error span10" id="error-text">&nbsp;</div>
+            </div>
+
+            <div class="field-container submit-container row-fluid">
+                <div class="span1">{# spacer #}&nbsp;</div>
+                <div class="span9">
+                    <span class="tos-area">By clicking "Create child account", you agree to our <a href="/about/tos" target="_blank" tabindex="1">Terms of Service</a> and <a href="/about/privacy-policy" target="_blank" tabindex="1">Privacy Policy</a></span>
+                    <input type="button" id="submit-button" name="create-button" value="Create child account" class="simple-button green">
+                </div>
+            </div>
+
+            </form>
+
+            {{ js_css_packages.js_package("shared") }}
+            {{ js_css_packages.js_package("login") }}
+            <script>
+            $(function() {
+                Login.initCreateChildForm({
+                    baseAppUrl: "{{ templatetags.to_insecure_url('/') }}"
+                });
+            });
+            </script>
+            </div>
+        </div>
+    </body>
+</html>
+
+

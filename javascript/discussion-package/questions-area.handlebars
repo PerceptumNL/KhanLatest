@@ -1,0 +1,39 @@
+{{#each questions}}
+{{> thread}}
+{{/each}}
+
+{{> page-controls}}
+
+{{#unless restrictPosting}}
+
+<div class="question_container">
+    {{> question-guide}}
+    <div class="question_form">
+        <form class="question" name="questions">
+            <input type="hidden" id="video_key" class="video_key_primary" name="video_key" value="{{tempVideoKey}}">
+            <div class="question_placeholder requires_script">
+                <textarea name="question_text"
+                          class="question_text"
+                          placeholder="Ask a question about this video">
+                </textarea>
+            </div>
+
+            <!-- TODO(marcia): should be a partial too -->
+            <div class="question_controls_container" style="display: none;">
+                <div class="question_add_controls feedback_add_controls">
+                    <div class="controls">
+                        <input class="simple-button green question_submit"
+                               type="button"
+                               value="Ask your question" />
+                        or <a href="#" class="question_cancel control">Cancel</a>
+                    </div>
+                    <div class="chars_remaining">
+                        <span class="chars_remaining_count">500</span> characters left
+                    </div>
+                    <div class="clearFloat">&nbsp;</div>
+                </div>
+            </div>
+       </form>
+    </div>
+</div>
+{{/unless}}

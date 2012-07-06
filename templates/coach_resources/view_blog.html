@@ -1,0 +1,38 @@
+{% extends "coach_resources/view_toolkit.html" %}
+
+{% import 'macros/mailing_lists.html' as mailing_lists %}
+
+{% block resourcecontent %}
+<div id="schools-blog">
+    <div id="blog-content">
+        {% block posts %}
+        {% for post in posts %}
+        <h2 class="pulls visited-no-recolor"><a href="{{ post.local_url()|escape }}">{{ post.title|escape }}</a></h2>
+        <p class="pulled" style="color: #999; font-style: italic; font-family: Georgia;">{{ post.dt }}</p>
+        <div id="post-content">
+        {{ post.body }}
+        </div>
+        <p><a class="dsq-comment-count" href="{{ post.local_url()|escape }}#disqus_thread">Comments</a></p>
+        <hr style="margin-top: 36px;">
+        {% endfor %}
+        <div id="page-controls">
+            {% if has_prev %}
+                <a href="/coach/schools-blog?offset={{ prev_offset|escape }}" class="simple-button">Newer Posts</a>
+            {% endif %}
+        
+            {% if has_next %}
+                <a href="/coach/schools-blog?offset={{ next_offset|escape }}" class="simple-button">Older Posts</a>
+            {% endif %}
+        </div>
+        <script type="text/javascript">var disqus_url = ""; var disqus_title ="";</script><script type="text/javascript">
+        var disqus_shortname = 'bjk5';
+        (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.src = 'http://disqus.com/forums/bjk5/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        </script>
+        {% endblock posts %}
+    </div>
+</div>
+{% endblock resourcecontent %}

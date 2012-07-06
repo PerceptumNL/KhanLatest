@@ -1,0 +1,121 @@
+{% extends "page_template.html" %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("badge") }}
+{% endblock pagecss %}
+
+{% block meta_facebook_tags -%}
+{% if badge -%}
+        <meta property="og:type" content="{{ App.facebook_app_namespace }}:badge" /> 
+        <meta property="og:title" content="{{ badge.description }}" />
+        <meta property="og:description" content="{{ badge.safe_extended_description }}" />
+        <meta property="og:url" content="{{ badge.absolute_url }}">
+        <meta property="og:image" content="{{ badge.large_icon_src }}" />
+{%- endif %}
+{%- endblock %}
+
+{% block pagecontent %}
+
+{% if badge -%}
+<div class="badge-box">
+<div class="badge-spotlight vertical-shadow">
+    <h2 class="info-box">{{ badge.description }}</h2>
+    <div class="description">
+        {{ badge.safe_extended_description|escape }}
+    </div>
+    <div class="hero-badge">
+        <figure>
+            <p><img src="{{ badge.large_icon_src }}" alt="a large illustration of a {{ badge.type_label()|escape }}">
+            <figcaption>
+                <p class="badge-desc"><span class="badge-type">{{ badge.type_label()|escape }}</span> Badge
+            </figcaption>
+        </figure>
+    <div class="badge-hook info-box">
+        <p class="badge-hook">This is just one of <a title="really, more like a billionty">more than a hundred</a> badges you can earn at Khan Academy.
+        {% if logged_in %}
+        <p class="badge-hook">Why not <a href="/exercisedashboard">start an exercise</a> or <a href="/#browse">watch a video</a> and earn one too?</p>
+        {% else %}
+        <p class="badge-hook"><a href="{{ login_url|escape }}">Login</a> or <a href="{{ templatetags.to_insecure_url('/signup') }}?continue={{continue|urlencode}}">Sign Up</a> right now and get started earning yours today!</p>
+        {% endif %}
+    </div>
+    </div>
+</div>
+</div>
+{%- endif %}
+
+<div class="achievement-badges-explanation">
+    <h3 class="fancy-heading"><span>Badge Types</span></h3>
+    <table style="width:100%" cellspacing="5">
+        <tr>
+            <td style="text-align:center;">
+                <img src="/images/badges/meteorite-small.png" /><br/>
+                <strong>Meteorite</strong> badges are common and easy to earn when just getting started.
+            </td>
+            <td style="text-align:center;">
+                <img src="/images/badges/moon-small.png" /><br/>
+                <strong>Moon</strong> badges are uncommon and represent an investment in learning.
+            </td>
+            <td style="text-align:center;">
+                <img src="/images/badges/earth-small.png" /><br/>
+                <strong>Earth</strong> badges are rare. They require a significant amount of learning.
+            </td>
+            <td style="text-align:center;">
+                <img src="/images/badges/sun-small.png" /><br/>
+                <strong>Sun</strong> badges are epic. Earning them is a true challenge, and they require impressive dedication.
+            </td>
+            <td style="text-align:center;">
+                <img src="/images/badges/eclipse-small.png" /><br/>
+                <strong>Black Hole</strong> badges are legendary and unknown. They are the most unique Khan Academy awards.
+            </td>
+            <td style="text-align:center;">
+                <img src="/images/badges/master-challenge-blue-small.png" /><br/>
+                <strong>Challenge Patches</strong> are special awards for completing topic challenges.
+            </td>
+        </tr>
+    </table>
+</div>
+
+<article class="achievement-badges-container">
+{% if user_badges_master %}
+    <h3 class="fancy-heading"><span>Your Challenge Patches</span></h3>
+    <div class="clear">&nbsp;</div>
+    <div class="centered-badge-container">
+    {% for user_badge in user_badges_master %}
+        {% if user_badge.badge %}
+            {{ badges.badge_block(user_badge.badge, user_badge) }}
+        {% endif %}
+    {% endfor %}
+    </div>
+    <div class="clear">&nbsp;</div>
+{% endif %}
+
+{% if user_badges_normal %}
+    <h3 class="fancy-heading"><span>Your Badges</span></h3>
+    <div class="clear">&nbsp;</div>
+    <div class="centered-badge-container">
+    {% for user_badge in user_badges_normal %}
+        {% if user_badge.badge %}
+            {{ badges.badge_block(user_badge.badge, user_badge) }}
+        {% endif %}
+    {% endfor %}
+    </div>
+    <div class="clear">&nbsp;</div>
+{% endif %}
+
+
+<h2 class="luxe"><span>All Badges</span></h2>
+{% for badge_collection in badge_collections %}
+    <div class="clear">&nbsp;</div>
+    <h3 class="fancy-heading"><span>{{ badge_collection[0].type_label()|escape }}</span></h3>
+    <div class="clear">&nbsp;</div>
+    <div class="centered-badge-container">
+    {% for badge in badge_collection %}
+          <a class="big-button" href="/badges/{{ badge.slug }}">{{ badges.badge_block(badge, None, show_badge_frequencies) }}</a>
+    {% endfor %}
+    </div>
+{% endfor %}
+    <div class="clear">&nbsp;</div>
+</article>
+
+{% endblock pagecontent %}
+

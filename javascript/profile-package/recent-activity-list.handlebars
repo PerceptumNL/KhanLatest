@@ -1,0 +1,12 @@
+{{#if this}}
+    <div class="activity-list">
+        <ul>
+            {{#each this}}
+            {{#renderActivity this}}{{/renderActivity}}
+            {{/each}}
+        </ul>
+    </div>
+{{else}}
+    Recent <a href="/#browse">video</a>, <a href="/exercisedashboard">exercise</a>, and <a href="#achievements">badge</a> activity will show up here.
+{{/if}}
+

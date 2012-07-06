@@ -1,0 +1,33 @@
+{{#if this}}
+    {{#each this}}
+    <div class="feedback-container">
+        <div class="col1 forty-sixty">
+            <p class="author-nickname" data-user-id="{{authorUserId}}">
+                {{authorNickname}}
+                {{#if isSortedByHeuristics}}
+                    <hr>
+                    {{lowQualityScore}}
+                {{/if}}
+            </p>
+            <p>{{pluralize sumVotesIncremented "vote"}},
+               {{flags.length}} flags</p>
+            <p>
+                {{#if isAnswer}}
+                    <a href="{{videoUrl}}?qa_expand_key={{questionKey}}">video</a>
+                {{else}}
+                    <a href="{{videoUrl}}?qa_expand_key={{key}}">link</a>
+                {{/if}}
+            </p>
+        </div>
+        <div class="col2 forty-sixty">
+            <p>{{content}}</p>
+            <p>flags: {{#each flags}}{{this}} {{/each}}</p>
+            <p>flagged by: {{#each flaggedBy}}{{this}} {{/each}}</p>
+            {{> mod-controls}}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    {{/each}}
+{{else}}
+    <p>Wow, congratulations. There are no flagged feedback items awaiting moderator attention!</p>
+{{/if}}

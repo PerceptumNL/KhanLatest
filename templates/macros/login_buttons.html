@@ -1,0 +1,19 @@
+{% macro google_button(google_url) -%}
+<div id="login-google" class="action-gradient provider">
+    <div class="img-container">
+        <a href="{{google_url}}">
+            <img width="180" height="61" alt="Google" src="/images/google-logo-large.png">
+        </a>
+    </div>
+</div>
+{%- endmacro %}
+
+{% macro facebook_button(facebook_app_secret) -%}
+    {% if facebook_app_secret %}
+    <div id="login-facebook" class="action-gradient provider">
+        <div class="img-container">
+        <img width="180" height="61" alt="Facebook" src="/images/facebook-logo-large.png">
+        </div>
+    </div>
+    {% endif %}
+{%- endmacro %}

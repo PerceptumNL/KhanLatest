@@ -1,0 +1,830 @@
+[
+    {
+        "next_video": "obZzOq_wSCg", 
+        "video_position": 1, 
+        "description": "An introduction to probability", 
+        "title": "Basic Probability", 
+        "views": 94092, 
+        "related_videos": [
+            "obZzOq_wSCg"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 498, 
+        "ka_url": "http://www.khanacademy.org/video/basic-probability?playlist=Probability", 
+        "youtube_id": "uzkc-qNVoOk", 
+        "keywords": "math, chance, mutually, exclusive, events, CC_7_SP_5, CC_7_SP_6, CC_7_SP_7, CC_7_SP_7_a, CC_7_SP_7_b, CC_7_SP_8", 
+        "date_added": "2011-08-03 23:27:30", 
+        "youtube_url": "http://www.youtube.com/watch?v=uzkc-qNVoOk&feature=youtube_gdata_player", 
+        "prev_video": "", 
+        "readable_id": "basic-probability"
+    }, 
+    {
+        "next_video": "QE2uR6Z-NcU", 
+        "video_position": 2, 
+        "description": "Probability of compound events.  The Addition Rule.  Common Core Standard 457 S-CP.7", 
+        "title": "Probability with Playing Cards and Venn Diagrams", 
+        "views": 44789, 
+        "related_videos": [
+            "uzkc-qNVoOk", 
+            "QE2uR6Z-NcU"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "New and Noteworthy"
+        ], 
+        "duration": 602, 
+        "ka_url": "http://www.khanacademy.org/video/probability-with-playing-cards-and-venn-diagrams?playlist=Probability", 
+        "youtube_id": "obZzOq_wSCg", 
+        "keywords": "math, chance, probability", 
+        "date_added": "2011-08-03 23:27:30", 
+        "youtube_url": "http://www.youtube.com/watch?v=obZzOq_wSCg&feature=youtube_gdata_player", 
+        "prev_video": "uzkc-qNVoOk", 
+        "readable_id": "probability-with-playing-cards-and-venn-diagrams"
+    }, 
+    {
+        "next_video": "mLE-SlOZToc", 
+        "video_position": 3, 
+        "description": "Venn diagrams and the addition rule for probability", 
+        "title": "Addition Rule for Probability", 
+        "views": 36051, 
+        "related_videos": [
+            "obZzOq_wSCg", 
+            "mLE-SlOZToc"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "New and Noteworthy"
+        ], 
+        "duration": 643, 
+        "ka_url": "http://www.khanacademy.org/video/addition-rule-for-probability?playlist=Probability", 
+        "youtube_id": "QE2uR6Z-NcU", 
+        "keywords": "probability, statistics, venn", 
+        "date_added": "2011-08-06 18:49:26", 
+        "youtube_url": "http://www.youtube.com/watch?v=QE2uR6Z-NcU&feature=youtube_gdata_player", 
+        "prev_video": "obZzOq_wSCg", 
+        "readable_id": "addition-rule-for-probability"
+    }, 
+    {
+        "next_video": "xSc4oLA9e8o", 
+        "video_position": 4, 
+        "description": "Basic probability examples (the type seen in the probability 1 module)", 
+        "title": "Probability 1 Module Examples", 
+        "views": 35593, 
+        "related_videos": [
+            "QE2uR6Z-NcU", 
+            "xSc4oLA9e8o"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 596, 
+        "ka_url": "http://www.khanacademy.org/video/probability-1-module-examples?playlist=Probability", 
+        "youtube_id": "mLE-SlOZToc", 
+        "keywords": "probability, CC_7_SP_6, CC_7_SP_7_a, CC_7_SP_7_b", 
+        "date_added": "2011-04-14 00:00:34", 
+        "youtube_url": "http://www.youtube.com/watch?v=mLE-SlOZToc&feature=youtube_gdata_player", 
+        "prev_video": "QE2uR6Z-NcU", 
+        "readable_id": "probability-1-module-examples"
+    }, 
+    {
+        "next_video": "mkyZ45KQYi4", 
+        "video_position": 5, 
+        "description": "Probability of particular sequences of flips", 
+        "title": "Compound Probability of Independent Events", 
+        "views": 25007, 
+        "related_videos": [
+            "mLE-SlOZToc", 
+            "mkyZ45KQYi4"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 360, 
+        "ka_url": "http://www.khanacademy.org/video/compound-probability-of-independent-events?playlist=Probability", 
+        "youtube_id": "xSc4oLA9e8o", 
+        "keywords": "probability, statistics, coin, fair", 
+        "date_added": "2011-08-09 18:49:33", 
+        "youtube_url": "http://www.youtube.com/watch?v=xSc4oLA9e8o&feature=youtube_gdata_player", 
+        "prev_video": "mLE-SlOZToc", 
+        "readable_id": "compound-probability-of-independent-events"
+    }, 
+    {
+        "next_video": "RI874OSJp1U", 
+        "video_position": 6, 
+        "description": "Probability of getting at least one heads in multiple flips of a fair coin", 
+        "title": "Getting At Least One Heads", 
+        "views": 22011, 
+        "related_videos": [
+            "xSc4oLA9e8o", 
+            "RI874OSJp1U"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 560, 
+        "ka_url": "http://www.khanacademy.org/video/getting-at-least-one-heads?playlist=Probability", 
+        "youtube_id": "mkyZ45KQYi4", 
+        "keywords": "probability, statistics", 
+        "date_added": "2011-08-09 18:49:33", 
+        "youtube_url": "http://www.youtube.com/watch?v=mkyZ45KQYi4&feature=youtube_gdata_player", 
+        "prev_video": "xSc4oLA9e8o", 
+        "readable_id": "getting-at-least-one-heads"
+    }, 
+    {
+        "next_video": "8TIben0bJpU", 
+        "video_position": 7, 
+        "description": "A different way of thinking about probability when we don't have equally likely events", 
+        "title": "Frequency Probability and Unfair Coins", 
+        "views": 17410, 
+        "related_videos": [
+            "mkyZ45KQYi4", 
+            "8TIben0bJpU"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 538, 
+        "ka_url": "http://www.khanacademy.org/video/frequency-probability-and-unfair-coins?playlist=Probability", 
+        "youtube_id": "RI874OSJp1U", 
+        "keywords": "probability, statistics, chance", 
+        "date_added": "2011-08-09 18:49:33", 
+        "youtube_url": "http://www.youtube.com/watch?v=RI874OSJp1U&feature=youtube_gdata_player", 
+        "prev_video": "mkyZ45KQYi4", 
+        "readable_id": "frequency-probability-and-unfair-coins"
+    }, 
+    {
+        "next_video": "udG9KhNMKJw", 
+        "video_position": 8, 
+        "description": "A different way to think about the probability of getting 2 heads in 4 flips", 
+        "title": "Getting Exactly Two Heads (Combinatorics)", 
+        "views": 17368, 
+        "related_videos": [
+            "RI874OSJp1U", 
+            "udG9KhNMKJw"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 600, 
+        "ka_url": "http://www.khanacademy.org/video/getting-exactly-two-heads--combinatorics?playlist=Probability", 
+        "youtube_id": "8TIben0bJpU", 
+        "keywords": "probability, combinatorics", 
+        "date_added": "2011-08-10 18:49:33", 
+        "youtube_url": "http://www.youtube.com/watch?v=8TIben0bJpU&feature=youtube_gdata_player", 
+        "prev_video": "RI874OSJp1U", 
+        "readable_id": "getting-exactly-two-heads--combinatorics"
+    }, 
+    {
+        "next_video": "AOsWph2FNLw", 
+        "video_position": 9, 
+        "description": "Probability of exactly 3 heads in 5 flips using combinations", 
+        "title": "Exactly Three Heads in Five Flips", 
+        "views": 15606, 
+        "related_videos": [
+            "8TIben0bJpU", 
+            "AOsWph2FNLw"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 411, 
+        "ka_url": "http://www.khanacademy.org/video/exactly-three-heads-in-five-flips?playlist=Probability", 
+        "youtube_id": "udG9KhNMKJw", 
+        "keywords": "probability, statistics", 
+        "date_added": "2011-08-10 18:49:33", 
+        "youtube_url": "http://www.youtube.com/watch?v=udG9KhNMKJw&feature=youtube_gdata_player", 
+        "prev_video": "8TIben0bJpU", 
+        "readable_id": "exactly-three-heads-in-five-flips"
+    }, 
+    {
+        "next_video": "6E_NVnboMB8", 
+        "video_position": 10, 
+        "description": "Conceptual understanding of where the formula for binomial coefficients come from", 
+        "title": "Generalizing with Binomial Coefficients (bit advanced)", 
+        "views": 16724, 
+        "related_videos": [
+            "udG9KhNMKJw", 
+            "6E_NVnboMB8"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 700, 
+        "ka_url": "http://www.khanacademy.org/video/generalizing-with-binomial-coefficients--bit-advanced?playlist=Probability", 
+        "youtube_id": "AOsWph2FNLw", 
+        "keywords": "probability, combinations", 
+        "date_added": "2011-08-10 18:49:33", 
+        "youtube_url": "http://www.youtube.com/watch?v=AOsWph2FNLw&feature=youtube_gdata_player", 
+        "prev_video": "udG9KhNMKJw", 
+        "readable_id": "generalizing-with-binomial-coefficients--bit-advanced"
+    }, 
+    {
+        "next_video": "wBDOCvHYckE", 
+        "video_position": 11, 
+        "description": "Let's flip a coin.", 
+        "title": "Probability (part 2)", 
+        "views": 155931, 
+        "related_videos": [
+            "AOsWph2FNLw", 
+            "wBDOCvHYckE"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 594, 
+        "ka_url": "http://www.khanacademy.org/video/probability--part-2?playlist=Probability", 
+        "youtube_id": "6E_NVnboMB8", 
+        "keywords": "probability, CC_7_SP_5, CC_7_SP_6, CC_7_SP_7, CC_7_SP_7_a, CC_7_SP_7_b, CC_7_SP_8, CC_7_SP_8_a, CC_7_SP_8_b", 
+        "date_added": "2011-02-20 16:52:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=6E_NVnboMB8&feature=youtube_gdata_player", 
+        "prev_video": "AOsWph2FNLw", 
+        "readable_id": "probability--part-2"
+    }, 
+    {
+        "next_video": "W581OBM9rAY", 
+        "video_position": 12, 
+        "description": "More on probability.", 
+        "title": "Probability (part 3)", 
+        "views": 112628, 
+        "related_videos": [
+            "6E_NVnboMB8", 
+            "W581OBM9rAY"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 606, 
+        "ka_url": "http://www.khanacademy.org/video/probability--part-3?playlist=Probability", 
+        "youtube_id": "wBDOCvHYckE", 
+        "keywords": "probability, CC_7_SP_5, CC_7_SP_6, CC_7_SP_7, CC_7_SP_7_a, CC_7_SP_7_b, CC_7_SP_8, CC_7_SP_8_a, CC_7_SP_8_b", 
+        "date_added": "2011-02-20 16:52:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=wBDOCvHYckE&feature=youtube_gdata_player", 
+        "prev_video": "6E_NVnboMB8", 
+        "readable_id": "probability--part-3"
+    }, 
+    {
+        "next_video": "2XToWi9j0Tk", 
+        "video_position": 13, 
+        "description": "More on free throws.", 
+        "title": "Probability (part 4)", 
+        "views": 84551, 
+        "related_videos": [
+            "wBDOCvHYckE", 
+            "2XToWi9j0Tk"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 599, 
+        "ka_url": "http://www.khanacademy.org/video/probability--part-4?playlist=Probability", 
+        "youtube_id": "W581OBM9rAY", 
+        "keywords": "probability, CC_7_SP_5, CC_7_SP_6, CC_7_SP_7, CC_7_SP_7_b, CC_7_SP_8, CC_7_SP_8_a, CC_7_SP_8_b, CC_7_SP_8_c", 
+        "date_added": "2011-02-20 16:52:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=W581OBM9rAY&feature=youtube_gdata_player", 
+        "prev_video": "wBDOCvHYckE", 
+        "readable_id": "probability--part-4"
+    }, 
+    {
+        "next_video": "xf3vfczoCho", 
+        "video_position": 14, 
+        "description": "Probability of getting a certain number roll in Monopoly", 
+        "title": "Probability (part 5)", 
+        "views": 72376, 
+        "related_videos": [
+            "W581OBM9rAY", 
+            "xf3vfczoCho"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 607, 
+        "ka_url": "http://www.khanacademy.org/video/probability--part-5?playlist=Probability", 
+        "youtube_id": "2XToWi9j0Tk", 
+        "keywords": "probability, CC_7_SP_5, CC_7_SP_6, CC_7_SP_7, CC_7_SP_7_a, CC_7_SP_7_b, CC_7_SP_8, CC_7_SP_8_a, CC_7_SP_8_b, CC_7_SP_8_c", 
+        "date_added": "2011-02-20 16:52:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=2XToWi9j0Tk&feature=youtube_gdata_player", 
+        "prev_video": "W581OBM9rAY", 
+        "readable_id": "probability--part-5"
+    }, 
+    {
+        "next_video": "xPUm5SUVzTE", 
+        "video_position": 15, 
+        "description": "Introduction to conditional probability", 
+        "title": "Probability (part 6)", 
+        "views": 96157, 
+        "related_videos": [
+            "2XToWi9j0Tk", 
+            "xPUm5SUVzTE"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 556, 
+        "ka_url": "http://www.khanacademy.org/video/probability--part-6?playlist=Probability", 
+        "youtube_id": "xf3vfczoCho", 
+        "keywords": "conditional, probability, CC_7_SP_5, CC_7_SP_6, CC_7_SP_7, CC_7_SP_7_b, CC_7_SP_8, CC_7_SP_8_a, CC_7_SP_8_b", 
+        "date_added": "2011-02-20 16:52:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=xf3vfczoCho&feature=youtube_gdata_player", 
+        "prev_video": "2XToWi9j0Tk", 
+        "readable_id": "probability--part-6"
+    }, 
+    {
+        "next_video": "7BkcNLOf56w", 
+        "video_position": 16, 
+        "description": "Example of the type of problem in the Khan Academy Dependent Probability module", 
+        "title": "Dependent Probability Example 1", 
+        "views": 29423, 
+        "related_videos": [
+            "xf3vfczoCho", 
+            "7BkcNLOf56w"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 541, 
+        "ka_url": "http://www.khanacademy.org/video/dependent-probability-example-1?playlist=Probability", 
+        "youtube_id": "xPUm5SUVzTE", 
+        "keywords": "probability, coins, unfair", 
+        "date_added": "2011-05-23 23:27:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=xPUm5SUVzTE&feature=youtube_gdata_player", 
+        "prev_video": "xf3vfczoCho", 
+        "readable_id": "dependent-probability-example-1"
+    }, 
+    {
+        "next_video": "BLcgeLALLnc", 
+        "video_position": 17, 
+        "description": "Another example of dependent probability", 
+        "title": "Dependent Probability Example 2", 
+        "views": 17627, 
+        "related_videos": [
+            "xPUm5SUVzTE", 
+            "BLcgeLALLnc"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 394, 
+        "ka_url": "http://www.khanacademy.org/video/dependent-probability-example-2?playlist=Probability", 
+        "youtube_id": "7BkcNLOf56w", 
+        "keywords": "coin, unfair, CC_7_SP_5, CC_7_SP_6, CC_7_SP_7, CC_7_SP_7_b, CC_7_SP_8, CC_7_SP_8_a, CC_7_SP_8_b", 
+        "date_added": "2011-05-23 23:27:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=7BkcNLOf56w&feature=youtube_gdata_player", 
+        "prev_video": "xPUm5SUVzTE", 
+        "readable_id": "dependent-probability-example-2"
+    }, 
+    {
+        "next_video": "VVr8snbaxZg", 
+        "video_position": 18, 
+        "description": "More on conditional probability.  Touch on Bayes' Theorem.", 
+        "title": "Probability (part 7)", 
+        "views": 88990, 
+        "related_videos": [
+            "7BkcNLOf56w", 
+            "VVr8snbaxZg"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 605, 
+        "ka_url": "http://www.khanacademy.org/video/probability--part-7?playlist=Probability", 
+        "youtube_id": "BLcgeLALLnc", 
+        "keywords": "conditional, probability, bayes, theorem, CC_7_SP_5, CC_7_SP_6, CC_7_SP_7, CC_7_SP_7_b, CC_7_SP_8, CC_7_SP_8_a, CC_7_SP_8_b", 
+        "date_added": "2011-02-20 16:52:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=BLcgeLALLnc&feature=youtube_gdata_player", 
+        "prev_video": "7BkcNLOf56w", 
+        "readable_id": "probability--part-7"
+    }, 
+    {
+        "next_video": "XqQTXW7XfYA", 
+        "video_position": 19, 
+        "description": "Introduction to Bayes' Theorem", 
+        "title": "Probability (part 8)", 
+        "views": 75926, 
+        "related_videos": [
+            "BLcgeLALLnc", 
+            "XqQTXW7XfYA"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 323, 
+        "ka_url": "http://www.khanacademy.org/video/probability--part-8?playlist=Probability", 
+        "youtube_id": "VVr8snbaxZg", 
+        "keywords": "conditional, probability, bayes, CC_7_SP_8_a", 
+        "date_added": "2011-02-20 16:52:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=VVr8snbaxZg&feature=youtube_gdata_player", 
+        "prev_video": "BLcgeLALLnc", 
+        "readable_id": "probability--part-8"
+    }, 
+    {
+        "next_video": "bCxMhncR7PU", 
+        "video_position": 20, 
+        "description": "Introduction to permutations", 
+        "title": "Permutations", 
+        "views": 114375, 
+        "related_videos": [
+            "VVr8snbaxZg", 
+            "bCxMhncR7PU"
+        ], 
+        "playlist_titles": [
+            "Precalculus", 
+            "Probability"
+        ], 
+        "duration": 611, 
+        "ka_url": "http://www.khanacademy.org/video/permutations?playlist=Probability", 
+        "youtube_id": "XqQTXW7XfYA", 
+        "keywords": "permutations", 
+        "date_added": "2011-02-20 16:51:38", 
+        "youtube_url": "http://www.youtube.com/watch?v=XqQTXW7XfYA&feature=youtube_gdata_player", 
+        "prev_video": "VVr8snbaxZg", 
+        "readable_id": "permutations"
+    }, 
+    {
+        "next_video": "Xqfcy1rqMbI", 
+        "video_position": 21, 
+        "description": "Introduction to combinations", 
+        "title": "Combinations", 
+        "views": 94250, 
+        "related_videos": [
+            "XqQTXW7XfYA", 
+            "Xqfcy1rqMbI"
+        ], 
+        "playlist_titles": [
+            "Precalculus", 
+            "Probability"
+        ], 
+        "duration": 616, 
+        "ka_url": "http://www.khanacademy.org/video/combinations?playlist=Probability", 
+        "youtube_id": "bCxMhncR7PU", 
+        "keywords": "combinations", 
+        "date_added": "2011-02-20 16:51:38", 
+        "youtube_url": "http://www.youtube.com/watch?v=bCxMhncR7PU&feature=youtube_gdata_player", 
+        "prev_video": "XqQTXW7XfYA", 
+        "readable_id": "combinations"
+    }, 
+    {
+        "next_video": "W7DmsJKLoxc", 
+        "video_position": 22, 
+        "description": "Probability of getting exactly 3 heads in 8 flips of a fair coin.", 
+        "title": "Probability using Combinations", 
+        "views": 62637, 
+        "related_videos": [
+            "bCxMhncR7PU", 
+            "W7DmsJKLoxc"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 550, 
+        "ka_url": "http://www.khanacademy.org/video/probability-using-combinations?playlist=Probability", 
+        "youtube_id": "Xqfcy1rqMbI", 
+        "keywords": "probability, combinations, coin", 
+        "date_added": "2011-02-20 16:52:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=Xqfcy1rqMbI&feature=youtube_gdata_player", 
+        "prev_video": "bCxMhncR7PU", 
+        "readable_id": "probability-using-combinations"
+    }, 
+    {
+        "next_video": "xw6utjoyMi4", 
+        "video_position": 23, 
+        "description": "Making at least 3 out of 5 free throws.", 
+        "title": "Probability and Combinations (part 2)", 
+        "views": 38645, 
+        "related_videos": [
+            "Xqfcy1rqMbI", 
+            "xw6utjoyMi4"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 636, 
+        "ka_url": "http://www.khanacademy.org/video/probability-and-combinations--part-2?playlist=Probability", 
+        "youtube_id": "W7DmsJKLoxc", 
+        "keywords": "probability, combinations, basketball", 
+        "date_added": "2011-02-20 16:52:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=W7DmsJKLoxc&feature=youtube_gdata_player", 
+        "prev_video": "Xqfcy1rqMbI", 
+        "readable_id": "probability-and-combinations--part-2"
+    }, 
+    {
+        "next_video": "9G0w61pZPig", 
+        "video_position": 24, 
+        "description": "Probability that I picked a fair coin given that I flipped 4 out of 6 heads.", 
+        "title": "Conditional Probability and Combinations", 
+        "views": 76185, 
+        "related_videos": [
+            "W7DmsJKLoxc", 
+            "9G0w61pZPig"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 1012, 
+        "ka_url": "http://www.khanacademy.org/video/conditional-probability-and-combinations?playlist=Probability", 
+        "youtube_id": "xw6utjoyMi4", 
+        "keywords": "conditional, probability, combinations", 
+        "date_added": "2011-02-20 16:52:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=xw6utjoyMi4&feature=youtube_gdata_player", 
+        "prev_video": "W7DmsJKLoxc", 
+        "readable_id": "conditional-probability-and-combinations"
+    }, 
+    {
+        "next_video": "IYdiKeQ9xEI", 
+        "video_position": 25, 
+        "description": "The probability that at least 2 people in a room of 30 share the same birthday.", 
+        "title": "Birthday Probability Problem", 
+        "views": 46532, 
+        "related_videos": [
+            "xw6utjoyMi4", 
+            "IYdiKeQ9xEI"
+        ], 
+        "playlist_titles": [
+            "Probability"
+        ], 
+        "duration": 796, 
+        "ka_url": "http://www.khanacademy.org/video/birthday-probability-problem?playlist=Probability", 
+        "youtube_id": "9G0w61pZPig", 
+        "keywords": "probability, birthday", 
+        "date_added": "2011-02-20 16:52:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=9G0w61pZPig&feature=youtube_gdata_player", 
+        "prev_video": "xw6utjoyMi4", 
+        "readable_id": "birthday-probability-problem"
+    }, 
+    {
+        "next_video": "Fvi9A_tEmXQ", 
+        "video_position": 26, 
+        "description": "Introduction to random variables and probability distribution functions.", 
+        "title": "Introduction to Random Variables", 
+        "views": 165451, 
+        "related_videos": [
+            "9G0w61pZPig", 
+            "Fvi9A_tEmXQ"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Statistics"
+        ], 
+        "duration": 724, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-random-variables?playlist=Probability", 
+        "youtube_id": "IYdiKeQ9xEI", 
+        "keywords": "random, variable, statistics, probability, distribution, CC_7_SP_8_c", 
+        "date_added": "2011-02-20 16:52:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=IYdiKeQ9xEI&feature=youtube_gdata_player", 
+        "prev_video": "9G0w61pZPig", 
+        "readable_id": "introduction-to-random-variables"
+    }, 
+    {
+        "next_video": "O12yTz_8EOw", 
+        "video_position": 27, 
+        "description": "Probability density functions for continuous random variables.", 
+        "title": "Probability Density Functions", 
+        "views": 193375, 
+        "related_videos": [
+            "IYdiKeQ9xEI", 
+            "O12yTz_8EOw"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Statistics"
+        ], 
+        "duration": 602, 
+        "ka_url": "http://www.khanacademy.org/video/probability-density-functions?playlist=Probability", 
+        "youtube_id": "Fvi9A_tEmXQ", 
+        "keywords": "random, variable, continuous, probability, density, function, CC_7_SP_7_b", 
+        "date_added": "2011-02-20 16:52:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=Fvi9A_tEmXQ&feature=youtube_gdata_player", 
+        "prev_video": "IYdiKeQ9xEI", 
+        "readable_id": "probability-density-functions"
+    }, 
+    {
+        "next_video": "FI8xtVaI068", 
+        "video_position": 28, 
+        "description": "Introduction to the binomial distribution", 
+        "title": "Binomial Distribution 1", 
+        "views": 192937, 
+        "related_videos": [
+            "Fvi9A_tEmXQ", 
+            "FI8xtVaI068"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Statistics"
+        ], 
+        "duration": 736, 
+        "ka_url": "http://www.khanacademy.org/video/binomial-distribution-1?playlist=Probability", 
+        "youtube_id": "O12yTz_8EOw", 
+        "keywords": "probability, discrete, binomial, distribution", 
+        "date_added": "2011-02-20 16:52:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=O12yTz_8EOw&feature=youtube_gdata_player", 
+        "prev_video": "Fvi9A_tEmXQ", 
+        "readable_id": "binomial-distribution-1"
+    }, 
+    {
+        "next_video": "vKNpQ_KTXvE", 
+        "video_position": 29, 
+        "description": "More on the binomial distribution", 
+        "title": "Binomial Distribution 2", 
+        "views": 99374, 
+        "related_videos": [
+            "O12yTz_8EOw", 
+            "vKNpQ_KTXvE"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Statistics"
+        ], 
+        "duration": 665, 
+        "ka_url": "http://www.khanacademy.org/video/binomial-distribution-2?playlist=Probability", 
+        "youtube_id": "FI8xtVaI068", 
+        "keywords": "probability, binomial, distribution", 
+        "date_added": "2011-02-20 16:52:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=FI8xtVaI068&feature=youtube_gdata_player", 
+        "prev_video": "O12yTz_8EOw", 
+        "readable_id": "binomial-distribution-2"
+    }, 
+    {
+        "next_video": "H0ZgOGWUcJw", 
+        "video_position": 30, 
+        "description": "Basketball binomial distribution", 
+        "title": "Binomial Distribution 3", 
+        "views": 73114, 
+        "related_videos": [
+            "FI8xtVaI068", 
+            "H0ZgOGWUcJw"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Statistics"
+        ], 
+        "duration": 806, 
+        "ka_url": "http://www.khanacademy.org/video/binomial-distribution-3?playlist=Probability", 
+        "youtube_id": "vKNpQ_KTXvE", 
+        "keywords": "basketball, binomial, distribution, probability", 
+        "date_added": "2011-02-20 16:52:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=vKNpQ_KTXvE&feature=youtube_gdata_player", 
+        "prev_video": "FI8xtVaI068", 
+        "readable_id": "binomial-distribution-3"
+    }, 
+    {
+        "next_video": "j__Kredt7vY", 
+        "video_position": 31, 
+        "description": "Using Excel to visualize the basketball binomial distribution", 
+        "title": "Binomial Distribution 4", 
+        "views": 60299, 
+        "related_videos": [
+            "vKNpQ_KTXvE", 
+            "j__Kredt7vY"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Statistics"
+        ], 
+        "duration": 646, 
+        "ka_url": "http://www.khanacademy.org/video/binomial-distribution-4?playlist=Probability", 
+        "youtube_id": "H0ZgOGWUcJw", 
+        "keywords": "excel, binomial, distribution, probability", 
+        "date_added": "2011-02-20 16:52:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=H0ZgOGWUcJw&feature=youtube_gdata_player", 
+        "prev_video": "vKNpQ_KTXvE", 
+        "readable_id": "binomial-distribution-4"
+    }, 
+    {
+        "next_video": "SqcxYnNlI3Y", 
+        "video_position": 32, 
+        "description": "Expected value of a random variable", 
+        "title": "Expected Value: E(X)", 
+        "views": 121849, 
+        "related_videos": [
+            "H0ZgOGWUcJw", 
+            "SqcxYnNlI3Y"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Statistics"
+        ], 
+        "duration": 893, 
+        "ka_url": "http://www.khanacademy.org/video/expected-value--e-x?playlist=Probability", 
+        "youtube_id": "j__Kredt7vY", 
+        "keywords": "expected, value, E(X), population, mean", 
+        "date_added": "2011-02-20 16:52:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=j__Kredt7vY&feature=youtube_gdata_player", 
+        "prev_video": "H0ZgOGWUcJw", 
+        "readable_id": "expected-value--e-x"
+    }, 
+    {
+        "next_video": "3z-M6sbGIZ0", 
+        "video_position": 33, 
+        "description": "Expected value of a binomial distributed random variable", 
+        "title": "Expected Value of Binomial Distribution", 
+        "views": 67932, 
+        "related_videos": [
+            "j__Kredt7vY", 
+            "3z-M6sbGIZ0"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Statistics"
+        ], 
+        "duration": 1015, 
+        "ka_url": "http://www.khanacademy.org/video/expected-value-of-binomial-distribution?playlist=Probability", 
+        "youtube_id": "SqcxYnNlI3Y", 
+        "keywords": "expected, value, binomial, distribution, E(x)", 
+        "date_added": "2011-02-20 16:52:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=SqcxYnNlI3Y&feature=youtube_gdata_player", 
+        "prev_video": "j__Kredt7vY", 
+        "readable_id": "expected-value-of-binomial-distribution"
+    }, 
+    {
+        "next_video": "Jkr4FSrNEVY", 
+        "video_position": 34, 
+        "description": "Introduction to Poisson Processes and the Poisson Distribution.", 
+        "title": "Poisson Process 1", 
+        "views": 97241, 
+        "related_videos": [
+            "SqcxYnNlI3Y", 
+            "Jkr4FSrNEVY"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Statistics"
+        ], 
+        "duration": 661, 
+        "ka_url": "http://www.khanacademy.org/video/poisson-process-1?playlist=Probability", 
+        "youtube_id": "3z-M6sbGIZ0", 
+        "keywords": "probability, poisson, process, distribution", 
+        "date_added": "2011-02-20 16:52:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=3z-M6sbGIZ0&feature=youtube_gdata_player", 
+        "prev_video": "SqcxYnNlI3Y", 
+        "readable_id": "poisson-process-1"
+    }, 
+    {
+        "next_video": "VpuN8vCQ--M", 
+        "video_position": 35, 
+        "description": "More of the derivation of the Poisson Distribution.", 
+        "title": "Poisson Process 2", 
+        "views": 55172, 
+        "related_videos": [
+            "3z-M6sbGIZ0", 
+            "VpuN8vCQ--M"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Statistics"
+        ], 
+        "duration": 761, 
+        "ka_url": "http://www.khanacademy.org/video/poisson-process-2?playlist=Probability", 
+        "youtube_id": "Jkr4FSrNEVY", 
+        "keywords": "probability, poisson, process, distribution", 
+        "date_added": "2011-02-20 16:52:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=Jkr4FSrNEVY&feature=youtube_gdata_player", 
+        "prev_video": "3z-M6sbGIZ0", 
+        "readable_id": "poisson-process-2"
+    }, 
+    {
+        "next_video": "NSSoMafbBqQ", 
+        "video_position": 36, 
+        "description": "Introduction to the law of large numbers", 
+        "title": "Law of Large Numbers", 
+        "views": 64787, 
+        "related_videos": [
+            "Jkr4FSrNEVY", 
+            "NSSoMafbBqQ"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Statistics"
+        ], 
+        "duration": 539, 
+        "ka_url": "http://www.khanacademy.org/video/law-of-large-numbers?playlist=Probability", 
+        "youtube_id": "VpuN8vCQ--M", 
+        "keywords": "probability, law, of, large, numbers, statistics, CC_6_SP_5_c, CC_7_SP_1, CC_7_SP_2, CC_8_SP_1", 
+        "date_added": "2011-02-20 16:52:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=VpuN8vCQ--M&feature=youtube_gdata_player", 
+        "prev_video": "Jkr4FSrNEVY", 
+        "readable_id": "law-of-large-numbers"
+    }, 
+    {
+        "next_video": "", 
+        "video_position": 37, 
+        "description": "Understanding an insurance company's sense of my chances of dying.", 
+        "title": "Term Life Insurance and Death Probability", 
+        "views": 11782, 
+        "related_videos": [
+            "VpuN8vCQ--M"
+        ], 
+        "playlist_titles": [
+            "Probability", 
+            "Finance"
+        ], 
+        "duration": 262, 
+        "ka_url": "http://www.khanacademy.org/video/term-life-insurance-and-death-probability?playlist=Probability", 
+        "youtube_id": "NSSoMafbBqQ", 
+        "keywords": "term, life, insurance", 
+        "date_added": "2011-04-19 23:27:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=NSSoMafbBqQ&feature=youtube_gdata_player", 
+        "prev_video": "VpuN8vCQ--M", 
+        "readable_id": "term-life-insurance-and-death-probability"
+    }
+]

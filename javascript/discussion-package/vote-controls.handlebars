@@ -1,0 +1,19 @@
+<div class="vote_tools">
+    <div class="control vote_tools_show" >
+        <a href="#" class="control vote_for {{#if upVoted}}voted{{/if}}" 
+                title="Vote up, this is encouraging or helpful (click again to undo)"
+                data-key="{{key}}"
+                data-vote-type="1">
+            <img src="/images/vote-up-gray.png" class="vote_up_gray">
+            <img src="/images/vote-up.png" class="vote_up">
+        </a>
+        <div class="sum_votes">{{sumVotesIncremented}}</div>
+        <a href="#" class="control vote_for {{#if downVoted}}voted{{/if}}"
+                title="Vote down, this is not encouraging or helpful (click again to undo)"
+                data-key="{{key}}"
+                data-vote-type="-1">
+            <img src="/images/vote-down-gray.png" class="vote_down_gray">
+            <img src="/images/vote-down.png" class="vote_down">
+        </a>
+    </div>
+</div>

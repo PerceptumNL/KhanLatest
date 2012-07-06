@@ -1,0 +1,114 @@
+{% extends "page_template.html" %}
+{% block meta_page_title %}Sign In | {% endblock meta_page_title %}
+{% block pagetitle %}{% endblock pagetitle %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("login") }}
+    <style>
+    .u13-container {
+        width: 420px;
+        margin: 6em auto;
+        padding: 2em;
+        font-size: 13px;
+    }
+
+    .u13-container img.tree {
+        float: left;
+    }
+    .u13-container h3 {
+        margin-top: 1em;
+        margin-left: 90px;
+    }
+
+    .u13-container .message {
+        margin: 2em 0;
+    }
+
+    .u13-container .simple-input {
+        width: 17em;
+        margin: 0 0.5em;
+    }
+
+    .u13-container .faq-link-container {
+        padding: 1em 0;
+        text-align: right;
+    }
+    .u13-container .faq-link {
+        font-size: 11px;
+    }
+
+    .u13-container .error-container {
+        margin-left: 7.5em;
+    }
+    </style>
+{% endblock pagecss %}
+
+{% block pagecontent %}
+<article id="page-root" style="padding: 20px 0;">
+    <div class="u13-container card-case vertical-shadow">
+        <img src="/images/hand-tree.png" width="75" height="75" class="tree">
+        <h3>{% if parent_registered %}Waiting For Parent or Guardian to Complete Signup{% else %}Child Account Signup{% endif %}</h3>
+        <div style="clear: both"></div>
+
+        <div class="message">
+            Thanks for your interest in Khan Academy! To go on, we need your parent to complete the signup process.
+        </div>
+
+        {% if not parent_registered %}
+        <form class="auth-form" method="POST">
+            Please enter your parent or guardian's email address here and we'll send them instructions for the next step in your signup.
+            <br>
+            <br>
+            <div class="parent-field-container">
+                <label for="parent-email">Parent's email</label>
+                <input id="parent-email" name="parent-email" class="simple-input ui-corner-all">
+                <input id="submit-button" class="simple-button green" value="Submit" type="button">
+            </div>
+            <div class="error-container">
+                <span class="field-error"></span>
+            </div>
+        </form>
+        {% else %}
+        We've sent information to your parent or guardian for completing your signup. Please have them check their e-mail (make sure to check their "Spam" or "Junk" folder in case it got lost there).
+        {% endif %}
+        <div class="faq-link-container">
+            <a class="faq-link" href="http://khanacademy.desk.com/customer/portal/articles/337876-how-do-i-login-if-my-child-is-under-age-13-">
+                Questions about creating an account?
+            </a>
+        </div>
+    </div>
+</article>
+{% endblock pagecontent %}
+
+{% block bottompagescript %}
+<script>
+function submitParentEmail() {
+    $("#submit-button").attr("disabled", true);
+    $.ajax({
+        type: "POST",
+        url: "/parentsignup",
+        data: $(".auth-form").serialize(),
+        dataType: "json",
+        success: function(data) {
+            if (data["error"]) {
+                $(".field-error").text(data["error"]);
+                $("#submit-button").attr("enabled", true);
+            } else {
+                createCookie("u13", "notifiedparent");
+                $(".auth-form").text("Great! We've sent information to your parent or guardian for completing your signup. Please have them check their e-mail.");
+            }
+        }
+    });
+}
+$("#submit-button").click(function(e) {
+    e.preventDefault();
+    submitParentEmail()
+});
+$("#parent-email").on("keypress", function(e) {
+    if (e.keyCode == $.ui.keyCode.ENTER) {
+        e.preventDefault();
+        submitParentEmail();
+    }
+});
+</script>
+{% endblock bottompagescript %}

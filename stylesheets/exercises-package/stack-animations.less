@@ -1,0 +1,174 @@
+/* Stack Key Frame Animations */
+/* Stack to current card to finished stack animations */
+@-webkit-keyframes move-center-to-ur {
+    85% { .translate(510px, -202px); }
+    100% { .translate(510px, -202px); }
+}
+
+@-webkit-keyframes shrink-right-and-fade {
+    85% { .opacity(15); .scale(0.1); }
+    100% { .opacity(0); .scale(0.1); }
+}
+
+@-moz-keyframes move-center-to-ur {
+	85% { .translate(510px, -202px); }
+    100% { .translate(510px, -202px); }
+}
+
+@-moz-keyframes shrink-right-and-fade {
+    85% { .opacity(15); .scale(0.1); }
+    100% { .opacity(0); .scale(0.1); }
+}
+
+@-ms-keyframes move-center-to-ur {
+    85% { .translate(510px, -202px); }
+    100% { .translate(510px, -202px); }
+}
+
+@-ms-keyframes shrink-right-and-fade {
+    85% { .opacity(15); .scale(0.1); }
+    100% { .opacity(0); .scale(0.1); }
+}
+
+/* Apply leaf to current card */
+
+@-webkit-keyframes fly-in-leaf {
+    0% { .scale(8); .opacity(0); }
+    66% { .scale(1); .opacity(17); }
+    100% { .scale(1); .opacity(100); }
+}
+
+@-moz-keyframes fly-in-leaf {
+    0% { .scale(8); .opacity(0); }
+    66% { .scale(1); .opacity(17); }
+    100% { .scale(1); .opacity(100); }
+}
+
+@-ms-keyframes fly-in-leaf {
+    0% { .scale(8); .opacity(0); }
+    66% { .scale(1); .opacity(17); }
+    100% { .scale(1); .opacity(100); }
+}
+
+/* End of stack progress bar animations */
+
+/** 
+ * Leaving out the "to" or 100% state in these keyframe animations 
+ * causes the fill to animate based on the inline width.
+ */
+
+@-webkit-keyframes progress-bar {
+   0% { width: 0; .opacity(60); }
+}
+@-moz-keyframes progress-bar {
+   0% { width: 0; .opacity(60); }
+}
+@-ms-keyframes progress-bar {
+   0% { width: 0; .opacity(60); }
+}
+
+@-webkit-keyframes progress-bar-proficient {
+   0% { .opacity(0); }
+   66% { .opacity(0); } /* Keep opacity at 0 until progress bar is done filling */
+}
+@-moz-keyframes progress-bar-proficient {
+   0% { .opacity(0); }
+   66% { .opacity(0); } /* Keep opacity at 0 until progress bar is done filling */
+}
+@-ms-keyframes progress-bar-proficient {
+   0% { .opacity(0); }
+   66% { .opacity(0); } /* Keep opacity at 0 until progress bar is done filling */
+}
+
+/**
+ * End-of-stack calculation in-progress animations
+ */
+.stack .card-container.into-pocket,
+.stack .card-container.into-pocket .card-container-inner {
+    -webkit-animation-duration: 0.55s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+
+    -moz-animation-duration: 0.55s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-fill-mode: forwards;
+
+    -ms-animation-duration: 0.55s;
+    -ms-animation-timing-function: linear;
+    -ms-animation-fill-mode: forwards;
+}
+
+/* Start arc.
+ * See http://lea.verou.me/2012/02/moving-an-element-along-a-circle/ to learn about
+ * the chaining transforms (rotate, translate, rotate, translate) used here.
+ */
+.half-circle-arc {
+	0% {
+        -webkit-transform: rotate(0deg) translateX(70px) rotate(0deg) translateX(-70px);
+        -moz-transform: rotate(0deg) translateX(70px) rotate(0deg) translateX(-70px);
+        -ms-transform: rotate(0deg) translateX(70px) rotate(0deg) translateX(-70px);
+	}
+	100% {
+		-webkit-transform: rotate(-180deg) translateX(70px) rotate(180deg) translateX(-70px);
+        -moz-transform: rotate(-180deg) translateX(70px) rotate(180deg) translateX(-70px);
+        -ms-transform: rotate(-180deg) translateX(70px) rotate(180deg) translateX(-70px);
+	}
+}
+
+@-webkit-keyframes card-up-down { .half-circle-arc; }
+@-moz-keyframes card-up-down { .half-circle-arc; }
+@-ms-keyframes card-up-down { .half-circle-arc; }
+
+.stack .card-container.into-pocket { 
+    -webkit-animation-name: card-up-down; 
+    -moz-animation-name: card-up-down;
+    -ms-animation-name: card-up-down;
+}
+/* End arc */
+
+/* Start arc's final position adjustment */
+.arc-adjustment(@ix, @yTweak) {
+    @x: -515px + 28px * @ix;
+    @y: 45px - (22px * @ix) + @yTweak;
+
+    100% {
+        .translate(@x, @y);
+    }
+}
+
+@-webkit-keyframes card-left-right-0 { .arc-adjustment(0, 0px); } 
+@-webkit-keyframes card-left-right-1 { .arc-adjustment(1, 5px); } 
+@-webkit-keyframes card-left-right-2 { .arc-adjustment(2, -7px); } 
+@-webkit-keyframes card-left-right-3 { .arc-adjustment(3, -3px); } 
+@-webkit-keyframes card-left-right-4 { .arc-adjustment(4, 2px); } 
+@-webkit-keyframes card-left-right-5 { .arc-adjustment(5, 0px); } 
+@-webkit-keyframes card-left-right-6 { .arc-adjustment(6, 7px); } 
+@-webkit-keyframes card-left-right-7 { .arc-adjustment(7, 1px); }
+
+@-moz-keyframes card-left-right-0 { .arc-adjustment(0, 0px); } 
+@-moz-keyframes card-left-right-1 { .arc-adjustment(1, 5px); } 
+@-moz-keyframes card-left-right-2 { .arc-adjustment(2, -7px); } 
+@-moz-keyframes card-left-right-3 { .arc-adjustment(3, -3px); } 
+@-moz-keyframes card-left-right-4 { .arc-adjustment(4, 2px); } 
+@-moz-keyframes card-left-right-5 { .arc-adjustment(5, 0px); } 
+@-moz-keyframes card-left-right-6 { .arc-adjustment(6, 7px); } 
+@-moz-keyframes card-left-right-7 { .arc-adjustment(7, 1px); } 
+
+.card-left-right-animation(@state){
+    -webkit-animation-name: ~"card-left-right-@{state}";
+    -moz-animation-name: ~"card-left-right-@{state}";
+}
+
+.stack .card-container.into-pocket-0 .card-container-inner { .card-left-right-animation(0); }
+.stack .card-container.into-pocket-1 .card-container-inner { .card-left-right-animation(1); }
+.stack .card-container.into-pocket-2 .card-container-inner { .card-left-right-animation(2); }
+.stack .card-container.into-pocket-3 .card-container-inner { .card-left-right-animation(3); }
+.stack .card-container.into-pocket-4 .card-container-inner { .card-left-right-animation(4); }
+.stack .card-container.into-pocket-5 .card-container-inner { .card-left-right-animation(5); }
+.stack .card-container.into-pocket-6 .card-container-inner { .card-left-right-animation(6); }
+.stack .card-container.into-pocket-7 .card-container-inner { .card-left-right-animation(7); }
+/* End arc's final position adjustment */
+
+/**
+ * End end-of-stack calculation animations
+ */

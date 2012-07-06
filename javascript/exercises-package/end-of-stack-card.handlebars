@@ -1,0 +1,102 @@
+<div class="end-of-stack-info">
+    <div class="title clearfix">
+        <div class="stack-stats">
+            <p data-desc="Your longest streak of cards with 3 or more leaves in this stack.">
+            	<img src="/images/power-mode/streak.png?2" /><span class="times">&times;</span>{{longestStreak}}
+           	</p>
+            <p data-desc="Your quickly answered cards for this stack.">
+            	<img src="/images/power-mode/speed-answer.png?1" /><span class="times">&times;</span>{{speedyCards}}
+            </p>
+            <p data-desc="Your total leaves for this stack of cards.">
+            	<img src="/images/power-mode/card-leaf-full-large.png" /><span class="times">&times;</span>{{totalLeaves}}
+            </p>
+        </div>
+        <h2>Stack Progress</h2>
+    </div>
+    <div class="progress-graph current-stack visited-no-recolor">
+	    {{#each progress}}
+	    	<div class="skill-status">
+                <h2 class="skill-bar-title">
+                    {{#with exerciseStates}}{{> shared_small-exercise-icon}}{{/with}}
+                    <a href="{{userExercise.exerciseModel.relativeUrl}}">{{displayName}}</a>
+                </h2>
+                {{{skill-bar end start exerciseStates}}}
+		    </div>
+	    {{/each}}
+    </div>
+
+    {{#unless practiceMode}}
+    <div>
+        <h2 style="display: inline-block;">Overall Progress</h2>
+        <a href="javascript:void(0);" class="simple-button" id="show-topic-details">
+            {{proficient}}/{{total}} Skills
+        </a>
+    </div>
+    <div class="progress-graph current-topic clearfix visited-no-recolor">
+        <div class="three-col col-one">
+            <h3>Upcoming Skills</h3>
+            {{#each unstartedExercises}}
+            <div class="skill-status">
+                <h4 class="skill-bar-title">
+                    {{#with exerciseStates}}{{> shared_small-exercise-icon}}{{/with}}
+                    <a href="{{exerciseModel.relativeUrl}}">{{exerciseModel.displayName}}</a>
+                </h4>
+                {{{skill-bar progress progress}}}
+            </div>
+            {{/each}}
+        </div>
+        <div class="three-col col-two">
+            <h3>Skills In-Progress</h3>
+            {{#each startedExercises}}
+            <div class="skill-status">
+                <h4 class="skill-bar-title">
+                    {{#with exerciseStates}}{{> shared_small-exercise-icon}}{{/with}}
+                    <a href="{{exerciseModel.relativeUrl}}">{{exerciseModel.displayName}}</a>
+                </h4>
+                {{{skill-bar progress progress}}}
+            </div>
+            {{/each}}
+        </div>
+        <div class="three-col col-three">
+            <h3>Proficient Skills</h3>
+            {{#each proficientExercises}}
+        	<div class="skill-status">
+    	    	<h4 class="skill-bar-title">
+    	    		{{#with exerciseStates}}{{> shared_small-exercise-icon}}{{/with}}
+                    <a href="{{exerciseModel.relativeUrl}}">{{exerciseModel.displayName}}</a>
+    	    	</h4>
+                {{{skill-bar progress progress exerciseStates}}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{/unless}}
+
+    {{#if practiceMode}}
+        {{#each progress}}
+        {{#if exerciseStates.proficient}}
+            <h2>
+                Nice work! You're ready to move on. 
+                {{#if exerciseStates.reviewing}}
+                {{#unless exerciseStates.justEarnedProficiency}}
+                <span class="hover-disclosure review-explain" data-desc="You've earned proficiency in this skill, but we think you might want to review it because you had some trouble in this last stack.">
+                    Why is the bar orange?
+                </span>
+                {{/unless}}
+                {{/if}}
+            </h2>
+            <div class="stack-controls practice-mode proficient">
+                <input type="button" class="more-stacks simple-button left" value="Give me another stack like this"><input type="button" class="skill-proficient to-dashboard default-action simple-button green right" value="Pick a new skill to work on" style="margin:0">
+            </div>
+        {{else}}
+            <div class="stack-controls practice-mode">
+                <input type="button" class="take-a-break to-dashboard simple-button left" value="Work on something else"><input type="button" class="more-stacks default-action simple-button green right" value="Give me another stack like this!">
+            </div>
+        {{/if}}
+        {{/each}}
+    {{else}}
+        <div class="stack-controls">
+            <input type="button" class="take-a-break to-dashboard simple-button left" value="Work on something else"><input type="button" class="more-stacks default-action simple-button green right" value="Give me another stack like this!">
+        </div>
+    {{/if}}
+</div>

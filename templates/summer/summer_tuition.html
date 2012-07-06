@@ -1,0 +1,118 @@
+{% extends "page_template.html" %}
+{% block pagesubmenu %}
+    <span class="breadcrumbs_nav">
+        <a href="http://www.khanacademy.org">Home</a>
+    </span>
+{% endblock pagesubmenu %}
+			
+{% block pagecontent %}
+<script type="text/javascript">
+    var number_of_students = {{ number_of_students }}
+</script>
+
+<div id="discovery_lab" style="padding: 9px 23px;">
+    <div>
+        <h2>Khan Academy Discovery Lab 2012</h2>
+        {% if authenticated %}
+            {% if nickname %}
+                Logged in as: <u>{{ nickname|escape }}</u>.
+            {% else %}
+                Logged in as: <u>{{ user_email|escape }}</u>.
+            {% endif %}
+            {% if student.tuition_paid %}
+                You have already paid your tuition for the Khan Academy Discovery Lab. See you this summer!
+            {% else %}
+                {% if make_payment %}
+                <br><br>Please pay a total tuition of ${{ total_payment|escape }} for<br>
+                {% for student in students %}
+                {% if student.accepted %}
+                    {% if not student.tuition_paid %}
+                        {{ student.first_name|escape }} {{ student.last_name|escape }}<br>
+                    {% endif %}
+                {% endif %}
+                {% endfor %}
+                <br>via Paypal using the link below<br><br>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="W9NEW3XP4D72N">
+                    <input type="hidden" name="first_name" value="{{ payee.first_name|escape }}">
+                    <input type="hidden" name="last_name" value="{{ payee.last_name|escape }}">
+                    <input type="hidden" name="address1" value="{{ payee.address_1|escape }}">
+                    <input type="hidden" name="address2" value="{{ payee.address_2|escape }}">
+                    <input type="hidden" name="city" value="{{ payee.city|escape }}">
+                    <input type="hidden" name="state" value="{{ payee.state|escape }}">
+                    <input type="hidden" name="zip" value="{{ payee.zipcode|escape }}">
+                    <input type="hidden" name="email" value="{{ payee.email|escape }}">
+                    <input type="hidden" name="night_phone_a" value="{{ payee_phone_a|escape }}">
+                    <input type="hidden" name="night_phone_b" value="{{ payee_phone_b|escape }}">
+                    <input type="hidden" name="night_phone_c" value="{{ payee_phone_c|escape }}">
+                    <input type="hidden" name="amount" value="{{ total_payment|escape }}">
+                    <input type="hidden" name="custom" value="{{ student.email|escape }}">
+                    <input type="hidden" name="return" value="http://www.khanacademy.org/summer/paypal-autoreturn?student_email={{ student.email|escape }}&user_email={{ user_email|escape }}">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+                <br><br>
+                {% else %}
+                <form id="discovery-lab-tuition" method="POST" action="/summer/tuition" style="display: block; margin: 22px 0">
+                {% if is_parent %}
+                    Congratulations! The student(s) below have been selected to attend the Khan Academy Discovery Lab.
+                    Please pay their tuition to confirm their spot(s) in the camp<br>
+                    {% for student in students %}
+                        {% if student.accepted %}
+                            {% if student.tuition_paid %}
+                                <input id="{{ student.email|escape }}" type="checkbox" name="{{ student.email|escape }}" value="{{ student.email|escape }}" hidden> "{{ student.first_name|escape }} {{ student.last_name|escape }} ({{ student.tuition }} paid)"<br>
+                            {% else %}
+                                <input id="{{ student.email|escape }}" type="checkbox" name="{{ student.email|escape }}" value="{{ student.email|escape }}" hidden> "{{ student.first_name|escape }} {{ student.last_name|escape }}"<br>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    Congratulations! You have been selected to attend the Khan Academy Discovery Lab. Please pay your tuition to confirm your spot in the camp.<br>
+                    <input id="{{ user_email|escape }}" name="{{ user_email|escape }}" type="hidden" value="{{ user_email|escape }}" />
+                {% endif %}
+
+                <br><b>Tuition: </b><br>
+                <input type="checkbox" name="tuition" id="tuition" value="1" hidden> $1000 for 2 weeks (per student)<br><br>
+
+                <b>Extended Care: </b><br>
+                <input id="extended_care" type="checkbox" name="extended_care" value="1" readonly> $160 for 2 weeks (per student)<br><br>
+
+                <b>Payment to be made: </b><br>
+                <input id="total_payment" type="text" name="total_payment" value="1000" readonly><br><br>
+                <input name="make_payment" id="make_payment" value="1" hidden>
+
+                <input id="discovery-lab-tuition-submit" type="submit" value="Pay Tuition"/>
+                </form>
+
+                <script>
+                    $(document).ready(function() {
+                        if ($("#extended_care").is(':checked')) {
+                            var total_payment = 1160 * number_of_students 
+                            $("#total_payment").val(total_payment)
+                        }
+                        else {
+                            var total_payment = 1000 * number_of_students 
+                            $("#total_payment").val(total_payment)
+                        }
+                    });
+
+                    $("#extended_care").change(function() {
+                        if ($("#extended_care").is(':checked')) {
+                            var total_payment = 1160 * number_of_students 
+                            $("#total_payment").val(total_payment)
+                        }
+                        else {
+                            var total_payment = 1000 * number_of_students 
+                            $("#total_payment").val(total_payment)
+                        }
+                    });
+                </script>
+                {% endif %}
+            {% endif %}
+        {% else %}
+	    <a id="auth_link" class="authenticate-user" href="{{login_url|escape}}">Please log in to your Khan Academy account to apply for the Discovery Camp</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock pagecontent %}

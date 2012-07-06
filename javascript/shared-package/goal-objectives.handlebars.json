@@ -1,0 +1,16 @@
+{
+    "description": "One Step Equations",
+    "internal_id": "one-step-equations",
+    "progress": 0,
+    "status": "not-started",
+    "type": "GoalObjectiveWatchVideo",
+    "url": "/video/one-step-equations",
+    "complete": false,
+    "progressStr": "0",
+    "iconFillHeight": 6,
+    "objectiveWidth": 16.666666,
+    "isVideo": true,
+    "isAnyVideo": false,
+    "isExercise": false,
+    "isAnyExercise": false
+}

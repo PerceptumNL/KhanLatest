@@ -1,0 +1,2009 @@
+[
+    {
+        "next_video": "XoEn1LfVoTo", 
+        "video_position": 1, 
+        "description": "Introduction to basic algebraic equations of the form Ax=B", 
+        "title": "Simple Equations", 
+        "views": 1030343, 
+        "related_videos": [
+            "XoEn1LfVoTo"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 666, 
+        "ka_url": "http://www.khanacademy.org/video/simple-equations?playlist=Algebra", 
+        "youtube_id": "9Ek61w1LxSc", 
+        "keywords": "algebra, introduction, CC_6_EE_5, CC_7_EE_1, CC_7_EE_4", 
+        "date_added": "2011-02-20 16:27:05", 
+        "youtube_url": "http://www.youtube.com/watch?v=9Ek61w1LxSc&feature=youtube_gdata_player", 
+        "prev_video": "", 
+        "readable_id": "simple-equations"
+    }, 
+    {
+        "next_video": "f15zA0PhSek", 
+        "video_position": 2, 
+        "description": "slightly more complicated equations", 
+        "title": "Equations 2", 
+        "views": 421712, 
+        "related_videos": [
+            "9Ek61w1LxSc", 
+            "f15zA0PhSek"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 521, 
+        "ka_url": "http://www.khanacademy.org/video/equations-2?playlist=Algebra", 
+        "youtube_id": "XoEn1LfVoTo", 
+        "keywords": "Equations, algebra, basic, CC_7_EE_1, CC_7_EE_4_a", 
+        "date_added": "2011-02-20 16:27:05", 
+        "youtube_url": "http://www.youtube.com/watch?v=XoEn1LfVoTo&feature=youtube_gdata_player", 
+        "prev_video": "9Ek61w1LxSc", 
+        "readable_id": "equations-2"
+    }, 
+    {
+        "next_video": "9IUEk9fn2Vs", 
+        "video_position": 3, 
+        "description": "Equations with the variable on both sides.", 
+        "title": "Equations 3", 
+        "views": 296852, 
+        "related_videos": [
+            "XoEn1LfVoTo", 
+            "9IUEk9fn2Vs"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 533, 
+        "ka_url": "http://www.khanacademy.org/video/equations-3?playlist=Algebra", 
+        "youtube_id": "f15zA0PhSek", 
+        "keywords": "algebra, solving, equations, CC_7_EE_1, CC_7_EE_4_a", 
+        "date_added": "2011-02-20 16:27:05", 
+        "youtube_url": "http://www.youtube.com/watch?v=f15zA0PhSek&feature=youtube_gdata_player", 
+        "prev_video": "XoEn1LfVoTo", 
+        "readable_id": "equations-3"
+    }, 
+    {
+        "next_video": "VgDe_D8ojxw", 
+        "video_position": 4, 
+        "description": "Solving linear equations with variable expressions in the denominators of fractions", 
+        "title": "Algebra: Linear Equations 4", 
+        "views": 490488, 
+        "related_videos": [
+            "f15zA0PhSek", 
+            "VgDe_D8ojxw"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 458, 
+        "ka_url": "http://www.khanacademy.org/video/algebra--linear-equations-4?playlist=Algebra", 
+        "youtube_id": "9IUEk9fn2Vs", 
+        "keywords": "algebra, CC_7_EE_1, CC_8_EE_7_b", 
+        "date_added": "2011-02-20 16:27:05", 
+        "youtube_url": "http://www.youtube.com/watch?v=9IUEk9fn2Vs&feature=youtube_gdata_player", 
+        "prev_video": "f15zA0PhSek", 
+        "readable_id": "algebra--linear-equations-4"
+    }, 
+    {
+        "next_video": "2UrcUfBizyw", 
+        "video_position": 5, 
+        "description": "Solving linear inequalities.", 
+        "title": "Algebra: Solving Inequalities", 
+        "views": 327104, 
+        "related_videos": [
+            "9IUEk9fn2Vs", 
+            "2UrcUfBizyw"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 384, 
+        "ka_url": "http://www.khanacademy.org/video/algebra--solving-inequalities?playlist=Algebra", 
+        "youtube_id": "VgDe_D8ojxw", 
+        "keywords": "Algebra, linear, inequality, equations, less, greater, than, CC_6_EE_5, CC_6_EE_8, CC_7_EE_4_b", 
+        "date_added": "2011-02-20 16:27:05", 
+        "youtube_url": "http://www.youtube.com/watch?v=VgDe_D8ojxw&feature=youtube_gdata_player", 
+        "prev_video": "9IUEk9fn2Vs", 
+        "readable_id": "algebra--solving-inequalities"
+    }, 
+    {
+        "next_video": "Nhn-anmubYU", 
+        "video_position": 6, 
+        "description": "Graphing linear equations", 
+        "title": "Algebra: graphing lines 1", 
+        "views": 238419, 
+        "related_videos": [
+            "VgDe_D8ojxw", 
+            "Nhn-anmubYU"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 589, 
+        "ka_url": "http://www.khanacademy.org/video/algebra--graphing-lines-1?playlist=Algebra", 
+        "youtube_id": "2UrcUfBizyw", 
+        "keywords": "algebra, graphing, CC_8_EE_6, CC_39336_F-BF_3", 
+        "date_added": "2011-02-20 16:27:05", 
+        "youtube_url": "http://www.youtube.com/watch?v=2UrcUfBizyw&feature=youtube_gdata_player", 
+        "prev_video": "VgDe_D8ojxw", 
+        "readable_id": "algebra--graphing-lines-1"
+    }, 
+    {
+        "next_video": "hXP1Gv9IMBo", 
+        "video_position": 7, 
+        "description": "Getting a feel for slope and y-intercept", 
+        "title": "Algebra: Slope and Y-intercept intuition", 
+        "views": 225634, 
+        "related_videos": [
+            "2UrcUfBizyw", 
+            "hXP1Gv9IMBo"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 515, 
+        "ka_url": "http://www.khanacademy.org/video/algebra--slope-and-y-intercept-intuition?playlist=Algebra", 
+        "youtube_id": "Nhn-anmubYU", 
+        "keywords": "algebra, slope, y-intercept, CC_8_EE_6, CC_39336_F-BF_3", 
+        "date_added": "2011-02-20 16:27:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=Nhn-anmubYU&feature=youtube_gdata_player", 
+        "prev_video": "2UrcUfBizyw", 
+        "readable_id": "algebra--slope-and-y-intercept-intuition"
+    }, 
+    {
+        "next_video": "Kk9IDameJXk", 
+        "video_position": 8, 
+        "description": "Figuring out the slope of a line", 
+        "title": "Algebra: Slope", 
+        "views": 245413, 
+        "related_videos": [
+            "Nhn-anmubYU", 
+            "Kk9IDameJXk"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 507, 
+        "ka_url": "http://www.khanacademy.org/video/algebra--slope?playlist=Algebra", 
+        "youtube_id": "hXP1Gv9IMBo", 
+        "keywords": "algebra, slope, CC_8_EE_6", 
+        "date_added": "2011-02-20 16:27:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=hXP1Gv9IMBo&feature=youtube_gdata_player", 
+        "prev_video": "Nhn-anmubYU", 
+        "readable_id": "algebra--slope"
+    }, 
+    {
+        "next_video": "8XffLj2zvf4", 
+        "video_position": 9, 
+        "description": "Second part of determining the slope of a line", 
+        "title": "Algebra: Slope 2", 
+        "views": 127016, 
+        "related_videos": [
+            "hXP1Gv9IMBo", 
+            "8XffLj2zvf4"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 586, 
+        "ka_url": "http://www.khanacademy.org/video/algebra--slope-2?playlist=Algebra", 
+        "youtube_id": "Kk9IDameJXk", 
+        "keywords": "algebra, slope, CC_8_EE_6", 
+        "date_added": "2011-02-20 16:27:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=Kk9IDameJXk&feature=youtube_gdata_player", 
+        "prev_video": "hXP1Gv9IMBo", 
+        "readable_id": "algebra--slope-2"
+    }, 
+    {
+        "next_video": "gvwKv6F69F0", 
+        "video_position": 10, 
+        "description": "Part 3 of slope", 
+        "title": "Algebra: Slope 3", 
+        "views": 99028, 
+        "related_videos": [
+            "Kk9IDameJXk", 
+            "gvwKv6F69F0"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 381, 
+        "ka_url": "http://www.khanacademy.org/video/algebra--slope-3?playlist=Algebra", 
+        "youtube_id": "8XffLj2zvf4", 
+        "keywords": "algebra, slope, CC_8_EE_6", 
+        "date_added": "2011-02-20 16:27:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=8XffLj2zvf4&feature=youtube_gdata_player", 
+        "prev_video": "Kk9IDameJXk", 
+        "readable_id": "algebra--slope-3"
+    }, 
+    {
+        "next_video": "8sz1IPjBRS8", 
+        "video_position": 11, 
+        "description": "Determining the equation of a line", 
+        "title": "Algebra: Equation of a line", 
+        "views": 165956, 
+        "related_videos": [
+            "8XffLj2zvf4", 
+            "8sz1IPjBRS8"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 405, 
+        "ka_url": "http://www.khanacademy.org/video/algebra--equation-of-a-line?playlist=Algebra", 
+        "youtube_id": "gvwKv6F69F0", 
+        "keywords": "algebra, CC_8_EE_6", 
+        "date_added": "2011-02-20 16:27:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=gvwKv6F69F0&feature=youtube_gdata_player", 
+        "prev_video": "8XffLj2zvf4", 
+        "readable_id": "algebra--equation-of-a-line"
+    }, 
+    {
+        "next_video": "9VZsMY15xeU", 
+        "video_position": 12, 
+        "description": "Using the \"Graph of a line\" module to understand how a line's graph changes when its slope or y-intercept is changed.", 
+        "title": "Slope and Y-intercept Intuition", 
+        "views": 102864, 
+        "related_videos": [
+            "gvwKv6F69F0", 
+            "9VZsMY15xeU"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 354, 
+        "ka_url": "http://www.khanacademy.org/video/slope-and-y-intercept-intuition?playlist=Algebra", 
+        "youtube_id": "8sz1IPjBRS8", 
+        "keywords": "slope, y-intercept, graph", 
+        "date_added": "2011-02-20 16:27:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=8sz1IPjBRS8&feature=youtube_gdata_player", 
+        "prev_video": "gvwKv6F69F0", 
+        "readable_id": "slope-and-y-intercept-intuition"
+    }, 
+    {
+        "next_video": "W254ewkkMck", 
+        "video_position": 13, 
+        "description": "Introduction to averages and algebra problems involving averages.", 
+        "title": "Averages", 
+        "views": 125654, 
+        "related_videos": [
+            "8sz1IPjBRS8", 
+            "W254ewkkMck"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 516, 
+        "ka_url": "http://www.khanacademy.org/video/averages?playlist=Algebra", 
+        "youtube_id": "9VZsMY15xeU", 
+        "keywords": "Math, Khan, Average, Algebra, CC_6_EE_6", 
+        "date_added": "2011-02-20 16:27:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=9VZsMY15xeU&feature=youtube_gdata_player", 
+        "prev_video": "8sz1IPjBRS8", 
+        "readable_id": "averages"
+    }, 
+    {
+        "next_video": "_SpE4hQ8D_o", 
+        "video_position": 14, 
+        "description": "Adding sums of consecutive integers", 
+        "title": "Integer sums", 
+        "views": 112513, 
+        "related_videos": [
+            "9VZsMY15xeU", 
+            "_SpE4hQ8D_o"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 595, 
+        "ka_url": "http://www.khanacademy.org/video/integer-sums?playlist=Algebra", 
+        "youtube_id": "W254ewkkMck", 
+        "keywords": "Algebra, sums, integers, even, odd, khan, academy", 
+        "date_added": "2011-02-20 16:27:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=W254ewkkMck&feature=youtube_gdata_player", 
+        "prev_video": "9VZsMY15xeU", 
+        "readable_id": "integer-sums"
+    }, 
+    {
+        "next_video": "X2jVap1YgwI", 
+        "video_position": 15, 
+        "description": "Taking a percentage of a number.", 
+        "title": "Taking percentages", 
+        "views": 170640, 
+        "related_videos": [
+            "W254ewkkMck", 
+            "X2jVap1YgwI"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 594, 
+        "ka_url": "http://www.khanacademy.org/video/taking-percentages?playlist=Algebra", 
+        "youtube_id": "_SpE4hQ8D_o", 
+        "keywords": "Percent, math, algebra, khan, CC_6_RP_3_c, CC_7_RP_3", 
+        "date_added": "2011-02-20 16:27:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=_SpE4hQ8D_o&feature=youtube_gdata_player", 
+        "prev_video": "W254ewkkMck", 
+        "readable_id": "taking-percentages"
+    }, 
+    {
+        "next_video": "d1oNF88SAgg", 
+        "video_position": 16, 
+        "description": "Growing a quantity by a percentage", 
+        "title": "Growing by a percentage", 
+        "views": 87796, 
+        "related_videos": [
+            "_SpE4hQ8D_o", 
+            "d1oNF88SAgg"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 582, 
+        "ka_url": "http://www.khanacademy.org/video/growing-by-a-percentage?playlist=Algebra", 
+        "youtube_id": "X2jVap1YgwI", 
+        "keywords": "Percentage, math, khan, CC_7_EE_2, CC_7_RP_3", 
+        "date_added": "2011-02-20 16:27:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=X2jVap1YgwI&feature=youtube_gdata_player", 
+        "prev_video": "_SpE4hQ8D_o", 
+        "readable_id": "growing-by-a-percentage"
+    }, 
+    {
+        "next_video": "4oeoIOan_h4", 
+        "video_position": 17, 
+        "description": "Finding the full price when you know the discount price", 
+        "title": "Another Percent Word Problem", 
+        "views": 70913, 
+        "related_videos": [
+            "X2jVap1YgwI", 
+            "4oeoIOan_h4"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 378, 
+        "ka_url": "http://www.khanacademy.org/video/another-percent-word-problem?playlist=Algebra", 
+        "youtube_id": "d1oNF88SAgg", 
+        "keywords": "percent, word, problem, CC_7_RP_3", 
+        "date_added": "2011-02-20 16:27:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=d1oNF88SAgg&feature=youtube_gdata_player", 
+        "prev_video": "X2jVap1YgwI", 
+        "readable_id": "another-percent-word-problem"
+    }, 
+    {
+        "next_video": "nok99JOhcjo", 
+        "video_position": 18, 
+        "description": "Slightly harder percent problems", 
+        "title": "More percent problems", 
+        "views": 73370, 
+        "related_videos": [
+            "d1oNF88SAgg", 
+            "nok99JOhcjo"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 545, 
+        "ka_url": "http://www.khanacademy.org/video/more-percent-problems?playlist=Algebra", 
+        "youtube_id": "4oeoIOan_h4", 
+        "keywords": "Percent, math, algebra, CC_7_RP_3", 
+        "date_added": "2011-02-20 16:27:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=4oeoIOan_h4&feature=youtube_gdata_player", 
+        "prev_video": "d1oNF88SAgg", 
+        "readable_id": "more-percent-problems"
+    }, 
+    {
+        "next_video": "HpdMJaKaXXc", 
+        "video_position": 19, 
+        "description": "systems of equations", 
+        "title": "systems of equations", 
+        "views": 119046, 
+        "related_videos": [
+            "4oeoIOan_h4", 
+            "HpdMJaKaXXc"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 597, 
+        "ka_url": "http://www.khanacademy.org/video/systems-of-equations?playlist=Algebra", 
+        "youtube_id": "nok99JOhcjo", 
+        "keywords": "Algebra, systems, of, equations, CC_8_EE_8, CC_8_EE_8_a, CC_39336_A-REI_5, CC_39336_A-REI_6", 
+        "date_added": "2011-02-20 16:27:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=nok99JOhcjo&feature=youtube_gdata_player", 
+        "prev_video": "4oeoIOan_h4", 
+        "readable_id": "systems-of-equations"
+    }, 
+    {
+        "next_video": "ITVQrzDSekU", 
+        "video_position": 20, 
+        "description": "What a ratio is.  Simple ratio problems.", 
+        "title": "Introduction to Ratios (new HD version)", 
+        "views": 109300, 
+        "related_videos": [
+            "nok99JOhcjo", 
+            "ITVQrzDSekU"
+        ], 
+        "playlist_titles": [
+            "Algebra", 
+            "Pre-algebra"
+        ], 
+        "duration": 853, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-ratios--new-hd-version?playlist=Algebra", 
+        "youtube_id": "HpdMJaKaXXc", 
+        "keywords": "ratio, ratios, math", 
+        "date_added": "2011-02-20 16:27:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=HpdMJaKaXXc&feature=youtube_gdata_player", 
+        "prev_video": "nok99JOhcjo", 
+        "readable_id": "introduction-to-ratios--new-hd-version"
+    }, 
+    {
+        "next_video": "ItA_hhRtUuw", 
+        "video_position": 21, 
+        "description": "A slightly more involved ratio problem with algebra", 
+        "title": "Ratio problem with basic algebra (new HD)", 
+        "views": 62039, 
+        "related_videos": [
+            "HpdMJaKaXXc", 
+            "ItA_hhRtUuw"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 312, 
+        "ka_url": "http://www.khanacademy.org/video/ratio-problem-with-basic-algebra--new-hd?playlist=Algebra", 
+        "youtube_id": "ITVQrzDSekU", 
+        "keywords": "ratio, algebra, CC_7_RP_3", 
+        "date_added": "2011-02-20 16:27:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=ITVQrzDSekU&feature=youtube_gdata_player", 
+        "prev_video": "HpdMJaKaXXc", 
+        "readable_id": "ratio-problem-with-basic-algebra--new-hd"
+    }, 
+    {
+        "next_video": "-xyTz0WZ1W4", 
+        "video_position": 22, 
+        "description": "More advance ratio problem with algebra.", 
+        "title": "More advanced ratio problem--with Algebra (HD version)", 
+        "views": 45770, 
+        "related_videos": [
+            "ITVQrzDSekU", 
+            "-xyTz0WZ1W4"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 598, 
+        "ka_url": "http://www.khanacademy.org/video/more-advanced-ratio-problem--with-algebra--hd-version?playlist=Algebra", 
+        "youtube_id": "ItA_hhRtUuw", 
+        "keywords": "ratio, ratios, algebra, CC_7_RP_3", 
+        "date_added": "2011-02-20 16:27:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=ItA_hhRtUuw&feature=youtube_gdata_player", 
+        "prev_video": "ITVQrzDSekU", 
+        "readable_id": "more-advanced-ratio-problem--with-algebra--hd-version"
+    }, 
+    {
+        "next_video": "UsPmg_Ne1po", 
+        "video_position": 23, 
+        "description": "An alternate solution to the advanced ratio problem in the last video.", 
+        "title": "Alternate Solution to Ratio Problem (HD Version)", 
+        "views": 26524, 
+        "related_videos": [
+            "ItA_hhRtUuw", 
+            "UsPmg_Ne1po"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 422, 
+        "ka_url": "http://www.khanacademy.org/video/alternate-solution-to-ratio-problem--hd-version?playlist=Algebra", 
+        "youtube_id": "-xyTz0WZ1W4", 
+        "keywords": "ratio, ratios, algebra", 
+        "date_added": "2011-02-20 16:27:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=-xyTz0WZ1W4&feature=youtube_gdata_player", 
+        "prev_video": "ItA_hhRtUuw", 
+        "readable_id": "alternate-solution-to-ratio-problem--hd-version"
+    }, 
+    {
+        "next_video": "PASSD2OcU0c", 
+        "video_position": 24, 
+        "description": "Basic ratio problems. (from KhanAcademy.org)", 
+        "title": "Introduction to Ratios", 
+        "views": 107148, 
+        "related_videos": [
+            "-xyTz0WZ1W4", 
+            "PASSD2OcU0c"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 447, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-ratios?playlist=Algebra", 
+        "youtube_id": "UsPmg_Ne1po", 
+        "keywords": "ratio, algebra, math, CC_6_RP_1, CC_6_RP_2, CC_6_RP_3", 
+        "date_added": "2011-02-20 16:27:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=UsPmg_Ne1po&feature=youtube_gdata_player", 
+        "prev_video": "-xyTz0WZ1W4", 
+        "readable_id": "introduction-to-ratios"
+    }, 
+    {
+        "next_video": "bAUT_Pux73w", 
+        "video_position": 25, 
+        "description": "More advanced ratio problems", 
+        "title": "Advanced ratio problems", 
+        "views": 56171, 
+        "related_videos": [
+            "UsPmg_Ne1po", 
+            "bAUT_Pux73w"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 597, 
+        "ka_url": "http://www.khanacademy.org/video/advanced-ratio-problems?playlist=Algebra", 
+        "youtube_id": "PASSD2OcU0c", 
+        "keywords": "Ratios, Algebra, Math, CC_7_RP_3", 
+        "date_added": "2011-02-20 16:27:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=PASSD2OcU0c&feature=youtube_gdata_player", 
+        "prev_video": "UsPmg_Ne1po", 
+        "readable_id": "advanced-ratio-problems"
+    }, 
+    {
+        "next_video": "pPqPj8CAPvI", 
+        "video_position": 26, 
+        "description": "Age word problems", 
+        "title": "Age word problems 1", 
+        "views": 132871, 
+        "related_videos": [
+            "PASSD2OcU0c", 
+            "pPqPj8CAPvI"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 432, 
+        "ka_url": "http://www.khanacademy.org/video/age-word-problems-1?playlist=Algebra", 
+        "youtube_id": "bAUT_Pux73w", 
+        "keywords": "algebra, word, problems, CC_7_RP_2_c", 
+        "date_added": "2011-02-20 16:27:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=bAUT_Pux73w&feature=youtube_gdata_player", 
+        "prev_video": "PASSD2OcU0c", 
+        "readable_id": "age-word-problems-1"
+    }, 
+    {
+        "next_video": "DplUpe3oyWo", 
+        "video_position": 27, 
+        "description": "Second set of age word problems", 
+        "title": "Age word problems 2", 
+        "views": 63349, 
+        "related_videos": [
+            "bAUT_Pux73w", 
+            "DplUpe3oyWo"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 596, 
+        "ka_url": "http://www.khanacademy.org/video/age-word-problems-2?playlist=Algebra", 
+        "youtube_id": "pPqPj8CAPvI", 
+        "keywords": "algebra, word, problems, CC_7_RP_2_c", 
+        "date_added": "2011-02-20 16:27:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=pPqPj8CAPvI&feature=youtube_gdata_player", 
+        "prev_video": "bAUT_Pux73w", 
+        "readable_id": "age-word-problems-2"
+    }, 
+    {
+        "next_video": "Sc0e6xrRJYY", 
+        "video_position": 28, 
+        "description": "Part 3 of the presentation on age word problems", 
+        "title": "Age word problems 3", 
+        "views": 65595, 
+        "related_videos": [
+            "pPqPj8CAPvI", 
+            "Sc0e6xrRJYY"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 248, 
+        "ka_url": "http://www.khanacademy.org/video/age-word-problems-3?playlist=Algebra", 
+        "youtube_id": "DplUpe3oyWo", 
+        "keywords": "algebra, word, problems, CC_7_RP_2_c", 
+        "date_added": "2011-02-20 16:27:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=DplUpe3oyWo&feature=youtube_gdata_player", 
+        "prev_video": "pPqPj8CAPvI", 
+        "readable_id": "age-word-problems-3"
+    }, 
+    {
+        "next_video": "N30tN9158Kc", 
+        "video_position": 29, 
+        "description": "(Ax+By)(Ax+By)", 
+        "title": "Level 1 multiplying expressions", 
+        "views": 80724, 
+        "related_videos": [
+            "DplUpe3oyWo", 
+            "N30tN9158Kc"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 478, 
+        "ka_url": "http://www.khanacademy.org/video/level-1-multiplying-expressions?playlist=Algebra", 
+        "youtube_id": "Sc0e6xrRJYY", 
+        "keywords": "Algebra, CC_39336_A-APR_1", 
+        "date_added": "2011-02-20 16:27:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=Sc0e6xrRJYY&feature=youtube_gdata_player", 
+        "prev_video": "DplUpe3oyWo", 
+        "readable_id": "level-1-multiplying-expressions"
+    }, 
+    {
+        "next_video": "ysVcAYo7UPI", 
+        "video_position": 30, 
+        "description": "factoring quadratics", 
+        "title": "Solving a quadratic by factoring", 
+        "views": 145880, 
+        "related_videos": [
+            "Sc0e6xrRJYY", 
+            "ysVcAYo7UPI"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 552, 
+        "ka_url": "http://www.khanacademy.org/video/solving-a-quadratic-by-factoring?playlist=Algebra", 
+        "youtube_id": "N30tN9158Kc", 
+        "keywords": "algebra, CC_39336_A-SSE_3_a", 
+        "date_added": "2011-02-20 16:27:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=N30tN9158Kc&feature=youtube_gdata_player", 
+        "prev_video": "Sc0e6xrRJYY", 
+        "readable_id": "solving-a-quadratic-by-factoring"
+    }, 
+    {
+        "next_video": "QiwfF83NWNA", 
+        "video_position": 31, 
+        "description": "Introduction to i and imaginary numbers", 
+        "title": "Introduction to i and Imaginary Numbers", 
+        "views": 41892, 
+        "related_videos": [
+            "N30tN9158Kc", 
+            "QiwfF83NWNA"
+        ], 
+        "playlist_titles": [
+            "Algebra", 
+            "New and Noteworthy"
+        ], 
+        "duration": 320, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-i-and-imaginary-numbers?playlist=Algebra", 
+        "youtube_id": "ysVcAYo7UPI", 
+        "keywords": "imaginary, unit, complex, numbers, exponents", 
+        "date_added": "2011-07-11 23:26:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=ysVcAYo7UPI&feature=youtube_gdata_player", 
+        "prev_video": "N30tN9158Kc", 
+        "readable_id": "introduction-to-i-and-imaginary-numbers"
+    }, 
+    {
+        "next_video": "rYG1D5lUE4I", 
+        "video_position": 32, 
+        "description": "Calculating i raised to arbitrarily high exponents", 
+        "title": "Calculating i Raised to Arbitrary Exponents", 
+        "views": 28859, 
+        "related_videos": [
+            "ysVcAYo7UPI", 
+            "rYG1D5lUE4I"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 380, 
+        "ka_url": "http://www.khanacademy.org/video/calculating-i-raised-to-arbitrary-exponents?playlist=Algebra", 
+        "youtube_id": "QiwfF83NWNA", 
+        "keywords": "complex, imaginary, numbers", 
+        "date_added": "2011-07-11 23:26:15", 
+        "youtube_url": "http://www.youtube.com/watch?v=QiwfF83NWNA&feature=youtube_gdata_player", 
+        "prev_video": "ysVcAYo7UPI", 
+        "readable_id": "calculating-i-raised-to-arbitrary-exponents"
+    }, 
+    {
+        "next_video": "kpywdu1afas", 
+        "video_position": 33, 
+        "description": "i as the principal square root of -1", 
+        "title": "i as the Principal Root of -1 (a little technical)", 
+        "views": 25494, 
+        "related_videos": [
+            "QiwfF83NWNA", 
+            "kpywdu1afas"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 404, 
+        "ka_url": "http://www.khanacademy.org/video/i-as-the-principal-root-of--1--a-little-technical?playlist=Algebra", 
+        "youtube_id": "rYG1D5lUE4I", 
+        "keywords": "complex, imagnary, numbers", 
+        "date_added": "2011-07-12 23:26:59", 
+        "youtube_url": "http://www.youtube.com/watch?v=rYG1D5lUE4I&feature=youtube_gdata_player", 
+        "prev_video": "QiwfF83NWNA", 
+        "readable_id": "i-as-the-principal-root-of--1--a-little-technical"
+    }, 
+    {
+        "next_video": "bPqB9a1uk_8", 
+        "video_position": 34, 
+        "description": "Introduction to complex numbers. Adding, subtracting and multiplying complex numbers.", 
+        "title": "Complex Numbers (part 1)", 
+        "views": 225325, 
+        "related_videos": [
+            "rYG1D5lUE4I", 
+            "bPqB9a1uk_8"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 610, 
+        "ka_url": "http://www.khanacademy.org/video/complex-numbers--part-1?playlist=Algebra", 
+        "youtube_id": "kpywdu1afas", 
+        "keywords": "math, complex, imaginary, numbers", 
+        "date_added": "2011-02-20 16:27:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=kpywdu1afas&feature=youtube_gdata_player", 
+        "prev_video": "rYG1D5lUE4I", 
+        "readable_id": "complex-numbers--part-1"
+    }, 
+    {
+        "next_video": "IWigvJcCAJ0", 
+        "video_position": 35, 
+        "description": "Dividing complex numbers.  Complex conjugates.", 
+        "title": "Complex Numbers (part 2)", 
+        "views": 127943, 
+        "related_videos": [
+            "kpywdu1afas", 
+            "IWigvJcCAJ0"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 538, 
+        "ka_url": "http://www.khanacademy.org/video/complex-numbers--part-2?playlist=Algebra", 
+        "youtube_id": "bPqB9a1uk_8", 
+        "keywords": "Complex, number, division, conjugate, math", 
+        "date_added": "2011-02-20 16:27:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=bPqB9a1uk_8&feature=youtube_gdata_player", 
+        "prev_video": "kpywdu1afas", 
+        "readable_id": "complex-numbers--part-2"
+    }, 
+    {
+        "next_video": "y19jYxzY8Y8", 
+        "video_position": 36, 
+        "description": "Introduction to using the quadratic equation to solve 2nd degree polynomials", 
+        "title": "Introduction to the quadratic equation", 
+        "views": 168749, 
+        "related_videos": [
+            "bPqB9a1uk_8", 
+            "y19jYxzY8Y8"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 555, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-the-quadratic-equation?playlist=Algebra", 
+        "youtube_id": "IWigvJcCAJ0", 
+        "keywords": "quadratic, equation, khan, algebra, CC_39336_A-REI_4, CC_39336_A-REI_4_b", 
+        "date_added": "2011-02-20 16:27:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=IWigvJcCAJ0&feature=youtube_gdata_player", 
+        "prev_video": "bPqB9a1uk_8", 
+        "readable_id": "introduction-to-the-quadratic-equation"
+    }, 
+    {
+        "next_video": "gzm-uhj06q8", 
+        "video_position": 37, 
+        "description": "2 more examples of solving equations using the quadratic equation", 
+        "title": "Quadratic Equation part 2", 
+        "views": 115501, 
+        "related_videos": [
+            "IWigvJcCAJ0", 
+            "gzm-uhj06q8"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 554, 
+        "ka_url": "http://www.khanacademy.org/video/quadratic-equation-part-2?playlist=Algebra", 
+        "youtube_id": "y19jYxzY8Y8", 
+        "keywords": "algebra, quadratic, equation, CC_39336_A-REI_4, CC_39336_A-REI_4_b", 
+        "date_added": "2011-02-20 16:27:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=y19jYxzY8Y8&feature=youtube_gdata_player", 
+        "prev_video": "IWigvJcCAJ0", 
+        "readable_id": "quadratic-equation-part-2"
+    }, 
+    {
+        "next_video": "mDmRYfma9C0", 
+        "video_position": 38, 
+        "description": "Solving a quadratic by completing the square.", 
+        "title": "Completing the square", 
+        "views": 185879, 
+        "related_videos": [
+            "y19jYxzY8Y8", 
+            "mDmRYfma9C0"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 825, 
+        "ka_url": "http://www.khanacademy.org/video/completing-the-square?playlist=Algebra", 
+        "youtube_id": "gzm-uhj06q8", 
+        "keywords": "algebra, completing, the, square, quadratic, CC_39336_A-REI_4_a, CC_39336_A-REI_4_b, CC_39336_A-SSE_3_b", 
+        "date_added": "2011-02-20 16:27:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=gzm-uhj06q8&feature=youtube_gdata_player", 
+        "prev_video": "y19jYxzY8Y8", 
+        "readable_id": "completing-the-square"
+    }, 
+    {
+        "next_video": "ZNtzWpU80-0", 
+        "video_position": 39, 
+        "description": "Deriving the quadratic formula by completing the square.", 
+        "title": "Quadratic Formula (proof)", 
+        "views": 97004, 
+        "related_videos": [
+            "gzm-uhj06q8", 
+            "ZNtzWpU80-0"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 454, 
+        "ka_url": "http://www.khanacademy.org/video/quadratic-formula--proof?playlist=Algebra", 
+        "youtube_id": "mDmRYfma9C0", 
+        "keywords": "quadratic, formula, algebra, completing, square, CC_39336_A-REI_4_a", 
+        "date_added": "2011-02-20 16:27:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=mDmRYfma9C0&feature=youtube_gdata_player", 
+        "prev_video": "gzm-uhj06q8", 
+        "readable_id": "quadratic-formula--proof"
+    }, 
+    {
+        "next_video": "xdiBjypYFRQ", 
+        "video_position": 40, 
+        "description": "Solving quadratic inequalities using factoring", 
+        "title": "Quadratic Inequalities", 
+        "views": 87713, 
+        "related_videos": [
+            "mDmRYfma9C0", 
+            "xdiBjypYFRQ"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 588, 
+        "ka_url": "http://www.khanacademy.org/video/quadratic-inequalities?playlist=Algebra", 
+        "youtube_id": "ZNtzWpU80-0", 
+        "keywords": "quadratic, factoring, inequality, algebra", 
+        "date_added": "2011-02-20 16:27:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=ZNtzWpU80-0&feature=youtube_gdata_player", 
+        "prev_video": "mDmRYfma9C0", 
+        "readable_id": "quadratic-inequalities"
+    }, 
+    {
+        "next_video": "VhokQhjl5t0", 
+        "video_position": 41, 
+        "description": "How to solve a quadratic inequality.  Visual intuition of what a quadratic inequality means.", 
+        "title": "Quadratic Inequalities (Visual Explanation)", 
+        "views": 60164, 
+        "related_videos": [
+            "ZNtzWpU80-0", 
+            "VhokQhjl5t0"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 591, 
+        "ka_url": "http://www.khanacademy.org/video/quadratic-inequalities--visual-explanation?playlist=Algebra", 
+        "youtube_id": "xdiBjypYFRQ", 
+        "keywords": "Algebra, Math, Khan", 
+        "date_added": "2011-02-20 16:27:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=xdiBjypYFRQ&feature=youtube_gdata_player", 
+        "prev_video": "ZNtzWpU80-0", 
+        "readable_id": "quadratic-inequalities--visual-explanation"
+    }, 
+    {
+        "next_video": "XEblO51pF5I", 
+        "video_position": 42, 
+        "description": "An introduction to functions.", 
+        "title": "Introduction to functions", 
+        "views": 229006, 
+        "related_videos": [
+            "xdiBjypYFRQ", 
+            "XEblO51pF5I"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 572, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-functions?playlist=Algebra", 
+        "youtube_id": "VhokQhjl5t0", 
+        "keywords": "algebra, functions, f(x), domain, range, CC_8_F_1, CC_39336_F-IF_1", 
+        "date_added": "2011-02-20 16:27:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=VhokQhjl5t0&feature=youtube_gdata_player", 
+        "prev_video": "xdiBjypYFRQ", 
+        "readable_id": "introduction-to-functions"
+    }, 
+    {
+        "next_video": "5fcRSie63Hs", 
+        "video_position": 43, 
+        "description": "More examples of solving function problems", 
+        "title": "Functions Part 2", 
+        "views": 173873, 
+        "related_videos": [
+            "VhokQhjl5t0", 
+            "5fcRSie63Hs"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 593, 
+        "ka_url": "http://www.khanacademy.org/video/functions-part-2?playlist=Algebra", 
+        "youtube_id": "XEblO51pF5I", 
+        "keywords": "algebra, functions, math, CC_39336_F-IF_7_b", 
+        "date_added": "2011-02-20 16:27:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=XEblO51pF5I&feature=youtube_gdata_player", 
+        "prev_video": "VhokQhjl5t0", 
+        "readable_id": "functions-part-2"
+    }, 
+    {
+        "next_video": "rbt51hXmzig", 
+        "video_position": 44, 
+        "description": "Even more examples of function exercises.  Introduction of a graph as definition of a function.", 
+        "title": "Functions (Part III)", 
+        "views": 99498, 
+        "related_videos": [
+            "XEblO51pF5I", 
+            "rbt51hXmzig"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 552, 
+        "ka_url": "http://www.khanacademy.org/video/functions--part-iii?playlist=Algebra", 
+        "youtube_id": "5fcRSie63Hs", 
+        "keywords": "Functions, algebra, f(x), math, CC_39336_F-IF_4", 
+        "date_added": "2011-02-20 16:27:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=5fcRSie63Hs&feature=youtube_gdata_player", 
+        "prev_video": "XEblO51pF5I", 
+        "readable_id": "functions--part-iii"
+    }, 
+    {
+        "next_video": "U-k5N1WPk4g", 
+        "video_position": 45, 
+        "description": "An example of a functions problem submitted by a youtube viewer", 
+        "title": "Functions (part 4)", 
+        "views": 73623, 
+        "related_videos": [
+            "5fcRSie63Hs", 
+            "U-k5N1WPk4g"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 367, 
+        "ka_url": "http://www.khanacademy.org/video/functions--part-4?playlist=Algebra", 
+        "youtube_id": "rbt51hXmzig", 
+        "keywords": "functions, algebra, math, compotise, f(x), g(x), khan, CC_39336_F-IF_8", 
+        "date_added": "2011-02-20 16:27:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=rbt51hXmzig&feature=youtube_gdata_player", 
+        "prev_video": "5fcRSie63Hs", 
+        "readable_id": "functions--part-4"
+    }, 
+    {
+        "next_video": "FP2arCfAfBY", 
+        "video_position": 46, 
+        "description": "Figuring out the domain of a function", 
+        "title": "Domain of a function", 
+        "views": 165394, 
+        "related_videos": [
+            "rbt51hXmzig", 
+            "FP2arCfAfBY"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 599, 
+        "ka_url": "http://www.khanacademy.org/video/domain-of-a-function?playlist=Algebra", 
+        "youtube_id": "U-k5N1WPk4g", 
+        "keywords": "domain, range, algebra, function, CC_39336_F-IF_2", 
+        "date_added": "2011-02-20 16:27:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=U-k5N1WPk4g&feature=youtube_gdata_player", 
+        "prev_video": "rbt51hXmzig", 
+        "readable_id": "domain-of-a-function"
+    }, 
+    {
+        "next_video": "yEAxG_D1HDw", 
+        "video_position": 47, 
+        "description": "Proof of the logarithm property: log a + log b = log ab", 
+        "title": "Proof: log a + log b = log ab", 
+        "views": 101356, 
+        "related_videos": [
+            "U-k5N1WPk4g", 
+            "yEAxG_D1HDw"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 428, 
+        "ka_url": "http://www.khanacademy.org/video/proof--log-a---log-b---log-ab?playlist=Algebra", 
+        "youtube_id": "FP2arCfAfBY", 
+        "keywords": "logarithm, log, proof, algebra, math, khan, property", 
+        "date_added": "2011-02-20 16:27:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=FP2arCfAfBY&feature=youtube_gdata_player", 
+        "prev_video": "U-k5N1WPk4g", 
+        "readable_id": "proof--log-a---log-b---log-ab"
+    }, 
+    {
+        "next_video": "cKOtT4WnZb4", 
+        "video_position": 48, 
+        "description": "Proofs of the logarithm properties: A(log B) = log (B^A) and log A - log B = log (A/B)", 
+        "title": "Proof: A(log B) = log (B^A), log A - log B = log (A/B)", 
+        "views": 51800, 
+        "related_videos": [
+            "FP2arCfAfBY", 
+            "cKOtT4WnZb4"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 477, 
+        "ka_url": "http://www.khanacademy.org/video/proof--a-log-b----log--b-a---log-a---log-b---log--a-b?playlist=Algebra", 
+        "youtube_id": "yEAxG_D1HDw", 
+        "keywords": "logarithm, properties, proof, algebra, math, khan", 
+        "date_added": "2011-02-20 16:27:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=yEAxG_D1HDw&feature=youtube_gdata_player", 
+        "prev_video": "FP2arCfAfBY", 
+        "readable_id": "proof--a-log-b----log--b-a---log-a---log-b---log--a-b"
+    }, 
+    {
+        "next_video": "4u8_AMacu-Y", 
+        "video_position": 49, 
+        "description": "Proof of the logarithm property \nlog_a (B) = (log_x (B))/(log_x (A))", 
+        "title": "Proof: log_a (B) = (log_x (B))/(log_x (A))", 
+        "views": 33001, 
+        "related_videos": [
+            "yEAxG_D1HDw", 
+            "4u8_AMacu-Y"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 445, 
+        "ka_url": "http://www.khanacademy.org/video/proof--log-a--b-----log-x--b----log-x--a?playlist=Algebra", 
+        "youtube_id": "cKOtT4WnZb4", 
+        "keywords": "logarithms, proof, properties, algebra, math, khan", 
+        "date_added": "2011-02-20 16:27:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=cKOtT4WnZb4&feature=youtube_gdata_player", 
+        "prev_video": "yEAxG_D1HDw", 
+        "readable_id": "proof--log-a--b-----log-x--b----log-x--a"
+    }, 
+    {
+        "next_video": "0A7RR0oy2ho", 
+        "video_position": 50, 
+        "description": "Dividing one polynomial into another", 
+        "title": "Algebraic Long Division", 
+        "views": 67666, 
+        "related_videos": [
+            "cKOtT4WnZb4", 
+            "0A7RR0oy2ho"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 621, 
+        "ka_url": "http://www.khanacademy.org/video/algebraic-long-division?playlist=Algebra", 
+        "youtube_id": "4u8_AMacu-Y", 
+        "keywords": "Algebraic, Long, Division, CC_39336_A-APR_2", 
+        "date_added": "2011-02-20 16:27:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=4u8_AMacu-Y&feature=youtube_gdata_player", 
+        "prev_video": "cKOtT4WnZb4", 
+        "readable_id": "algebraic-long-division"
+    }, 
+    {
+        "next_video": "6r1GQCxyMKI", 
+        "video_position": 51, 
+        "description": "What are conic sections and why are they called \"conic sections\"?", 
+        "title": "Introduction to Conic Sections", 
+        "views": 106847, 
+        "related_videos": [
+            "4u8_AMacu-Y", 
+            "6r1GQCxyMKI"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 658, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-conic-sections?playlist=Algebra", 
+        "youtube_id": "0A7RR0oy2ho", 
+        "keywords": "algebra, conic, sections, parabola, circle, ellipse, hyperbola", 
+        "date_added": "2011-02-20 16:27:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=0A7RR0oy2ho&feature=youtube_gdata_player", 
+        "prev_video": "4u8_AMacu-Y", 
+        "readable_id": "introduction-to-conic-sections"
+    }, 
+    {
+        "next_video": "lvAYFUIEpFI", 
+        "video_position": 52, 
+        "description": "Introduction to the Circle", 
+        "title": "Conic Sections: Intro to Circles", 
+        "views": 66104, 
+        "related_videos": [
+            "0A7RR0oy2ho", 
+            "lvAYFUIEpFI"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 544, 
+        "ka_url": "http://www.khanacademy.org/video/conic-sections--intro-to-circles?playlist=Algebra", 
+        "youtube_id": "6r1GQCxyMKI", 
+        "keywords": "conic, sections, circle, algebra", 
+        "date_added": "2011-02-20 16:27:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=6r1GQCxyMKI&feature=youtube_gdata_player", 
+        "prev_video": "0A7RR0oy2ho", 
+        "readable_id": "conic-sections--intro-to-circles"
+    }, 
+    {
+        "next_video": "pzSyOTkAsY4", 
+        "video_position": 53, 
+        "description": "Introduction to the ellipse.", 
+        "title": "Conic Sections: Intro to Ellipses", 
+        "views": 68759, 
+        "related_videos": [
+            "6r1GQCxyMKI", 
+            "pzSyOTkAsY4"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 854, 
+        "ka_url": "http://www.khanacademy.org/video/conic-sections--intro-to-ellipses?playlist=Algebra", 
+        "youtube_id": "lvAYFUIEpFI", 
+        "keywords": "ellipse, conic, section", 
+        "date_added": "2011-02-20 16:27:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=lvAYFUIEpFI&feature=youtube_gdata_player", 
+        "prev_video": "6r1GQCxyMKI", 
+        "readable_id": "conic-sections--intro-to-ellipses"
+    }, 
+    {
+        "next_video": "hl58vTCqVIY", 
+        "video_position": 54, 
+        "description": "Introduction to the hyperbola", 
+        "title": "Conic Sections: Intro to Hyperbolas", 
+        "views": 63844, 
+        "related_videos": [
+            "lvAYFUIEpFI", 
+            "hl58vTCqVIY"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 814, 
+        "ka_url": "http://www.khanacademy.org/video/conic-sections--intro-to-hyperbolas?playlist=Algebra", 
+        "youtube_id": "pzSyOTkAsY4", 
+        "keywords": "hyperbola, conic, section, algebra", 
+        "date_added": "2011-02-20 16:27:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=pzSyOTkAsY4&feature=youtube_gdata_player", 
+        "prev_video": "lvAYFUIEpFI", 
+        "readable_id": "conic-sections--intro-to-hyperbolas"
+    }, 
+    {
+        "next_video": "lGQw-W1PxBE", 
+        "video_position": 55, 
+        "description": "Continuation of the intro to hyperbolas", 
+        "title": "Conic Sections: Hyperbolas 2", 
+        "views": 35703, 
+        "related_videos": [
+            "pzSyOTkAsY4", 
+            "lGQw-W1PxBE"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 450, 
+        "ka_url": "http://www.khanacademy.org/video/conic-sections--hyperbolas-2?playlist=Algebra", 
+        "youtube_id": "hl58vTCqVIY", 
+        "keywords": "hyperbola, conic, section", 
+        "date_added": "2011-02-20 16:27:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=hl58vTCqVIY&feature=youtube_gdata_player", 
+        "prev_video": "pzSyOTkAsY4", 
+        "readable_id": "conic-sections--hyperbolas-2"
+    }, 
+    {
+        "next_video": "LSJuu4Qm2qQ", 
+        "video_position": 56, 
+        "description": "Part 3 of the intro to hyperbolas", 
+        "title": "Conic Sections: Hyperbolas 3", 
+        "views": 30416, 
+        "related_videos": [
+            "hl58vTCqVIY", 
+            "LSJuu4Qm2qQ"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 629, 
+        "ka_url": "http://www.khanacademy.org/video/conic-sections--hyperbolas-3?playlist=Algebra", 
+        "youtube_id": "lGQw-W1PxBE", 
+        "keywords": "conic, section, hyperbola", 
+        "date_added": "2011-02-20 16:27:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=lGQw-W1PxBE&feature=youtube_gdata_player", 
+        "prev_video": "hl58vTCqVIY", 
+        "readable_id": "conic-sections--hyperbolas-3"
+    }, 
+    {
+        "next_video": "cvA4VN1dpuY", 
+        "video_position": 57, 
+        "description": "Part 1 of identifying and graphic conic sections", 
+        "title": "Identifying Conics 1", 
+        "views": 39290, 
+        "related_videos": [
+            "lGQw-W1PxBE", 
+            "cvA4VN1dpuY"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 551, 
+        "ka_url": "http://www.khanacademy.org/video/identifying-conics-1?playlist=Algebra", 
+        "youtube_id": "LSJuu4Qm2qQ", 
+        "keywords": "conic, section, graphing, ellipse, hyperbola", 
+        "date_added": "2011-02-20 16:27:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=LSJuu4Qm2qQ&feature=youtube_gdata_player", 
+        "prev_video": "lGQw-W1PxBE", 
+        "readable_id": "identifying-conics-1"
+    }, 
+    {
+        "next_video": "Dru0RHgfp2g", 
+        "video_position": 58, 
+        "description": "Part 2 of identifying and graphing conic sections", 
+        "title": "Identifying Conics 2", 
+        "views": 23745, 
+        "related_videos": [
+            "LSJuu4Qm2qQ", 
+            "Dru0RHgfp2g"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 688, 
+        "ka_url": "http://www.khanacademy.org/video/identifying-conics-2?playlist=Algebra", 
+        "youtube_id": "cvA4VN1dpuY", 
+        "keywords": "conic, section, graphing, hyperbola", 
+        "date_added": "2011-02-20 16:27:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=cvA4VN1dpuY&feature=youtube_gdata_player", 
+        "prev_video": "LSJuu4Qm2qQ", 
+        "readable_id": "identifying-conics-2"
+    }, 
+    {
+        "next_video": "QR2vxfwiHAU", 
+        "video_position": 59, 
+        "description": "Let's identify (and graph) a couple of more conics!", 
+        "title": "Conic Identification 3", 
+        "views": 22490, 
+        "related_videos": [
+            "cvA4VN1dpuY", 
+            "QR2vxfwiHAU"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 694, 
+        "ka_url": "http://www.khanacademy.org/video/conic-identification-3?playlist=Algebra", 
+        "youtube_id": "Dru0RHgfp2g", 
+        "keywords": "conic, sections, parabola, circle", 
+        "date_added": "2011-02-20 16:27:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=Dru0RHgfp2g&feature=youtube_gdata_player", 
+        "prev_video": "cvA4VN1dpuY", 
+        "readable_id": "conic-identification-3"
+    }, 
+    {
+        "next_video": "S0Fd2Tg2v7M", 
+        "video_position": 60, 
+        "description": "Calculating the foci (or focuses) of an Ellipse.", 
+        "title": "Foci of an Ellipse", 
+        "views": 55575, 
+        "related_videos": [
+            "Dru0RHgfp2g", 
+            "S0Fd2Tg2v7M"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 829, 
+        "ka_url": "http://www.khanacademy.org/video/foci-of-an-ellipse?playlist=Algebra", 
+        "youtube_id": "QR2vxfwiHAU", 
+        "keywords": "foci, focus, ellipse, conic, section", 
+        "date_added": "2011-02-20 16:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=QR2vxfwiHAU&feature=youtube_gdata_player", 
+        "prev_video": "Dru0RHgfp2g", 
+        "readable_id": "foci-of-an-ellipse"
+    }, 
+    {
+        "next_video": "HPRFmu7JsKU", 
+        "video_position": 61, 
+        "description": "Introduction to the foci (focuses) of a hyperbola", 
+        "title": "Foci of a Hyperbola", 
+        "views": 35007, 
+        "related_videos": [
+            "QR2vxfwiHAU", 
+            "HPRFmu7JsKU"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 924, 
+        "ka_url": "http://www.khanacademy.org/video/foci-of-a-hyperbola?playlist=Algebra", 
+        "youtube_id": "S0Fd2Tg2v7M", 
+        "keywords": "hyperbola, foci, focuses, conic", 
+        "date_added": "2011-02-20 16:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=S0Fd2Tg2v7M&feature=youtube_gdata_player", 
+        "prev_video": "QR2vxfwiHAU", 
+        "readable_id": "foci-of-a-hyperbola"
+    }, 
+    {
+        "next_video": "S-XKGBesRzk", 
+        "video_position": 62, 
+        "description": "Proof of the hyperbola foci formula", 
+        "title": "Proof: Hyperbola Foci", 
+        "views": 20317, 
+        "related_videos": [
+            "S0Fd2Tg2v7M", 
+            "S-XKGBesRzk"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 890, 
+        "ka_url": "http://www.khanacademy.org/video/proof--hyperbola-foci?playlist=Algebra", 
+        "youtube_id": "HPRFmu7JsKU", 
+        "keywords": "hyperbola, foci, focuses, conic", 
+        "date_added": "2011-02-20 16:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=HPRFmu7JsKU&feature=youtube_gdata_player", 
+        "prev_video": "S0Fd2Tg2v7M", 
+        "readable_id": "proof--hyperbola-foci"
+    }, 
+    {
+        "next_video": "6FrPLJY0rqM", 
+        "video_position": 63, 
+        "description": "Introduction to partial fraction expansion", 
+        "title": "Partial Fraction Expansion 1", 
+        "views": 109030, 
+        "related_videos": [
+            "HPRFmu7JsKU", 
+            "6FrPLJY0rqM"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 688, 
+        "ka_url": "http://www.khanacademy.org/video/partial-fraction-expansion-1?playlist=Algebra", 
+        "youtube_id": "S-XKGBesRzk", 
+        "keywords": "partial, fraction, expansion, decomposition, CC_39336_A-APR_6", 
+        "date_added": "2011-02-20 16:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=S-XKGBesRzk&feature=youtube_gdata_player", 
+        "prev_video": "HPRFmu7JsKU", 
+        "readable_id": "partial-fraction-expansion-1"
+    }, 
+    {
+        "next_video": "A52fEdPn9lg", 
+        "video_position": 64, 
+        "description": "A more complex problem", 
+        "title": "Partial Fraction Expansion 2", 
+        "views": 55036, 
+        "related_videos": [
+            "S-XKGBesRzk", 
+            "A52fEdPn9lg"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 782, 
+        "ka_url": "http://www.khanacademy.org/video/partial-fraction-expansion-2?playlist=Algebra", 
+        "youtube_id": "6FrPLJY0rqM", 
+        "keywords": "partial, fraction, expansion, decomposition, CC_39336_A-APR_6", 
+        "date_added": "2011-02-20 16:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=6FrPLJY0rqM&feature=youtube_gdata_player", 
+        "prev_video": "S-XKGBesRzk", 
+        "readable_id": "partial-fraction-expansion-2"
+    }, 
+    {
+        "next_video": "ZJf9shWlMz0", 
+        "video_position": 65, 
+        "description": "Dealing with repeated factors", 
+        "title": "Partial Fraction Expansion 3", 
+        "views": 39329, 
+        "related_videos": [
+            "6FrPLJY0rqM", 
+            "ZJf9shWlMz0"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 635, 
+        "ka_url": "http://www.khanacademy.org/video/partial-fraction-expansion-3?playlist=Algebra", 
+        "youtube_id": "A52fEdPn9lg", 
+        "keywords": "partial, fraction, expansion, decomposition, CC_39336_A-APR_6", 
+        "date_added": "2011-02-20 16:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=A52fEdPn9lg&feature=youtube_gdata_player", 
+        "prev_video": "6FrPLJY0rqM", 
+        "readable_id": "partial-fraction-expansion-3"
+    }, 
+    {
+        "next_video": "1Jm9rREA-uA", 
+        "video_position": 66, 
+        "description": "Parabola as the locus of all points equidistant from a point and a line", 
+        "title": "Parabola Focus and Directrix 1", 
+        "views": 71067, 
+        "related_videos": [
+            "A52fEdPn9lg", 
+            "1Jm9rREA-uA"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 871, 
+        "ka_url": "http://www.khanacademy.org/video/parabola-focus-and-directrix-1?playlist=Algebra", 
+        "youtube_id": "ZJf9shWlMz0", 
+        "keywords": "parabola, focus, directrix, conic, section", 
+        "date_added": "2011-02-20 16:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=ZJf9shWlMz0&feature=youtube_gdata_player", 
+        "prev_video": "A52fEdPn9lg", 
+        "readable_id": "parabola-focus-and-directrix-1"
+    }, 
+    {
+        "next_video": "Nx4Xk5S4HQA", 
+        "video_position": 67, 
+        "description": "Finding the focus and directrix of a parabola", 
+        "title": "Focus and Directrix of a Parabola 2", 
+        "views": 33190, 
+        "related_videos": [
+            "ZJf9shWlMz0", 
+            "Nx4Xk5S4HQA"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 1108, 
+        "ka_url": "http://www.khanacademy.org/video/focus-and-directrix-of-a-parabola-2?playlist=Algebra", 
+        "youtube_id": "1Jm9rREA-uA", 
+        "keywords": "focus, directrix, parabola, conic, section", 
+        "date_added": "2011-02-20 16:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=1Jm9rREA-uA&feature=youtube_gdata_player", 
+        "prev_video": "ZJf9shWlMz0", 
+        "readable_id": "focus-and-directrix-of-a-parabola-2"
+    }, 
+    {
+        "next_video": "P03ljxjy8Nw", 
+        "video_position": 68, 
+        "description": "Algebra word problem involving two bicycles passing each other.", 
+        "title": "Two Passing Bicycles Word Problem", 
+        "views": 32993, 
+        "related_videos": [
+            "1Jm9rREA-uA", 
+            "P03ljxjy8Nw"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 339, 
+        "ka_url": "http://www.khanacademy.org/video/two-passing-bicycles-word-problem?playlist=Algebra", 
+        "youtube_id": "Nx4Xk5S4HQA", 
+        "keywords": "algebra, word, problem, bicycles, rate, distance, time", 
+        "date_added": "2011-02-20 16:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=Nx4Xk5S4HQA&feature=youtube_gdata_player", 
+        "prev_video": "1Jm9rREA-uA", 
+        "readable_id": "two-passing-bicycles-word-problem"
+    }, 
+    {
+        "next_video": "qLLjD-g_9ms", 
+        "video_position": 69, 
+        "description": "Fun algebra word problem involving a train passing a bike.", 
+        "title": "Passed Bike Word Problem", 
+        "views": 18057, 
+        "related_videos": [
+            "Nx4Xk5S4HQA", 
+            "qLLjD-g_9ms"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 354, 
+        "ka_url": "http://www.khanacademy.org/video/passed-bike-word-problem?playlist=Algebra", 
+        "youtube_id": "P03ljxjy8Nw", 
+        "keywords": "algebra, word, problem, brain, teaser", 
+        "date_added": "2011-02-20 16:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=P03ljxjy8Nw&feature=youtube_gdata_player", 
+        "prev_video": "Nx4Xk5S4HQA", 
+        "readable_id": "passed-bike-word-problem"
+    }, 
+    {
+        "next_video": "LYWUHaWwY0c", 
+        "video_position": 70, 
+        "description": "Trains passing at different rates.", 
+        "title": "Passing Trains", 
+        "views": 32066, 
+        "related_videos": [
+            "P03ljxjy8Nw", 
+            "LYWUHaWwY0c"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 547, 
+        "ka_url": "http://www.khanacademy.org/video/passing-trains?playlist=Algebra", 
+        "youtube_id": "qLLjD-g_9ms", 
+        "keywords": "algebra, word, problem, rate, velocity, distance, time", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=qLLjD-g_9ms&feature=youtube_gdata_player", 
+        "prev_video": "P03ljxjy8Nw", 
+        "readable_id": "passing-trains"
+    }, 
+    {
+        "next_video": "uA3m8vbd2wc", 
+        "video_position": 71, 
+        "description": "3 people overtaking each other at different rates", 
+        "title": "Overtaking Word Problem", 
+        "views": 20883, 
+        "related_videos": [
+            "qLLjD-g_9ms", 
+            "uA3m8vbd2wc"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 592, 
+        "ka_url": "http://www.khanacademy.org/video/overtaking-word-problem?playlist=Algebra", 
+        "youtube_id": "LYWUHaWwY0c", 
+        "keywords": "algebra, word, problem, brain, teaser", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=LYWUHaWwY0c&feature=youtube_gdata_player", 
+        "prev_video": "qLLjD-g_9ms", 
+        "readable_id": "overtaking-word-problem"
+    }, 
+    {
+        "next_video": "IPJAi5zWu9U", 
+        "video_position": 72, 
+        "description": "Fun word problem that is almost a brain teaser.", 
+        "title": "Early Train Word Problem", 
+        "views": 18668, 
+        "related_videos": [
+            "LYWUHaWwY0c", 
+            "IPJAi5zWu9U"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 427, 
+        "ka_url": "http://www.khanacademy.org/video/early-train-word-problem?playlist=Algebra", 
+        "youtube_id": "uA3m8vbd2wc", 
+        "keywords": "algebra, word, problem, brain, teaser", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=uA3m8vbd2wc&feature=youtube_gdata_player", 
+        "prev_video": "LYWUHaWwY0c", 
+        "readable_id": "early-train-word-problem"
+    }, 
+    {
+        "next_video": "ZjeMdXV0QMg", 
+        "video_position": 73, 
+        "description": "Not quite a brain teaser but fun nonetheless!", 
+        "title": "Officer on Horseback", 
+        "views": 24505, 
+        "related_videos": [
+            "uA3m8vbd2wc", 
+            "ZjeMdXV0QMg"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 534, 
+        "ka_url": "http://www.khanacademy.org/video/officer-on-horseback?playlist=Algebra", 
+        "youtube_id": "IPJAi5zWu9U", 
+        "keywords": "math, brain, teaser, word, problem", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=IPJAi5zWu9U&feature=youtube_gdata_player", 
+        "prev_video": "uA3m8vbd2wc", 
+        "readable_id": "officer-on-horseback"
+    }, 
+    {
+        "next_video": "2RnS3fSHVV8", 
+        "video_position": 74, 
+        "description": "Two ways to solve a rational inequality (or an inequality involving a fractional expression)", 
+        "title": "Rational Inequalities", 
+        "views": 36704, 
+        "related_videos": [
+            "IPJAi5zWu9U", 
+            "2RnS3fSHVV8"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 709, 
+        "ka_url": "http://www.khanacademy.org/video/rational-inequalities?playlist=Algebra", 
+        "youtube_id": "ZjeMdXV0QMg", 
+        "keywords": "algebra, inequality, rational, fraction", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=ZjeMdXV0QMg&feature=youtube_gdata_player", 
+        "prev_video": "IPJAi5zWu9U", 
+        "readable_id": "rational-inequalities"
+    }, 
+    {
+        "next_video": "hypi8QPsFEk", 
+        "video_position": 75, 
+        "description": "Slightly harder rational inequality problem", 
+        "title": "Rational Inequalities 2", 
+        "views": 18902, 
+        "related_videos": [
+            "ZjeMdXV0QMg", 
+            "hypi8QPsFEk"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 795, 
+        "ka_url": "http://www.khanacademy.org/video/rational-inequalities-2?playlist=Algebra", 
+        "youtube_id": "2RnS3fSHVV8", 
+        "keywords": "algebra, rational, inequality", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=2RnS3fSHVV8&feature=youtube_gdata_player", 
+        "prev_video": "ZjeMdXV0QMg", 
+        "readable_id": "rational-inequalities-2"
+    }, 
+    {
+        "next_video": "i05-okb1EJg", 
+        "video_position": 76, 
+        "description": "Finding the coefficients of a third degree polynomial given 2 roots and the y-intercept", 
+        "title": "Interesting Polynomial Coefficient Problem", 
+        "views": 21976, 
+        "related_videos": [
+            "2RnS3fSHVV8", 
+            "i05-okb1EJg"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 975, 
+        "ka_url": "http://www.khanacademy.org/video/interesting-polynomial-coefficient-problem?playlist=Algebra", 
+        "youtube_id": "hypi8QPsFEk", 
+        "keywords": "algebra, polynomial, root, zeroes, coefficients", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=hypi8QPsFEk&feature=youtube_gdata_player", 
+        "prev_video": "2RnS3fSHVV8", 
+        "readable_id": "interesting-polynomial-coefficient-problem"
+    }, 
+    {
+        "next_video": "W84lObmOp8M", 
+        "video_position": 77, 
+        "description": "Figuring out the formula for fixed mortgage payments using the sum of a geometric series", 
+        "title": "Geometric series sum to figure out mortgage payments", 
+        "views": 20656, 
+        "related_videos": [
+            "hypi8QPsFEk", 
+            "W84lObmOp8M"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 1056, 
+        "ka_url": "http://www.khanacademy.org/video/geometric-series-sum-to-figure-out-mortgage-payments?playlist=Algebra", 
+        "youtube_id": "i05-okb1EJg", 
+        "keywords": "geometric, series, mortgage, math, CC_39336_A-SSE_4", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=i05-okb1EJg&feature=youtube_gdata_player", 
+        "prev_video": "hypi8QPsFEk", 
+        "readable_id": "geometric-series-sum-to-figure-out-mortgage-payments"
+    }, 
+    {
+        "next_video": "wSiamij_i_k", 
+        "video_position": 78, 
+        "description": "Introduction to Function Inverses", 
+        "title": "Introduction to Function Inverses", 
+        "views": 57002, 
+        "related_videos": [
+            "i05-okb1EJg", 
+            "wSiamij_i_k"
+        ], 
+        "playlist_titles": [
+            "Algebra", 
+            "Precalculus"
+        ], 
+        "duration": 545, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-function-inverses?playlist=Algebra", 
+        "youtube_id": "W84lObmOp8M", 
+        "keywords": "function, inverse, CC_39336_F-BF_4, CC_39336_F-BF_4_a, CC_39336_F-BF_4_c", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=W84lObmOp8M&feature=youtube_gdata_player", 
+        "prev_video": "i05-okb1EJg", 
+        "readable_id": "introduction-to-function-inverses"
+    }, 
+    {
+        "next_video": "aeyFb2eVH1c", 
+        "video_position": 79, 
+        "description": "Function Inverse Example 1", 
+        "title": "Function Inverse Example 1", 
+        "views": 59304, 
+        "related_videos": [
+            "W84lObmOp8M", 
+            "aeyFb2eVH1c"
+        ], 
+        "playlist_titles": [
+            "Algebra", 
+            "Precalculus"
+        ], 
+        "duration": 404, 
+        "ka_url": "http://www.khanacademy.org/video/function-inverse-example-1?playlist=Algebra", 
+        "youtube_id": "wSiamij_i_k", 
+        "keywords": "Function, Inverse, Example, CC_39336_F-BF_4, CC_39336_F-BF_4_a, CC_39336_F-BF_4_b", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=wSiamij_i_k&feature=youtube_gdata_player", 
+        "prev_video": "W84lObmOp8M", 
+        "readable_id": "function-inverse-example-1"
+    }, 
+    {
+        "next_video": "Bq9cq9FZuNM", 
+        "video_position": 80, 
+        "description": "Function Inverses Example 2", 
+        "title": "Function Inverses Example 2", 
+        "views": 29109, 
+        "related_videos": [
+            "wSiamij_i_k", 
+            "Bq9cq9FZuNM"
+        ], 
+        "playlist_titles": [
+            "Algebra", 
+            "Precalculus"
+        ], 
+        "duration": 432, 
+        "ka_url": "http://www.khanacademy.org/video/function-inverses-example-2?playlist=Algebra", 
+        "youtube_id": "aeyFb2eVH1c", 
+        "keywords": "Function, Inverses, Example, CC_39336_F-BF_4, CC_39336_F-BF_4_a, CC_39336_F-BF_4_d", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=aeyFb2eVH1c&feature=youtube_gdata_player", 
+        "prev_video": "wSiamij_i_k", 
+        "readable_id": "function-inverses-example-2"
+    }, 
+    {
+        "next_video": "92U67CUy9Gc", 
+        "video_position": 81, 
+        "description": "Function Inverses Example 3", 
+        "title": "Function Inverses Example 3", 
+        "views": 26945, 
+        "related_videos": [
+            "aeyFb2eVH1c", 
+            "92U67CUy9Gc"
+        ], 
+        "playlist_titles": [
+            "Algebra", 
+            "Precalculus"
+        ], 
+        "duration": 455, 
+        "ka_url": "http://www.khanacademy.org/video/function-inverses-example-3?playlist=Algebra", 
+        "youtube_id": "Bq9cq9FZuNM", 
+        "keywords": "Function, Inverses, Example, CC_39336_F-BF_4, CC_39336_F-BF_4_a, CC_39336_F-BF_4_d", 
+        "date_added": "2011-02-20 16:27:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=Bq9cq9FZuNM&feature=youtube_gdata_player", 
+        "prev_video": "aeyFb2eVH1c", 
+        "readable_id": "function-inverses-example-3"
+    }, 
+    {
+        "next_video": "3_DxJwDTbyQ", 
+        "video_position": 82, 
+        "description": "Understanding direct and inverse variation", 
+        "title": "Direct and Inverse Variation", 
+        "views": 20989, 
+        "related_videos": [
+            "Bq9cq9FZuNM", 
+            "3_DxJwDTbyQ"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 594, 
+        "ka_url": "http://www.khanacademy.org/video/direct-and-inverse-variation?playlist=Algebra", 
+        "youtube_id": "92U67CUy9Gc", 
+        "keywords": "direct, inverse, variation", 
+        "date_added": "2011-04-16 23:59:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=92U67CUy9Gc&feature=youtube_gdata_player", 
+        "prev_video": "Bq9cq9FZuNM", 
+        "readable_id": "direct-and-inverse-variation"
+    }, 
+    {
+        "next_video": "8VgmBe3ulb8", 
+        "video_position": 83, 
+        "description": "Examples of variables varying directly and inversely", 
+        "title": "Recognizing Direct and Inverse Variation", 
+        "views": 11112, 
+        "related_videos": [
+            "92U67CUy9Gc", 
+            "8VgmBe3ulb8"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 425, 
+        "ka_url": "http://www.khanacademy.org/video/recognizing-direct-and-inverse-variation?playlist=Algebra", 
+        "youtube_id": "3_DxJwDTbyQ", 
+        "keywords": "direct, inverse, variation", 
+        "date_added": "2011-04-16 23:59:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=3_DxJwDTbyQ&feature=youtube_gdata_player", 
+        "prev_video": "92U67CUy9Gc", 
+        "readable_id": "recognizing-direct-and-inverse-variation"
+    }, 
+    {
+        "next_video": "jFazrvLodrA", 
+        "video_position": 84, 
+        "description": "Even and odd functions", 
+        "title": "Recognizing Odd and Even Functions", 
+        "views": 21827, 
+        "related_videos": [
+            "3_DxJwDTbyQ", 
+            "jFazrvLodrA"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 745, 
+        "ka_url": "http://www.khanacademy.org/video/recognizing-odd-and-even-functions?playlist=Algebra", 
+        "youtube_id": "8VgmBe3ulb8", 
+        "keywords": "even, odd, functions, CC_39336_F-BF_3", 
+        "date_added": "2011-04-16 23:59:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=8VgmBe3ulb8&feature=youtube_gdata_player", 
+        "prev_video": "3_DxJwDTbyQ", 
+        "readable_id": "recognizing-odd-and-even-functions"
+    }, 
+    {
+        "next_video": "ND-Bbp_q46s", 
+        "video_position": 85, 
+        "description": "A possible reason why even functions are called \"even\" and odd functions are called \"odd\"", 
+        "title": "Connection between even and odd numbers and functions", 
+        "views": 11394, 
+        "related_videos": [
+            "8VgmBe3ulb8", 
+            "ND-Bbp_q46s"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 248, 
+        "ka_url": "http://www.khanacademy.org/video/connection-between-even-and-odd-numbers-and-functions?playlist=Algebra", 
+        "youtube_id": "jFazrvLodrA", 
+        "keywords": "even, odd, functions, CC_39336_F-BF_3", 
+        "date_added": "2011-04-16 23:59:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=jFazrvLodrA&feature=youtube_gdata_player", 
+        "prev_video": "8VgmBe3ulb8", 
+        "readable_id": "connection-between-even-and-odd-numbers-and-functions"
+    }, 
+    {
+        "next_video": "wblW_M_HVQ8", 
+        "video_position": 86, 
+        "description": "Getting comfortable with evaluating newly defined function operators", 
+        "title": "New Operator Definitions", 
+        "views": 10095, 
+        "related_videos": [
+            "jFazrvLodrA", 
+            "wblW_M_HVQ8"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 410, 
+        "ka_url": "http://www.khanacademy.org/video/new-operator-definitions?playlist=Algebra", 
+        "youtube_id": "ND-Bbp_q46s", 
+        "keywords": "algebra, operators, function, SAT", 
+        "date_added": "2011-08-03 23:27:02", 
+        "youtube_url": "http://www.youtube.com/watch?v=ND-Bbp_q46s&feature=youtube_gdata_player", 
+        "prev_video": "jFazrvLodrA", 
+        "readable_id": "new-operator-definitions"
+    }, 
+    {
+        "next_video": "1wnIsgUivEQ", 
+        "video_position": 87, 
+        "description": "Proving an expression for the sum of all positive integers up to and including n by induction", 
+        "title": "Proof by Induction", 
+        "views": 23741, 
+        "related_videos": [
+            "ND-Bbp_q46s", 
+            "1wnIsgUivEQ"
+        ], 
+        "playlist_titles": [
+            "Algebra", 
+            "New and Noteworthy"
+        ], 
+        "duration": 563, 
+        "ka_url": "http://www.khanacademy.org/video/proof-by-induction?playlist=Algebra", 
+        "youtube_id": "wblW_M_HVQ8", 
+        "keywords": "proof, algebra, induction", 
+        "date_added": "2011-08-10 18:49:02", 
+        "youtube_url": "http://www.youtube.com/watch?v=wblW_M_HVQ8&feature=youtube_gdata_player", 
+        "prev_video": "ND-Bbp_q46s", 
+        "readable_id": "proof-by-induction"
+    }, 
+    {
+        "next_video": "96ZEmUbnuU8", 
+        "video_position": 88, 
+        "description": "Another way to prove the expression for the sum of all positive integers up to and including n", 
+        "title": "Alternate Proof to Induction for Integer Sum", 
+        "views": 6650, 
+        "related_videos": [
+            "wblW_M_HVQ8", 
+            "96ZEmUbnuU8"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 212, 
+        "ka_url": "http://www.khanacademy.org/video/alternate-proof-to-induction-for-integer-sum?playlist=Algebra", 
+        "youtube_id": "1wnIsgUivEQ", 
+        "keywords": "proof, algebra, sum, sequence, series", 
+        "date_added": "2011-08-10 18:49:02", 
+        "youtube_url": "http://www.youtube.com/watch?v=1wnIsgUivEQ&feature=youtube_gdata_player", 
+        "prev_video": "wblW_M_HVQ8", 
+        "readable_id": "alternate-proof-to-induction-for-integer-sum"
+    }, 
+    {
+        "next_video": "FPNhCVZlbJs", 
+        "video_position": 89, 
+        "description": "Setting up proportions to solve a word problem", 
+        "title": "Writing Proportions", 
+        "views": 15953, 
+        "related_videos": [
+            "1wnIsgUivEQ", 
+            "FPNhCVZlbJs"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 351, 
+        "ka_url": "http://www.khanacademy.org/video/writing-proportions?playlist=Algebra", 
+        "youtube_id": "96ZEmUbnuU8", 
+        "keywords": "algebra, math, proportions, ratios", 
+        "date_added": "2011-08-24 10:00:21", 
+        "youtube_url": "http://www.youtube.com/watch?v=96ZEmUbnuU8&feature=youtube_gdata_player", 
+        "prev_video": "1wnIsgUivEQ", 
+        "readable_id": "writing-proportions"
+    }, 
+    {
+        "next_video": "Ihws0d-WLzU", 
+        "video_position": 90, 
+        "description": "Examples of how to convert basic repeating decimals to fractions", 
+        "title": "Coverting Repeating Decimals to Fractions 1", 
+        "views": 11388, 
+        "related_videos": [
+            "96ZEmUbnuU8", 
+            "Ihws0d-WLzU"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 243, 
+        "ka_url": "http://www.khanacademy.org/video/coverting-repeating-decimals-to-fractions-1?playlist=Algebra", 
+        "youtube_id": "FPNhCVZlbJs", 
+        "keywords": "Coverting, Repeating, Decimals, to, Fractions, 1", 
+        "date_added": "2011-11-02 10:02:13", 
+        "youtube_url": "http://www.youtube.com/watch?v=FPNhCVZlbJs&feature=youtube_gdata_player", 
+        "prev_video": "96ZEmUbnuU8", 
+        "readable_id": "coverting-repeating-decimals-to-fractions-1"
+    }, 
+    {
+        "next_video": "", 
+        "video_position": 91, 
+        "description": "Converting more interesting repeating decimals to fractions", 
+        "title": "Coverting Repeating Decimals to Fractions 2", 
+        "views": 7160, 
+        "related_videos": [
+            "FPNhCVZlbJs"
+        ], 
+        "playlist_titles": [
+            "Algebra"
+        ], 
+        "duration": 546, 
+        "ka_url": "http://www.khanacademy.org/video/coverting-repeating-decimals-to-fractions-2?playlist=Algebra", 
+        "youtube_id": "Ihws0d-WLzU", 
+        "keywords": "Coverting, Repeating, Decimals, to, Fractions, 2", 
+        "date_added": "2011-11-02 10:02:13", 
+        "youtube_url": "http://www.youtube.com/watch?v=Ihws0d-WLzU&feature=youtube_gdata_player", 
+        "prev_video": "FPNhCVZlbJs", 
+        "readable_id": "coverting-repeating-decimals-to-fractions-2"
+    }
+]

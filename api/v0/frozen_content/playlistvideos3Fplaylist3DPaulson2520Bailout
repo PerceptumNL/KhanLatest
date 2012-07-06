@@ -1,0 +1,322 @@
+[
+    {
+        "next_video": "YJBqGM29_64", 
+        "video_position": 1, 
+        "description": "Review of balance sheets.  Difference between illiquidity and insolvency.", 
+        "title": "Bailout 1: Liquidity vs. Solvency", 
+        "views": 92628, 
+        "related_videos": [
+            "YJBqGM29_64"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 686, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-1--liquidity-vs--solvency?playlist=Paulson+Bailout", 
+        "youtube_id": "ZUEjRYe7MRk", 
+        "keywords": "bailout, fed, treasury, insolvency, credit, crunch", 
+        "date_added": "2011-02-20 16:42:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=ZUEjRYe7MRk&feature=youtube_gdata_player", 
+        "prev_video": "", 
+        "readable_id": "bailout-1--liquidity-vs--solvency"
+    }, 
+    {
+        "next_video": "TUOQZjotyAQ", 
+        "video_position": 2, 
+        "description": "Hypothetical bank balance sheet.  What book value means.", 
+        "title": "Bailout 2: Book Value", 
+        "views": 46085, 
+        "related_videos": [
+            "ZUEjRYe7MRk", 
+            "TUOQZjotyAQ"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 652, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-2--book-value?playlist=Paulson+Bailout", 
+        "youtube_id": "YJBqGM29_64", 
+        "keywords": "bailout, fed, treasury, insolvency, credit, crunch, book, value", 
+        "date_added": "2011-02-20 16:42:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=YJBqGM29_64&feature=youtube_gdata_player", 
+        "prev_video": "ZUEjRYe7MRk", 
+        "readable_id": "bailout-2--book-value"
+    }, 
+    {
+        "next_video": "w_GZqhAR0I4", 
+        "video_position": 3, 
+        "description": "What it means when the market value of a stock is different from its book value.", 
+        "title": "Bailout 3: Book value vs. market value", 
+        "views": 43213, 
+        "related_videos": [
+            "YJBqGM29_64", 
+            "w_GZqhAR0I4"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 632, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-3--book-value-vs--market-value?playlist=Paulson+Bailout", 
+        "youtube_id": "TUOQZjotyAQ", 
+        "keywords": "bailout, fed, treasury, insolvency, credit, crunch", 
+        "date_added": "2011-02-20 16:42:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=TUOQZjotyAQ&feature=youtube_gdata_player", 
+        "prev_video": "YJBqGM29_64", 
+        "readable_id": "bailout-3--book-value-vs--market-value"
+    }, 
+    {
+        "next_video": "I8BLj7cRM7c", 
+        "video_position": 4, 
+        "description": "Different ways of accounting for an asset.  Mark-to-model vs. mark-to-market.", 
+        "title": "Bailout 4: Mark-to-model vs. mark-to-market", 
+        "views": 38894, 
+        "related_videos": [
+            "TUOQZjotyAQ", 
+            "I8BLj7cRM7c"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 684, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-4--mark-to-model-vs--mark-to-market?playlist=Paulson+Bailout", 
+        "youtube_id": "w_GZqhAR0I4", 
+        "keywords": "bailout, fed, treasury, insolvency, credit, crunch, accounting, model, mark, market", 
+        "date_added": "2011-02-20 16:42:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=w_GZqhAR0I4&feature=youtube_gdata_player", 
+        "prev_video": "TUOQZjotyAQ", 
+        "readable_id": "bailout-4--mark-to-model-vs--mark-to-market"
+    }, 
+    {
+        "next_video": "jDNalKBb3aA", 
+        "video_position": 5, 
+        "description": "How the bank can liquidate assets to pay off debt that comes due.", 
+        "title": "Bailout 5: Paying off the debt", 
+        "views": 35107, 
+        "related_videos": [
+            "w_GZqhAR0I4", 
+            "jDNalKBb3aA"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 651, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-5--paying-off-the-debt?playlist=Paulson+Bailout", 
+        "youtube_id": "I8BLj7cRM7c", 
+        "keywords": "bailout, credit, crunch, paulson, bernanke, leverage, CDO", 
+        "date_added": "2011-02-20 16:42:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=I8BLj7cRM7c&feature=youtube_gdata_player", 
+        "prev_video": "w_GZqhAR0I4", 
+        "readable_id": "bailout-5--paying-off-the-debt"
+    }, 
+    {
+        "next_video": "MdIfefLcdoU", 
+        "video_position": 6, 
+        "description": "The bank gets bailed out by an equity infusion from a sovereign wealth fund.", 
+        "title": "Bailout 6: Getting an equity infusion", 
+        "views": 26123, 
+        "related_videos": [
+            "I8BLj7cRM7c", 
+            "MdIfefLcdoU"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 722, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-6--getting-an-equity-infusion?playlist=Paulson+Bailout", 
+        "youtube_id": "jDNalKBb3aA", 
+        "keywords": "bailout, paulson, bernanke, SWF, sovereign, wealth, fund, equity", 
+        "date_added": "2011-02-20 16:42:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=jDNalKBb3aA&feature=youtube_gdata_player", 
+        "prev_video": "I8BLj7cRM7c", 
+        "readable_id": "bailout-6--getting-an-equity-infusion"
+    }, 
+    {
+        "next_video": "gX9aKDeAOz4", 
+        "video_position": 7, 
+        "description": "What happens when there is no equity infusion and the bank goes in to bankruptcy.", 
+        "title": "Bailout 7: Bank goes into bankruptcy", 
+        "views": 27985, 
+        "related_videos": [
+            "jDNalKBb3aA", 
+            "gX9aKDeAOz4"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 625, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-7--bank-goes-into-bankruptcy?playlist=Paulson+Bailout", 
+        "youtube_id": "MdIfefLcdoU", 
+        "keywords": "bailout, receivership, bankruptcy, paulson, bernanke", 
+        "date_added": "2011-02-20 16:42:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=MdIfefLcdoU&feature=youtube_gdata_player", 
+        "prev_video": "jDNalKBb3aA", 
+        "readable_id": "bailout-7--bank-goes-into-bankruptcy"
+    }, 
+    {
+        "next_video": "eBYbnYNl0rw", 
+        "video_position": 8, 
+        "description": "How the banks are connected.  What happens when one bank fails.", 
+        "title": "Bailout 8: Systemic Risk", 
+        "views": 29008, 
+        "related_videos": [
+            "MdIfefLcdoU", 
+            "eBYbnYNl0rw"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 712, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-8--systemic-risk?playlist=Paulson+Bailout", 
+        "youtube_id": "gX9aKDeAOz4", 
+        "keywords": "paulson, lehman, aig, goldman, bailout, credit, crunch, bernanke", 
+        "date_added": "2011-02-20 16:42:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=gX9aKDeAOz4&feature=youtube_gdata_player", 
+        "prev_video": "MdIfefLcdoU", 
+        "readable_id": "bailout-8--systemic-risk"
+    }, 
+    {
+        "next_video": "roap32sTgPk", 
+        "video_position": 9, 
+        "description": "What Paulson wants to do and why I don't like it.", 
+        "title": "Bailout 9: Paulson's Plan", 
+        "views": 31763, 
+        "related_videos": [
+            "gX9aKDeAOz4", 
+            "roap32sTgPk"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 665, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-9--paulson-s-plan?playlist=Paulson+Bailout", 
+        "youtube_id": "eBYbnYNl0rw", 
+        "keywords": "credit, crunch, moral, hazard, paulson, treasury, bailout, finance", 
+        "date_added": "2011-02-20 16:42:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=eBYbnYNl0rw&feature=youtube_gdata_player", 
+        "prev_video": "gX9aKDeAOz4", 
+        "readable_id": "bailout-9--paulson-s-plan"
+    }, 
+    {
+        "next_video": "RkIM0Mbc8YQ", 
+        "video_position": 10, 
+        "description": "Alternate plans and moral hazard.", 
+        "title": "Bailout 10: Moral Hazard", 
+        "views": 32122, 
+        "related_videos": [
+            "eBYbnYNl0rw", 
+            "RkIM0Mbc8YQ"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 727, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-10--moral-hazard?playlist=Paulson+Bailout", 
+        "youtube_id": "roap32sTgPk", 
+        "keywords": "fed, bailout, paulsen, bernanke, credit, crunch, lehman, aig", 
+        "date_added": "2011-02-20 16:42:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=roap32sTgPk&feature=youtube_gdata_player", 
+        "prev_video": "eBYbnYNl0rw", 
+        "readable_id": "bailout-10--moral-hazard"
+    }, 
+    {
+        "next_video": "eZZkhSl8lMA", 
+        "video_position": 11, 
+        "description": "Why a CDO could be worth nothing even though they are \"collateralized\".", 
+        "title": "Bailout 11: Why these CDOs could be worth nothing", 
+        "views": 33629, 
+        "related_videos": [
+            "roap32sTgPk", 
+            "eZZkhSl8lMA"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 644, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-11--why-these-cdos-could-be-worth-nothing?playlist=Paulson+Bailout", 
+        "youtube_id": "RkIM0Mbc8YQ", 
+        "keywords": "bailout, collateralized, debt, obligations, CDO, MBS", 
+        "date_added": "2011-02-20 16:42:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=RkIM0Mbc8YQ&feature=youtube_gdata_player", 
+        "prev_video": "roap32sTgPk", 
+        "readable_id": "bailout-11--why-these-cdos-could-be-worth-nothing"
+    }, 
+    {
+        "next_video": "BdmI14oSe4g", 
+        "video_position": 12, 
+        "description": "A real life example of a transaction involving CDOs.", 
+        "title": "Bailout 12: Lone Star Transaction", 
+        "views": 24086, 
+        "related_videos": [
+            "RkIM0Mbc8YQ", 
+            "BdmI14oSe4g"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 628, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-12--lone-star-transaction?playlist=Paulson+Bailout", 
+        "youtube_id": "eZZkhSl8lMA", 
+        "keywords": "merill, lynch, lone, star, CDOs", 
+        "date_added": "2011-02-20 16:42:51", 
+        "youtube_url": "http://www.youtube.com/watch?v=eZZkhSl8lMA&feature=youtube_gdata_player", 
+        "prev_video": "RkIM0Mbc8YQ", 
+        "readable_id": "bailout-12--lone-star-transaction"
+    }, 
+    {
+        "next_video": "-KrSxA9NCf0", 
+        "video_position": 13, 
+        "description": "A solution that is MUCH fairer that has a MUCH better chance of working!", 
+        "title": "Bailout 14: Possible Solution", 
+        "views": 31283, 
+        "related_videos": [
+            "eZZkhSl8lMA", 
+            "-KrSxA9NCf0"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 742, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-14--possible-solution?playlist=Paulson+Bailout", 
+        "youtube_id": "BdmI14oSe4g", 
+        "keywords": "bailout, paulson, bank, bernanke, credit, crisis", 
+        "date_added": "2011-02-20 16:42:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=BdmI14oSe4g&feature=youtube_gdata_player", 
+        "prev_video": "eZZkhSl8lMA", 
+        "readable_id": "bailout-14--possible-solution"
+    }, 
+    {
+        "next_video": "", 
+        "video_position": 14, 
+        "description": "More on the \"Plutsky Plan\".", 
+        "title": "Bailout 15: More on the solution", 
+        "views": 21833, 
+        "related_videos": [
+            "BdmI14oSe4g"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Paulson Bailout"
+        ], 
+        "duration": 609, 
+        "ka_url": "http://www.khanacademy.org/video/bailout-15--more-on-the-solution?playlist=Paulson+Bailout", 
+        "youtube_id": "-KrSxA9NCf0", 
+        "keywords": "paulson, bailout, fed, inflation, deflation, credit, crunch", 
+        "date_added": "2011-02-20 16:42:52", 
+        "youtube_url": "http://www.youtube.com/watch?v=-KrSxA9NCf0&feature=youtube_gdata_player", 
+        "prev_video": "BdmI14oSe4g", 
+        "readable_id": "bailout-15--more-on-the-solution"
+    }
+]

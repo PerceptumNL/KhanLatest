@@ -1,0 +1,27 @@
+{{#each badgeCollections}}
+    <div id="category-{{category}}" style="display: none;">
+      <div class="badge-description-container">
+        <div class="badge-description-content">
+            {{categoryDescription}}
+        </div>
+      </div>
+      {{#if userBadges.length}}
+      <div id="user-owned">
+      <h2 style="display: block; margin-left: 10px;">Badges Earned</h2>
+        {{#each userBadges}}
+          {{> shared_user-badge}}
+        {{/each}}
+        <div class="clear"></div>
+      </div>
+      {{/if}}
+      <div id="all-badges">
+        <h2 style="display: block; margin-left: 10px;">Possible Badges</h2>
+        {{#each badges}}
+          {{#unless isRetired}}
+            {{> shared_badge}}
+          {{/unless}}
+        {{/each}}
+      </div>
+      <div class="clear"></div>
+    </div>
+{{/each}}

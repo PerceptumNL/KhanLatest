@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<!-- Unit tests for LocalStore -->
+<html>
+<head>
+<script src="../testbase.js"></script>
+<script src="../shared-package/localStorage.js"></script>
+<script>
+
+var pass = KA_TEST.run([
+
+    function testClear() {
+        LocalStore.clearAll();
+        return LocalStore.get("Monkey") === null;
+    },
+
+    function testSimpleSetAndGet() {
+        LocalStore.set("Monkey", "Gorilla");
+        return LocalStore.get("Monkey") === "Gorilla" &&
+                LocalStore.get("Gorilla") === null &&
+                LocalStore.get("monkey") === null;
+    },
+
+    function testDelete() {
+        LocalStore.set("Monkey", "Bananas");
+        LocalStore.del("Monkey");
+        return LocalStore.get("Monkey") === null;
+    },
+
+    function testVersionChange() {
+        LocalStore.set("Giraffe", "Kangaroo");
+
+        var versionLast = LocalStore.version;
+        LocalStore.version += 1;
+
+        var pass = LocalStore.get("Giraffe") === null;
+
+        LocalStore.version = versionLast;
+
+        return pass && LocalStore.get("Giraffe") === "Kangaroo";
+    }
+
+]);
+
+if (pass) {
+    document.write("LocalStore tests Passed!");
+} else {
+    document.write("LocalStore tests Failed.");
+}
+
+</script>
+</head>
+
+<body></body>
+
+</html>
+

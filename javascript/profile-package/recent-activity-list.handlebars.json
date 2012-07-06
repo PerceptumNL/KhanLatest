@@ -1,0 +1,97 @@
+[{
+    "dt": "2012-03-09T20:16:46Z",
+    "isVideoCompleted": true,
+    "lastSecondWatched": 730,
+    "pointsEarned": 750,
+    "relativeUrl": "/video?v=qihoczo1Ujk",
+    "sType": "Video",
+    "secondsWatched": 725,
+    "videoTitle": "Multiplication 3: 10,11,12 times tables",
+    "youtubeId": "qihoczo1Ujk"
+}, {
+    "badge": {
+        "badgeCategory": 0,
+        "description": "Inspired 15 Minutes",
+        "hideContext": false,
+        "iconSrc": "/images/badges/meteorite-small.png",
+        "icons": {
+            "compact": "/images/badges/meteorite-60x60.png",
+            "medium": "/images/badges/meteorite-medium.png",
+            "small": "/images/badges/meteorite-small.png"
+        },
+        "isOwned": false,
+        "name": "powerfifteenminutesbadge",
+        "points": 0,
+        "safeExtendedDescription": "Correctly answer 10 problems and watch 10 minutes of video in 15 minutes"
+    },
+    "dt": "2012-03-09T20:13:14Z",
+    "sType": "Badge",
+    "userBadge": {
+        "badgeName": "powerfifteenminutesbadge",
+        "date": "2012-03-09T20:13:14Z",
+        "kind": "UserBadge",
+        "pointsEarned": 0,
+        "targetContext": null,
+        "targetContextName": null,
+        "user": "test333@example.com"
+    }
+}, {
+    "cProblems": 5,
+    "dt": "2012-03-09T20:04:11Z",
+    "earnedProficiency": true,
+    "exercise": "subtraction_1",
+    "exerciseDisplayName": "Subtraction 1",
+    "sType": "Exercise"
+}, {
+    "badge": {
+        "badgeCategory": 0,
+        "description": "Picking Up Steam",
+        "hideContext": false,
+        "iconSrc": "/images/badges/meteorite-small.png",
+        "icons": {
+            "compact": "/images/badges/meteorite-60x60.png",
+            "medium": "/images/badges/meteorite-medium.png",
+            "small": "/images/badges/meteorite-small.png"
+        },
+        "isOwned": false,
+        "name": "nicetimedproblembadge",
+        "points": 100,
+        "safeExtendedDescription": "Quickly & correctly answer 5 exercise problems in a row (time limit depends on exercise difficulty)"
+    },
+    "dt": "2012-03-09T20:01:05Z",
+    "sType": "Badge",
+    "userBadge": {
+        "badgeName": "nicetimedproblembadge",
+        "date": "2012-03-09T20:01:05Z",
+        "kind": "UserBadge",
+        "pointsEarned": 100,
+        "targetContext": {
+            "covers": [],
+            "creationDate": "2012-02-28T06:59:45Z",
+            "description": null,
+            "displayName": "Addition 1",
+            "hPosition": 0,
+            "kaUrl": "http://www.khanacademy.local:8085/exercise/addition_1",
+            "kind": "Exercise",
+            "live": true,
+            "name": "addition_1",
+            "numMilestones": 1,
+            "prerequisites": [],
+            "relativeUrl": "/exercise/addition_1",
+            "secondsPerFastProblem": 4,
+            "shortDisplayName": "Add. 1",
+            "summative": false,
+            "tags": [],
+            "vPosition": 3
+        },
+        "targetContextName": "Addition 1",
+        "user": "test333@example.com"
+    }
+}, {
+    "cProblems": 5,
+    "dt": "2012-03-09T20:01:04Z",
+    "earnedProficiency": true,
+    "exercise": "addition_1",
+    "exerciseDisplayName": "Addition 1",
+    "sType": "Exercise"
+}]

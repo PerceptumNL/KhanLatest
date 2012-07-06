@@ -1,0 +1,74 @@
+{% extends "about/about_template.html" %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("bootstrap") }}
+{% endblock pagecss %}
+
+{% block aboutcontent %}
+<article id="downloads">
+<h2 class="main-headline">Downloads</h2>
+
+<ul>
+	<li><a href="#offline">Offline Server</a></li>
+	<li><a href="#other">Other Video Sources</a></li>
+	<li><a href="#spreadsheets">Spreadsheets</a></li>
+</ul>
+<br>
+<br/>
+
+<a name="offline"><h2>Offline Server</h2></a>
+<p>
+    For an offline capable version of the site for Windows, visit the
+    <a href="http://code.google.com/p/khanacademy/downloads/list">download page.</a>
+    Unzip it and click on run.bat, which will start up the server and load the
+    local version of the Khan Academy homepage in your browser. Next, go to the download_scripts directory and click on the playlist(s) you want to download
+    (download_ALL.bat will get everything).  When you're done, the videos you've downloaded
+    will work when you click on them in the browser. <u>Please note that this is a volunteer-developed version and is not officially supported.</u>
+</p>
+<br>
+
+
+<a name="other"><h2>Other Video Sources</h2></a>
+<p>
+    Here are some other sources for downloading Khan Academy videos.
+    <u>Please note that we have little or no experience with many of these, and they also aren't officially supported.</u>
+</p>
+
+<ul>
+    <li><a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewiTunesUInstitution?id=391034778">
+    Khan Academy</a> on iTunes U.</li>
+    <li><a href="http://www.archive.org/details/khanacademy">Khan Academy on archive.org</a>
+    </li>
+    <li><a href="http://www.utorrent.com/apps">BitTorrent's official Khan Academy app</a> (download the Khan Academy app).</li>
+    <li><a href="http://www.appup.com/developer/intel-performance-learning-solutions-">Intel offline player for Khan Academy content</a> on the Intel AppUp<sup>SM</sup> center.</li>
+    <li><a href="http://mujica.org/khan/">Khan Academy on a Stick</a>
+    Math and Science lectures from khanacademy.org, as available on September 2010.
+    </li>
+    <li><a href="http://itunes.apple.com/us/app/khan-academy-a-classroom-in/id361975619?mt=8">
+    Khan Academy: A Classroom In Your Pocket</a> by Irynsoft. An app for the ipod/iphone/ipad.</li>
+    <li><a href="http://khanacademy.googlecode.com/files/khanacademy.org%20-%20COMPLETE%20-%202010-12-10.torrent">
+    Torrent</a> of all videos as of 2010-12-10.  Download using <a href="http://www.bittorrent.com/">BitTorrent</a> for numbered videos.</li>
+    <li><a href="http://code.google.com/p/khanacademy/issues/detail?id=191">Downloadable Material issue</a>
+    on code.google.com.  Check here for updates.
+    </li>
+</ul>
+<br>
+
+<div class="clear"></div>
+<a name="spreadsheets"><h2 class="section-headline">Spreadsheets</h2></a>
+<p>
+    These example spreadsheets are mentioned in some Khan Academy videos. Download and work with them while watching.
+</p>
+<ul>
+    <li><a href="/downloads/MortgageCalculator.xlsx">Fixed Mortgage Calculator</a></li>
+    <li><a href="/downloads/NormalIntro.xls">Introduction to the Normal Distribution</a></li>
+    <li><a href="/downloads/NormalDistribution.xls">Binomial and Normal Distribution Comparison</a></li>
+    <li><a href="/downloads/cupcakes.xls">Sal's Cupcake Factory</a></li>
+    <li><a href="/downloads/buyrent.xls">Home Purchase Model</a></li>
+</ul>
+
+<br/>
+
+</article>
+{% endblock aboutcontent %}
+

@@ -1,0 +1,67 @@
+<div class="layer backdrop whiteout"></div>
+<div class="layer controls">
+    <form class="popout">
+        <a class="close" href="javascript: void 0">&times;</a>
+        <h2>{{title}}</h2>
+        <p>If you were the human that defined matrix addition, how would you define it?</p>
+        <p>For matrices \(A\) and \(B\), choose a result for \(A + B\) from the options below.</p>
+        $$
+            A =
+            \begin{bmatrix}
+            3 & -1 \\
+            2 & 0
+            \end{bmatrix}
+            \hspace{20pt}
+            B =
+            \begin{bmatrix}
+            -7 & 2 \\
+            3 & 5
+            \end{bmatrix}
+        $$
+
+        <label class="radio inline">
+            <input type="radio" name="answer" value="0">
+            \(
+                A' =
+                \begin{bmatrix}
+                -4 & 1 \\
+                5 & 5
+                \end{bmatrix}
+            \)
+        </label>
+        <label class="radio inline">
+            <input type="radio" name="answer" value="1">
+            \(
+                B' =
+                \begin{bmatrix}
+                8 & 2 \\
+                4 & -7
+                \end{bmatrix}
+            \)
+        </label>
+        <label class="radio inline">
+            <input type="radio" name="answer" value="2">
+            \(
+                C =
+                \begin{bmatrix}
+                3 & -1 & -7 & 2 \\
+                2 & 0 & 3 & 5
+                \end{bmatrix}
+            \)
+        </label>
+        <label class="radio inline">
+            <input type="radio" name="answer" value="3">
+            \(
+                D =
+                \begin{bmatrix}
+                3 & -1 \\
+                2 & 0 \\
+                -7 & 2 \\
+                3 & 5
+                \end{bmatrix}
+            \)
+        </label>
+
+        {{>submit-area}}
+    </form>
+</div>

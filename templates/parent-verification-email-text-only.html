@@ -1,0 +1,28 @@
+{# Email sent to a parent to complete the signup process for a child account. #}
+
+Hi {% if name %}{{ name }}{% else %}there{% endif %},
+
+Someone (perhaps yourself or your child) started to create a Khan Academy account for your child and listed you as the parent or guardian.
+
+We need you to complete the process for creating your child's account.
+{% if create_child_link %}
+{# Existing user detected for parent - just streamline the process and ask them to create the child account. #}
+Please click on the following link to help finish signing up for them.
+
+{{ create_child_link }}
+
+If clicking doesn't seem to work, you can copy and paste the link into your browser's address bar.
+{% else %}
+{# New parent. They have to sign up for an account, first, unfortunately. #}
+Please sign up for a new Khan Academy account for yourself first, and after that we can help you create a child account.
+
+{{ create_account_link }}
+{% endif %}
+
+For more information on Khan Academy and child accounts, please see our FAQ entry.
+
+http://khanacademy.desk.com/customer/portal/articles/552783-how-are-child-accounts-different-than-regular-accounts-
+
+Onward!
+Sal and the Khan Academy Team
+

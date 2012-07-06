@@ -1,0 +1,18 @@
+<div class="skill-bar">
+    {{#if justEarnedProficiency}}
+        {{! When proficiency is first earned, show the bar becoming proficient regardless of current state. }}
+        <div class="fill green" style="width:100%;"></div>
+        <div class="fill gray" style="width:{{multiply start 100}}%;"></div>
+        <div class="fill blue just-earned" style="width:100%;"></div>
+    {{else}}
+        <div class="fill green" style="width:{{multiply end 100}}%;"></div>
+        <div class="fill gray" style="width:{{multiply start 100}}%;"></div>
+        {{#if reviewing}}
+            <div class="fill orange" style="width:100%;"></div>
+        {{else}}
+            {{#if proficient}}
+                <div class="fill blue" style="width:100%;"></div>
+            {{/if}}
+        {{/if}}
+    {{/if}}
+</div>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/226/trunk/java/test/com/google/appengine/tools/mapreduce/v2/impl/handlers
+END
+ControllerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/226/trunk/java/test/com/google/appengine/tools/mapreduce/v2/impl/handlers/ControllerTest.java
+END
+StatusTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/221/trunk/java/test/com/google/appengine/tools/mapreduce/v2/impl/handlers/StatusTest.java
+END
+WorkerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/226/trunk/java/test/com/google/appengine/tools/mapreduce/v2/impl/handlers/WorkerTest.java
+END

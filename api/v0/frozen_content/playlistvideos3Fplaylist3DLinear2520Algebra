@@ -1,0 +1,3150 @@
+[
+    {
+        "next_video": "aKhhYguY0DQ", 
+        "video_position": 1, 
+        "description": "What a matrix is.  How to add and subtract them.", 
+        "title": "Introduction to matrices", 
+        "views": 309109, 
+        "related_videos": [
+            "aKhhYguY0DQ"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 711, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-matrices?playlist=Linear+Algebra", 
+        "youtube_id": "xyAuNHPsq-g", 
+        "keywords": "matrix, matrices, addition, adding", 
+        "date_added": "2011-02-20 16:46:05", 
+        "youtube_url": "http://www.youtube.com/watch?v=xyAuNHPsq-g&feature=youtube_gdata_player", 
+        "prev_video": "", 
+        "readable_id": "introduction-to-matrices"
+    }, 
+    {
+        "next_video": "OAh573i_qn8", 
+        "video_position": 2, 
+        "description": "Multiplying two 2x2 matrices.", 
+        "title": "Matrix multiplication (part 1)", 
+        "views": 223370, 
+        "related_videos": [
+            "xyAuNHPsq-g", 
+            "OAh573i_qn8"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 820, 
+        "ka_url": "http://www.khanacademy.org/video/matrix-multiplication--part-1?playlist=Linear+Algebra", 
+        "youtube_id": "aKhhYguY0DQ", 
+        "keywords": "matrix, multiplication, multiplying, matrices", 
+        "date_added": "2011-02-20 16:46:05", 
+        "youtube_url": "http://www.youtube.com/watch?v=aKhhYguY0DQ&feature=youtube_gdata_player", 
+        "prev_video": "xyAuNHPsq-g", 
+        "readable_id": "matrix-multiplication--part-1"
+    }, 
+    {
+        "next_video": "iUQR0enP7RQ", 
+        "video_position": 3, 
+        "description": "More on multiplying matrices.", 
+        "title": "Matrix multiplication (part 2)", 
+        "views": 126455, 
+        "related_videos": [
+            "aKhhYguY0DQ", 
+            "iUQR0enP7RQ"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 877, 
+        "ka_url": "http://www.khanacademy.org/video/matrix-multiplication--part-2?playlist=Linear+Algebra", 
+        "youtube_id": "OAh573i_qn8", 
+        "keywords": "matrix, multiplying, multiplication, matrices", 
+        "date_added": "2011-02-20 16:46:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=OAh573i_qn8&feature=youtube_gdata_player", 
+        "prev_video": "aKhhYguY0DQ", 
+        "readable_id": "matrix-multiplication--part-2"
+    }, 
+    {
+        "next_video": "S4n-tQZnU6o", 
+        "video_position": 4, 
+        "description": "Taking the inverse of a 2x2 matrix", 
+        "title": "Inverse Matrix (part 1)", 
+        "views": 246128, 
+        "related_videos": [
+            "OAh573i_qn8", 
+            "S4n-tQZnU6o"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 854, 
+        "ka_url": "http://www.khanacademy.org/video/inverse-matrix--part-1?playlist=Linear+Algebra", 
+        "youtube_id": "iUQR0enP7RQ", 
+        "keywords": "matrix, inverse, identity, inverting, matrices", 
+        "date_added": "2011-02-20 16:46:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=iUQR0enP7RQ&feature=youtube_gdata_player", 
+        "prev_video": "OAh573i_qn8", 
+        "readable_id": "inverse-matrix--part-1"
+    }, 
+    {
+        "next_video": "obts_JDS6_Q", 
+        "video_position": 5, 
+        "description": "Inverting a 3x3 matrix", 
+        "title": "Inverting matrices (part 2)", 
+        "views": 133378, 
+        "related_videos": [
+            "iUQR0enP7RQ", 
+            "obts_JDS6_Q"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1004, 
+        "ka_url": "http://www.khanacademy.org/video/inverting-matrices--part-2?playlist=Linear+Algebra", 
+        "youtube_id": "S4n-tQZnU6o", 
+        "keywords": "inverting, inverse, matrix, matrices", 
+        "date_added": "2011-02-20 16:46:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=S4n-tQZnU6o&feature=youtube_gdata_player", 
+        "prev_video": "iUQR0enP7RQ", 
+        "readable_id": "inverting-matrices--part-2"
+    }, 
+    {
+        "next_video": "AUqeb9Z3y3k", 
+        "video_position": 6, 
+        "description": "Using Gauss-Jordan elimination to invert a 3x3 matrix.", 
+        "title": "Inverting Matrices (part 3)", 
+        "views": 99966, 
+        "related_videos": [
+            "S4n-tQZnU6o", 
+            "AUqeb9Z3y3k"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 816, 
+        "ka_url": "http://www.khanacademy.org/video/inverting-matrices--part-3?playlist=Linear+Algebra", 
+        "youtube_id": "obts_JDS6_Q", 
+        "keywords": "gauss, jordan, reduced, row, echelon, elimination, matrix, inverse", 
+        "date_added": "2011-02-20 16:46:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=obts_JDS6_Q&feature=youtube_gdata_player", 
+        "prev_video": "S4n-tQZnU6o", 
+        "readable_id": "inverting-matrices--part-3"
+    }, 
+    {
+        "next_video": "gsNgdVdAT1o", 
+        "video_position": 7, 
+        "description": "Using the inverse of a matrix to solve a system of equations.", 
+        "title": "Matrices to solve a system of equations", 
+        "views": 163699, 
+        "related_videos": [
+            "obts_JDS6_Q", 
+            "gsNgdVdAT1o"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 992, 
+        "ka_url": "http://www.khanacademy.org/video/matrices-to-solve-a-system-of-equations?playlist=Linear+Algebra", 
+        "youtube_id": "AUqeb9Z3y3k", 
+        "keywords": "matrix, algebra, inverse, matrices", 
+        "date_added": "2011-02-20 16:46:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=AUqeb9Z3y3k&feature=youtube_gdata_player", 
+        "prev_video": "obts_JDS6_Q", 
+        "readable_id": "matrices-to-solve-a-system-of-equations"
+    }, 
+    {
+        "next_video": "UqyN7-tRS00", 
+        "video_position": 8, 
+        "description": "Using matrices to figure out if some combination of 2 vectors can create a 3rd vector", 
+        "title": "Matrices to solve a vector combination problem", 
+        "views": 63420, 
+        "related_videos": [
+            "AUqeb9Z3y3k", 
+            "UqyN7-tRS00"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 860, 
+        "ka_url": "http://www.khanacademy.org/video/matrices-to-solve-a-vector-combination-problem?playlist=Linear+Algebra", 
+        "youtube_id": "gsNgdVdAT1o", 
+        "keywords": "matrix, matrices, vectors", 
+        "date_added": "2011-02-20 16:46:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=gsNgdVdAT1o&feature=youtube_gdata_player", 
+        "prev_video": "AUqeb9Z3y3k", 
+        "readable_id": "matrices-to-solve-a-vector-combination-problem"
+    }, 
+    {
+        "next_video": "5tB7y_piK6o", 
+        "video_position": 9, 
+        "description": "When and why you can't invert a matrix.", 
+        "title": "Singular Matrices", 
+        "views": 84766, 
+        "related_videos": [
+            "gsNgdVdAT1o", 
+            "5tB7y_piK6o"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 867, 
+        "ka_url": "http://www.khanacademy.org/video/singular-matrices?playlist=Linear+Algebra", 
+        "youtube_id": "UqyN7-tRS00", 
+        "keywords": "matrix, matrices, inverse, singular, determinant", 
+        "date_added": "2011-02-20 16:46:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=UqyN7-tRS00&feature=youtube_gdata_player", 
+        "prev_video": "gsNgdVdAT1o", 
+        "readable_id": "singular-matrices"
+    }, 
+    {
+        "next_video": "woqq3Sls1d8", 
+        "video_position": 10, 
+        "description": "Visual intuition of a 3-variable linear equation.", 
+        "title": "3-variable linear equations (part 1)", 
+        "views": 60342, 
+        "related_videos": [
+            "UqyN7-tRS00", 
+            "woqq3Sls1d8"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 481, 
+        "ka_url": "http://www.khanacademy.org/video/3-variable-linear-equations--part-1?playlist=Linear+Algebra", 
+        "youtube_id": "5tB7y_piK6o", 
+        "keywords": "3d, algebra, linear, equations, plane", 
+        "date_added": "2011-02-20 16:46:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=5tB7y_piK6o&feature=youtube_gdata_player", 
+        "prev_video": "UqyN7-tRS00", 
+        "readable_id": "3-variable-linear-equations--part-1"
+    }, 
+    {
+        "next_video": "5cWB52I-SF0", 
+        "video_position": 11, 
+        "description": "Solving 3 equations with 3 unknowns (old video from July 2008)", 
+        "title": "Solving 3 Equations with 3 Unknowns", 
+        "views": 82403, 
+        "related_videos": [
+            "5tB7y_piK6o", 
+            "5cWB52I-SF0"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 926, 
+        "ka_url": "http://www.khanacademy.org/video/solving-3-equations-with-3-unknowns?playlist=Linear+Algebra", 
+        "youtube_id": "woqq3Sls1d8", 
+        "keywords": "linear, algebra, system, of, equations", 
+        "date_added": "2011-02-20 16:46:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=woqq3Sls1d8&feature=youtube_gdata_player", 
+        "prev_video": "5tB7y_piK6o", 
+        "readable_id": "solving-3-equations-with-3-unknowns"
+    }, 
+    {
+        "next_video": "r4bH66vYjss", 
+        "video_position": 12, 
+        "description": "Linear Algebra: Introduction to Vectors", 
+        "title": "Linear Algebra: Introduction to Vectors", 
+        "views": 126575, 
+        "related_videos": [
+            "woqq3Sls1d8", 
+            "r4bH66vYjss"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 991, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--introduction-to-vectors?playlist=Linear+Algebra", 
+        "youtube_id": "5cWB52I-SF0", 
+        "keywords": "Linear, Algebra, Vectors", 
+        "date_added": "2011-02-20 16:46:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=5cWB52I-SF0&feature=youtube_gdata_player", 
+        "prev_video": "woqq3Sls1d8", 
+        "readable_id": "linear-algebra--introduction-to-vectors"
+    }, 
+    {
+        "next_video": "hWhs2cIj7Cw", 
+        "video_position": 13, 
+        "description": "Visually understanding basic vector operations", 
+        "title": "Linear Algebra: Vector Examples", 
+        "views": 75069, 
+        "related_videos": [
+            "5cWB52I-SF0", 
+            "hWhs2cIj7Cw"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1533, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--vector-examples?playlist=Linear+Algebra", 
+        "youtube_id": "r4bH66vYjss", 
+        "keywords": "Linear, Algebra, Vectors", 
+        "date_added": "2011-02-20 16:46:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=r4bH66vYjss&feature=youtube_gdata_player", 
+        "prev_video": "5cWB52I-SF0", 
+        "readable_id": "linear-algebra--vector-examples"
+    }, 
+    {
+        "next_video": "Qm_OS-8COwU", 
+        "video_position": 14, 
+        "description": "Linear Algebra: Parametric Representations of Lines in R2 and R3", 
+        "title": "Linear Algebra: Parametric Representations of Lines", 
+        "views": 52629, 
+        "related_videos": [
+            "r4bH66vYjss", 
+            "Qm_OS-8COwU"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1486, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--parametric-representations-of-lines?playlist=Linear+Algebra", 
+        "youtube_id": "hWhs2cIj7Cw", 
+        "keywords": "Linear, Algebra, Vectors", 
+        "date_added": "2011-02-20 16:46:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=hWhs2cIj7Cw&feature=youtube_gdata_player", 
+        "prev_video": "r4bH66vYjss", 
+        "readable_id": "linear-algebra--parametric-representations-of-lines"
+    }, 
+    {
+        "next_video": "CrV1xCWdY-g", 
+        "video_position": 15, 
+        "description": "Understanding linear combinations and spans of vectors", 
+        "title": "Linear Combinations and Span", 
+        "views": 83209, 
+        "related_videos": [
+            "hWhs2cIj7Cw", 
+            "CrV1xCWdY-g"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1235, 
+        "ka_url": "http://www.khanacademy.org/video/linear-combinations-and-span?playlist=Linear+Algebra", 
+        "youtube_id": "Qm_OS-8COwU", 
+        "keywords": "Linear, Algebra, Vectors, span, combination", 
+        "date_added": "2011-02-20 16:46:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=Qm_OS-8COwU&feature=youtube_gdata_player", 
+        "prev_video": "hWhs2cIj7Cw", 
+        "readable_id": "linear-combinations-and-span"
+    }, 
+    {
+        "next_video": "Alhcv5d_XOs", 
+        "video_position": 16, 
+        "description": "Linear Algebra: Introduction to linear dependence and independence", 
+        "title": "Linear Algebra: Introduction to Linear Independence", 
+        "views": 75106, 
+        "related_videos": [
+            "Qm_OS-8COwU", 
+            "Alhcv5d_XOs"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 946, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--introduction-to-linear-independence?playlist=Linear+Algebra", 
+        "youtube_id": "CrV1xCWdY-g", 
+        "keywords": "Linear, Algebra, Vectors, span, combination", 
+        "date_added": "2011-02-20 16:46:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=CrV1xCWdY-g&feature=youtube_gdata_player", 
+        "prev_video": "Qm_OS-8COwU", 
+        "readable_id": "linear-algebra--introduction-to-linear-independence"
+    }, 
+    {
+        "next_video": "9kW6zFK5E5c", 
+        "video_position": 17, 
+        "description": "More examples determining linear dependence or independence.", 
+        "title": "More on linear independence", 
+        "views": 45759, 
+        "related_videos": [
+            "CrV1xCWdY-g", 
+            "9kW6zFK5E5c"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1058, 
+        "ka_url": "http://www.khanacademy.org/video/more-on-linear-independence?playlist=Linear+Algebra", 
+        "youtube_id": "Alhcv5d_XOs", 
+        "keywords": "Linear, Algebra, Vectors, span, combination, dependence, independence", 
+        "date_added": "2011-02-20 16:46:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=Alhcv5d_XOs&feature=youtube_gdata_player", 
+        "prev_video": "CrV1xCWdY-g", 
+        "readable_id": "more-on-linear-independence"
+    }, 
+    {
+        "next_video": "pMFv6liWK4M", 
+        "video_position": 18, 
+        "description": "Determining whether 3 vectors are linearly independent and/or span R3", 
+        "title": "Span and Linear Independence Example", 
+        "views": 62228, 
+        "related_videos": [
+            "Alhcv5d_XOs", 
+            "pMFv6liWK4M"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1013, 
+        "ka_url": "http://www.khanacademy.org/video/span-and-linear-independence-example?playlist=Linear+Algebra", 
+        "youtube_id": "9kW6zFK5E5c", 
+        "keywords": "Linear, Algebra, Vectors, span, combination, dependence, independence", 
+        "date_added": "2011-02-20 16:46:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=9kW6zFK5E5c&feature=youtube_gdata_player", 
+        "prev_video": "Alhcv5d_XOs", 
+        "readable_id": "span-and-linear-independence-example"
+    }, 
+    {
+        "next_video": "zntNi3-ybfQ", 
+        "video_position": 19, 
+        "description": "Introduction to linear subspaces of Rn", 
+        "title": "Linear Subspaces", 
+        "views": 84472, 
+        "related_videos": [
+            "9kW6zFK5E5c", 
+            "zntNi3-ybfQ"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1409, 
+        "ka_url": "http://www.khanacademy.org/video/linear-subspaces?playlist=Linear+Algebra", 
+        "youtube_id": "pMFv6liWK4M", 
+        "keywords": "Linear, Algebra, Vectors, span, combination, subspace", 
+        "date_added": "2011-02-20 16:46:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=pMFv6liWK4M&feature=youtube_gdata_player", 
+        "prev_video": "9kW6zFK5E5c", 
+        "readable_id": "linear-subspaces"
+    }, 
+    {
+        "next_video": "WNuIhXo39_k", 
+        "video_position": 20, 
+        "description": "Understanding the definition of a basis of a subspace", 
+        "title": "Linear Algebra: Basis of a Subspace", 
+        "views": 99429, 
+        "related_videos": [
+            "pMFv6liWK4M", 
+            "WNuIhXo39_k"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1140, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--basis-of-a-subspace?playlist=Linear+Algebra", 
+        "youtube_id": "zntNi3-ybfQ", 
+        "keywords": "Linear, Algebra, Vectors, span, combination, basis, subspace", 
+        "date_added": "2011-02-20 16:46:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=zntNi3-ybfQ&feature=youtube_gdata_player", 
+        "prev_video": "pMFv6liWK4M", 
+        "readable_id": "linear-algebra--basis-of-a-subspace"
+    }, 
+    {
+        "next_video": "rVQ3G9epCjw", 
+        "video_position": 21, 
+        "description": "Definitions of the vector dot product and vector length", 
+        "title": "Vector Dot Product and Vector Length", 
+        "views": 47913, 
+        "related_videos": [
+            "zntNi3-ybfQ", 
+            "rVQ3G9epCjw"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 550, 
+        "ka_url": "http://www.khanacademy.org/video/vector-dot-product-and-vector-length?playlist=Linear+Algebra", 
+        "youtube_id": "WNuIhXo39_k", 
+        "keywords": "vector, dot, product, length", 
+        "date_added": "2011-02-20 16:46:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=WNuIhXo39_k&feature=youtube_gdata_player", 
+        "prev_video": "zntNi3-ybfQ", 
+        "readable_id": "vector-dot-product-and-vector-length"
+    }, 
+    {
+        "next_video": "r2PogGDl8_U", 
+        "video_position": 22, 
+        "description": "Proving the \"associative\", \"distributive\" and \"commutative\" properties for vector dot products.", 
+        "title": "Proving Vector Dot Product Properties", 
+        "views": 27262, 
+        "related_videos": [
+            "WNuIhXo39_k", 
+            "r2PogGDl8_U"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 645, 
+        "ka_url": "http://www.khanacademy.org/video/proving-vector-dot-product-properties?playlist=Linear+Algebra", 
+        "youtube_id": "rVQ3G9epCjw", 
+        "keywords": "vector, dot, product, length", 
+        "date_added": "2011-02-20 16:46:07", 
+        "youtube_url": "http://www.youtube.com/watch?v=rVQ3G9epCjw&feature=youtube_gdata_player", 
+        "prev_video": "WNuIhXo39_k", 
+        "readable_id": "proving-vector-dot-product-properties"
+    }, 
+    {
+        "next_video": "PsNidCBr5II", 
+        "video_position": 23, 
+        "description": "Proof of the Cauchy-Schwarz Inequality", 
+        "title": "Proof of the Cauchy-Schwarz Inequality", 
+        "views": 46019, 
+        "related_videos": [
+            "rVQ3G9epCjw", 
+            "PsNidCBr5II"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1015, 
+        "ka_url": "http://www.khanacademy.org/video/proof-of-the-cauchy-schwarz-inequality?playlist=Linear+Algebra", 
+        "youtube_id": "r2PogGDl8_U", 
+        "keywords": "cauchy, swarz, vector, dot, product, length, linear, algebra", 
+        "date_added": "2011-02-20 16:46:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=r2PogGDl8_U&feature=youtube_gdata_player", 
+        "prev_video": "rVQ3G9epCjw", 
+        "readable_id": "proof-of-the-cauchy-schwarz-inequality"
+    }, 
+    {
+        "next_video": "5AWob_z74Ks", 
+        "video_position": 24, 
+        "description": "Proving the triangle inequality  for vectors in Rn", 
+        "title": "Linear Algebra: Vector Triangle Inequality", 
+        "views": 23487, 
+        "related_videos": [
+            "r2PogGDl8_U", 
+            "5AWob_z74Ks"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1133, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--vector-triangle-inequality?playlist=Linear+Algebra", 
+        "youtube_id": "PsNidCBr5II", 
+        "keywords": "vector, dot, product, length", 
+        "date_added": "2011-02-20 16:46:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=PsNidCBr5II&feature=youtube_gdata_player", 
+        "prev_video": "r2PogGDl8_U", 
+        "readable_id": "linear-algebra--vector-triangle-inequality"
+    }, 
+    {
+        "next_video": "UJxgcVaNTqY", 
+        "video_position": 25, 
+        "description": "Introducing the idea of an angle between two vectors", 
+        "title": "Defining the angle between vectors", 
+        "views": 29504, 
+        "related_videos": [
+            "PsNidCBr5II", 
+            "UJxgcVaNTqY"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1511, 
+        "ka_url": "http://www.khanacademy.org/video/defining-the-angle-between-vectors?playlist=Linear+Algebra", 
+        "youtube_id": "5AWob_z74Ks", 
+        "keywords": "Linear, Algebra, Vectors, dot, product, angle", 
+        "date_added": "2011-02-20 16:46:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=5AWob_z74Ks&feature=youtube_gdata_player", 
+        "prev_video": "PsNidCBr5II", 
+        "readable_id": "defining-the-angle-between-vectors"
+    }, 
+    {
+        "next_video": "pJzmiywagfY", 
+        "video_position": 26, 
+        "description": "Determining the equation for a plane in R3 using a point on the plane and a normal vector", 
+        "title": "Defining a plane in R3 with a point and normal vector", 
+        "views": 28344, 
+        "related_videos": [
+            "5AWob_z74Ks", 
+            "pJzmiywagfY"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 833, 
+        "ka_url": "http://www.khanacademy.org/video/defining-a-plane-in-r3-with-a-point-and-normal-vector?playlist=Linear+Algebra", 
+        "youtube_id": "UJxgcVaNTqY", 
+        "keywords": "normal, plane, dot, product, vector", 
+        "date_added": "2011-02-20 16:46:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=UJxgcVaNTqY&feature=youtube_gdata_player", 
+        "prev_video": "5AWob_z74Ks", 
+        "readable_id": "defining-a-plane-in-r3-with-a-point-and-normal-vector"
+    }, 
+    {
+        "next_video": "7MKA2QlKvHc", 
+        "video_position": 27, 
+        "description": "Introduction to the cross product", 
+        "title": "Linear Algebra: Cross Product Introduction", 
+        "views": 28468, 
+        "related_videos": [
+            "UJxgcVaNTqY", 
+            "7MKA2QlKvHc"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 947, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--cross-product-introduction?playlist=Linear+Algebra", 
+        "youtube_id": "pJzmiywagfY", 
+        "keywords": "Linear, Algebra, Vectors, cross, product", 
+        "date_added": "2011-02-20 16:46:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=pJzmiywagfY&feature=youtube_gdata_player", 
+        "prev_video": "UJxgcVaNTqY", 
+        "readable_id": "linear-algebra--cross-product-introduction"
+    }, 
+    {
+        "next_video": "tdwFdzVqito", 
+        "video_position": 28, 
+        "description": "Proof: Relationship between the  cross product and sin of angle between vectors", 
+        "title": "Proof: Relationship between cross product and sin of angle", 
+        "views": 16838, 
+        "related_videos": [
+            "pJzmiywagfY", 
+            "tdwFdzVqito"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1089, 
+        "ka_url": "http://www.khanacademy.org/video/proof--relationship-between-cross-product-and-sin-of-angle?playlist=Linear+Algebra", 
+        "youtube_id": "7MKA2QlKvHc", 
+        "keywords": "cross, product, vectors, sin, theta", 
+        "date_added": "2011-02-20 16:46:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=7MKA2QlKvHc&feature=youtube_gdata_player", 
+        "prev_video": "pJzmiywagfY", 
+        "readable_id": "proof--relationship-between-cross-product-and-sin-of-angle"
+    }, 
+    {
+        "next_video": "L0CmbneYETs", 
+        "video_position": 29, 
+        "description": "Dot and Cross Product Comparison/Intuition", 
+        "title": "Dot and Cross Product Comparison/Intuition", 
+        "views": 20934, 
+        "related_videos": [
+            "7MKA2QlKvHc", 
+            "L0CmbneYETs"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1154, 
+        "ka_url": "http://www.khanacademy.org/video/dot-and-cross-product-comparison-intuition?playlist=Linear+Algebra", 
+        "youtube_id": "tdwFdzVqito", 
+        "keywords": "cross, dot, product", 
+        "date_added": "2011-02-20 16:46:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=tdwFdzVqito&feature=youtube_gdata_player", 
+        "prev_video": "7MKA2QlKvHc", 
+        "readable_id": "dot-and-cross-product-comparison-intuition"
+    }, 
+    {
+        "next_video": "lP1DGtZ8Wys", 
+        "video_position": 30, 
+        "description": "Solving a system of linear equations by putting an augmented matrix into reduced row echelon form", 
+        "title": "Matrices: Reduced Row Echelon Form 1", 
+        "views": 71046, 
+        "related_videos": [
+            "tdwFdzVqito", 
+            "lP1DGtZ8Wys"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1063, 
+        "ka_url": "http://www.khanacademy.org/video/matrices--reduced-row-echelon-form-1?playlist=Linear+Algebra", 
+        "youtube_id": "L0CmbneYETs", 
+        "keywords": "matrix, augmented, echelon", 
+        "date_added": "2011-02-20 16:46:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=L0CmbneYETs&feature=youtube_gdata_player", 
+        "prev_video": "tdwFdzVqito", 
+        "readable_id": "matrices--reduced-row-echelon-form-1"
+    }, 
+    {
+        "next_video": "JVDrlTdzxiI", 
+        "video_position": 31, 
+        "description": "Another example of solving a system of linear equations by putting an augmented matrix into reduced row echelon form", 
+        "title": "Matrices: Reduced Row Echelon Form 2", 
+        "views": 27929, 
+        "related_videos": [
+            "L0CmbneYETs", 
+            "JVDrlTdzxiI"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 457, 
+        "ka_url": "http://www.khanacademy.org/video/matrices--reduced-row-echelon-form-2?playlist=Linear+Algebra", 
+        "youtube_id": "lP1DGtZ8Wys", 
+        "keywords": "matrix, augmented, echelon", 
+        "date_added": "2011-02-20 16:46:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=lP1DGtZ8Wys&feature=youtube_gdata_player", 
+        "prev_video": "L0CmbneYETs", 
+        "readable_id": "matrices--reduced-row-echelon-form-2"
+    }, 
+    {
+        "next_video": "7Mo4S2wyMg4", 
+        "video_position": 32, 
+        "description": "And another example of solving a system of linear equations by putting an augmented matrix into reduced row echelon form", 
+        "title": "Matrices: Reduced Row Echelon Form 3", 
+        "views": 21955, 
+        "related_videos": [
+            "lP1DGtZ8Wys", 
+            "7Mo4S2wyMg4"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 728, 
+        "ka_url": "http://www.khanacademy.org/video/matrices--reduced-row-echelon-form-3?playlist=Linear+Algebra", 
+        "youtube_id": "JVDrlTdzxiI", 
+        "keywords": "matrix, augmented, echelon", 
+        "date_added": "2011-02-20 16:46:08", 
+        "youtube_url": "http://www.youtube.com/watch?v=JVDrlTdzxiI&feature=youtube_gdata_player", 
+        "prev_video": "lP1DGtZ8Wys", 
+        "readable_id": "matrices--reduced-row-echelon-form-3"
+    }, 
+    {
+        "next_video": "jCwRV1QL_Xs", 
+        "video_position": 33, 
+        "description": "Defining and understanding what it means to take the product of a matrix and a vector", 
+        "title": "Matrix Vector Products", 
+        "views": 20470, 
+        "related_videos": [
+            "JVDrlTdzxiI", 
+            "jCwRV1QL_Xs"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1270, 
+        "ka_url": "http://www.khanacademy.org/video/matrix-vector-products?playlist=Linear+Algebra", 
+        "youtube_id": "7Mo4S2wyMg4", 
+        "keywords": "matrix, vector, product", 
+        "date_added": "2011-02-20 16:46:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=7Mo4S2wyMg4&feature=youtube_gdata_player", 
+        "prev_video": "JVDrlTdzxiI", 
+        "readable_id": "matrix-vector-products"
+    }, 
+    {
+        "next_video": "qvyboGryeA8", 
+        "video_position": 34, 
+        "description": "Showing that the Null Space of a Matrix is a valid Subspace", 
+        "title": "Introduction to the Null Space of a Matrix", 
+        "views": 50689, 
+        "related_videos": [
+            "7Mo4S2wyMg4", 
+            "qvyboGryeA8"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 623, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-the-null-space-of-a-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "jCwRV1QL_Xs", 
+        "keywords": "nullspace, null, space, subspace, matrix, vector", 
+        "date_added": "2011-02-20 16:46:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=jCwRV1QL_Xs&feature=youtube_gdata_player", 
+        "prev_video": "7Mo4S2wyMg4", 
+        "readable_id": "introduction-to-the-null-space-of-a-matrix"
+    }, 
+    {
+        "next_video": "vFctYRhK2M0", 
+        "video_position": 35, 
+        "description": "Calculating the null space of a matrix", 
+        "title": "Null Space 2: Calculating the null space of a matrix", 
+        "views": 50088, 
+        "related_videos": [
+            "jCwRV1QL_Xs", 
+            "vFctYRhK2M0"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 787, 
+        "ka_url": "http://www.khanacademy.org/video/null-space-2--calculating-the-null-space-of-a-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "qvyboGryeA8", 
+        "keywords": "nullspace, null, space, subspace, matrix, vector", 
+        "date_added": "2011-02-20 16:46:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=qvyboGryeA8&feature=youtube_gdata_player", 
+        "prev_video": "jCwRV1QL_Xs", 
+        "readable_id": "null-space-2--calculating-the-null-space-of-a-matrix"
+    }, 
+    {
+        "next_video": "st6D5OdFV9M", 
+        "video_position": 36, 
+        "description": "Understanding how the null space of a matrix relates to the linear independence of its column vectors", 
+        "title": "Null Space 3: Relation to Linear Independence", 
+        "views": 26454, 
+        "related_videos": [
+            "qvyboGryeA8", 
+            "st6D5OdFV9M"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 695, 
+        "ka_url": "http://www.khanacademy.org/video/null-space-3--relation-to-linear-independence?playlist=Linear+Algebra", 
+        "youtube_id": "vFctYRhK2M0", 
+        "keywords": "nullspace, null, space, subspace, matrix, vector", 
+        "date_added": "2011-02-20 16:46:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=vFctYRhK2M0&feature=youtube_gdata_player", 
+        "prev_video": "qvyboGryeA8", 
+        "readable_id": "null-space-3--relation-to-linear-independence"
+    }, 
+    {
+        "next_video": "_uTAdf_AsfQ", 
+        "video_position": 37, 
+        "description": "Introduction to the column space of a matrix", 
+        "title": "Column Space of a Matrix", 
+        "views": 28465, 
+        "related_videos": [
+            "vFctYRhK2M0", 
+            "_uTAdf_AsfQ"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 640, 
+        "ka_url": "http://www.khanacademy.org/video/column-space-of-a-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "st6D5OdFV9M", 
+        "keywords": "column, space, matrix", 
+        "date_added": "2011-02-20 16:46:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=st6D5OdFV9M&feature=youtube_gdata_player", 
+        "prev_video": "vFctYRhK2M0", 
+        "readable_id": "column-space-of-a-matrix"
+    }, 
+    {
+        "next_video": "EGNlXtjYABw", 
+        "video_position": 38, 
+        "description": "Figuring out the null space and a basis of a column space for a matrix", 
+        "title": "Null Space and Column Space Basis", 
+        "views": 42712, 
+        "related_videos": [
+            "st6D5OdFV9M", 
+            "EGNlXtjYABw"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1513, 
+        "ka_url": "http://www.khanacademy.org/video/null-space-and-column-space-basis?playlist=Linear+Algebra", 
+        "youtube_id": "_uTAdf_AsfQ", 
+        "keywords": "null, space, column, matrix, basis", 
+        "date_added": "2011-02-20 16:46:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=_uTAdf_AsfQ&feature=youtube_gdata_player", 
+        "prev_video": "st6D5OdFV9M", 
+        "readable_id": "null-space-and-column-space-basis"
+    }, 
+    {
+        "next_video": "Zn2K8UIT8r4", 
+        "video_position": 39, 
+        "description": "Determining the planar equation for a column space in R3", 
+        "title": "Visualizing a Column Space as a Plane in R3", 
+        "views": 12987, 
+        "related_videos": [
+            "_uTAdf_AsfQ", 
+            "Zn2K8UIT8r4"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1271, 
+        "ka_url": "http://www.khanacademy.org/video/visualizing-a-column-space-as-a-plane-in-r3?playlist=Linear+Algebra", 
+        "youtube_id": "EGNlXtjYABw", 
+        "keywords": "column, space, matrix, plane, equation", 
+        "date_added": "2011-02-20 16:46:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=EGNlXtjYABw&feature=youtube_gdata_player", 
+        "prev_video": "_uTAdf_AsfQ", 
+        "readable_id": "visualizing-a-column-space-as-a-plane-in-r3"
+    }, 
+    {
+        "next_video": "abYAUqs_n6I", 
+        "video_position": 40, 
+        "description": "Proof: Any subspace basis has same number of elements", 
+        "title": "Proof: Any subspace basis has same number of elements", 
+        "views": 12196, 
+        "related_videos": [
+            "EGNlXtjYABw", 
+            "abYAUqs_n6I"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1295, 
+        "ka_url": "http://www.khanacademy.org/video/proof--any-subspace-basis-has-same-number-of-elements?playlist=Linear+Algebra", 
+        "youtube_id": "Zn2K8UIT8r4", 
+        "keywords": "basis, subspace, proof, dimension", 
+        "date_added": "2011-02-20 16:46:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=Zn2K8UIT8r4&feature=youtube_gdata_player", 
+        "prev_video": "EGNlXtjYABw", 
+        "readable_id": "proof--any-subspace-basis-has-same-number-of-elements"
+    }, 
+    {
+        "next_video": "JUgrBkPteTg", 
+        "video_position": 41, 
+        "description": "Dimension of the Null Space or Nullity", 
+        "title": "Dimension of the Null Space or Nullity", 
+        "views": 25506, 
+        "related_videos": [
+            "Zn2K8UIT8r4", 
+            "JUgrBkPteTg"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 839, 
+        "ka_url": "http://www.khanacademy.org/video/dimension-of-the-null-space-or-nullity?playlist=Linear+Algebra", 
+        "youtube_id": "abYAUqs_n6I", 
+        "keywords": "dimension, null, space, nullity", 
+        "date_added": "2011-02-20 16:46:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=abYAUqs_n6I&feature=youtube_gdata_player", 
+        "prev_video": "Zn2K8UIT8r4", 
+        "readable_id": "dimension-of-the-null-space-or-nullity"
+    }, 
+    {
+        "next_video": "BfVjTOjvI30", 
+        "video_position": 42, 
+        "description": "Dimension of the Column Space or Rank", 
+        "title": "Dimension of the Column Space or Rank", 
+        "views": 28198, 
+        "related_videos": [
+            "abYAUqs_n6I", 
+            "BfVjTOjvI30"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 768, 
+        "ka_url": "http://www.khanacademy.org/video/dimension-of-the-column-space-or-rank?playlist=Linear+Algebra", 
+        "youtube_id": "JUgrBkPteTg", 
+        "keywords": "column, space, matrix, dimension, rank", 
+        "date_added": "2011-02-20 16:46:09", 
+        "youtube_url": "http://www.youtube.com/watch?v=JUgrBkPteTg&feature=youtube_gdata_player", 
+        "prev_video": "abYAUqs_n6I", 
+        "readable_id": "dimension-of-the-column-space-or-rank"
+    }, 
+    {
+        "next_video": "CkQOCnLWPUA", 
+        "video_position": 43, 
+        "description": "Showing that linear independence of pivot columns implies linear independence of the corresponding columns in the original equation", 
+        "title": "Showing relation between basis cols and pivot cols", 
+        "views": 10729, 
+        "related_videos": [
+            "JUgrBkPteTg", 
+            "CkQOCnLWPUA"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 513, 
+        "ka_url": "http://www.khanacademy.org/video/showing-relation-between-basis-cols-and-pivot-cols?playlist=Linear+Algebra", 
+        "youtube_id": "BfVjTOjvI30", 
+        "keywords": "column, space, matrix, dimension, rank", 
+        "date_added": "2011-02-20 16:46:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=BfVjTOjvI30&feature=youtube_gdata_player", 
+        "prev_video": "JUgrBkPteTg", 
+        "readable_id": "showing-relation-between-basis-cols-and-pivot-cols"
+    }, 
+    {
+        "next_video": "BQMyeQOLvpg", 
+        "video_position": 44, 
+        "description": "Showing that just the columns of A associated with the pivot columns of rref(A) do indeed span C(A).", 
+        "title": "Showing that the candidate basis does span C(A)", 
+        "views": 8175, 
+        "related_videos": [
+            "BfVjTOjvI30", 
+            "BQMyeQOLvpg"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 820, 
+        "ka_url": "http://www.khanacademy.org/video/showing-that-the-candidate-basis-does-span-c-a?playlist=Linear+Algebra", 
+        "youtube_id": "CkQOCnLWPUA", 
+        "keywords": "column, space, matrix, dimension, rank", 
+        "date_added": "2011-02-20 16:46:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=CkQOCnLWPUA&feature=youtube_gdata_player", 
+        "prev_video": "BfVjTOjvI30", 
+        "readable_id": "showing-that-the-candidate-basis-does-span-c-a"
+    }, 
+    {
+        "next_video": "gAbadNuQEjI", 
+        "video_position": 45, 
+        "description": "A more formal understanding of functions", 
+        "title": "A more formal understanding of functions", 
+        "views": 17174, 
+        "related_videos": [
+            "CkQOCnLWPUA", 
+            "gAbadNuQEjI"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 961, 
+        "ka_url": "http://www.khanacademy.org/video/a-more-formal-understanding-of-functions?playlist=Linear+Algebra", 
+        "youtube_id": "BQMyeQOLvpg", 
+        "keywords": "functions", 
+        "date_added": "2011-02-20 16:46:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=BQMyeQOLvpg&feature=youtube_gdata_player", 
+        "prev_video": "CkQOCnLWPUA", 
+        "readable_id": "a-more-formal-understanding-of-functions"
+    }, 
+    {
+        "next_video": "4PCktDZJH8E", 
+        "video_position": 46, 
+        "description": "Introduction to the notion of vector transformations", 
+        "title": "Vector Transformations", 
+        "views": 33939, 
+        "related_videos": [
+            "BQMyeQOLvpg", 
+            "4PCktDZJH8E"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 859, 
+        "ka_url": "http://www.khanacademy.org/video/vector-transformations?playlist=Linear+Algebra", 
+        "youtube_id": "gAbadNuQEjI", 
+        "keywords": "vector, transformations, linear, algebra", 
+        "date_added": "2011-02-20 16:46:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=gAbadNuQEjI&feature=youtube_gdata_player", 
+        "prev_video": "BQMyeQOLvpg", 
+        "readable_id": "vector-transformations"
+    }, 
+    {
+        "next_video": "ondmopWLiEg", 
+        "video_position": 47, 
+        "description": "Introduction to linear transformations", 
+        "title": "Linear Transformations", 
+        "views": 76224, 
+        "related_videos": [
+            "gAbadNuQEjI", 
+            "ondmopWLiEg"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 832, 
+        "ka_url": "http://www.khanacademy.org/video/linear-transformations?playlist=Linear+Algebra", 
+        "youtube_id": "4PCktDZJH8E", 
+        "keywords": "linear, transformation, algebra, matrix", 
+        "date_added": "2011-02-20 16:46:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=4PCktDZJH8E&feature=youtube_gdata_player", 
+        "prev_video": "gAbadNuQEjI", 
+        "readable_id": "linear-transformations"
+    }, 
+    {
+        "next_video": "PErhLkQcpZ8", 
+        "video_position": 48, 
+        "description": "Matrix Vector Products as Linear Transformations", 
+        "title": "Matrix Vector Products as Linear Transformations", 
+        "views": 29259, 
+        "related_videos": [
+            "4PCktDZJH8E", 
+            "PErhLkQcpZ8"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1024, 
+        "ka_url": "http://www.khanacademy.org/video/matrix-vector-products-as-linear-transformations?playlist=Linear+Algebra", 
+        "youtube_id": "ondmopWLiEg", 
+        "keywords": "matrix, vector, product, linear, transformation", 
+        "date_added": "2011-02-20 16:46:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=ondmopWLiEg&feature=youtube_gdata_player", 
+        "prev_video": "4PCktDZJH8E", 
+        "readable_id": "matrix-vector-products-as-linear-transformations"
+    }, 
+    {
+        "next_video": "MIAmN5kgp3k", 
+        "video_position": 49, 
+        "description": "Showing how ANY linear transformation can be represented as a matrix vector product", 
+        "title": "Linear Transformations as Matrix Vector Products", 
+        "views": 38938, 
+        "related_videos": [
+            "ondmopWLiEg", 
+            "MIAmN5kgp3k"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1052, 
+        "ka_url": "http://www.khanacademy.org/video/linear-transformations-as-matrix-vector-products?playlist=Linear+Algebra", 
+        "youtube_id": "PErhLkQcpZ8", 
+        "keywords": "linear, transformation, algebra, matrix", 
+        "date_added": "2011-02-20 16:46:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=PErhLkQcpZ8&feature=youtube_gdata_player", 
+        "prev_video": "ondmopWLiEg", 
+        "readable_id": "linear-transformations-as-matrix-vector-products"
+    }, 
+    {
+        "next_video": "hZ827mfh1Jo", 
+        "video_position": 50, 
+        "description": "Exploring what happens to a subset of the domain under a transformation", 
+        "title": "Image of a subset under a transformation", 
+        "views": 17061, 
+        "related_videos": [
+            "PErhLkQcpZ8", 
+            "hZ827mfh1Jo"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1091, 
+        "ka_url": "http://www.khanacademy.org/video/image-of-a-subset-under-a-transformation?playlist=Linear+Algebra", 
+        "youtube_id": "MIAmN5kgp3k", 
+        "keywords": "image, transformation", 
+        "date_added": "2011-02-20 16:46:10", 
+        "youtube_url": "http://www.youtube.com/watch?v=MIAmN5kgp3k&feature=youtube_gdata_player", 
+        "prev_video": "PErhLkQcpZ8", 
+        "readable_id": "image-of-a-subset-under-a-transformation"
+    }, 
+    {
+        "next_video": "zVsGtU8lIWs", 
+        "video_position": 51, 
+        "description": "Showing that the image of a subspace under a transformation is also a subspace.  Definition of the image of a Transformation.", 
+        "title": "im(T):  Image of a Transformation", 
+        "views": 17521, 
+        "related_videos": [
+            "MIAmN5kgp3k", 
+            "zVsGtU8lIWs"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 997, 
+        "ka_url": "http://www.khanacademy.org/video/im-t----image-of-a-transformation?playlist=Linear+Algebra", 
+        "youtube_id": "hZ827mfh1Jo", 
+        "keywords": "image, transformation, subspace", 
+        "date_added": "2011-02-20 16:46:42", 
+        "youtube_url": "http://www.youtube.com/watch?v=hZ827mfh1Jo&feature=youtube_gdata_player", 
+        "prev_video": "MIAmN5kgp3k", 
+        "readable_id": "im-t----image-of-a-transformation"
+    }, 
+    {
+        "next_video": "6yrPU8rYOhs", 
+        "video_position": 52, 
+        "description": "Definition of preimage of a set", 
+        "title": "Preimage of a set", 
+        "views": 8623, 
+        "related_videos": [
+            "hZ827mfh1Jo", 
+            "6yrPU8rYOhs"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 323, 
+        "ka_url": "http://www.khanacademy.org/video/preimage-of-a-set?playlist=Linear+Algebra", 
+        "youtube_id": "zVsGtU8lIWs", 
+        "keywords": "preimage, image, of, set", 
+        "date_added": "2011-02-20 16:46:42", 
+        "youtube_url": "http://www.youtube.com/watch?v=zVsGtU8lIWs&feature=youtube_gdata_player", 
+        "prev_video": "hZ827mfh1Jo", 
+        "readable_id": "preimage-of-a-set"
+    }, 
+    {
+        "next_video": "wHuY97vss18", 
+        "video_position": 53, 
+        "description": "Example involving the preimage of a set under a transformation.  Definition of kernel of a transformation.", 
+        "title": "Preimage and Kernel Example", 
+        "views": 19045, 
+        "related_videos": [
+            "zVsGtU8lIWs", 
+            "wHuY97vss18"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 923, 
+        "ka_url": "http://www.khanacademy.org/video/preimage-and-kernel-example?playlist=Linear+Algebra", 
+        "youtube_id": "6yrPU8rYOhs", 
+        "keywords": "preimage, kernel", 
+        "date_added": "2011-02-20 16:46:42", 
+        "youtube_url": "http://www.youtube.com/watch?v=6yrPU8rYOhs&feature=youtube_gdata_player", 
+        "prev_video": "zVsGtU8lIWs", 
+        "readable_id": "preimage-and-kernel-example"
+    }, 
+    {
+        "next_video": "Z19-ObbmHJE", 
+        "video_position": 54, 
+        "description": "Sums and Scalar Multiples of Linear Transformations.  Definitions of matrix addition and scalar multiplication.", 
+        "title": "Sums and Scalar Multiples of Linear Transformations", 
+        "views": 8306, 
+        "related_videos": [
+            "6yrPU8rYOhs", 
+            "Z19-ObbmHJE"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 909, 
+        "ka_url": "http://www.khanacademy.org/video/sums-and-scalar-multiples-of-linear-transformations?playlist=Linear+Algebra", 
+        "youtube_id": "wHuY97vss18", 
+        "keywords": "linear, transformation, algebra, matrix", 
+        "date_added": "2011-02-20 16:46:42", 
+        "youtube_url": "http://www.youtube.com/watch?v=wHuY97vss18&feature=youtube_gdata_player", 
+        "prev_video": "6yrPU8rYOhs", 
+        "readable_id": "sums-and-scalar-multiples-of-linear-transformations"
+    }, 
+    {
+        "next_video": "qkfODKmZ-x4", 
+        "video_position": 55, 
+        "description": "More on Matrix Addition and Scalar Multiplication", 
+        "title": "More on Matrix Addition and Scalar Multiplication", 
+        "views": 9734, 
+        "related_videos": [
+            "wHuY97vss18", 
+            "qkfODKmZ-x4"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 641, 
+        "ka_url": "http://www.khanacademy.org/video/more-on-matrix-addition-and-scalar-multiplication?playlist=Linear+Algebra", 
+        "youtube_id": "Z19-ObbmHJE", 
+        "keywords": "matrix, addition, scalar, multiplication", 
+        "date_added": "2011-02-20 16:46:42", 
+        "youtube_url": "http://www.youtube.com/watch?v=Z19-ObbmHJE&feature=youtube_gdata_player", 
+        "prev_video": "wHuY97vss18", 
+        "readable_id": "more-on-matrix-addition-and-scalar-multiplication"
+    }, 
+    {
+        "next_video": "lPWfIq5DzqI", 
+        "video_position": 56, 
+        "description": "Creating scaling and reflection transformation matrices (which are diagonal)", 
+        "title": "Linear Transformation Examples: Scaling and Reflections", 
+        "views": 21032, 
+        "related_videos": [
+            "Z19-ObbmHJE", 
+            "lPWfIq5DzqI"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 913, 
+        "ka_url": "http://www.khanacademy.org/video/linear-transformation-examples--scaling-and-reflections?playlist=Linear+Algebra", 
+        "youtube_id": "qkfODKmZ-x4", 
+        "keywords": "linear, transformation, matrices", 
+        "date_added": "2011-02-20 16:46:42", 
+        "youtube_url": "http://www.youtube.com/watch?v=qkfODKmZ-x4&feature=youtube_gdata_player", 
+        "prev_video": "Z19-ObbmHJE", 
+        "readable_id": "linear-transformation-examples--scaling-and-reflections"
+    }, 
+    {
+        "next_video": "gkyuLPzfDV0", 
+        "video_position": 57, 
+        "description": "Linear Transformation Examples: Rotations in R2", 
+        "title": "Linear Transformation Examples: Rotations in R2", 
+        "views": 23345, 
+        "related_videos": [
+            "qkfODKmZ-x4", 
+            "gkyuLPzfDV0"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1072, 
+        "ka_url": "http://www.khanacademy.org/video/linear-transformation-examples--rotations-in-r2?playlist=Linear+Algebra", 
+        "youtube_id": "lPWfIq5DzqI", 
+        "keywords": "linear, transformation, matrices", 
+        "date_added": "2011-02-20 16:46:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=lPWfIq5DzqI&feature=youtube_gdata_player", 
+        "prev_video": "qkfODKmZ-x4", 
+        "readable_id": "linear-transformation-examples--rotations-in-r2"
+    }, 
+    {
+        "next_video": "lQn7fksaDq0", 
+        "video_position": 58, 
+        "description": "Construction a rotation transformation in R3", 
+        "title": "Rotation in R3 around the X-axis", 
+        "views": 14237, 
+        "related_videos": [
+            "lPWfIq5DzqI", 
+            "lQn7fksaDq0"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 738, 
+        "ka_url": "http://www.khanacademy.org/video/rotation-in-r3-around-the-x-axis?playlist=Linear+Algebra", 
+        "youtube_id": "gkyuLPzfDV0", 
+        "keywords": "linear, algebra, rotation, r3, matrix, transformation", 
+        "date_added": "2011-02-20 16:46:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=gkyuLPzfDV0&feature=youtube_gdata_player", 
+        "prev_video": "lPWfIq5DzqI", 
+        "readable_id": "rotation-in-r3-around-the-x-axis"
+    }, 
+    {
+        "next_video": "27vT-NWuw0M", 
+        "video_position": 59, 
+        "description": "What unit vectors are and how to construct them", 
+        "title": "Unit Vectors", 
+        "views": 24735, 
+        "related_videos": [
+            "gkyuLPzfDV0", 
+            "27vT-NWuw0M"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 419, 
+        "ka_url": "http://www.khanacademy.org/video/unit-vectors?playlist=Linear+Algebra", 
+        "youtube_id": "lQn7fksaDq0", 
+        "keywords": "unit, vectors, length, vector, normalized", 
+        "date_added": "2011-02-20 16:46:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=lQn7fksaDq0&feature=youtube_gdata_player", 
+        "prev_video": "gkyuLPzfDV0", 
+        "readable_id": "unit-vectors"
+    }, 
+    {
+        "next_video": "JK-8XNIoAkI", 
+        "video_position": 60, 
+        "description": "Determining the projection of a vector on s line", 
+        "title": "Introduction to Projections", 
+        "views": 21956, 
+        "related_videos": [
+            "lQn7fksaDq0", 
+            "JK-8XNIoAkI"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 877, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-projections?playlist=Linear+Algebra", 
+        "youtube_id": "27vT-NWuw0M", 
+        "keywords": "projection, vector, line, linear, algebra", 
+        "date_added": "2011-02-20 16:46:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=27vT-NWuw0M&feature=youtube_gdata_player", 
+        "prev_video": "lQn7fksaDq0", 
+        "readable_id": "introduction-to-projections"
+    }, 
+    {
+        "next_video": "f_DTiXZpb8M", 
+        "video_position": 61, 
+        "description": "Expressing a Projection on to a line as a Matrix Vector prod", 
+        "title": "Expressing a Projection on to a line as a Matrix Vector prod", 
+        "views": 12651, 
+        "related_videos": [
+            "27vT-NWuw0M", 
+            "f_DTiXZpb8M"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1000, 
+        "ka_url": "http://www.khanacademy.org/video/expressing-a-projection-on-to-a-line-as-a-matrix-vector-prod?playlist=Linear+Algebra", 
+        "youtube_id": "JK-8XNIoAkI", 
+        "keywords": "matrix, vector, projection, linear, transformation", 
+        "date_added": "2011-02-20 16:46:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=JK-8XNIoAkI&feature=youtube_gdata_player", 
+        "prev_video": "27vT-NWuw0M", 
+        "readable_id": "expressing-a-projection-on-to-a-line-as-a-matrix-vector-prod"
+    }, 
+    {
+        "next_video": "BuqcKpe5ZQs", 
+        "video_position": 62, 
+        "description": "Introduction to compositions of Linear Transformations", 
+        "title": "Compositions of Linear Transformations 1", 
+        "views": 11855, 
+        "related_videos": [
+            "JK-8XNIoAkI", 
+            "BuqcKpe5ZQs"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 741, 
+        "ka_url": "http://www.khanacademy.org/video/compositions-of-linear-transformations-1?playlist=Linear+Algebra", 
+        "youtube_id": "f_DTiXZpb8M", 
+        "keywords": "linear, transformation, compositions", 
+        "date_added": "2011-02-20 16:46:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=f_DTiXZpb8M&feature=youtube_gdata_player", 
+        "prev_video": "JK-8XNIoAkI", 
+        "readable_id": "compositions-of-linear-transformations-1"
+    }, 
+    {
+        "next_video": "x1z0hOyjapU", 
+        "video_position": 63, 
+        "description": "Providing the motivation for definition of matrix products", 
+        "title": "Compositions of Linear Transformations 2", 
+        "views": 7098, 
+        "related_videos": [
+            "f_DTiXZpb8M", 
+            "x1z0hOyjapU"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 990, 
+        "ka_url": "http://www.khanacademy.org/video/compositions-of-linear-transformations-2?playlist=Linear+Algebra", 
+        "youtube_id": "BuqcKpe5ZQs", 
+        "keywords": "matrix, products, composition", 
+        "date_added": "2011-02-20 16:46:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=BuqcKpe5ZQs&feature=youtube_gdata_player", 
+        "prev_video": "f_DTiXZpb8M", 
+        "readable_id": "compositions-of-linear-transformations-2"
+    }, 
+    {
+        "next_video": "Hhc96U_HvQE", 
+        "video_position": 64, 
+        "description": "Example of taking the product of two matrices", 
+        "title": "Linear Algebra: Matrix Product Examples", 
+        "views": 10070, 
+        "related_videos": [
+            "BuqcKpe5ZQs", 
+            "Hhc96U_HvQE"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1094, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--matrix-product-examples?playlist=Linear+Algebra", 
+        "youtube_id": "x1z0hOyjapU", 
+        "keywords": "matrix, multiplying, product", 
+        "date_added": "2011-02-20 16:46:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=x1z0hOyjapU&feature=youtube_gdata_player", 
+        "prev_video": "BuqcKpe5ZQs", 
+        "readable_id": "linear-algebra--matrix-product-examples"
+    }, 
+    {
+        "next_video": "oMWTMj78cwc", 
+        "video_position": 65, 
+        "description": "Showing that matrix products are associative", 
+        "title": "Matrix Product Associativity", 
+        "views": 4677, 
+        "related_videos": [
+            "x1z0hOyjapU", 
+            "oMWTMj78cwc"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 719, 
+        "ka_url": "http://www.khanacademy.org/video/matrix-product-associativity?playlist=Linear+Algebra", 
+        "youtube_id": "Hhc96U_HvQE", 
+        "keywords": "associate, matrix, products", 
+        "date_added": "2011-02-20 16:46:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=Hhc96U_HvQE&feature=youtube_gdata_player", 
+        "prev_video": "x1z0hOyjapU", 
+        "readable_id": "matrix-product-associativity"
+    }, 
+    {
+        "next_video": "-eAzhBZgq28", 
+        "video_position": 66, 
+        "description": "Showing that matrix products exhibit the distributive property", 
+        "title": "Distributive Property of Matrix Products", 
+        "views": 4654, 
+        "related_videos": [
+            "Hhc96U_HvQE", 
+            "-eAzhBZgq28"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 592, 
+        "ka_url": "http://www.khanacademy.org/video/distributive-property-of-matrix-products?playlist=Linear+Algebra", 
+        "youtube_id": "oMWTMj78cwc", 
+        "keywords": "matrix, product, distributive", 
+        "date_added": "2011-02-20 16:46:44", 
+        "youtube_url": "http://www.youtube.com/watch?v=oMWTMj78cwc&feature=youtube_gdata_player", 
+        "prev_video": "Hhc96U_HvQE", 
+        "readable_id": "distributive-property-of-matrix-products"
+    }, 
+    {
+        "next_video": "7GEUgRcnfVE", 
+        "video_position": 67, 
+        "description": "Introduction to the inverse of a function", 
+        "title": "Linear Algebra: Introduction to the inverse of a function", 
+        "views": 14420, 
+        "related_videos": [
+            "oMWTMj78cwc", 
+            "7GEUgRcnfVE"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1133, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--introduction-to-the-inverse-of-a-function?playlist=Linear+Algebra", 
+        "youtube_id": "-eAzhBZgq28", 
+        "keywords": "Linear, algebra, function, inverse", 
+        "date_added": "2011-02-20 16:46:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=-eAzhBZgq28&feature=youtube_gdata_player", 
+        "prev_video": "oMWTMj78cwc", 
+        "readable_id": "linear-algebra--introduction-to-the-inverse-of-a-function"
+    }, 
+    {
+        "next_video": "xKNX8BUWR0g", 
+        "video_position": 68, 
+        "description": "Proof: Invertibility implies a unique solution to f(x)=y for all y in co-domain of f.", 
+        "title": "Proof: Invertibility implies a unique solution to f(x)=y", 
+        "views": 7393, 
+        "related_videos": [
+            "-eAzhBZgq28", 
+            "xKNX8BUWR0g"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1361, 
+        "ka_url": "http://www.khanacademy.org/video/proof--invertibility-implies-a-unique-solution-to-f-x--y?playlist=Linear+Algebra", 
+        "youtube_id": "7GEUgRcnfVE", 
+        "keywords": "invertible, inverse, domain, linear, algebra", 
+        "date_added": "2011-02-20 16:46:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=7GEUgRcnfVE&feature=youtube_gdata_player", 
+        "prev_video": "-eAzhBZgq28", 
+        "readable_id": "proof--invertibility-implies-a-unique-solution-to-f-x--y"
+    }, 
+    {
+        "next_video": "QIU1daMN8fw", 
+        "video_position": 69, 
+        "description": "Introduction to surjective and injective functions", 
+        "title": "Surjective (onto) and Injective (one-to-one) functions", 
+        "views": 29393, 
+        "related_videos": [
+            "7GEUgRcnfVE", 
+            "QIU1daMN8fw"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 571, 
+        "ka_url": "http://www.khanacademy.org/video/surjective--onto--and-injective--one-to-one--functions?playlist=Linear+Algebra", 
+        "youtube_id": "xKNX8BUWR0g", 
+        "keywords": "surjective, onto, injective, one-to-one, functions", 
+        "date_added": "2011-02-20 16:46:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=xKNX8BUWR0g&feature=youtube_gdata_player", 
+        "prev_video": "7GEUgRcnfVE", 
+        "readable_id": "surjective--onto--and-injective--one-to-one--functions"
+    }, 
+    {
+        "next_video": "eR8vEdJTvd0", 
+        "video_position": 70, 
+        "description": "Relating invertibility to being onto (surjective) and one-to-one (injective)", 
+        "title": "Relating invertibility to being onto and one-to-one", 
+        "views": 8088, 
+        "related_videos": [
+            "xKNX8BUWR0g", 
+            "eR8vEdJTvd0"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 391, 
+        "ka_url": "http://www.khanacademy.org/video/relating-invertibility-to-being-onto-and-one-to-one?playlist=Linear+Algebra", 
+        "youtube_id": "QIU1daMN8fw", 
+        "keywords": "invertibility, surjective, injective, onto, one-to-one", 
+        "date_added": "2011-02-20 16:46:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=QIU1daMN8fw&feature=youtube_gdata_player", 
+        "prev_video": "xKNX8BUWR0g", 
+        "readable_id": "relating-invertibility-to-being-onto-and-one-to-one"
+    }, 
+    {
+        "next_video": "1PsNIzUJPkc", 
+        "video_position": 71, 
+        "description": "Determining whether a transformation is onto", 
+        "title": "Determining whether a transformation is onto", 
+        "views": 10618, 
+        "related_videos": [
+            "QIU1daMN8fw", 
+            "1PsNIzUJPkc"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1551, 
+        "ka_url": "http://www.khanacademy.org/video/determining-whether-a-transformation-is-onto?playlist=Linear+Algebra", 
+        "youtube_id": "eR8vEdJTvd0", 
+        "keywords": "onto, surjective, transformation, matrix, invertible", 
+        "date_added": "2011-02-20 16:46:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=eR8vEdJTvd0&feature=youtube_gdata_player", 
+        "prev_video": "QIU1daMN8fw", 
+        "readable_id": "determining-whether-a-transformation-is-onto"
+    }, 
+    {
+        "next_video": "M3FuL9qKTBs", 
+        "video_position": 72, 
+        "description": "Exploring the solution set of Ax=b (non homogeneous equations)", 
+        "title": "Linear Algebra: Exploring the solution set of Ax=b", 
+        "views": 17372, 
+        "related_videos": [
+            "eR8vEdJTvd0", 
+            "M3FuL9qKTBs"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 994, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--exploring-the-solution-set-of-ax-b?playlist=Linear+Algebra", 
+        "youtube_id": "1PsNIzUJPkc", 
+        "keywords": "nullspace, linear, algebra", 
+        "date_added": "2011-02-20 16:46:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=1PsNIzUJPkc&feature=youtube_gdata_player", 
+        "prev_video": "eR8vEdJTvd0", 
+        "readable_id": "linear-algebra--exploring-the-solution-set-of-ax-b"
+    }, 
+    {
+        "next_video": "Yz2OosyMTmY", 
+        "video_position": 73, 
+        "description": "Showing that the rank of the of an mxn transformation matrix has to be an for the transformation to be one-to-one (injective)", 
+        "title": "Linear Algebra: Matrix condition for one-to-one trans", 
+        "views": 10666, 
+        "related_videos": [
+            "1PsNIzUJPkc", 
+            "Yz2OosyMTmY"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1199, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--matrix-condition-for-one-to-one-trans?playlist=Linear+Algebra", 
+        "youtube_id": "M3FuL9qKTBs", 
+        "keywords": "rank, one-to-one, injective, transformation", 
+        "date_added": "2011-02-20 16:46:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=M3FuL9qKTBs&feature=youtube_gdata_player", 
+        "prev_video": "1PsNIzUJPkc", 
+        "readable_id": "linear-algebra--matrix-condition-for-one-to-one-trans"
+    }, 
+    {
+        "next_video": "mr9Tow8hpCg", 
+        "video_position": 74, 
+        "description": "Showing that a transformation is invertible if and only if  rref(A) is equal to the identity matrix", 
+        "title": "Linear Algebra: Simplifying conditions for invertibility", 
+        "views": 6291, 
+        "related_videos": [
+            "M3FuL9qKTBs", 
+            "mr9Tow8hpCg"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 397, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--simplifying-conditions-for-invertibility?playlist=Linear+Algebra", 
+        "youtube_id": "Yz2OosyMTmY", 
+        "keywords": "identity, transformation, invertible", 
+        "date_added": "2011-02-20 16:46:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=Yz2OosyMTmY&feature=youtube_gdata_player", 
+        "prev_video": "M3FuL9qKTBs", 
+        "readable_id": "linear-algebra--simplifying-conditions-for-invertibility"
+    }, 
+    {
+        "next_video": "6DpzCKJBsz0", 
+        "video_position": 75, 
+        "description": "Showing that inverse transformations are also linear", 
+        "title": "Linear Algebra: Showing that Inverses are Linear", 
+        "views": 5174, 
+        "related_videos": [
+            "Yz2OosyMTmY", 
+            "6DpzCKJBsz0"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1285, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--showing-that-inverses-are-linear?playlist=Linear+Algebra", 
+        "youtube_id": "mr9Tow8hpCg", 
+        "keywords": "inverse, invertibility, linear, transformation", 
+        "date_added": "2011-02-20 16:46:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=mr9Tow8hpCg&feature=youtube_gdata_player", 
+        "prev_video": "Yz2OosyMTmY", 
+        "readable_id": "linear-algebra--showing-that-inverses-are-linear"
+    }, 
+    {
+        "next_video": "r9aTLTN16V4", 
+        "video_position": 76, 
+        "description": "Determining a method for constructing inverse transformation matrices", 
+        "title": "Linear Algebra: Deriving a method for determining inverses", 
+        "views": 7392, 
+        "related_videos": [
+            "mr9Tow8hpCg", 
+            "r9aTLTN16V4"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1080, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--deriving-a-method-for-determining-inverses?playlist=Linear+Algebra", 
+        "youtube_id": "6DpzCKJBsz0", 
+        "keywords": "matrix, inverse, transformation", 
+        "date_added": "2011-02-20 16:46:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=6DpzCKJBsz0&feature=youtube_gdata_player", 
+        "prev_video": "mr9Tow8hpCg", 
+        "readable_id": "linear-algebra--deriving-a-method-for-determining-inverses"
+    }, 
+    {
+        "next_video": "eEUK_ThrHuQ", 
+        "video_position": 77, 
+        "description": "Example of calculating the inverse of a matrix", 
+        "title": "Linear Algebra: Example of Finding Matrix Inverse", 
+        "views": 17717, 
+        "related_videos": [
+            "6DpzCKJBsz0", 
+            "eEUK_ThrHuQ"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 382, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--example-of-finding-matrix-inverse?playlist=Linear+Algebra", 
+        "youtube_id": "r9aTLTN16V4", 
+        "keywords": "matrix, inverse, example", 
+        "date_added": "2011-02-20 16:46:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=r9aTLTN16V4&feature=youtube_gdata_player", 
+        "prev_video": "6DpzCKJBsz0", 
+        "readable_id": "linear-algebra--example-of-finding-matrix-inverse"
+    }, 
+    {
+        "next_video": "0c7dt2SQfLw", 
+        "video_position": 78, 
+        "description": "Figuring out the formula for a 2x2 matrix.  Defining the determinant.", 
+        "title": "Linear Algebra: Formula for 2x2 inverse", 
+        "views": 11729, 
+        "related_videos": [
+            "r9aTLTN16V4", 
+            "0c7dt2SQfLw"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1100, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--formula-for-2x2-inverse?playlist=Linear+Algebra", 
+        "youtube_id": "eEUK_ThrHuQ", 
+        "keywords": "matrix, inverse, determinant", 
+        "date_added": "2011-02-20 16:46:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=eEUK_ThrHuQ&feature=youtube_gdata_player", 
+        "prev_video": "r9aTLTN16V4", 
+        "readable_id": "linear-algebra--formula-for-2x2-inverse"
+    }, 
+    {
+        "next_video": "H9BWRYJNIv4", 
+        "video_position": 79, 
+        "description": "Determinants: Finding the determinant of a 3x3 matrix", 
+        "title": "Linear Algebra: 3x3 Determinant", 
+        "views": 35788, 
+        "related_videos": [
+            "eEUK_ThrHuQ", 
+            "H9BWRYJNIv4"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 601, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--3x3-determinant?playlist=Linear+Algebra", 
+        "youtube_id": "0c7dt2SQfLw", 
+        "keywords": "determinant", 
+        "date_added": "2011-02-20 16:46:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=0c7dt2SQfLw&feature=youtube_gdata_player", 
+        "prev_video": "eEUK_ThrHuQ", 
+        "readable_id": "linear-algebra--3x3-determinant"
+    }, 
+    {
+        "next_video": "nu87kfmwNfU", 
+        "video_position": 80, 
+        "description": "Defining the determinant for nxn matrices.  An exampled of a 4x4 determinant.", 
+        "title": "Linear Algebra: nxn Determinant", 
+        "views": 28779, 
+        "related_videos": [
+            "0c7dt2SQfLw", 
+            "nu87kfmwNfU"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1120, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--nxn-determinant?playlist=Linear+Algebra", 
+        "youtube_id": "H9BWRYJNIv4", 
+        "keywords": "determinant, example", 
+        "date_added": "2011-02-20 16:46:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=H9BWRYJNIv4&feature=youtube_gdata_player", 
+        "prev_video": "0c7dt2SQfLw", 
+        "readable_id": "linear-algebra--nxn-determinant"
+    }, 
+    {
+        "next_video": "4xFIi0JF2AM", 
+        "video_position": 81, 
+        "description": "Finding the determinant by going along other rows or columns", 
+        "title": "Linear Algebra: Determinants along other rows/cols", 
+        "views": 10357, 
+        "related_videos": [
+            "H9BWRYJNIv4", 
+            "4xFIi0JF2AM"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 543, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--determinants-along-other-rows-cols?playlist=Linear+Algebra", 
+        "youtube_id": "nu87kfmwNfU", 
+        "keywords": "determinant, row, column", 
+        "date_added": "2011-02-20 16:46:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=nu87kfmwNfU&feature=youtube_gdata_player", 
+        "prev_video": "H9BWRYJNIv4", 
+        "readable_id": "linear-algebra--determinants-along-other-rows-cols"
+    }, 
+    {
+        "next_video": "32rdijPB-rA", 
+        "video_position": 82, 
+        "description": "A alternative \"short cut\" for calculating 3x3 determinants (Rule of Sarrus)", 
+        "title": "Linear Algebra: Rule of Sarrus of Determinants", 
+        "views": 13156, 
+        "related_videos": [
+            "nu87kfmwNfU", 
+            "32rdijPB-rA"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 438, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--rule-of-sarrus-of-determinants?playlist=Linear+Algebra", 
+        "youtube_id": "4xFIi0JF2AM", 
+        "keywords": "determinant, sarrus", 
+        "date_added": "2011-02-20 16:46:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=4xFIi0JF2AM&feature=youtube_gdata_player", 
+        "prev_video": "nu87kfmwNfU", 
+        "readable_id": "linear-algebra--rule-of-sarrus-of-determinants"
+    }, 
+    {
+        "next_video": "WY6QG0mZ7uQ", 
+        "video_position": 83, 
+        "description": "The determinant when a row is multiplied by a scalar", 
+        "title": "Linear Algebra: Determinant when row multiplied by scalar", 
+        "views": 7781, 
+        "related_videos": [
+            "4xFIi0JF2AM", 
+            "WY6QG0mZ7uQ"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 800, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--determinant-when-row-multiplied-by-scalar?playlist=Linear+Algebra", 
+        "youtube_id": "32rdijPB-rA", 
+        "keywords": "determinant, matrix, linear, algebra", 
+        "date_added": "2011-02-20 16:46:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=32rdijPB-rA&feature=youtube_gdata_player", 
+        "prev_video": "4xFIi0JF2AM", 
+        "readable_id": "linear-algebra--determinant-when-row-multiplied-by-scalar"
+    }, 
+    {
+        "next_video": "VrB3LaSD_uo", 
+        "video_position": 84, 
+        "description": "Correction of last video showing that the determinant when one row is multiplied by a scalar is equal to the scalar times the determinant", 
+        "title": "Linear Algebra: (correction) scalar muliplication of row", 
+        "views": 4380, 
+        "related_videos": [
+            "32rdijPB-rA", 
+            "VrB3LaSD_uo"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 172, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra---correction--scalar-muliplication-of-row?playlist=Linear+Algebra", 
+        "youtube_id": "WY6QG0mZ7uQ", 
+        "keywords": "linear, algebra, determinant", 
+        "date_added": "2011-02-20 16:46:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=WY6QG0mZ7uQ&feature=youtube_gdata_player", 
+        "prev_video": "32rdijPB-rA", 
+        "readable_id": "linear-algebra---correction--scalar-muliplication-of-row"
+    }, 
+    {
+        "next_video": "gYv8sttBIqs", 
+        "video_position": 85, 
+        "description": "The determinant when one matrix has a row that is the sum of the rows of other matrices (and every other term is identical in the 3 matrices)", 
+        "title": "Linear Algebra: Determinant when row is added", 
+        "views": 6018, 
+        "related_videos": [
+            "WY6QG0mZ7uQ", 
+            "gYv8sttBIqs"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1015, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--determinant-when-row-is-added?playlist=Linear+Algebra", 
+        "youtube_id": "VrB3LaSD_uo", 
+        "keywords": "matrices, linear, algebra, determinant", 
+        "date_added": "2011-02-20 16:46:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=VrB3LaSD_uo&feature=youtube_gdata_player", 
+        "prev_video": "WY6QG0mZ7uQ", 
+        "readable_id": "linear-algebra--determinant-when-row-is-added"
+    }, 
+    {
+        "next_video": "kpG7xySkivg", 
+        "video_position": 86, 
+        "description": "Determinant of a matrix with duplicate rows", 
+        "title": "Linear Algebra: Duplicate Row Determinant", 
+        "views": 4332, 
+        "related_videos": [
+            "VrB3LaSD_uo", 
+            "kpG7xySkivg"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 499, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--duplicate-row-determinant?playlist=Linear+Algebra", 
+        "youtube_id": "gYv8sttBIqs", 
+        "keywords": "linear, algebra, determinant", 
+        "date_added": "2011-02-20 16:46:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=gYv8sttBIqs&feature=youtube_gdata_player", 
+        "prev_video": "VrB3LaSD_uo", 
+        "readable_id": "linear-algebra--duplicate-row-determinant"
+    }, 
+    {
+        "next_video": "VX7K8iqoiRc", 
+        "video_position": 87, 
+        "description": "What happens to the determinant when we perform a row operation", 
+        "title": "Linear Algebra: Determinant after row operations", 
+        "views": 7480, 
+        "related_videos": [
+            "gYv8sttBIqs", 
+            "VX7K8iqoiRc"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 625, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--determinant-after-row-operations?playlist=Linear+Algebra", 
+        "youtube_id": "kpG7xySkivg", 
+        "keywords": "linear, algebra, determinant", 
+        "date_added": "2011-02-20 16:46:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=kpG7xySkivg&feature=youtube_gdata_player", 
+        "prev_video": "gYv8sttBIqs", 
+        "readable_id": "linear-algebra--determinant-after-row-operations"
+    }, 
+    {
+        "next_video": "QV0jsTiobU4", 
+        "video_position": 88, 
+        "description": "The determinant of an upper triangular matrix", 
+        "title": "Linear Algebra: Upper Triangular Determinant", 
+        "views": 9976, 
+        "related_videos": [
+            "kpG7xySkivg", 
+            "QV0jsTiobU4"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 487, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--upper-triangular-determinant?playlist=Linear+Algebra", 
+        "youtube_id": "VX7K8iqoiRc", 
+        "keywords": "linear, algebra, determinant", 
+        "date_added": "2011-02-20 16:46:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=VX7K8iqoiRc&feature=youtube_gdata_player", 
+        "prev_video": "kpG7xySkivg", 
+        "readable_id": "linear-algebra--upper-triangular-determinant"
+    }, 
+    {
+        "next_video": "n-S63_goDFg", 
+        "video_position": 89, 
+        "description": "Calculating a 4x4 determinant by putting in in upper triangular form first.", 
+        "title": "Linear Algebra: Simpler 4x4 determinant", 
+        "views": 41393, 
+        "related_videos": [
+            "VX7K8iqoiRc", 
+            "n-S63_goDFg"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 553, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--simpler-4x4-determinant?playlist=Linear+Algebra", 
+        "youtube_id": "QV0jsTiobU4", 
+        "keywords": "linear, algebra, determinant", 
+        "date_added": "2011-02-20 16:46:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=QV0jsTiobU4&feature=youtube_gdata_player", 
+        "prev_video": "VX7K8iqoiRc", 
+        "readable_id": "linear-algebra--simpler-4x4-determinant"
+    }, 
+    {
+        "next_video": "g3MqSdO5Ubc", 
+        "video_position": 90, 
+        "description": "Realizing that the determinant of a 2x2 matrix is equal to the area of the parallelogram defined by the column vectors of the matrix", 
+        "title": "Linear Algebra:  Determinant and area of a parallelogram", 
+        "views": 10317, 
+        "related_videos": [
+            "QV0jsTiobU4", 
+            "g3MqSdO5Ubc"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1297, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra---determinant-and-area-of-a-parallelogram?playlist=Linear+Algebra", 
+        "youtube_id": "n-S63_goDFg", 
+        "keywords": "linear, algebra, determinant", 
+        "date_added": "2011-02-20 16:46:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=n-S63_goDFg&feature=youtube_gdata_player", 
+        "prev_video": "QV0jsTiobU4", 
+        "readable_id": "linear-algebra---determinant-and-area-of-a-parallelogram"
+    }, 
+    {
+        "next_video": "2t0003_sxtU", 
+        "video_position": 91, 
+        "description": "Viewing the determinant of the transformation matrix as a scaling factor of regions", 
+        "title": "Linear Algebra: Determinant as Scaling Factor", 
+        "views": 6844, 
+        "related_videos": [
+            "n-S63_goDFg", 
+            "2t0003_sxtU"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1209, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--determinant-as-scaling-factor?playlist=Linear+Algebra", 
+        "youtube_id": "g3MqSdO5Ubc", 
+        "keywords": "determinant, area, transformation", 
+        "date_added": "2011-02-20 16:46:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=g3MqSdO5Ubc&feature=youtube_gdata_player", 
+        "prev_video": "n-S63_goDFg", 
+        "readable_id": "linear-algebra--determinant-as-scaling-factor"
+    }, 
+    {
+        "next_video": "x-GV2v0dRNE", 
+        "video_position": 92, 
+        "description": "Transpose of a matrix", 
+        "title": "Linear Algebra: Transpose of a Matrix", 
+        "views": 18952, 
+        "related_videos": [
+            "g3MqSdO5Ubc", 
+            "x-GV2v0dRNE"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 517, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--transpose-of-a-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "2t0003_sxtU", 
+        "keywords": "matrix, transpose", 
+        "date_added": "2011-02-20 16:46:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=2t0003_sxtU&feature=youtube_gdata_player", 
+        "prev_video": "g3MqSdO5Ubc", 
+        "readable_id": "linear-algebra--transpose-of-a-matrix"
+    }, 
+    {
+        "next_video": "UdHgWK13x5I", 
+        "video_position": 93, 
+        "description": "Proof by induction that transposing a matrix does not change its determinant", 
+        "title": "Linear Algebra:  Determinant of Transpose", 
+        "views": 10338, 
+        "related_videos": [
+            "2t0003_sxtU", 
+            "UdHgWK13x5I"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 850, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra---determinant-of-transpose?playlist=Linear+Algebra", 
+        "youtube_id": "x-GV2v0dRNE", 
+        "keywords": "transpose, determinant, linear, algebra, matrix", 
+        "date_added": "2011-02-20 16:46:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=x-GV2v0dRNE&feature=youtube_gdata_player", 
+        "prev_video": "2t0003_sxtU", 
+        "readable_id": "linear-algebra---determinant-of-transpose"
+    }, 
+    {
+        "next_video": "Br_8t58mdeI", 
+        "video_position": 94, 
+        "description": "Taking the transpose of the product of two matrices", 
+        "title": "Linear Algebra: Transpose of a Matrix Product", 
+        "views": 4229, 
+        "related_videos": [
+            "x-GV2v0dRNE", 
+            "Br_8t58mdeI"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 530, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--transpose-of-a-matrix-product?playlist=Linear+Algebra", 
+        "youtube_id": "UdHgWK13x5I", 
+        "keywords": "transpose, matrix", 
+        "date_added": "2011-07-28 23:27:37", 
+        "youtube_url": "http://www.youtube.com/watch?v=UdHgWK13x5I&feature=youtube_gdata_player", 
+        "prev_video": "x-GV2v0dRNE", 
+        "readable_id": "linear-algebra--transpose-of-a-matrix-product"
+    }, 
+    {
+        "next_video": "lSoaMCNKfAg", 
+        "video_position": 95, 
+        "description": "Transposes of sums and inverses", 
+        "title": "Linear Algebra:  Transposes of sums and inverses", 
+        "views": 5167, 
+        "related_videos": [
+            "UdHgWK13x5I", 
+            "lSoaMCNKfAg"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 521, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra---transposes-of-sums-and-inverses?playlist=Linear+Algebra", 
+        "youtube_id": "Br_8t58mdeI", 
+        "keywords": "transpose, sum, inverse", 
+        "date_added": "2011-02-20 16:46:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=Br_8t58mdeI&feature=youtube_gdata_player", 
+        "prev_video": "UdHgWK13x5I", 
+        "readable_id": "linear-algebra---transposes-of-sums-and-inverses"
+    }, 
+    {
+        "next_video": "qBfc57x_RSg", 
+        "video_position": 96, 
+        "description": "Transpose of a column vector.  Matrix-matrix products using vectors", 
+        "title": "Linear Algebra: Transpose of a Vector", 
+        "views": 6791, 
+        "related_videos": [
+            "Br_8t58mdeI", 
+            "qBfc57x_RSg"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 726, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--transpose-of-a-vector?playlist=Linear+Algebra", 
+        "youtube_id": "lSoaMCNKfAg", 
+        "keywords": "matrix, vector, transpose", 
+        "date_added": "2011-02-20 16:46:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=lSoaMCNKfAg&feature=youtube_gdata_player", 
+        "prev_video": "Br_8t58mdeI", 
+        "readable_id": "linear-algebra--transpose-of-a-vector"
+    }, 
+    {
+        "next_video": "GW8ZPjGlk24", 
+        "video_position": 97, 
+        "description": "Rowspace and Left Nullspace", 
+        "title": "Linear Algebra: Rowspace and Left Nullspace", 
+        "views": 11319, 
+        "related_videos": [
+            "lSoaMCNKfAg", 
+            "GW8ZPjGlk24"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1398, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--rowspace-and-left-nullspace?playlist=Linear+Algebra", 
+        "youtube_id": "qBfc57x_RSg", 
+        "keywords": "rowspace, left, nullspace", 
+        "date_added": "2011-02-20 16:46:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=qBfc57x_RSg&feature=youtube_gdata_player", 
+        "prev_video": "lSoaMCNKfAg", 
+        "readable_id": "linear-algebra--rowspace-and-left-nullspace"
+    }, 
+    {
+        "next_video": "QOTjdgmNqlg", 
+        "video_position": 98, 
+        "description": "Relationship between left nullspace, rowspace, column space and nullspace.", 
+        "title": "Lin Alg: Visualizations of Left Nullspace and Rowspace", 
+        "views": 5017, 
+        "related_videos": [
+            "qBfc57x_RSg", 
+            "QOTjdgmNqlg"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1190, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--visualizations-of-left-nullspace-and-rowspace?playlist=Linear+Algebra", 
+        "youtube_id": "GW8ZPjGlk24", 
+        "keywords": "rowspace, left, nullspace", 
+        "date_added": "2011-02-20 16:46:48", 
+        "youtube_url": "http://www.youtube.com/watch?v=GW8ZPjGlk24&feature=youtube_gdata_player", 
+        "prev_video": "qBfc57x_RSg", 
+        "readable_id": "lin-alg--visualizations-of-left-nullspace-and-rowspace"
+    }, 
+    {
+        "next_video": "tqqVOWm9YsU", 
+        "video_position": 99, 
+        "description": "Orthogonal Complements as subspaces.", 
+        "title": "Linear Algebra: Orthogonal Complements", 
+        "views": 24130, 
+        "related_videos": [
+            "GW8ZPjGlk24", 
+            "tqqVOWm9YsU"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1328, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--orthogonal-complements?playlist=Linear+Algebra", 
+        "youtube_id": "QOTjdgmNqlg", 
+        "keywords": "orthogonal, complement", 
+        "date_added": "2011-02-20 16:46:48", 
+        "youtube_url": "http://www.youtube.com/watch?v=QOTjdgmNqlg&feature=youtube_gdata_player", 
+        "prev_video": "GW8ZPjGlk24", 
+        "readable_id": "linear-algebra--orthogonal-complements"
+    }, 
+    {
+        "next_video": "pGhBfkBqok0", 
+        "video_position": 100, 
+        "description": "Rank(A) = Rank(transpose of A)", 
+        "title": "Linear Algebra: Rank(A) = Rank(transpose of A)", 
+        "views": 14089, 
+        "related_videos": [
+            "QOTjdgmNqlg", 
+            "pGhBfkBqok0"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 673, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--rank-a----rank-transpose-of-a?playlist=Linear+Algebra", 
+        "youtube_id": "tqqVOWm9YsU", 
+        "keywords": "rank, transpose", 
+        "date_added": "2011-02-20 16:46:48", 
+        "youtube_url": "http://www.youtube.com/watch?v=tqqVOWm9YsU&feature=youtube_gdata_player", 
+        "prev_video": "QOTjdgmNqlg", 
+        "readable_id": "linear-algebra--rank-a----rank-transpose-of-a"
+    }, 
+    {
+        "next_video": "M6lFqkqvUgo", 
+        "video_position": 101, 
+        "description": "Showing that if V is a subspace of Rn, then dim(V) + dim(V's orthogonal complement) = n", 
+        "title": "Linear Algebra: dim(V) + dim(orthogonoal complelent of V)=n", 
+        "views": 7413, 
+        "related_videos": [
+            "tqqVOWm9YsU", 
+            "M6lFqkqvUgo"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 567, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--dim-v----dim-orthogonoal-complelent-of-v--n?playlist=Linear+Algebra", 
+        "youtube_id": "pGhBfkBqok0", 
+        "keywords": "orthogonal, complement, dimension, dim", 
+        "date_added": "2011-02-20 16:46:48", 
+        "youtube_url": "http://www.youtube.com/watch?v=pGhBfkBqok0&feature=youtube_gdata_player", 
+        "prev_video": "tqqVOWm9YsU", 
+        "readable_id": "linear-algebra--dim-v----dim-orthogonoal-complelent-of-v--n"
+    }, 
+    {
+        "next_video": "zlI8mx8Hc8o", 
+        "video_position": 102, 
+        "description": "Showing that any member of Rn can be represented as a unique sum of a vector in subspace V and a vector in the orthogonal complement of V.", 
+        "title": "Lin Alg: Representing vectors in Rn using subspace members", 
+        "views": 5868, 
+        "related_videos": [
+            "pGhBfkBqok0", 
+            "zlI8mx8Hc8o"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1620, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--representing-vectors-in-rn-using-subspace-members?playlist=Linear+Algebra", 
+        "youtube_id": "M6lFqkqvUgo", 
+        "keywords": "linear, algebra, orthogonal, complement", 
+        "date_added": "2011-02-20 16:47:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=M6lFqkqvUgo&feature=youtube_gdata_player", 
+        "prev_video": "pGhBfkBqok0", 
+        "readable_id": "lin-alg--representing-vectors-in-rn-using-subspace-members"
+    }, 
+    {
+        "next_video": "LE_aQAur7nI", 
+        "video_position": 103, 
+        "description": "Finding that the orthogonal complement of the orthogonal complement of V is V", 
+        "title": "Lin Alg:  Orthogonal Complement of the Orthogonal Complement", 
+        "views": 7162, 
+        "related_videos": [
+            "M6lFqkqvUgo", 
+            "LE_aQAur7nI"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 738, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg---orthogonal-complement-of-the-orthogonal-complement?playlist=Linear+Algebra", 
+        "youtube_id": "zlI8mx8Hc8o", 
+        "keywords": "subspace, orthogonal, complement", 
+        "date_added": "2011-02-20 16:47:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=zlI8mx8Hc8o&feature=youtube_gdata_player", 
+        "prev_video": "M6lFqkqvUgo", 
+        "readable_id": "lin-alg---orthogonal-complement-of-the-orthogonal-complement"
+    }, 
+    {
+        "next_video": "czIYvs9zj2g", 
+        "video_position": 104, 
+        "description": "The orthogonal complement of the nullspace and left nullspace.", 
+        "title": "Lin Alg: Orthogonal Complement of the Nullspace", 
+        "views": 5342, 
+        "related_videos": [
+            "zlI8mx8Hc8o", 
+            "czIYvs9zj2g"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 207, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--orthogonal-complement-of-the-nullspace?playlist=Linear+Algebra", 
+        "youtube_id": "LE_aQAur7nI", 
+        "keywords": "orthogonal, complement", 
+        "date_added": "2011-02-20 16:47:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=LE_aQAur7nI&feature=youtube_gdata_player", 
+        "prev_video": "zlI8mx8Hc8o", 
+        "readable_id": "lin-alg--orthogonal-complement-of-the-nullspace"
+    }, 
+    {
+        "next_video": "qdf2CuMGdKs", 
+        "video_position": 105, 
+        "description": "Showing that, for any b that is in the column space of A, there is a unique member of the row space that is the \"smallest\" solution to Ax=b", 
+        "title": "Lin Alg: Unique rowspace solution to Ax=b", 
+        "views": 4777, 
+        "related_videos": [
+            "LE_aQAur7nI", 
+            "qdf2CuMGdKs"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1152, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--unique-rowspace-solution-to-ax-b?playlist=Linear+Algebra", 
+        "youtube_id": "czIYvs9zj2g", 
+        "keywords": "rowspace, columnspace, solution, Ax=b", 
+        "date_added": "2011-02-20 16:47:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=czIYvs9zj2g&feature=youtube_gdata_player", 
+        "prev_video": "LE_aQAur7nI", 
+        "readable_id": "lin-alg--unique-rowspace-solution-to-ax-b"
+    }, 
+    {
+        "next_video": "ESSMQH6Y5OA", 
+        "video_position": 107, 
+        "description": "Visualizing the rowspace solution to Ax=b", 
+        "title": "Linear Alg: Rowspace Solution to Ax=b example", 
+        "views": 6783, 
+        "related_videos": [
+            "czIYvs9zj2g", 
+            "ESSMQH6Y5OA"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1178, 
+        "ka_url": "http://www.khanacademy.org/video/linear-alg--rowspace-solution-to-ax-b-example?playlist=Linear+Algebra", 
+        "youtube_id": "qdf2CuMGdKs", 
+        "keywords": "rowspace, columnspace, solution", 
+        "date_added": "2011-02-20 16:47:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=qdf2CuMGdKs&feature=youtube_gdata_player", 
+        "prev_video": "czIYvs9zj2g", 
+        "readable_id": "linear-alg--rowspace-solution-to-ax-b-example"
+    }, 
+    {
+        "next_video": "5B8XluiqdHM", 
+        "video_position": 108, 
+        "description": "Showing that (transpose of A)(A) is invertible if A has linearly independent columns", 
+        "title": "Lin Alg: Showing that A-transpose x A is invertible", 
+        "views": 4627, 
+        "related_videos": [
+            "qdf2CuMGdKs", 
+            "5B8XluiqdHM"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 754, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--showing-that-a-transpose-x-a-is-invertible?playlist=Linear+Algebra", 
+        "youtube_id": "ESSMQH6Y5OA", 
+        "keywords": "invertible, transpose", 
+        "date_added": "2011-02-20 16:47:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=ESSMQH6Y5OA&feature=youtube_gdata_player", 
+        "prev_video": "qdf2CuMGdKs", 
+        "readable_id": "lin-alg--showing-that-a-transpose-x-a-is-invertible"
+    }, 
+    {
+        "next_video": "uWbZlJURkfA", 
+        "video_position": 109, 
+        "description": "Projections onto subspaces", 
+        "title": "Linear Algebra: Projections onto Subspaces", 
+        "views": 11345, 
+        "related_videos": [
+            "ESSMQH6Y5OA", 
+            "uWbZlJURkfA"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1046, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--projections-onto-subspaces?playlist=Linear+Algebra", 
+        "youtube_id": "5B8XluiqdHM", 
+        "keywords": "subspace, projection", 
+        "date_added": "2011-02-20 16:47:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=5B8XluiqdHM&feature=youtube_gdata_player", 
+        "prev_video": "ESSMQH6Y5OA", 
+        "readable_id": "linear-algebra--projections-onto-subspaces"
+    }, 
+    {
+        "next_video": "cTyNpXB92bQ", 
+        "video_position": 110, 
+        "description": "Visualizing a projection onto a plane.  Showing that the old and new definitions of projections aren't that different.", 
+        "title": "Linear Alg: Visualizing a projection onto a plane", 
+        "views": 6282, 
+        "related_videos": [
+            "5B8XluiqdHM", 
+            "cTyNpXB92bQ"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 568, 
+        "ka_url": "http://www.khanacademy.org/video/linear-alg--visualizing-a-projection-onto-a-plane?playlist=Linear+Algebra", 
+        "youtube_id": "uWbZlJURkfA", 
+        "keywords": "projection, subspace", 
+        "date_added": "2011-02-20 16:47:21", 
+        "youtube_url": "http://www.youtube.com/watch?v=uWbZlJURkfA&feature=youtube_gdata_player", 
+        "prev_video": "5B8XluiqdHM", 
+        "readable_id": "linear-alg--visualizing-a-projection-onto-a-plane"
+    }, 
+    {
+        "next_video": "QTcSBB3uVP0", 
+        "video_position": 111, 
+        "description": "Showing that a  projection onto a subspace is a linear transformation", 
+        "title": "Lin Alg: A Projection onto a Subspace is a Linear Transforma", 
+        "views": 5356, 
+        "related_videos": [
+            "uWbZlJURkfA", 
+            "QTcSBB3uVP0"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 975, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--a-projection-onto-a-subspace-is-a-linear-transforma?playlist=Linear+Algebra", 
+        "youtube_id": "cTyNpXB92bQ", 
+        "keywords": "subspace, linear, transformation", 
+        "date_added": "2011-02-20 16:47:21", 
+        "youtube_url": "http://www.youtube.com/watch?v=cTyNpXB92bQ&feature=youtube_gdata_player", 
+        "prev_video": "uWbZlJURkfA", 
+        "readable_id": "lin-alg--a-projection-onto-a-subspace-is-a-linear-transforma"
+    }, 
+    {
+        "next_video": "XhCSHu6dHb8", 
+        "video_position": 112, 
+        "description": "Example of a transformation matrix for a projection onto a subspace", 
+        "title": "Linear Algebra: Subspace Projection Matrix Example", 
+        "views": 11674, 
+        "related_videos": [
+            "cTyNpXB92bQ", 
+            "XhCSHu6dHb8"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 784, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--subspace-projection-matrix-example?playlist=Linear+Algebra", 
+        "youtube_id": "QTcSBB3uVP0", 
+        "keywords": "subspace, projection", 
+        "date_added": "2011-02-20 16:47:21", 
+        "youtube_url": "http://www.youtube.com/watch?v=QTcSBB3uVP0&feature=youtube_gdata_player", 
+        "prev_video": "cTyNpXB92bQ", 
+        "readable_id": "linear-algebra--subspace-projection-matrix-example"
+    }, 
+    {
+        "next_video": "b269qpILOpk", 
+        "video_position": 113, 
+        "description": "Figuring out the transformation matrix for a projection onto a subspace by figuring out the matrix for the projection onto the subspace's orthogonal complement first", 
+        "title": "Lin Alg: Another Example of a Projection Matrix", 
+        "views": 5856, 
+        "related_videos": [
+            "QTcSBB3uVP0", 
+            "b269qpILOpk"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1295, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--another-example-of-a-projection-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "XhCSHu6dHb8", 
+        "keywords": "projection, subspace", 
+        "date_added": "2011-02-20 16:47:21", 
+        "youtube_url": "http://www.youtube.com/watch?v=XhCSHu6dHb8&feature=youtube_gdata_player", 
+        "prev_video": "QTcSBB3uVP0", 
+        "readable_id": "lin-alg--another-example-of-a-projection-matrix"
+    }, 
+    {
+        "next_video": "MC7l96tW8V8", 
+        "video_position": 114, 
+        "description": "Showing that the projection of x onto a subspace is the closest vector in the subspace to x", 
+        "title": "Linear Alg: Projection is closest vector in subspace", 
+        "views": 5187, 
+        "related_videos": [
+            "XhCSHu6dHb8", 
+            "MC7l96tW8V8"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 545, 
+        "ka_url": "http://www.khanacademy.org/video/linear-alg--projection-is-closest-vector-in-subspace?playlist=Linear+Algebra", 
+        "youtube_id": "b269qpILOpk", 
+        "keywords": "projection, subspace", 
+        "date_added": "2011-02-20 16:47:21", 
+        "youtube_url": "http://www.youtube.com/watch?v=b269qpILOpk&feature=youtube_gdata_player", 
+        "prev_video": "XhCSHu6dHb8", 
+        "readable_id": "linear-alg--projection-is-closest-vector-in-subspace"
+    }, 
+    {
+        "next_video": "8mAZYv5wIcE", 
+        "video_position": 115, 
+        "description": "The least squares approximation for otherwise unsolvable equations", 
+        "title": "Linear Algebra: Least Squares Approximation", 
+        "views": 24098, 
+        "related_videos": [
+            "b269qpILOpk", 
+            "8mAZYv5wIcE"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 932, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--least-squares-approximation?playlist=Linear+Algebra", 
+        "youtube_id": "MC7l96tW8V8", 
+        "keywords": "least, squares, approximation, solution", 
+        "date_added": "2011-02-20 16:47:21", 
+        "youtube_url": "http://www.youtube.com/watch?v=MC7l96tW8V8&feature=youtube_gdata_player", 
+        "prev_video": "b269qpILOpk", 
+        "readable_id": "linear-algebra--least-squares-approximation"
+    }, 
+    {
+        "next_video": "QkepM8Vv3kw", 
+        "video_position": 116, 
+        "description": "An example using the least squares solution to an unsolvable system", 
+        "title": "Linear Algebra: Least Squares Examples", 
+        "views": 21869, 
+        "related_videos": [
+            "MC7l96tW8V8", 
+            "QkepM8Vv3kw"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1130, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--least-squares-examples?playlist=Linear+Algebra", 
+        "youtube_id": "8mAZYv5wIcE", 
+        "keywords": "least, squares, approximation, solution", 
+        "date_added": "2011-02-20 16:47:21", 
+        "youtube_url": "http://www.youtube.com/watch?v=8mAZYv5wIcE&feature=youtube_gdata_player", 
+        "prev_video": "MC7l96tW8V8", 
+        "readable_id": "linear-algebra--least-squares-examples"
+    }, 
+    {
+        "next_video": "uvgru6FcyxU", 
+        "video_position": 117, 
+        "description": "Using least squares approximation to fit a line to points", 
+        "title": "Linear Algebra: Another Least Squares Example", 
+        "views": 12742, 
+        "related_videos": [
+            "8mAZYv5wIcE", 
+            "uvgru6FcyxU"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 805, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--another-least-squares-example?playlist=Linear+Algebra", 
+        "youtube_id": "QkepM8Vv3kw", 
+        "keywords": "least, squares, approximation, solution", 
+        "date_added": "2011-02-20 16:47:21", 
+        "youtube_url": "http://www.youtube.com/watch?v=QkepM8Vv3kw&feature=youtube_gdata_player", 
+        "prev_video": "8mAZYv5wIcE", 
+        "readable_id": "linear-algebra--another-least-squares-example"
+    }, 
+    {
+        "next_video": "1j5WnqwMdCk", 
+        "video_position": 118, 
+        "description": "Understanding alternate coordinate systems", 
+        "title": "Linear Algebra: Coordinates with Respect to a Basis", 
+        "views": 13476, 
+        "related_videos": [
+            "QkepM8Vv3kw", 
+            "1j5WnqwMdCk"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 968, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--coordinates-with-respect-to-a-basis?playlist=Linear+Algebra", 
+        "youtube_id": "uvgru6FcyxU", 
+        "keywords": "basis, coordinates", 
+        "date_added": "2011-02-20 16:47:21", 
+        "youtube_url": "http://www.youtube.com/watch?v=uvgru6FcyxU&feature=youtube_gdata_player", 
+        "prev_video": "QkepM8Vv3kw", 
+        "readable_id": "linear-algebra--coordinates-with-respect-to-a-basis"
+    }, 
+    {
+        "next_video": "meibWcbGqt4", 
+        "video_position": 119, 
+        "description": "Using a change of basis matrix to get us from one coordinate system to another.", 
+        "title": "Linear Algebra: Change of Basis Matrix", 
+        "views": 31978, 
+        "related_videos": [
+            "uvgru6FcyxU", 
+            "meibWcbGqt4"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1075, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--change-of-basis-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "1j5WnqwMdCk", 
+        "keywords": "change, of, basis, matrix, coordinate, system", 
+        "date_added": "2011-02-20 16:47:22", 
+        "youtube_url": "http://www.youtube.com/watch?v=1j5WnqwMdCk&feature=youtube_gdata_player", 
+        "prev_video": "uvgru6FcyxU", 
+        "readable_id": "linear-algebra--change-of-basis-matrix"
+    }, 
+    {
+        "next_video": "PiuhTj0zCf4", 
+        "video_position": 120, 
+        "description": "Using an invertible change of basis matrix to go between different coordinate systems", 
+        "title": "Lin Alg: Invertible Change of Basis Matrix", 
+        "views": 8978, 
+        "related_videos": [
+            "1j5WnqwMdCk", 
+            "PiuhTj0zCf4"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 814, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--invertible-change-of-basis-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "meibWcbGqt4", 
+        "keywords": "change, of, basis, matrix, coordinate, system", 
+        "date_added": "2011-02-20 16:47:22", 
+        "youtube_url": "http://www.youtube.com/watch?v=meibWcbGqt4&feature=youtube_gdata_player", 
+        "prev_video": "1j5WnqwMdCk", 
+        "readable_id": "lin-alg--invertible-change-of-basis-matrix"
+    }, 
+    {
+        "next_video": "lCRGNykWqFI", 
+        "video_position": 121, 
+        "description": "Finding the transformation matrix with respect to a non-standard basis", 
+        "title": "Lin Alg: Transformation Matrix with Respect to a Basis", 
+        "views": 21128, 
+        "related_videos": [
+            "meibWcbGqt4", 
+            "lCRGNykWqFI"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1082, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--transformation-matrix-with-respect-to-a-basis?playlist=Linear+Algebra", 
+        "youtube_id": "PiuhTj0zCf4", 
+        "keywords": "transformation, basis, coordinates", 
+        "date_added": "2011-02-20 16:47:22", 
+        "youtube_url": "http://www.youtube.com/watch?v=PiuhTj0zCf4&feature=youtube_gdata_player", 
+        "prev_video": "meibWcbGqt4", 
+        "readable_id": "lin-alg--transformation-matrix-with-respect-to-a-basis"
+    }, 
+    {
+        "next_video": "EyORbCPUAd4", 
+        "video_position": 122, 
+        "description": "Example of finding the transformation matrix for an alternate basis", 
+        "title": "Lin Alg: Alternate Basis Tranformation Matrix Example", 
+        "views": 8663, 
+        "related_videos": [
+            "PiuhTj0zCf4", 
+            "EyORbCPUAd4"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 800, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--alternate-basis-tranformation-matrix-example?playlist=Linear+Algebra", 
+        "youtube_id": "lCRGNykWqFI", 
+        "keywords": "basis, coordinates, transformation, matrix", 
+        "date_added": "2011-02-20 16:47:22", 
+        "youtube_url": "http://www.youtube.com/watch?v=lCRGNykWqFI&feature=youtube_gdata_player", 
+        "prev_video": "PiuhTj0zCf4", 
+        "readable_id": "lin-alg--alternate-basis-tranformation-matrix-example"
+    }, 
+    {
+        "next_video": "K_na_j1Msfg", 
+        "video_position": 123, 
+        "description": "Showing that the transformation matrix with respect to basis B actually works.  Brief point on why someone would want to operate in a different basis to begin with.", 
+        "title": "Lin Alg: Alternate Basis Tranformation Matrix Example Part 2", 
+        "views": 5518, 
+        "related_videos": [
+            "lCRGNykWqFI", 
+            "K_na_j1Msfg"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 756, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--alternate-basis-tranformation-matrix-example-part-2?playlist=Linear+Algebra", 
+        "youtube_id": "EyORbCPUAd4", 
+        "keywords": "Linear, Algebra, basis, coordinates, transformation", 
+        "date_added": "2011-02-20 16:47:22", 
+        "youtube_url": "http://www.youtube.com/watch?v=EyORbCPUAd4&feature=youtube_gdata_player", 
+        "prev_video": "lCRGNykWqFI", 
+        "readable_id": "lin-alg--alternate-basis-tranformation-matrix-example-part-2"
+    }, 
+    {
+        "next_video": "7BFx8pt2aTQ", 
+        "video_position": 124, 
+        "description": "Changing our coordinate system to find the transformation matrix with respect to standard coordinates", 
+        "title": "Lin Alg: Changing coordinate systems to help find a transformation matrix", 
+        "views": 10068, 
+        "related_videos": [
+            "EyORbCPUAd4", 
+            "7BFx8pt2aTQ"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1739, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--changing-coordinate-systems-to-help-find-a-transformation-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "K_na_j1Msfg", 
+        "keywords": "basis, coordinates, transformation, matrix", 
+        "date_added": "2011-02-20 16:47:22", 
+        "youtube_url": "http://www.youtube.com/watch?v=K_na_j1Msfg&feature=youtube_gdata_player", 
+        "prev_video": "EyORbCPUAd4", 
+        "readable_id": "lin-alg--changing-coordinate-systems-to-help-find-a-transformation-matrix"
+    }, 
+    {
+        "next_video": "SWbis2zWIvo", 
+        "video_position": 125, 
+        "description": "Looking at sets and bases that are orthonormal -- or where all the vectors have length 1 and are orthogonal to each other.", 
+        "title": "Linear Algebra: Introduction to Orthonormal Bases", 
+        "views": 21780, 
+        "related_videos": [
+            "K_na_j1Msfg", 
+            "SWbis2zWIvo"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 676, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--introduction-to-orthonormal-bases?playlist=Linear+Algebra", 
+        "youtube_id": "7BFx8pt2aTQ", 
+        "keywords": "orthonormal, basis, orthogonal, set, normal, normailzed", 
+        "date_added": "2011-02-20 16:47:22", 
+        "youtube_url": "http://www.youtube.com/watch?v=7BFx8pt2aTQ&feature=youtube_gdata_player", 
+        "prev_video": "K_na_j1Msfg", 
+        "readable_id": "linear-algebra--introduction-to-orthonormal-bases"
+    }, 
+    {
+        "next_video": "we829K4NOq8", 
+        "video_position": 126, 
+        "description": "Seeing that orthonormal bases make for good coordinate systems", 
+        "title": "Linear Algebra: Coordinates with respect to orthonormal bases", 
+        "views": 8006, 
+        "related_videos": [
+            "7BFx8pt2aTQ", 
+            "we829K4NOq8"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 928, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--coordinates-with-respect-to-orthonormal-bases?playlist=Linear+Algebra", 
+        "youtube_id": "SWbis2zWIvo", 
+        "keywords": "orthonormal, coordinates", 
+        "date_added": "2011-02-20 16:47:22", 
+        "youtube_url": "http://www.youtube.com/watch?v=SWbis2zWIvo&feature=youtube_gdata_player", 
+        "prev_video": "7BFx8pt2aTQ", 
+        "readable_id": "linear-algebra--coordinates-with-respect-to-orthonormal-bases"
+    }, 
+    {
+        "next_video": "SUoqA9srY1Q", 
+        "video_position": 127, 
+        "description": "Projections onto subspaces with orthonormal bases", 
+        "title": "Lin Alg: Projections onto subspaces with orthonormal bases", 
+        "views": 7306, 
+        "related_videos": [
+            "SWbis2zWIvo", 
+            "SUoqA9srY1Q"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 974, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--projections-onto-subspaces-with-orthonormal-bases?playlist=Linear+Algebra", 
+        "youtube_id": "we829K4NOq8", 
+        "keywords": "projection, orthonormal, basis", 
+        "date_added": "2011-02-20 16:47:22", 
+        "youtube_url": "http://www.youtube.com/watch?v=we829K4NOq8&feature=youtube_gdata_player", 
+        "prev_video": "SWbis2zWIvo", 
+        "readable_id": "lin-alg--projections-onto-subspaces-with-orthonormal-bases"
+    }, 
+    {
+        "next_video": "gfVY7cW7VLQ", 
+        "video_position": 128, 
+        "description": "Example of finding the transformation matrix for the projection onto a subspace with an orthonormal basis", 
+        "title": "Lin Alg: Finding projection onto subspace with orthonormal basis example", 
+        "views": 7924, 
+        "related_videos": [
+            "we829K4NOq8", 
+            "gfVY7cW7VLQ"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 402, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--finding-projection-onto-subspace-with-orthonormal-basis-example?playlist=Linear+Algebra", 
+        "youtube_id": "SUoqA9srY1Q", 
+        "keywords": "basis, orthonormal, projection, proj", 
+        "date_added": "2011-02-20 16:47:22", 
+        "youtube_url": "http://www.youtube.com/watch?v=SUoqA9srY1Q&feature=youtube_gdata_player", 
+        "prev_video": "we829K4NOq8", 
+        "readable_id": "lin-alg--finding-projection-onto-subspace-with-orthonormal-basis-example"
+    }, 
+    {
+        "next_video": "yDwIfYjKEeo", 
+        "video_position": 129, 
+        "description": "Example using orthogonal change-of-basis matrix to find transformation matrix", 
+        "title": "Lin Alg: Example using orthogonal change-of-basis matrix to find transformation matrix", 
+        "views": 7882, 
+        "related_videos": [
+            "SUoqA9srY1Q", 
+            "yDwIfYjKEeo"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1624, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg--example-using-orthogonal-change-of-basis-matrix-to-find-transformation-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "gfVY7cW7VLQ", 
+        "keywords": "orthogonal, matrix", 
+        "date_added": "2011-02-20 16:47:23", 
+        "youtube_url": "http://www.youtube.com/watch?v=gfVY7cW7VLQ&feature=youtube_gdata_player", 
+        "prev_video": "SUoqA9srY1Q", 
+        "readable_id": "lin-alg--example-using-orthogonal-change-of-basis-matrix-to-find-transformation-matrix"
+    }, 
+    {
+        "next_video": "rHonltF77zI", 
+        "video_position": 130, 
+        "description": "Showing that orthogonal matrices preserve angles and lengths", 
+        "title": "Lin Alg:  Orthogonal matrices preserve angles and lengths", 
+        "views": 7390, 
+        "related_videos": [
+            "gfVY7cW7VLQ", 
+            "rHonltF77zI"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 676, 
+        "ka_url": "http://www.khanacademy.org/video/lin-alg---orthogonal-matrices-preserve-angles-and-lengths?playlist=Linear+Algebra", 
+        "youtube_id": "yDwIfYjKEeo", 
+        "keywords": "orthogonal, matrix", 
+        "date_added": "2011-02-20 16:47:23", 
+        "youtube_url": "http://www.youtube.com/watch?v=yDwIfYjKEeo&feature=youtube_gdata_player", 
+        "prev_video": "gfVY7cW7VLQ", 
+        "readable_id": "lin-alg---orthogonal-matrices-preserve-angles-and-lengths"
+    }, 
+    {
+        "next_video": "tu1GPtfsQ7M", 
+        "video_position": 131, 
+        "description": "Finding an orthonormal basis for a subspace using the Gram-Schmidt Process", 
+        "title": "Linear Algebra: The Gram-Schmidt Process", 
+        "views": 31120, 
+        "related_videos": [
+            "yDwIfYjKEeo", 
+            "tu1GPtfsQ7M"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 1164, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--the-gram-schmidt-process?playlist=Linear+Algebra", 
+        "youtube_id": "rHonltF77zI", 
+        "keywords": "gram, schmidt, orthonormal", 
+        "date_added": "2011-02-20 16:47:23", 
+        "youtube_url": "http://www.youtube.com/watch?v=rHonltF77zI&feature=youtube_gdata_player", 
+        "prev_video": "yDwIfYjKEeo", 
+        "readable_id": "linear-algebra--the-gram-schmidt-process"
+    }, 
+    {
+        "next_video": "ZRRG386v6DI", 
+        "video_position": 132, 
+        "description": "Using Gram-Schmidt to find an orthonormal basis for a plane in R3", 
+        "title": "Linear Algebra: Gram-Schmidt Process Example", 
+        "views": 23198, 
+        "related_videos": [
+            "rHonltF77zI", 
+            "ZRRG386v6DI"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 794, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--gram-schmidt-process-example?playlist=Linear+Algebra", 
+        "youtube_id": "tu1GPtfsQ7M", 
+        "keywords": "gram, schmidt, process, basis", 
+        "date_added": "2011-02-20 16:47:23", 
+        "youtube_url": "http://www.youtube.com/watch?v=tu1GPtfsQ7M&feature=youtube_gdata_player", 
+        "prev_video": "rHonltF77zI", 
+        "readable_id": "linear-algebra--gram-schmidt-process-example"
+    }, 
+    {
+        "next_video": "PhfbEr2btGQ", 
+        "video_position": 133, 
+        "description": "Gram-Schmidt example with 3 basis vectors", 
+        "title": "Linear Algebra:  Gram-Schmidt example with 3 basis vectors", 
+        "views": 17538, 
+        "related_videos": [
+            "tu1GPtfsQ7M", 
+            "PhfbEr2btGQ"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 837, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra---gram-schmidt-example-with-3-basis-vectors?playlist=Linear+Algebra", 
+        "youtube_id": "ZRRG386v6DI", 
+        "keywords": "gram, schmidt", 
+        "date_added": "2011-02-20 16:47:23", 
+        "youtube_url": "http://www.youtube.com/watch?v=ZRRG386v6DI&feature=youtube_gdata_player", 
+        "prev_video": "tu1GPtfsQ7M", 
+        "readable_id": "linear-algebra---gram-schmidt-example-with-3-basis-vectors"
+    }, 
+    {
+        "next_video": "rfm0wQObxjk", 
+        "video_position": 134, 
+        "description": "What eigenvectors and eigenvalues are and why they are interesting", 
+        "title": "Linear Algebra: Introduction to Eigenvalues and Eigenvectors", 
+        "views": 104305, 
+        "related_videos": [
+            "ZRRG386v6DI", 
+            "rfm0wQObxjk"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 463, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--introduction-to-eigenvalues-and-eigenvectors?playlist=Linear+Algebra", 
+        "youtube_id": "PhfbEr2btGQ", 
+        "keywords": "eigenvalue, eigenvector", 
+        "date_added": "2011-02-20 16:47:23", 
+        "youtube_url": "http://www.youtube.com/watch?v=PhfbEr2btGQ&feature=youtube_gdata_player", 
+        "prev_video": "ZRRG386v6DI", 
+        "readable_id": "linear-algebra--introduction-to-eigenvalues-and-eigenvectors"
+    }, 
+    {
+        "next_video": "pZ6mMVEE89g", 
+        "video_position": 135, 
+        "description": "Proof of formula for determining Eigenvalues", 
+        "title": "Linear Algebra: Proof of formula for determining Eigenvalues", 
+        "views": 28147, 
+        "related_videos": [
+            "PhfbEr2btGQ", 
+            "pZ6mMVEE89g"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 559, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--proof-of-formula-for-determining-eigenvalues?playlist=Linear+Algebra", 
+        "youtube_id": "rfm0wQObxjk", 
+        "keywords": "eigenvectors, eigenvalues", 
+        "date_added": "2011-02-20 16:47:23", 
+        "youtube_url": "http://www.youtube.com/watch?v=rfm0wQObxjk&feature=youtube_gdata_player", 
+        "prev_video": "PhfbEr2btGQ", 
+        "readable_id": "linear-algebra--proof-of-formula-for-determining-eigenvalues"
+    }, 
+    {
+        "next_video": "3-xfmbdzkqc", 
+        "video_position": 136, 
+        "description": "Example solving for the eigenvalues of a 2x2 matrix", 
+        "title": "Linear Algebra: Example solving for the eigenvalues of a 2x2 matrix", 
+        "views": 52336, 
+        "related_videos": [
+            "rfm0wQObxjk", 
+            "3-xfmbdzkqc"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 339, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--example-solving-for-the-eigenvalues-of-a-2x2-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "pZ6mMVEE89g", 
+        "keywords": "eigenvalue", 
+        "date_added": "2011-02-20 16:47:23", 
+        "youtube_url": "http://www.youtube.com/watch?v=pZ6mMVEE89g&feature=youtube_gdata_player", 
+        "prev_video": "rfm0wQObxjk", 
+        "readable_id": "linear-algebra--example-solving-for-the-eigenvalues-of-a-2x2-matrix"
+    }, 
+    {
+        "next_video": "11dNghWC4HI", 
+        "video_position": 137, 
+        "description": "Finding the eigenvectors and eigenspaces of a 2x2 matrix", 
+        "title": "Linear Algebra:  Finding Eigenvectors and Eigenspaces example", 
+        "views": 86432, 
+        "related_videos": [
+            "pZ6mMVEE89g", 
+            "11dNghWC4HI"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 874, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra---finding-eigenvectors-and-eigenspaces-example?playlist=Linear+Algebra", 
+        "youtube_id": "3-xfmbdzkqc", 
+        "keywords": "eigenvalue, eigenvector, eigenspace", 
+        "date_added": "2011-02-20 16:47:23", 
+        "youtube_url": "http://www.youtube.com/watch?v=3-xfmbdzkqc&feature=youtube_gdata_player", 
+        "prev_video": "pZ6mMVEE89g", 
+        "readable_id": "linear-algebra---finding-eigenvectors-and-eigenspaces-example"
+    }, 
+    {
+        "next_video": "3Md5KCCQX-0", 
+        "video_position": 138, 
+        "description": "Determining the eigenvalues of a 3x3 matrix", 
+        "title": "Linear Algebra: Eigenvalues of a 3x3 matrix", 
+        "views": 80797, 
+        "related_videos": [
+            "3-xfmbdzkqc", 
+            "3Md5KCCQX-0"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 848, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra--eigenvalues-of-a-3x3-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "11dNghWC4HI", 
+        "keywords": "eigenvalue, eigenvector", 
+        "date_added": "2011-02-20 16:47:23", 
+        "youtube_url": "http://www.youtube.com/watch?v=11dNghWC4HI&feature=youtube_gdata_player", 
+        "prev_video": "3-xfmbdzkqc", 
+        "readable_id": "linear-algebra--eigenvalues-of-a-3x3-matrix"
+    }, 
+    {
+        "next_video": "C2PC9185gIw", 
+        "video_position": 139, 
+        "description": "Eigenvectors and eigenspaces for a 3x3 matrix", 
+        "title": "Linear Algebra:  Eigenvectors and Eigenspaces for a 3x3 matrix", 
+        "views": 63975, 
+        "related_videos": [
+            "11dNghWC4HI", 
+            "C2PC9185gIw"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 934, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra---eigenvectors-and-eigenspaces-for-a-3x3-matrix?playlist=Linear+Algebra", 
+        "youtube_id": "3Md5KCCQX-0", 
+        "keywords": "eigenvector, eigenspace", 
+        "date_added": "2011-02-20 16:47:24", 
+        "youtube_url": "http://www.youtube.com/watch?v=3Md5KCCQX-0&feature=youtube_gdata_player", 
+        "prev_video": "11dNghWC4HI", 
+        "readable_id": "linear-algebra---eigenvectors-and-eigenspaces-for-a-3x3-matrix"
+    }, 
+    {
+        "next_video": "b7JTVLc_aMk", 
+        "video_position": 140, 
+        "description": "Showing that an eigenbasis makes for good coordinate systems", 
+        "title": "Linear Algebra:  Showing that an eigenbasis makes for good coordinate systems", 
+        "views": 17817, 
+        "related_videos": [
+            "3Md5KCCQX-0", 
+            "b7JTVLc_aMk"
+        ], 
+        "playlist_titles": [
+            "Linear Algebra"
+        ], 
+        "duration": 789, 
+        "ka_url": "http://www.khanacademy.org/video/linear-algebra---showing-that-an-eigenbasis-makes-for-good-coordinate-systems?playlist=Linear+Algebra", 
+        "youtube_id": "C2PC9185gIw", 
+        "keywords": "eigenbasis, eigenvector", 
+        "date_added": "2011-02-20 16:47:24", 
+        "youtube_url": "http://www.youtube.com/watch?v=C2PC9185gIw&feature=youtube_gdata_player", 
+        "prev_video": "3Md5KCCQX-0", 
+        "readable_id": "linear-algebra---showing-that-an-eigenbasis-makes-for-good-coordinate-systems"
+    }, 
+    {
+        "next_video": "gw-4wltP5tY", 
+        "video_position": 141, 
+        "description": "A shortcut for having to evaluate the cross product of three vectors", 
+        "title": "Vector Triple Product Expansion (very optional)", 
+        "views": 7144, 
+        "related_videos": [
+            "C2PC9185gIw", 
+            "gw-4wltP5tY"
+        ], 
+        "playlist_titles": [
+            "IIT JEE Questions", 
+            "Linear Algebra"
+        ], 
+        "duration": 865, 
+        "ka_url": "http://www.khanacademy.org/video/vector-triple-product-expansion--very-optional?playlist=Linear+Algebra", 
+        "youtube_id": "b7JTVLc_aMk", 
+        "keywords": "vector, cross, product, lagrange, expansion, triple", 
+        "date_added": "2011-02-20 16:45:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=b7JTVLc_aMk&feature=youtube_gdata_player", 
+        "prev_video": "C2PC9185gIw", 
+        "readable_id": "vector-triple-product-expansion--very-optional"
+    }, 
+    {
+        "next_video": "7rIFO8hct9g", 
+        "video_position": 142, 
+        "description": "Figuring out a normal vector to a plane from its equation", 
+        "title": "Normal vector from plane equation", 
+        "views": 12048, 
+        "related_videos": [
+            "b7JTVLc_aMk", 
+            "7rIFO8hct9g"
+        ], 
+        "playlist_titles": [
+            "IIT JEE Questions", 
+            "Linear Algebra"
+        ], 
+        "duration": 598, 
+        "ka_url": "http://www.khanacademy.org/video/normal-vector-from-plane-equation?playlist=Linear+Algebra", 
+        "youtube_id": "gw-4wltP5tY", 
+        "keywords": "linear, algebra, normal, vector, equation, plane", 
+        "date_added": "2011-02-20 16:45:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=gw-4wltP5tY&feature=youtube_gdata_player", 
+        "prev_video": "b7JTVLc_aMk", 
+        "readable_id": "normal-vector-from-plane-equation"
+    }, 
+    {
+        "next_video": "v8plb6V8BQo", 
+        "video_position": 143, 
+        "description": "Distance between a point and a plane in three dimensions", 
+        "title": "Point distance to plane", 
+        "views": 10259, 
+        "related_videos": [
+            "gw-4wltP5tY", 
+            "v8plb6V8BQo"
+        ], 
+        "playlist_titles": [
+            "IIT JEE Questions", 
+            "Linear Algebra"
+        ], 
+        "duration": 732, 
+        "ka_url": "http://www.khanacademy.org/video/point-distance-to-plane?playlist=Linear+Algebra", 
+        "youtube_id": "7rIFO8hct9g", 
+        "keywords": "linear, algebra, point, plane, distance, normal, vector", 
+        "date_added": "2011-02-20 16:45:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=7rIFO8hct9g&feature=youtube_gdata_player", 
+        "prev_video": "gw-4wltP5tY", 
+        "readable_id": "point-distance-to-plane"
+    }, 
+    {
+        "next_video": "", 
+        "video_position": 144, 
+        "description": "2010 IIT JEE Paper 1 Problem 51 Distance Between Planes", 
+        "title": "Distance Between Planes", 
+        "views": 9204, 
+        "related_videos": [
+            "7rIFO8hct9g"
+        ], 
+        "playlist_titles": [
+            "IIT JEE Questions", 
+            "Linear Algebra"
+        ], 
+        "duration": 885, 
+        "ka_url": "http://www.khanacademy.org/video/distance-between-planes?playlist=Linear+Algebra", 
+        "youtube_id": "v8plb6V8BQo", 
+        "keywords": "2010, IIT, JEE, Paper, Problem, 51, Distance, Between, Planes", 
+        "date_added": "2011-02-20 16:45:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=v8plb6V8BQo&feature=youtube_gdata_player", 
+        "prev_video": "7rIFO8hct9g", 
+        "readable_id": "distance-between-planes"
+    }
+]

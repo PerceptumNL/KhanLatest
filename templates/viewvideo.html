@@ -1,0 +1,104 @@
+{% extends "page_template.html" %}
+
+{% import 'macros/youtube.html' as youtube %}
+{% import 'macros/analytics.html' as analytics %}
+{% import 'macros/subtitles.html' as subtitles %}
+
+{% block meta_page_title %}
+{% if topic_data %}{{video.title|escape}} | {{topic_data.title|escape}}{% endif %} | {% endblock %}
+{% block meta_keywords %}{{video.keywords}}{% endblock %}
+{% block meta_description %}{{video.description}}{% endblock %}
+
+{% block meta_facebook_tags %}
+        <meta property="og:type" content="video.other" />
+        <meta property="og:title" content="{{ video.title }}" />
+        <meta property="og:description" content="{{ video.description }}" />
+        <meta property="og:url" content="{{ site_base_url }}{{ video.canonical_url }}">
+        <meta property="og:image" content="http://img.youtube.com/vi/{{ video.youtube_id }}/0.jpg" />
+        <meta property="og:video" content="http://www.youtube.com/v/{{ video.youtube_id }}">
+        <meta property="og:video:type" content="application/x-shockwave-flash">
+{% endblock %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("video") }}
+{% endblock pagecss %}
+
+{% block pagesubmenu %}
+<span class="breadcrumbs_nav video-nav">
+  {{ handlebars_template('video', 'video-nav', {'topic': topic_data, 'video': video}) }}
+</span>
+{% endblock pagesubmenu %}
+{% block pagecontent %}
+<article id="video-page">
+<div class="video" data-role="page" data-theme="b">
+    <div data-role="header" class="mobile-only">
+        <a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+        <h2 class="video-title">{{ video.title }}</h2>
+        <a href="/" data-icon="home" data-iconpos="notext" data-direction="reverse"></a>
+    </div>
+    <div data-role="content" itemscope itemtype="http://schema.org/VideoObject">
+        <div style="min-height: 88px">
+          <div id="description" class="video-description">
+            {{ handlebars_template('video', 'video-description', {'topic': topic_data, 'video': video}) }}
+          </div>
+          <div class="video-header" style="min-height: 1px">
+            {{ handlebars_template('video', 'video-header', {'topic': topic_data, 'video': video}) }}
+          </div>
+        </div>
+
+        <div id="youtube_blocked" class="desktop-only"></div>
+        <div class="youtube-video">
+            <link itemprop="thumbnailUrl" href="http://img.youtube.com/vi/{{ video.youtube_id }}/hqdefault.jpg">
+            {{ youtube.player_embed(video.youtube_id, mobile=is_mobile_capable, use_iframe_embed=is_ipad, http_origin=http_host)  }}
+            <div class="subtitles-warning desktop-only">
+                &lArr; Use this menu to view and help create subtitles for this video in many different languages.
+                You'll probably want to hide YouTube's captions if using these subtitles.
+            </div>
+        </div>
+        <div>
+
+          {{ subtitles.interactive_transcript(video.subtitles_json) }}
+
+          <span class="video-footer">
+            {{ handlebars_template('video', 'video-footer', {'topic': topic_data, 'video': video}) }}
+          </span>
+        </div>
+
+        <div class="desktop-only video-discussion"></div>
+    </div>
+</div>
+</article>
+{% endblock pagecontent %}
+
+{% block bottompagescript %}
+
+    {{ js_css_packages.js_package("video") }}
+    {{ js_css_packages.js_package("discussion") }}
+    {{ js_css_packages.js_package("moderation") }}
+    <script>
+      var videoParams = {
+
+      {% if topic_data_json and video_data_json %}
+        videoTopLevelTopic: "{{ topic_data.top_level_topic }}",
+        videoLibrary: {
+          "{{ topic_data.id }}": {
+              topic: {{ topic_data_json }},
+              videos: {
+                  "{{ video.readable_id }}": {{ video_data_json }}
+              }
+          }
+        },
+      {% else %}
+        videoTopLevelTopic: "{{ top_level_topic }}",
+      {% endif %}
+
+        loginURL: "{{ login_url|escape }}",
+      }
+
+      $(function() {
+        Video.init(videoParams);
+      });
+    </script>
+    {{ analytics.crazyegg_tracker(False) }}
+{% endblock bottompagescript %}
+

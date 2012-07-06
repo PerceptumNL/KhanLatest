@@ -1,0 +1,187 @@
+{% extends "page_template.html" %}
+{% block pagetitle %}{% if page_search_query %}Search Results for {{page_search_query|escape}}{% else %}Search{% endif %}{% endblock pagetitle %}
+{% block pagescript %}
+<style>
+    #page_sub_nav { display: none; }
+
+    .error {
+        width: 100%;
+        text-align: center;
+        font-size: large;
+        font-weight: bolder;
+        background-color: #fcc;
+    }
+    .search_results form {
+        display: block;
+        margin: 1em 0;
+    }
+    .search_results form * {
+        font-size: large;
+    }
+    .search_results section {
+        margin-top: 1em;
+    }
+    .search_results h1 {
+        font-size: large;
+        font-weight: bold;
+    }
+    .search_results dl {
+        margin-left: 2em;
+    }
+    .search_results dt {
+        font-size: large;
+    }
+    .search_results dd {
+        margin-left: 0;
+        margin-bottom: 1em;
+    }
+    .search_results dd .keywords {
+        font-style: italic;
+    }
+    .search_results .highlight {
+        font-weight: bold;
+    }
+    #search-page-box {
+        width: 270px;
+    }
+</style>
+{% endblock pagescript %}
+{% block pagemessage %}
+    {% if query_too_short %}
+    <div class="error">
+        Search terms must contain at least {{query_too_short}} letters.
+    </div>
+    {% endif %}
+    {% if server_timout %}
+    <div class="error">
+        A problem occurred fetching your search results. Please refresh the page to try again.
+    </div>
+    {% endif %}
+{% endblock pagemessage %}
+{% block pagecontent %}
+<article class="search_results" id="search_results">
+    <form id="page_requery" action="/search">
+        <input id="search-page-box" type="text" name="page_search_query" value='{{page_search_query|escape}}'>
+        <button type="submit">New Search</button>
+    </form>
+    {% if topics and matching_topic_count %}
+    <section class="topics search-topics">
+        {% if matching_topic %}
+        <div class="topic-condensed">
+          <h2><a href="{{ matching_topic["ka_url"]|fix_url_domain }}" data-tag="Search Topic Results">{{ matching_topic["title"]|escape }}</a></h2>
+
+          {% if matching_topic["description"] %}
+          <div class="searchresulthighlight topic-description">{{ matching_topic["description"]|escape }}</div>
+          {% endif %}
+
+          {% if matching_topic["children"] %}
+            <ul>
+            {% for child_topic in matching_topic["children"] %}
+              <li>
+                <a href="{{ child_topic["url"]|fix_url_domain }}" data-tag="Search Topic Results" class="topic-result"><span class="searchresulthighlight">{{ child_topic["title"]|escape }}</span></a>
+              </li>
+            {% endfor %}
+            </ul>
+            <div style="clear: both"></div>
+          {% endif %}
+        </div>
+        {% endif %}
+    </section>
+    {% endif %}
+
+    <section class="searchresult-counts">
+        {% if (video_count == 0 and topic_count == 0) %}
+            No videos were found. Please try a different query.
+        {% else %}
+            Found {{ video_count }} video{{ video_count|pluralize }} in {{ topic_count }} topic{{ topic_count|pluralize }} that match{% if video_count == 1 %}es{% endif %} your query:
+        {% endif %}
+    </section>
+    {% if topics %}
+    <section class="topics search-topics">
+        <dl>
+
+        {% for topic in topics %}
+        {% if topic["match_count"] > 0 %}
+            <dt><h2 class="topic"><a href="{{ topic["url"]|fix_url_domain }}">{{ topic["title"]|escape }}</a>
+            <span class="match_count">
+                ({{ topic["match_count"] }} matching video{{ topic["match_count"]|pluralize }})
+            </span>
+            </h2></dt>
+
+            {% if topic["description"] %}
+            <dd>{{ topic["description"] }}</dd>
+            {% endif %}
+
+            <ol>
+            {% for video in topic["videos"] %}
+                    <li class="videos">
+                      <div class="column">
+                        <a href="{{ video["ka_url"]|fix_url_domain }}" data-tag="Search Body" class="video-result"><span class="searchresulthighlight">{{ video["title"]|escape }}</span></a>
+                        <span class="searchresultscore">({{ video["score"] }})</span>
+                        {% if video["description"] %}
+                        <p class="description searchresulthighlight">{{ video["description"]|escape }}</p>
+                        {% endif %}
+                      </div>
+                      <div class="column">
+                        <p class="column-heading">Watch</p>
+                        <ul>
+                          <li><a href="{{ video["ka_url"]|fix_url_domain }}" data-tag="Search Body" class="vl"><span class="vid-progress v{{ video["key_id"] }}">Watch the video lesson</a></li>
+                        </ul>
+                      </div>
+                      {% if video["related_exercises"] %}
+                      <div class="column">
+                        <p class="column-heading">Practice Exercises</p>
+                          <ul>
+                            {% for exercise in video["related_exercises"] %}
+                              <li><a href="{{ exercise["url"]|fix_url_domain }}" data-tag="Search Body" class="exercise-link">{{ exercise["name"]|escape }}</a></li>
+                            {% endfor %}
+                          </ul>
+                      </div>
+                      {% endif %}
+                      <br>
+                    </li>
+            {% endfor %}
+            <li>
+                <a href="{{ topic["url"]|fix_url_domain }}" data-tag="Search Body">See more videos from this topic</a>
+            </li>
+            </ol>
+        {% endif %}
+        {% endfor %}
+        </dl>
+    </section>
+    {% endif %}
+</article>
+
+<div id="back-to-top">
+    <a class="arrow" href="#">▲</a>
+    <a class="text" href="#">Back to Top</a>
+</div>
+{% endblock pagecontent %}
+
+{% block bottompagescript %}
+{{ super() }}
+<script type="text/javascript">
+$(function() {
+    SearchResultHighlight.highlight('{{ search_string|escapejs }}');
+
+    if (!$.browser.msie) {
+        var jelTop = $("#back-to-top");
+        jelTop.css("display", "block");
+    }
+
+    initAutocomplete("#search_results #search-page-box", true);
+
+    $("#page_requery").submit(function(e) {
+        // Only allow submission if there is a non-empty query.
+        return !!$.trim( $("#page_requery #search-page-box").val() );
+    });
+
+    {%- if not hide_analytics -%}
+        {% if mixpanel_enabled %}
+        Analytics.trackSingleEvent("Search", {"Search Term": "{{page_search_query|escape}}"});
+        {% endif %}
+    {%- endif %}
+})
+</script>
+{% endblock bottompagescript %}
+

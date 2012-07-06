@@ -1,0 +1,21 @@
+{{#if isEmpty}}
+
+<div class="achievement-badge compact empty">
+  <div id="outline-box">
+  <div class="selected-indicator"> </div>
+  </div>
+</div>
+
+{{else}}
+
+<div class="achievement-badge compact achievement-badge-owned{{#if used}} used{{/if}}"
+    id="{{name}}" title="{{safeExtendedDescription}}">
+  <div id="outline-box">
+    <div class="achievement-title">{{{toBadgeDescriptionWithBreaks description}}}</div>
+    <img class="badge-icon" src="{{icons.compact}}">
+    <div class="delete-icon">X</div>
+    <div class="selected-indicator"> </div>
+  </div>
+</div>
+
+{{/if}}

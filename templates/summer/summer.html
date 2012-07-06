@@ -1,0 +1,562 @@
+{% extends "page_template.html" %}
+{% block pagesubmenu %}
+    <span class="breadcrumbs_nav">
+        <a href="http://www.khanacademy.org">Home</a>
+    </span>
+{% endblock pagesubmenu %}
+			
+{% block pagecontent %}
+
+<script type="text/javascript">
+    var is_parent_js = {{ is_parent_js }}
+    var student_js = {{ student_js }}
+    var parent_js = {{ parent_js }}
+</script>
+
+<div id="discovery_lab" style="padding: 9px 23px;">
+    <div>
+        <h2>Khan Academy Discovery Lab 2012 Application</h2>
+        {% if authenticated %}
+            {% if nickname %}
+                Logged in as: <u>{{ nickname|escape }}</u>.
+            {% else %}
+                Logged in as: <u>{{ user_email|escape }}</u>.
+            {% endif %}
+            {% if make_payment %}
+                {% if student.processing_fee_paid %}
+                    <br><br>Your application processing fee of ${{ student.processing_fee|escape }} has been paid.<br>
+                    We are still processing all applications, you can always check your application
+                    <a href="/summer/application-status">status</a>
+                {% else %}
+                <br><br>Please pay the processing fee of ${{ student.processing_fee|escape }} for {{ student.first_name|escape }} {{ student.last_name|escape }} via Paypal using the link below<br><br>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="E3NNSXP2AXM9L">
+                        <input type="hidden" name="first_name" value="{{ payee.first_name|escape }}">
+                        <input type="hidden" name="last_name" value="{{ payee.last_name|escape }}">
+                        <input type="hidden" name="address1" value="{{ payee.address_1|escape }}">
+                        <input type="hidden" name="address2" value="{{ payee.address_2|escape }}">
+                        <input type="hidden" name="city" value="{{ payee.city|escape }}">
+                        <input type="hidden" name="state" value="{{ payee.state|escape }}">
+                        <input type="hidden" name="zip" value="{{ payee.zipcode|escape }}">
+                        <input type="hidden" name="email" value="{{ payee.email|escape }}">
+                        <input type="hidden" name="night_phone_a" value="{{ payee_phone_a|escape }}">
+                        <input type="hidden" name="night_phone_b" value="{{ payee_phone_b|escape }}">
+                        <input type="hidden" name="night_phone_c" value="{{ payee_phone_c|escape }}">
+                        <input type="hidden" name="custom" value="{{ student.email|escape }}">
+                        <input type="hidden" name="return" value="http://www.khanacademy.org/summer/paypal-autoreturn?student_email={{ student.email|escape }}&user_email={{ user_email|escape }}">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                    <br><br>
+                {% endif %}
+            {% else %}
+                <form id="discovery-lab-application" method="POST" action="/summer/application" style="display: block; margin: 22px 0">
+                <input id="application_filled" name="application_filled" type="hidden" value="1" />
+                {% if applied %}
+                    {% if is_parent %}
+                        You have already applied for {{ students|length }} student(s). You can make changes to their
+                        application or add a new student<br><br>
+                        {% for student in students %}
+                        <input id="{{ student.email|escape }}" type="radio" name="applicant_email" value="{{ student.email|escape }}"> "{{ student.first_name|escape }} {{ student.last_name|escape }}"<br>
+                        {% endfor %}
+                        <input id="new" type="radio" name="applicant_email" value="new"> Apply for a new student<br><br>
+                    {% else %}
+                        You have already applied, You can however make changes to your application<br><br>
+                        <input id="applicant-email" name="applicant_email" type="hidden" value="{{ user_email|escape }}" />
+                    {% endif %}
+                {% else %}
+                Please fill out the form below to be considered for the 2012 Khan Academy Discovery Lab. We will let you know the status of your application as soon as possible, no later than March 1st, 2012. If you are the student, please have your parent/guardian fill out this form.<br><br>
+                    There will be 3 two-week sessions held on the following dates
+                    <ul>
+                        <li>Session 1: Jun 25 - Jul 6 (no camp on Jul 4th)</li>
+                        <li>Session 2: Jul 16 - Jul 27</li>
+                        <li>Session 3: Jul 30 - Aug 10</li>
+                    </ul><br>
+
+                    Please note that the cost per week is $500 (total of $1,000 for the 2 weeks). You can check back on the <a href="/summer/application-status">status</a> of your application at any time (or edit your existing
+                    application).<br><br>
+                {% endif %}
+
+                <u>Location for the camp:</u><br>
+                <a href="http://www.istp.org">International School of the Peninsula in Palo Alto.</a><br>
+                151 Laura Lane<br>
+                Palo Alto CA 94303<br><br>
+
+                <hr>
+
+                <input id="user-email" name="user_email" type="hidden" value="{{ user_email|escape }}" />
+                <h3>Parent/Guardian Information</h3>
+
+                <b>Name: <font color="FF0000">*</font></b><br>
+                <table>
+                <tr>
+                <td><input type="text" id="parent_first_name" name="parent_first_name" value="{{ parent.first_name|escape }}"></td>
+                <td><input type="text" id="parent_last_name" name="parent_last_name" value="{{ parent.last_name|escape }}"></td>
+                </tr>
+                <tr>
+                <td>First</td>
+                <td>Last</td>
+                </tr>
+                </table><br>
+
+                <b>Relationship to the student: <font color="FF0000">*</font></b><br>
+                <select id="relation" name="relation">
+                    <option value=""></option>
+                    <option value="Mother">Mother</option>
+                    <option value="Father">Father</option>
+                    <option value="Guardian">Guardian</option>
+                    <option value="Other">Other</option>
+                </select><br><br>
+
+                <b>Parent email: <font color="FF0000">*</font></b><br>
+                {% if parent %}
+                    <input type="text" size="32" id="parent_email" name="parent_email" value="{{ parent.email|escape }}"><br><br>
+                {% else %}
+                    <input type="text" size="32" id="parent_email" name="parent_email" value="{{ user_email|escape }}"><br><br>
+                {% endif %}
+
+                <b>Phone number: <font color="FF0000">*</font></b><br>
+                <input type="text" name="parent_phone" id="parent_phone" value="{{ parent.phone|escape }}"><br>
+                (###-###-####)<br><br>
+
+                <b>Home Mailing Address:</b><br>
+                <input type="text" size="87" name="parent_address_1" id="parent_address_1" value="{{ parent.address_1|escape }}"><br>
+                Street address<br>
+                <input type="text" size="87" name="parent_address_2" id="parent_address_2 value="{{ parent.address_2|escape }}""><br>
+                Address line 2<br>
+                <table>
+                <tr>
+                <td><input type="text" size="30" name="parent_city" id="parent_city" value="{{ parent.city|escape }}"></td>
+                {% if parent.state %}
+                    <td><input type="text" size="4" name="parent_state" id="parent_state" value="{{ parent.state|escape }}"></td>
+                {% else %}
+                    <td><input type="text" size="4" name="parent_state" id="parent_state" value="CA"></td>
+                {% endif %}
+                <td><input type="text" size="10" name="parent_zip" id="parent_zip" value="{{ parent.zipcode|escape }}"></td>
+                {% if parent.country %}
+                    <td><input type="text" size="25" name="parent_country" id="parent_country" value="{{ parent.country|escape }}"></td>
+                {% else %}
+                    <td><input type="text" size="25" name="parent_country" id="parent_country" value="United States"></td>
+                {% endif %}
+                </tr>
+                <tr>
+                <td>City</td>
+                <td>State</td>
+                <td>Zipcode</td>
+                </tr>
+                </table><br>
+
+                <hr>
+                <h3>Student Information</h3>
+
+                <b>Student Name: <font color="FF0000">*</font></b><br>
+                <table>
+                <tr>
+                <td><input type="text" id="first_name" name="first_name" value="{{ student.first_name|escape }}"></td>
+                <td><input type="text" id="last_name" name="last_name" value="{{ student.last_name|escape }}"></td>
+                </tr>
+                <tr>
+                <td>First</td>
+                <td>Last</td>
+                </tr>
+                </table><br>
+
+                <b>Date of Birth: <font color="FF0000">*</font></b><br>
+                <table>
+                <tr>
+                <td><input size="16" id="date_of_birth" name="date_of_birth" value="{{ student.date_of_birth|escape }}"></td>
+                </tr>
+                <td><small>(MM/DD/YYYY)</small></td>
+                </table><br>
+
+                <b>Gender: <font color="FF0000">*</font></b><br>
+                <select id="gender" name="gender">
+                    {% if student.is_female %}
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                    {% else %}
+                        <option value="Female">Female</option>
+                        <option value="Male" selected>Male</option>
+                    {% endif %}
+                </select><br><br>
+
+                <b>Grade entering in Fall 2012: <font color="FF0000">*</font></b><br>
+                <select id="grade" name="grade">
+                    <option value=""></option>
+                    <option value="6th grade">6th grade</option>
+                    <option value="7th grade">7th grade</option>
+                    <option value="8th grade">8th grade</option>
+                    <option value="9th grade">9th grade</option>
+                    <option value="Other">Other</option>
+                </select><br><br>
+
+                <b>School attending in Fall 2012: <font color="FF0000">*</font></b><br>
+                <input type="text" name="school" id="school" value="{{ student.school|escape }}"><br><br>
+
+                <b>School Zipcode: <font color="FF0000">*</font></b><br>
+                <input type="text" size="10" name="school_zip" id="school_zip" value="{{ student.school_zipcode|escape }}"><br><br>
+
+                <b>Khan Academy email of the student:</b> (if available)<br>
+                {% if student %}
+                    <input type="text" size="32" id="student_email" name="student_email" value="{{ student.email|escape }}"><br>
+                {% else %}
+                    <input type="text" size="32" id="student_email" name="student_email" value="{{ user_email|escape }}"><br>
+                {% endif %}
+
+                <hr>
+
+                <h3>Choose session and provide Khan Academy information:</h3>
+                Choose the sessions the students should be considered for, in order of preference. For example,
+                if you would like to be considered for session 3 first, choose that option as your first choice.
+                If you don't want to be considered for a session, choose N/A for that session
+                <font color="FF0000">*</font><br><br>
+                <table>
+                <tr>
+                <td width="180"><b>Session 1</b> (Jun 25 - Jul 6):</td>
+                <td><select id="session_1" name="session_1">
+                    <option value=""></option>
+                    <option value="1">First choice</option>
+                    <option value="2">Second choice</option>
+                    <option value="3">Third choice</option>
+                    <option value="0">N/A</option>
+                </select></td>
+                </tr>
+                <tr>
+                <td><b>Session 2</b> (Jul 16 - Jul 27):</td>
+                <td><select id="session_2" name="session_2">
+                    <option value=""></option>
+                    <option value="1">First choice</option>
+                    <option value="2">Second choice</option>
+                    <option value="3">Third choice</option>
+                    <option value="0">N/A</option>
+                </select></td>
+                </tr>
+                <tr>
+                <td><b>Session 3</b> (Jul 30 - Aug 10):</td>
+                <td><select id="session_3" name="session_3">
+                    <option value=""></option>
+                    <option value="1">First choice</option>
+                    <option value="2">Second choice</option>
+                    <option value="3">Third choice</option>
+                    <option value="0">N/A</option>
+                </select></td>
+                </tr>
+                </table><br>
+
+                <b>Why do you want to come to the Khan Academy Discovery Lab? (to be answered by the student):
+                <font color="FF0000">*</font></b><br>
+                <textarea rows="10" cols="64" id="answer_why" name="answer_why">{{ student.answer_why|escape }}</textarea><br><br>
+
+                <b>How do you use Khan Academy today? (to be answered by the student):
+                <font color="FF0000">*</font></b><br>
+                <textarea rows="10" cols="64" id="answer_how" name="answer_how">{{ student.answer_how|escape }}</textarea><br><br>
+
+                <hr>
+                <b>Any other comments:</b><br>
+                <textarea rows="10" cols="64" id="parent_comments" name="parent_comments">{{ parent.comments|escape }}</textarea><br><br>
+
+                <b>Processing Fee: <font color="FF0000">*</font></b><br>
+                {% if student.processing_fee_paid %}
+                    $<input type="text" size="5" name="display_fee" id="display_fee" value="5 (paid)" readonly><br><br>
+                {% else %}
+                    $<input type="text" size="5" name="display_fee" id="display_fee" value="5" readonly><br><br>
+                {% endif %}
+
+                <input type="hidden" size="5" name="fee" id="fee" value="5">
+                <input id="discovery-lab-application-submit" type="submit" value="Apply for the Discovery Lab"/>
+
+                </form>
+
+                <script>
+                    var autofill = function(email, alert_user) {
+                        $.ajax({
+                            type: "GET",
+                            url: "/summer/getstudent?student_email=" + email,
+                            dataType: "jsonp",
+                            success: function(l) {
+                                if (l == null) {
+                                    if (alert_user) {
+                                        alert("Student " + email + " has not yet applied")
+                                    }
+                                    if (email == "new") {
+                                        $("#student_email").val("");
+                                    }
+                                    else {
+                                        $("#student_email").val(email);
+                                    }
+                                    $("#student_email").removeAttr("readonly")
+                                    $("#first_name").val("");
+                                    $("#last_name").val("");
+                                    $("#date_of_birth").val("");
+                                    $("#grade").val("");
+                                    $("#school").val("");
+                                    $("#school_zip").val("");
+                                    $("#session_1").val("");
+                                    $("#session_2").val("");
+                                    $("#session_3").val("");
+                                    $("#answer_why").val("");
+                                    $("#answer_how").val("");
+                                    $("#relation").val("");
+                                    $("#fee").val("5");
+                                    $("input[name=applicant_email]").filter('[id="new"]').attr("checked", "checked")
+                                    $("input[id='discovery-lab-application-submit']").val("Apply for the Discovery Lab")
+                                }
+                                else {
+                                    var current_user = {{ user_email_js }}
+                                    var update = 1
+                                    if (l.parent_email != "None" && l.parent_email != current_user) {
+                                        if (alert_user) {
+                                            if (confirm("Change parent for " + email + " from " + l.parent_email + " to you?")) {
+                                                update = 1
+                                            }
+                                            else {
+                                                update = 0
+                                            }
+                                        }
+                                    }
+
+                                    if (update == 1) {
+                                        $("#student_email").val(l.email);
+                                        $("#first_name").val(l.first_name);
+                                        $("#last_name").val(l.last_name);
+                                        $("#date_of_birth").val(l.date_of_birth);
+                                        $("#grade").val(l.grade);
+                                        $("#school").val(l.school);
+                                        $("#school_zip").val(l.school_zipcode);
+                                        $("#session_1").val(l.session_1);
+                                        $("#session_2").val(l.session_2);
+                                        $("#session_3").val(l.session_3);
+                                        $("#answer_why").val(l.answer_why);
+                                        $("#answer_how").val(l.answer_how);
+
+                                        if (l.parent_email == current_user) {
+                                            $("#relation").val(l.parent_relation);
+                                        }
+
+                                        if (l.processing_fee_paid == "True") {
+                                            $("#fee").val("5 (paid)");
+                                        }
+                                        else {
+                                            $("#fee").val("5");
+                                        }
+
+                                        $("input[name=applicant_email]").filter('[id="' + email + '"]').attr("checked", "checked")
+                                        $("input[id='discovery-lab-application-submit']").val("Modify Discovery Lab Application")
+                                        $("#student_email").attr("readonly", "readonly")
+                                    }
+                                }
+                                student_js = l
+                            }
+                        });
+                    }
+
+                    $(document).ready(function() {
+                        if (student_js != null) {
+                            $("input[name=applicant_email]").filter('[id="' + student_js.email + '"]').attr("checked", "checked")
+                            $("input[id='discovery-lab-application-submit']").val("Modify Discovery Lab Application")
+                        }
+
+                        $("input[name='applicant_email']").bind('change keypress', function() {
+                            var email = $("input[name='applicant_email']:checked").val()
+                            autofill(email, false)
+                        });
+
+                        $("#student_email").change(function(e) {
+                            var email = $("#student_email").val()
+                            var user_email = {{ user_email_js }}
+                            if (email != user_email) {
+                                var parent_email = $("#parent_email").val()
+                                $("#parent_email").val(user_email)
+                                if (parent_email != user_email) {
+                                    alert("One of parent or student email, must be the logged in user. Parent email changed to " + user_email)
+                                }
+                                $("#parent_email").attr("readonly", "readonly")
+                            }
+                            else {
+                                $("#parent_email").removeAttr("readonly")
+                                if (parent_js == null) {
+                                    $("#parent_email").val("")
+                                }
+                                else {
+                                    $("#parent_email").val(parent_js.email)
+                                }
+                            }
+                        });
+
+                        $("#date_of_birth").datepicker();
+                        if (student_js != null) {
+                            $("#grade").val(student_js.grade)
+                            $("#session_1").val(student_js.session_1)
+                            $("#session_2").val(student_js.session_2)
+                            $("#session_3").val(student_js.session_3)
+                            $("#relation").val(student_js.parent_relation)
+                            $("#student_email").attr("readonly", "readonly")
+                        }
+
+                        if (parent_js != null) {
+                            $("#parent_email").attr("readonly", "readonly")
+                        }
+                    });
+
+                    $("#discovery-lab-application").submit(function(e) {
+                        var first_name = $("#first_name").val()
+                        if (first_name == "") {
+                            alert("Student's first name is a required field")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var last_name = $("#last_name").val()
+                        if (last_name == "") {
+                            alert("Student's last name is a required field")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var dob = $("#date_of_birth").val()
+                        if (dob == "") {
+                            alert("Student's date of birth is a required field")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var gender = $("#gender").val()
+                        if (gender == "") {
+                            alert("Student's gender is a required field")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var grade = $("#grade").val()
+                        if (grade == "") {
+                            alert("Student's grade is a required field")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var school = $("#school").val()
+                        if (school == "") {
+                            alert("Student's school is a required field")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var school_zip = $("#school_zip").val()
+                        if (school_zip == "") {
+                            alert("Student's school zip is a required field")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var session_1 = $("#session_1").val()
+                        if (session_1 == "") {
+                            alert("Indicate a preference for session 1")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var session_2 = $("#session_2").val()
+                        if (session_2 == "") {
+                            alert("Indicate a preference for session 2")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var session_3 = $("#session_3").val()
+                        if (session_3 == "") {
+                            alert("Indicate a preference for session 3")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var answer_why = $("#answer_why").val()
+                        if (answer_why == "") {
+                            alert("Please answer why do you want come to the Discovery lab")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var answer_how = $("#answer_how").val()
+                        if (answer_how == "") {
+                            alert("Please answer how you use Khan Academy today")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var student_email = $("#student_email").val()
+                        if (student_email == "") {
+                            student_email = first_name + '.' + last_name + '.' + school + '.' + school_zip + '.' + dob
+                            $("#student_email").val(student_email)
+                        }
+
+                        var parent_first_name = $("#parent_first_name").val()
+                        if (parent_first_name == "") {
+                            alert("Parent's first name is a required field")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var parent_last_name = $("#parent_last_name").val()
+                        if (parent_last_name == "") {
+                            alert("Parent's last name is a required field")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var parent_email = $("#parent_email").val()
+                        if (parent_email == "") {
+                            alert("Parent's email is a required field")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var parent_phone = $("#parent_phone").val()
+                        if (parent_phone == "") {
+                            alert("Parent's phone is a required field")
+                            e.preventDefault();
+                            return
+                        }
+                        else if (parent_phone.length != 12) {
+                            if (~~parent_phone === 0 || parent_phone.length != 10) {
+                                alert('Please enter a valid phone number formatted as ###-###-####')
+                                e.preventDefault()
+                                return
+                            }
+                            else {
+                                var new_parent_phone = parent_phone.substr(0, 3) + '-' + parent_phone.substr(3, 3) + '-' + parent_phone.substr(6, 4)
+                                $("#parent_phone").val(new_parent_phone)
+                            }
+                        }
+                        else {
+                            if (parent_phone.charAt(3) != '-' || parent_phone.charAt(7) != '-') {
+                                alert('Please enter a valid phone number formatted as ###-###-####')
+                                e.preventDefault()
+                                return
+                            }
+                        }
+
+                        var relation = $("#relation").val()
+                        if (relation == "") {
+                            alert("Relationship to student is a required field")
+                            e.preventDefault();
+                            return
+                        }
+
+                        var parent_email = $("#parent_email").val()
+                        var student_email = $("#student_email").val()
+                        var user_email = {{ user_email_js }}
+                        if (parent_email != user_email && student_email != user_email) {
+                            alert("Either the parent or student email should be " + user_email + " (i.e. logged in user)")
+                            e.preventDefault();
+                            return
+                        }
+                    });
+                </script>
+            {% endif %}
+        {% else %}
+	    <a id="auth_link" class="authenticate-user" href="{{login_url|escape}}">Please log in to your Khan Academy account to apply for the Discovery Camp</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock pagecontent %}

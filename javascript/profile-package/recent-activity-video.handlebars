@@ -1,0 +1,13 @@
+<li class="activity-video clearfix {{#if isVideoCompleted}}completed{{/if}}">
+    <div class="ach-text">
+        <div class="clearfix">
+            <span class="activity-image"></span>
+            <div class="description">
+                Watched <span class="video-minutes">{{secondsToTime secondsWatched}}</span> of <a href="{{relativeUrl}}">{{videoTitle}}</a>
+            </div>
+        </div>
+        <div class="activity-controls clearfix">
+	        <span class="time timeago" title="{{dt}}">{{dt}}</span>
+	    </div>
+    </div>
+</li>

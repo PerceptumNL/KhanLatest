@@ -1,0 +1,190 @@
+{% extends "page_template.html" %}
+{% block meta_page_title %}Donate | {% endblock meta_page_title %}
+{% block pagecss %}
+    {{ js_css_packages.css_package("bootstrap-grids") }}
+    {{ js_css_packages.css_package("donate") }}
+{% endblock pagecss %}
+{% block pagecontent %}
+
+<article id="donate">
+	<div class="container">
+		<div class="row">
+			<div class="span9">
+				<div class="row">
+					<h1 class="section-headline"><strong>Together</strong> we can reinvent education on a global scale.</h1>
+					<h3>Your contribution helps us...</h3>
+				</div>
+				<div id="donate-areas">
+					<div class="row">
+						<div class="span3 icontile blue">
+							<h2>Grow our library</h2>
+							<img src="/images/donate/video-library.png" />
+							<p>We are adding instructors to expand our library of over
+							   3000 videos into new areas.</p>
+						</div>
+						<div class="span3 icontile orange">
+							<h2>Enhance interaction</h2>
+							<img src="/images/donate/exercises.png" />
+							<p>Learners have solved over 400 million problems.
+							   We're creating new ways to practice.</p>
+						</div>
+						<div class="span3 icontile blue">
+							<h2>Empower coaches</h2>
+							<img src="/images/donate/schoolhouse.png" />
+							<p>Our tools and analytics enable teachers and coaches
+							   to track progress in the classroom.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="span3 icontile orange">
+							<h2>Translate our lessons</h2>
+							<img src="/images/donate/translate.png" />
+							<p>We want to give all the world's people the opportunity
+							   to learn.</p>
+						</div>
+						<div class="span3 icontile blue">
+							<h2>Try new ideas</h2>
+							<img src="/images/donate/paper-airplane.png" />
+							<p>Our Discovery Lab summer camp is a test bed for creating
+							   the school of the future.</p>
+						</div>
+						<div class="span3 icontile orange">
+							<h2>Spread the word</h2>
+							<img src="/images/donate/spread-the-word.png" />
+							<p>Each week, students, parents, and teachers send us thousands
+							   of success stories.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="span5 donate-sidebar">
+				<h2 class="section-headline">Donate Online</h2>
+				<div>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="paypal-form">
+				        <input id="paypal-cmd" type="hidden" name="cmd" value="_donations">
+				        <input type="hidden" name="business" value="JBBC7SGTYUGK2">
+				        <input type="hidden" name="lc" value="US">
+				        <input id="paypal-item-name" type="hidden" name="item_name" value="Recurring donation to Khan Academy">
+				        <input type="hidden" name="no_note" value="1">
+				        <input type="hidden" name="no_shipping" value="2">
+				        <input type="hidden" name="src" value="1">
+				        <input type="hidden" name="p3" value="1">
+				        <input type="hidden" name="currency_code" value="USD">
+				        <input type="hidden" name="bn" value="PP-SubscriptionsBF:btn_subscribeCC_LG.gif:NonHosted">
+				        <input type="hidden" name="return" value="http://khanacademy.org">
+				        <input id="paypal-recurring-amount" type="hidden" name="a3" value="0">
+				        <input type="hidden" name="srt" value="2">
+			            <h4 class="donate-bar">$
+			            	<input type="text" id="donate-amount" name="amount" value="100" maxlength="30">
+			            	<input type="submit"
+			            	       class="simple-button green"
+			            	       id="donation-submit"
+			            	       value="Donate"/>
+			            </h4>
+			            <div class="donate-radio-buttons">
+							<input type="radio" class="donate-radio" name="t3" value="O" id="one-time" checked/> One Time
+							<input type="radio" class="donate-radio" name="t3" value="M" data-plural="months" id="monthly"/> Monthly
+							<input type="radio" class="donate-radio" name="t3" value="Y" data-plural="years" id="annually"/> Annually
+						</div>
+						<div>
+							<div id="recurring-frequency-months">
+					            for
+					            <select id="months-repeating" name="months-repeating">
+					                <option value="0">ongoing</option>
+					                <option value="2">2</option>
+					                <option value="3">3</option>
+					                <option value="4">4</option>
+					                <option value="5">5</option>
+					                <option value="6">6</option>
+					                <option value="7">7</option>
+					                <option value="8">8</option>
+					                <option value="9">9</option>
+					                <option value="10">10</option>
+					                <option value="11">11</option>
+					                <option value="12" selected>12</option>
+					                <option value="24">24</option>
+					                <option value="36">36</option>
+					            </select>
+					            <br>
+					            months
+					        </div>
+							<div id="recurring-frequency-years">
+					            for
+					            <select id="years-repeating" name="years-repeating">
+					                <option value="0">ongoing</option>
+					                <option value="2">2</option>
+					                <option value="3">3</option>
+					                <option value="4">4</option>
+					                <option value="5" selected>5</option>
+					                <option value="6">6</option>
+					                <option value="7">7</option>
+					                <option value="8">8</option>
+					                <option value="9">9</option>
+					                <option value="10">10</option>
+					            </select>
+					            <br>
+								years
+					        </div>
+						</div>
+					</form>
+	     		</div>
+				<hr class="thin">
+     			<div>
+     				Khan Academy is a tax-exempt 501(C)(3) nonprofit organization (<b>Tax ID Number: 26-1544963</b>). Your gift is tax-deductible as allowed by law.
+     			</div>
+     			<hr class="thin">
+			  	<div class="ways-to-donate">
+					<h2 class="section-headline">Other ways to Donate</h2>
+
+					<div id="accordion">
+						<p><a id="check-mail-link" href="#">Send a Check by Mail</a></p>
+						<div id="check-mail">        
+							<p>Please make your check payable to “Khan Academy.” <a href="downloads/donate/KhanAcademy-Check.pdf">Download this form</a> and mail it and your check to:</p>
+							<p>
+							Khan Academy<br>
+							PO Box 1630<br>
+							Mountain View CA 94042<br>
+						    </p>
+						</div>
+						<p><a id="stock-gift-link" href="#">Make a Stock Gift</a></p>
+						<div id="stock-gift">
+						    <p>To make physical and electronic stock gifts, please <a href="downloads/donate/KhanAcademy-DonateStock.pdf">download this form</a>. The donated value of the stock will be calculated by taking the average of the high and low prices for the day the date stamp indicates on the certificate.</p> 
+						
+							<p>Please <a href="mailto:donate@khanacademy.org">email us</a> if you intend to transfer stock to our account so we may acknowledge your gift. We will need the donor’s name, the name of the stock, # shares, and the amount. This will make it easier to receive and track the gift.</p>
+						</div>
+
+						<p><a id="wire-transfers-link" href="#">Wire Transfers</a></p>
+						<div id="wire-transfers">
+						    <p>To make wire transfers, please <a href="downloads/donate/KhanAcademy-WiringInstructions.pdf">download this form</a>. <a href="mailto:donate@khanacademy.org">Email us</a> if you intend to transfer stock to our account so we may acknowledge your gift. Please include the donor’s name and the amount of the transfer.</p>
+						    </ul>
+						</div>
+						<p><a id="matching-gifts-link" href="#">Matching Gifts</a></p>
+						<div id="matching-gifts">
+						    <p>Take advantage of your employer’s matching gifts program. Please help us by adding us to your company’s matching gift program! Please <a href="mailto:donate@khanacademy.org">email us</a> if you would like us to contact your company to assist.</p>
+						</div>
+						<p><a id="corporate-partnerships-link" href="#">Corporate Sponsorship and Partnerships</a></p>
+						<div id="corporate-partnerships">
+						    <p>If your company would like to partner with the Khan Academy, please <a href="mailto:donate@khanacademy.org">email us</a>.
+						</div>
+					</div>
+					<p>
+					    To contact us about supporting our efforts, email us at
+					    <a href="mailto:donate@khanacademy.org">donate@khanacademy.org</a>.
+					</p>
+					<hr class="thin">
+					<h3 class="section-headline">PDF Downloads</h3>
+					<p>
+						<a href="downloads/donate/KhanAcademy-Check.pdf">Donate by Check</a><br>
+						<a href="downloads/donate/KhanAcademy-WiringInstructions.pdf">Donate by Wire Transfer</a><br>
+						<a href="downloads/donate/KhanAcademy-DonateStock.pdf">Donate Stock</a><br>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</article>
+{% endblock pagecontent %}
+{% block bottompagescript %}
+	{{ js_css_packages.js_package("donate") }}
+{% endblock bottompagescript %}

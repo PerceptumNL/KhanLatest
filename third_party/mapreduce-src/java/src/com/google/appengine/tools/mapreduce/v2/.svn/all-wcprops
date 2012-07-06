@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/226/trunk/java/src/com/google/appengine/tools/mapreduce/v2
+END
+Mapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/221/trunk/java/src/com/google/appengine/tools/mapreduce/v2/Mapper.java
+END
+Reducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/221/trunk/java/src/com/google/appengine/tools/mapreduce/v2/Reducer.java
+END

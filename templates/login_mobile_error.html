@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1,user-scalable=no" />
+<style>
+* {
+    -webkit-user-select: none;
+}
+#image {
+    width: 64px;
+    height: 64px;
+    background-image: url(/images/mobile-error.png);
+    margin: 96px auto 0 auto;
+    padding: 0;
+    display: block;
+}
+p {
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #444;
+    text-align: center;
+    margin: 0;
+    padding: 16px 64px;
+    -webkit-user-select: all;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    #image {
+        background-image: url(/images/mobile-error-2x.png);
+        background-size: 100%;
+    }
+}
+</style>
+</head>
+<body>
+    <div id="image"></div>
+    <p>{{ message|escape }}</p>
+</body>
+<script>
+    document.ontouchmove = function(event){
+        event.preventDefault();
+    }
+</script>
+</html>

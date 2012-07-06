@@ -1,0 +1,88 @@
+{% extends "page_template.html" %}
+
+{% block meta_page_title %}Universal Subtitles Import | {% endblock meta_page_title %}
+
+{% block pagecontent %}
+<style>
+.unisubs-report {
+    margin-top:1em;
+}
+.unisubs-report input {
+    display:inline;
+}
+.unisubs-report .started {
+    padding:0.5em 1em;
+    background-color:yellow;
+}
+.unisubs-report .reports th {
+    font-weight:bold;
+    padding:0.5em 1em;
+}
+.unisubs-report .started-row {
+    background-color:yellow;
+}
+.unisubs-report .reports td {
+    padding:0.5em 1em;
+    text-align:center;
+    border-top:1px solid #333;
+}
+</style>
+<article>
+<div class="unisubs-report">
+{% if started: %}
+<p class="started">Started job {{ started|e }}</p>
+{% endif %}
+<h2>Universal Subtitles Import</h2>
+<form action="/admin/unisubs/import" method="POST">
+    <input type="hidden" name="interactive" value="1">
+    <p>
+    The import job runs automatically. Don't start one unless you're sure that you need to.
+    <input type="submit" value="Start Import Job" onclick="return confirm('Seriously? You want to batch import tons of subtitles?')">
+    </p>
+</form>
+<h3>Reports by date</h3>
+<div class="reports">
+{% if reports|length == 0 %}
+<p>None yet.</p>
+{% else %}
+<table>
+<tr>
+    <th>Status</th>
+    <th>Date</th>
+    <th>Job</th>
+    <th>Fetches</th>
+    <th>Writes</th>
+    <th>Errors</th>
+    <th>Redirects</th>
+</tr>
+{% for report in reports %}
+{% if report.key().name() == started %}
+<tr class="started-row">
+{% else %}
+<tr>
+{% endif %}
+    <td>{{ report.status|e }}</td>
+    <td>{{ report.created|e }}</td>
+    <td>{{ report.key().name()|e }}</td>
+    {% if report.status != 'finished' %}
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    {% else %}
+        <td>{{ report.fetches|e }}</td>
+        <td>{{ report.writes|e }}</td>
+        <td>{{ report.errors|e }}</td>
+        <td>{{ report.redirects|e }}</td>
+    {% endif %}
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+{% if truncated %}
+<p>&hellip; there are more reports but we'll stop here.</p>
+{% endif %}
+</div>
+</div>
+</article>
+{% endblock pagecontent %}

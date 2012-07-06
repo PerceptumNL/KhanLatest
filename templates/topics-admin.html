@@ -1,0 +1,95 @@
+{% extends "page_template.html" %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("topicsadmin") }}
+{% endblock pagecss %}
+{% block bottompagescript %}
+
+    {{ js_css_packages.js_package("topicsadmin") }}
+
+<script>
+
+var initialTreeNodes = {{ tree_nodes }};
+var editVersionData = {{ edit_version }};
+
+$(function() {
+    var editVersion = new TopicVersion(editVersionData);
+    getTopicVersionList().add(editVersion);
+    editVersion.getTopicTree().resetInited(initialTreeNodes);
+
+    KAConsole.enable();
+    TopicTreeEditor.init(editVersion);
+});
+
+</script>
+
+{% endblock bottompagescript %}
+
+{% block pagesubmenu %}
+    <div id="topicversion-editor"></div>
+{% endblock pagesubmenu %}
+
+{% block pagecontent %}
+
+<div id="topic_tree" style="width: 500px; height: 500px; overflow-y: auto; float: left;"></div>
+<div id="details-view" style="width: 700px; height: 500px; overflow-y: auto; float: left;"></div>
+
+<ul id="topic_context_menu" class="contextMenu">
+    <li class="add_new_topic">
+        <a href="#add_new_topic">Add subtopic</a>
+    </li>
+    <li class="add_new_video separator">
+        <a href="#add_new_video">Add new video...</a>
+    </li>
+    <li class="add_existing_video">
+        <a href="#add_existing_video">Add existing video...</a>
+    </li>
+    <li class="add_new_exercise separator">
+        <a href="#add_new_exercise">Add new exercise...</a>
+    </li>
+    <li class="add_existing_exercise">
+        <a href="#add_existing_exercise">Add existing exercise...</a>
+    </li>
+    <li class="add_new_url separator">
+        <a href="#add_new_url">Add new URL...</a>
+    </li>
+    <li class="export_topic separator">
+        <a href="#export_topic">Export Topic...</a>
+    </li>
+    <li class="import_topic">
+        <a href="#import_topic">Add imported topic...</a>
+    </li>
+    <li class="paste_item separator">
+        <a href="#paste_item">Paste item</a>
+    </li>
+    <li class="delete_topic">
+        <a href="#delete_topic">Delete topic</a>
+    </li>
+    <li class="ungroup_topic">
+        <a href="#ungroup_topic">Ungroup topic</a>
+    </li>
+</ul>
+
+<ul id="item_context_menu" class="contextMenu">
+    <li class="copy_item">
+        <a href="#copy_item">Copy</a>
+    </li>
+    <li class="cut_item">
+        <a href="#cut_item">Cut</a>
+    </li>
+    <li class="paste_after_item separator">
+        <a href="#paste_after_item">Paste here</a>
+    </li>
+    <li class="remove_item">
+        <a href="#remove_item">Remove from topic</a>
+    </li>
+</ul>
+
+<ul id="content_change_context_menu" class="contextMenu">
+    <li class="undo_changes">
+        <a href="#undo_changes">Undo Changes</a>
+    </li>
+</ul>
+
+{% endblock pagecontent %}
+

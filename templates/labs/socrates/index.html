@@ -1,0 +1,56 @@
+{% extends "labs/template.html" %}
+
+{% block pagescript %}
+{{ js_css_packages.css_package("bootstrap") }}
+<style>
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    ul {
+        margin-bottom: 10px;
+        margin-left:   35px;
+    }
+
+    .row {
+        margin-bottom: 20px;
+        margin-top:    20px;
+    }
+
+    .row:first-child {
+        margin-top: 0;
+    }
+</style>
+{% endblock pagescript %}
+
+{% block pagetitle %}Interactive Videos | Khan Academy Labs{% endblock pagetitle %}
+
+{% block pagecontent %}
+<div class="row">
+    <div class="span8">
+        <ul class="breadcrumb">
+            <li><a href="/labs">Labs</a> <span class="divider">/</span></li>
+            <li>Interactive Videos</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span8">
+        <h1>Interactive videos</h1>
+        <p>A new way to watch videos where you will be quizzed on the content as you watch.</p>
+
+        <h4>Linear Algebra</h4>
+        <ul>
+            <li><a href="/labs/socrates/linear-algebra/v/introduction-to-matrices">Introduction to Matrices</a></li>
+        </ul>
+
+        <h4>Fractions</h4>
+        <ul>
+            <li><a href="/labs/socrates/fractions/v/numerator-and-denominator-of-a-fraction">Numerator and Denominator of a Fraction</a></li>
+            <li><a href="/labs/socrates/fractions/v/identifying-fraction-parts">Identifying Fraction Parts</a></li>
+            <li><a href="/labs/socrates/fractions/v/equivalent-fractions">Equivalent fractions</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock pagecontent %}

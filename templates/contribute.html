@@ -1,0 +1,310 @@
+{% extends "page_template.html" %}
+
+{% import 'macros/analytics.html' as analytics %}
+
+{% block meta_page_title %}Contribute | {% endblock meta_page_title %}
+{% block pagecss %}
+    {{ js_css_packages.css_package("bootstrap-grids") }}
+    {{ js_css_packages.css_package("contribute") }}
+{% endblock pagecss %}
+
+{% block pagecontent %}
+<article id="contribute">
+    <div>
+        <h2 class="section-headline">Translate our lessons</h2>
+        <div class="col1 sixty-forty" style="min-height: 1px;">
+            <div class="col1 fifty-fifty">
+                <div id="highchart-container" style="margin-top: -15px; margin-right: 50px; margin-left: 50px;">
+                    <div id="highchart-subtitle"></div>
+                </div>
+            </div>
+            <div class="col2 fifty-fifty">
+                <div id="highchart-container" style="margin-top: -15px; margin-right: 50px; margin-left: 50px;">
+                    <div id="highchart-subtitle2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col2 sixty-forty">
+            <h4 style="margin-top:-5px;">Create Subtitles</h4>
+        You can help us subtitle any video on Khan Academy.
+        <form target="_blank" id ="subtitle" method="GET" action="http://khan-report.appspot.com/translations/subtitleactions">
+            Pick a language:
+            <small><a href="http://khan-report.appspot.com/translations/subtitlestatus">(Full list)</a></small>
+            <select id="language-id" name="language">
+            </select>
+            <input id="playlist-id" name="playlist" value="all" type="hidden" />
+            <input id="random-id" name="random" value="1" type="hidden" />
+            <input id="subtitle-submit" type="submit" value="Subtitle Now" />
+        </form>
+        <p>
+        You can also go to any video on the Khan Academy site,
+        click on the subtitles button on the bottom right,
+        and use the universal subitles tool to select a language.
+        </p>
+        <hr>
+        <h4 class="pulls">Dub Videos</h4>
+        <p class="pulled">
+        We have dubbed videos in <a href="https://www.youtube.com/KhanAcademyLanguages">16 languages</a>. If you feel that you can dub videos, what should you do?
+        </p>
+        <p>
+        <a href="http://khanacademy.wufoo.com/forms/m7x3p9/" onclick="window.open(this.href,  null, 'height=1295, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="Application Form" class="simple-button social-button" style="display: inline-block; max-width:300px;">Apply to become a translator</a>
+        
+        </div>
+    </div>
+    <hr>
+    <div class="col1 sixty-forty">
+        <h2>Spread the word</h2>
+        <p>
+            Spreading the word about the Khan Academy is one of the best ways to help us. Each month we serve around 6 million students, but there's no reason it shouldn't be 50 million. Please take a moment to share this site with your friends and community.
+        </p>
+        <p>
+            <a href="http://www.facebook.com/khanacademy" class="simple-button social-button">
+                <img src="/images/social_facebook_box_blue_48.png" width=48 height=48 />
+                Join us on Facebook
+            </a>
+            <a href="http://twitter.com/khanacademy" class="simple-button social-button">
+                <img src="/images/social_twitter_box_blue_48.png" width=48 height=48 />
+                Follow us on Twitter
+            </a>
+        <br>
+        <p>
+        If you would like to be informed of future volunteer opportunities, please join our <a href="https://khanacademy.wufoo.com/forms/khan-academy-volunteer-form/">volunteer mailing list</a>. 
+        <br>
+        If you are interested in helping bring Khan Academy to a school near you, find out more at our
+        <a href="/coach/resources">teacher toolkit</a>. 
+        </p>
+        
+    </div>
+    <div class="col2 sixty-forty">
+        <iframe id="meetup" src="http://www.meetup.com/everywhere/widget2/khanacademy/?width=275&height=290&usetheme=1" border="0" frameborder="0" height="290" width="100%"></iframe>
+    </div>
+    <div class="clear"></div>
+    <hr>
+    <div>
+        <h2>Donate</h2>
+        <div class="container">
+            <div class="row to-donate-row">
+                <div class="span3 icon-category">
+                    <img src="/images/donate/translate.png" />
+                </div>
+                <div class="span3 icon-category">
+                    <img src="/images/donate/video-library.png" />
+                </div>
+                <div class="span3 icon-category">
+                    <img src="/images/donate/paper-airplane.png" />
+                </div>
+                <div class="span6 right donate-blurb">
+                    <p>Khan Academy students have already solved over <span class="callout-text">400 million</span><br>
+                    <p>of our interactive problems, and <span class="callout-text">we're just getting started.</span></p>
+                    <h3>Together we can reinvent education on a global scale.</h3>
+                </div>
+                <p class="span4">
+                    <a href="/donate" class="simple-button to-donate-button">
+                        Donate
+                        <img src="/images/donate/direction-chevron.png" width="12px" height="12px" />
+                    </a>
+                </p>
+             </div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    <hr>
+    <div style="padding-bottom: 18px;"><p>The Khan Academy has also received the time, energy, and expertise of many <a href="/contribute/credits">volunteers and part-time contributors</a>.</p></div>
+</article>
+{% endblock pagecontent %}
+{% block bottompagescript %}
+    {{ js_css_packages.js_package("exercisestats") }}
+    {{ analytics.crazyegg_tracker(False) }}
+    <script>
+        var chart;
+        var languages = [];
+        var subtitled = [];
+        var subtitled_last_week = [];
+        var bar_color = [];
+
+        var sort_language_list = function(selectId) {
+            $(selectId).html($(selectId + " option").sort(function(a, b) {
+                return a.text === b.text ? 0 : a.text < b.text ? -1 : 1;
+            }));
+        };
+
+        $.ajax({
+            type: "GET",
+            url: "http://khan-report.appspot.com/translations/getsubtitlelanguagescount",
+            dataType: "jsonp",
+            success: function(l) {
+                $.each(l, function(i) {
+                    if (i === 0) {
+                        subtitled_last_week_chart = l[i].last_week_subtitled;
+                        languages_last_week_chart = l[i].last_week_languages;
+                    }
+
+                    $("#language-id").append($("<option />").val(l[i].language).text(l[i].language));
+                    if (l[i].chart === true) {
+                        languages.push('<a href="http://khan-report.appspot.com/translations/subtitlestatus?display=1&playlist=all&language=' + l[i].language + '">' + l[i].language + "</a>");
+                        subtitled.push(l[i].translated_videos);
+                        subtitled_last_week.push(l[i].last_week);
+                    }
+                });
+
+                sort_language_list("#language-id");
+                $("#language-id").val("Spanish");
+
+                chart = new Highcharts.Chart({
+                    chart: {
+                        renderTo: "highchart-subtitle2",
+                      defaultSeriesType: "bar"
+                    },
+                      credits: {
+                          enabled: false
+                      },
+                      title: {
+                          text: "Top subtitled languages last week",
+                      style: {
+                          fontSize: "14px",
+                      color: "#000000"
+                      }
+                      },
+                      xAxis: {
+                          categories: languages_last_week_chart,
+                      labels: {
+                          style: {
+                              color: "#3E7F57",
+                      fontWeight: "bold"
+                          }
+                      },
+                      tickColor: "#FFFFFF"
+                      },
+                      yAxis: {
+                          title: {
+                              text: ""
+                          },
+                          showLastLabel: false,
+                          gridLineColor: "#FFFFFF"
+                      },
+                      plotOptions: {
+                          bar: {
+                              stacking: "normal",
+                              pointWidth: 22,
+                              borderWidth: 0
+                          }
+                      },
+                      series: [{
+                          data: subtitled_last_week_chart,
+                          name: "Subtitled in the last week",
+                          showInLegend: false,
+                          color: "#3E7F57"
+                      }]
+                });
+
+                chart = new Highcharts.Chart({
+                    chart: {
+                        renderTo: "highchart-subtitle",
+                      defaultSeriesType: "bar"
+                    },
+                      credits: {
+                          enabled: false
+                      },
+                      title: {
+                          text: "Most subtitled languages",
+                      style: {
+                          fontSize: "14px",
+                      color: "#000000"
+                      }
+                      },
+                      plotOptions: {
+                          bar: {
+                              stacking: "normal",
+                      pointWidth: 22,
+                      borderWidth: 0,
+                      shadow: false,
+                      dataLabels: {
+                          enabled: true,
+                          color: "#FFFFFF",
+                          align: "right",
+                          x: -2,
+                          y: 5,
+                          formatter: function() {
+                              var dlabel = "";
+                              if (this.series.name === "Subtitled videos") {
+                                  incremental = this.total - this.y;
+                                  if (incremental > 0) {
+                                      dlabel = "+" + incremental;
+                                  }
+                                  else {
+                                      dlabel = "";
+                                  }
+                              }
+                              else {
+                                  dlabel = "";
+                              }
+
+                              return dlabel;
+                          },
+                          style: {
+                              fontweight: "bold",
+                              fontSize: "12"
+                          }
+                      }
+                          }
+                      },
+                      xAxis: {
+                          categories: languages,
+                          labels: {
+                              style: {
+                                  color: "#88AA11",
+                                  fontWeight: "bold"
+                              }
+                          },
+                          tickColor: "#FFFFFF"
+                      },
+                      yAxis: {
+                          title: {
+                              text: ""
+                          },
+                          showLastLabel: false,
+                          gridLineColor: "#FFFFFF"
+                      },
+                      tooltip: {
+                          enabled: true,
+                          formatter: function() {
+                              var s;
+                              if (this.series.name === "Subtitles added in the last week") {
+                                  return false;
+                              }
+                              s = "<b>" + this.x + "</b>";
+                              s += "<br/>" + this.series.name + ": " + this.y;
+
+                              return s;
+                          },
+                          style: {
+                              fontSize: 10,
+                              fontWeight: "bold",
+                              color: "#88AA11"
+                          }
+                      },
+                      series: [{
+                          data: subtitled_last_week,
+                          name: "Subtitles added in the last week",
+                          showInLegend: false,
+                          color: "#FFFFFF"
+                      }, {
+                          data: subtitled,
+                          name: "Subtitled videos",
+                          showInLegend: false,
+                          color: "#88AA11"
+                      }]
+                });
+            }
+        });
+
+        $("#lang-status").submit(function(e) {
+            $.each($("#lang-status").children(), function() {
+                $("#language").remove();
+            });
+            var lang = $("#language-id").val();
+            $(this).append($("<input>").attr({id: "language", name: "language", value: lang, type: "hidden"}));
+        });
+    </script>
+{% endblock bottompagescript %}

@@ -1,0 +1,75 @@
+{% extends "coach_resources/view_toolkit.html" %}
+
+{% block col1content %}
+		
+	<h1>Keys to success</h1>
+	<hr>
+	<p class="lead">Best practices to get your classroom up and running smoothly</p>
+	
+	<h3>Technology guidelines</h3>
+	<p>Each school has different rules and procedures concerning technology. We encourage teachers to start off the year explaining these rules and procedures and getting appropriate forms signed. Previous teachers have also used this as an opportunity to discuss responsibility with technology (e.g., difference between school/work e‐mail accounts and personal e‐mail accounts, keeping passwords private, etc.).</p>
+		
+	<h3>A dedicated notebook</h3>
+	<p>A math or Khan Academy notebook can help students keep track of scratch work, video notes, goals, and other key information.</p>
+
+	<h3>Transparency and accountability</h3>
+        <p class="has-media"><span class="toolkit-media"><iframe width="100%" height="200" src="http://www.youtube.com/embed/BbDKQ3CX_iY" frameborder="0" allowfullscreen></iframe></span><p>
+	<p>Khan Academy provides students and coaches with detailed and helpful information about how students are learning. We recommend teaching students how to intepret their data so that they can track their progress and identify strengths and areas for improvement. Teachers and parents should be added as their students' coaches so they can hold students accountable, track their progress, and help support their learning.</p>
+	
+	<h3>Goal setting</h3>
+	<p>Setting goals helps students take ownership of their learning and facilitates self-pacing, since students can set goals appropriate to their level. Students can practice making data-driven decisions by basing their goals on their KA data. You can find more info on goal-setting in self-paced units <a href="{{base_url}}/individualized-units"> here</a>.</p>
+
+        <p class="has-media"><span class="toolkit-media"><iframe width="100%" height="200" src="http://www.youtube.com/embed/FjD8oKwtYcs" frameborder="0" allowfullscreen></iframe></span><p>
+        <h3>Peer tutoring</h3>
+	<p>Peer tutoring helps students who are acting as tutors confirm and deepen their understanding of a particular topic and enables struggling students to get help even if the teacher is unavailable.</p>
+	<p>We recommend teaching students how to help their peers understand concepts, rather than just giving them the answer. We've seen teachers facilitate peer tutoring well by creating 2 columns on the board ("I need help" and "I can help"); students write their names and relevant topics in the appropriate columns and help each other as needed.</p>
+
+	<h3>Active listening</h3>
+        <p class="has-media"><span class="toolkit-media"><iframe width="100%" height="200" src="http://www.youtube.com/embed/KHi-NbR0NHs" frameborder="0" allowfullscreen></iframe></span><p>
+	<p>Teachers can show students how to actively engage with Khan Academy videos by:</p>
+	<ul class="bullet">
+		<li>leading an active listening lesson. See an example of an active listening lesson from Eastside Prep <a href="http://dl.dropbox.com/u/34796456/Active%20Listening%20Khan%20Academy.docx">here</a> or an active listening handout from Oakland Unity <a href="http://dl.dropbox.com/u/38043945/OaklandUnityViewingGuide.docx">here</a></li>
+		<li>modeling active listening by watching a video and taking notes, stopping and replaying parts that are not clear, etc., so that students can observe the learning and note-taking process</li>
+		<li>encouraging students to pause a video after Sal introduces a problem, try the problem out in their math notebooks, then watch Sal complete the problem. Students can then reflect on their initial and current understanding of the concept</li>
+		<li>having students teach a concept in their own words or draw what their version of a particular video would look like after watching it</li>
+	</ul>	
+
+	<h3>Classroom space</h3>
+	<p>It may be helpful to consider the following questions and tips for setting up a KA classroom:</p>
+	<ul class="bullet">
+		<li>Does the technology (e.g., laptops) need to be charged during class?  How can outlets and extension cords be safely used while allowing for a purposeful seating arrangement?</li>
+		<li>Consider designating certain parts of your room for teacher seminars, projects, peer tutoring, and silent individual work</li>
+		<li>In <a href="{{base_url}}/individualized-units">individualized units</a>, teachers sometimes designate certain parts of the room for different exercises to facilitate peer tutoring and small group lessons</li>
+	</ul>
+	
+	<h3>Involving parents</h3>
+	<p>We encourage students to add their parents/guardians, tutors, siblings, or other mentors as their coaches on Khan Academy. As a coach, parents can access their students' data and more easily support them in their learning. You can find more information on adding coaches <a href="{{base_url}}/setting-up-accounts">here</a>.</p>
+	
+	<p><a href="{{base_url}}/instructional-strategies" class="call-to-action simple-button green">Next: Instructional strategies →</a></p>
+	
+{% endblock col1content %}	
+		
+{% block col2content %}	
+<div class="callout">
+		<h3>Useful links</h3>
+		<ul class="bullet">
+			<li><a href="http://dl.dropbox.com/u/34796456/Active%20Listening%20Khan%20Academy.docx">Lesson on active listening from Eastside Prep</a></li>
+			<li><a href="http://dl.dropbox.com/u/38043945/OaklandUnityViewingGuide.docx">Handout on active listening from Oakland Unity</a></li>
+			<li><a href="http://khanacademy.desk.com/customer/portal/articles/414211-do-you-have-results-that-show-the-success-of-khan-academy-in-the-classrooms-">Do you have results that show the success of KA in classrooms?</a></li>
+		
+		</ul>			
+</div>
+
+
+             <script type="text/javascript">
+            var disqus_shortname = 'ka-toolkit'; 
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+{% endblock col2content %}	

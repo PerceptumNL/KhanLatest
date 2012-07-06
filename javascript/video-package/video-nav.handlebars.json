@@ -1,0 +1,285 @@
+{
+    "topic": {
+        "extended_slug": "math/algebra/solving-linear-equations",
+        "id": "solving-linear-equations",
+        "next_topic_subtopic_slug": "math/algebra/solving-linear-inequalities",
+        "next_topic_title": "Solving linear inequalities",
+        "next_topic_video": "interpreting-inequalities",
+        "parent_titles": ["Math", "Algebra"],
+        "previous_topic_subtopic_slug": "math/algebra/introduction-to-algebra",
+        "previous_topic_title": "Introduction to Algebra",
+        "previous_topic_video": "descartes-and-cartesian-coordinates",
+        "title": "Solving linear equations",
+        "top_level_topic": "math",
+        "videos": [{
+            "key_id": 235,
+            "readable_id": "variables-expressions-and-equations",
+            "title": "Variables Expressions and Equations"
+        }, {
+            "key_id": 236,
+            "readable_id": "variables-and-expressions-1",
+            "title": "Variables and Expressions 1"
+        }, {
+            "key_id": 237,
+            "readable_id": "evaluating-expressions-with-two-variables",
+            "title": "Evaluating Expressions with Two Variables"
+        }, {
+            "key_id": 238,
+            "readable_id": "order-of-operations-example",
+            "title": "Order of Operations Example"
+        }, {
+            "key_id": 239,
+            "readable_id": "simple-equations",
+            "title": "Simple Equations"
+        }, {
+            "key_id": 240,
+            "readable_id": "solving-one-step-equations",
+            "title": "Solving One-Step Equations"
+        }, {
+            "key_id": 241,
+            "readable_id": "solving-one-step-equations-2",
+            "title": "Solving One-Step Equations 2"
+        }, {
+            "key_id": 242,
+            "readable_id": "one-step-equations",
+            "title": "One Step Equations"
+        }, {
+            "key_id": 243,
+            "readable_id": "evaluate-a-formula-using-substitution",
+            "title": "Evaluate a formula using substitution"
+        }, {
+            "key_id": 244,
+            "readable_id": "example-of-solving-for-a-variable",
+            "title": "Example of Solving for a Variable"
+        }, {
+            "key_id": 245,
+            "readable_id": "solving-for-a-variable",
+            "title": "Solving for a Variable"
+        }, {
+            "key_id": 246,
+            "readable_id": "solving-for-a-variable-2",
+            "title": "Solving for a Variable 2"
+        }, {
+            "key_id": 247,
+            "readable_id": "algebra--linear-equations-2",
+            "title": "Algebra: Linear Equations 2"
+        }, {
+            "key_id": 248,
+            "readable_id": "equations-2",
+            "title": "Equations 2"
+        }, {
+            "key_id": 249,
+            "readable_id": "solving-equations-1",
+            "title": "Solving Equations 1"
+        }, {
+            "key_id": 250,
+            "readable_id": "two-step-equations",
+            "title": "Two-Step Equations"
+        }, {
+            "key_id": 251,
+            "readable_id": "new-operator-definitions",
+            "title": "New Operator Definitions"
+        }, {
+            "key_id": 252,
+            "readable_id": "solving-equations-2",
+            "title": "Solving Equations 2"
+        }, {
+            "key_id": 253,
+            "readable_id": "equations-3",
+            "title": "Equations 3"
+        }, {
+            "key_id": 254,
+            "readable_id": "equations-with-variables-on-both-sides",
+            "title": "Equations with Variables on Both Sides"
+        }, {
+            "key_id": 255,
+            "readable_id": "multi-step-equations",
+            "title": "Multi-Step Equations"
+        }, {
+            "key_id": 256,
+            "readable_id": "multi-step-equations-1",
+            "title": "Multi-step equations 1"
+        }, {
+            "key_id": 257,
+            "readable_id": "multi-step-equations-2",
+            "title": "Multi-step equations 2"
+        }, {
+            "key_id": 258,
+            "readable_id": "solving-equations-with-the-distributive-property",
+            "title": "Solving Equations with the Distributive Property"
+        }, {
+            "key_id": 259,
+            "readable_id": "solving-equations-with-the-distributive-property-2",
+            "title": "Solving equations with the distributive property 2"
+        }, {
+            "key_id": 260,
+            "readable_id": "algebra--linear-equations-3",
+            "title": "Algebra: Linear Equations 3"
+        }, {
+            "key_id": 261,
+            "readable_id": "algebra--linear-equations-4",
+            "title": "Algebra: Linear Equations 4"
+        }, {
+            "key_id": 262,
+            "readable_id": "equation-special-cases",
+            "title": "Equation Special Cases"
+        }, {
+            "key_id": 263,
+            "readable_id": "sum-of-consecutive-odd-integers",
+            "title": "Sum of Consecutive Odd Integers"
+        }, {
+            "key_id": 264,
+            "readable_id": "integer-sums",
+            "title": "Integer sums"
+        }, {
+            "key_id": 265,
+            "readable_id": "rearrange-formulas-to-isolate-specific-variables",
+            "title": "Rearrange formulas to isolate specific variables"
+        }, {
+            "key_id": 266,
+            "readable_id": "algebraic-word-problem",
+            "title": "Algebraic Word Problem"
+        }, {
+            "key_id": 267,
+            "readable_id": "basic-rate-problem",
+            "title": "Basic Rate Problem"
+        }, {
+            "key_id": 268,
+            "readable_id": "averages",
+            "title": "Averages"
+        }, {
+            "key_id": 269,
+            "readable_id": "application-problems-with-equation-in-one-variable",
+            "title": "Application problems with equation in one variable"
+        }, {
+            "key_id": 270,
+            "readable_id": "percent-problems",
+            "title": "Percent Problems"
+        }, {
+            "key_id": 271,
+            "readable_id": "word-problem-solving-3",
+            "title": "Word Problem Solving 3"
+        }, {
+            "key_id": 272,
+            "readable_id": "taking-percentages",
+            "title": "Taking percentages"
+        }, {
+            "key_id": 209,
+            "readable_id": "growing-by-a-percentage",
+            "title": "Growing by a percentage"
+        }, {
+            "key_id": 273,
+            "readable_id": "another-percent-word-problem",
+            "title": "Another Percent Word Problem"
+        }, {
+            "key_id": 274,
+            "readable_id": "more-percent-problems",
+            "title": "More percent problems"
+        }, {
+            "key_id": 275,
+            "readable_id": "direct-variation-1",
+            "title": "Direct Variation 1"
+        }, {
+            "key_id": 276,
+            "readable_id": "proportionality-constant-for-direct-variation",
+            "title": "Proportionality Constant for Direct Variation"
+        }, {
+            "key_id": 277,
+            "readable_id": "direct-variation-application",
+            "title": "Direct Variation Application"
+        }, {
+            "key_id": 278,
+            "readable_id": "early-train-word-problem",
+            "title": "Early Train Word Problem"
+        }, {
+            "key_id": 279,
+            "readable_id": "age-word-problems-1",
+            "title": "Age word problems 1"
+        }, {
+            "key_id": 280,
+            "readable_id": "age-word-problems-2",
+            "title": "Age word problems 2"
+        }, {
+            "key_id": 281,
+            "readable_id": "age-word-problems-3",
+            "title": "Age word problems 3"
+        }, {
+            "key_id": 282,
+            "readable_id": "writing-proportions",
+            "title": "Writing Proportions"
+        }, {
+            "key_id": 178,
+            "readable_id": "coverting-repeating-decimals-to-fractions-1",
+            "title": "Coverting Repeating Decimals to Fractions 1"
+        }, {
+            "key_id": 179,
+            "readable_id": "coverting-repeating-decimals-to-fractions-2",
+            "title": "Coverting Repeating Decimals to Fractions 2"
+        }, {
+            "key_id": 283,
+            "readable_id": "patterns-in-sequences-1",
+            "title": "Patterns in Sequences 1"
+        }, {
+            "key_id": 284,
+            "readable_id": "patterns-in-sequences-2",
+            "title": "Patterns in Sequences 2"
+        }, {
+            "key_id": 285,
+            "readable_id": "equations-of-sequence-patterns",
+            "title": "Equations of Sequence Patterns"
+        }, {
+            "key_id": 286,
+            "readable_id": "finding-the-100th-term-in-a-sequence",
+            "title": "Finding the 100th Term in a Sequence"
+        }, {
+            "key_id": 287,
+            "readable_id": "basic-linear-function",
+            "title": "Basic Linear Function"
+        }, {
+            "key_id": 288,
+            "readable_id": "absolute-value-equations",
+            "title": "Absolute Value Equations"
+        }, {
+            "key_id": 289,
+            "readable_id": "absolute-value-equations-1",
+            "title": "Absolute Value Equations 1"
+        }, {
+            "key_id": 290,
+            "readable_id": "absolute-value-equations-example-1",
+            "title": "Absolute Value Equations Example 1"
+        }, {
+            "key_id": 291,
+            "readable_id": "absolute-value-equation-example-2",
+            "title": "Absolute Value Equation Example 2"
+        }]
+    },
+    "video": {
+        "author_profile": "https://plus.google.com/103970106103092409324",
+        "button_top_exercise": {
+            "name": "Percentage word problems 1",
+            "url": "/exercise/percentage_word_problems_1"
+        },
+        "description": "Percent Problems from Chapter 3 of ck12.org Algebra I textbook",
+        "discussion_html": "<div></div>",
+        "issue_labels": "Component-Videos,Video-percent-problems",
+        "key": "ahBkZXZ-a2hhbi1hY2FkZW15cgwLEgVWaWRlbxiOAgw",
+        "next_video": {
+            "key_id": 271,
+            "readable_id": "word-problem-solving-3",
+            "title": "Word Problem Solving 3"
+        },
+        "player_html": "<div></div>",
+        "previous_video": {
+            "key_id": 269,
+            "readable_id": "application-problems-with-equation-in-one-variable",
+            "title": "Application problems with equation in one variable"
+        },
+        "readable_id": "percent-problems",
+        "related_exercises": [],
+        "selected_nav_link": "watch",
+        "subtitles_html": "",
+        "title": "Percent Problems",
+        "video_path": null,
+        "youtube_id": "1LtBcfk1uHg"
+    }
+}

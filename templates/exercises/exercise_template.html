@@ -1,0 +1,106 @@
+{% extends "page_template.html" %}
+
+{% block meta_page_title %}{{ title|escape }} | {% endblock meta_page_title %}
+{% block meta_description %}{% if description %}{{ description|escape }}{% else %}Practice {{ title|lower|escape }} with Khan Academy's free online exercises.{% endif %}{% endblock %}
+
+{% block pagecss %}
+
+<style>#page_sub_nav {display: none;}</style>
+
+{{ js_css_packages.css_package("exercises") }}
+{{ js_css_packages.css_package("exercise-content") }}
+{{ js_css_packages.css_package("video") }}
+
+{% if show_intro %}
+{{ js_css_packages.css_package("intro") }}
+{% endif %}
+
+<style id="exercise-inline-style">/* Target element for imported per-exercise styles */</style>
+
+{% endblock pagecss %}
+
+{% block pagecontent %}
+
+{% if renderable and not browser_disabled %}
+
+<div 
+    id="container" 
+    class="exercises-content-container visited-no-recolor {% if read_only %}read-only{% endif %}" 
+    style="overflow:hidden"></div>
+
+{% else %}
+    {% if browser_disabled %}
+
+    <div id='browserwarning'>
+        {% if is_webos %}
+
+        <p>
+            We're sorry. Your device is not supported for Khan Academy's practice exercises.
+        </p>
+
+        {% else %}
+
+        <p>
+            You need to upgrade your browser to use Khan Academy's practice exercises.
+        </p>
+        <p>
+            We suggest using
+            <a href="http://www.google.com/chrome/">Chrome</a>,
+            <a href="http://www.mozilla.com/">Firefox</a>,
+            <a href="http://www.apple.com/safari/">Safari</a>, or
+            <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home">a recent version of Internet Explorer</a>.
+        </p>
+
+        {% endif %}
+    </div>
+
+    {% else %}
+
+    <div style="padding:0 9px; margin:0 1px; background: white;">
+        <p style="margin-top: 0px;">
+            This specific problem from the past was created with a very old version of Khan Academy, and we're unable to show it to you. <strong>No progress has been lost.</strong> This inconvenience is restricted to very old problems, and it will not affect any current or future work.
+        </p>
+        <p>
+            If you believe this is a mistake, please don't hesitate to <a href="/reportissue?type=Defect">let us know</a>.
+        <p/>
+    </div>
+
+    {% endif %}
+{% endif %}
+
+{% endblock pagecontent %}
+
+{% block bottompagescript %}
+
+{{ super() }}
+
+{{ js_css_packages.js_package("exercises") }}
+{{ js_css_packages.js_package("exercise-content") }}
+{{ js_css_packages.js_package("video") }}
+
+{% if show_intro %}
+{{ js_css_packages.js_package("intro") }}
+{% endif %}
+
+{% if renderable and not browser_disabled %}
+<script>
+    Exercises.init({
+        topic: {{ topic_json }},
+        topicExerciseBadge: {{ topic_exercise_badge_json }},
+        practiceExercise: {{ practice_exercise_json }},
+        userData: {{ user_data_json }},
+        userExercises: {{ user_exercises_json }},
+        incompleteStack: {{ stack_json }},
+        cards: {{ cards_json }},
+        reviewMode: {{ review_mode_json }},
+        practiceMode: {{ practice_mode_json }},
+        readOnly: {% if read_only %}true{% else %}false {% endif %}
+    });
+
+    $(function() {
+        Exercises.render();
+    });
+</script>
+{% endif %}
+
+{% endblock bottompagescript %}

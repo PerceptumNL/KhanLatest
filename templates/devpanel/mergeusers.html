@@ -1,0 +1,80 @@
+{% extends "devpanel/panel_template.html" %}
+
+{% block panelcontent %}
+
+<style>
+    .target_desc {
+        background-color: #FEE;
+        color: red;
+        padding: 5px;
+    }
+
+    .source_desc {
+        background-color: #E6ECD6;
+        color: green;
+        padding: 5px;
+    }
+</style>
+
+<h2>Merge user accounts</h2>
+
+{% if merge_error %}
+<p style="color:red;"> {{ merge_error|escape }}</p>
+{% endif %}
+
+
+{% if merged %}
+
+<p>
+    This account's history is now connected to <span class="target_desc">{{ target.email|escape }}</span>.
+</p>
+
+{% else %}
+
+    {% if not source or not target %}
+
+    <form action="/devadmin/emailchange" method="POST">
+        <p>
+            I want to transfer <input type="text" placeholder="source email" name="source_email" value="{{ source.email|escape }}" style="color:green;">'s progress <br>
+            over to 
+            <input type="text" placeholder="target email" name="target_email" value="{{ target.email|escape }}" style="color:red;">'s account.
+            
+            <br><br>
+
+            <input type="submit" class="simple-button" value="Start merging (nothing will happen yet)">
+        </p>
+    </form>
+
+    {% else %}
+
+    <form action="/devadmin/emailchange" method="POST">
+        <p>
+
+            <input type="hidden" name="confirm" value="1">
+            <input type="hidden" name="source_email" value="{{ source.email|escape }}">
+            <input type="hidden" name="target_email" value="{{ target.email|escape }}">
+
+            I am confirming that I want to replace 
+            <span class="target_desc"><nobr>{{ target.nickname|escape }}, {{ target.points|escape }} energy points, member for {{ target.seconds_since_joined|seconds_to_time_string() }}</nobr></span>'s 
+            progress with 
+            <span class="source_desc"><nobr>{{ source.nickname|escape }}, {{ source.points|escape }} energy points, member for {{ source.seconds_since_joined|seconds_to_time_string() }}</nobr></span>.
+            <br><br>
+
+            <strong>The user will login as {{ target.nickname|escape }} with {{ target_email|escape }}.<br><br>{{ target_email|escape }}'s current progress will be deleted and replaced with the above data.</strong> Bum bum bummmmmmmm...
+            <br><br>
+
+            {% if source.points < target.points %}
+                <strong>Warning! The account being overwritten has more points than the source account. Be sure you know what you're doing.</strong>
+                <br><br>
+            {% endif %}
+
+            <input type="submit" class="simple-button" value="I know what I'm doing. Let's do it!">
+        </p>
+    </form>
+
+    {% endif %}
+
+{% endif %}
+
+{% endblock panelcontent %}
+

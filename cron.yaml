@@ -1,0 +1,55 @@
+cron:
+
+- description: badge update
+  url: /admin/startnewbadgemapreduce
+  schedule: every 72 hours
+  timezone: US/Pacific
+
+- description: badge statistics
+  url: /admin/badgestatistics
+  schedule: every day 22:00
+  timezone: US/Pacific
+
+- description: daily_activity_log
+  url: /admin/dailyactivitylog
+  schedule: every 48 hours
+  timezone: US/Pacific
+
+- description: exercise statistics update
+  url: /admin/startnewexercisestatisticsmapreduce
+  schedule: every sunday 03:00
+  timezone: US/Pacific
+
+- description: youtube video sync
+  url: /admin/youtubesync?start=1
+  schedule: every day 03:00
+  timezone: US/Pacific
+
+- description: update video subtitles
+  url: /admin/unisubs/import
+  schedule: every day 04:00
+  timezone: US/Pacific
+
+- description: record daily dashboard statistics
+  url: /admin/dashboard/record_statistics
+  schedule: every day 22:30
+  timezone: US/Pacific
+
+- description: fancy exercise stats
+  url: /admin/exercisestats/collectfancyexercisestatistics
+  schedule: every day 00:30
+  timezone: US/Pacific
+
+- description: persist gae bingo experiments to datastore
+  url: /gae_bingo/persist
+  schedule: every 1 minutes
+
+- description: log a snapshot of live experiement data to datastore 
+  url: /gae_bingo/log_snapshot
+  schedule: every 30 minutes
+
+- description: update smarthistory to default and edit topic trees
+  url: /admin/import_smarthistory
+  schedule: every day 01:00
+  timezone: US/Pacific
+

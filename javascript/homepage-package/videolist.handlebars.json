@@ -1,0 +1,43 @@
+{
+    "children": [{
+        "key_id": 227,
+        "title": "Understanding Exponents",
+        "url": "/math/arithmetic/basic-exponents/v/understanding-exponents",
+        "col": 0
+    }, {
+        "key_id": 228,
+        "title": "Understanding Exponents 2",
+        "url": "/math/arithmetic/basic-exponents/v/understanding-exponents-2",
+        "col": 0
+    }, {
+        "key_id": 229,
+        "title": "Level 1 Exponents",
+        "url": "/math/arithmetic/basic-exponents/v/level-1-exponents",
+        "col": 0
+    }, {
+        "key_id": 230,
+        "title": "Level 2 Exponents",
+        "url": "/math/arithmetic/basic-exponents/v/level-2-exponents",
+        "col": 1,
+        "firstInCol": true
+    }, {
+        "key_id": 231,
+        "title": "Level 3 exponents",
+        "url": "/math/arithmetic/basic-exponents/v/level-3-exponents",
+        "col": 1
+    }, {
+        "key_id": 232,
+        "title": "Exponent Rules Part 1",
+        "url": "/math/arithmetic/basic-exponents/v/exponent-rules-part-1",
+        "col": 1
+    }, {
+        "key_id": 233,
+        "title": "Exponent Rules Part 2",
+        "url": "/math/arithmetic/basic-exponents/v/exponent-rules-part-2",
+        "col": 2,
+        "firstInCol": true
+    }],
+    "id": "basic-exponents",
+    "colHeight": 54,
+    "titleEncoded": "undefined"
+}

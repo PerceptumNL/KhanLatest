@@ -1,0 +1,19 @@
+{{#if showPageControls}}
+<div class="page_controls questions_page_controls">
+    <span>
+        {{#if hasPreviousPage}}
+        <a href="javascript:void(0);" class="simple-button page questions_page" data-page="{{prevPage_1Based}}">
+            <img class="icon" src="/images/arrow-left.png">
+            {{#if sortedByDate}}Newer questions{{else}}Q&A with higher votes{{/if}}
+        </a>
+        {{/if}}
+
+        {{#if hasNextPage}}
+        <a href="javascript:void(0);" class="simple-button page questions_page" data-page="{{nextPage_1Based}}">
+            {{#if sortedByDate}}Older questions{{else}}Q&A with lower votes{{/if}}
+            <img class="icon" src="/images/arrow-right.png">
+        </a>
+        {{/if}}
+    </span>
+</div>
+{{/if}}

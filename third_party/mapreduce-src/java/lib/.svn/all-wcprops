@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/138/trunk/java/lib
+END
+json.jar
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/15/trunk/java/lib/json.jar
+END
+guava-r07.jar
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/138/trunk/java/lib/guava-r07.jar
+END
+commons-logging-1.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/71/trunk/java/lib/commons-logging-1.1.1.jar
+END
+hadoop-0.20.2-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/15/trunk/java/lib/hadoop-0.20.2-core.jar
+END
+charts4j-1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/15/trunk/java/lib/charts4j-1.2.jar
+END

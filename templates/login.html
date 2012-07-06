@@ -1,0 +1,51 @@
+{% extends "page_template.html" %}
+{% block meta_page_title %}Sign In | {% endblock meta_page_title %}
+{% import 'macros/login_buttons.html' as login_macros %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("login") }}
+{% endblock pagecss %}
+
+{% block pagecontent %}
+<article id="page-root">
+    <div class="login-container card-case vertical-shadow">
+
+    <div class="providers">
+        <h3>Login to Khan Academy with</h3>
+        {{ login_macros.google_button(google_url) }}
+
+        <br>
+
+        {{ login_macros.facebook_button(App.facebook_app_secret) }}
+    </div>
+
+    <div class="vertical-separator">
+        <span class="separator-text">OR</span>
+    </div>
+
+    <div class="pw-login">
+        <h3>Login with a Khan Academy account:</h3>
+        <iframe frameborder="0"
+                scrolling="no"
+                width="435px"
+                height="200px"
+                allowtransparency="yes"
+                src="{{templatetags.to_secure_url('/login')}}?continue={{continue|urlencode}}&form=1">
+        </iframe>
+    </div>
+
+    </div>
+</article>
+{% endblock pagecontent %}
+
+{% block bottompagescript %}
+    {{ js_css_packages.js_package("login") }}
+    <script>
+    $(function() {
+        Login.initLoginPage({
+            continueUrl: {{ templatetags.jsonify(continue, camel_cased=True) }}
+        });
+    });
+    </script>
+{% endblock bottompagescript %}
+

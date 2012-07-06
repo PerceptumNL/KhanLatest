@@ -1,0 +1,162 @@
+<div>
+  <img src="/images/generic-exercise-icon-shadow.png" width="48" height="48" style="vertical-align: middle">
+  <span class="node-title">{{ model.display_name }}</span>
+  <a href="javascript:" data-id="save" class="save-button item-action simple-button disabled">Save</a>
+</div>
+
+<div>
+  <a href="javascript:" data-id="remove_item" class="item-action left-align simple-button blue">Remove from topic</a>
+</div>
+<div style="clear: both" />
+
+<div style="padding: 9px 23px;">
+    <div>
+        <table class="node-properties">
+
+          <tr>
+            <td colspan="2">Changes are saved to the <strong>editing version</strong> of the site when you click the Save button above.</td>
+          </tr>
+
+            <tr>
+                <td style="font-weight:bold;">View</td>
+                <td style="padding-bottom:9px;">
+                    <a href="{{ model.relative_url }}" target="_blank">Open {{ model.display_name }} in new tab</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold;">Display name</td>
+                <td style="padding-bottom:9px;">
+                    <input type="text" name="pretty_display_name" value="{{ model.pretty_display_name }}"/><br/>
+                    {{#if oldValues.pretty_display_name }}<span class="old-value">Old value: <input type="text" disabled value="{{ oldValues.pretty_display_name }}"/></span><br/>{{/if}}
+                    <em></em>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold;">File name</td>
+                <td style="padding-bottom:9px;">
+                    <input type="text" name="file_name" value="{{ model.file_name }}"/><br/>
+                    {{#if oldValues.file_name }}<span class="old-value">Old value: <input type="text" disabled value="{{ oldValues.file_name }}"/></span><br/>{{/if}}
+                    <em></em>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold;">Status</td>
+                <td style="padding-bottom:9px;">
+                    <label for="live_yes">Live&nbsp;</label><input type="radio" id="live_yes" name="live" value="true" {{#if model.live }}checked="checked"{{/if}}/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label for="live_no">Developers only&nbsp;</label><input type="radio" id="live_no" name="live" value="false" {{#unless model.live }}checked="checked"{{/unless}}/>
+                    <br/>
+                    {{#if oldValues.live }}<span class="old-value">Old value: <input type="text" disabled value="{{#if oldValues.live }}Live{{else}}Developers Only{{/if}}"/></span><br/>{{/if}}
+                    <em>Non-live exercises are completely hidden from normal users.</em>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold;">Short name</td>
+                <td style="padding-bottom:9px;">
+                    <input type="text" name="short_display_name" value="{{ model.short_display_name }}" maxlength="11"/><br/>
+                    {{#if oldValues.short_display_name }}<span class="old-value">Old value: <input type="text" disabled value="{{ oldValues.short_display_name }}" maxlength="11"/></span><br/>{{/if}}
+                    <em>Short name is used in some UI elements that are too small to display the full exercise name (11 chars max).</em>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold;">Horizontal position</td>
+                <td style="padding-bottom:9px;">
+                    <input type="text" name="v_position" value="{{ model.v_position }}" class="short" /></br>
+                    {{#if oldValues.v_position }}<span class="old-value">Old value: <input type="text" disabled value="{{ oldValues.v_position }}" class="short"/></span><br/>{{/if}}
+                    <em>Bigger numbers move this exercise to the right on the knowledge map.</em>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold;">Vertical position</td>
+                <td style="padding-bottom:9px;">
+                    <input type="text" name="h_position" value="{{ model.h_position }}" class="short" /></br>
+                    {{#if oldValues.h_position }}<span class="old-value">Old value: <input type="text" disabled value="{{ oldValues.h_position }}" class="short"/></span><br/>{{/if}}
+                    <em>Bigger numbers move this exercise down the knowledge map.</em>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold;">Prerequisites</td>
+                <td style="padding-bottom:9px;">
+                    <div class="exercise-prereqs-list"></div>
+
+                    <a href="javascript:" data-id="add-prereq" class="item-action simple-button">Add prerequisite exercise</a>
+                    <br/>
+
+                    <em>This exercise will be suggested once these prereqs are completed.</em><br/>
+                  {{#if oldValues.prerequisites}}
+                    {{#each oldValues.prerequisites}}
+                      <span class="old-value">Old value: <input type="text" disabled value="{{ this }}" maxlength="256"/></span><br/>
+                    {{/each}}
+                  {{/if}}
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold;">Covered exercises</td>
+                <td style="padding-bottom:9px;">
+                    <div class="exercise-covers-list"></div>
+
+                    <a href="javascript:" data-id="add-cover" class="item-action simple-button">Add a covered exercise</a>
+                    <br/>
+
+                    <em>Achieving proficiency in this exercise will give proficiency in all covered exercises.</em>
+                  {{#if oldValues.covers}}
+                    {{#each oldValues.covers}}
+                      <span class="old-value">Old value: <input type="text" disabled value="{{ this }}" maxlength="256"/></span><br/>
+                    {{/each}}
+                  {{/if}}
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold;">Related Videos</td>
+                <td style="padding-bottom:9px;">
+                    <div class="exercise-videos-list"></div>
+
+                    <div><a href="javascript:" data-id="add-video" class="item-action simple-button">Add a related video</a></div>
+
+                    <em>If the student is struggling on this exercise, we refer them to these related videos.</em>
+                  {{#if oldValues.related_video_readable_ids}}
+                    {{#each oldValues.related_video_readable_ids}}
+                      <span class="old-value">Old value: <input type="text" disabled value="{{ this }}" maxlength="256"/></span><br/>
+                    {{/each}}
+                  {{/if}}
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold;">Description</td>
+                <td style="padding-bottom:9px;">
+                <input type="text" name="description" value="{{ model.description }}" maxlength="256"/><br/>
+                {{#if oldValues.description }}<span class="old-value">Old value: <input type="text" disabled value="{{ oldValues.description }}" maxlength="256"/></span><br/>{{/if}}
+                <em>Description text visible in topic listings</em>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="font-weight:bold;">Tags</td>
+                <td style="padding-bottom:9px;">
+                    <div class="tags-list"></div>
+
+                    <input class="add-tag" type="text" value="" maxlength="32" placeholder="- Add tag" class="placeholder short" /> 
+                    <a href="javascript:" data-id="add-tag" class="item-action simple-button">Add</a>
+                  {{#if oldValues.tags}}
+                    {{#each oldValues.tags}}
+                      <span class="old-value">Old value: <input type="text" disabled value="{{ this }}" maxlength="256"/></span><br/>
+                    {{/each}}
+                  {{/if}}
+                </td>
+            </tr>
+
+
+            </table>
+
+    </div>
+</div>

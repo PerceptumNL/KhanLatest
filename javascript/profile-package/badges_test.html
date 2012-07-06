@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<!-- Unit tests and demos for badge related components -->
+<html>
+<head>
+<script src="../testbase.js"></script>
+<script src="badges.js"></script>
+<link rel="stylesheet" type="text/css" href="../../stylesheets/shared-package/default.css"></link>
+<link rel="stylesheet" type="text/css" href="../../stylesheets/profile-package/badges.css"></link>
+<script>
+var badgeList = new Badges.BadgeList(),
+    fullBadgeList = new Badges.UserBadgeList(),
+    displayCase,
+    imageBase = "http://khan-academy.appspot.com";
+
+// Matches what would be sent from the server
+var SAMPLE_BADGE_JSON = {
+    "badgeCategory": 0,
+    "description": "",
+    "iconSrc": "/images/badges/meteorite-small.png",
+    "isOwned": true,
+    "name": "",
+    "points": 100,
+    "safeExtendedDescription": ""
+};
+
+var SAMPLE_USER_BADGE_JSON = {
+    "badge": SAMPLE_BADGE_JSON,
+    "count": 1,
+    "lastEarnedDate": "2011-11-22T00:00:00Z",
+    "targetContextNames": []
+};
+
+function addBadge( name, desc, type, isUserBadge ) {
+    var name = name || $("#name").val(),
+        desc = desc || $("#desc").val(),
+        type = ( type || $("#type").val() ).toLowerCase(),
+        json = SAMPLE_BADGE_JSON;
+    switch ( type ) {
+        case "earth":
+            json[ "badgeCategory" ] = Badges.Category.GOLD;
+            break;
+        case "moon":
+            json[ "badgeCategory" ] = Badges.Category.SILVER;
+            break;
+        case "meteorite":
+        default:
+            type = "meteorite";
+            json[ "badgeCategory" ] = Badges.Category.BRONZE;
+            break;
+    }
+    json[ "name" ] = name;
+    json[ "description" ] = desc;
+    json[ "iconSrc" ] = json[ "iconSrc" ].replace(
+        /[a-z]*-small.png/,
+        type + "-small.png"
+    );
+
+    if ( isUserBadge ) {
+        var badgeJson = json;
+        json = SAMPLE_USER_BADGE_JSON;
+        json[ "badge" ] = badgeJson;
+        json[ "count" ] = Math.random() * 10 | 0;
+
+        fullBadgeList.add( new Badges.UserBadge( json ) );
+    } else {
+        badgeList.add( new Badges.Badge( json ) );
+    }
+}
+
+KA_TEST.loadTemplates([
+        "profile.badge-display-case",
+        "profile.badge-compact"
+        ], function() {
+    displayCase = new Badges.DisplayCase({ model: badgeList });
+    $("#container").append( displayCase.render().el );
+
+    addBadge( "foobadge", "Foo badge", "moon" );
+    addBadge( "barbadge", "Bar badge", "earth" );
+
+    // Populate the full, master badge list.
+    addBadge( "foobadge", "Foo badge", "moon", true );
+    addBadge( "barbadge", "Bar badge", "earth", true );
+    addBadge( "bazbadge", "Baz badge", "meteorite", true );
+    addBadge( "kablowbadge", "Kablow badge", "moon", true );
+    addBadge( "powbadge", "Pow! badge", "earth", true );
+    displayCase.setFullBadgeList( fullBadgeList );
+});
+
+</script>
+</head>
+<body>
+<div id="container">
+</div>
+
+<div>
+Name: <input id="name"><br>
+Desc: <input id="desc"><br>
+Type(meteorite|moon|earth): <input id="type" value="moon"><br>
+<button onclick="addBadge()">Add Badge</button>
+</div>
+</body>
+</html>

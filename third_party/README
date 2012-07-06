@@ -1,0 +1,38 @@
+To add a new project to third_party, do the following under third_party/:
+
+1) GIT: Run
+      git clone https://github.com/Khan/<project>.git <project>-src
+
+   MERCURIAL: Run
+      hg clone https://.../<project> <project>-src
+
+   SVN: Run
+      svn co http://.../<project> <project>-src
+
+   Note that in all cases, we give the project a -src suffix!  Also,
+   we should only import projects that are under a user we own (such
+   as the Khan group on github).  Use the forking feature of the
+   project-hosting site to make a fork of the project if necessary.
+
+2) Run
+      ln -s <project>-src/<something> <project>
+      hg add <project>
+   <something> should point to the root of where the actual python
+   source code is.  We need this because we do not install the python
+   project normally, via 'pip install' or the like.  Instead, we use
+   this symlink to point to the root of the library code.
+
+   If the project does non-trivial work at install time (such as
+   building .so files, etc), we will need to augment the steps here.
+
+3) Update ../.hgsub with the information for this repository, a line like
+      third_party/<project>-src = [git]git@github.com/Khan/<project>
+      third_party/<project>-src = [hg]https://.../<project>
+      third_party/<project>-src = [svn]http://.../<project>
+
+4) Now you can 'hg commit' the .hgsub file and your symlink from step
+(2), and you should be done!
+
+Note: I think the default is that you get the version that you had
+checked out when you added it, unless you specify otherwise.
+TODO(csilvers): how would you specify otherwise?  hg checkout?

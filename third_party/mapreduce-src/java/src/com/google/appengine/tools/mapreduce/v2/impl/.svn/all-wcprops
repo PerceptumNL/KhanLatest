@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/226/trunk/java/src/com/google/appengine/tools/mapreduce/v2/impl
+END
+ShardState.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/221/trunk/java/src/com/google/appengine/tools/mapreduce/v2/impl/ShardState.java
+END
+MapReduceState.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/221/trunk/java/src/com/google/appengine/tools/mapreduce/v2/impl/MapReduceState.java
+END
+Writables.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/221/trunk/java/src/com/google/appengine/tools/mapreduce/v2/impl/Writables.java
+END

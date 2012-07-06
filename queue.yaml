@@ -1,0 +1,63 @@
+total_storage_limit: 99999M
+queue:
+- name: badge-statistics-queue
+  rate: 5/s
+
+# for UpdateExerciseStatistics mapreduce
+- name: exercise-statistics-mapreduce-queue
+  rate: 100/s
+  target: mapreducebackend-version
+
+# for UpdateFeedbackVotes, BackfillCheckUserProperties, 
+# and BackfillUserExerciseProgress mapreduces
+- name: backfill-mapreduce-queue
+  rate: 100/s
+  target: mapreducebackend-version
+
+- name: youtube-sync-queue
+  rate: 5/s
+
+- name: voting-queue
+  rate: 5/s
+
+- name: problem-log-queue
+  rate: 100/s
+
+- name: video-log-queue
+  rate: 140/s
+
+- name: log-summary-queue
+  rate: 60/s
+
+# for DailyActivityLog mapreduce
+- name: activity-summary-queue
+  rate: 100/s
+  target: mapreducebackend-version
+
+# for UpdateUserBadges mapreduce
+- name: user-badge-queue
+  rate: 100/s
+  target: mapreducebackend-version
+
+# TODO(marcia): When possible, use a backend for the slow-background-queue,
+# since we don't want to block a user facing request with these tasks
+- name: slow-background-queue
+  rate: 20/s
+
+- name: gae-bingo-queue
+  rate: 10/s
+
+- name: fancy-exercise-stats-queue
+  rate: 1/s
+
+- name: topics-set-default-queue
+  rate: 1/s
+
+- name: subtitles-fetch-queue
+  rate: 1/s
+
+- name: import-queue
+  rate: 60/s
+
+- name: stack-log-queue
+  rate: 80/s

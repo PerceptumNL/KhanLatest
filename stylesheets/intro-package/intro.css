@@ -1,0 +1,12 @@
+.ka_guider_button,
+.simple-button.ka_guider_button {
+    display: inline-block;
+    float: right;
+    font-size: 90%;
+    font-weight: bold;
+    margin-left: 6px;
+    min-width: 40px;
+    padding: 3px 5px;
+    text-align: center;
+    text-decoration: none;
+}

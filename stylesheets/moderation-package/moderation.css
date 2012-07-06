@@ -1,0 +1,36 @@
+.feedback-list-container .feedback-container {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+.feedback-list-container .load-more {
+    width: 300px;
+}
+
+.feedback-list-container .tab-header {
+    border-bottom: 1px solid #ccc;
+    display: block;
+    padding-bottom: 2px;
+    margin-bottom: 12px;
+}
+
+.feedback-sort-links {
+    color: #eee;
+    float: right;
+    font-size: 13px;
+    font-family: Helvetica, Arial;
+    margin-top: 3px;
+}
+
+.feedback-sort-links a {
+    color: #888;
+    padding-left: 10px;
+}
+
+.feedback-sort-links a.selected {
+    color: #000;
+    cursor: default;
+}
+
+.feedback-sort-links a.selected:hover {
+    text-decoration: none;
+}

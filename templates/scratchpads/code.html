@@ -1,0 +1,338 @@
+{% extends "scratchpads/page_template.html" %}
+
+{% import 'macros/youtube.html' as youtube %}
+
+{% block pagescript %}
+{{ super() }}
+{% if App.is_dev_server -%}<script>var KA_IS_DEV = true;</script>{%- endif %}
+{% endblock pagescript %}
+
+{% block pagecss %}
+{{ js_css_packages.css_package("bootstrap-grids") }}
+{{ js_css_packages.css_package("scratchpads") }}
+{% endblock pagecss %}
+
+
+{% block explorecontent %}
+<div id="play-page" class="scratch {% if UserData.current().developer %}developer{% endif %}">
+    {% if not gandalf("scratchpads") %}
+    <div id="beta-notice">
+        <h3>Shh. It's a secret.</h3>
+        <p>
+            Explorations are in closed beta at the moment.
+            We'll let the world know when it's ready.
+            For now, you can play around with the exploration on this page.
+        </p><p>
+            You can subscribe to updates on the <a href="/about/blog">Khan
+            Academy Blog</a> or by following us on twitter
+            <a href='https://twitter.com/khanacademy'>@khanacademy</a>.
+        </p>
+        <hr style="margin-bottom: 20px">
+    </div>
+    {%- endif %}
+
+    {# Developer-only scratchpad property controls #}
+    {% if UserData.current().developer %}
+    <div id="dev-controls-modal" style="display: none;">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label" for="category-regular">
+                    Category
+                </label>
+                <div id="scratchpad-category" class="controls">
+                    <label>
+                        <input type="radio" name="category"
+                            id="category-regular" value="" checked="checked" />
+                        Regular
+                    </label>
+
+                    <label>
+                        <input type="radio" name="category"
+                            id="category-tutorial" value="tutorial">
+                        Tutorial
+                    </label>
+
+                    <label>
+                        <input type="radio" name="category"
+                            id="category-official" value="official">
+                        Official
+                    </label>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="scratchpad-difficulty-select">
+                    Difficulty
+                </label>
+                <div class="controls">
+                    <select id="scratchpad-difficulty-select">
+                    </select>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="scratchpad-youtube-id">
+                    YouTube ID
+                </label>
+                <div class="controls">
+                    <input id="scratchpad-youtube-id"
+                        placeholder="(e.g. LWNLE4sklfI)">
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    {%- endif %}
+
+    <div id="title-bar" class="row">
+        <div class="span7">
+            <div class="title-box">
+                <h2 id="scratchpad-title">{{pagetitle|escape}}</h2>
+                <input type="button" id="edit-title" value="Edit Title"
+                    class="simple-button" />
+            </div>
+        </div>
+
+        {% if UserData.current().developer %}
+        <input id="dev-settings-button" type="button"
+            class="simple-button secondary" value="Developer-only Settings" />
+        {%- endif %}
+
+        {% if scratchpad and (scratchpad.user_id == UserData.current().user_id
+            or UserData.current().developer) %}
+        <input id="delete-scratchpad-button" type="button"
+            class="simple-button warning" value="Delete" />
+        {%- endif %}
+    </div>
+
+    {% if scratchpad and scratchpad.youtube_id %}
+    <div class="youtube-video" style="margin-bottom: 15px;">
+        <link itemprop="thumbnailUrl"
+            href="http://img.youtube.com/vi/{{scratchpad.youtube_id}}/hqdefault.jpg">
+        {{ youtube.player_embed(scratchpad.youtube_id, width=961) }}
+    </div>
+    {%- endif %}
+
+    <div id="exercise-tabs">
+        <div id="code">
+            <div id="canvas-editor" class="row">
+                <div id="editor-box" class="span7 editor-box ui-widget-content">
+                    <div id="editor" class="editor"></div>
+
+                    <div class="toolbar ui-widget-header">
+                        {% if gandalf("scratchpads") %}
+                        <input type="button" id="save-button" value="Save"
+                            class="simple-button green right" />
+                        <input type="button" id="fork-button" value="Save As..."
+                            class="simple-button right" />
+                        {%- endif %}
+                        <input type="button" id="record" value="Record"
+                            class="simple-button right dev-only" />
+
+                        <div id="playbar">
+                            <div class="playarea">
+                                <a href="" id="play" class="ui-button">
+                                    <span class="ui-icon-play"></span>
+                                </a>
+                                <div id="progress"></div>
+                                <span id="timeleft"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overlay disable-overlay"></div>
+                </div>
+
+                <div id="output-box" class="span5">
+                    <div id="output" class="side editor-box">
+                        <div class="overlay disable-overlay"></div>
+                        <div class="overlay error-overlay"></div>
+                        <div id="output-text"></div>
+                        <canvas id="output-canvas"
+                            width="400" height="400"></canvas>
+                        <canvas id="canvas" width="400" height="400"></canvas>
+                        <div id="output-text-test"></div>
+                    </div>
+                    <div class="toolbar ui-corner-all">
+                        <input type="button" id="restart-code"
+                            class="simple-button right" value="Restart" />
+
+                        {% if creator_profile and not (scratchpad.category == 'tutorial' or
+                            scratchpad.category == 'official') %}
+                        {# See javascript/video-package/thread.handlebars #}
+                        <div class="author">
+                            <img class="user-avatar" src="{{creator_profile.avatar_src}}"/>
+                            <a class="author-nickname"
+                                data-user-id="{{scratchpad.user_id|escape}}">
+                                {{creator_profile.nickname|escape}}</a>
+                            (Updated
+                            <time class="timeago" datetime="{{scratchpad.revision.created}}">
+                                {{scratchpad.revision.created}}
+                            </time>)
+                            </a>
+                        </div>
+                        {%- endif %}
+
+
+                        <div id="draw-widgets" class="dev-only">
+                            <a href="" id="clear" class="ui-button">
+                                <span class="ui-icon-cancel"></span></a>
+                            <a href="" class="color" id="black">
+                                <span></span></a>
+                            <a href="" class="color" id="red">
+                                <span></span></a>
+                            <a href="" class="color" id="orange">
+                                <span></span></a>
+                            <a href="" class="color" id="green">
+                                <span></span></a>
+                            <a href="" class="color" id="blue">
+                                <span></span></a>
+                            <a href="" class="color" id="lightblue">
+                                <span></span></a>
+                            <a href="" class="color" id="violet">
+                                <span></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# Disqus comments are only shown to developers #}
+            {% if show_scratchpad_review_system %}
+            <div id="disqus-comments" class="developer">
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    // Configuration variables used by the disqus script
+                    // See http://help.disqus.com/customer/portal/articles/472098-javascript-configuration-variables
+                    window.disqus_shortname = 'khanacademy-labs';
+                    window.disqus_identifier = 'ka_scratchpad_review_' +
+                        ENV.scratchpad.id;
+
+                    if (window.KA_IS_DEV) {
+                        // This makes it still render locally so you can
+                        // test layout and what-not
+                        window.disqus_developer = true;
+                        if (window.location.href.indexOf('disqus_debug') !== -1) {
+                            loadDisqus();
+                        }
+                    } else {
+                        loadDisqus();
+                    }
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    function loadDisqus() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    }
+                </script>
+            </div>
+            {% endif %}
+
+            <h2 class="documentation">Documentation</h2>
+            <div id="docs" class="row span12">
+                <div class="span4">
+                    <h4>Shapes</h4>
+                    <ul>
+                        <li><a href="/explore/pointx-y/827809834"><code>point(x, y);</code></a><br/>
+                            Draw a single point on the drawing.</li>
+                        <li><a href="/explore/linex1-y1-x2-y2/827916099"><code>line(x1, y1, x2, y2);</code></a><br/>
+                            Draw a line from one point to another.</li>
+                        <li><a href="/explore/rectx-y-width-height/839496660"><code>rect(x, y, width, height);</code></a><br/>
+                            Draw a four-sided rectangle.</li>
+                        <li><a href="/explore/ellipsex-y-width-height/839435680"><code>ellipse(x, y, width, height);</code></a><br/>
+                            Draw an ellipse.</li>
+                        <li><a href="/explore/trianglex1-y1-x2-y2-x3-y3/839546599"><code>triangle(x1, y1, x2, y2, x3, y3);</code></a><br/>
+                            Draw a three-sided shape.</li>
+                    </ul>
+                    <h4>Animation</h4>
+                    <ul>
+                        <li><a href="/explore/intro-to-animation/830742281"><code>var draw = function() { };</code></a><br/>
+                            Draw function which is called over and over.</li>
+                        <li><a href="/explore/incrementing-shortcuts/877551296"><code>x += 1;</code></a><br/>
+                            Increment a variable by 1.</li>
+                    </ul>
+                </div>
+                <div class="span4">
+                    <h4>Coloring</h4>
+                    <ul>
+                        <li><a href="/explore/backgroundred-green-blue/839653892"><code>background(red, green, blue);</code></a><br/>
+                            Set the background color of the entire drawing.</li>
+                        <li><a href="/explore/strokered-green-blue/839545910"><code>stroke(red, green, blue);</code></a><br/>
+                            Set the color for lines and shape borders.</li>
+                        <li><a href="/explore/strokeweightsize/877859744"><code>strokeWeight(size);</code></a><br/>
+                            Set the width of lines and shape borders.</li>
+                        <li><a href="/explore/nostroke/839859412"><code>noStroke();</code></a><br/>
+                            Disable lines and shape borders.</li>
+                        <li><a href="/explore/fillred-green-blue/839774957"><code>fill(red, green, blue);</code></a><br/>
+                            Set the color of the insides of shapes.</li>
+                        <li><a href="/explore/nofill/877946290"><code>noFill();</code></a><br/>
+                            Set the shapes to be transparent.</li>
+                    </ul>
+                    <h4>Interactions</h4>
+                    <ul>
+                        <li><a href="/explore/mouse-interaction/836683206"><code>mouseX</code></a><br/>
+                            The X position of the mouse on the drawing.</li>
+                        <li><a href="/explore/mouse-interaction/836683206"><code>mouseY</code></a><br/>
+                            The Y position of the mouse on the drawing.</li>
+                    </ul>
+                </div>
+                <div class="span4">
+                    <h4>Programming Basics</h4>
+                    <ul>
+                        <li><a href="/explore/intro-to-variables/825241936"><code>var age = 28;</code></a><br/>
+                            Set a value into a variable.</li>
+                        <li><a href="/explore/if-statements/836708402"><code>if ( age > 27 ) { }</code></a><br/>
+                            Check if a value is above a certain amount.</li>
+                        <li><a href="/explore/for-var-i-0-i-10-i-1/877960284"><code>for ( var i = 1; i &lt;= 10; i += 1 ) { }</code></a><br/>
+                            Do something 10 times.</li>
+                        <li><a href="/explore/var-drawwinston-function/877982168"><code>var drawWinston = function() { };</code></a><br/>
+                            Create a function named 'drawWinston'.</li>
+                    </ul>
+                    <h4>Math</h4>
+                    <p><a href="/explore/sinrad/877910284"><code>sin(rad)</code></a>
+                        <a href="/explore/cosrad/878003074"><code>cos(rad)</code></a>
+                        <a href="/explore/tanrad/878005079"><code>tan(rad)</code></a></p>
+                    <p><a href="/explore/absnum/877930637"><code>abs(num)</code></a>
+                        <a href="/explore/pownum-exponent/877858853"><code>pow(num, exponent)</code></a>
+                        <a href="/explore/sqrtnum/877932758"><code>sqrt(num)</code></a></p>
+                    <p><a href="/explore/lognum/877921884"><code>log(num)</code></a>
+                        <a href="/explore/randomlow-high/827911487"><code>random(low, high)</code></a></p>
+                    <!--
+                    <h4>Printing</h4>
+                    <ul>
+                        <li><code>print("Some text.");</code><br/>
+                            Display some text on the screen.</li>
+                        <li><code>input( "Prompt" );</code><br/>
+                            Prompt the user for a value.</li>
+                    </ul>
+                    -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-overlay" class="overlay"></div>
+</div>
+{% endblock explorecontent %}
+
+{% block bottompagescript %}
+<script type="text/html" id="tipbar-tmpl">
+<div class="tipbar ui-state-hover">
+    <a href="" class="close"><span class="ui-icon ui-icon-circle-close"></span></a>
+    <div class="tipnav">
+        <a href="" class="prev"><span class="ui-icon ui-icon-circle-triangle-w"></span> Prev</a>
+        <a href="" class="next">Next <span class="ui-icon ui-icon-circle-triangle-e"></span></a>
+    </div>
+    <div class="text-wrap">
+        <strong></strong>
+        <span class="text"></span>
+    </div>
+</div>
+</script>
+
+{{ js_css_packages.js_package("scratchpads") }}
+
+<script>
+ScratchpadUI.init();
+</script>
+
+{% endblock bottompagescript %}

@@ -1,0 +1,12 @@
+<div id="{{ browser_id|escape }}" class="topic_browser pulled" {% if hidden %}style="display:none;"{% endif %}>
+<div id="topic-jump">
+<span class="topic_browser_text desktop-only">{% if browser_id == "topic-browse" %}Other Topics:{% else %}Jump to topic:{% endif %}</span>
+<nav class="css-menu" id="page_main_nav">
+<ul data-role="listview" data-inset="true">
+    {{ templatetags.topic_browser_tree(topic_tree) }}
+</ul>
+</nav>
+</div>
+<div class="clear"></div>
+</div>
+

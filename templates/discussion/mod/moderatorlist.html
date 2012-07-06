@@ -1,0 +1,44 @@
+{% extends "discussion/mod/mod_template.html" %}
+
+{% block panelcontent %}
+
+<h2>Moderators</h2>
+<br/>
+<strong>Moderators can delete and modify discussion content.  All devs and admins have moderation powers by default.</strong>
+<br/><br/>
+
+{% if mods.count %}
+<table class="feedback_list">
+    {% for mod in mods %}
+        <tr>
+            <td>
+                {{ mod.email|escape }}
+            </td>
+            <td width="100%">
+                <form method="POST" action="/discussion/mod/moderatorlist">
+                    <input type="hidden" name="mod" value="0" />
+                    <input type="hidden" name="user" value="{{mod.email|escape}}" />
+                    <input type="submit" value="Remove"/>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% else %}
+    No moderators.
+{% endif %}
+
+<br/></br>
+
+<h3>Add moderators</h3>
+Enter a user's email address below (e.g. "user@gmail.com") to add them as a moderator.<br/>
+<form method="POST" action="/discussion/mod/moderatorlist">
+    <input type="hidden" name="mod" value="1" />
+    <input type="text" name="user" value="" />
+    <input type="submit" value="Add Moderator"/>
+</form>
+
+{% endblock panelcontent %}
+
+

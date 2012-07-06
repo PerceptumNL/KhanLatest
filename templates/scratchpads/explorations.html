@@ -1,0 +1,49 @@
+{% extends "scratchpads/page_template.html" %}
+
+{% block pagetitle %}{{pagetitle}} | Khan Academy{% endblock %}
+
+{% block pagecss %}
+{{ js_css_packages.css_package("bootstrap-grids") }}
+{{ js_css_packages.css_package("scratchpads") }}
+{% endblock pagecss %}
+
+{% block explorecontent %}
+<div id="explorations-sidebar">
+</div>
+<div id="explorations-content">
+    <div class='headline-container'>
+        <h2 class='main-headline {{selected_id}}'>{{pagetitle}}</h2>
+        <a href="/explore/new" class="new-scratchpad">
+            <input type="button" class="simple-button green"
+                value="New Scratchpad" />
+        </a>
+    </div>
+    <div id='scratchpads'>
+    </div>
+</div>
+{% endblock explorecontent %}
+
+{% block bottompagescript %}
+{{ js_css_packages.js_package("scratchpads") }}
+<script>
+(function() {
+    new ScratchpadExplorationView({
+        el: $('#scratchpads')[0],
+        collection: new ScratchpadList(ENV.officialScratchpads, {parse: true}),
+        sortBy: function(s) {
+            // Sort the official scratchpads by title
+            return s.get('title');
+        }
+    }).render();
+
+    new ScratchpadTutorialSidebarView({
+        el: $('#explorations-sidebar')[0],
+        collection: new ScratchpadList(ENV.tutorialScratchpads, {parse: true}),
+        sortBy: function(s) {
+            // Sort the tutorial scratchpads by title
+            return s.get('title');
+        }
+    }).render();
+})();
+</script>
+{% endblock bottompagescript %}

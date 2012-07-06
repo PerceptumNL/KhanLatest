@@ -1,0 +1,36 @@
+{% macro empty_class_instructions(class_is_empty=True) -%}
+
+    {% set coach_email = UserData.current().email if UserData.current() else "Sign in for your Coach id." %}
+
+    <div id="empty-class">
+        {% if class_is_empty %}
+        <h1>You don't have any students yet.</h1>
+        {% endif %}
+        <h3>Each of your students needs to sign in and follow these steps:</h3>
+        <ol>
+            <li>
+                <p>First, they should visit <a href="/profile">their profile</a> by clicking on their name at the top of the page.</p>
+                <img src="/images/profile-link-in-header.png?1" class="vertical-shadow rounded-background" />
+            </li>
+            <li>
+                <p>Then, they should click on the Coaches tab.</p>
+                <img src="/images/coaches-nav.png?1" class="vertical-shadow rounded-background"/>
+            </li>
+            <li class="enter-email">
+                <!-- Are you a flying chimpanzee? Are you changing this element or anything inside?
+                If you answered yes to any of these questions, please update the positioning of the coach email.
+                Look in default.css for #empty-class ol li.enter-email div.coach-email -->
+                <p>Finally, they need to enter your Coach id and click the <em>Add coach</em> button.</p>
+                {% if UserData.current() %}
+                    <p>Your Coach id is <strong>{{ coach_email|escape }}</strong>.</p>
+                {% else %}
+                    <p>{{ coach_email|escape}}</p>
+                {% endif %}
+                <div class="coach-email">{{ coach_email|escape }}</div>
+                <img src="/images/coaches-tab-in-profile.png?1" class="vertical-shadow rounded-background"/>
+            </li>
+        </ol>
+        <p>Once students make you their coach, you'll have access to all types of interesting data about their progress and achievements.</p>
+        <p>You can access that data via the <a href="/class_profile">Class Report</a>.</p>
+    </div>
+{%- endmacro %}

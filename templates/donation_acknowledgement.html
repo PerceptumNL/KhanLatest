@@ -1,0 +1,58 @@
+{% extends "page_template.html" %}
+
+{% import 'macros/analytics.html' as analytics %}
+
+{% block meta_page_title %}Acknowledgement | {% endblock meta_page_title %}
+{% block pagescript %}
+    <style>
+        #page_sub_nav { display: none; }
+        #public #container #form1 #header {display: none; }
+    </style>
+{% endblock pagescript %}
+{% block pagecontent %}
+<article id="contribute">
+    <div>
+        <h2 class="section-headline">Thank you!</h2>
+        <p>
+        <em>Thank you for your donation to Khan Academy!</em> Your donation is tax deductible (Tax ID: 26-1544963).
+        </p>
+
+        <p>Your money supports our people and technology, and helps us:</p>
+        <ul>
+            <li>Keep the site running, totally free</li>
+            <li>Create more high-quality content, in more languages</li>
+            <li>Develop interactive skill assessments, to complement the video library</li>
+            <li>Improve our website and create the best free, online educational experience possible </li>
+            <li>Support efforts to use our technology in schools around the world</li>
+            <li>Explore other ideas we have on the future of education and how 
+                we think learning should be done!</li>
+        </ul>
+    </div>
+    <hr>
+    <div>
+        <h2>Get the word out</h2>
+        <p>
+        Spreading the word about the Khan Academy is one of the best ways to help
+        us. Each month we serve around 4 million students, but there's no reason it
+        shouldn't be 50 million. Please take a moment to share this site with your
+        friends and community.
+        </p>
+        <p>
+            <a href="http://www.facebook.com/khanacademy" class="simple-button social-button">
+                <img src="/images/social_facebook_box_blue_48.png" width=48 height=48 />
+                Join us on Facebook
+            </a>
+            <a href="http://twitter.com/khanacademy" class="simple-button social-button">
+                <img src="/images/social_twitter_box_blue_48.png" width=48 height=48 />
+                Follow us on Twitter
+            </a>
+        <br>
+        <p>
+    </div>
+    <hr>
+    <div style="text-align:center; padding-bottom: 18px;"><p>The Khan Academy has also received the time, energy, and expertise of many <a href="/contribute/credits">volunteers and part-time contributors</a>.</p></div>
+</article>
+{% endblock pagecontent %}
+{% block bottompagescript %}
+    {{ analytics.crazyegg_tracker(False) }}
+{% endblock bottompagescript %}

@@ -1,0 +1,568 @@
+@import "../shared-package/mixins.less";
+@import "../shared-package/variables.less";
+@import "stack-animations.less";
+
+.stack {
+    min-height: 100px;
+    margin-bottom: 10px;
+}
+
+.current-card-container {
+    position: relative;
+}
+
+.current-card-container-inner {
+    background-color: #F8F8F8;
+}
+.card-type-endofstack .current-card-container-inner,
+.card-type-endofreview .current-card-container-inner {
+    background-color: #E9EFDD;
+}
+
+.current-card-container,
+.current-card-container-inner {
+    .transition(all 0.18s ease-in-out);
+}
+
+.current-card.notransition .current-card-container,
+.current-card.notransition .current-card-container-inner,
+.current-card.shrinkRight .leaves .leaf.earned .full-leaf {
+    /* For temporarily disabling transitions.
+     * See http://stackoverflow.com/questions/6634470/disable-turn-off-inherited-css3-transitions
+     */
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: color 0 ease-in;
+    transition: none;
+
+    .animation(none);
+}
+
+.current-card.shrinkRight .current-card-container {
+    .animation(move-center-to-ur 0.18s ease-in-out 0s 1 forwards normal);
+}
+.current-card.shrinkRight .current-card-container-inner {
+    .animation(shrink-right-and-fade 0.18s ease-in-out 0s 1 forwards normal);
+}
+.current-card.shrinkLeft .current-card-container {
+    .translate(-510px, -202px);
+}
+.current-card.shrinkLeft .current-card-container-inner {
+    .scale(0.1);
+    .opacity(0);
+}
+
+.current-card.shrinkRight #extras,
+.card-type-endofstack #extras,
+.card-type-happypicture #extras,
+.card-type-endofreview #extras {
+    visibility: hidden;
+}
+
+.stack .card {
+    width: 25px;
+    height: 40px;
+    border: 1px solid #bbb;
+    margin: 0 auto;
+
+    .transition(all 0.18s ease-in-out);
+
+    .box-shadow(0 0 3px #ccc);
+}
+
+.stack .card-container {
+    position: relative;
+    margin-bottom: -20px;
+    .rotate(-20deg);
+
+    z-index: 1;
+}
+.lte8 .stack .card-container {
+    /* *
+     * Rotate these in IE < 8 too.
+     * WARNING: This is brittle. If we change the rotation from -20deg, these values need to be recalculated.
+     */
+    filter: ~"progid:DXImageTransform.Microsoft.Matrix(M11=0.9396926207859084, M12=0.3420201433256687, M21=-0.3420201433256687, M22=0.9396926207859084, sizingMethod='auto expand')";
+    zoom: 1;
+}
+
+.stack .card .card-face {
+    position: absolute;
+    width: 25px;
+    height: 40px;
+}
+.stack .card-face.card-front {
+    background: #f7f7f7;
+}
+.stack .card-face.card-back {
+    color: white;
+    text-align: center;
+    background-color: #aaa;
+}
+.stack .card-face.card-back {
+    .box-shadow(~"inset 0 0 0 2px #fff, inset 0 0 0 4px #cfcfcf");
+    background-color: #ccc;
+}
+.stack .card-container:last-child .card-face.card-back,
+.stack .card-container.end-of-stack-card .card-face.card-back {
+    /* 
+     * This works in everything except IE8. Will work when we apply to appropriate
+     * classes to the end of stack card programatically. 
+     * TODO (jasonrr): remove :last-child selector when that happens
+     */
+    background-color: #E9EFDD;
+    .box-shadow(~"inset 0 0 0 2px white, inset 0 0 0 4px #E9EFDD");
+}
+
+.exercises-stack,
+.exercises-card {
+    float: left;
+    width: 7%;
+
+    /* margin-bottom: -9999px;
+    padding-bottom: 9999px; */
+
+    .box-sizing(border-box);
+}
+.exercises-card {
+    width: 86%;
+}
+
+.current-card {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.current-card #answer_area_wrap {
+    margin: 10px -8px 0 0;
+}
+
+.current-card #answer_area .info-box {
+    overflow: visible;
+}
+.current-card .info-box:before {
+    content: " ";
+    display: block;
+
+    border-right: 7px solid transparent;
+    border-bottom: 8px solid #ccc;
+
+    width: 0;
+    height: 15px;
+
+    position: absolute;
+    right: -1px;
+    top: -24px;
+}
+
+.current-card .exercise_message {
+    display: none; /* TODO: currently hiding all proficient/struggling/review messages */
+}
+
+.leaves-container {
+    margin: 8px 0 0 15px;
+    overflow: visible;
+    position: absolute;
+    right: 10px;
+    display: none;
+}
+    .card-type-problem .leaves-container {
+        display: block;
+    }
+
+.qtip.ui-tooltip.leaf-tooltip {
+    max-width: 200px !important;
+}
+
+.current-card .leaves .leaf {
+    background: transparent url(/images/power-mode/card-leaf-empty-large.png) no-repeat 50% 0; /* data-uri(/images/power-mode/card-leaf-empty-large.png) */
+    background-size: 40px 40px;
+    float: left;
+    color: transparent;
+    width: 40px;
+    height: 40px;
+    margin-right: 35px;
+}
+.lte8 .current-card .leaves .leaf {
+    background: transparent url(/images/power-mode/card-leaf-empty-small.png) no-repeat 50% 0; /* data-uri(/images/power-mode/card-leaf-empty-small.png) */
+}
+
+.stack .leaves .leaf {
+    width: 5px;
+    height: 5px;
+    margin: 2px 0 0 2px;
+    float: left;
+    background: #83a600;
+    color: transparent;
+    border: 1px solid #a7b36b;
+    position: relative;
+
+    line-height: 25px;
+    text-align: center;
+
+    .border-radiuses(10px, 50px, 50px, 15px);
+    .box-sizing(border-box);
+    .box-shadow(inset 0 0 9px 1px rgba(0,0,0,.25));
+}
+
+.leaves .leaf.available {
+    /* Nothing right now */
+}
+.leaves .leaf.unavailable {
+    background-color: transparent;
+
+}
+.leaves .leaf.earned .full-leaf {
+    background: url(/images/power-mode/card-leaf-full-large.png) no-repeat; /* data-uri(/images/power-mode/card-leaf-full-large.png) */
+    background-size: 40px 40px;
+    opacity: 0; /* Don't support IE < 8 on purpose. It screws up display of transparent PNG leaf */
+    -moz-opacity: 0;
+    .scale(8);
+    .transition(all 0.18s ease-in-out);
+
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+.lte8 .leaves .leaf.earned .full-leaf {
+    background: url(/images/power-mode/card-leaf-full-small.png) no-repeat 50% 0; /* data-uri(/images/power-mode/card-leaf-full-small.png) */
+}
+
+.leaves .leaf.earned .full-leaf.animated {
+    .animation(fly-in-leaf 0.3s ease-out 0s 1 none normal);
+    .scale(1);
+    opacity: 1;
+    -moz-opacity: 1;
+}
+
+.stack .leaves .leaf.earned {
+    background: #83a600;
+    border-color: #5a7300;
+    color: transparent;
+    box-shadow: none;
+}
+.stack .leaves .leaf.unavailable {
+    .opacity(50);
+}
+.stack .leaves .full-leaf {
+    display: none;
+}
+
+.card-type-endofstack .current-card-contents,
+.card-type-endofreview .current-card-contents {
+    padding: 20px;
+}
+
+.current-card #problemarea {
+    margin-top: 35px;
+}
+.current-card #answer_area_wrap {
+    margin-top: 52px;
+}
+
+#footer {
+    /*
+     * This crazy little sucker invokes a different rendering path
+     * for the entire page, even though it's only applied to the footer.
+     *
+     * This hints to webkit that GPU acceleration should be used where
+     * possible, which fixes this annoying bug: http://code.google.com/p/chromium/issues/detail?id=103198
+     * as well as any screen flicker on macs when switching to/from GPU
+     * rendering.
+     *
+     * If another fix for this bug is found, this can be removed.
+     * See "the magic CSS bullet" here: http://www.html5rocks.com/en/tutorials/speed/html5/#toc-hardware-accell
+     *
+     * */
+    -webkit-transform: translateZ(0);
+}
+
+/* "Calculating End of Stack" Card Styling */
+
+.calculating-end-of-stack {
+    padding: 50px;
+    height: 70px;
+    text-align: center;
+}
+
+.calculating-end-of-stack .card-pocket {
+    width: 530px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+}
+.calculating-end-of-stack .card-pocket .slit {
+    background: transparent url('/images/power-mode/slit.png') no-repeat top left; /* data-uri('/images/power-mode/slit.png') */
+}
+.calculating-end-of-stack .card-pocket .slit-overlay {
+    background: #E9EFDD;
+    height: 30px;
+    position: relative;
+    top: -17px;
+}
+
+.calculating-end-of-stack .calc-text-spin {
+    position: relative;
+    top: -15px;
+}
+.calculating-end-of-stack .calc-text-spin span {
+    display: none;
+}
+
+.calculating-end-of-stack .throbber {
+    position: relative;
+    top: -5px;
+}
+
+/* End "Calculating End of Stack" Card styling */
+
+/* End of Stack Card Styling */
+
+.end-of-stack-info .title h1 {
+    float: left;
+}
+.end-of-stack-info .stack-controls .simple-button {
+    padding: 8px 0;
+    display: inline-block;
+    font-size: 150%;
+    text-align: center;
+    width: 48%;
+
+    .box-sizing(border-box);
+}
+.end-of-stack-info .stack-controls .right {
+    margin: 0 0 0 2%;
+}
+.end-of-stack-info .stack-controls .left {
+    margin: 0 2% 0 0;
+}
+.end-of-stack-info .stack-stats {
+    float: right;
+    margin-top: -8px;
+}
+    .end-of-stack-info .stack-stats p {
+        display: inline-block;
+        text-align: center;
+        font-size: 150%;
+        margin: 0;
+        margin-left: 40px;
+    }
+    .end-of-stack-info .stack-stats img {
+        height: 38px;
+        vertical-align: -11px;
+    }
+    .end-of-stack-info .stack-stats .times {
+        display: inline-block;
+        margin: 0 7px;
+    }
+
+.end-of-stack-info .progress-graph {
+    background: white;
+    padding: 20px;
+    border: 1px solid #CCC;
+    margin-bottom: 22px;
+}
+
+.end-of-stack-info .progress-graph.current-topic {
+    display: none;
+}
+
+.current-topic .skill-bar-title {
+    margin: 0 0 0 25px;
+}
+
+.proficient-tick {
+    vertical-align: -1px;
+}
+/* Much credit goes to: http://css-tricks.com/css3-progress-bars/ */
+
+.current-topic .skill-bar {
+    height: 5px;
+}
+
+.current-stack .skill-bar .fill.green {
+    .animation(progress-bar 1s);
+}
+.current-stack .skill-bar .fill.blue.just-earned {
+    /* The 1s progress-bar animation and 1.5s progress-bar-proficient animations
+     * are connected, timing-wise. Don't change one without changing the other appropriately
+     * and taking a look at the keyframes %'s in each animation.
+     */
+    .animation(progress-bar-proficient 1.5s);
+}
+
+.current-topic .skill-bar .fill {
+    -webkit-animation: none;
+    -moz-animation: none;
+}
+
+.dashboard-drawer .skill-bar .fill.gray,
+.current-topic .skill-bar .fill.gray {
+    visibility: hidden;
+}
+.current-topic .skill-bar .fill.blue,
+.current-topic .skill-bar .fill.orange {
+    top: -10px !important;
+}
+
+.three-col {
+    float: left;
+    width: 32%;
+    .box-sizing(border-box);
+}
+.three-col.col-one,
+.three-col.col-two {
+    margin-right: 2%;
+}
+
+#show-topic-details {
+    position: relative;
+    top: -2px;
+    margin-left: 10px;
+}
+
+/**
+ * Read-only historical problem viewing mode
+ */
+
+.read-only .stack {
+    visibility: hidden;
+}
+
+.read-only .leaves-container {
+    display: none;
+}
+
+/**
+ * End read-only historical problem viewing mode
+ */
+
+ /**
+  * General Exercise area styling
+  */
+.exercises-content {
+    padding-left: 0;
+    padding-right: 0;
+}
+.exercises-body {
+    min-height: 380px;
+}
+.exercises-header .topic-exercise-badge {
+    width: 7%;
+}
+.exercises-header .topic-exercise-image {
+    width: 40px;
+    height: 40px;
+}
+    .exercises-header .topic-exercise-image.inline {
+        display: inline-block;
+        margin: -50% 0; // Don't let the image affect the height of its container
+    }
+.exercises-header .practice-exercise-topic-context {
+    .transition(opacity 0.1s ease-in-out);
+    .opacity(30);
+
+    // See http://stackoverflow.com/questions/5814101/css3-transition-transform-translate3d-causes-severe-flicker
+    -webkit-backface-visibility: hidden;
+}
+.exercises-header .practice-exercise-topic-context.solid-hover:hover {
+    .opacity(100);
+}
+.exercises-header .practice-exercise-topic-context .topic-exercise-badge {
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+}
+.exercises-header .streak-transition {
+    float:right;
+    font-size: 60%;
+    margin-right: 19px;
+    padding-bottom: 10px;
+    position: relative;
+}
+    .exercises-header .streak-transition .expl-image {
+        visibility: hidden;
+        background: #eee;
+        width: 800px;
+        margin-top: 3px;
+        padding: 10px;
+        position: absolute;
+        right: 0;
+        z-index: 9000;
+
+        .box-sizing(border-box);
+        .opacity(0);
+        .transition(opacity 0.2s ease-in-out);
+    }
+    .lte8 .exercises-header .streak-transition .expl-image {
+        visibility: visible;
+        display: none;
+    }
+        .exercises-header .streak-transition .expl-image img {
+            width: 100%;
+        }
+        .exercises-header .streak-transition.hover .expl-image {
+            visibility: visible;
+            .opacity(100);
+        }
+        .lte8 .exercises-header .streak-transition.hover .expl-image {
+            display: block;
+        }
+
+.exercises-header .streak-transition .expl-image:before,
+.exercises-header .streak-transition .expl-image:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: 9001;
+
+    width: 0;
+    height: 15px;
+
+    /* simulate a triangle with borders */
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ccc; /* must be the same as badge-picker */
+
+    right: 10%;
+    margin-left: -10px;
+    top: -25px;
+}
+.exercises-header .streak-transition .expl-image:after {
+    top: -24px;
+    border-bottom: 10px solid #eee;
+}
+
+.card-type-happypicture {
+    text-align: center;
+}
+.card-type-happypicture h4,
+.card-type-happypicture .img-container {
+    margin: 22px 0;
+}
+.card-type-happypicture .happy-picture {
+    margin-left: auto;
+    margin-right: auto;
+}
+.hover-disclosure {
+  background: #F7F7F7;
+  padding: 0 10px;
+  .border-radius(50px);
+  border: 1px solid #DDD;
+  color: #777;
+  cursor: default;
+  display: inline-block;
+
+}
+.hover-disclosure:hover,
+.hover-discolsure.hover {
+  background: #777;
+  color: #fff;
+  text-decoration: none;
+}
+.review-explain {
+    font-size: 12px;
+    position: relative;
+    top: -3px;
+}

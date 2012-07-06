@@ -1,0 +1,14 @@
+<li class="activity-goal clearfix{{#if goal.completedTime}} completed{{/if}}">
+    <div class="ach-text">
+        <div class="clearfix">
+            <span class="activity-image"></span>
+            <div class="description">
+                Completed the goal <a href="{{profileRoot}}goals/completed">{{goal.title}}</a> after working toward it for {{goal.completedTime}}
+            </div>
+        </div>
+        <div class="activity-controls clearfix">
+	        <span class="time timeago" title="{{dt}}">{{dt}}</span>
+	    </div>
+    </div>
+</li>
+

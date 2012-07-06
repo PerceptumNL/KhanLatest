@@ -1,0 +1,11 @@
+<div class="import-export modal fade hide">
+    <div class="modal-header">
+        <span class="title">{{#if import }}Import topic into tree{{else}}Export topic{{/if}}</span> <a href="#" class="close-button close">x</a>
+    </div>
+    <div class="modal-body">
+        {{#if import }}Paste exported topic data here:<br />{{/if}}
+        <textarea class="topic-data" cols="80" rows="30" /><br />
+        <a class="ok-button simple-button green" href="javascript:void(0)" style="float: right">{{#if import }}Import{{else}}Close{{/if}}</a>
+        <div style="clear: both"></div>
+    </div>
+</div>

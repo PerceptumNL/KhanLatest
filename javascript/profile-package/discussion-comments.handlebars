@@ -1,0 +1,34 @@
+{{#each this}}
+    <div class="discussion-item">
+        <a href="{{video.relativeUrl}}"
+            class="covering-link"
+            data-feedback-type="question"
+            data-votes="{{sumVotesIncremented}}">
+        </a>
+
+        <div class="discussion-title {{#if deleted}}deleted{{/if}}">
+            {{formatContent content}}
+        </div>
+
+        <div class="discussion-meta">
+            <span class="discussion-award-small-icons"
+                data-feedback-key="{{qaExpandKey}}"
+                data-feedback-type="comments"
+                data-loaded="false">
+                <!-- Badge Icons -->
+            </span>
+            {{pluralize sumVotesIncremented "vote"}}
+            <div class="discussion-submeta">
+                <span title="{{date}}" class="timeago">
+                    {{date}}
+                </span>
+                <span class="discussion-meta-faded">on</span>
+                {{video.title}}
+                <span class="discussion-meta-faded">
+                    in {{topic.title}}
+                </span>
+            </div>
+        </div>
+    </div>
+{{/each}}
+

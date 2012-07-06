@@ -1,0 +1,140 @@
+{% extends "labs/template-slim.html" %}
+
+{% import 'macros/youtube.html' as youtube %}
+{% import 'macros/analytics.html' as analytics %}
+{% import 'macros/discussion.html' as discussion %}
+
+{% block meta_page_title %}
+{% if topic_data %}{{video.title|escape}} | {{topic_data.title|escape}}{% endif %} | {% endblock %}{% block meta_keywords %}{{video.keywords}}
+{% endblock %}
+{% block meta_description %}{{video.description}}{% endblock %}
+
+{% block meta_facebook_tags %}
+        <meta property="og:type" content="video.other" />
+        <meta property="og:title" content="{{ video.title }}" />
+        <meta property="og:description" content="{{ video.description }}" />
+        <meta property="og:url" content="{{ site_base_url }}{{ video.canonical_url }}">
+        <meta property="og:image" content="http://img.youtube.com/vi/{{ video.youtube_id }}/0.jpg" />
+        <meta property="og:video" content="http://www.youtube.com/v/{{ video.youtube_id }}">
+        <meta property="og:video:type" content="application/x-shockwave-flash">
+{% endblock %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("video") }}
+    {% if has_socrates %}
+    {{ js_css_packages.css_package("socrates") }}
+    {% endif %}
+
+<style>
+.sidebar-section h3 {
+  margin: 30px 0 0 0;
+}
+.sidebar-section h4 {
+  margin: 15px 0 0 0;
+}
+.sidebar-section a, .sidebar-section a:visited {
+  color: #333;
+  text-decoration: none;
+}
+</style>
+{% endblock pagecss %}
+
+{% block pagescript %}
+<!-- todo: replace this with the same mathjax used in khan-exercises.js -->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{% endblock pagescript %}
+
+{% block pagesubmenu %}
+<span class="breadcrumbs_nav video-nav"></span>
+{% endblock pagesubmenu %}
+
+{% block pagecontent %}
+<article id="video-page">
+
+<ul class="breadcrumb">
+    <li><a href="/labs">Labs</a> <span class="divider">/</span></li>
+    <li><a href="/labs/socrates">Interactive Videos</a> <span class="divider">/</span></li>
+    <li>Introduction to Matrices</li>
+</ul>
+
+<div class="video" data-role="page" data-theme="b">
+    <div data-role="header" class="mobile-only">
+        <a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+        <h2 class="video-title"></h2>
+        <a href="/" data-icon="home" data-iconpos="notext" data-direction="reverse"></a>
+    </div>
+    <div data-role="content" itemscope itemtype="http://schema.org/VideoObject">
+        <div>
+          <div id="description" class="video-description"></div>
+          <span class="video-header"></span>
+        </div>
+
+        <div class="video-container" style="position: relative">
+            <div class="video-overlay" class="desktop-only"></div>
+            <div id="youtube_blocked" class="desktop-only"></div>
+            <div class="youtube-video">
+                <link itemprop="thumbnailUrl" href="http://img.youtube.com/vi/{{ video.youtube_id }}/hqdefault.jpg">
+                {{ youtube.player_embed(video.youtube_id, mobile=is_mobile_capable, use_iframe_embed=is_ipad, http_origin=http_host)  }}
+                <div class="socrates-nav"></div>
+                <div class="subtitles-warning desktop-only">
+                    &lArr; Use this menu to view and help create subtitles for this video in many different languages.
+                    You'll probably want to hide YouTube's captions if using these subtitles.
+                   <a href="#" class="subtitles-link">Close subtitles</a>
+                </div>
+            </div>
+        </div>
+        <div>
+          <div itemprop="transcript" class="subtitles">
+          {% if video.subtitles_json %}
+              {% for entry in video.subtitles_json: %}
+              <p>{{ entry.text|e }}</p>
+              {% endfor %}
+          {% endif %}
+          </div>
+          <span class="video-footer"></span>
+        </div>
+        <div class="desktop-only video-discussion"></div>
+    </div>
+    </div>
+</div>
+</article>
+{% endblock pagecontent %}
+
+{% block bottompagescript %}
+
+    {{ js_css_packages.js_package("video") }}
+    {{ js_css_packages.js_package("moderation") }}
+    {% if has_socrates %}
+    {{ js_css_packages.js_package("socrates") }}
+    {{ js_css_packages.js_package(video.youtube_id) }}
+    {% endif %}
+    <script>
+      {% if topic_data_json and video_data_json %}
+      window.videoTopLevelTopic = "{{ topic_data.top_level_topic }}";
+      window.videoLibrary = {
+        "{{ topic_data.id }}": {
+            topic: {{ topic_data_json }},
+            videos: {
+                "{{ video.readable_id }}": {{ video_data_json }}
+            }
+        }
+      };
+      {% else %}
+      window.videoTopLevelTopic = "{{ top_level_topic }}";
+      window.videoLibrary = { };
+      {% endif %}
+
+      window.loginURL = "{{ login_url|escape }}";
+
+
+      $(function() {
+        {% if has_socrates %}
+        // Socrates will call Video.init()
+        Socrates.init("{{video.youtube_id}}");
+        {% else %}
+        Video.init();
+        {% endif %}
+      });
+    </script>
+    {{ analytics.crazyegg_tracker(False) }}
+{% endblock bottompagescript %}

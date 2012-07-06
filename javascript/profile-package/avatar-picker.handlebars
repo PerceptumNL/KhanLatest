@@ -1,0 +1,41 @@
+<div class="modal-header">
+    <a href="#" class="close-button close">x</a><h3>Choose Your Avatar</h3>
+</div>
+<div class="modal-body avatar-picker-contents">
+
+    {{#if categories}}
+
+    {{#each categories}}
+    {{#if avatars}}
+    <div class="category-title">{{title}}</div>
+    <div class="category-section">
+        <div class="category-avatars">
+        {{#each avatars}}
+            <div class="avatar{{#unless isAvailable}} locked{{/unless}}" data="{{name}}">
+                <img src="{{imageSrc}}" class="avatar-preview">
+                <div class="name">{{displayName}}</div>
+            </div>
+        {{/each}}
+        </div>
+        <div class="clear"></div>
+    </div>
+    {{/if}}
+    {{/each}}
+
+    <div class="category-title"><em>Coming Soon</em></div>
+    <div class="category-section">
+        <div class="category-avatars">
+            <div class="avatar locked">
+                <img src="/images/avatars/questionmark.png" class="avatar-preview">
+                <div class="name">???</div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    {{else}}
+    Loading...
+    {{/if}}
+
+</div>
+<div class="modal-footer"></div>

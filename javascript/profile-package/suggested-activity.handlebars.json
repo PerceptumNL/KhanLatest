@@ -1,0 +1,61 @@
+{
+    "exercises": [{
+        "name": "Number line",
+        "progress": 0.6370535,
+        "url": "/exercise/number_line",
+        "streakBar": {
+            "proficient": false,
+            "suggested": true,
+            "progressDisplay": "63.71%",
+            "maxWidth": 228,
+            "width": 145.2482125
+        }
+    }, {
+        "name": "Addition 2",
+        "progress": 0,
+        "url": "/exercise/addition_2",
+        "streakBar": {
+            "proficient": false,
+            "suggested": true,
+            "progressDisplay": "not started",
+            "maxWidth": 228,
+            "width": 0
+        }
+    }, {
+        "name": "Multiplication 0.5",
+        "progress": 0,
+        "url": "/exercise/multiplication_0.5",
+        "streakBar": {
+            "proficient": false,
+            "suggested": true,
+            "progressDisplay": "not started",
+            "maxWidth": 228,
+            "width": 0
+        }
+    }],
+    "videos": [{
+        "lastSecondWatched": 81,
+        "name": "Evaluating Expressions with Two Variables",
+        "progress": 0.708,
+        "url": "/video?v=BXHNzUaIRR0",
+        "streakBar": {
+            "proficient": false,
+            "suggested": true,
+            "progressDisplay": "70.80%",
+            "maxWidth": 228,
+            "width": 161.4239999
+        }
+    }, {
+        "lastSecondWatched": 126,
+        "name": "Basic Rate Problem",
+        "progress": 0.5,
+        "url": "/video?v=7WXijfIZh64",
+        "streakBar": {
+            "proficient": false,
+            "suggested": true,
+            "progressDisplay": "50.00%",
+            "maxWidth": 228,
+            "width": 114
+        }
+    }]
+}

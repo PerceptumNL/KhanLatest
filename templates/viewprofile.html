@@ -1,0 +1,104 @@
+{% extends "page_template.html" %}
+
+{% import 'macros/analytics.html' as analytics %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("profile") }}
+    {{ super() }}
+    {% if show_intro or show_discussion_intro %}
+        {{ js_css_packages.css_package("intro") }}
+    {% endif %}
+
+    {# The view template variable is used for our iPad app, and you
+        can see the result by visiting /profile?view=mobile.
+        See request_handler.py for more on the related but different
+        global template values is_mobile and is_mobile_capable.
+     #}
+    {% if view == "mobile" %}
+    <style type="text/css">
+        header,
+        footer,
+        .profile-navigation,
+        .user-profile-controls,
+        .visibility-toggler,
+        #suggested-activity {
+            display: none;
+        }
+
+        #outer-wrapper,
+        #page-container,
+        #page-container-inner {
+            background: 0;
+        }
+
+        #page-container {
+            min-width: 0;
+            max-width: none;
+        }
+
+        #individual_report {
+            border: 0;
+        }
+
+        .tab-content {
+            margin: 0;
+            border: 0;
+            padding: 20px 0 0;
+        }
+
+        .avatar-pic-container,
+        .display-case-cover {
+            pointer-events: none;
+        }
+
+        .activity-badge a,
+        .activity-goal a,
+        .activity-exercise a {
+            color: #555;
+            pointer-events: none;
+        }
+        .user-card {
+            width: 768px;
+        }
+    </style>
+    {% endif %}
+{% endblock pagecss %}
+
+{% block meta_page_title %}User Profile | {% endblock meta_page_title %}
+
+{% block pagecontent %}
+    <article id="individual_report">
+        <div id="profile-content"></div>
+    </article>
+{% endblock pagecontent %}
+
+{% block bottompagescript %}
+    {{ super() }}
+
+    <script>
+    // TODO: move this into the initial JSON below so it's not in global scope.
+    var USER_EMAIL = '{{ user_data_student.email|escapejs }}';
+
+    $(function() {
+        Profile.init({
+            countVideos: {{count_videos}},
+            countExercises: {{count_exercises}},
+            showDiscussionIntro: {{ templatetags.jsonify(show_discussion_intro, True) }},
+            isSettingsAvailable: {{ templatetags.jsonify(is_settings_available, True) }},
+            isCoachListWritable: {{ templatetags.jsonify(is_coach_list_writable, True) }},
+            isCoachListReadable: {{ templatetags.jsonify(is_coach_list_readable, True) }},
+            isDiscussionAvailable: {{ templatetags.jsonify(is_discussion_available, True) }},
+            {# python uses True/False, js uses true/false, so we use |lower #}
+            displayExplorations: {{ gandalf("scratchpads")|lower }},
+            profileRoot: "{{profile_root}}",
+            profileData: {{ templatetags.jsonify(profile, True) }}
+        });
+    });
+    </script>
+    {{ js_css_packages.js_package("profile") }}
+    {% if show_intro or show_discussion_intro %}
+        {{ js_css_packages.js_package("intro") }}
+    {% endif %}
+
+    {{ analytics.crazyegg_tracker(False) }}
+{% endblock bottompagescript %}

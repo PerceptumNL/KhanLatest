@@ -1,0 +1,39 @@
+{{#each this}}
+    {{#if question}}
+        <div class="discussion-item">
+            <a href="{{question.video.relativeUrl}}?qa_expand_key={{question.qaExpandKey}}"
+                class="covering-link"
+                data-feedback-type="answer"
+                data-votes="{{sumVotesIncremented}}">
+            </a>
+            <div class="discussion-title discussion-light {{#if question.deleted}}deleted{{/if}}">
+                {{formatContent question.content}}
+            </div>
+
+            <div class="discussion-indent {{#if deleted}}deleted{{/if}}">
+                {{formatContent content}}
+            </div>
+
+            <div class="discussion-meta">
+                <span class="discussion-award-small-icons"
+                    data-feedback-key="{{key}}"
+                    data-feedback-type="answers"
+                    data-loaded="false">
+                    <!-- Badge Icons -->
+                </span>
+                {{pluralize sumVotesIncremented "vote"}}
+                <div class="discussion-submeta">
+                    <span title="{{date}}" class="timeago">
+                        {{date}}
+                    </span>
+                    <span class="discussion-meta-faded">on</span>
+                    {{question.video.title}}
+                    <span class="discussion-meta-faded">
+                        in {{question.topic.title}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+{{/each}}
+

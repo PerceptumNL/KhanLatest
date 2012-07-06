@@ -1,0 +1,36 @@
+{% extends "page_template.html" %}
+{% block meta_page_title %}Create Child Account | {% endblock meta_page_title %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("login") }}
+{% endblock pagecss %}
+
+{% block pagecontent %}
+<article id="page-root">
+    <div class="create-child-iframe-container">
+        {% if show_login_warning %}
+        <div class="create-child completesignup-container card-case vertical-shadow">
+        <div class="create-child completesignup-contents">
+        <img src="/images/hand-tree.png" width="75" height="75" class="tree">
+        <h3>First, create or log in to <strong>your parent account</strong></h3>
+        <div class="login-warning">
+            We will then take you through creating your child's account.
+            <div class="button-container">
+                <a href="/login?continue={{continue}}"><button class="simple-button primary">Continue to parent login</button></a>
+            </div>
+            <div style="clear: both"> </div>
+        </div>
+        </div>
+        {% else %}
+        <iframe frameborder="0"
+                scrolling="no"
+                width="565"
+                height="480"
+                allowtransparency="yes"
+                src="{{ secure_url }}">
+        </iframe>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+        <title>{% block pagetitle %}{% endblock pagetitle %}</title>
+        {{ js_css_packages.css_package("shared") }}
+        {{ js_css_packages.css_package("labs") }}
+
+        {% block pagecss %}
+        {% endblock pagecss %}
+
+        {{ js_css_packages.js_package("shared") }}
+
+        {% block pagescript %}
+        {% endblock pagescript %}
+
+    </head>
+    <!--[if lt IE 7]>  <body class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+    <!--[if IE 7]>     <body class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+    <!--[if IE 8]>     <body class="ie ie8 lte9 lte8"> <![endif]-->
+    <!--[if IE 9]>     <body class="ie ie9 lte9"> <![endif]-->
+    <!--[if gt IE 9]>  <body> <![endif]-->
+    <!--[if !IE]><!--> <body> <!--<![endif]-->
+
+        <style>
+
+            .body, .container-fluid, .sidebar {
+                height: 100%;
+            }
+
+            .container-fluid {
+                padding-left: 0;
+            }
+
+            .container-fluid > .sidebar {
+                background-color: #70C448;
+                left: 0;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .container-fluid > .content {
+                margin-left: 260px;
+                padding: 20px;
+            }
+        </style>
+
+        {# Make script-requiring elements visible. #}
+        <script>document.writeln('<style scoped type="text/css">a[href="#"], .requires_script { visibility: visible; }</style>');</script>
+
+        <div class="container-fluid">
+            <div class="sidebar">
+                <a href="/labs">
+                    <img src="/images/labs/logo.png" alt="">
+                </a>
+                {% block sidebarcontent %}
+                {% endblock sidebarcontent %}
+            </div>
+            <div class="content">
+                {% block pagecontent %}
+                {% endblock pagecontent %}
+            </div>
+        </div>
+
+        {% block bottompagescript %}
+        {% endblock bottompagescript %}
+
+        <script type="text/javascript">
+            {# GA #}
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+    </body>
+
+</html>
+
+

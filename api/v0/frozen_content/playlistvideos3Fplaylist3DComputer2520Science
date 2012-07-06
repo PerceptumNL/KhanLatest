@@ -1,0 +1,507 @@
+[
+    {
+        "next_video": "zEyEC34MY1A", 
+        "video_position": 1, 
+        "description": "Writing a basic program.  Basics of data types, variables and conditional statements", 
+        "title": "Introduction to Programs Data Types and Variables", 
+        "views": 196191, 
+        "related_videos": [
+            "zEyEC34MY1A"
+        ], 
+        "playlist_titles": [
+            "Computer Science", 
+            "New and Noteworthy"
+        ], 
+        "duration": 688, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-programs-data-types-and-variables?playlist=Computer+Science", 
+        "youtube_id": "husPzLE6sZc", 
+        "keywords": "python, programming, computer, science, marquee", 
+        "date_added": "2011-06-30 23:30:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=husPzLE6sZc&feature=youtube_gdata_player", 
+        "prev_video": "", 
+        "readable_id": "introduction-to-programs-data-types-and-variables"
+    }, 
+    {
+        "next_video": "9LgyKiq_hU0", 
+        "video_position": 2, 
+        "description": "Understanding the basics of lists in Python", 
+        "title": "Python Lists", 
+        "views": 64578, 
+        "related_videos": [
+            "husPzLE6sZc", 
+            "9LgyKiq_hU0"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 701, 
+        "ka_url": "http://www.khanacademy.org/video/python-lists?playlist=Computer+Science", 
+        "youtube_id": "zEyEC34MY1A", 
+        "keywords": "programming, computer, science, python, list", 
+        "date_added": "2011-06-30 23:30:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=zEyEC34MY1A&feature=youtube_gdata_player", 
+        "prev_video": "husPzLE6sZc", 
+        "readable_id": "python-lists"
+    }, 
+    {
+        "next_video": "D0Nb2Fs3Q8c", 
+        "video_position": 3, 
+        "description": "Basics of for loops in Python", 
+        "title": "For Loops in Python", 
+        "views": 40140, 
+        "related_videos": [
+            "zEyEC34MY1A", 
+            "D0Nb2Fs3Q8c"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 615, 
+        "ka_url": "http://www.khanacademy.org/video/for-loops-in-python?playlist=Computer+Science", 
+        "youtube_id": "9LgyKiq_hU0", 
+        "keywords": "range, for, loop, python", 
+        "date_added": "2011-06-30 23:30:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=9LgyKiq_hU0&feature=youtube_gdata_player", 
+        "prev_video": "zEyEC34MY1A", 
+        "readable_id": "for-loops-in-python"
+    }, 
+    {
+        "next_video": "iZAtkS0F-Zo", 
+        "video_position": 4, 
+        "description": "Seeing that a while loop can do the same thing as a for loop", 
+        "title": "While Loops in Python", 
+        "views": 23818, 
+        "related_videos": [
+            "9LgyKiq_hU0", 
+            "iZAtkS0F-Zo"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 319, 
+        "ka_url": "http://www.khanacademy.org/video/while-loops-in-python?playlist=Computer+Science", 
+        "youtube_id": "D0Nb2Fs3Q8c", 
+        "keywords": "computer, science, programming, python", 
+        "date_added": "2011-06-30 23:30:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=D0Nb2Fs3Q8c&feature=youtube_gdata_player", 
+        "prev_video": "9LgyKiq_hU0", 
+        "readable_id": "while-loops-in-python"
+    }, 
+    {
+        "next_video": "ZyYp1V84Xqc", 
+        "video_position": 5, 
+        "description": "Experimenting and seeing what we can do with strings", 
+        "title": "Fun with Strings", 
+        "views": 29783, 
+        "related_videos": [
+            "D0Nb2Fs3Q8c", 
+            "ZyYp1V84Xqc"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 838, 
+        "ka_url": "http://www.khanacademy.org/video/fun-with-strings?playlist=Computer+Science", 
+        "youtube_id": "iZAtkS0F-Zo", 
+        "keywords": "eval, splice, string, programming, python", 
+        "date_added": "2011-07-01 23:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=iZAtkS0F-Zo&feature=youtube_gdata_player", 
+        "prev_video": "D0Nb2Fs3Q8c", 
+        "readable_id": "fun-with-strings"
+    }, 
+    {
+        "next_video": "dn9XjHz33O8", 
+        "video_position": 6, 
+        "description": "Writing a simple factorial program with a \"for\" loop", 
+        "title": "Writing a Simple Factorial Program. (Python 2)", 
+        "views": 33304, 
+        "related_videos": [
+            "iZAtkS0F-Zo", 
+            "dn9XjHz33O8"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 489, 
+        "ka_url": "http://www.khanacademy.org/video/writing-a-simple-factorial-program---python-2?playlist=Computer+Science", 
+        "youtube_id": "ZyYp1V84Xqc", 
+        "keywords": "computer, science, python, programming", 
+        "date_added": "2011-06-30 23:30:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=ZyYp1V84Xqc&feature=youtube_gdata_player", 
+        "prev_video": "iZAtkS0F-Zo", 
+        "readable_id": "writing-a-simple-factorial-program---python-2"
+    }, 
+    {
+        "next_video": "EiR6cf8Towc", 
+        "video_position": 7, 
+        "description": "Stepping through what happens when a user inputs a particular value into our factorial program", 
+        "title": "Stepping Through the Factorial Program", 
+        "views": 13223, 
+        "related_videos": [
+            "ZyYp1V84Xqc", 
+            "EiR6cf8Towc"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 564, 
+        "ka_url": "http://www.khanacademy.org/video/stepping-through-the-factorial-program?playlist=Computer+Science", 
+        "youtube_id": "dn9XjHz33O8", 
+        "keywords": "factorial, python, computer, science", 
+        "date_added": "2011-06-29 23:29:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=dn9XjHz33O8&feature=youtube_gdata_player", 
+        "prev_video": "ZyYp1V84Xqc", 
+        "readable_id": "stepping-through-the-factorial-program"
+    }, 
+    {
+        "next_video": "WT-gS-8p7KA", 
+        "video_position": 8, 
+        "description": "Flowchart  for the factorial program", 
+        "title": "Flowchart for the Factorial Program", 
+        "views": 13057, 
+        "related_videos": [
+            "dn9XjHz33O8", 
+            "WT-gS-8p7KA"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 336, 
+        "ka_url": "http://www.khanacademy.org/video/flowchart-for-the-factorial-program?playlist=Computer+Science", 
+        "youtube_id": "EiR6cf8Towc", 
+        "keywords": "python, computer, science", 
+        "date_added": "2011-06-29 23:29:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=EiR6cf8Towc&feature=youtube_gdata_player", 
+        "prev_video": "dn9XjHz33O8", 
+        "readable_id": "flowchart-for-the-factorial-program"
+    }, 
+    {
+        "next_video": "JwO_25S_eWE", 
+        "video_position": 9, 
+        "description": "Understanding why the example program would not run in Python 3 and how to fix it.", 
+        "title": "Python 3 Not Backwards Compatible with Python 2", 
+        "views": 15278, 
+        "related_videos": [
+            "EiR6cf8Towc", 
+            "JwO_25S_eWE"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 322, 
+        "ka_url": "http://www.khanacademy.org/video/python-3-not-backwards-compatible-with-python-2?playlist=Computer+Science", 
+        "youtube_id": "WT-gS-8p7KA", 
+        "keywords": "computer, science, python", 
+        "date_added": "2011-06-29 23:29:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=WT-gS-8p7KA&feature=youtube_gdata_player", 
+        "prev_video": "EiR6cf8Towc", 
+        "readable_id": "python-3-not-backwards-compatible-with-python-2"
+    }, 
+    {
+        "next_video": "6qCQB8E5bkI", 
+        "video_position": 10, 
+        "description": "Defining a function in Python", 
+        "title": "Defining a Factorial Function", 
+        "views": 13591, 
+        "related_videos": [
+            "WT-gS-8p7KA", 
+            "6qCQB8E5bkI"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 606, 
+        "ka_url": "http://www.khanacademy.org/video/defining-a-factorial-function?playlist=Computer+Science", 
+        "youtube_id": "JwO_25S_eWE", 
+        "keywords": "computer, science, python, function", 
+        "date_added": "2011-06-29 23:29:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=JwO_25S_eWE&feature=youtube_gdata_player", 
+        "prev_video": "WT-gS-8p7KA", 
+        "readable_id": "defining-a-factorial-function"
+    }, 
+    {
+        "next_video": "o920mj0NbhE", 
+        "video_position": 11, 
+        "description": "Variable scope and function calls", 
+        "title": "Diagramming What Happens with a Function Call", 
+        "views": 12232, 
+        "related_videos": [
+            "JwO_25S_eWE", 
+            "o920mj0NbhE"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 552, 
+        "ka_url": "http://www.khanacademy.org/video/diagramming-what-happens-with-a-function-call?playlist=Computer+Science", 
+        "youtube_id": "6qCQB8E5bkI", 
+        "keywords": "python, computer, science", 
+        "date_added": "2011-06-29 23:29:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=6qCQB8E5bkI&feature=youtube_gdata_player", 
+        "prev_video": "JwO_25S_eWE", 
+        "readable_id": "diagramming-what-happens-with-a-function-call"
+    }, 
+    {
+        "next_video": "kx6DfrYfWnQ", 
+        "video_position": 12, 
+        "description": "Introduction to recursion.", 
+        "title": "Recursive Factorial Function", 
+        "views": 12116, 
+        "related_videos": [
+            "6qCQB8E5bkI", 
+            "kx6DfrYfWnQ"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 335, 
+        "ka_url": "http://www.khanacademy.org/video/recursive-factorial-function?playlist=Computer+Science", 
+        "youtube_id": "o920mj0NbhE", 
+        "keywords": "factorial, recursion, computer, science", 
+        "date_added": "2011-06-29 23:29:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=o920mj0NbhE&feature=youtube_gdata_player", 
+        "prev_video": "6qCQB8E5bkI", 
+        "readable_id": "recursive-factorial-function"
+    }, 
+    {
+        "next_video": "Bdbc1ZC-vhw", 
+        "video_position": 13, 
+        "description": "Comparing iterative and recursive factorial functions", 
+        "title": "Comparing Iterative and Recursive Factorial Functions", 
+        "views": 9268, 
+        "related_videos": [
+            "o920mj0NbhE", 
+            "Bdbc1ZC-vhw"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 468, 
+        "ka_url": "http://www.khanacademy.org/video/comparing-iterative-and-recursive-factorial-functions?playlist=Computer+Science", 
+        "youtube_id": "kx6DfrYfWnQ", 
+        "keywords": "computer, science, python, interation, recursion", 
+        "date_added": "2011-06-29 23:29:28", 
+        "youtube_url": "http://www.youtube.com/watch?v=kx6DfrYfWnQ&feature=youtube_gdata_player", 
+        "prev_video": "o920mj0NbhE", 
+        "readable_id": "comparing-iterative-and-recursive-factorial-functions"
+    }, 
+    {
+        "next_video": "94O_3QCvfqI", 
+        "video_position": 14, 
+        "description": "Introduction to the Fibonacci Sequence and a programming challenge", 
+        "title": "Exercise - Write a Fibonacci Function", 
+        "views": 16043, 
+        "related_videos": [
+            "kx6DfrYfWnQ", 
+            "94O_3QCvfqI"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 255, 
+        "ka_url": "http://www.khanacademy.org/video/exercise---write-a-fibonacci-function?playlist=Computer+Science", 
+        "youtube_id": "Bdbc1ZC-vhw", 
+        "keywords": "python, computer, science", 
+        "date_added": "2011-06-30 23:30:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=Bdbc1ZC-vhw&feature=youtube_gdata_player", 
+        "prev_video": "kx6DfrYfWnQ", 
+        "readable_id": "exercise---write-a-fibonacci-function"
+    }, 
+    {
+        "next_video": "-BE7FEouGeI", 
+        "video_position": 15, 
+        "description": "One way to write a Fibonacci function iteratively", 
+        "title": "Iterative Fibonacci Function Example", 
+        "views": 12273, 
+        "related_videos": [
+            "Bdbc1ZC-vhw", 
+            "-BE7FEouGeI"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 393, 
+        "ka_url": "http://www.khanacademy.org/video/iterative-fibonacci-function-example?playlist=Computer+Science", 
+        "youtube_id": "94O_3QCvfqI", 
+        "keywords": "computer, science, python", 
+        "date_added": "2011-06-30 23:30:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=94O_3QCvfqI&feature=youtube_gdata_player", 
+        "prev_video": "Bdbc1ZC-vhw", 
+        "readable_id": "iterative-fibonacci-function-example"
+    }, 
+    {
+        "next_video": "urPVT1lymzU", 
+        "video_position": 16, 
+        "description": "Understanding how the iterative fibonacci function works for a particular example", 
+        "title": "Stepping Through Iterative Fibonacci Function", 
+        "views": 7234, 
+        "related_videos": [
+            "94O_3QCvfqI", 
+            "urPVT1lymzU"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 579, 
+        "ka_url": "http://www.khanacademy.org/video/stepping-through-iterative-fibonacci-function?playlist=Computer+Science", 
+        "youtube_id": "-BE7FEouGeI", 
+        "keywords": "while, loop, computer, science, python, programming", 
+        "date_added": "2011-06-30 23:30:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=-BE7FEouGeI&feature=youtube_gdata_player", 
+        "prev_video": "94O_3QCvfqI", 
+        "readable_id": "stepping-through-iterative-fibonacci-function"
+    }, 
+    {
+        "next_video": "zg-ddPbzcKM", 
+        "video_position": 17, 
+        "description": "Using recursion to write a fibonacci function", 
+        "title": "Recursive Fibonacci Example", 
+        "views": 11594, 
+        "related_videos": [
+            "-BE7FEouGeI", 
+            "zg-ddPbzcKM"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 457, 
+        "ka_url": "http://www.khanacademy.org/video/recursive-fibonacci-example?playlist=Computer+Science", 
+        "youtube_id": "urPVT1lymzU", 
+        "keywords": "recursive, algorithm, computer, science, python", 
+        "date_added": "2011-06-30 23:30:06", 
+        "youtube_url": "http://www.youtube.com/watch?v=urPVT1lymzU&feature=youtube_gdata_player", 
+        "prev_video": "-BE7FEouGeI", 
+        "readable_id": "recursive-fibonacci-example"
+    }, 
+    {
+        "next_video": "Qbl-RZS2-4g", 
+        "video_position": 18, 
+        "description": "Understanding why and how the recursive Fibonacci function works", 
+        "title": "Stepping Through Recursive Fibonacci Function", 
+        "views": 6184, 
+        "related_videos": [
+            "urPVT1lymzU", 
+            "Qbl-RZS2-4g"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 484, 
+        "ka_url": "http://www.khanacademy.org/video/stepping-through-recursive-fibonacci-function?playlist=Computer+Science", 
+        "youtube_id": "zg-ddPbzcKM", 
+        "keywords": "python, programming, computer, science", 
+        "date_added": "2011-07-01 23:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=zg-ddPbzcKM&feature=youtube_gdata_player", 
+        "prev_video": "urPVT1lymzU", 
+        "readable_id": "stepping-through-recursive-fibonacci-function"
+    }, 
+    {
+        "next_video": "lCzQvQr8Utw", 
+        "video_position": 19, 
+        "description": "Challenge to write a Python function that can sort a list in-place", 
+        "title": "Exercise - Write a Sorting Function", 
+        "views": 9744, 
+        "related_videos": [
+            "zg-ddPbzcKM", 
+            "lCzQvQr8Utw"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 132, 
+        "ka_url": "http://www.khanacademy.org/video/exercise---write-a-sorting-function?playlist=Computer+Science", 
+        "youtube_id": "Qbl-RZS2-4g", 
+        "keywords": "programming, computer, science", 
+        "date_added": "2011-07-01 23:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=Qbl-RZS2-4g&feature=youtube_gdata_player", 
+        "prev_video": "zg-ddPbzcKM", 
+        "readable_id": "exercise---write-a-sorting-function"
+    }, 
+    {
+        "next_video": "lEA31vHiry4", 
+        "video_position": 20, 
+        "description": "Visual description of the insertion sort algorithm", 
+        "title": "Insertion Sort Algorithm", 
+        "views": 16929, 
+        "related_videos": [
+            "Qbl-RZS2-4g", 
+            "lEA31vHiry4"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 472, 
+        "ka_url": "http://www.khanacademy.org/video/insertion-sort-algorithm?playlist=Computer+Science", 
+        "youtube_id": "lCzQvQr8Utw", 
+        "keywords": "computer, science, python, programming", 
+        "date_added": "2011-07-01 23:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=lCzQvQr8Utw&feature=youtube_gdata_player", 
+        "prev_video": "Qbl-RZS2-4g", 
+        "readable_id": "insertion-sort-algorithm"
+    }, 
+    {
+        "next_video": "6pyeMmJTefg", 
+        "video_position": 21, 
+        "description": "Basic implementation of insertion sort algorithm", 
+        "title": "Insertion Sort in Python", 
+        "views": 11365, 
+        "related_videos": [
+            "lCzQvQr8Utw", 
+            "6pyeMmJTefg"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 516, 
+        "ka_url": "http://www.khanacademy.org/video/insertion-sort-in-python?playlist=Computer+Science", 
+        "youtube_id": "lEA31vHiry4", 
+        "keywords": "computer, science, python, programming", 
+        "date_added": "2011-07-01 23:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=lEA31vHiry4&feature=youtube_gdata_player", 
+        "prev_video": "lCzQvQr8Utw", 
+        "readable_id": "insertion-sort-in-python"
+    }, 
+    {
+        "next_video": "hh3AkOGnnpE", 
+        "video_position": 22, 
+        "description": "Clarifying what \"break\" does and stepping through the insertion sort implementation", 
+        "title": "Stepping Through Insertion Sort Function", 
+        "views": 6638, 
+        "related_videos": [
+            "lEA31vHiry4", 
+            "hh3AkOGnnpE"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 714, 
+        "ka_url": "http://www.khanacademy.org/video/stepping-through-insertion-sort-function?playlist=Computer+Science", 
+        "youtube_id": "6pyeMmJTefg", 
+        "keywords": "computer, science, programming, python", 
+        "date_added": "2011-07-01 23:27:45", 
+        "youtube_url": "http://www.youtube.com/watch?v=6pyeMmJTefg&feature=youtube_gdata_player", 
+        "prev_video": "lEA31vHiry4", 
+        "readable_id": "stepping-through-insertion-sort-function"
+    }, 
+    {
+        "next_video": "", 
+        "video_position": 23, 
+        "description": "Simplifying the while loop for the Insertion Sort function", 
+        "title": "Simpler Insertion Sort Function", 
+        "views": 8929, 
+        "related_videos": [
+            "6pyeMmJTefg"
+        ], 
+        "playlist_titles": [
+            "Computer Science"
+        ], 
+        "duration": 169, 
+        "ka_url": "http://www.khanacademy.org/video/simpler-insertion-sort-function?playlist=Computer+Science", 
+        "youtube_id": "hh3AkOGnnpE", 
+        "keywords": "computer, science, khan, academy, sort", 
+        "date_added": "2011-07-11 23:29:56", 
+        "youtube_url": "http://www.youtube.com/watch?v=hh3AkOGnnpE&feature=youtube_gdata_player", 
+        "prev_video": "6pyeMmJTefg", 
+        "readable_id": "simpler-insertion-sort-function"
+    }
+]

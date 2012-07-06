@@ -1,0 +1,23 @@
+<div style="padding-bottom: 5px; font-size: 120%;">
+  <b><a href="/?version={{ number }}">Version #{{ number }}</a>:</b>
+  {{#edit}}
+    <b>[Editing version]</b>
+    <a href="javascript:" class="set-default simple-button {{#if IS_DEV}}green{{else}}orange{{/if}}">
+      {{#if IS_DEV}}
+        Commit local changes
+      {{else}}
+        Publish to website
+      {{/if}}
+    </a>
+  {{/edit}}
+  {{#default}}<b>[Currently live version]</b>{{/default}}
+  <div id="topictree-queue-progress-wrapper"><div id="topictree-queue-progress-bar"></div><div id="topictree-queue-progress-text"></div></div>
+  <a href="/api/v1/topicversion/edit/topictree" class="simple-button green">Export to file</a>
+  <a href="javascript:" class="show-versions simple-button green">View all versions</a>
+</div>
+<div>
+  <b>Title:</b> <input type="text" name="title" value="{{ title }}" {{#unless edit}}disabled{{/unless}}></input>
+  <b>Description:</b> <input type="text" name="description" value="{{ description }}" {{#unless edit}}disabled{{/unless}}></input>
+  <b>Created:</b> {{ created_on }}
+  <b>Updated:</b> {{ updated_on }} by {{ last_edited_by }}
+</div>

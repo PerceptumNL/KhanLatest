@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/303/trunk/python/demo
+END
+app.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/267/trunk/python/demo/app.yaml
+END
+queue.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/184/trunk/python/demo/queue.yaml
+END
+mapreduce.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/53/trunk/python/demo/mapreduce.yaml
+END
+main.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/184/trunk/python/demo/main.py
+END

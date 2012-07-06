@@ -1,0 +1,168 @@
+/* A simple 3D button style */
+.simple-button {
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #bbb;
+
+    .border-radius(5px);
+
+    .box-shadow(~"inset 0 1px 0 rgba(255,255,255, .3)");
+
+    .buttonBackground(@whiteDark, @grayExtraLight);
+
+    color: @grayDark !important;
+    cursor: pointer !important;    
+    font-family: inherit; /* input[type=button] won't inherit by default */
+    line-height: @baseLineHeight;
+    margin: 0;
+    padding: 5px 10px;
+    position: relative;
+    text-decoration: none !important;
+
+    text-shadow: 0 1px 0 @white;
+
+    &:hover {
+        border-color: @grayLight;
+        .box-shadow(~"inset 0 1px 0 rgba(255,255,255, .4), inset 0 0 50px 5px rgba(255,255,255,.2)");
+    }
+
+    &:active,
+    &.toggled {
+        .box-shadow(~"inset 0 0 30px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.4)");
+    }
+
+    &:disabled,
+    &.disabled {
+        background-image: none !important;
+        .box-shadow(none);
+        cursor: not-allowed !important;
+        .opacity(50);
+        top: 0 !important;
+    }
+
+    &.blue,
+    &.secondary {
+        border-color: @blueDark !important;
+        border-bottom-color: darken(@blueDark, 30%) !important;
+        
+        .buttonBackground(#3a4759, darken(#3a4759, 5%));
+
+        color: @white !important;
+        text-shadow:  0 -1px 0 darken(@blueDark, 20%);
+    }
+
+    &.green,
+    &.primary {
+        border-color: @green !important;
+        border-bottom-color: darken(@green, 10%) !important;
+
+        .buttonBackground(#8aba08, #6e9700);
+
+        color: @white !important;
+        text-shadow:  0 -1px 0 darken(@green, 10%);
+    }
+
+    &.orange,
+    &.warning {
+        border-color: @orange !important;
+        border-bottom-color: darken(@orange, 10%) !important;
+
+        .buttonBackground(#e35d04, #bf4f04);
+        
+        color: @white !important;
+        text-shadow:  0 -1px 0 darken(@orange, 15%);
+    }
+
+    &.seethrough {
+        @startColor: rgba(255,255,255, .5);
+        @endColor: rgba(255,255,255, .0);
+        
+        /* Creating my own gradient instead of using a mixin because I explicitly
+         * do not want to set a background color which the mixin does by default.
+         */
+        background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+        background-image: -ms-linear-gradient(top, @startColor, @endColor); // IE10
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+        background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+        background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+        background-image: linear-gradient(top, @startColor, @endColor); // The standard
+        background-repeat: repeat-x;
+        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); // IE9 and down
+
+        text-shadow: none;
+    }
+
+    /* Special button types */
+    &.with-icon {
+        padding-left: 30px;
+
+        img {
+            left: 7px;
+            position: absolute;
+            top: 3px;
+        }
+    }
+
+    &.social-button {
+        display: inline-block;    
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 9px;
+        max-width: 200px;
+        padding-top: 7px;
+        text-transform: uppercase;
+
+        img {
+            height: 24px;
+            vertical-align: middle;
+            width: 24px;
+        }
+    }
+
+    &.donate-button {
+        bottom: 1px;
+        padding: 3px 7px;
+    }
+}
+
+.action-gradient {
+    /* TODO (jasonrr): remove this once the last few uses of it have been converted or removed */
+    .buttonBackground(@whiteDark, @grayExtraLight);
+}
+
+/* Modifications for IE8 and under */
+.lte8 .simple-button {
+    &:active,
+    &.toggled {
+        background-color: darken(@grayExtraLight, 10%);
+    }
+    &.blue:active,
+    &.blue.toggled {
+        background-color: darken(#222e3e, 10%);
+    }
+
+    &.green:active,
+    &.green.toggled {
+        background-color: darken(#6e9700, 10%);
+    }
+
+    &.orange:active,
+    &.orange.toggled {
+        background-color: darken(#bf4f04, 10%);
+    }
+    &:hover {
+        outline: 2px solid @grayDark;
+    }
+}
+
+.lte7 .simple-button {
+    position: static;
+}
+
+input.simple-button {
+    /* Inputs (specificically buttons) don't obey padding in some cases */
+    line-height: 15px;
+}
+
+.ui-corner-right.strict {
+    .border-radiuses(0,0,5px,5px);
+}

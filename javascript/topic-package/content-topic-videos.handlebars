@@ -1,0 +1,29 @@
+<div>
+  <div data-role="header" class="main-header clearfix">
+    <div class="topic-video thumbnail_td">
+      <a href="{{ topic.thumbnail_link.href }}" data-tag="Topic Page Subtopic Featured" data-youtube-id="{{ topic.thumbnail_link.youtube_id }}" class="thumbnail_link modal-video">
+        <div class="thumb" style="background-image:url('{{ topic.thumbnail_link.thumb_urls.hq }}')"></div>
+        <div class="thumbnail_label"><div class="thumbnail_desc">{{{ topic.thumbnail_link.desc_html }}}</div><div class="thumbnail_teaser">{{{ topic.thumbnail_link.teaser_html }}}</div></div>
+      </a>
+    </div>
+    <div class="topic-info">
+      <div class='topic-title'>{{ topic.title }}</div>
+      <div class='topic-desc'>{{{ topic.description }}}</div>
+    </div>
+  </div>
+  <div class="videos-list">
+    <div class="videos-header">Videos</div>
+    <div class="videos-table">
+      <ol class="first">
+      {{#each childrenCol1 }}
+        <li class="video-link"><a href="{{ url }}" data-tag="Topic Page Subtopic Library"><span class="indent"><span class='vid-progress v{{ key_id }}'>{{ title }}</span></span></a></li>
+      {{/each}}
+      </ol>
+      <ol>
+      {{#each childrenCol2 }}
+        <li class="video-link"><a href="{{ url }}" data-tag="Topic Page Subtopic Library"><span class="indent"><span class='vid-progress v{{ key_id }}'>{{ title }}</span></span></a></li>
+      {{/each}}
+      </ol>
+    </div>
+  </div>
+</div>

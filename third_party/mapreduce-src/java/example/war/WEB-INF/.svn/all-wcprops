@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/307/trunk/java/example/war/WEB-INF
+END
+appengine-web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/307/trunk/java/example/war/WEB-INF/appengine-web.xml
+END
+logging.properties
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/22/trunk/java/example/war/WEB-INF/logging.properties
+END
+datastore-indexes.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/22/trunk/java/example/war/WEB-INF/datastore-indexes.xml
+END
+mapreduce.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/22/trunk/java/example/war/WEB-INF/mapreduce.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/22/trunk/java/example/war/WEB-INF/web.xml
+END

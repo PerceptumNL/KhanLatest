@@ -1,0 +1,12 @@
+<div>
+  <a href="javascript:" class="edit-version simple-button green" style="float: right">View this version</a>
+  <div><strong>Version #{{ number }}:</strong> "{{ title }}"
+    {{#edit}}
+      <strong>[Editing version]</strong>
+    {{/edit}}
+    {{#default}}<strong>[Currently live version]</strong>{{/default}}
+  </div>
+  <div style="margin-left: 20px;"><strong>Description:</strong> {{ description }}</div>
+  <div style="margin-left: 20px;"><strong>Created:</strong> {{ created_on }}</div>
+  <div style="margin-left: 20px;"><strong>Updated:</strong> {{ updated_on }} by {{ last_edited_by }}</div>
+</div>

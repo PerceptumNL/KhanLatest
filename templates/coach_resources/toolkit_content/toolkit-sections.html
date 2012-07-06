@@ -1,0 +1,36 @@
+{% extends "coach_resources/view_toolkit.html" %}
+
+{% block col1content %}
+		
+	<h1>Toolkit sections</h1>
+	<hr>
+	<p class="lead">Here's a quick description of the 5 sections of this toolkit:</p>
+	<ul class="bullet">
+		<li><strong>Choosing KA:</strong> Understand our vision for Khan Academy, identify ways to use Khan Academy, and figure out which resources are most relevant for you</li>
+		<li><strong>Getting started:</strong> Decide which classes should use Khan Academy and figure out logistics</li>
+		<li><strong>Class time:</strong> Learn about teaching practices that have worked well with Khan Academy</li>
+		<li><strong>Curriculum:</strong> Get tips on creating individualized units with Khan Academy through downloadable worksheets, and check out our Common Core Map.</li>
+		<li><strong>Other resources:</strong> Read and add to our frequently-asked questions, and see the latest news on the Schools Blog.</li>
+	</ul>
+	<p><a href="{{base_url}}/ka-classrooms" class="call-to-action simple-button green">Next: Why Khan Academy? →</a></p>
+	<p>
+	<p>
+	<p>
+
+{% endblock col1content %}	
+
+<div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ka-toolkit'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        

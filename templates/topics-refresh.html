@@ -1,0 +1,25 @@
+{% extends "page_template.html" %}
+
+{% block pagecontent %}
+
+<h2>Refresh content caches:</h2>
+
+{% if started_list %}
+<div style="background-color: #c0ffc0">
+  <em>Started:</em>
+  <ul style="list-style-type: disc; list-style-position: inside;">
+  {% for item in started_list %}
+    <li>{{ item }}</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<form method="GET" action="refresh">
+  {% for option in refresh_options %}
+    <div><input type="checkbox" id="{{ option.name }}" name="{{ option.name }}" value="1" /> {{ option.description }}</div>
+  {% endfor %}
+  <input type="submit" value="Refresh" />
+</form>
+
+{% endblock %}

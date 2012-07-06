@@ -1,0 +1,461 @@
+<!-- If you drastically change the below nav, try to update the screenshots in coach.html. -->
+<menu class="profile-navigation">
+    <ul>
+        <li class="profile-tab">
+            <a href="{{profileRoot}}"
+               class="tab-link ellipsis no-recolor active-tab"
+               rel="profile">
+            <img src="{{profileData.avatarSrc}}" class="profile-tab-avatar">
+            <span id="profile-tab-link" class="profile-tab-text">
+                {{#if profileData.nickname}}
+                    {{profileData.nickname}}
+                {{else}}
+                    Profile
+                {{/if}}
+            </span>
+        </a></li>
+    </ul>
+    <ul class="accomplishments-statistics-section zero-top-margin">
+        <li>
+            <span class="inactive link-section-header">Accomplishments</span>
+            <ul class="second-tier">
+                <li>
+                    <a href="{{profileRoot}}achievements"
+                       class="tab-link has-icon no-recolor ellipsis"
+                       rel="achievements">
+                        Achievements
+                    </a>
+               </li>
+                <li>
+                    <a href="{{profileRoot}}goals"
+                       class="tab-link has-icon no-recolor ellipsis"
+                       rel="goals">
+                        Goals (beta)
+                    </a>
+                </li>
+                {{#if displayExplorations}}
+                <li>
+                    <a href="{{profileRoot}}explorations"
+                       class="tab-link has-icon no-recolor"
+                       rel="community explorations">
+                       Explorations
+                    </a>
+                </li>
+                {{/if}}
+            </ul>
+        </li>
+        <li>
+            <span class="inactive link-section-header">Vital statistics</span>
+            <ul class="second-tier">
+                <li>
+                    <a href="{{profileRoot}}vital-statistics/activity"
+                       class="tab-link has-icon no-recolor ellipsis"
+                       rel="vital-statistics activity">
+                        Activity
+                    </a>
+               </li>
+                <li>
+                    <a href="{{profileRoot}}vital-statistics/focus"
+                       class="tab-link has-icon no-recolor ellipsis"
+                       rel="vital-statistics focus">
+                       Focus
+                    </a>
+               </li>
+                <li>
+                    <a href="{{profileRoot}}vital-statistics/skill-progress"
+                       class="tab-link has-icon no-recolor ellipsis"
+                       rel="vital-statistics skill-progress">
+                        Skill Progress
+                    </a>
+                </li>
+                <li>
+                    <a href="{{profileRoot}}vital-statistics/skill-progress-over-time"
+                       class="tab-link has-icon no-recolor ellipsis"
+                       rel="vital-statistics skill-progress-over-time">
+                        Progress Over Time
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="zero-top-margin">
+        <li>
+            <span class="inactive link-section-header">Community</span>
+        </li>
+    </ul>
+    <ul class="zero-top-margin community-discussion">
+    <ul class="second-tier">
+        <li>
+            <a href="{{profileRoot}}discussion"
+               class="tab-link has-icon no-recolor ellipsis"
+               rel="community discussion">
+                Discussion
+            </a>
+        </li>
+    </ul>
+    </ul>
+    <ul class="zero-top-margin">
+    <ul class="second-tier">
+        {{#if isCoachListReadable}}
+            <li>
+                <a href="{{profileRoot}}coaches"
+                   class="tab-link has-icon no-recolor ellipsis"
+                   rel="community coaches">
+                    Coaches
+                </a>
+            </li>
+        {{/if}}
+    </ul>
+    </ul>
+
+</menu>
+
+<section class="tab-content">
+    <h2 class="profile-sheet-title">
+        <span class="nickname"></span>
+        <span class="page-title"></span>
+    </h2>
+    <div class="profile-notification">
+        {{#if profileData.isActivityAccessible}}
+            <div class="empty-graph">
+                <h2><a href="/#browse">Watch a video</a> or <a href="/exercisedashboard">try a skill</a>!</h2>
+                <p>Once you do, real data will show up here.</p>
+            </div>
+            <div class="error-graph">
+                <h2>It's our fault.</h2>
+                <p>Try again later, and please <a href="/reportissue?type=Defect">let us know</a> if it continues.</p>
+            </div>
+            <div class="no-coaches-for-phantoms">
+                <h2><a href="{{toLoginRedirectHref "/profile"}}">Log in</a> to add a coach!</h2>
+            </div>
+        {{else}}
+            {{#if profileData.isPublic}}
+                <div class="public">
+                    <h2>Oops, you're not allowed!</h2>
+                    <p>To view real data, you must be a coach.</p>
+                </div>
+            {{else}}
+                <div class="public">
+                    <h2>This user does not have a public profile.</h2>
+                    <p>You can still view their <a class="discussion-link"
+                        href="{{profileRoot}}discussion">discussion history</a>.
+                    </p>
+                </div>
+                <div class="empty-landing-page">
+                    <h2>This user does not have a public profile.</h2>
+                    <p>You can still view their <a class="discussion-link"
+                        href="{{profileRoot}}discussion">discussion history</a>.
+                    </p>
+                </div>
+            {{/if}}
+        {{/if}}
+    </div>
+    <div class="clearfix">
+        <div id="tab-content-user-profile" rel="profile">
+            <div class="user-info-container"></div>
+            <div style="clear: both; margin-bottom: 20px;"></div>
+            {{#if profileData.isActivityAccessible}}
+                <div class="activity-column">
+                    <div id="activity-loading-placeholder">
+                        <h2>Loading activity...</h2>
+                        <div id="recent-activity-progress-bar" class="throbber-progress-bar"></div>
+                    </div>
+                    <div id="activity-contents" style="display:none">
+                        <div id="suggested-activity">
+                            <h2>Suggested Activity</h2>
+                        </div>
+                        <div id="recent-activity">
+                            <h2>Recently Completed Activity</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="mini-stats-column">
+                </div>
+            {{/if}}
+        </div>
+
+        <div id="tab-content-vital-statistics" rel="vital-statistics">
+            {{> profile_vital-statistics}}
+        </div>
+
+        <div id="tab-content-achievements" rel="achievements"{{#unless profileData.email}} class="empty-chart"{{/unless}}>
+        </div>
+
+        <div id="tab-content-goals" rel="goals">
+            <div class="graph-picker">
+                Shows your current, completed and abandoned goals.
+                <ul class="tabrow">
+                    <li class="type current">
+                        <a href="{{profileRoot}}goals/current" class="graph-link no-recolor">
+                            Current
+                        </a>
+                    </li>
+                    <li class="type completed">
+                        <a href="{{profileRoot}}goals/completed" class="graph-link no-recolor">
+                            Completed
+                        </a>
+                    </li>
+                    <li class="type abandoned">
+                        <a href="{{profileRoot}}goals/abandoned" class="graph-link no-recolor">
+                            Abandoned
+                        </a>
+                    </li>
+                    <li>
+                        <a class="new-goal simple-button disabled" href="javascript:void(0);">
+                            Create a new goal
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="profile-goals-content"></div>
+        </div>
+
+        <!-- Explorations -->
+        <div id="tab-content-explorations" rel="explorations">
+            <div class="graph-picker">
+                All the explorations that you've made using the
+                <a href="/explore/new">Scratchpad</a>.
+
+                <div class="graph-date-picker">
+                    <ul class="tabrow">
+                        <li>
+                            <a href="/explore"
+                                class="no-recolor graph-link">Explorations</a>
+                        </li>
+                        <li class="selected">
+                            <a href="{{profileRoot}}explorations"
+                                class="no-recolor graph-link">
+                                My Explorations</a>
+                        </li>
+                        <li>
+                            <a href="/explore/new"
+                                class="no-recolor graph-link">
+                                New Scratchpad
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="explorations-progress-bar" class="throbber-progress-bar"></div>
+            <div id="scratchpads"></div>
+        </div>
+
+        <div id="tab-content-coaches" rel="coaches">
+        </div>
+
+        <!-- Discussion -->
+        <div id="tab-content-discussion" rel="discussion" class="discussion-tab">
+            <div class="graph-picker">
+                {{#if profileData.isActivityAccessible}}
+                    Shows your participation in community discussions.
+                {{/if}}
+                {{> profile_discussion-tab-links}}
+            </div>
+
+            <div class="discussion-placeholder">
+                <div id="discussion-progress-bar"
+                    class="throbber-progress-bar"></div>
+            </div>
+
+            <div id="discussion-summary">
+                <div id="discussion-left">
+                    <!-- Discussion -> Questions -->
+                    <div class="discussion-block" id="questions-block">
+                        <h2 id="questions-block-header" class="discussion-group-header">
+                            <a class="discussion-link" href="{{profileRoot}}discussion/questions">
+                                Questions
+                            </a>
+                            <span class="discussion-count"></span>
+                        </h2>
+                        <div class="discussion-message">
+                            No questions asked yet.
+                        </div>
+                    </div>
+
+                    <!-- Discussion -> Answers -->
+                    <div class="discussion-block" id="answers-block">
+                        <h2 id="answers-block-header" class="discussion-group-header">
+                            <a class="discussion-link"
+                                href="{{profileRoot}}discussion/answers">
+                                Answers
+                            </a>
+                            <span class="discussion-count"></span>
+                        </h2>
+                        <div class="discussion-message">
+                            No answers posted yet.
+                        </div>
+                    </div>
+
+                    <!-- Discussion -> Comments -->
+                    <div class="discussion-block" id="comments-block" style="clear: both">
+                        <h2 id="comments-block-header" class="discussion-group-header">
+                            <a class="discussion-link"
+                                href="{{profileRoot}}discussion/comments">
+                                Comments
+                            </a>
+                            <span class="discussion-count"></span>
+                        </h2>
+                        <div class="discussion-message">
+                            No comments made yet.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="discussion-right">
+                    <!-- Discussion > Achievements -->
+                    <div class="discussion-block" id="discussion-awards-block">
+                        <h2 class="discussion-group-header">
+                            Achievements
+                        </h2>
+                        <div id="discussion-awards"></div>
+                        <div class="discussion-message">
+                            {{#if profileData.isActivityAccessible}}
+                                Earn badges by asking and answering questions, voting, and flagging
+                                inappropriate content.
+                            {{else}}
+                                No badges earned yet.
+                            {{/if}}
+                        </div>
+                    </div>
+
+                    <!-- Discussion > Statistics -->
+                    <div class="discussion-block" id="discussion-statistics-block">
+                        <h2 class="discussion-group-header">
+                            Statistics
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questions -->
+        <div id="tab-content-questions" rel="questions" class="discussion-tab">
+            <div class="graph-picker">
+                {{#if profileData.isActivityAccessible}}
+                    Shows the questions you've asked.
+                {{/if}}
+
+                {{> profile_discussion-tab-links}}
+            </div>
+
+            <div id="discussion-questions" class="discussion-tab-content">
+                <h2 id="questions-header" class="discussion-group-header">
+                    Questions <span class="discussion-count"></span>
+                    <span data-feedback-type="questions"
+                        class="discussion-sort-links">
+                        {{> profile_discussion-sort-links}}
+                    </span>
+                </h2>
+                <div class="discussion-message">
+                    No questions asked yet.
+                </div>
+
+                <div id="questions"></div>
+
+                <div class="discussion-placeholder">
+                    <div id="questions-progress-bar"
+                        class="throbber-progress-bar"></div>
+                </div>
+
+                <a href="#" id="questions-more" data-feedback-type="questions"
+                    class="simple-button action-gradient more-button">
+                    More
+                </a>
+            </div>
+        </div>
+
+        <!-- Answers -->
+        <div id="tab-content-answers" rel="answers" class="discussion-tab">
+            <div class="graph-picker">
+                {{#if profileData.isActivityAccessible}}
+                    Shows your answers to other users' questions.
+                {{/if}}
+                {{> profile_discussion-tab-links}}
+            </div>
+
+            <div id="discussion-answers" class="discussion-tab-content">
+                <h2 id="answers-header" class="discussion-group-header">
+                    Answers <span class="discussion-count"></span>
+                    <span data-feedback-type="answers"
+                        class="discussion-sort-links">
+                        {{> profile_discussion-sort-links}}
+                    </span>
+                </h2>
+
+                <div class="discussion-message">
+                    No answers posted yet.
+                </div>
+
+                <div id="answers"></div>
+
+                <div class="discussion-placeholder">
+                    <div id="answers-progress-bar"
+                        class="throbber-progress-bar"></div>
+                </div>
+
+                <a href="#" id="answers-more" data-feedback-type="answers"
+                    class="simple-button action-gradient more-button">
+                    More
+                </a>
+            </div>
+        </div>
+
+        <!-- Comments -->
+        <div id="tab-content-comments" rel="comments" class="discussion-tab">
+            <div class="graph-picker">
+                {{#if profileData.isActivityAccessible}}
+                    Shows the comments you've posted.
+                {{/if}}
+                {{> profile_discussion-tab-links}}
+            </div>
+
+            <div id="discussion-comments" class="discussion-tab-content">
+                <h2 id="comments-header" class="discussion-group-header">
+                    Comments <span class="discussion-count"></span>
+                    <span data-feedback-type="comments"
+                        class="discussion-sort-links">
+                        {{> profile_discussion-sort-links}}
+                    </span>
+                </h2>
+
+                <div class="discussion-message">
+                    No comments made yet.
+                </div>
+
+                <div id="comments"></div>
+
+                <div class="discussion-placeholder">
+                    <div id="comments-progress-bar"
+                        class="throbber-progress-bar"></div>
+                </div>
+
+                <a href="#" id="comments-more" data-feedback-type="comments"
+                    class="simple-button action-gradient more-button">
+                    More
+                </a>
+            </div>
+        </div>
+
+        {{#if profileData.isActivityAccessible}}
+        <!-- Notifications -->
+            <div id="tab-content-notifications" rel="notifications">
+                <div class="graph-picker">
+                    {{#if profileData.isActivityAccessible}}
+                        Shows new answers to your questions.
+                    {{/if}}
+                    {{> profile_discussion-tab-links}}
+                </div>
+                <div class="discussion-placeholder">
+                    <div id="notifications-progress-bar"
+                        class="throbber-progress-bar"></div>
+                </div>
+
+                <div id="notifications" class="discussion-tab-content">
+                    <div class="discussion-message"></div>
+                </div>
+            </div>
+
+            <div id="tab-content-settings" rel="settings"></div>
+        {{/if}}
+    </div>
+</section>

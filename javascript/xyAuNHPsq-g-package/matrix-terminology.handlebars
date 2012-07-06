@@ -1,0 +1,74 @@
+<div class="layer backdrop whiteout"></div>
+<div class="layer controls">
+    <form class="popout" style="margin-top: 5px">
+        <a class="close" href="javascript: void 0">&times;</a>
+        <h2>{{title}}</h2>
+        <p>Sal introduced us to some new terms during this video. Let's see if you can remember them!</p>
+        <p>Fill in the grid below. Check the box if the object in the first row matches the term in the column header.</p>
+
+        <table class="table centered checkbox-grid">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th name="scalar">Scalar</th>
+                    <th name="row-vector">Row vector</th>
+                    <th name="column-vector">Column vector</th>
+                    <th name="matrix">Matrix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr name="column-vector">
+                    <td>
+                        \(
+                            \begin{bmatrix}
+                            1 \\ 2 \\ 3 \\ 4
+                            \end{bmatrix}
+                        \)
+                    </td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr name="scalar">
+                    <td>
+                        \(1\)
+                    </td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr name="row-vector">
+                    <td>
+                        \(
+                            \begin{bmatrix}
+                            1 & 2 & 3 & 4
+                            \end{bmatrix}
+                        \)
+                    </td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr name="matrix">
+                    <td>
+                        \(
+                            \begin{bmatrix}
+                            1 & 2 \\
+                            3 & 4
+                            \end{bmatrix}
+                        \)
+                    </td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        {{>submit-area}}
+    </form>
+</div>

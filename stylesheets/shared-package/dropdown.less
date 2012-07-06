@@ -1,0 +1,166 @@
+.dropdown-toggle {
+  cursor: pointer;
+  border-color: transparent;
+  border-width: 1px 1px 0px 1px;
+  border-style: solid;
+}
+
+// When the menu opens, highlight the menu title.
+.dropdown.open .dropdown-toggle {
+  color: @menuActiveTextColor;
+  background-color: @menuHighlightColor;
+  border-color: @menuHighlightBorderColor;
+  .border-radiuses(5px,0,5px,0);
+}
+
+// The menu item arrow that points to a submenu.
+.right-arrow {
+  #popoverArrow > .left(3px);
+  position: absolute;
+  right: 6px;
+  margin-top: -3px;
+}
+// The pulldown arrow next to the menu title.
+.caret {
+  #popoverArrow > .top(4px);
+  display: inline-block;
+  margin-left: 2px;
+  margin-bottom: 2px;
+}
+// On hover, make the menu title arrow solid.
+.dropdown-toggle:hover .caret,
+.open.dropdown .caret {
+  #popoverArrow > .top(4px,@menuActiveTextColor);
+}
+
+// Not exported as a css class.
+.menu-border() {
+  border: 1px solid @menuBorderColor;
+  border-bottom: 1px solid #999;
+  .box-shadow(0 5px 8px #444);
+}
+
+.dropdown.open > .dropdown-menu {
+  display: block;
+}
+.dropdown-menu {
+  position: absolute;
+  z-index: @zindexDropdown;
+  float: left;
+  display: none;
+  list-style: none;
+  background-color: @white;
+  border-color: @menuBorderColor;
+  padding: 3px 0;
+  #font > .sans-serif(@baseFontSize, normal, @menuLineHeight);
+  .menu-border;
+  li {
+    position: relative;
+    float: left;
+    clear: both;
+    width: 100%;
+    > a {
+      white-space: nowrap;
+      display: block;
+      padding: 0px 8px;
+    }
+  }
+}
+
+// Dropdown menu hover interaction
+
+.dropdown-menu > li
+{
+  color: @menuInactiveTextColor;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  > a {
+    color: @menuInactiveTextColor;
+    position: relative;
+    &:link,
+    &:visited {
+      &:hover,
+      &:focus {
+        // This ugly section is necessary to override sitewide defaults
+        // for displaying links.
+        text-decoration: none;
+        color: @menuInactiveTextColor;
+      }
+    }
+  }
+  // This is a hack to get Chrome's renderer to kick in
+  // and draw the text properly.
+  -webkit-transform: translate3d(0,0,0);
+}
+
+// This item has its submenu open:
+.dropdown-menu.child-active > li.hover-active,
+// No other item has a submenu open, and we hover:
+.dropdown-menu.none-active > li:hover,
+// The menu does not contain any submenus, and we hover:
+.dropdown-menu.no-submenus > li:hover
+{
+  text-decoration: none;
+  background-color: @menuHighlightColor;
+  border-top: 1px solid @menuHighlightBorderColor;
+  border-bottom: 1px solid @menuHighlightBorderColor;
+
+  > a,
+  > label {
+    text-shadow: 0 -1px 0 @menuHighlightBorderColor;
+    color: @menuActiveTextColor;
+    font-weight: bold;
+    text-decoration: none;
+    // Webkit, when showing bold text, offsets it by a pixel.
+    // Use this as a corrector.
+    -webkit-transform: translateY(-1px);
+  }
+  > div.right-arrow {
+    #popoverArrow > .left(3px,@menuActiveTextColor);
+    position: absolute;
+    right: 6px;
+  }
+  // This is a hack to get Chrome's renderer to kick in
+  // and draw the text properly.
+  -webkit-transform: translate3d(0,0,0);
+}
+
+// Items with submenus aren't themselves links.
+.dropdown-menu > li.has-submenu {
+  cursor: default;
+}
+
+// Subheader separator is non-interactive.
+.dropdown-menu > li.is-subheader,
+.dropdown-menu > li.is-subheader:hover,
+.dropdown-menu > li.is-subheader.hover-active {
+  cursor: default;
+  background-color: transparent;
+  // Don't specify border-top, so it may be defined
+  // by the later has-divider rule.
+  border-bottom: 1px solid transparent;
+
+  > a {
+    color: @menuSubheaderTextColor;
+    text-transform: uppercase;
+    font-weight: inherit;
+    bottom: 0px;
+    text-shadow: none;
+    #font > .sans-serif(@menuSubheaderFontSize,
+                        normal,
+                        @menuSubheaderLineHeight);
+    // Cancel compensation used in regular menu item
+    // highlight (see above).
+    -webkit-transform: translateY(0px);
+  }
+}
+
+// When hover-active is set, open your submenu.
+.dropdown-menu > li.hover-active > ul {
+  display: block;
+}
+
+// For a separator row.
+.dropdown-menu > li.has-divider {
+  border-top: solid 1px @menuBorderColor;
+}

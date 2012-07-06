@@ -1,0 +1,6 @@
+K 13
+svn:externals
+V 87
+static http://appengine-mapreduce.googlecode.com/svn/trunk/python/src/mapreduce/static
+
+END

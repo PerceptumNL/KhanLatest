@@ -1,0 +1,144 @@
+{% extends "page_template.html" %}
+
+{% import 'macros/mailing_lists.html' as mailing_lists %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("bootstrap-grids") }}
+{% endblock pagecss %}
+
+{% block pagesubmenu %}
+<span class="breadcrumbs_nav">
+    <a href="/coach/resources" id="teacher-resources" class="selected">Teacher Resources<span style="font-size:8px;color:orange;"> NEW</span>
+    <a href="/students" id="manage-students">Manage Students</a>
+    <a href="/class_profile" id="class-stats">Class Stats</a>
+</span>
+{% endblock pagesubmenu %}
+
+{% block pagecontent %}
+<style type="text/css">
+.container{ margin-top:2em; }
+
+.bigdeal { margin-top:2em; }
+.bigdeal .bigpic {
+    overflow:hidden; height:230px;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    -ms-border-radius:8px;
+    -o-border-radius:8px;
+    border-radius:8px;
+}
+.bigdeal .bigpic img{ width:100%; }
+.bigdeal h2 {font-family: museosans300, museosans-300, helveticaneue-light, "helvetica neue", sans-serif; font-size:28px; color: rgb(137, 185, 8); }
+.bigdeal a.simple-button.action-gradient.green { font-size:18px; font-family: museosans300, museosans-300, helveticaneue-light, "helvetica neue", sans-serif; }
+.smallpic { height:120px; border-bottom:2px solid #e3f1f9; margin-bottom:1em; }
+.extra-resources { margin-top:1em; }
+.extra-resources h3, .extra-resources h3 a:visited { color:rgb(0,89,135); }
+.extra-resources > div:hover  h3 a { color: rgb(137, 185, 8); text-decoration:none; }
+.extra-resources h3 small {color: #900; position:relative; font-size:9px; top:-4px; text-transform:uppercase; letter-spacing:1px;}
+.extra-resources p{ font-size:12px; line-height:1.5em; }
+.middle.row {margin-top: 3em; position:relative; }
+.middle.row hr {
+    height:0; width:100%; 
+    border-bottom: 2px solid #d0e39c; position:absolute; }
+.middle.row h4 {
+    text-transform:uppercase; letter-spacing: 4px; 
+    width:auto; text-align:center; color:#444;
+    font-family: museosans300, museosans-300, helveticaneue-light, "helvetica neue", sans-serif; 
+    font-size:12px;
+    margin-top:.7em; position:relative;
+}
+.middle.row h4 span {background-color:white; padding:0 15px; }
+.keepintouch input{ width: 95%; }
+.keepintouch input.simple-input { width:92%; padding-left:3%; margin-bottom:1em; }
+</style>
+
+<article id="coach-splash">
+
+<div class="container">
+    {#
+    <div class="login row">
+        <span class="span1">Login</span>
+        <span class="fb span2">with facebook</span>
+        <span class="goog span2">with google</span>
+    </div>
+    #}
+
+    <div class="bigdeal row">
+
+        <div class="bigpic span5">
+            <a href="/toolkit/">
+            <img src="/images/teacher-classroom.png" alt="a teacher interacting with students">
+            </a>
+        </div>
+        <div class="bigcallout span6 offset1">
+            <h2>Supercharge your classroom</h2>
+            <p>Visit our teacher toolkit and see the incredible things other teachers and coaches are doing with the Khan Academy right now.
+            <p>We're committed to providing top-tier resources to our coaches. Free. Always. Comprehensive data and meaningful analytics are only the beginning.</p>
+            <p><a href="/toolkit/" class="simple-button green">Explore the toolkit</a></p>
+        </div>
+    </div>
+
+    <div class="middle row">
+        <hr>
+        <h4><span>Plus, all coaches get access to</span></h4>
+    </div>
+
+    <div class="extra-resources row">
+        <div class="span3">
+            <div class="smallpic">
+                <a href="/toolkit/using-data">
+                    <img src="/images/toolkit-01.png">
+                </a>
+            </div>
+            <h3><a href="/toolkit/using-data">Rich Data</a></h3>
+            <p>Get the whole picture: from how your class is doing on <em>linear equations</em> to Brian's progress on <em>Adding Fractions</em>.
+        </div>
+
+        <div class="span3">
+            <div class="smallpic">
+                <a href="http://khanacademy.desk.com">
+                    <img src="/images/toolkit-02.png">
+                </a>
+            </div>
+            <h3><a href="http://khanacademy.desk.com">Your Questions</a></h3>
+            <p>Find and contribute answers to common questions like: <a href="http://khanacademy.desk.com/customer/portal/articles/414175">What is KA's vision for classroom learning?</a> <a href="http://khanacademy.desk.com/customer/portal/articles/329324-how-do-i-set-up-a-new-user-account-">How do I login to KA?</a> Or, <a href="http://khanacademy.desk.com/customer/portal/questions/new">add your own question</a>.
+        </div>
+
+        <div class="span3">
+            <div class="smallpic">
+                <a href="/commoncore">
+                    <img src="/images/toolkit-03.png">
+                </a>
+            </div>
+            <h3><a href="/commoncore">Common Core</a> <small>alpha</small></h3>
+            <p>View KA videos and exercises that map to specific Common Core standards. <!-- TODO(Matt): Nice to have - Insert "We're in the early innings here - suggestions welcome." and form to allow CC suggestion --></a>
+        </div>
+        <div class="span3">
+            <div class="smallpic">
+                <a href="javascript:$('#mailform').focus();">
+                    <img src="/images/toolkit-04.png">
+                </a>
+            </div>
+            <h3><a href="javascript:$('#mailform').focus();">Keep In Touch</a></h3>
+            <div class="mailing_list_container" id="mailing_list_container_2">
+                <form name="coach_mailing_list_form" class="keepintouch">
+                    <input type="email" name="email" class="email simple-input ui-corner-all"
+                     id="mailform" placeholder="Enter your email"
+                     {% if logged_in %} value="{{ coach_email }}" {% endif %} />
+                    <input type="submit" value="Register your class" class="simple-button">
+                </form>
+            </div>
+            <p>Sign up for our coach mailing list and keep up to date with new developments.</p>
+            <script>
+                if (typeof MailingList !== "undefined") {
+                    MailingList.init("2");
+                }
+            </script>
+        </div>
+
+    </div>
+
+</article>
+</div>
+
+{% endblock pagecontent %}

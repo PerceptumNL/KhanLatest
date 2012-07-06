@@ -1,0 +1,29 @@
+<div class="story {{#if disabled}}disabled{{else}}rotate{{/if}}">
+    <div class="envelope envelope-background">
+        {{#unless empty}}
+        <div class="content-teaser">
+            {{#if youtube_id}}
+            <div class="youtube-thumbnail-container">
+                <img class="youtube-thumbnail" src="http://img.youtube.com/vi/{{ youtube_id }}/hqdefault.jpg">
+                <div class="youtube-thumbnail-title">{{ youtube_title }}</div>
+                <img class="youtube-thumbnail-play" src="/images/stories/youtube_play.png">
+            </div>
+            {{else}}
+            &ldquo;{{{ teaser_html }}}&hellip;&rdquo;
+            {{/if}}
+        </div>
+        {{/unless}}
+        <div class="envelope envelope-foreground">&nbsp;</div>
+    </div>
+</div>
+
+<div class="slit-overlay">&nbsp;</div>
+<div class="slit-overlay-background">&nbsp;</div>
+
+{{#if author }}
+<div class="tape envelope-under">{{ author }}<br>{{ date }}</div>
+{{else}}
+<div class="envelope-under">
+    <a href="#" class="btn large primary share-story-btn-bottom">Share your story</a>
+</div>
+{{/if}}

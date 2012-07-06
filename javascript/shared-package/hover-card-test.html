@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<!-- Unit tests and demos for hover card -->
+<html>
+<head>
+<script src="../testbase.js"></script>
+<script src="jquery.timeago.js"></script>
+<script src="handlebars-extras.js"></script>
+<script src="profile-model.js"></script>
+<script src="hover-card-view.js"></script>
+<link rel="stylesheet" type="text/css" href="../../stylesheets/shared-package/default.css"></link>
+<script>
+var SAMPLE_PROFILE_DATA = {
+    "avatarName": "green_leaf",
+    "avatarSrc": "../../images/avatars/leaf-green.png",
+    "dateJoined": "2011-11-16T23:55:12Z",
+    "nickname": "Curious George",
+    "points": 10000,
+    "publicBadges": [{
+        "badgeCategory": 0,
+        "description": "Picking Up Steam",
+        "hideContext": false,
+        "iconSrc": "/images/badges/meteorite-small.png",
+        "icons": {
+            "compact": "/images/badges/meteorite-60x60.png",
+            "medium": "/images/badges/meteorite-medium.png",
+            "small": "/images/badges/meteorite-small.png"
+        },
+        "isOwned": true,
+        "name": "nicetimedproblembadge",
+        "points": 100,
+        "safeExtendedDescription": "Quickly & correctly answer 5 skill problems in a row (time limit depends on skill difficulty)"
+    },
+    {
+        "badgeCategory": 0,
+        "description": "Just Getting Started",
+        "hideContext": false,
+        "iconSrc": "/images/badges/meteorite-small.png",
+        "icons": {
+            "compact": "/images/badges/meteorite-60x60.png",
+            "medium": "/images/badges/meteorite-medium.png",
+            "small": "/images/badges/meteorite-small.png"
+        },
+        "isOwned": true,
+        "name": "gettingstartedbadge",
+        "points": 100,
+        "safeExtendedDescription": "Achieve proficiency in any 3 skills"
+    },
+    {
+        "badgeCategory": 3,
+        "canBecomeGoal": false,
+        "description": "Full-Timer",
+        "hideContext": false,
+        "iconSrc": "/images/badges/sun-small.png",
+        "icons": {
+            "compact": "/images/badges/sun-60x60.png",
+            "medium": "/images/badges/sun-medium.png",
+            "small": "/images/badges/sun-small.png"
+        },
+        "isOwned": true,
+        "name": "FullTimer",
+        "points": 0,
+        "safeExtendedDescription": "Become a full-time member of the Khan Academy team"
+    }]
+};
+
+KA_TEST.loadTemplates([
+    "shared.hover-card"
+    ], function() {
+        function addHoverCard(view) {
+            var jel = $("<div>").addClass("user-info-container")
+                        .addClass("qtip")
+                        .html(view.render().el)
+                        .css("margin", 20);
+
+            var jelClear = $("<div>").css("clear", "both");
+
+            $("body").append(jel)
+                .append(jelClear);
+        }
+
+        // Loading hover card
+        addHoverCard(new HoverCardView());
+
+        var datas = [ {}, SAMPLE_PROFILE_DATA ];
+        $.each(datas, function(index, data) {
+            var model = new ProfileModel(data),
+                view = new HoverCardView({model: model});
+
+            addHoverCard(view);
+        });
+});
+
+</script>
+</head>
+
+<body></body>
+
+</html>

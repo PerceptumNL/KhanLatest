@@ -1,0 +1,34 @@
+<h2 class="section-headline" style="display:block;">
+{{#if reviewMode}}
+<div class="topic-exercise-badge">
+	<span class="topic-exercise-image">&nbsp;<!-- Review doesn't have a badge image, just a placeholder --></span>
+</div>
+Review
+{{else}}
+    {{#if practiceMode}}
+	<div class="topic-exercise-badge">
+        <span class="topic-exercise-badge">
+            &nbsp;<!-- Practice exercises don't have badge images, just a placeholder -->
+        </span>
+    </div>
+    <span class="practice-exercise-topic-context">Practicing</span> {{practiceExercise.displayName}}
+    <span class="practice-exercise-topic-context">in </span>
+    <span class="practice-exercise-topic-context solid-hover">
+        <img class="topic-exercise-image inline" src="{{topicExerciseBadge.icons.compact}}">
+        <a href=".">{{topic.standaloneTitle}}</a>
+    </span>
+    {{else}}
+    <div class="topic-exercise-badge">
+	    <img class="topic-exercise-image" src="{{topicExerciseBadge.icons.compact}}">
+    </div>
+	{{topic.standaloneTitle}}
+
+    {{/if}}
+{{/if}}
+<div class="streak-transition">
+    <span class="hover-disclosure">What happened to the streak bar?</span>
+    <div class="expl-image vertical-shadow">
+        <img src="/images/power-mode/streak-transition.png?4" />
+    </div>
+</div>
+</h2>

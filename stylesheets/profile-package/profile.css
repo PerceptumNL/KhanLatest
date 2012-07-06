@@ -1,0 +1,1433 @@
+#page_sub_nav {
+    display: none;
+}
+
+#profile-header {
+    font-family: "MuseoSans300",sans-serif;
+    border-bottom: 1px solid #c6d1ad;
+    padding: 4px 20px;
+    margin: 0 -20px;
+}
+
+#profile-header #user-info,
+#profile-header #high-level-stats {
+    display: inline-block;
+}
+#profile-header {
+    position: relative;
+    display: block;
+}
+    #profile-header img {
+        width: 50px;
+        height: 50px;
+        vertical-align: middle;
+        position: relative;
+        top: -4px;
+    }
+
+#profile-header #user-info {
+    position: relative;
+    top: 1px;
+}
+#profile-header #user-info.has-details {
+    top: -3px;
+}
+#profile-header #user-info #name {
+    font-size: 20px;
+}
+#profile-header #user-info #phantom-login {
+    position: relative;
+    top: 7px;
+}
+#profile-header #user-info #phantom-login a {
+    color: #005987;
+    font-size: 20px;
+}
+#profile-header #user-info img {
+    width: 0px;
+    visibility: hidden;
+}
+#profile-header #user-info #simple-student-info {
+    color: #666;
+    font-size: 11px;
+    width: 480px;
+}
+
+#profile-header #high-level-stats {
+    float: right;
+    position: relative;
+    top: -7px;
+}
+    #profile-header #high-level-stats > span {
+        display: inline-block;
+    }
+    #profile-header #high-level-stats .count {
+        display: inline-block;
+    }
+
+.profile-sheet-title {
+    display: none;
+    background: #EEE;
+    margin: 0 -19px 0 -20px;
+    padding: 5px 20px;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+}
+.profile-sheet-title > .page-title {
+    text-transform: capitalize;
+}
+#profile-header #high-level-stats #videos-watched,
+#profile-header #high-level-stats #exercises-completed,
+#profile-header #high-level-stats #students-coached
+{
+    margin-right: 10px;
+}
+    #profile-header #high-level-stats span > span.count {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 18px;
+        position: relative;
+        top: 10px;
+    }
+    #profile-header #high-level-stats span > span.label {
+        font-size: 11px;
+        font-style: italic;
+        color: #666;
+        font-weight: normal;
+    }
+#profile-header #high-level-stats #energy-points {
+    height: 51px;
+    position: relative;
+    top: 12px;
+}
+    #profile-header #high-level-stats #energy-points .energy-points-badge {
+        display: inline-block;
+        float:none;
+        font-size: 16px;
+        min-width: 90px;
+        padding: 2px 5px 4px;
+    }
+    #profile-header #high-level-stats #energy-points .label {
+        display: inline-block;
+        min-width: 90px;
+        position: relative;
+        top: -1px;
+    }
+
+.legacy-report h2 {
+    color: #444;
+    font-weight: normal;
+    margin: 0;
+    padding: 5px 5px 7px 1px;
+    width: 280px;
+
+    background: transparent url(/images/profile-header-bg.png) no-repeat 0px 100%;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.legacy-report #tab-content-achievements,
+.legacy-report #recent-activity {
+    min-height: 148px;
+}
+
+.legacy .tab-content #vital-statistics {
+    height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+#individual_report .inset-container {
+    border: 1px solid #bbb;
+    background: #f7f7f7;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    -webkit-box-shadow: inset 0 0 2px #ccc;
+    -moz-box-shadow: inset 0 0 2px #ccc;
+    box-shadow: inset 0 0 2px #ccc;
+}
+
+#individual_report #vital-statistics {
+    position: relative;
+    margin-top: 0;
+}
+    /* Only the class profile page uses #stats-nav these days */
+    #individual_report #vital-statistics #stats-nav {
+        width: 280px;
+        float: left;
+        margin: 0px 20px 10px 0;
+    }
+    #individual_report #vital-statistics #stats-nav ul#nav-accordion {
+        padding: 10px 0 0 3px;
+    }
+    #individual_report #vital-statistics #stats-nav ul#nav-accordion .accordion-content {
+        min-width: 250px;
+    }
+    #individual_report #vital-statistics #stats-nav ul#nav-accordion .accordion-content .instructions {
+        font-size: 10px;
+    }
+    #individual_report #vital-statistics #stats-nav ul#nav-accordion .accordion-content .vertical-choice-container {
+        max-height: 300px;
+        margin-top: 5px;
+        padding: 2px 5px 5px 5px;
+        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: 1px solid #CCCCCC;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    #individual_report #vital-statistics #stats-nav ul#nav-accordion .accordion-content ul {
+        padding-left: 15px;
+        list-style: disc outside none;
+    }
+    #individual_report #vital-statistics #stats-nav ul#nav-accordion .accordion-content ul li {
+        margin-bottom: 0;
+    }
+    #individual_report #vital-statistics #stats-nav ul#nav-accordion .accordion-content ul li a,
+    #individual_report #vital-statistics #stats-nav ul#nav-accordion .accordion-content a.highlight-section {
+        font-size: 10px;
+        color: #006699;
+        display: inline;
+        padding: 0;
+        text-decoration: underline;
+        border: 0;
+    }
+    #individual_report #vital-statistics #stats-nav ul#nav-accordion .accordion-content ul li a.selected,
+    #individual_report #vital-statistics #stats-nav ul#nav-accordion .accordion-content a.selected {
+        color: #DD6900;
+        text-decoration: none;
+    }
+    #individual_report #vital-statistics #stats-nav ul > li {
+        margin-bottom: 5px;
+    }
+    #individual_report #vital-statistics #stats-nav ul > li > a {
+        display: block;
+        padding: 7px 5px 5px 25px;
+        font-size: 14px;
+    }
+        #individual_report #vital-statistics #stats-nav ul > li > a.ui-state-default {
+            background: transparent;
+            border: 1px solid transparent;
+        }
+        #individual_report #vital-statistics #stats-nav ul > li > a.ui-state-active,
+        #individual_report #vital-statistics #stats-nav ul > li > a.ui-state-hover {
+            color: #DD6900;
+            border: 1px solid #ccc;
+            background: #f7f7f7;
+            background-image: none;
+        }
+        #individual_report #vital-statistics #stats-nav ul > li > a.graph-sub-link-selected {
+            text-decoration: none;
+            color: #DD6900;
+        }
+    #individual_report #vital-statistics #stats-nav ul > li > p,
+    #individual_report #vital-statistics #stats-nav ul > li > div {
+        color: #333;
+        border: 1px solid #ccc;
+        border-top: none;
+        padding: .2em 1em 1em;
+        font-size: 13px;
+        background: #f7f7f7;
+    }
+    #individual_report #vital-statistics #stats-nav ul > li > p .graph-date-picker,
+    #individual_report #vital-statistics #stats-nav ul > li > p .graph-picker,
+    .accordion-content .graph-options,
+    .graph-options {
+        font-size: 10px;
+        display: block;
+        margin-top: 10px;
+    }
+    #individual_report #vital-statistics #stats-nav ul > li > p .graph-date-picker a.graph-sub-link-selected {
+        text-decoration: none;
+        color: #DD6900;
+    }
+    .tab-content .graph-date-picker {
+        display: inline-block;
+        float: right;
+    }
+    .tab-content .vital-statistics-description,
+    .tab-content .graph-picker {
+        margin: 22px 0 30px 0;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+        font-size: 13px;
+        height: 21px;
+    }
+        .tab-content .graph-picker .new-goal {
+            margin-top: -7px;
+            padding: 0 10px;
+            line-height: 23px;
+            display: inline-block;
+        }
+    .tab-content .graph-options {
+        font-size: 10px;
+        display: inline-block;
+        float:right;
+        margin: 0;
+    }
+    .tab-content .graph-options .progress-legend {
+        padding: 0 4px;
+    }
+    #individual_report #vital-statistics #stats-nav ul > li > p .graph-picker a.graph-sub-link-selected {
+        text-decoration: none;
+        color: #DD6900;
+    }
+    #individual_report #vital-statistics #stats-nav ul > li > p a {
+        margin-top: 10px;
+        text-align: center;
+    }
+    #individual_report #vital-statistics #stats-nav ul > li > p a.simple-button {
+        display: block;
+    }
+    #individual_report #vital-statistics #stats-nav ul > li > .accordion-content .graph-options .progress-legend,
+    .graph-options .progress-legend {
+        display: inline-block;
+        padding: 4px;
+        color: #333;
+        cursor: default;
+        height: auto;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    #individual_report #vital-statistics #stats-nav ul > li > .accordion-content .graph-options .progress-legend.goal-complete {
+        background-color: #3A4759;
+        color: white !important;
+        border-color: #2C3747;
+        border-bottom-color: #13181F;
+        text-shadow: 0 -1px 0 #13181F;
+    }
+    #individual_report #vital-statistics #stats-charts {
+        position: relative;
+        top:0;
+        min-height: 300px;
+        padding-bottom: 20px;
+    }
+    #individual_report #vital-statistics.coach-view #stats-charts {
+        overflow: hidden;
+        overflow-y: auto;
+        height: 400px;
+    }
+    #individual_report #vital-statistics #stats-charts #module-progress .exercise-progress-block {
+        width: 70px;
+        float: left;
+        overflow: hidden;
+        height: auto;
+        padding-left: 0;
+    }
+    #individual_report #vital-statistics #stats-charts #module-progress .exercise-progress-block.transparent {
+        cursor: pointer;
+    }
+    #individual_report #vital-statistics #stats-charts #module-progress .exercise-progress-block .exercise-display-name {
+        text-align: center;
+        font-size: 11px;
+        margin: 10px 4px;
+        display: block;
+    }
+    #individual_report #vital-statistics #stats-charts #module-progress .exercise-progress-block.transparent .exercise-display-name {
+        color: #aaa;
+    }
+    .coach-view #module-progress #table_div, .coach-view #module-progress #firstcol {
+      /*
+      ~~hv svnt dracones~~ breaks ie8 completely (why?)
+      max-height: 725px;
+      */
+    }
+    .lte8 .coach-view #module-progress #table_div, .lte8 .coach-view #module-progress #firstcol {
+    }
+
+#individual_report #achievements {
+}
+    #individual_report #achievements h2 {
+        margin-bottom: 20px;
+    }
+    #individual_report #achievements #badge-container {
+        margin-top: 15px;
+    }
+        #individual_report #achievements #badge-container > div {
+            padding-top: 20px;
+        }
+        #individual_report #achievements #badge-container .badge-description-container {
+            text-align: center;
+            margin: 10px 0;
+            padding: 5px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+            #individual_report #achievements #badge-container .badge-description-container .badge-description-content {
+                text-align: center;
+                font-size: 16px;
+            }
+
+    #individual_report #achievements #achievement-list {
+        margin: 0 0 30px;
+    }
+    #individual_report #achievements #achievement-list .achievement-badge {
+        float: left;
+        width: 30%;
+    }
+    #individual_report #achievements #achievement-list > ul {
+        margin: 0;
+        padding: 0 0 0 2%;
+        list-style: none;
+    }
+    #individual_report #achievements #achievement-list > ul li {
+        display: block;
+        float: left;
+        padding-top: 10px;
+        opacity: 0.5;
+        width: auto;
+        text-align: center;
+        min-width: 16%;
+        margin-left: 0.5%;
+    }
+        #individual_report #achievements #achievement-list > ul li img {
+            /* On iOS, disable the Save popup so that holding an image down makes the gray background */
+            -webkit-touch-callout: none;
+        }
+        #individual_report #achievements #achievement-list > ul li.platinum,
+        #individual_report #achievements #achievement-list > ul li.diamond {
+            margin-top: 10px;
+        }
+        #individual_report #achievements #achievement-list > ul li.gold {
+            margin-top: 20px;
+        }
+        #individual_report #achievements #achievement-list > ul li.silver,
+        #individual_report #achievements #achievement-list > ul li.bronze {
+            margin-top: 30px;
+        }
+        #individual_report #achievements #achievement-list > ul li.owned {
+            opacity: 1;
+        }
+         #individual_report #achievements #achievement-list > ul li:hover {
+            cursor: pointer;
+            opacity: 1;
+         }
+    #individual_report #achievements #achievement-list > ul li div.label {
+        border: 1px solid transparent;
+        color: #555;
+        font-weight: bold;
+        padding: 3px 0;
+        text-shadow: 0 1px 0 #fff;
+        width: 95%;
+
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+        #individual_report #achievements #achievement-list > ul li:hover div.label,
+        #individual_report #achievements #achievement-list > ul li.selected div.label {
+            border: 1px solid #bbb;
+            border-bottom: 1px solid #999;
+            cursor: pointer;
+            background: #ddd;
+            background-image: -webkit-gradient(linear, left top, left bottom,  from(#eee), to(#ccc));
+            background-image: -moz-linear-gradient( top, #eee, #ccc );
+            background-image: -o-linear-gradient( top, #eee, #ccc );
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc');
+
+            -moz-box-shadow: 0 1px 1px #ccc;
+            -webkit-box-shadow: 0 1px 1px #ccc;
+            box-shadow: 0 1px 1px #ccc;
+
+            white-space: nowrap;
+        }
+        #individual_report #achievements #achievement-list > ul li.selected {
+            opacity: 1;
+            position: relative;
+            top:25px;
+            z-index: 5;
+        }
+
+#activity-contents h2 {
+    margin-bottom: 10px;
+}
+.activity-column {
+    width: 530px;
+    float: left;
+    position: relative;
+}
+.mini-stats-column {
+    margin-left: 3%;
+    width: 39%;
+    height: 500px;
+    /* background: #eee; */
+    float: left;
+}
+.activity-list > ul {
+    margin: 0;
+    list-style: none;
+}
+.activity-list > ul > li {
+    font-size: 18px;
+    color: #555;
+    padding: 0px 0px 10px 0px;
+}
+    #recent-activity .simple-button {
+        padding: 0 10px;
+        line-height: 20px;
+    }
+    .ach-text {
+        display: block;
+        float: left;
+        background: #EEE;
+        padding: 10px;
+        border-radius: 5px;
+        position: relative;
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+    .activity-list .skill-bar-container {
+        margin-left: 48px;
+        width: 380px;
+    }
+    .activity-list .skill-bar-container .skill-bar {
+        margin-bottom: 0;
+    }
+    .activity-list .activity-image {
+        float: left;
+        margin-right: 8px;
+        width: 40px;
+        height: 40px;
+        background-color: #ccc;
+        display: inline-block;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .activity-list .activity-badge .activity-image {
+        background: #005987 url(/images/activity-badge-icon-small.png) no-repeat 50% 50%;
+    }
+    .activity-list .activity-exercise .activity-image {
+        background: none;
+    }
+    .activity-list .activity-exercise.proficient .activity-image {
+        background: #005987 url(/images/activity-exercise-icon-proficient-small.png) no-repeat 50% 50%;
+    }
+    .activity-list .activity-goal .activity-image {
+        background: #ccc url(/images/activity-icon-goal-inset-small.png) no-repeat 50% 50%;
+    }
+    .activity-list .activity-goal.completed .activity-image {
+        background: #005987 url(/images/activity-icon-goal-complete-small.png) no-repeat 50% 50%;
+    }
+    .activity-list .activity-video .activity-image {
+        background: #ccc url(/images/activity-video-icon-inset-small.png) no-repeat 50% 50%;
+    }
+    .activity-list .activity-video.completed .activity-image {
+        background: #005987 url(/images/activity-video-icon-complete-small.png) no-repeat 50% 50%;
+    }
+    .activity-list .activity-image img {
+        max-width: 60px;
+        max-height: 60px;
+        vertical-align: middle;
+        position:absolute;
+    }
+    .covering-link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .suggested-activity-controls {
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        font-size: 15px;
+    }
+    .suggested-activity-controls .simple-button {
+        padding: 10px 5px 10px 5px;
+    }
+    .foreground-link {
+        position: relative;
+        z-index: 2;
+    }
+    .ach-text .ellipsis {
+        width:365px;
+        display: inline-block;
+    }
+    .ellipsis .topic-name {
+        font-size: 10px;
+        display: inline-block;
+    }
+    .suggested-activity-controls .foreground-link:hover {
+        text-decoration: none;
+    }
+    .activity-controls {
+        font-size: 75%;
+        margin: 10px 0 -5px 0;
+        padding-top: 5px;
+        border-top: 1px dotted #ddd;
+    }
+    .activity-controls .time {
+        color: #999;
+        font-style: italic;
+    }
+    .description {
+        float: left;
+        width: 420px;
+    }
+a.graph-link {
+    color: #006699;
+}
+
+div.graph-notification {
+    text-align: center;
+    width: 100%;
+    margin-top: 100px;
+    font-size: 13px;
+    color: #333333;
+    position: absolute;
+    z-index: 2;
+}
+
+div.profile-notification {
+    display: none;
+    padding: 20px 0 0 20px; /* should be the same as padding on tab-content */
+    margin: 0 -19px 0 0; /* should be the same right margin as .profile-sheet-title */
+    position: absolute;
+    top: 55px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    color: #333333;
+    background-color: #FFFFFF;
+    opacity: 0.90;
+    filter:alpha(opacity=90);
+    /*
+        Must overlay #achievement-list > ul li.selected at z-index 5
+        and .display-case-cover at z-index 10
+    */
+    z-index: 11;
+}
+
+div.profile-notification.uncover-nav {
+    top: 105px;
+}
+
+div.profile-notification.cover-top {
+    top: 20px;
+    padding-top: 55px;
+}
+
+#activity-loading-placeholder {
+    position: absolute;
+    background: white;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 20; /* must be above all of the recent/suggested activity */
+}
+
+.throbber-progress-bar {
+    width: 400px;
+    height: 22px;
+}
+
+.throbber-progress-bar .ui-progressbar-value {
+    background-image: url('/images/progress-animated.gif');
+}
+
+#recent-activity-progress-bar {
+    margin: 15px 0;
+}
+
+#graph-progress-bar {
+    position: relative;
+    top: 20px;
+    margin: 0 auto;
+}
+
+#highchart-container {
+    width: 100%;
+}
+
+#highchart-container.x-scrollable {
+    height: 395px;
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#graph-content {
+    position: relative;
+}
+
+#individual_report #students-list {
+    margin-top: 44px;
+}
+#individual_report #students-list > h2 {
+    margin-bottom: 18px;
+}
+
+#student-list table td {
+    padding-right: 10px;
+    margin: 0;
+}
+
+#individual_report #vital-statistics #stats-charts.coach-view {
+  height:auto !important;
+}
+#individual_report #vital-statistics.coach-view {
+  /*used to have a min-height here, now clear the floating accordion*/
+}
+
+#current-goals-list input.goal-title {
+    min-width: 450px;
+}
+
+.coach-option-block {
+    display: block;
+    margin: 3px;
+}
+.coach-filter-block {
+    display: block;
+}
+
+
+
+#stats-filters { position:relative; min-width:680px; z-index:10; margin-top: 18px;}
+#stats-filters .filter{ display:none; }
+
+#stats-filters a.graph-link{ display:none; }
+
+#stats-filters .filter-block{ display:inline-block; vertical-align:top; margin-right:24px; }
+
+#stats-filters .coach-filter-block {display:inline; margin-right:1em;}
+
+#stats-filters p {font-size:10px; margin: 0; display:inline-block; }
+#stats-filters h3 {
+  font-family: "MuseoSans300"; font-size:18px;
+  margin-right:.5em;
+  display:inline-block;
+}
+#stats-filters h3 small{ font-size:14px; }
+#stats-filters #targetDatepicker{
+  display:inline-block;
+}
+
+.user-info-container .user-info {
+  padding: 10px;
+  position: relative;
+  background: #eee; /* same as visibility-toggler */
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.user-info-container .avatar-pic-container {
+  display: inline-block;
+  position: relative;
+}
+
+.user-info-container .avatar-pic-container.editable {
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.user-info-container .avatar-pic-container.editable:hover {
+  background-color: #d6e0ba;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #999;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+
+  -webkit-box-shadow: #ccc 0px 1px 3px 0px;
+     -moz-box-shadow: #ccc 0px 1px 3px 0px;
+          box-shadow: #ccc 0px 1px 3px 0px;
+}
+
+.user-info-container .avatar-pic {
+  vertical-align: top;
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.lte8 .user-card {
+    min-width: 970px;
+}
+.lte8 .sticker-book {
+    width: 540px;
+    float: none;
+    margin-left: 370px;
+}
+.sticker-book {
+    position: relative;
+    padding: 10px;
+    margin: 10px 10px 10px 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 0 5px #bbb;
+    float: right;
+}
+
+.profile-navigation {
+    position: absolute;
+    width: 150px; /* must be the same as left margin of .tab-content */
+}
+.profile-navigation ul {
+    /* force a position-context and background color so that it can be
+     * highlighted in the out-of-the-box experience. */
+    background: white;
+    margin-top: 20px;
+    position: relative;
+}
+.profile-navigation .zero-top-margin {
+    /* The hierarchy was restructured to support the presentation in the
+     * tutorial. Consequently, this override is used to keep the
+     * multiple lists smushed together appearing like a single one.
+     */
+    margin-top: 0;
+}
+.profile-navigation .inactive {
+    color: #888;
+}
+.profile-navigation li {
+    margin-bottom: 1px;
+}
+.profile-navigation .link-section-header {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.profile-navigation ul.second-tier {
+    margin-top: 0;
+    padding-left: 5px;
+}
+.profile-navigation .tab-link {
+    display: block;
+    color:#555;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-right: none;
+
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+}
+.profile-navigation .tab-link:hover {
+    background-color: #eee;
+    text-decoration: none;
+}
+.profile-navigation .tab-link.active-tab {
+    font-weight: bold;
+    color: #333;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-right: none;
+}
+.profile-navigation .tab-link.has-icon {
+    padding-left: 24px;
+}
+a[rel="vital-statistics activity"] {
+    background: transparent url(/images/profile-icons/chart.png) no-repeat 4px 50%;
+}
+a[rel="vital-statistics focus"] {
+    background: transparent url(/images/profile-icons/chart-pie-separate.png) no-repeat 4px 50%;
+}
+a[rel="vital-statistics skill-progress"] {
+    background: transparent url(/images/profile-icons/color-swatch.png) no-repeat 4px 50%;
+}
+a[rel="vital-statistics skill-progress-over-time"] {
+    background: transparent url(/images/profile-icons/chart-up.png) no-repeat 4px 50%;
+}
+a[rel="achievements"] {
+    background: transparent url(/images/profile-icons/shield.png) no-repeat 4px 50%;
+}
+a[rel="goals"] {
+    background: transparent url(/images/profile-icons/tick-circle.png) no-repeat 4px 50%;
+}
+a[rel="community explorations"] {
+    background: transparent url(/images/profile-icons/explorations.png) no-repeat 4px 50%;
+}
+a[rel="community coaches"] {
+    background: transparent url(/images/profile-icons/user-silhouette.png) no-repeat 4px 50%;
+}
+a[rel="community discussion"] {
+    background: transparent url(/images/profile-icons/discussions.png) no-repeat 4px 50%;
+}
+a[rel="community notifications"] {
+    background: transparent url(/images/profile-icons/discussions.png) no-repeat 4px 50%;
+}
+li.profile-tab {
+    margin-bottom: 10px;
+}
+.profile-tab-avatar {
+    width: 24px;
+    height: 24px;
+    margin: 5px;
+    vertical-align: middle;
+}
+.tab-content {
+    margin-left: 150px; /* must be the same as width of profile-navigation */
+    padding: 20px 0 20px 20px;
+    min-height: 570px;
+    border-left: 1px solid #ccc;
+    position: relative;
+}
+
+.user-deets {
+    float:left;
+    margin-left: 10px;
+    max-width: 230px;
+}
+.nickname-container.fully-editable {
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 0px 5px 0px 5px;
+  margin-left: -5px;
+}
+.nickname-container.fully-editable:hover {
+  background-color: #d6e0ba;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #999;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+
+  -webkit-box-shadow: #ccc 0px 1px 3px 0px;
+     -moz-box-shadow: #ccc 0px 1px 3px 0px;
+          box-shadow: #ccc 0px 1px 3px 0px;
+}
+.user-deets .nickname {
+    font-size: 150%;
+    padding: 0;
+    margin: 0;
+}
+.user-deets .add-remove-coach {
+    display: inline;
+}
+.user-deets .basic-stats {
+    min-width: 180px;
+    margin-top: 10px;
+}
+
+.basic-user-info {
+    /* force a position-context and background color so that it can be
+     * highlighted in the out-of-the-box experience. */
+    background: #eee;
+    position: relative;
+    padding: 10px;
+}
+
+.basic-stats .simple-stat {
+    float: left;
+    text-align: left;
+    margin-right: 9px;
+}
+.simple-stat .summary-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 2px 0 1px;
+    background: #005987;
+    border-radius: 5px;
+    padding: 2px 8px;
+}
+
+.simple-stat .summary-icon.star {
+    width: 14px;
+    height: 14px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.simple-stat .stat-divider {
+    font-size: 150%;
+    vertical-align: middle;
+}
+
+#username-picker-container {
+    position: fixed;
+    /* set the point on which top and left operate to the middle top edge*/
+    width: 500px; /* this is redundant but here for clarity */
+    margin: 0 0 0 -250px;
+    top: 60px;
+    left: 50%;
+}
+#username-picker-container .notification,
+#tab-content-coaches .notification {
+    padding: 5px 5px 5px 10px;
+    margin: -10px 0 15px 0;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#tab-content-coaches .notification {
+    margin: 10px 0 15px 0;
+}
+#username-picker-container .notification.info {
+    background-color: #DDF4FB;
+    border-color: #C6EDF9;
+}
+#username-picker-container .notification.error,
+.coaches-section .notification.error {
+    background-color: #FDDFDE;
+    border-color: #FBC7C6;
+}
+
+#username-picker-container .modal-header {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+#username-picker-container .modal-body {
+    margin-bottom: 0;
+}
+.username-picker {
+    margin: 0 auto;
+}
+.username-picker .row:first-child {
+    margin: 0;
+}
+.username-picker .row {
+    position: relative;
+    margin: 20px 0px 0px 0px;
+}
+.username-picker .labels{
+    position: absolute;
+    width: 80px;
+    text-align: right;
+}
+.username-picker .inputs {
+    margin-left: 90px;
+}
+.username-picker input,
+.username-picker label{
+    font-size: 15px;
+    font-family: Helvetica Nueue, Helvetica, sans-serif;
+}
+.username-picker .inputs input {
+    width: 250px;
+    margin: 0 5px 0 0;
+}
+.username-picker .input-description {
+    font-size: 12px;
+    color: #888;
+    margin: 5px 0 0 0;
+    line-height: 15px;
+    word-wrap: break-word;
+}
+.username-picker .example-username {
+    color: #678D00;
+}
+.sidenote {
+    background-repeat: no-repeat;
+    background-position: 0 30%;
+    padding-left: 13px;
+}
+.sidenote.success {
+    background-image:url(/images/video-indicator-complete.png);
+}
+.sidenote.error {
+    background-image:url(/images/cross.png);
+}
+
+.avatar-picker.modal {
+    width: 700px;
+    left: 50%;
+    margin: 0 0 0 -300px;
+    position: absolute;
+}
+.avatar-picker .modal-body {
+    margin-bottom: 0;
+}
+.avatar-picker .avatar {
+    display: block;
+    float: left;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    width: 33%;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.avatar-picker .avatar.hover, .avatar-picker .avatar.selected {
+    border: 1px solid #bbb;
+    background: #eee;
+}
+
+.avatar-picker .avatar.locked {
+    opacity: 0.4;
+    filter:alpha(opacity=40);
+    cursor: auto;
+}
+
+.avatar-picker .avatar.locked.hover {
+    border: 1px solid transparent;
+}
+
+.avatar-picker .category-section {
+    border: 5px solid #BBB;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    -webkit-box-shadow: inset 0 0 3px 1px #ccc;
+    -moz-box-shadow: inset 0 0 3px 1px #ccc;
+    box-shadow: inset 0 0 3px 1px #ccc;
+}
+
+.avatar-picker .category-title {
+    font-size: 150%;
+    line-height: 150%;
+}
+
+.visibility-toggler {
+    padding: 0 10px 0 28px;
+
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom-color: #aaa;
+
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+
+    box-shadow: 0 2px 2px #ddd;
+
+    float: right;
+    display: block;
+    width: 87px;
+    margin-right: 34px;
+    position: relative;
+    top: -8px;
+}
+.visibility-toggler.public {
+    background: #eee url(/images/unlocked.png) no-repeat 8px 50%;
+}
+.visibility-toggler.private {
+    background: #eee url(/images/locked.png) no-repeat 8px 50%;
+}
+
+#tab-content-coaches {
+    margin-top: 22px;
+    min-width: 835px;
+}
+#tab-content-coaches .coaches-section {
+    margin-bottom: 22px;
+}
+#tab-content-coaches #requests {
+    display: none;
+}
+#tab-content-coaches #coach-email{
+    width: 200px;
+}
+.coach-row {
+    padding: 10px;
+    border-top: 1px solid #EFEFEF;
+}
+.coach-row span.email {
+    display: inline-block;
+    width: 260px;
+    word-wrap: break-word;
+}
+.coach-row span.email .pending {
+    color: #BBB;
+}
+.coach-row .controls {
+    float: right;
+}
+.user-profile-controls {
+    margin-top: 10px;
+}
+.user-profile-controls .dropdown-toggle .caret {
+    margin-top: 8px;
+}
+.user-profile-controls .dropdown-toggle {
+    border: 1px solid #CCC;
+    border-bottom: 1px solid #BBB;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    line-height: 22px;
+    padding: 5px 10px;
+    font-size: 13px;
+}
+.user-profile-controls .dropdown-toggle:hover {
+    background-color: #89B908;
+    color: #FFF;
+    border: 1px solid #76A005;
+}
+.user-profile-controls .dropdown-menu {
+    width: 153px;
+}
+
+/* Discussions Tabs */
+
+.discussion-tab {
+    margin-top: 20px;
+}
+
+.discussion-tab .deleted {
+    text-decoration: line-through;
+}
+
+.discussion-placeholder {
+    margin-top: 40px;
+    position: absolute;
+    width: 100%;
+}
+
+.discussion-placeholder .throbber-progress-bar {
+    margin: 0 auto;
+}
+
+.discussion-light {
+    color: #888;
+}
+
+.discussion-group-header {
+    border-bottom: 1px solid #ccc;
+    display: block;
+    padding-bottom: 2px;
+    margin-bottom: 12px;
+}
+
+.discussion-group-header a {
+    color: #000;
+}
+
+.discussion-group-header a:hover {
+    text-decoration: none;
+}
+
+.discussion-sort-links {
+    color: #eee;
+    float: right;
+    font-size: 13px;
+    font-family: Helvetica, Arial;
+    margin-top: 3px;
+}
+
+.discussion-sort-links a {
+    color: #888;
+    padding-left: 10px;
+}
+
+.discussion-sort-links a.selected {
+    color: #000;
+    cursor: default;
+}
+
+.discussion-sort-links a.selected:hover {
+    text-decoration: none;
+}
+
+.discussion-block {
+    min-height: 200px;
+    margin-bottom: 40px;
+    float: left;
+    width: 100%;
+}
+
+.discussion-message {
+    display: none;
+    font-size: 13px;
+}
+
+.discussion-message-body {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+a.discussion-message-item {
+    clear: both;
+    display: block;
+    float: left;
+    font-style: italic;
+}
+
+#discussion-summary {
+    display: none;
+}
+
+#discussion-left,
+.discussion-tab-content,
+.discussion-tab-content .discussion-placeholder {
+    float: left;
+    width: 55%;
+    min-width: 500px;
+}
+
+#discussion-right {
+    float: right;
+    width: 33%;
+    /** TODO(ankit): fix this hack **/
+    margin-top: 3px;
+}
+
+.discussion-item {
+    font-size: 13px;
+    margin: 0 -10px;
+    padding: 10px;
+    position: relative;
+}
+
+.discussion-item:hover {
+    /** !important is required to override inline CSS added
+        by Profile.highlight in profile.js **/
+    background-color: #ebf1df !important;
+    color: #000;
+    text-decoration: none;
+}
+
+.discussion-item a:not(.covering-link) {
+    position: relative;
+    z-index: 2;
+}
+
+.lte8 .discussion-item .covering-link {
+    background-color: #000;
+    filter:alpha(opacity=0);
+}
+
+.discussion-count {
+    color: #aaa;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.discussion-title {
+    display: inline;
+    word-wrap: break-word;
+}
+
+.discussion-indent {
+    margin-left: 15px;
+    word-wrap: break-word;
+}
+
+.discussion-meta {
+    color: #888;
+    display: block;
+    font-size: 11px;
+    text-align: right;
+}
+
+.discussion-submeta {
+    font-style: italic;
+}
+
+.discussion-meta-separator {
+    color: #ddd;
+    padding: 0 2px;
+}
+
+.discussion-meta-faded {
+    color: #bfbfbf;
+}
+
+.discussion-item:hover .discussion-meta {
+    color: #808080;
+}
+
+.discussion-item:hover .discussion-meta-faded {
+    color: #b1b3ad;
+}
+
+a.more-button {
+    clear: both;
+    display: none;
+    float: left;
+    margin-top: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+}
+
+/* Discussion Achievements */
+
+.discussion-award {
+    display: block;
+    padding: 10px 5px;
+    margin-left: -10px;
+}
+
+a.discussion-award:hover {
+    background-color: #ebf1df;
+    text-decoration: none;
+}
+
+.discussion-award-icon {
+    display: block;
+    float: left;
+    width: 45px;
+}
+
+.discussion-award-text {
+    margin-left: 45px;
+}
+
+.discussion-award-name {
+    color: #000;
+    font-size: 13px;
+}
+
+.discussion-award-description {
+    color: #888;
+    font-size: 11px;
+    font-style: italic;
+    line-height: 18px;
+}
+
+.discussion-award-small-icons img {
+    margin-bottom: -3px;
+    padding-right: 2px;
+    height: 15px;
+    width: 15px;
+    /* show the tooltip on hover */
+    position: relative;
+    z-index: 2;
+}
+
+.discussion-award-count {
+    color: #888;
+    padding-left: 2px;
+}
+
+/* Discussion Statistics */
+
+.discussion-stat {
+    float: left;
+    width: 50%;
+}
+
+/* Notifications */
+
+.notification-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.notification-item {
+    margin-bottom: 2px;
+}
+
+/* Settings */
+
+.settings-iframe {
+    height: 400px;
+    width: 640px;
+}

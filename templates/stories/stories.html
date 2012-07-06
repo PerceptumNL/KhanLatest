@@ -1,0 +1,117 @@
+{% extends "stories/template.html" %}
+
+{% import 'macros/mailing_lists.html' as mailing_lists %}
+
+{% block headercontent %}
+
+<div class="row">
+    <div class="span11 left-header-container">
+        <h1><a href="/">Khan Academy</a> <br>Stories</h1>
+        <h2 class="header-explanation">These stories inspire us.<br>We decided to share them with you, unedited.</h2>
+        <h2 class="header-share"><a href="#" class="btn large primary share-story-btn">Share your story</a>
+
+            <span class="share-container">
+                <iframe allowtransparency="true" frameborder="0" scrolling="no" src="//platform.twitter.com/widgets/tweet_button.html?count=none&amp;related=khanacademy&amp;text=Real%2C%20unedited%20stories%20from%20Khan%20Academy%20users" style="width:56px; height:20px;"></iframe>
+
+                <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.khanacademy.org%2Fstories&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font=verdana&amp;height=21&amp;appId=160249463991765" scrolling="no" frameborder="0" style="border:none; position: relative; top: 1px; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
+            </span>
+        
+        </h2>
+    </div>
+    <div class="span5">
+        <img class="big-tree" src="/images/large-tree-transparent.png">
+    </div>
+</div>
+
+{% endblock headercontent %}
+
+{% block submitcontent %}
+
+<div class="row">
+    <div class="span16 form-stacked">
+
+        <div class="input">
+            <label for="story">Your story:</label>
+            <textarea id="story"></textarea>
+        </div>
+		
+        <div class="input">
+            <label for="story">Your YouTube video link:</label>
+            <input id="video" placeholder="(optional - we love videos!)"/>
+        </div>
+
+        <div class="input">
+            <label for="story">Your name:</label>
+            <input id="name" placeholder="(optional)"/>
+        </div>
+
+ 		<div class="input">
+            <label for="story">Your email address:</label>
+            <input id="email" placeholder="(optional - will not be shared)"/>
+        </div>
+
+        <div class="input">
+        <ul class="inputs-list">
+            <li>
+                <label>
+                    <input type="radio" checked name="shareAllow" value="0">
+                    <span>My story is private, this is for the Khan Academy team only</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" name="shareAllow" id="shareAllow" value="1">
+                    <span>Khan Academy can share my story with the world</span>
+                </label>
+            </li>
+        </ul>
+        </div>
+       
+
+
+
+
+        <div class="input">
+            <a href="#" class="btn primary submit-story-btn">Send us your story</a>
+        </div>
+    </div>
+</div>
+
+{% endblock submitcontent %}
+
+{% block pagecontent %}
+
+<div id="stories"></div>
+
+{% endblock pagecontent %}
+
+{% block bottompagescript %}
+
+<script>
+    Stories.render({
+        target: "#stories",
+        content: [
+            {% for story in stories %}
+            {
+                {% if story.youtube_id %}
+                "youtube_id": "{{ story.youtube_id }}",
+                "youtube_title": "{{ story.youtube_title }}",
+                {% else %}
+                "teaser_html": "{{ story.teaser|strip|escapejs|linebreaksbr_js }}",
+                "content_html": "{{ story.content|strip|escapejs|linebreaksbr_js }}",
+                {% endif %}
+                "date": "{{ story.date|strip|escapejs }}",
+                "author": "{{ story.author|strip|escapejs }}",
+                "name": "{{ story.name|strip|escapejs }}",
+            },
+            {% endfor %}
+            {
+                "empty": true,
+                "disabled": true,
+                "envelope": "envelope-1"
+            }
+        ]
+    });
+</script>
+
+{% endblock bottompagescript %}

@@ -1,0 +1,43 @@
+<div id="modal-story" class="modal fade hide">
+
+    <div class="modal-header">
+        <a href="#" class="close-button close">x</a>
+        <h3>
+            <span class="tape">From {{ author }}, {{ date }}</span>
+        
+            <span class="share-container">
+                <iframe allowtransparency="true" frameborder="0" scrolling="no" src="//platform.twitter.com/widgets/tweet_button.html?count=none&amp;related=khanacademy&amp;text=Read%20this%20story%20from%20a%20Khan%20Academy%20user" style="width:56px; height:20px;"></iframe>
+
+                <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.khanacademy.org%2Fstories%2F{{name}}&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=21&amp;appId=160249463991765" scrolling="no" frameborder="0" style="border:none; position:relative; top:1px; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+            </span>
+
+        </h3>
+    </div>
+
+    <div class="modal-body">
+        {{#if youtube_id }}
+        <iframe width="100%" height="380" src="http://www.youtube.com/embed/{{youtube_id}}?rel=0" frameborder="0" allowfullscreen></iframe>
+        {{else}}
+        {{{ content_html }}}
+        {{/if}}
+    </div>
+
+    <div class="modal-footer">
+
+        <div class="row">
+            <div class="span4">
+                <button class="btn prev-btn {{#unless prev_story}}disabled{{/unless}}">&larr; Previous</button>
+            </div>
+
+            <div class="span-middle center">
+                &nbsp;
+            </div>
+
+            <div class="span4 right">
+                <button class="btn next-btn {{#unless next_story}}disabled{{/unless}}">Next &rarr;</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

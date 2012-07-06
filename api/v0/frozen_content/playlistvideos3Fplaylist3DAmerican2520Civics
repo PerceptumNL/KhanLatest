@@ -1,0 +1,182 @@
+[
+    {
+        "next_video": "z_QeYCg4yJ8", 
+        "video_position": 1, 
+        "description": "How we elect our President in the United States", 
+        "title": "Electoral College", 
+        "views": 52253, 
+        "related_videos": [
+            "z_QeYCg4yJ8"
+        ], 
+        "playlist_titles": [
+            "American Civics", 
+            "New and Noteworthy"
+        ], 
+        "duration": 670, 
+        "ka_url": "http://www.khanacademy.org/video/electoral-college?playlist=American+Civics", 
+        "youtube_id": "oTbvYGH_Hiw", 
+        "keywords": "politics, electoral, college", 
+        "date_added": "2011-09-02 10:02:34", 
+        "youtube_url": "http://www.youtube.com/watch?v=oTbvYGH_Hiw&feature=youtube_gdata_player", 
+        "prev_video": "", 
+        "readable_id": "electoral-college"
+    }, 
+    {
+        "next_video": "-05OfTp6ZEE", 
+        "video_position": 2, 
+        "description": "How states choose their delegates for the national party conventions (under CC-BY-SA license)", 
+        "title": "Primaries and Caucuses", 
+        "views": 23312, 
+        "related_videos": [
+            "oTbvYGH_Hiw", 
+            "-05OfTp6ZEE"
+        ], 
+        "playlist_titles": [
+            "American Civics", 
+            "New and Noteworthy"
+        ], 
+        "duration": 493, 
+        "ka_url": "http://www.khanacademy.org/video/primaries-and-caucuses?playlist=American+Civics", 
+        "youtube_id": "z_QeYCg4yJ8", 
+        "keywords": "primary, caucus, politics", 
+        "date_added": "2011-09-02 10:02:34", 
+        "youtube_url": "http://www.youtube.com/watch?v=z_QeYCg4yJ8&feature=youtube_gdata_player", 
+        "prev_video": "oTbvYGH_Hiw", 
+        "readable_id": "primaries-and-caucuses"
+    }, 
+    {
+        "next_video": "LOiw5aBrm4Y", 
+        "video_position": 3, 
+        "description": "Basic of the deficit, debt and debt ceiling", 
+        "title": "Deficit and Debt Ceiling", 
+        "views": 56836, 
+        "related_videos": [
+            "z_QeYCg4yJ8", 
+            "LOiw5aBrm4Y"
+        ], 
+        "playlist_titles": [
+            "American Civics", 
+            "New and Noteworthy"
+        ], 
+        "duration": 597, 
+        "ka_url": "http://www.khanacademy.org/video/deficit-and-debt-ceiling?playlist=American+Civics", 
+        "youtube_id": "-05OfTp6ZEE", 
+        "keywords": "debt, ceiling, finance, deficit, economics", 
+        "date_added": "2011-09-02 10:02:34", 
+        "youtube_url": "http://www.youtube.com/watch?v=-05OfTp6ZEE&feature=youtube_gdata_player", 
+        "prev_video": "z_QeYCg4yJ8", 
+        "readable_id": "deficit-and-debt-ceiling"
+    }, 
+    {
+        "next_video": "gLHUCUv1e5Y", 
+        "video_position": 4, 
+        "description": "Difference between debt and operating costs.  Seeing how large obligations are for social security and medicare", 
+        "title": "Government's Financial Condition", 
+        "views": 27808, 
+        "related_videos": [
+            "-05OfTp6ZEE", 
+            "gLHUCUv1e5Y"
+        ], 
+        "playlist_titles": [
+            "American Civics"
+        ], 
+        "duration": 632, 
+        "ka_url": "http://www.khanacademy.org/video/government-s-financial-condition?playlist=American+Civics", 
+        "youtube_id": "LOiw5aBrm4Y", 
+        "keywords": "finance, economics, budget, deficit, debt", 
+        "date_added": "2011-09-02 10:02:34", 
+        "youtube_url": "http://www.youtube.com/watch?v=LOiw5aBrm4Y&feature=youtube_gdata_player", 
+        "prev_video": "-05OfTp6ZEE", 
+        "readable_id": "government-s-financial-condition"
+    }, 
+    {
+        "next_video": "UP9xy2eVj7s", 
+        "video_position": 5, 
+        "description": "Basics on how social security works", 
+        "title": "Social Security Intro", 
+        "views": 24590, 
+        "related_videos": [
+            "LOiw5aBrm4Y", 
+            "UP9xy2eVj7s"
+        ], 
+        "playlist_titles": [
+            "American Civics", 
+            "New and Noteworthy"
+        ], 
+        "duration": 389, 
+        "ka_url": "http://www.khanacademy.org/video/social-security-intro?playlist=American+Civics", 
+        "youtube_id": "gLHUCUv1e5Y", 
+        "keywords": "united, states, debt, deficit, budget, OASDI, trust", 
+        "date_added": "2011-09-02 10:02:34", 
+        "youtube_url": "http://www.youtube.com/watch?v=gLHUCUv1e5Y&feature=youtube_gdata_player", 
+        "prev_video": "LOiw5aBrm4Y", 
+        "readable_id": "social-security-intro"
+    }, 
+    {
+        "next_video": "o1Y0G8Z67iU", 
+        "video_position": 6, 
+        "description": "How the FICA tax is calculated and what it stands for", 
+        "title": "FICA Tax", 
+        "views": 18829, 
+        "related_videos": [
+            "gLHUCUv1e5Y", 
+            "o1Y0G8Z67iU"
+        ], 
+        "playlist_titles": [
+            "American Civics", 
+            "New and Noteworthy"
+        ], 
+        "duration": 450, 
+        "ka_url": "http://www.khanacademy.org/video/fica-tax?playlist=American+Civics", 
+        "youtube_id": "UP9xy2eVj7s", 
+        "keywords": "FICA, federal, insurance, contributions, act", 
+        "date_added": "2011-09-02 10:02:34", 
+        "youtube_url": "http://www.youtube.com/watch?v=UP9xy2eVj7s&feature=youtube_gdata_player", 
+        "prev_video": "gLHUCUv1e5Y", 
+        "readable_id": "fica-tax"
+    }, 
+    {
+        "next_video": "tzqMoOk9NWc", 
+        "video_position": 7, 
+        "description": "How medicare is funded and why it is even less sustainable than social security", 
+        "title": "Medicare Sustainability", 
+        "views": 20099, 
+        "related_videos": [
+            "UP9xy2eVj7s", 
+            "tzqMoOk9NWc"
+        ], 
+        "playlist_titles": [
+            "American Civics"
+        ], 
+        "duration": 472, 
+        "ka_url": "http://www.khanacademy.org/video/medicare-sustainability?playlist=American+Civics", 
+        "youtube_id": "o1Y0G8Z67iU", 
+        "keywords": "medicare, social, security, medicaid", 
+        "date_added": "2011-09-02 10:02:34", 
+        "youtube_url": "http://www.youtube.com/watch?v=o1Y0G8Z67iU&feature=youtube_gdata_player", 
+        "prev_video": "UP9xy2eVj7s", 
+        "readable_id": "medicare-sustainability"
+    }, 
+    {
+        "next_video": "", 
+        "video_position": 8, 
+        "description": "What SOPA and PIPA are at face value and what they could end up enabling", 
+        "title": "SOPA and PIPA", 
+        "views": 1223732, 
+        "related_videos": [
+            "o1Y0G8Z67iU"
+        ], 
+        "playlist_titles": [
+            "American Civics", 
+            "New and Noteworthy"
+        ], 
+        "duration": 675, 
+        "ka_url": "http://www.khanacademy.org/video/sopa-and-pipa?playlist=American+Civics", 
+        "youtube_id": "tzqMoOk9NWc", 
+        "keywords": "privacy, liberty, piracy, sopa, pipa, marquee", 
+        "date_added": "2012-01-18 21:23:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=tzqMoOk9NWc&feature=youtube_gdata_player", 
+        "prev_video": "o1Y0G8Z67iU", 
+        "readable_id": "sopa-and-pipa"
+    }
+]

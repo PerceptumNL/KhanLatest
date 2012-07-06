@@ -1,0 +1,34 @@
+{% extends "page_template.html" %}
+
+{% block meta_page_title %}{{pagetitle|escape}} | Explore | {% endblock meta_page_title %}
+
+{% block pagescript %}
+{% if App.is_dev_server -%}<script>var KA_IS_DEV = true;</script>{%- endif %}
+
+{#
+  Pass a JSON serialized string as env_js and it'll be accessible
+  from JS
+#}
+{% if env_js -%}
+<script>var ENV = {{ env_js }};</script>
+{%- endif %}
+{% endblock pagescript %}
+
+{% block pagesubmenu %}
+    {% if gandalf("scratchpads") %}
+    <span class="breadcrumbs_nav">
+        <a href="/explore" id="show-explorations" {% if "show-explorations" == selected_id %}class="selected"{% endif %}>Explorations</a>
+        {% if user_data and not user_data.is_pre_phantom %}
+            <a href="{{user_data.profile_root}}explorations" id="my-explorations" {% if "my-explorations" == selected_id %}class="selected"{% endif %}>My Explorations</a>
+        {% endif %}
+        <a href="/explore/new" id="new-scratchpad" {% if "new-scratchpad" == selected_id %}class="selected"{% endif %}>New Scratchpad</a>
+    </span>
+    {%- endif %}
+{% endblock pagesubmenu %}
+
+{% block pagecontent %}
+<article id="explorations">
+{% block explorecontent %}
+{% endblock explorecontent %}
+</article>
+{% endblock pagecontent %}

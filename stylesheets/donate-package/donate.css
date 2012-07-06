@@ -1,0 +1,127 @@
+#page_sub_nav { display: none; }
+
+/* CSS for donate icon tiles */
+.icontile {
+	height: 285px;
+	margin: 0px 20px 20px 0px;
+	-webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+    border-radius:10px;
+}
+.icontile h2 {
+	text-align: center;
+	margin-top: 16px;
+}
+.icontile p {
+	padding: 0px 10px;
+}
+.icontile img {
+	height: 128px;
+	width: 128px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+}
+.icontile.blue {
+	background-color: #f2fbff;
+}
+.icontile.blue h2, .icontile.blue p {
+	color: #1880be;
+}
+.icontile.orange {
+	background-color: #fff7f2;
+}
+.icontile.orange h2, .icontile.orange p {
+	color: #f6681d;
+}
+
+/* CSS for the donate sidebar */
+
+.donate-sidebar {
+	background-color: #f5f5f5;
+	margin-left: 0px;
+	padding: 0px 15px;
+}
+.donate-sidebar h4, #donate-amount {
+	font-family: helveticaneue, "helvetica neue", sans-serif;
+	font-size: 24px;
+}
+.donate-bar {
+	margin-left: 30px;
+	padding-top: 20px;
+}
+.donate-radio-buttons {
+	margin-left: 45px;
+}
+.donate-radio {
+	margin-left: 15px;
+}
+#donate-amount {
+	width: 85px;
+	padding: 2px 1px;
+}
+#donation-submit {
+	font-size: 18px;
+	margin-left: 18px;
+	padding: 10px 50px;
+	bottom: 2px;
+}
+#recurring-frequency-months {
+	position: relative;
+	left: 164px;
+	display: inline;
+	visibility: hidden;
+}
+#recurring-frequency-years {
+	position: relative;
+	left: 242px;
+	display: none;
+}
+.donate-sidebar hr.thin {
+	width: 80%;
+}
+
+/* JQuery accordion widget configuration for the Donate page */
+.ui-state-default {
+	background: none;
+	border: 0;
+}
+.ui-state-hover  {
+	text-decoration: underline;
+}
+.ui-state-active, .ui-accordion-content-active {
+	background-image: none;
+	background-color: #e8e8e8;
+	border: 0;
+}
+.ui-accordion .ui-accordion-content {
+	padding: 0 10px;
+}
+.ui-accordion-content, .ui-accordion-header {
+	font-family: helveticaneue, "helvetica neue", sans-serif;
+	font-size: 14px;
+}
+.ui-accordion-content-active p {
+	margin: 15px 0;
+}
+.ui-widget-content a {
+	color: #678D00;
+}
+
+/* Overrides to bootstrap grids for this page */
+.span3 {
+  width: 220px;
+}
+.span5 {
+  width: 360px;
+}
+.span9 {
+  width: 710px;
+}
+.container {
+  width: 1170px;
+  margin: 24px 40px 24px 40px;
+}

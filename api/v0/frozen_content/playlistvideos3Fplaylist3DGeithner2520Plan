@@ -1,0 +1,132 @@
+[
+    {
+        "next_video": "n-arbfLTCtI", 
+        "video_position": 1, 
+        "description": "Overview of the Geithner Plan and the problem it is supposed to solve.", 
+        "title": "Geithner Plan I", 
+        "views": 71113, 
+        "related_videos": [
+            "n-arbfLTCtI"
+        ], 
+        "playlist_titles": [
+            "Geithner Plan"
+        ], 
+        "duration": 842, 
+        "ka_url": "http://www.khanacademy.org/video/geithner-plan-i?playlist=Geithner+Plan", 
+        "youtube_id": "ervHbKa7R5g", 
+        "keywords": "geithner, timothy, obama, plan, bailout, TALF, TARP", 
+        "date_added": "2011-02-20 16:43:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=ervHbKa7R5g&feature=youtube_gdata_player", 
+        "prev_video": "", 
+        "readable_id": "geithner-plan-i"
+    }, 
+    {
+        "next_video": "0FxRYePmogU", 
+        "video_position": 2, 
+        "description": "More on the Geithner Plan.  The problem of banks buying the assets from themselves.", 
+        "title": "Geithner Plan II", 
+        "views": 81990, 
+        "related_videos": [
+            "ervHbKa7R5g", 
+            "0FxRYePmogU"
+        ], 
+        "playlist_titles": [
+            "Geithner Plan"
+        ], 
+        "duration": 749, 
+        "ka_url": "http://www.khanacademy.org/video/geithner-plan-ii?playlist=Geithner+Plan", 
+        "youtube_id": "n-arbfLTCtI", 
+        "keywords": "timothy, geithner, bank, bailout, obama, tarp, talf", 
+        "date_added": "2011-02-20 16:43:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=n-arbfLTCtI&feature=youtube_gdata_player", 
+        "prev_video": "ervHbKa7R5g", 
+        "readable_id": "geithner-plan-ii"
+    }, 
+    {
+        "next_video": "_ka1HZS-Egc", 
+        "video_position": 3, 
+        "description": "More exotic ways that a bank could buy transfer exposure to the taxpayer.", 
+        "title": "Geithner Plan 2.5", 
+        "views": 13883, 
+        "related_videos": [
+            "n-arbfLTCtI", 
+            "_ka1HZS-Egc"
+        ], 
+        "playlist_titles": [
+            "Geithner Plan"
+        ], 
+        "duration": 744, 
+        "ka_url": "http://www.khanacademy.org/video/geithner-plan-2-5?playlist=Geithner+Plan", 
+        "youtube_id": "0FxRYePmogU", 
+        "keywords": "geithner, tim, TARP, bailout", 
+        "date_added": "2011-02-20 16:43:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=0FxRYePmogU&feature=youtube_gdata_player", 
+        "prev_video": "n-arbfLTCtI", 
+        "readable_id": "geithner-plan-2-5"
+    }, 
+    {
+        "next_video": "ajl1UdtYUCA", 
+        "video_position": 4, 
+        "description": "Constructing an investment where an investor gets the same upside while the program limits the downside.", 
+        "title": "Geithner Plan III", 
+        "views": 11977, 
+        "related_videos": [
+            "0FxRYePmogU", 
+            "ajl1UdtYUCA"
+        ], 
+        "playlist_titles": [
+            "Geithner Plan"
+        ], 
+        "duration": 802, 
+        "ka_url": "http://www.khanacademy.org/video/geithner-plan-iii?playlist=Geithner+Plan", 
+        "youtube_id": "_ka1HZS-Egc", 
+        "keywords": "geithner, timothy, obama, plan, bailout, TALF, TARP", 
+        "date_added": "2011-02-20 16:43:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=_ka1HZS-Egc&feature=youtube_gdata_player", 
+        "prev_video": "0FxRYePmogU", 
+        "readable_id": "geithner-plan-iii"
+    }, 
+    {
+        "next_video": "kpqSeXpiM6k", 
+        "video_position": 5, 
+        "description": "Quantifying the value of the put option", 
+        "title": "Geithner Plan IV", 
+        "views": 9287, 
+        "related_videos": [
+            "_ka1HZS-Egc", 
+            "kpqSeXpiM6k"
+        ], 
+        "playlist_titles": [
+            "Geithner Plan"
+        ], 
+        "duration": 841, 
+        "ka_url": "http://www.khanacademy.org/video/geithner-plan-iv?playlist=Geithner+Plan", 
+        "youtube_id": "ajl1UdtYUCA", 
+        "keywords": "geithner, timothy, obama, plan, bailout, put, option, TALF, TARP", 
+        "date_added": "2011-02-20 16:43:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=ajl1UdtYUCA&feature=youtube_gdata_player", 
+        "prev_video": "_ka1HZS-Egc", 
+        "readable_id": "geithner-plan-iv"
+    }, 
+    {
+        "next_video": "", 
+        "video_position": 6, 
+        "description": "A better way to solve the \"liquidity\" and \"price discovery\" problem.", 
+        "title": "Geithner 5: A better solution", 
+        "views": 16510, 
+        "related_videos": [
+            "ajl1UdtYUCA"
+        ], 
+        "playlist_titles": [
+            "Geithner Plan"
+        ], 
+        "duration": 618, 
+        "ka_url": "http://www.khanacademy.org/video/geithner-5--a-better-solution?playlist=Geithner+Plan", 
+        "youtube_id": "kpqSeXpiM6k", 
+        "keywords": "toxic, asset, price, discovery, geithner, obama", 
+        "date_added": "2011-02-20 16:43:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=kpqSeXpiM6k&feature=youtube_gdata_player", 
+        "prev_video": "ajl1UdtYUCA", 
+        "readable_id": "geithner-5--a-better-solution"
+    }
+]

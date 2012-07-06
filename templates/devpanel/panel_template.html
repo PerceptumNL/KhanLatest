@@ -1,0 +1,22 @@
+{% extends "page_template.html" %}
+
+{% block meta_page_title %}Dev Panel | {% endblock meta_page_title %}
+
+{% block pagesubmenu %}
+    <span class="breadcrumbs_nav">
+        <a href="/devadmin" {% if "panel" == selected_id %}class="selected"{% endif %}>Panel</a>
+        <a href="/devadmin/emailchange" {% if "users" == selected_id %}class="selected"{% endif %}>Users</a>
+        <a href="/devadmin/managedevs" {% if "devs" == selected_id %}class="selected"{% endif %}>Developers</a>
+        <a href="/devadmin/managecoworkers" {% if "coworkers" == selected_id %}class="selected"{% endif %}>Coworkers</a>
+        <a href="/devadmin/managecommoncore" {% if "commoncore" == selected_id %}class="selected"{% endif %}>Common Core</a>
+    </span>
+{% endblock pagesubmenu %}
+
+{% block pagecontent %}
+<article>
+    <div id="devpanel">
+    {% block panelcontent %}
+    {% endblock panelcontent %}
+    </div>
+</article>
+{% endblock pagecontent %}

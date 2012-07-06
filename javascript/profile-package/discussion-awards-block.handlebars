@@ -1,0 +1,22 @@
+{{#if this.length}}
+    {{#each this}}
+        <a href="{{absoluteUrl}}" class="discussion-award">
+            <div class="discussion-award-icon">
+                {{> profile_discussion-award-icon}}
+            </div>
+            <div class="discussion-award-text">
+                <div class="discussion-award-name">
+                    {{name}}
+                    {{#if multiple}}
+                        <span class="discussion-award-count">
+                        x {{count}}
+                        </span>
+                    {{/if}}
+                </div>
+                <div class="discussion-award-description">
+                    {{description}}
+                </div>
+            </div>
+        </a>
+    {{/each}}
+{{/if}}

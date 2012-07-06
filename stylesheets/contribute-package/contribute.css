@@ -1,0 +1,58 @@
+#page_sub_nav { display: none; }
+
+.to-donate-row {
+	padding-left: 30px;
+}
+.simple-button.to-donate-button {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+    font-size: 12px;
+    font-weight: bold;
+    max-width: 200px;
+    padding-top: 7px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    top: 47px;
+}
+.simple-button.to-donate-button img {
+    position: relative;
+    top: 1px;
+    width: 12px;
+    height: 12px;
+}
+.icon-category img {
+    height: 96px;
+    width: 96px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.donate-blurb p {
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-family: "MuseoSans500", sans-serif;
+}
+.donate-blurb h3 {
+    margin-top: 22px;
+}
+.callout-text {
+    font-size: 18px;
+}
+
+/* overrides to bootstrap-grids-package/grids.css */
+
+.span3 {
+  width: 120px;
+}
+.span4 {
+    width: 140px;
+}
+.span6 {
+  width: 480px;
+}
+.container {
+  width: 1170px;
+  margin: 24px 40px 24px 40px;
+}

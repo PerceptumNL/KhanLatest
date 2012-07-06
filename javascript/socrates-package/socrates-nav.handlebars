@@ -1,0 +1,8 @@
+<div class="timebar">
+	{{#each questions}}
+	<span class="event {{complete}}" style="left: {{percentage}}%">
+		<a href="#{{slug}}" class="icon" title="{{time}}: {{title}}"></a>
+		<div class="stem"></div>
+	</span>
+	{{/each}}
+</div>

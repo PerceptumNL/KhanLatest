@@ -1,0 +1,53 @@
+{
+    "profileRoot": "/profile/_emtest333%40example.com",
+    "profileData": {
+        "avatarName": "yellowleaf",
+        "avatarSrc": "/images/avatars/leaf-yellow.png",
+        "countExercisesProficient": 2,
+        "countVideosCompleted": 1,
+        "dateJoined": "2012-03-08T23:52:42Z",
+        "email": "test333@example.com",
+        "isCoachingLoggedInUser": true,
+        "nickname": "test333",
+        "points": 4637,
+        "username": "",
+        "isDataCollectible": false,
+        "isSelf": true,
+        "isPublic": false,
+        "isPhantom": false,
+        "isRequestingToCoachLoggedInUser": false,
+        "publicBadges": [{
+            "badgeCategory": 0,
+            "description": "Inspired 15 Minutes",
+            "hideContext": false,
+            "iconSrc": "/images/badges/meteorite-small.png",
+            "icons": {
+                "compact": "/images/badges/meteorite-60x60.png",
+                "medium": "/images/badges/meteorite-medium.png",
+                "small": "/images/badges/meteorite-small.png"
+            },
+            "isOwned": false,
+            "name": "powerfifteenminutesbadge",
+            "points": 0,
+            "safeExtendedDescription": "Correctly answer 10 problems and watch 10 minutes of video in 15 minutes"
+        }, {
+            "badgeCategory": 0,
+            "description": "Picking Up Steam",
+            "hideContext": false,
+            "iconSrc": "/images/badges/meteorite-small.png",
+            "icons": {
+                "compact": "/images/badges/meteorite-60x60.png",
+                "medium": "/images/badges/meteorite-medium.png",
+                "small": "/images/badges/meteorite-small.png"
+            },
+            "isOwned": false,
+            "name": "nicetimedproblembadge",
+            "points": 100,
+            "safeExtendedDescription": "Quickly & correctly answer 5 exercise problems in a row (time limit depends on exercise difficulty)"
+        }],
+        "isEditable": true,
+        "isFullyEditable": false
+    },
+    "countVideos": 3023,
+    "countExercises": 305
+}

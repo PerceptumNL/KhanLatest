@@ -1,0 +1,32 @@
+<div id="class-student-goals" class="{{colors}}">
+    <div id="class-goal-filter-desc"></div>
+    <div id="class-student-goal">
+    {{#each rowData}}
+        <div class="goal-row" data-id="{{rowID}}">
+            <div class="student-name">
+                <a href="{{student.profile_url}}">{{student.nickname}}</a>
+                {{#if goal.objectives}}
+                <span class="goal-count">({{goal_idx}}/{{student.goal_count}})</span>
+                <div>
+                    <div class="goal-start-time">Started {{goal.created_ago}}</div>
+                    <div class="goal-update-time">Updated {{goal.updated_ago}}</div>
+                </div>
+                {{/if}}
+            </div>
+            <div class="goal {{#if goal.completed}}{{#unless goal.abandoned}}complete{{/unless}}{{/if}}">
+                {{#if goal.objectives}}
+                    <ul class="inline-list objective-list">
+                    {{#each goal.objectives}}
+                        {{>shared_goal-objectives}}
+                    {{/each}}
+                    </ul>
+                {{else}}
+                    <div class="no-goal">
+                        {{student.nickname}} is not current working on a goal
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    {{/each}}
+    </div>
+</div>

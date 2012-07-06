@@ -1,0 +1,1001 @@
+[
+    {
+        "next_video": "W0VWO4asgmk", 
+        "video_position": 1, 
+        "description": "Introduction to Limits (HD)", 
+        "title": "Introduction to Limits (HD)", 
+        "views": 248137, 
+        "related_videos": [
+            "W0VWO4asgmk"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 692, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-limits--hd?playlist=Precalculus", 
+        "youtube_id": "riXcZT2ICjA", 
+        "keywords": "calculus, CC_39336_A-CED_2, CC_39336_A-REI_3", 
+        "date_added": "2011-05-19 23:24:50", 
+        "youtube_url": "http://www.youtube.com/watch?v=riXcZT2ICjA&feature=youtube_gdata_player", 
+        "prev_video": "", 
+        "readable_id": "introduction-to-limits--hd"
+    }, 
+    {
+        "next_video": "GGQngIp0YGI", 
+        "video_position": 2, 
+        "description": "Introduction to the intuition behind limits", 
+        "title": "Introduction to Limits", 
+        "views": 470640, 
+        "related_videos": [
+            "riXcZT2ICjA", 
+            "GGQngIp0YGI"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 457, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-limits?playlist=Precalculus", 
+        "youtube_id": "W0VWO4asgmk", 
+        "keywords": "calculus, math, limit, limits, khan, academy, CC_39336_A-CED_2, CC_39336_F-BF_1, CC_39336_F-BF_1_c, CC_39336_F-IF_2, CC_39336_F-IF_7", 
+        "date_added": "2011-02-20 16:32:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=W0VWO4asgmk&feature=youtube_gdata_player", 
+        "prev_video": "riXcZT2ICjA", 
+        "readable_id": "introduction-to-limits"
+    }, 
+    {
+        "next_video": "YRw8udexH4o", 
+        "video_position": 3, 
+        "description": "Some limit exercises", 
+        "title": "Limit Examples (part 1)", 
+        "views": 342353, 
+        "related_videos": [
+            "W0VWO4asgmk", 
+            "YRw8udexH4o"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 536, 
+        "ka_url": "http://www.khanacademy.org/video/limit-examples--part-1?playlist=Precalculus", 
+        "youtube_id": "GGQngIp0YGI", 
+        "keywords": "calculus, limits, limit, examples, khan, academy, CC_39336_A-CED_2, CC_39336_A-CED_3, CC_39336_A-REI_10, CC_39336_F-BF_1, CC_39336_F-IF_7_d", 
+        "date_added": "2011-02-20 16:32:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=GGQngIp0YGI&feature=youtube_gdata_player", 
+        "prev_video": "W0VWO4asgmk", 
+        "readable_id": "limit-examples--part-1"
+    }, 
+    {
+        "next_video": "gWSDDopD9sk", 
+        "video_position": 4, 
+        "description": "More limit examples", 
+        "title": "Limit Examples (part 2)", 
+        "views": 228296, 
+        "related_videos": [
+            "GGQngIp0YGI", 
+            "gWSDDopD9sk"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 417, 
+        "ka_url": "http://www.khanacademy.org/video/limit-examples--part-2?playlist=Precalculus", 
+        "youtube_id": "YRw8udexH4o", 
+        "keywords": "calculus, limits, limit, khan, academy, CC_39336_F-IF_4, CC_39336_F-IF_7_d", 
+        "date_added": "2011-02-20 16:32:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=YRw8udexH4o&feature=youtube_gdata_player", 
+        "prev_video": "GGQngIp0YGI", 
+        "readable_id": "limit-examples--part-2"
+    }, 
+    {
+        "next_video": "xjkSE9cPqzo", 
+        "video_position": 5, 
+        "description": "More limit examples", 
+        "title": "Limit Examples (part3)", 
+        "views": 207979, 
+        "related_videos": [
+            "YRw8udexH4o", 
+            "xjkSE9cPqzo"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 598, 
+        "ka_url": "http://www.khanacademy.org/video/limit-examples--part3?playlist=Precalculus", 
+        "youtube_id": "gWSDDopD9sk", 
+        "keywords": "Calculus, limit, math, khan, academy, CC_39336_A-REI_4, CC_39336_A-SSE_3_a, CC_39336_F-IF_8_a", 
+        "date_added": "2011-02-20 16:32:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=gWSDDopD9sk&feature=youtube_gdata_player", 
+        "prev_video": "YRw8udexH4o", 
+        "readable_id": "limit-examples--part3"
+    }, 
+    {
+        "next_video": "igJdDN-DPgA", 
+        "video_position": 6, 
+        "description": "3 interesting limit examples (correct answer for problem 1 is 3/16 (6/(4*8) NOT 6/(4+8))", 
+        "title": "Limit Examples w/ brain malfunction on first prob (part 4)", 
+        "views": 160586, 
+        "related_videos": [
+            "gWSDDopD9sk", 
+            "igJdDN-DPgA"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 902, 
+        "ka_url": "http://www.khanacademy.org/video/limit-examples-w--brain-malfunction-on-first-prob--part-4?playlist=Precalculus", 
+        "youtube_id": "xjkSE9cPqzo", 
+        "keywords": "calculus, CC_39336_A-REI_4, CC_39336_A-SSE_3_a", 
+        "date_added": "2011-02-20 16:32:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=xjkSE9cPqzo&feature=youtube_gdata_player", 
+        "prev_video": "gWSDDopD9sk", 
+        "readable_id": "limit-examples-w--brain-malfunction-on-first-prob--part-4"
+    }, 
+    {
+        "next_video": "Ve99biD1KtA", 
+        "video_position": 7, 
+        "description": "Intuition (but not a proof) of the Squeeze Theorem.", 
+        "title": "Squeeze Theorem", 
+        "views": 161997, 
+        "related_videos": [
+            "xjkSE9cPqzo", 
+            "Ve99biD1KtA"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 457, 
+        "ka_url": "http://www.khanacademy.org/video/squeeze-theorem?playlist=Precalculus", 
+        "youtube_id": "igJdDN-DPgA", 
+        "keywords": "calculus, limit, squeeze, theorem, CC_39336_F-IF_1, CC_39336_F-IF_5", 
+        "date_added": "2011-02-20 16:32:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=igJdDN-DPgA&feature=youtube_gdata_player", 
+        "prev_video": "xjkSE9cPqzo", 
+        "readable_id": "squeeze-theorem"
+    }, 
+    {
+        "next_video": "rkeU8_4nzKo", 
+        "video_position": 8, 
+        "description": "Using the squeeze theorem to prove that the limit as x approaches 0 of (sin x)/x =1", 
+        "title": "Proof: lim (sin x)/x", 
+        "views": 239367, 
+        "related_videos": [
+            "igJdDN-DPgA", 
+            "rkeU8_4nzKo"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 1085, 
+        "ka_url": "http://www.khanacademy.org/video/proof--lim--sin-x--x?playlist=Precalculus", 
+        "youtube_id": "Ve99biD1KtA", 
+        "keywords": "calculus, limit, squeeze, sin", 
+        "date_added": "2011-02-20 16:32:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=Ve99biD1KtA&feature=youtube_gdata_player", 
+        "prev_video": "igJdDN-DPgA", 
+        "readable_id": "proof--lim--sin-x--x"
+    }, 
+    {
+        "next_video": "VgVJrSJxkDk", 
+        "video_position": 9, 
+        "description": "More limit examples", 
+        "title": "More Limits", 
+        "views": 93433, 
+        "related_videos": [
+            "Ve99biD1KtA", 
+            "VgVJrSJxkDk"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 789, 
+        "ka_url": "http://www.khanacademy.org/video/more-limits?playlist=Precalculus", 
+        "youtube_id": "rkeU8_4nzKo", 
+        "keywords": "limits, calculus, CC_39336_F-IF_7", 
+        "date_added": "2011-02-20 16:32:19", 
+        "youtube_url": "http://www.youtube.com/watch?v=rkeU8_4nzKo&feature=youtube_gdata_player", 
+        "prev_video": "Ve99biD1KtA", 
+        "readable_id": "more-limits"
+    }, 
+    {
+        "next_video": "U_8GRLJplZg", 
+        "video_position": 10, 
+        "description": "Introduction to the arithmetic and geometric series", 
+        "title": "Sequences and Series (part 1)", 
+        "views": 175618, 
+        "related_videos": [
+            "rkeU8_4nzKo", 
+            "U_8GRLJplZg"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 588, 
+        "ka_url": "http://www.khanacademy.org/video/sequences-and-series--part-1?playlist=Precalculus", 
+        "youtube_id": "VgVJrSJxkDk", 
+        "keywords": "math, sigma, notation, sequences, series, arithmetic, geometric, sum, CC_39336_A-SSE_4, CC_39336_F-BF_2, CC_39336_F-IF_3", 
+        "date_added": "2011-02-20 16:32:59", 
+        "youtube_url": "http://www.youtube.com/watch?v=VgVJrSJxkDk&feature=youtube_gdata_player", 
+        "prev_video": "rkeU8_4nzKo", 
+        "readable_id": "sequences-and-series--part-1"
+    }, 
+    {
+        "next_video": "XqQTXW7XfYA", 
+        "video_position": 11, 
+        "description": "Finding the sum of an infinite geometric series.", 
+        "title": "Sequences and series (part 2)", 
+        "views": 121867, 
+        "related_videos": [
+            "VgVJrSJxkDk", 
+            "XqQTXW7XfYA"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 603, 
+        "ka_url": "http://www.khanacademy.org/video/sequences-and-series--part-2?playlist=Precalculus", 
+        "youtube_id": "U_8GRLJplZg", 
+        "keywords": "geometric, series, math, sum, sigma, CC_39336_F-IF_3", 
+        "date_added": "2011-02-20 16:32:59", 
+        "youtube_url": "http://www.youtube.com/watch?v=U_8GRLJplZg&feature=youtube_gdata_player", 
+        "prev_video": "VgVJrSJxkDk", 
+        "readable_id": "sequences-and-series--part-2"
+    }, 
+    {
+        "next_video": "bCxMhncR7PU", 
+        "video_position": 12, 
+        "description": "Introduction to permutations", 
+        "title": "Permutations", 
+        "views": 114375, 
+        "related_videos": [
+            "U_8GRLJplZg", 
+            "bCxMhncR7PU"
+        ], 
+        "playlist_titles": [
+            "Precalculus", 
+            "Probability"
+        ], 
+        "duration": 611, 
+        "ka_url": "http://www.khanacademy.org/video/permutations?playlist=Precalculus", 
+        "youtube_id": "XqQTXW7XfYA", 
+        "keywords": "permutations", 
+        "date_added": "2011-02-20 16:51:38", 
+        "youtube_url": "http://www.youtube.com/watch?v=XqQTXW7XfYA&feature=youtube_gdata_player", 
+        "prev_video": "U_8GRLJplZg", 
+        "readable_id": "permutations"
+    }, 
+    {
+        "next_video": "Cv4YhIMfbeM", 
+        "video_position": 13, 
+        "description": "Introduction to combinations", 
+        "title": "Combinations", 
+        "views": 94250, 
+        "related_videos": [
+            "XqQTXW7XfYA", 
+            "Cv4YhIMfbeM"
+        ], 
+        "playlist_titles": [
+            "Precalculus", 
+            "Probability"
+        ], 
+        "duration": 616, 
+        "ka_url": "http://www.khanacademy.org/video/combinations?playlist=Precalculus", 
+        "youtube_id": "bCxMhncR7PU", 
+        "keywords": "combinations", 
+        "date_added": "2011-02-20 16:51:38", 
+        "youtube_url": "http://www.youtube.com/watch?v=bCxMhncR7PU&feature=youtube_gdata_player", 
+        "prev_video": "XqQTXW7XfYA", 
+        "readable_id": "combinations"
+    }, 
+    {
+        "next_video": "-fFWWt1m9k0", 
+        "video_position": 14, 
+        "description": "Introduction to raising (a+b)^n", 
+        "title": "Binomial Theorem (part 1)", 
+        "views": 104645, 
+        "related_videos": [
+            "bCxMhncR7PU", 
+            "-fFWWt1m9k0"
+        ], 
+        "playlist_titles": [
+            "Precalculus"
+        ], 
+        "duration": 758, 
+        "ka_url": "http://www.khanacademy.org/video/binomial-theorem--part-1?playlist=Precalculus", 
+        "youtube_id": "Cv4YhIMfbeM", 
+        "keywords": "binomial, theorem, expansion, CC_39336_A-APR_5", 
+        "date_added": "2011-02-20 16:51:38", 
+        "youtube_url": "http://www.youtube.com/watch?v=Cv4YhIMfbeM&feature=youtube_gdata_player", 
+        "prev_video": "bCxMhncR7PU", 
+        "readable_id": "binomial-theorem--part-1"
+    }, 
+    {
+        "next_video": "xF_hJaXUNfE", 
+        "video_position": 15, 
+        "description": "Binomial Theorem and Pascal's Triangle", 
+        "title": "Binomial Theorem (part 2)", 
+        "views": 56042, 
+        "related_videos": [
+            "Cv4YhIMfbeM", 
+            "xF_hJaXUNfE"
+        ], 
+        "playlist_titles": [
+            "Precalculus"
+        ], 
+        "duration": 859, 
+        "ka_url": "http://www.khanacademy.org/video/binomial-theorem--part-2?playlist=Precalculus", 
+        "youtube_id": "-fFWWt1m9k0", 
+        "keywords": "binomial, theorem, expansion, pascals, triangle", 
+        "date_added": "2011-02-20 16:51:38", 
+        "youtube_url": "http://www.youtube.com/watch?v=-fFWWt1m9k0&feature=youtube_gdata_player", 
+        "prev_video": "Cv4YhIMfbeM", 
+        "readable_id": "binomial-theorem--part-2"
+    }, 
+    {
+        "next_video": "GtaoP0skPWc", 
+        "video_position": 16, 
+        "description": "Intuition behind why binomial expansion involves combinatorics", 
+        "title": "Binomial Theorem (part 3)", 
+        "views": 37310, 
+        "related_videos": [
+            "-fFWWt1m9k0", 
+            "GtaoP0skPWc"
+        ], 
+        "playlist_titles": [
+            "Precalculus"
+        ], 
+        "duration": 719, 
+        "ka_url": "http://www.khanacademy.org/video/binomial-theorem--part-3?playlist=Precalculus", 
+        "youtube_id": "xF_hJaXUNfE", 
+        "keywords": "binomial, combinatorics, CC_39336_A-APR_5", 
+        "date_added": "2011-02-20 16:51:38", 
+        "youtube_url": "http://www.youtube.com/watch?v=xF_hJaXUNfE&feature=youtube_gdata_player", 
+        "prev_video": "-fFWWt1m9k0", 
+        "readable_id": "binomial-theorem--part-3"
+    }, 
+    {
+        "next_video": "t4zfiBw0hwM", 
+        "video_position": 17, 
+        "description": "What interest is.  Simple versus compound interest.", 
+        "title": "Introduction to interest", 
+        "views": 307227, 
+        "related_videos": [
+            "xF_hJaXUNfE", 
+            "t4zfiBw0hwM"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Precalculus"
+        ], 
+        "duration": 596, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-interest?playlist=Precalculus", 
+        "youtube_id": "GtaoP0skPWc", 
+        "keywords": "math, finance, interest, simple, compound, CC_7_RP_3, CC_39336_A-SSE_3_c", 
+        "date_added": "2011-02-20 16:42:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=GtaoP0skPWc&feature=youtube_gdata_player", 
+        "prev_video": "xF_hJaXUNfE", 
+        "readable_id": "introduction-to-interest"
+    }, 
+    {
+        "next_video": "qEB6y4DklNY", 
+        "video_position": 18, 
+        "description": "More on simple and compound interest", 
+        "title": "Interest (part 2)", 
+        "views": 93923, 
+        "related_videos": [
+            "GtaoP0skPWc", 
+            "qEB6y4DklNY"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Precalculus"
+        ], 
+        "duration": 481, 
+        "ka_url": "http://www.khanacademy.org/video/interest--part-2?playlist=Precalculus", 
+        "youtube_id": "t4zfiBw0hwM", 
+        "keywords": "simple, compound, interest, math, finance, money, CC_39336_A-SSE_3_c", 
+        "date_added": "2011-02-20 16:42:14", 
+        "youtube_url": "http://www.youtube.com/watch?v=t4zfiBw0hwM&feature=youtube_gdata_player", 
+        "prev_video": "GtaoP0skPWc", 
+        "readable_id": "interest--part-2"
+    }, 
+    {
+        "next_video": "dzMvqJMLy9c", 
+        "video_position": 19, 
+        "description": "Compounding interest multiple times a year.", 
+        "title": "Introduction to compound interest and e", 
+        "views": 80599, 
+        "related_videos": [
+            "t4zfiBw0hwM", 
+            "dzMvqJMLy9c"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Precalculus"
+        ], 
+        "duration": 611, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-compound-interest-and-e?playlist=Precalculus", 
+        "youtube_id": "qEB6y4DklNY", 
+        "keywords": "compount, interest, limit, continuous, CC_39336_A-SSE_3_c", 
+        "date_added": "2011-02-20 16:42:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=qEB6y4DklNY&feature=youtube_gdata_player", 
+        "prev_video": "t4zfiBw0hwM", 
+        "readable_id": "introduction-to-compound-interest-and-e"
+    }, 
+    {
+        "next_video": "sQYpUJV8foY", 
+        "video_position": 20, 
+        "description": "Compounding 100% annual interest continuously over a year converges to e (2.71...)", 
+        "title": "Compound Interest and e (part 2)", 
+        "views": 50997, 
+        "related_videos": [
+            "qEB6y4DklNY", 
+            "sQYpUJV8foY"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Precalculus"
+        ], 
+        "duration": 614, 
+        "ka_url": "http://www.khanacademy.org/video/compound-interest-and-e--part-2?playlist=Precalculus", 
+        "youtube_id": "dzMvqJMLy9c", 
+        "keywords": "Continuously, Compounding, interest, finance, math, limit", 
+        "date_added": "2011-02-20 16:42:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=dzMvqJMLy9c&feature=youtube_gdata_player", 
+        "prev_video": "qEB6y4DklNY", 
+        "readable_id": "compound-interest-and-e--part-2"
+    }, 
+    {
+        "next_video": "VAxHMTJRhmY", 
+        "video_position": 21, 
+        "description": "Continuously compounding $P in principal at an annual interest rate of r for a year ends up with a final payment of $Pe^r", 
+        "title": "Compound Interest and e (part  3)", 
+        "views": 40340, 
+        "related_videos": [
+            "dzMvqJMLy9c", 
+            "VAxHMTJRhmY"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Precalculus"
+        ], 
+        "duration": 604, 
+        "ka_url": "http://www.khanacademy.org/video/compound-interest-and-e--part--3?playlist=Precalculus", 
+        "youtube_id": "sQYpUJV8foY", 
+        "keywords": "continuous, compounding, interest, math, finance", 
+        "date_added": "2011-02-20 16:42:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=sQYpUJV8foY&feature=youtube_gdata_player", 
+        "prev_video": "dzMvqJMLy9c", 
+        "readable_id": "compound-interest-and-e--part--3"
+    }, 
+    {
+        "next_video": "JWfTckls59k", 
+        "video_position": 22, 
+        "description": "Continuously compounding for multiple years.", 
+        "title": "Compound Interest and e (part 4)", 
+        "views": 31565, 
+        "related_videos": [
+            "sQYpUJV8foY", 
+            "JWfTckls59k"
+        ], 
+        "playlist_titles": [
+            "Finance", 
+            "Precalculus"
+        ], 
+        "duration": 484, 
+        "ka_url": "http://www.khanacademy.org/video/compound-interest-and-e--part-4?playlist=Precalculus", 
+        "youtube_id": "VAxHMTJRhmY", 
+        "keywords": "finance, math, compound, interest, continuous", 
+        "date_added": "2011-02-20 16:42:18", 
+        "youtube_url": "http://www.youtube.com/watch?v=VAxHMTJRhmY&feature=youtube_gdata_player", 
+        "prev_video": "sQYpUJV8foY", 
+        "readable_id": "compound-interest-and-e--part-4"
+    }, 
+    {
+        "next_video": "jexMSlSDubM", 
+        "video_position": 23, 
+        "description": "Exponential growth involving bacteria (some calculus in part c).", 
+        "title": "Exponential Growth", 
+        "views": 69679, 
+        "related_videos": [
+            "VAxHMTJRhmY", 
+            "jexMSlSDubM"
+        ], 
+        "playlist_titles": [
+            "Calculus", 
+            "Precalculus"
+        ], 
+        "duration": 960, 
+        "ka_url": "http://www.khanacademy.org/video/exponential-growth?playlist=Precalculus", 
+        "youtube_id": "JWfTckls59k", 
+        "keywords": "Exponential, growth, calculus, CC_39336_A-SSE_3_c, CC_39336_F-BF_1, CC_39336_F-BF_1_b, CC_39336_F-IF_8_b", 
+        "date_added": "2011-02-20 16:33:00", 
+        "youtube_url": "http://www.youtube.com/watch?v=JWfTckls59k&feature=youtube_gdata_player", 
+        "prev_video": "VAxHMTJRhmY", 
+        "readable_id": "exponential-growth"
+    }, 
+    {
+        "next_video": "zGpbSGj_vfE", 
+        "video_position": 24, 
+        "description": "Introduction to polar coordinates", 
+        "title": "Polar Coordinates 1", 
+        "views": 82457, 
+        "related_videos": [
+            "JWfTckls59k", 
+            "zGpbSGj_vfE"
+        ], 
+        "playlist_titles": [
+            "Precalculus", 
+            "Trigonometry"
+        ], 
+        "duration": 620, 
+        "ka_url": "http://www.khanacademy.org/video/polar-coordinates-1?playlist=Precalculus", 
+        "youtube_id": "jexMSlSDubM", 
+        "keywords": "polar, cartesian, coordinates, CC_8_G_8, CC_39336_F-BF_4", 
+        "date_added": "2011-02-20 16:51:39", 
+        "youtube_url": "http://www.youtube.com/watch?v=jexMSlSDubM&feature=youtube_gdata_player", 
+        "prev_video": "JWfTckls59k", 
+        "readable_id": "polar-coordinates-1"
+    }, 
+    {
+        "next_video": "9iqN12hCn10", 
+        "video_position": 25, 
+        "description": "Conversion from Cartesian to Polar Coordinates", 
+        "title": "Polar Coordinates 2", 
+        "views": 52100, 
+        "related_videos": [
+            "jexMSlSDubM", 
+            "9iqN12hCn10"
+        ], 
+        "playlist_titles": [
+            "Precalculus", 
+            "Trigonometry"
+        ], 
+        "duration": 571, 
+        "ka_url": "http://www.khanacademy.org/video/polar-coordinates-2?playlist=Precalculus", 
+        "youtube_id": "zGpbSGj_vfE", 
+        "keywords": "cartesian, polar, coordinates, CC_8_G_8", 
+        "date_added": "2011-02-20 16:51:39", 
+        "youtube_url": "http://www.youtube.com/watch?v=zGpbSGj_vfE&feature=youtube_gdata_player", 
+        "prev_video": "jexMSlSDubM", 
+        "readable_id": "polar-coordinates-2"
+    }, 
+    {
+        "next_video": "m6c6dlmUT1c", 
+        "video_position": 26, 
+        "description": "Converting between Cartesian and Polar functions", 
+        "title": "Polar Coordinates 3", 
+        "views": 44753, 
+        "related_videos": [
+            "zGpbSGj_vfE", 
+            "m6c6dlmUT1c"
+        ], 
+        "playlist_titles": [
+            "Precalculus", 
+            "Trigonometry"
+        ], 
+        "duration": 457, 
+        "ka_url": "http://www.khanacademy.org/video/polar-coordinates-3?playlist=Precalculus", 
+        "youtube_id": "9iqN12hCn10", 
+        "keywords": "Cartersian, Polar, Coordinates", 
+        "date_added": "2011-02-20 16:51:39", 
+        "youtube_url": "http://www.youtube.com/watch?v=9iqN12hCn10&feature=youtube_gdata_player", 
+        "prev_video": "zGpbSGj_vfE", 
+        "readable_id": "polar-coordinates-3"
+    }, 
+    {
+        "next_video": "wToSIQJ2o_8", 
+        "video_position": 27, 
+        "description": "Introduction to parametric equations", 
+        "title": "Parametric Equations 1", 
+        "views": 79676, 
+        "related_videos": [
+            "9iqN12hCn10", 
+            "wToSIQJ2o_8"
+        ], 
+        "playlist_titles": [
+            "Precalculus"
+        ], 
+        "duration": 668, 
+        "ka_url": "http://www.khanacademy.org/video/parametric-equations-1?playlist=Precalculus", 
+        "youtube_id": "m6c6dlmUT1c", 
+        "keywords": "parametric, equation, physics, CC_39336_A-CED_2, CC_39336_F-BF_1_c, CC_39336_F-IF_4, CC_39336_F-IF_6", 
+        "date_added": "2011-02-20 16:51:39", 
+        "youtube_url": "http://www.youtube.com/watch?v=m6c6dlmUT1c&feature=youtube_gdata_player", 
+        "prev_video": "9iqN12hCn10", 
+        "readable_id": "parametric-equations-1"
+    }, 
+    {
+        "next_video": "57BiI_iD3-U", 
+        "video_position": 28, 
+        "description": "Eliminating the parameter", 
+        "title": "Parametric Equations 2", 
+        "views": 37204, 
+        "related_videos": [
+            "m6c6dlmUT1c", 
+            "57BiI_iD3-U"
+        ], 
+        "playlist_titles": [
+            "Precalculus"
+        ], 
+        "duration": 585, 
+        "ka_url": "http://www.khanacademy.org/video/parametric-equations-2?playlist=Precalculus", 
+        "youtube_id": "wToSIQJ2o_8", 
+        "keywords": "parametric, equation, physics, CC_39336_F-BF_1_c", 
+        "date_added": "2011-02-20 16:51:40", 
+        "youtube_url": "http://www.youtube.com/watch?v=wToSIQJ2o_8&feature=youtube_gdata_player", 
+        "prev_video": "m6c6dlmUT1c", 
+        "readable_id": "parametric-equations-2"
+    }, 
+    {
+        "next_video": "IReD6c_njOY", 
+        "video_position": 29, 
+        "description": "Removing the parameter from a more interesting example", 
+        "title": "Parametric Equations 3", 
+        "views": 30422, 
+        "related_videos": [
+            "wToSIQJ2o_8", 
+            "IReD6c_njOY"
+        ], 
+        "playlist_titles": [
+            "Precalculus"
+        ], 
+        "duration": 772, 
+        "ka_url": "http://www.khanacademy.org/video/parametric-equations-3?playlist=Precalculus", 
+        "youtube_id": "57BiI_iD3-U", 
+        "keywords": "parametric, equation, ellipse, CC_39336_F-BF_1_c", 
+        "date_added": "2011-02-20 16:51:40", 
+        "youtube_url": "http://www.youtube.com/watch?v=57BiI_iD3-U&feature=youtube_gdata_player", 
+        "prev_video": "wToSIQJ2o_8", 
+        "readable_id": "parametric-equations-3"
+    }, 
+    {
+        "next_video": "W84lObmOp8M", 
+        "video_position": 30, 
+        "description": "Parametric Equations that \"move\" along the same path", 
+        "title": "Parametric Equations 4", 
+        "views": 24394, 
+        "related_videos": [
+            "57BiI_iD3-U", 
+            "W84lObmOp8M"
+        ], 
+        "playlist_titles": [
+            "Precalculus"
+        ], 
+        "duration": 784, 
+        "ka_url": "http://www.khanacademy.org/video/parametric-equations-4?playlist=Precalculus", 
+        "youtube_id": "IReD6c_njOY", 
+        "keywords": "parametric, equations", 
+        "date_added": "2011-02-20 16:51:40", 
+        "youtube_url": "http://www.youtube.com/watch?v=IReD6c_njOY&feature=youtube_gdata_player", 
+        "prev_video": "57BiI_iD3-U", 
+        "readable_id": "parametric-equations-4"
+    }, 
+    {
+        "next_video": "wSiamij_i_k", 
+        "video_position": 31, 
+        "description": "Introduction to Function Inverses", 
+        "title": "Introduction to Function Inverses", 
+        "views": 57002, 
+        "related_videos": [
+            "IReD6c_njOY", 
+            "wSiamij_i_k"
+        ], 
+        "playlist_titles": [
+            "Algebra", 
+            "Precalculus"
+        ], 
+        "duration": 545, 
+        "ka_url": "http://www.khanacademy.org/video/introduction-to-function-inverses?playlist=Precalculus", 
+        "youtube_id": "W84lObmOp8M", 
+        "keywords": "function, inverse, CC_39336_F-BF_4, CC_39336_F-BF_4_a, CC_39336_F-BF_4_c", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=W84lObmOp8M&feature=youtube_gdata_player", 
+        "prev_video": "IReD6c_njOY", 
+        "readable_id": "introduction-to-function-inverses"
+    }, 
+    {
+        "next_video": "aeyFb2eVH1c", 
+        "video_position": 32, 
+        "description": "Function Inverse Example 1", 
+        "title": "Function Inverse Example 1", 
+        "views": 59304, 
+        "related_videos": [
+            "W84lObmOp8M", 
+            "aeyFb2eVH1c"
+        ], 
+        "playlist_titles": [
+            "Algebra", 
+            "Precalculus"
+        ], 
+        "duration": 404, 
+        "ka_url": "http://www.khanacademy.org/video/function-inverse-example-1?playlist=Precalculus", 
+        "youtube_id": "wSiamij_i_k", 
+        "keywords": "Function, Inverse, Example, CC_39336_F-BF_4, CC_39336_F-BF_4_a, CC_39336_F-BF_4_b", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=wSiamij_i_k&feature=youtube_gdata_player", 
+        "prev_video": "W84lObmOp8M", 
+        "readable_id": "function-inverse-example-1"
+    }, 
+    {
+        "next_video": "Bq9cq9FZuNM", 
+        "video_position": 33, 
+        "description": "Function Inverses Example 2", 
+        "title": "Function Inverses Example 2", 
+        "views": 29109, 
+        "related_videos": [
+            "wSiamij_i_k", 
+            "Bq9cq9FZuNM"
+        ], 
+        "playlist_titles": [
+            "Algebra", 
+            "Precalculus"
+        ], 
+        "duration": 432, 
+        "ka_url": "http://www.khanacademy.org/video/function-inverses-example-2?playlist=Precalculus", 
+        "youtube_id": "aeyFb2eVH1c", 
+        "keywords": "Function, Inverses, Example, CC_39336_F-BF_4, CC_39336_F-BF_4_a, CC_39336_F-BF_4_d", 
+        "date_added": "2011-02-20 16:27:46", 
+        "youtube_url": "http://www.youtube.com/watch?v=aeyFb2eVH1c&feature=youtube_gdata_player", 
+        "prev_video": "wSiamij_i_k", 
+        "readable_id": "function-inverses-example-2"
+    }, 
+    {
+        "next_video": "FwuPXchH2rA", 
+        "video_position": 34, 
+        "description": "Function Inverses Example 3", 
+        "title": "Function Inverses Example 3", 
+        "views": 26945, 
+        "related_videos": [
+            "aeyFb2eVH1c", 
+            "FwuPXchH2rA"
+        ], 
+        "playlist_titles": [
+            "Algebra", 
+            "Precalculus"
+        ], 
+        "duration": 455, 
+        "ka_url": "http://www.khanacademy.org/video/function-inverses-example-3?playlist=Precalculus", 
+        "youtube_id": "Bq9cq9FZuNM", 
+        "keywords": "Function, Inverses, Example, CC_39336_F-BF_4, CC_39336_F-BF_4_a, CC_39336_F-BF_4_d", 
+        "date_added": "2011-02-20 16:27:47", 
+        "youtube_url": "http://www.youtube.com/watch?v=Bq9cq9FZuNM&feature=youtube_gdata_player", 
+        "prev_video": "aeyFb2eVH1c", 
+        "readable_id": "function-inverses-example-3"
+    }, 
+    {
+        "next_video": "N0Y8ia57C24", 
+        "video_position": 35, 
+        "description": "Argand Diagram, magnitude, modulus, argument, exponential form", 
+        "title": "Basic Complex Analysis", 
+        "views": 18577, 
+        "related_videos": [
+            "Bq9cq9FZuNM", 
+            "N0Y8ia57C24"
+        ], 
+        "playlist_titles": [
+            "Precalculus"
+        ], 
+        "duration": 784, 
+        "ka_url": "http://www.khanacademy.org/video/basic-complex-analysis?playlist=Precalculus", 
+        "youtube_id": "FwuPXchH2rA", 
+        "keywords": "Argand, Diagram, magnitude, modulus, argument, exponential, form, complex", 
+        "date_added": "2011-02-20 16:51:40", 
+        "youtube_url": "http://www.youtube.com/watch?v=FwuPXchH2rA&feature=youtube_gdata_player", 
+        "prev_video": "Bq9cq9FZuNM", 
+        "readable_id": "basic-complex-analysis"
+    }, 
+    {
+        "next_video": "BZxZ_eEuJBM", 
+        "video_position": 36, 
+        "description": "Using exponential form to find complex roots", 
+        "title": "Exponential form to find complex roots", 
+        "views": 13283, 
+        "related_videos": [
+            "FwuPXchH2rA", 
+            "BZxZ_eEuJBM"
+        ], 
+        "playlist_titles": [
+            "Precalculus"
+        ], 
+        "duration": 713, 
+        "ka_url": "http://www.khanacademy.org/video/exponential-form-to-find-complex-roots?playlist=Precalculus", 
+        "youtube_id": "N0Y8ia57C24", 
+        "keywords": "Exponential, form, to, find, complex, roots, real, imaginary, argument, magintude", 
+        "date_added": "2011-02-20 16:51:40", 
+        "youtube_url": "http://www.youtube.com/watch?v=N0Y8ia57C24&feature=youtube_gdata_player", 
+        "prev_video": "FwuPXchH2rA", 
+        "readable_id": "exponential-form-to-find-complex-roots"
+    }, 
+    {
+        "next_video": "A6fbDssPeac", 
+        "video_position": 37, 
+        "description": "Complex Conjugates", 
+        "title": "Complex Conjugates", 
+        "views": 8182, 
+        "related_videos": [
+            "N0Y8ia57C24", 
+            "A6fbDssPeac"
+        ], 
+        "playlist_titles": [
+            "Precalculus"
+        ], 
+        "duration": 483, 
+        "ka_url": "http://www.khanacademy.org/video/complex-conjugates?playlist=Precalculus", 
+        "youtube_id": "BZxZ_eEuJBM", 
+        "keywords": "Complex, Conjugates, argand, real, imaginary", 
+        "date_added": "2011-02-20 16:51:40", 
+        "youtube_url": "http://www.youtube.com/watch?v=BZxZ_eEuJBM&feature=youtube_gdata_player", 
+        "prev_video": "N0Y8ia57C24", 
+        "readable_id": "complex-conjugates"
+    }, 
+    {
+        "next_video": "E7OkUomRq1Q", 
+        "video_position": 38, 
+        "description": "2010 IIT JEE Paper 1 Problem 54 Series Sum", 
+        "title": "Series Sum Example", 
+        "views": 9074, 
+        "related_videos": [
+            "BZxZ_eEuJBM", 
+            "E7OkUomRq1Q"
+        ], 
+        "playlist_titles": [
+            "IIT JEE Questions", 
+            "Precalculus"
+        ], 
+        "duration": 858, 
+        "ka_url": "http://www.khanacademy.org/video/series-sum-example?playlist=Precalculus", 
+        "youtube_id": "A6fbDssPeac", 
+        "keywords": "2010, IIT, JEE, Paper, Problem, 54, Series, Sum", 
+        "date_added": "2011-02-20 16:45:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=A6fbDssPeac&feature=youtube_gdata_player", 
+        "prev_video": "BZxZ_eEuJBM", 
+        "readable_id": "series-sum-example"
+    }, 
+    {
+        "next_video": "ZFN63oTeYzc", 
+        "video_position": 39, 
+        "description": "2010 IIT JEE Paper 1 Problem 53 Complex Determinant", 
+        "title": "Complex Determinant Example", 
+        "views": 4865, 
+        "related_videos": [
+            "A6fbDssPeac", 
+            "ZFN63oTeYzc"
+        ], 
+        "playlist_titles": [
+            "IIT JEE Questions", 
+            "Precalculus"
+        ], 
+        "duration": 778, 
+        "ka_url": "http://www.khanacademy.org/video/complex-determinant-example?playlist=Precalculus", 
+        "youtube_id": "E7OkUomRq1Q", 
+        "keywords": "2010, IIT, JEE, Paper, Problem, 53, Complex, Determinant", 
+        "date_added": "2011-02-20 16:45:20", 
+        "youtube_url": "http://www.youtube.com/watch?v=E7OkUomRq1Q&feature=youtube_gdata_player", 
+        "prev_video": "A6fbDssPeac", 
+        "readable_id": "complex-determinant-example"
+    }, 
+    {
+        "next_video": "sBhEi4L91Sg", 
+        "video_position": 40, 
+        "description": "Sequence from the product of 2 arithmetic sequences", 
+        "title": "2003 AIME II Problem 8", 
+        "views": 5741, 
+        "related_videos": [
+            "E7OkUomRq1Q", 
+            "sBhEi4L91Sg"
+        ], 
+        "playlist_titles": [
+            "Competition Math", 
+            "Precalculus"
+        ], 
+        "duration": 728, 
+        "ka_url": "http://www.khanacademy.org/video/2003-aime-ii-problem-8?playlist=Precalculus", 
+        "youtube_id": "ZFN63oTeYzc", 
+        "keywords": "arithmetic, sequence, series", 
+        "date_added": "2011-02-20 16:37:35", 
+        "youtube_url": "http://www.youtube.com/watch?v=ZFN63oTeYzc&feature=youtube_gdata_player", 
+        "prev_video": "E7OkUomRq1Q", 
+        "readable_id": "2003-aime-ii-problem-8"
+    }, 
+    {
+        "next_video": "4xfOq00BzJA", 
+        "video_position": 41, 
+        "description": "Understanding how logarithmic scale is different from linear scale and why it could be useful", 
+        "title": "Logarithmic Scale", 
+        "views": 18157, 
+        "related_videos": [
+            "ZFN63oTeYzc", 
+            "4xfOq00BzJA"
+        ], 
+        "playlist_titles": [
+            "Precalculus", 
+            "New and Noteworthy"
+        ], 
+        "duration": 675, 
+        "ka_url": "http://www.khanacademy.org/video/logarithmic-scale?playlist=Precalculus", 
+        "youtube_id": "sBhEi4L91Sg", 
+        "keywords": "log, scale, number, line", 
+        "date_added": "2011-08-26 10:00:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=sBhEi4L91Sg&feature=youtube_gdata_player", 
+        "prev_video": "ZFN63oTeYzc", 
+        "readable_id": "logarithmic-scale"
+    }, 
+    {
+        "next_video": "6KmeGpjeLZ0", 
+        "video_position": 42, 
+        "description": "Vi Hart (http://www.youtube.com/vihart) and Sal talk about how we humans perceive things nonlinearly", 
+        "title": "Vi and Sal Explore How We Think About Scale", 
+        "views": 24860, 
+        "related_videos": [
+            "sBhEi4L91Sg", 
+            "6KmeGpjeLZ0"
+        ], 
+        "playlist_titles": [
+            "Precalculus", 
+            "New and Noteworthy"
+        ], 
+        "duration": 416, 
+        "ka_url": "http://www.khanacademy.org/video/vi-and-sal-explore-how-we-think-about-scale?playlist=Precalculus", 
+        "youtube_id": "4xfOq00BzJA", 
+        "keywords": "logarithmic, scale, logarithm, vi, hart", 
+        "date_added": "2011-08-26 10:00:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=4xfOq00BzJA&feature=youtube_gdata_player", 
+        "prev_video": "sBhEi4L91Sg", 
+        "readable_id": "vi-and-sal-explore-how-we-think-about-scale"
+    }, 
+    {
+        "next_video": "SZUDoEdjTzg", 
+        "video_position": 43, 
+        "description": "Vi Hart visits Khan Academy and talks about Benford's Law with Sal", 
+        "title": "Vi and Sal Talk About the Mysteries of Benford's Law", 
+        "views": 10771, 
+        "related_videos": [
+            "4xfOq00BzJA", 
+            "SZUDoEdjTzg"
+        ], 
+        "playlist_titles": [
+            "Precalculus", 
+            "New and Noteworthy"
+        ], 
+        "duration": 485, 
+        "ka_url": "http://www.khanacademy.org/video/vi-and-sal-talk-about-the-mysteries-of-benford-s-law?playlist=Precalculus", 
+        "youtube_id": "6KmeGpjeLZ0", 
+        "keywords": "benford, math, numbers", 
+        "date_added": "2011-08-26 10:00:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=6KmeGpjeLZ0&feature=youtube_gdata_player", 
+        "prev_video": "4xfOq00BzJA", 
+        "readable_id": "vi-and-sal-talk-about-the-mysteries-of-benford-s-law"
+    }, 
+    {
+        "next_video": "", 
+        "video_position": 44, 
+        "description": "Vi and Sal talk through the intuition of Benford's law (part 2)", 
+        "title": "Benford's Law Explanation (Sequel to Mysteries of Benford's Law)", 
+        "views": 6450, 
+        "related_videos": [
+            "6KmeGpjeLZ0"
+        ], 
+        "playlist_titles": [
+            "Precalculus"
+        ], 
+        "duration": 387, 
+        "ka_url": "http://www.khanacademy.org/video/benford-s-law-explanation--sequel-to-mysteries-of-benford-s-law?playlist=Precalculus", 
+        "youtube_id": "SZUDoEdjTzg", 
+        "keywords": "math, mysteries", 
+        "date_added": "2011-08-26 10:00:17", 
+        "youtube_url": "http://www.youtube.com/watch?v=SZUDoEdjTzg&feature=youtube_gdata_player", 
+        "prev_video": "6KmeGpjeLZ0", 
+        "readable_id": "benford-s-law-explanation--sequel-to-mysteries-of-benford-s-law"
+    }
+]

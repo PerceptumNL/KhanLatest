@@ -1,0 +1,20 @@
+{% extends "page_template.html" %}
+{% block pagesubmenu %}
+    <span class="breadcrumbs_nav">
+        <a href="http://www.khanacademy.org">Home</a>
+    </span>
+{% endblock pagesubmenu %}
+			
+{% block pagecontent %}
+
+<div id="summer_process" style="padding: 9px 23px;">
+  <div>
+    <h2>Khan Academy Discovery Lab Application Processing</h2>
+    {% if authenticated %}
+        Logged in as {{ user_email|escape }}.<br> Processing interface will be available shortly
+    {% else %}
+        <a id="auth_link" class="authenticate-user" href="{{login_url|escape}}">Log in to your Khan Academy account</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock pagecontent %}

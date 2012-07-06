@@ -1,0 +1,28 @@
+<!-- TODO(marcia): Understand what these different classes mean -->
+<div class="mod_tools mod_queue">
+    <!-- TODO(marcia): Put remaining mod controls in here and bring data-key up a level? -->
+    {{#if appearsAsDeleted}}
+        <span class="mod_undelete simple-button" data-key="{{key}}"
+        data-heuristics="{{isSortedByHeuristics}}">Undo</span>
+    {{else}}
+        <span class="mod_delete simple-button" data-key="{{key}}"
+        data-heuristics="{{isSortedByHeuristics}}">Delete post</span>
+    {{/if}}
+    <!-- TODO(drew): Find a way to make the following actions undo-able -->
+    {{#if isSortedByHeuristics}}
+        <!-- This entity may or may not have been flagged. However, clearing
+        the flags works since it also sets definitely_not_spam to true -->
+        <span class="mod_clear_flags simple-button" data-key="{{key}}"
+        data-heuristics="true">Not spam</span>
+    {{else}}
+        <span class="mod_clear_flags simple-button" data-key="{{key}}"
+        data-heuristics="false">Clear flags</span>
+    {{/if}}
+    </span>
+    {{#if isComment}}
+        <span class="mod_change simple-button" data-target-type="question" data-key="{{key}}">Change to question</span>
+    {{else}}
+        <span class="mod_change simple-button" data-target-type="comment" data-key="{{key}}">Change to comment</span>
+    {{/if}}
+    <span class="message">{{message}}</span>
+</div>

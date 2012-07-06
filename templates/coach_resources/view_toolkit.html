@@ -1,0 +1,223 @@
+{% extends "page_template.html" %}
+
+{% import 'macros/analytics.html' as analytics %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("profile") }}
+{% endblock pagecss %}
+
+{% block meta_page_title %}Teacher Toolkit | {% endblock meta_page_title %}
+{% block pagescript %}
+    <style>
+
+		
+		#public #container #form1 #header {
+			display: none; 
+		}
+		
+		.tab-link {
+			padding-left:6px;
+		}
+		
+		ul.bullet {
+			font-size: 14px;
+			list-style: disc;
+			margin-left: 30px;
+			margin-bottom:22px;
+		}
+		
+		span.video-link {
+			margin-left: 15px;
+		}
+		
+		ul.bullet > li {
+			line-height: 1.4em;
+			margin-bottom: .4em;
+		}
+		
+		hr {
+			margin-bottom: 22px;
+		}
+		
+		/* Special thanks to #business.Twitter for inspiration behind callout and lead styling */
+		
+		.lead {
+			font-size:18px;
+			line-height:23px;
+		}
+		
+		.callout {
+			background: #F3F3F3;
+			padding: 19px 19px 5px;
+			margin: 20px 0px 20px;
+			border: 1px solid #EEE;
+			border-top-color: #DDD;
+			border-radius: 6px;
+			-khtml-border-radius: 6px;
+			-moz-border-radius: 6px;
+			-webkit-border-radius: 6px;
+		}
+		
+		.callout > h3 {
+			margin-bottom:10px;
+		}
+		
+		.callout > ul {
+			font-size:12px;
+		}
+		
+		ol.number {
+			font-size: 14px;
+			margin-left: 30px;
+			list-style-type: decimal;
+		}
+		
+		ol.number > li {
+			line-height: 1.4em;
+			margin-bottom: .6em;
+		}
+		
+		h5 {
+			margin-top: 30px;
+		}
+		
+		.has-media {
+			position: relative;
+		}
+		
+		.has-media .toolkit-media {
+			position: absolute;
+			margin-left: 107%;
+			margin-top: -22px;
+			width: 52%;
+		}
+		
+		.has-media .toolkit-media-index-page1 {
+			position: absolute;
+			margin-left: 107%;
+			margin-top: 200px;
+			width: 52%;
+		}
+		
+		.has-media .toolkit-media-index-page2 {
+			position: absolute;
+			margin-left: 107%;
+			margin-top: 422px;
+			width: 52%;
+		}
+		
+		.image-centered {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+    </style>
+{% endblock pagescript %}
+
+{% block pagesubmenu %}
+<span class="breadcrumbs_nav">
+    <a href="/coach/resources" id="teacher-resources" class="selected">Teacher Resources<span style="font-size:8px;color:orange;"> NEW</span>
+    <a href="/students" id="manage-students">Manage Students</a>
+    <a href="/class_profile" id="class-stats">Class Stats</a>
+</span>
+{% endblock pagesubmenu %}
+
+{% block pagecontent %}
+<article id="toolkit">
+	<menu class="profile-navigation">
+	    <ul>
+	        <!-- TODO(Matt): transpent-ify the hand-tree image -->
+			<li class="profile-tab"><a href="{{base_url}}" class="tab-link ellipsis no-recolor {% if 'index' == selected_id %}active-tab{% endif %}" rel="profile">
+	            <img src="/images/hand-tree.png" class="profile-tab-avatar">
+	            <span id="profile-tab-link" class="profile-tab-text">Teacher Toolkit</span>
+	        </a></li>
+	        
+			<li>
+	            <span class="inactive link-section-header">Choosing KA</span>
+	            <ul class="second-tier">
+	                <li><a href="{{base_url}}/how-to-use-this-toolkit" class="tab-link ellipsis no-recolor {% if 'how-to-use-this-toolkit' == selected_id %}active-tab{% endif %}" rel="section-1">How to use this toolkit</a></li>
+	                <li><a href="{{base_url}}/toolkit-sections" class="tab-link ellipsis no-recolor {% if 'toolkit-sections' == selected_id %}active-tab{% endif %}" rel="section-2">Toolkit sections</a></li>
+					<li><a href="{{base_url}}/ka-classrooms" class="tab-link ellipsis no-recolor {% if 'ka-classrooms' == selected_id %}active-tab{% endif %}" rel="section-3">Why Khan Academy?</a></li>
+	            </ul>
+	        </li>
+	        <li>
+	            <span class="inactive link-section-header">Getting Started</span>
+	            <ul class="second-tier">
+	                <li><a href="{{base_url}}/setting-up-accounts" class="tab-link ellipsis no-recolor {% if 'setting-up-accounts' == selected_id %}active-tab{% endif %}" rel="getting-started accounts">Setting up a class</a></li>
+	                <li><a href="{{base_url}}/technology" class="tab-link ellipsis no-recolor {% if 'technology' == selected_id %}active-tab{% endif %}" rel="getting-started technology">Technology</a></li>
+	                <li><a href="{{base_url}}/navigating-the-site" class="tab-link ellipsis no-recolor {% if 'navigating-the-site' == selected_id %}active-tab{% endif %}" rel="getting-started navigating">Navigating the Site</a></li>
+	                <li><a href="{{base_url}}/first-week" class="tab-link ellipsis no-recolor {% if 'first-week' == selected_id %}active-tab{% endif %}" rel="getting-started warming">Starting out on KA</a></li-->
+	            </ul>
+	        </li>
+	        <li>
+	            <span class="inactive link-section-header">Class time</span>
+	            <ul class="second-tier">
+	                <li><a href="{{base_url}}/classroom-culture" class="tab-link ellipsis no-recolor {% if 'classroom-culture' == selected_id %}active-tab{% endif %}" rel="getting-started accounts">Classroom culture</a></li>
+	                <li><a href="{{base_url}}/keys-to-success" class="tab-link ellipsis no-recolor {% if 'keys-to-success' == selected_id %}active-tab{% endif %}" rel="getting-started accounts">Keys to success</a></li>
+	                <li><a href="{{base_url}}/instructional-strategies" class="tab-link ellipsis no-recolor {% if 'instructional-strategies' == selected_id %}active-tab{% endif %}" rel="getting-started documents">Instructional strategies</a></li>
+	                <li><a href="{{base_url}}/different-learners" class="tab-link ellipsis no-recolor {% if 'different-learners' == selected_id %}active-tab{% endif %}" rel="getting-started technology">Different learners</a></li>
+	                <li><a href="{{base_url}}/using-data" class="tab-link ellipsis no-recolor {% if 'using-data' == selected_id %}active-tab{% endif %}" rel="getting-started technology">Using data</a></li>
+	            </ul>
+	        </li>
+	        <li>
+	            <span class="inactive link-section-header">Curriculum</span>
+	            <ul class="vertical-tab-list second-tier">
+	                <li><a href="{{base_url}}/individualized-units" class="tab-link no-recolor {% if 'individualized-units' == selected_id %}active-tab{% endif %}" rel="getting-started accounts">Individualized units</a></li>
+	                <li><a href="{{base_url}}/projects" class="tab-link no-recolor {% if 'projects' == selected_id %}active-tab{% endif %}" rel="projects">Projects</a></li>
+                        <li><a href="/commoncore" target="_blank" class="tab-link no-recolor {% if 'commoncore' == selected_id %}active-tab{% endif %}" rel="getting-started accounts">Common Core <img width=12px src="/images/newtab.png"></a></li>
+
+	            <span class="inactive link-section-header">Other resources</span>
+	            <ul class="second-tier">
+                        <li><a href="http://khanacademy.desk.com/customer/portal/topics/189393-khan-academy-in-the-classroom/articles" target="_blank" class="tab-link no-recolor {% if 'teacher-faqs' == selected_id %}active-tab{% endif %}" rel="getting-started accounts">Teacher FAQs <img width=12px src="/images/newtab.png"></a></li>
+	                <li><a href="/coach/schools-blog" class="tab-link ellipsis no-recolor {% if 'schools-blog' == selected_id %}active-tab{% endif %}" rel="getting-started accounts">Schools Blog</a></li>
+	            </ul>
+	        </li>
+			
+			
+	    </ul>
+        </menu>
+	
+	<section class="tab-content">
+				
+        {% if not_in_toolkit_format %}
+                {% block resourcecontent %}
+                {% endblock resourcecontent %}
+        {% else %}
+		
+		<div class="col1 sixty-forty">
+		{% block col1content %}
+		{% endblock col1content %}
+		</div>
+		
+        <div class="col2 sixty-forty">
+		{% block col2content %}
+		{% endblock col2content %}
+        </div>
+        {% endif %}
+				
+	</section>	
+	
+</article>
+
+ <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'ka-toolkit'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+{% endblock pagecontent %}
+
+{% block bottompagescript %}
+    {{ js_css_packages.js_package("commoncore") }}
+	{{ analytics.crazyegg_tracker(False) }}
+{% endblock bottompagescript %}

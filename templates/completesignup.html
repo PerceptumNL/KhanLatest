@@ -1,0 +1,26 @@
+{% extends "page_template.html" %}
+
+{# This is the second step of the registration process and is a page to
+    collect the full information about a user, after they have verified
+    ownership of an e-mail address #}
+
+{% block meta_page_title %}Sign In | {% endblock meta_page_title %}
+{% block pagetitle %}{% endblock pagetitle %}
+
+{% block pagecss %}
+    {{ js_css_packages.css_package("login") }}
+{% endblock pagecss %}
+
+{% block pagecontent %}
+<article id="page-root">
+    <div class="completesignup-iframe-container">
+        <iframe frameborder="0"
+                scrolling="no"
+                width="565"
+                height="480"
+                allowtransparency="yes"
+                src="{{templatetags.to_secure_url('/completesignup')}}?{{params}}&continue={{continue|escape}}&form=1">
+        </iframe>
+    </div>
+</article>
+{% endblock pagecontent %}

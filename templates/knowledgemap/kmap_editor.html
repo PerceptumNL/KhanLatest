@@ -1,0 +1,120 @@
+{% extends "page_template.html" %}
+
+{% block meta_page_title %}Knowledge map editor | {% endblock meta_page_title %}
+
+{% block bottompagescript %}
+    {{ js_css_packages.css_package("knowledgemap") }}
+    {{ js_css_packages.js_package("knowledgemap") }}
+{% endblock bottompagescript %}
+
+
+{% block pagesubmenu %}
+    <span class="breadcrumbs_nav">
+    <a id="select-view-mode" href="#default">View default version</a>
+    <a id="select-edit-mode" href="#edit">Modify edit version</a>
+    </span>
+{% endblock pagesubmenu %}
+
+
+{% block pagecontent %}
+    <div id="map-edit-container">
+        <div id="map-edit-message"></div>
+        <div id="sidebar">
+            <div id="controls">
+                <input id="find-exercise" type="text" style="width:330px;"
+                placeholder="Start typing the name of an exercise to find it"
+                value class="ui-autocomplete-input placeholder ui-corner-all simple-input"
+                autocomplete="off" role="textbox"
+                aria-autocomplete="list" aria-haspopup="true">
+                <p style="text-align: center">
+                    <a href="javascript:null(0)" id="save-button"
+                    class="simple-button disabled">Save changes to edit version</a><br />
+                    <span style="font-size: 10px;">Saving won't publish the edit version</span>
+                </p>
+            </div>
+            <div id="info">
+                <div class="exercise-properties" style="display: none;">
+                    <p id="ex-title"></p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Display name</td>
+                                <td>
+                                    <input type="text" name="pretty_display_name"><br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>File name</td>
+                                <td>
+                                    <input type="text" name="file_name"><br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>
+                                    <label for="live_yes">Live</label>
+                                    <input type="radio" id="live_yes" name="live" value="1" checked="checked">
+                                    <label for="live_no">Developers only</label>
+                                    <input type="radio" id="live_no" name="live" value="0"><br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Short name</td>
+                                <td>
+                                    <input type="text" name="short_display_name" maxlength="11"><br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Position</td>
+                                <td>
+                                    <span id="h_position">0</span>, <span id="v_position">0</span><br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fast problem time</td>
+                                <td>
+                                    <input type="text" name="seconds_per_fast_problem" style="width: 30px">
+                                    seconds<br />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="caption">Prerequisites</p>
+                    <div class="list">
+                        <div id="prereqs-container"></div>
+                        <select id="add-prereq" style="width:200px;">
+                            <option value=""> - Add prerequisite exercise - </option>
+                        </select>
+                    </div>
+
+                    <p class="caption">Covered exercises</p>
+                    <div class="list">
+                        <div id="covers-container"></div>
+                        <select id="add-cover" style="width:200px;">
+                            <option value=""> - Add covered exercise - </option>
+                        </select>
+                    </div>
+
+                    <p class="caption">Related videos</p>
+                    <div id="related-video-wait" class="list"><img src="/images/throbber.gif"></div>
+                    <div id="related-video-control" class="list">
+                        <div id="video-container"></div>
+                        <input id="add-video-input" type="text" style="width:200px;" placeholder="- Add related video -"
+                        value class="ui-autocomplete-input placeholder" autocomplete="off" role="textbox"
+                        aria-autocomplete="list" aria-haspopup="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="map-container">
+            <div id="map">
+            </div>
+            <div id="zoom-exercise" class="zoom-button">Exercises</div>
+            <div id="zoom-hybrid" class="zoom-button">Hybrid</div>
+            <div id="zoom-topic" class="zoom-button">Topics</div>
+        </div>
+    </div>
+
+{% endblock pagecontent %}

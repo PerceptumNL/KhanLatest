@@ -1,0 +1,63 @@
+{% extends "labs/template.html" %}
+
+{% block pagecss %}
+{{ js_css_packages.css_package("bootstrap") }}
+<style>
+.row {
+    margin-top: 40px;
+}
+.placeholder {
+    display: block;
+    width: 130px;
+    height: 97px;
+    line-height: 97px;
+    font-size: 60px;
+    text-align: center;
+    color: #888;
+    background-color: #ccc;
+    font-weight: bold;
+}
+</style>
+{% endblock pagecss %}
+
+{% block pagetitle %}Khan Academy Labs{% endblock pagetitle %}
+
+{% block pagecontent %}
+<h1>Khan Academy Labs</h1>
+<p>Labs is a place for experiments that may or may not work out, or other features that are not yet ready to ship. You can try them here, but remember they could change, break, disappear, or graduate to the main site at any moment.</p>
+<div class="row">
+    <div class="span2">
+        <div class="thumbnail">
+            <img src="http://img.youtube.com/vi/xyAuNHPsq-g/hqdefault.jpg" alt="">
+        </div>
+    </div>
+    <div class="span6">
+        <h2>Interactive videos</h2>
+        <p>A new way to watch videos where you will be quizzed on the content as you watch.</p>
+        <a class="simple-button green" href="/labs/socrates">Take a peek</a>
+    </div>
+</div>
+<div class="row">
+    <div class="span2">
+        <div class="thumbnail">
+            <img alt="Explorations" src="/images/labs/explorations-thumb.png">
+        </div>
+    </div>
+    <div class="span6">
+        <h2>Explorations</h2>
+        <p>Build your intuition of key concepts through these interactive explorations.</p>
+        <a class="simple-button green" href="/labs/explorations">Take a peek</a>
+    </div>
+</div>
+<div class="row">
+    <div class="span2">
+        <div class="thumbnail">
+            <div class="placeholder">?</div>
+        </div>
+    </div>
+    <div class="span6">
+        <h2>Something secret</h2>
+        <p>Who knows what this could be?</p>
+    </div>
+</div>
+{% endblock pagecontent %}

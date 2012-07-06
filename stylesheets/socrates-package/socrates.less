@@ -1,0 +1,288 @@
+@import "timebar.less";
+
+.video-overlay .question {
+    display: none;
+}
+
+.video-overlay .question.visible {
+    display: block;
+}
+
+
+/* a layer is used to display form controls over a backdrop */
+.video-overlay .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 480px;
+}
+
+.video-overlay .popout {
+    display: block;
+    margin: 30px -30px auto -30px;
+    padding: 19px;
+
+    background-color: white;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.video-overlay {
+    font-size: 150%;
+}
+
+/* backdrop layer */
+.video-overlay .layer.backdrop {
+    z-index: 1;
+}
+.video-overlay .layer.backdrop.whiteout {
+    background: #fff;
+    opacity: 0.9;
+    -moz-opacity: 0.9;
+    filter:alpha(opacity=9);
+}
+.video-overlay .layer.backdrop.videoframe {
+    background: #000;
+}
+.video-overlay .layer.backdrop.videoframe img {
+    display: block;
+    height: 450px;
+    margin: 0 auto 0 auto;
+}
+
+
+/* controls layer */
+.video-overlay .layer.controls {
+    z-index: 2;
+}
+
+.video-overlay .layer.controls p {
+    margin: 0 0 13px;
+    font-size: 100%;
+}
+
+.video-overlay .submit-area button {
+    font-size: 100%;
+}
+
+/* default form styles */
+.video-overlay label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.video-overlay .checkbox, .video-overlay .radio {
+    padding-left: 18px;
+}
+
+.video-overlay .radio.inline, .checkbox.inline {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.video-overlay input[type=text] {
+    font-size: 100%;
+}
+
+/* buttons */
+.video-overlay .simple-button {
+    margin: 0 10px;
+}
+.video-overlay .submit-area .simple-button {
+    display: inline-block;
+}
+
+.video-overlay .submit-area .skip {
+    float: right;
+}
+
+/* default submit area */
+.video-overlay .submit-area {
+    margin: 30px 0 0;
+}
+.video-overlay .watermark-blocker {
+    position: absolute;
+    width: 800px;
+    height: 65px;
+    bottom: 0;
+    background-color: #000;
+}
+.video-overlay .watermark-blocker .submit-area {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 10px;
+}
+
+
+/* matrix input tables. Should use bootstrap css, but override as follows */
+table.matrix-input {
+    display: inline-block;
+    position: relative;
+    top: 1em
+}
+
+table.matrix-input td {
+    border: none;
+    padding: 2px;
+}
+
+
+/* inputtext */
+.video-overlay .layer.controls .inputtext {
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    padding: 3px 20px 10px 3px;
+}
+.video-overlay .layer.controls .inputtext.moveable {
+    background-color: red;
+}
+.video-overlay .layer.controls .inputtext.ui-draggable {
+    cursor: move;
+}
+.video-overlay .layer.controls .inputtext input {
+    width: 100%;
+    height: 100%;
+}
+.video-overlay .layer.controls .inputtext input {
+    background-color: #444;
+    border: 1px solid #444;
+    color: #ddd;
+}
+.video-overlay .layer.controls .inputtext input:focus {
+    background-color: #555;
+    color: #fff;
+}
+
+/* label */
+.video-overlay .layer.controls .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    padding: 5px;
+    color: #f60;
+}
+.video-overlay .layer.controls.edit .label {
+    border: 1px solid #fff;
+}
+
+/* other stuff */
+.interactive-video-controls {
+    position: absolute;
+    float: left;
+}
+
+/* (in)correct notifications */
+.submit-area .alert {
+    display: none;
+    background: none !important;
+    border: none;
+}
+
+img.face {
+    vertical-align: -6px;
+    height: 24px;
+}
+
+
+/* fraction input */
+.fraction-input {
+    display: inline-block;
+    vertical-align: middle;
+}
+.fraction-input input[type=text] {
+    display: block;
+    width: 75%;
+    margin: auto;
+}
+.fraction-input hr {
+    margin: 5px 0;
+    padding: 0;
+    color: #000;
+    background: #555;
+    height: 2px;
+    border: none;
+    box-shadow: none;
+}
+
+.qtip-question {
+    display: none;
+}
+
+.mem {
+    display: none;
+}
+
+/* hide some elements on the video page */
+article {
+    border-top: none;
+}
+
+/* bootstrap css for breadcrumbs */
+.breadcrumb {
+  padding: 7px 14px;
+  margin: 0 0 18px;
+  background-color: #fbfbfb;
+  background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -ms-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f5f5f5));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: linear-gradient(top, #ffffff, #f5f5f5);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0);
+  border: 1px solid #ddd;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 #ffffff;
+  -moz-box-shadow: inset 0 1px 0 #ffffff;
+  box-shadow: inset 0 1px 0 #ffffff;
+}
+.breadcrumb li {
+  display: inline-block;
+  text-shadow: 0 1px 0 #ffffff;
+}
+.breadcrumb .divider {
+  padding: 0 5px;
+  color: #999999;
+}
+.breadcrumb .active a {
+  color: #333333;
+}
+
+/* bootstrap close styles, anchor tag added to increase specificity */
+a.close {
+  float: right;
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 13.5px;
+  text-shadow: 0 1px 0 #ffffff;
+  filter: alpha(opacity=25);
+  -khtml-opacity: 0.25;
+  -moz-opacity: 0.25;
+  opacity: 0.25;
+}
+a.close:hover {
+  color: #000000;
+  text-decoration: none;
+  filter: alpha(opacity=40);
+  -khtml-opacity: 0.4;
+  -moz-opacity: 0.4;
+  opacity: 0.4;
+}

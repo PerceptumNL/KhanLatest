@@ -1,0 +1,57 @@
+{% extends "coach_resources/view_toolkit.html" %}
+
+{% block col1content %}
+		
+	<h1>Technology</h1>
+	<hr>
+	<p class="lead">Khan Academy is ready to go with a reliable internet connection and a modern web browser.</p>
+	
+	<p>Since beginning our work with schools in late 2010, we've seen schools successfully use a variety of devices and browsers. The most important things to have in place are accounts for logging in to KA, computers and devices, and internet connectivity.</p>
+	
+	<h3>Log-in / accounts</h3>
+	<p>For a large number of accounts, we recommend Google Apps for Education (described in the <a href="/toolkit/setting-up-accounts">accounts section</a>). Google Apps for Education is the only way to register students under age 13 on Khan Academy (with appropriate parental consent).</p>
+	<p>Today, for all users, we support Google and Facebook authentication; we do not have our own authentication service.</p>
+	
+	<h3>Computers and devices</h3>
+	<p>Khan Academy runs entirely in your browser, and there is no special software required to use the site, so you can access KA with any device that runs a modern internet browser. In the schools we work with we have seen the whole gamut including laptops, Chromebooks, Netbooks, iPads, and other tablet devices.</p>
+	<p>We recommend having a 1:1 student-to-computer ratio in the classroom when using KA. At many schools, classroms share laptop carts. We've also seen some schools employ an open-access policy that permits students to bring in their own devices.</p>
+	
+	<h3>Internet connectivity</h3>
+	<p>Classrooms should have adequate access-point availability and bandwidth:</p>
+	<ul class="bullet">
+		<li><strong>Access points</strong>
+		For full access to the site, make sure your wireless can accommodate every student working simultaneously on Khan Academy</li>
+		<li><strong>Connection speed (bandwidth)</strong>
+		Khan Academy requires a broadband connection (~1.5 Mbps for a single machine viewing standard definition video) to watch videos, practice using exercises, and view data</li>
+	</ul>	
+	
+	<h3>YouTube filtering</h3>
+	<p>If you'd like your students to be able to watch Khan Academy videos and other educational content without giving them full access to YouTube, you can sign up for <a href="http://youtube.com/education_signup">YouTube for Schools</a></li>. Find full details on setting up YouTube for Schools <a href="http://support.google.com/youtube/bin/answer.py?hl=en&answer=1686318">here</a>.</p>
+	
+	
+	<p><a href="{{base_url}}/navigating-the-site" class="call-to-action simple-button green">Next: Navigating the site →</a></p>
+
+{% endblock col1content %}	
+		
+{% block col2content %}	
+<div class="callout">
+		<h3>Useful links</h3>
+		<ul class="bullet">
+			<li><a href="http://khanacademy.desk.com/customer/portal/articles/414115-what-types-of-computers-devices-should-i-be-using-in-the-classroom-">What type of computers should I have in my classroom?</a></li>
+			<li><a href="http://khanacademy.desk.com/customer/portal/articles/414132-which-browsers-are-supported-">Which browsers are supported?</a></li>
+		</ul>			
+</div>
+
+
+             <script type="text/javascript">
+            var disqus_shortname = 'ka-toolkit'; 
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+{% endblock col2content %}	

@@ -1,0 +1,60 @@
+{% extends "coach_resources/view_toolkit.html" %}
+{% import 'macros/youtube.html' as youtube %}
+
+{% block resourcecontent %}
+<div id="demo">
+    <div class="col1 fifty-fifty" style="text-align: center; padding-top: 18px;">
+        {{ youtube.player_embed("DLt6mMQH1OY", "99%", 440) }}
+    </div>
+    <div class="col2 fifty-fifty">
+        <h2 class="main-headline" style="white-space: pre;">Demo</h2>
+        <p>
+        In addition to the tremendous content that Khan Academy provides via video lessons and
+        practice exercises, there is also a wealth of data that a coach can access about
+        his/her classroom. The short video on the left explains what some of the capabilities are.
+        </p>
+
+        <p>
+        To experience this first hand, we have created a way for you to access data for a
+        classroom setting by simulating the scenario. Some of us at Khan Academy have added ourselves
+        to a class, and you can access this class through a <a href="/coach/accessdemo" target="_blank">
+        demo</a>.
+        <ul class=bullet>
+            <li>Simply click on the demo button (if you are logged into your account, you will need to log out first)
+            <li>Experience the power of the data by clicking around the different reports
+            <li>Logout of the demo account when you are done (and log back into your account)
+        </ul>
+        </p>
+
+        <p>
+        <form id="coach_demo_form" action="/coach/accessdemo" method="post">
+            <input id="demo-submit" type="submit" value="Access Demo" class="call-to-action simple-button blue">
+        </form>
+        </p>
+
+        <script>
+            $(document).ready(function(e) {
+                var logged_in = {{ is_logged_in }}
+                if (logged_in) {
+                    $("input[id='demo-submit']").val("Logout and access demo")
+                    $("input[id='demo-submit']").removeClass("blue")
+                    $("input[id='demo-submit']").addClass("orange")
+                }
+            });
+
+            $("#coach_demo_form").submit(function(e) {
+                if ($("input[id='demo-submit']").val() != "Access Demo") {
+                    window.location = "/logout?continue=/coach/demo"
+
+                    $("input[id='demo-submit']").val("Access Demo")
+                    $("input[id='demo-submit']").removeClass("orange")
+                    $("input[id='demo-submit']").addClass("blue")
+
+                    e.preventDefault()
+                }
+            });
+        </script>
+    </div>
+</div>
+
+{% endblock resourcecontent %}

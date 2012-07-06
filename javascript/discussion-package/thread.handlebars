@@ -1,0 +1,96 @@
+{{! TODO(marcia): Remove superfluous key references. }}
+<div id="{{key}}" class="question_container" data-key={{key}}>
+    <input type="hidden" name="entity_key" value="{{key}}">
+    {{> question}}
+
+    {{#unless expanded}}
+    <div class="question_answer_count {{#unless answers.length}}unanswered{{/unless}}">
+        <table>
+        <tr>
+            <td style="vertical-align: middle;">
+                <a href="javascript:void(0);">{{pluralize answers.length "answer"}}</a>
+            </td>
+            {{#unless restrictPosting}}
+            <td>
+                <span class="question_answer_count_add_yours">
+                    <input type="button" 
+                           class="simple-button green add_yours" 
+                           value="Add Answer" />
+                </span>
+            </td>
+            {{/unless}}
+        </tr>
+        </table>
+    </div>
+    {{/unless}}
+
+    <div class="question_sig sig">
+        <a class="author-nickname" data-user-id="{{authorUserId}}">{{authorNickname}}</a> asked
+        <a class="timeago" href="?qa_expand_key={{key}}" title="{{date}}">{{date}}</a>
+        {{> flag-controls}}
+
+        {{#if showModControls}}
+        {{> mod-controls}}
+        {{/if}}
+
+        {{> author-controls}}
+
+        {{#if showProfilePromo}}
+            {{> visit-profile-promo}}
+        {{/if}}
+    </div>
+
+    <div class="question_controls_container" style="display: none;">
+        <div class="question_add_controls feedback_add_controls">
+            <div class="controls">
+                <input name="entity_key" type="hidden" value="{{key}}">
+                <input class="simple-button question_submit" 
+                       type="button" 
+                       value="Edit this question" />
+                or <a href="#" class="question_cancel control">Cancel</a>
+            </div>
+
+            <div class="chars_remaining">
+                <span class="chars_remaining_count">500</span> characters left
+            </div>
+
+            <div class="clearFloat">&nbsp;</div>
+        </div>
+    </div>
+
+    <div class="answers_and_form_container" {{#unless expanded}}style="display: none;"{{/unless}}>
+        <div class="answers_container">
+            {{#each answers}}
+                {{> answer}}
+            {{/each}}
+        </div>
+
+        {{#unless restrictPosting}}
+        <div class="answer_container">
+            <div class="answer_form">
+                <form class="answer">
+                    <input type="hidden" id="video_key" name="video_key" value="{{tempVideoKey}}">
+                    <input type="hidden" name="question_key" value="{{key}}">
+                    <div class="answer_placeholder">
+                        <textarea name="answer_text" class="answer_text" rows="2" cols="40" placeholder="Answer this question"></textarea>
+                    </div>
+                    <!-- TODO(marcia): should be a partial helper -->
+                    <div class="answer_controls_container" style="display: none;">
+                        <div class="answer_add_controls feedback_add_controls">
+                            <div class="controls">
+                                <input class="simple-button green answer_submit" 
+                                       type="button" 
+                                       value="Answer" />
+                                or <a href="javascript:void(0)" class="answer_cancel control">
+                                    Cancel
+                                </a>
+                            </div>
+                            <div class="clearFloat">&nbsp;</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {{/unless}}
+    </div>
+</div>

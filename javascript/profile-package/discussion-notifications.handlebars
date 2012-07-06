@@ -1,0 +1,31 @@
+<!-- TODO(ankit): As we extend notifications, we will want to update this
+    layout based on the type of feedback object. Right now, we assume
+    it is an answer. -->
+
+{{#if this.length}}
+    {{#each this}}
+        <div class="discussion-item notification-item {{#if hasUnread}}unread{{/if}} visited-no-recolor">
+            <a class="covering-link"
+                href="/v/{{video.readableId}}?qa_expand_key={{qaExpandKey}}">
+            </a>
+            <div class="notification-title">
+                {{pluralize answererCount "person"}} answered your question:
+                <span class="discussion-light">{{content}}</span>
+            </div>
+            {{#if lastUpdated}}
+                <div class="discussion-meta">
+                    <div class="discussion-submeta">
+                        <span class="timeago" title="{{lastUpdated}}">
+                            {{lastUpdated}}
+                        </span>
+                        <span class="discussion-meta-faded">on</span>
+                        {{video.title}}
+                        <span class="discussion-meta-faded">
+                            in {{topic.title}}
+                        </span>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    {{/each}}
+{{/if}}

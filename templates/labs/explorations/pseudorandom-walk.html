@@ -1,0 +1,64 @@
+{% extends "labs/template-slim.html" %}
+
+{% block pagescript %}
+{{ js_css_packages.css_package("bootstrap") }}
+{{ js_css_packages.js_package("raphael") }}
+<script>{% include "labs/explorations/bignumber.js" %}</script>
+<script>{% include "labs/explorations/pseudorandom-walk.js" %}</script>
+
+<style>
+    .row {
+        margin-bottom: 20px;
+        margin-top:    20px;
+    }
+</style>
+{% endblock pagescript %}
+
+{% block pagetitle %}Random vs. Pseudorandom walks | Khan Academy Labs{% endblock pagetitle %}
+
+{% block pagecontent %}
+
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <h1>Random vs. Pseudorandom walks</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span12">
+            <p style="margin-bottom: 0;">Explore how the seed size affects the period (length before repeating) of a pseudorandom sequence. Compare this to a random sequence which never falls into a repetitive pattern. Try different seeds and see what happens!</p>
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 0;">
+        <div class="offset2 span6">
+            <form class="form-inline" style="margin-bottom: 0;">
+                <label>Pseudorandom Seed:</label>
+                <input class="span2" id="seed" value="0000">
+                <a class="btn btn-primary" id="walk">Walk</a>
+                <a class="btn" id="clear">Clear</a>
+            </form>
+        </div>
+
+        <div class="span2">
+            <div style="line-height: 16px;">
+                <span style="color: blue;">&mdash; Pseudorandom</span>
+                <br>
+                <span style="color: red;">&mdash; Random</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 0;">
+        <div class="offset2 span8">
+            <div height="620" id="canvas" width="620" style="background: #000;display: block;"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <p>To learn more, <a href="/science/brit-cruise/cryptography/v/random-vs--pseudorandom-number-generators">watch a video</a> on pseudorandom number generators.</p>
+        </div>
+    </div>
+</div>
+{% endblock pagecontent %}

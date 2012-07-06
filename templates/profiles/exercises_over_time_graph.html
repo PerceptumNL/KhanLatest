@@ -1,0 +1,6 @@
+<script>
+    ExerciseGraphOverTime.render({{ templatetags.jsonify(user_exercises, true) }});
+</script>
+<div id="highchart-container" class="{% if not user_exercises %}empty-chart{% endif %}">
+    <div id="highchart"></div>
+</div>

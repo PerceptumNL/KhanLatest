@@ -1,0 +1,207 @@
+{% extends "devpanel/panel_template.html" %}
+
+{% block pagecss %}
+<style>
+    #warning span {
+        font-weight: bold;
+    }
+</style>
+{% endblock pagecss %}
+
+{% block panelcontent %}
+
+<h2>Delete an account</h2>
+
+<p>
+    <span style="color:red;">You have entered the danger zone. This tool <em>completely and irrevokably deletes users' accounts</em></span>.
+</p>
+
+<div>
+    <input type="text" id="targetId" placeholder="Student id" value=""/>
+</div>
+
+<div id="warning" style="display:none;">
+    You are about to delete the account (email: <span class="userEmail"></span>), which has <span class="points"></span> points, 
+    was created on <span class="joined"></span>, and last had recent activity on <span class="activity"></span>.
+
+    <br><br>
+
+    Complete user data (in case you're nervous and wanna copy it):<br>
+    <textarea class="fullUserData" style="width: 350px; height: 100px;"></textarea>
+
+    <br><br>
+</div>
+
+<div>
+    <input type="button" id="submitDelete" class="simple-button action-gradient" value="Delete account (you will be asked to confirm)">
+</div>
+
+{% endblock panelcontent %}
+
+{% block bottompagescript %}
+
+<script>
+
+
+/**
+ * Deleter handles all of the deletion and warning logic for anybody
+ * walking through the account deletion process.
+ */
+var Deleter = {
+
+    deletionCode: null,
+
+    init: function() {
+
+        $("#submitDelete").click(function() {
+            Deleter.nextStep();
+        });
+
+    },
+
+    targetId: function() {
+        return $("#targetId").val();
+    },
+
+    enable: function() {
+        $("#devpanel input").removeAttr("disabled");
+    },
+
+    disable: function() {
+        $("#devpanel input").attr("disabled", "disabled");
+    },
+
+    nextStep: function() {
+        if (!this.deletionCode) {
+            this.startConfirmation();
+        } else {
+            this.startDeletion();
+        }
+    },
+
+    /**
+     * Warn the user with specifics about the user about to be deleted,
+     * including their email, points, date of last activity, etc.
+     */
+    warn: function(userData) {
+
+        $("#warning")
+            .find(".userEmail")
+                .text(userData.email || "[no email - must be a child]")
+                .end()
+            .find(".points")
+                .text(userData.points)
+                .end()
+            .find(".joined")
+                .text(userData.joined || "[never]")
+                .end()
+            .find(".activity")
+                .text(userData.lastActivity || "[never]")
+                .end()
+            .find(".fullUserData")
+                .val(JSON.stringify(userData))
+                .end()
+            .slideDown();
+
+    },
+
+    /**
+     * Start the confirmation process by grabbing a temporary deletion code
+     * from the server and warning the admin with specifics about the user
+     * about to be deleted.
+     */
+    startConfirmation: function() {
+
+        if (!this.targetId()) {
+            return;
+        }
+
+        this.disable();
+
+        $.ajax({
+            url: "/api/v1/user/deletion_code",
+            type: "GET",
+            data: {
+                identifier: this.targetId(),
+                casing: "camel"
+            },
+            success: function(data) {
+
+                if (!data.deletionCode || !data.userData) {
+                    return;
+                }
+
+                // Store required confirmation code
+                Deleter.deletionCode = data.deletionCode;
+
+                Deleter.warn(data.userData);
+
+                // Enable submit button, but keep target id locked now that we
+                // have a confirmation code.
+                Deleter.enable();
+                $("#targetId").hide();
+
+                // Setup next step, make sure button is blurred to prevent an
+                // accidental click.
+                $("#submitDelete")
+                    .val("Delete the account. THIS. IS. SPARTA.")
+                    .blur();
+
+            },
+
+            error: function() {
+
+                alert("Could not find account.");
+                Deleter.enable();
+
+            }
+        });
+
+    },
+
+    /**
+     * Start the actual deletion after confirmation from the admin.
+     */
+    startDeletion: function() {
+
+        if (!this.targetId() || !this.deletionCode) {
+            return;
+        }
+
+        this.disable();
+
+        // We use this slightly non-standard method of sending data along with
+        // this request in the URL's querystring because we're sending a DELETE
+        // request, and our server won't see POST-style data.
+        var data = {
+            identifier: this.targetId(),
+            deletion_code: this.deletionCode,
+            casing: "camel"
+        };
+
+        $.ajax({
+            url: "/api/v1/user?" + $.param(data),
+            type: "DELETE",
+            success: function(data) {
+
+                $("#submitDelete").hide();
+                alert("Successfully deleted " + data.email + "'s account.");
+
+            },
+            error: function() {
+
+                alert("Something went wrong. This account wasn't deleted. " +
+                    "Reload the page and try again.");
+            }
+        });
+
+    }
+
+};
+
+Deleter.init();
+
+</script>
+
+{% endblock bottompagescript %}
+

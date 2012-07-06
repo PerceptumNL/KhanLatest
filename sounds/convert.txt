@@ -1,0 +1,13 @@
+useful site that tests browser compat for html5 audio:
+http://www.jplayer.org/HTML5.Audio.Support/
+
+
+How to generate ogg and mp3 files from these wavs
+
+$FILE = 72126__kizilsungur__sweetalertsound2
+
+convert to ogg for firefox:
+ffmpeg -i $FILE.wav -acodec libvorbis $FILE.ogg
+
+convert to mp3 for IE9:
+ffmpeg -i $FILE.wav $FILE.mp3

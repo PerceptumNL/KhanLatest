@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/221/trunk/java/src/com/google/appengine/tools/mapreduce/util
+END
+SystemClock.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/221/trunk/java/src/com/google/appengine/tools/mapreduce/util/SystemClock.java
+END
+Clock.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/221/trunk/java/src/com/google/appengine/tools/mapreduce/util/Clock.java
+END

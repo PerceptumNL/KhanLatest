@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+@labsGreen:         #70C448;
+@correctColor:      @labsGreen;
+@iconBorder:        @labsGreen;
+
+.timebar {
+    position: relative;
+    top: -72px;
+    display: none;
+}
+
+.event {
+    display: inline-block;
+    @width: 36px;
+    width: @width;
+    margin-left: -@width/2;
+    position: absolute;
+
+    .stem {
+        margin: 0 auto;
+        height: 8px;
+        width: 2px;
+        border: none;
+        background-color: @iconBorder;
+    }
+
+    .icon {
+        display: block;
+        margin: 0 auto;
+        width: 18px;
+        background-color: #000;
+        border: 2px solid @iconBorder;
+        color: @correctColor;
+        text-align: center;
+        font-family: Courier;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 18px;
+        border-radius: 4px;
+    }
+
+    a.icon:before {
+        content: "?";
+    }
+
+    a.icon:hover {
+        text-decoration: none;
+        color: @correctColor;
+    }
+}
+
+.event.complete  {
+    a.icon:before {
+        content: "✓";
+    }
+}

@@ -1,0 +1,9 @@
+# To keep backend and frontend versions in sync, ensure that your backend's
+# name contains a 'version' token (e.g. "mapreducebackend-version"). This token
+# will be temporarily replaced during deployment.
+
+backends:
+- name: mapreducebackend-version
+  class: B2
+  instances: 20
+  options: dynamic

@@ -1,0 +1,35 @@
+{% macro graph_control() -%}
+<div id="graph-control-container">
+    <div id="graph-container">
+        <div id="graph-progress-bar" class="throbber-progress-bar"></div>
+        <div id="graph-content">
+        </div>
+    </div>
+</div>
+{%- endmacro %}
+
+{% macro class_graph_link(user_data_coach, graph_name, graph_type, selected_type, list_id) -%}
+<a href="{{ profiles.get_graph_url(graph_type, None, user_data_coach, list_id) }}" class="graph-link graph-link-header header {% if graph_type == selected_type %}graph-link-selected{% endif %}">{{ graph_name|escape }}</a>
+{%- endmacro %}
+
+{% macro class_api_link(user_data_coach, page_name, api_function, selected_type, list_id) -%}
+<a href="{{ profiles.get_api_url('user/students', api_function, None, user_data_coach, list_id) }}" class="graph-link graph-link-header header {% if api_function == selected_type %}graph-link-selected{% endif %}">{{ page_name|escape }}</a>
+{%- endmacro %}
+
+{% macro student_highlight_control(user_data_students) -%}
+<ul>
+    {% for user_data_student in user_data_students %}
+    <li>
+    <a href="#" class="highlight-student-series" data-email="{{ user_data_student.email|escape }}">{{ user_data_student.nickname|escape }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{%- endmacro %}
+
+{% macro class_profile_meta_data_js(user_data_students, c_points) -%}
+<script>
+    $('#count_students').text('{{ user_data_students.__len__()|thousands_separated|escapejs }}');
+    $('#energy-points .energy-points-badge').text('{{ c_points|thousands_separated|escapejs }}');
+    $('#students-highlight').html('{{ student_highlight_control(user_data_students)|escapejs }}');
+</script>
+{%- endmacro %}

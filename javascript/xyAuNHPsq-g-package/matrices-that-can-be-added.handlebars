@@ -1,0 +1,49 @@
+<div class="layer backdrop whiteout"></div>
+<div class="layer controls">
+    <form class="popout">
+        <a class="close" href="javascript: void 0">&times;</a>
+        <h2>{{title}}</h2>
+        $$
+            A =
+            \begin{bmatrix}
+            3 & -1 & 9 \\
+            2 & 0 & 0
+            \end{bmatrix}
+
+            \hspace{20pt}
+
+            B =
+            \begin{bmatrix}
+            -7 & 2 \\
+            3 & 5
+            \end{bmatrix}
+
+            \hspace{20pt}
+
+            C =
+            \begin{bmatrix}
+            -7 & 2 & 4\\
+            3 & 5 & 8
+            \end{bmatrix}
+
+            \hspace{20pt}
+
+            D =
+            \begin{bmatrix}
+            -7 & 2 \\
+            3 & 5
+
+            \end{bmatrix}
+
+        $$
+        <p>Given the above matrices, which of the following expressions are valid examples of matrix addition? Check the box if it's possible to add the two matrices.</p>
+
+        <label class="checkbox inline"><input type="checkbox" name="answer"> \(A+B\)</label>
+        <label class="checkbox inline"><input type="checkbox" name="answer"> \(D+A\)</label>
+        <label class="checkbox inline"><input type="checkbox" name="answer"> \(A+C\)</label>
+        <label class="checkbox inline"><input type="checkbox" name="answer"> \(B+D\)</label>
+        <label class="checkbox inline"><input type="checkbox" name="answer"> \(C+D\)</label>
+
+        {{>submit-area}}
+    </form>
+</div>

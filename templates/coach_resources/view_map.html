@@ -1,0 +1,354 @@
+{% extends "page_template.html" %}
+
+{% import 'macros/analytics.html' as analytics %}
+
+{% block meta_page_title %}Common Core Map | {% endblock meta_page_title %}
+{% block pagescript %}
+    <style>
+        #page_sub_nav { display: none; }
+        #public #container #form1 #header {display: none; }
+    </style>
+{% endblock pagescript %}
+{% block pagecontent %}
+<article id="commoncore">
+	
+	<style type="text/css">
+	
+	#sidebar {
+		margin-right:10px;
+		overflow: auto;
+	}
+	
+	#sidebar-wrapper {
+		padding-right:24px;
+		padding-bottom:48px;
+		border-right: 1px solid #d1d1d1;
+	}
+	
+	table {
+		border-collapse: collapse;
+		margin: 0px 0px 0px 150px;
+		font-size: 1.1em;
+	}
+
+	th {
+		background: #6AB103;
+		color: #fff;
+		font-weight: bold;
+		padding: 8px 11px;
+		text-align: left;
+		border-right: 1px solid #fff;
+		line-height: 1.2;
+		width: 217px;
+		z-index: 99;
+	}
+
+	td {
+		padding: 6px 11px;
+		border-bottom: 1px dashed #DBDBDB;
+		vertical-align: top;
+		width: 190px;
+	}
+	
+	.standard {
+		width: 76px;
+	}
+	
+	.heading {
+		padding: 6px 20px;
+		margin: 0px;
+		background:white;
+		z-index:-1;
+	}
+	
+	.grade-heading {
+		margin-bottom: 0px;
+	}
+	
+	.content-totals {
+		margin: 0px;
+		padding: 0px;
+		font-size: .9em;
+		color: #CCCCCC;
+		line-height: 1.3em;
+	}
+	
+	
+	.grade-heading.hover {
+		background-color: #DBDBDB;
+		cursor: pointer;
+		text-decoration: underline;
+	}
+	
+	#filter-header {
+		margin-bottom:6px;
+	}
+	
+	.domain-level {
+		padding: 6px 20px;
+		z-index: -99;
+		margin: 12px 0px 12px 150px;
+		background-color: #DBDBDB;
+		text-decoration: bold;
+		width: 690px;
+	}
+	
+	.standards ul {
+		list-style: disc;
+		margin-left: 1.5em;
+	}
+	
+	.standards li {
+		line-height: 1.4em;
+		margin-bottom: .6em;
+	}
+	
+	.cluster-description {
+		line-height: 1.4em;
+	}
+	
+	.grade-link {
+		padding:6px;
+		margin-bottom: 0px;
+	}
+	
+	.grade-link a, .grade-link a:hover {
+		color: #000000;
+		text-decoration: none;
+	}
+
+	.hover {
+		background-color: #DBDBDB;
+		cursor: pointer;
+	}
+	
+	.domain-link {
+		overflow:auto;
+		max-height:350px;
+	}
+	
+	.domain-link ul {
+		margin-left: 2em;
+	}
+	
+	.hidden-videos {
+		display: none;
+	}
+	
+	</style>
+	
+	<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				
+				// Make it stick
+				
+				$( "#sidebar-wrapper" ).sticky({ topSpacing: 6});
+				
+				$( "#table-wrapper" ).sticky({ topSpacing: 0});
+				
+				$( ".heading" ).sticky({ topSpacing: 0});
+				
+				// Sidebar behavior
+				
+				$(".grade-link").mouseover(function() {
+					$(this).addClass("hover");
+				}).mouseout(function() {
+					$(this).removeClass("hover");
+				});
+				
+				$(".domain-link").hide();
+				
+				/*
+				
+				$( "#grade-list" ).accordion({ 
+					navigation: true
+				});
+				
+				*/
+				
+				$(".grade-link").click(function() {
+					
+					var grade = $(this).find("a");
+					
+					window.location.href = $(this).attr("href");
+					
+					$(".domain-link").hide();
+					
+					$(this).next().show();					
+						
+				});
+				
+				$(".expand-videos").click(function() {
+					
+					var hiddenVideos = $(this).parent().next();
+					
+					if (hiddenVideos.css("display") === "none") hiddenVideos.slideDown("fast");
+					else hiddenVideos.slideUp("fast");
+					
+					return false;
+				});
+				
+			});
+				
+	</script>
+	
+	<div id="page-background" style="background-color:#ffffff;">
+	
+    <div id="cc-header">
+		<!--a href="#" class="simple-button" style="float:right; margin-top:22px;">Submit a Common Core Tag</a>
+		<div style="clear:both;"></div-->
+	</div>
+	
+	<br>
+	<br>
+	<br>
+		
+	<div id="sidebar" class="col1" style="max-width:20%; min-width:20%;">
+		
+		<div id="sidebar-wrapper">
+		
+			<h3 id="filter-header"><b>Common Core Map</b></h3>
+		
+	        <div id="search-box">
+	            <!-- Hold for el search box -->
+	        </div>
+			
+			<div id="grade-list" class="pull-down">
+				
+				{% for grade in cc_map %}
+					<h5 class="grade-link" href="#grade-{{grade["grade"]|escape}}"><a href="#grade-{{grade["grade"]|escape}}">Grade: {{grade["grade"]|escape}}</a></h5>
+					<div class="domain-link">
+						<ul>
+							{% for domain in grade["domains"] %}
+								<li class="nav-link"><a href="#domain-{{grade["grade"]|escape}}-{{domain["domain_code"]|escape}}">{{domain["domain"]|escape}}</a></li>
+							{% endfor %}		
+						</ul>	
+					</div>
+				{% endfor %}
+				
+			</div>	
+		
+			<!--div id="Topics" class="pulled">
+
+				<select id="ComboBox" style="width: 100%;">
+					<option value="0">Select a topic:</option>
+					<option value="1">Arithmetic</option>
+					<option value="2">Pre-Algebra</option>
+					<option value="3">Algebra</option>
+					<option value="4">Geometry</option>
+					<option value="5">Trigonometry</option>
+					<option value="6">Pre-Calculus</option>
+					<option value="7">Calculus</option>
+					<option value="8">Stats & Probability</option>
+					</select>
+				
+			</div-->
+			
+		</div>
+		
+	</div>	
+		
+	<div id="map" class="col2" style="max-width:76%; min-width:76%">
+		
+		<div id="table-wrapper">
+		
+			<table>
+					
+				<thead>
+					<tr>
+						<th class="standard">Standard</th>
+						<th>Description</th>
+						<th>Videos</th>
+						<th>Exercises</th>
+					</tr>	
+				</thead>
+		
+			</table>
+		
+		</div>	
+		
+		{% for grade in cc_map %}
+		
+		{% set grade_level = grade["grade"] %}
+		
+		<div id="grade-{{grade["grade"]|escape}}" class="grade-level">
+			
+			<div class="heading">
+				<h4 class="grade-heading">Grade: {{grade["grade"]|escape}}</h4>
+				<p class="content-totals">
+					{% filter upper %}
+						{{ grade_totals[grade_level].videos|escape }} videos <br />
+						{{ grade_totals[grade_level].exercises|escape }} exercises
+					{% endfilter %}
+				</p>
+			</div>
+			
+			{% for domain in grade["domains"] %}
+			
+				<h6 id="domain-{{grade["grade"]|escape}}-{{domain["domain_code"]|escape}}" class="domain-level">{{domain["domain"]|escape}}</h6>
+			
+				{% for standard in domain["standards"] %}
+			
+					<div class="standards">
+					
+						<table>	
+					
+							<tbody>
+						
+									<tr class="domain-standards">
+										<td class="standard"><a href="{{standard["cc_url"]|escape}}" target="_blank">{{standard["standard"]|escape}}</a></td>
+										<td title="{{standard["cc_cluster"]|escape}}" class="cluster-description">{{standard["cc_description"]|escape}}</td>
+										
+										<td>
+											<ul>
+    										    {% for video in standard["videos"]|sort(attribute='title') %}
+												
+        											{% if loop.index == 9 %}
+        												<li>...and <a href="#" class="expand-videos">{{standard.videos|count - 8}} more</a> ...</li>
+														<div class="hidden-videos">
+													{% endif %}
+        												<li><a href="{{video["ka_url"]|escape}}" title="{{video["title"]|escape}}" target="_blank">{{video["title"]|escape}}</a></li>
+													
+													{% if loop.last and loop.index >= 9 %}
+														</div>
+													{% endif %}	
+													
+        										{% endfor %}
+
+    										</ul>
+										</td>
+										
+										
+										<td>
+											<ul>
+											{% for exercise in standard["exercises"]|sort(attribute='display_name') %}
+												<li><a href="{{exercise["ka_url"]|escape}}" title="{{exercise["display_name"]|escape}}" target="_blank">{{exercise["display_name"]|escape}}</a></li>
+											{% endfor %}
+											</ul>
+										</td>
+										
+										
+									</tr>				
+							
+							</tbody>
+					
+						</table>
+				
+					</div>
+			
+				{% endfor %}
+				
+			{% endfor %}
+			
+		</div>	
+			
+		{% endfor %}
+	</div>
+	
+	</div>		
+</article>
+{% endblock pagecontent %}
+{% block bottompagescript %}
+    {{ js_css_packages.js_package("commoncore") }}
+	{{ analytics.crazyegg_tracker(False) }}
+{% endblock bottompagescript %}

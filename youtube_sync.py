@@ -103,6 +103,7 @@ class YouTubeSync(request_handler.RequestHandler):
 
     @user_util.manual_access_checking  # superuser-only via app.yaml (/admin)
     def post(self):
+        return
         # Protected for admins only by app.yaml so taskqueue can hit this URL
         step = self.request_int("step", default = 0)
 

@@ -8,21 +8,9 @@ def append_paths():
     os.environ["SERVER_SOFTWARE"] = ""
     os.environ["CURRENT_VERSION_ID"] = ""
 
-    # Poor-man's `which` command, to find out where appengine lives.
-    for path in os.environ['PATH'].split(':'):
-        if os.path.isdir(path) and 'dev_appserver.py' in os.listdir(path):
-            break
-    else:
-        # Default to Mac's default location -- best we can do.
-        path = ("/Applications/GoogleAppEngineLauncher.app/Contents/"
+    sys.path.append("/Applications/GoogleAppEngineLauncher.app/Contents/"
                 "Resources/GoogleAppEngine-default.bundle/Contents/"
                 "Resources/google_appengine")
-
-    app_engine_path = os.path.join(os.path.dirname(path), 'google_appengine')
-    if not os.path.isdir(app_engine_path):
-        raise RuntimeError('%s is not a directory' % app_engine_path)
-
-    sys.path.append(app_engine_path)
     import dev_appserver
     dev_appserver.fix_sys_path()
 

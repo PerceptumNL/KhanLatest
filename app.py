@@ -44,7 +44,7 @@ for attr in (
     if App.is_dev_server and not hasattr(secrets, attr):
         setattr(App, attr, None)
     else:
-        setattr(App, attr, getattr(secrets, attr))
+        setattr(App, attr, None)
 
 if App.is_dev_server and App.token_recipe_key is None:
     # If a key is missing to dish out auth tokens on dev, we can't login

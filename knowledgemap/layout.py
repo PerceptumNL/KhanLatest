@@ -119,7 +119,10 @@ class MapLayout(db.Model):
 
     @staticmethod
     def key_for_version(version):
-        return "maplayout:%s" % version.number
+        if(version):
+            return "maplayout:%s" % version.number
+        else:
+            return "maplayout:0"
 
     @staticmethod
     @layer_cache.cache_with_key_fxn(

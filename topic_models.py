@@ -48,7 +48,12 @@ import url_util
 import user_models
 import util
 import video_models
-
+import urllib2
+# use json in Python 2.7, fallback to simplejson for Python 2.5
+try:
+    import json
+except ImportError:
+    import simplejson as json
 
 class TopicVersion(backup_model.BackupModel):
     """Metadata describing a particular version of the topic-tree data."""
@@ -272,7 +277,8 @@ class TopicVersion(backup_model.BackupModel):
         for video in videos:
             if re.search("_DUP_\d*$", video.youtube_id):
                 bad_videos.append(video)
-
+        db.delete(exercise_video_model.ExerciseVideo
+                 .get_all_with_topicless_videos(version))
         problems = {
             "ExerciseVideos with topicless videos":
                 (exercise_video_model.ExerciseVideo
@@ -484,7 +490,10 @@ class Topic(search.Searchable, backup_model.BackupModel):
                layer_cache.Layers.Datastore))
     def get_topic_page_html(self):
         main_topic = self
-        parent_topic = db.get(self.parent_keys[0])
+        if self.parent_keys:
+            parent_topic = db.get(self.parent_keys[0])
+        else:
+            parent_topic = main_topic
 
         # If the parent is a supertopic, use that instead
         if parent_topic.id in Topic._super_topic_ids:
@@ -558,7 +567,10 @@ class Topic(search.Searchable, backup_model.BackupModel):
                layer_cache.Layers.Datastore))
     def get_topic_page_nav_html(self):
         main_topic = self
-        parent_topic = db.get(self.parent_keys[0])
+        if self.parent_keys:
+            parent_topic = db.get(self.parent_keys[0])
+        else:
+            parent_topic = main_topic
 
         # If the parent is a supertopic, use that instead
         if parent_topic.id in Topic._super_topic_ids:
@@ -1950,6 +1962,7 @@ def _preload_default_version_data(version_number, run_code):
     logging.info("synced topic exercise badges")
 
     map_layout = layout.MapLayout.get_for_version(version)
+
     if not map_layout.has_layout:
         # Copy the previous maplayout to current version's maplayout
         # if it doesn't already exist.
@@ -1959,6 +1972,21 @@ def _preload_default_version_data(version_number, run_code):
         previous_version = TopicVersion.get_by_id(version.copied_from_number)
         map_layout_previous = layout.MapLayout.get_for_version(
             previous_version)
+
+    	# Khan NL
+        if not map_layout_previous:
+            map_layout_previous = layout.MapLayout(
+                    key_name="maplayout:0",
+                    version=map_layout.version,
+                    layout=None
+            )
+            setting_model.Setting.topic_admin_task_message(
+                " Khan NL : Importing maplayout from Khanacademy.org ")
+            logging.info("importing knowledge map layout")
+            request = urllib2.Request("http://www.khanacademy.org/api/v1/maplayout")
+            opener = urllib2.build_opener()
+            f = opener.open(request)
+            map_layout_previous.layout = json.load(f)
 
         if not map_layout_previous.has_layout:
             setting_model.Setting.topic_admin_task_message(

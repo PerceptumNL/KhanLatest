@@ -120,7 +120,7 @@ def library_content_html(ajax=False, version_number=None):
         version = topic_models.TopicVersion.get_by_number(version_number)
     else:
         version = topic_models.TopicVersion.get_default_version()
-
+    return None
     tree = topic_models.Topic.get_root(version).make_tree(
         types=["Topics", "Video", "Url"])
     topics = flatten_tree(tree)

@@ -1973,20 +1973,15 @@ def _preload_default_version_data(version_number, run_code):
         map_layout_previous = layout.MapLayout.get_for_version(
             previous_version)
 
-    	# Khan NL
+    	#TODO:Khan NL
         if not map_layout_previous:
             map_layout_previous = layout.MapLayout(
                     key_name="maplayout:0",
                     version=map_layout.version,
                     layout=None
             )
-            setting_model.Setting.topic_admin_task_message(
-                " Khan NL : Importing maplayout from Khanacademy.org ")
-            logging.info("importing knowledge map layout")
-            request = urllib2.Request("http://www.khanacademy.org/api/v1/maplayout")
-            opener = urllib2.build_opener()
-            f = opener.open(request)
-            map_layout_previous.layout = json.load(f)
+            logging.info("importing temporary knowledge map layout")
+            map_layout_previous.layout = json.loads('{"polylines":[],"topics":{"Getallen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"getallen","standalone_title":"Getallen","x":0,"y":4},"Verhoudingen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verhoudingen","standalone_title":"Verhoudingen","x":0,"y":7},"Meten en Meetkunde":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"meetkunde","standalone_title":"Meten en Meetkunde","x":3,"y":4},"Verbanden":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verbanden","standalone_title":"Verbanden","x":3,"y":7}}}');
 
         if not map_layout_previous.has_layout:
             setting_model.Setting.topic_admin_task_message(

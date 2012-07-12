@@ -59,7 +59,7 @@ class EditContent(request_handler.RequestHandler):
         root = Topic.get_root(edit_version)
         data = root.get_visible_data()
         tree_nodes = [data]
-        
+
         template_values = {
             'edit_version': jsonify(edit_version),
             'tree_nodes': jsonify(tree_nodes)

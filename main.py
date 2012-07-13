@@ -776,6 +776,10 @@ class ServeUserVideoCss(request_handler.RequestHandler):
 
         self.response.out.write(user_video_css.video_css)
 
+class Nuke(request_handler.RequestHandler):
+    @user_util.developer_required
+    def get(self):
+        db.delete(db.Query(keys_only=True))
 
 class MemcacheViewer(request_handler.RequestHandler):
     @user_util.developer_required
@@ -888,6 +892,7 @@ application = webapp2.WSGIApplication([
     ('/staging/commoncore', common_core.handlers.CommonCore),
     ('/devadmin/content', topics.EditContent),
     ('/devadmin/memcacheviewer', MemcacheViewer),
+    ('/devadmin/nuke', Nuke),
 
     # Manually refresh the content caches
     ('/devadmin/refresh', topics.RefreshCaches),

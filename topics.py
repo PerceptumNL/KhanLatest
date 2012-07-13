@@ -38,11 +38,19 @@ class EditContent(request_handler.RequestHandler):
         if edit_version is None:
             default_version = TopicVersion.get_default_version()
             if default_version is None:
-                # Assuming this is dev, there is an empty datastore and we need an import
+                # Create empty default version
+                default_version = TopicVersion.create_new_version()
+                root = create_root(default_version)
+                default_version.default = True
+                default_version.edit = False
+                default_version.put()
+                # Create empty edit version
+                old_tree = root.make_tree(types=["Topics"], include_hidden=True)
                 edit_version = TopicVersion.create_new_version()
+                edit_version.copied_from = default_version
                 edit_version.edit = True
+                TopicVersion.copy_tree(root, edit_version)
                 edit_version.put()
-                create_root(edit_version)
             else:
                 raise Exception("Wait for setting default version to finish making an edit version.")
 
@@ -203,7 +211,7 @@ class RefreshCaches(request_handler.RequestHandler):
 
 # function to create the root, needed for first import into a dev env
 def create_root(version):
-    Topic.insert(title="The Root of All Knowledge",
+    return Topic.insert(title="The Root of All Knowledge",
             description="All concepts fit into the root of all knowledge",
             id="root",
             version=version)

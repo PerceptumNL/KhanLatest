@@ -1964,32 +1964,8 @@ def _preload_default_version_data(version_number, run_code):
     map_layout = layout.MapLayout.get_for_version(version)
 
     if not map_layout.has_layout:
-        # Copy the previous maplayout to current version's maplayout
-        # if it doesn't already exist.
-        # TODO: this is temporary. Eventually this should be generated
-        # correctly, once the topics admin UI can send maplayout info.
-
-        previous_version = TopicVersion.get_by_id(version.copied_from_number)
-        map_layout_previous = layout.MapLayout.get_for_version(
-            previous_version)
-
-    	#TODO:Khan NL
-        if not map_layout_previous:
-            map_layout_previous = layout.MapLayout(
-                    key_name="maplayout:0",
-                    version=map_layout.version,
-                    layout=None
-            )
-            logging.info("importing temporary knowledge map layout")
-            map_layout_previous.layout = json.loads('{"polylines":[],"topics":{"Getallen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"getallen","standalone_title":"Getallen","x":0,"y":4},"Verhoudingen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verhoudingen","standalone_title":"Verhoudingen","x":0,"y":7},"Meten en Meetkunde":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"meetkunde","standalone_title":"Meten en Meetkunde","x":3,"y":4},"Verbanden":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verbanden","standalone_title":"Verbanden","x":3,"y":7}}}');
-
-        if not map_layout_previous.has_layout:
-            setting_model.Setting.topic_admin_task_message(
-                "Error - missing map layout and no previous version to "
-                "copy from.")
-            raise deferred.PermanentTaskFailure
-
-        map_layout.layout = map_layout_previous.layout
+        # TODO(KNL): Load map layout from location
+        map_layout.layout = json.loads('{"polylines":[],"topics":{"Getallen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"getallen","standalone_title":"Getallen","x":0,"y":4},"Verhoudingen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verhoudingen","standalone_title":"Verhoudingen","x":0,"y":7},"Meten en Meetkunde":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"meetkunde","standalone_title":"Meten en Meetkunde","x":3,"y":4},"Verbanden":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verbanden","standalone_title":"Verbanden","x":3,"y":7}}}');
         map_layout.put()
 
     _do_set_default_deferred_step(_change_default_version,

@@ -97,6 +97,7 @@ import redirects.handlers
 import robots
 from importer.handlers import ImportHandler
 import wsgi_compat
+import os
 
 
 class VideoDataTest(request_handler.RequestHandler):
@@ -776,10 +777,45 @@ class ServeUserVideoCss(request_handler.RequestHandler):
 
         self.response.out.write(user_video_css.video_css)
 
+#KhanNL
 class Nuke(request_handler.RequestHandler):
     @user_util.developer_required
     def get(self):
+        return
         db.delete(db.Query(keys_only=True))
+
+#KhanNL
+@layer_cache.cache_with_key_fxn(lambda exercise_file: "exercise_raw_html_%s" % exercise_file, layer=layer_cache.Layers.InAppMemory)
+def raw_exercise_contents(exercise_file):
+    path = os.path.join(os.path.dirname(__file__), "khan-exercises/exercises/%s" % exercise_file)
+
+    f = None
+    contents = ""
+
+    try:
+        f = open(path)
+        contents = f.read()
+    except:
+        raise MissingExerciseException(
+                "Missing exercise file for exid '%s'" % exercise_file)
+    finally:
+        if f:
+            f.close()
+
+    if not len(contents):
+        raise MissingExerciseException(
+                "Missing exercise content for exid '%s'" % exercise_file)
+
+    return contents
+
+#KhanNL
+class TranslateFile(request_handler.RequestHandler):
+    @user_util.login_required
+    def get(self, path):
+        path = self.request.path
+        exercise_file = urllib.unquote(path.rpartition('/')[2])
+        self.response.headers["Content-Type"] = "text/html"
+        self.response.out.write(raw_exercise_contents(exercise_file))
 
 class MemcacheViewer(request_handler.RequestHandler):
     @user_util.developer_required
@@ -850,7 +886,8 @@ application = webapp2.WSGIApplication([
     ('/exercises', exercises.handlers.ViewExerciseDeprecated),
 
     ('/(review)', exercises.handlers.ViewExercise),
-
+    #KhanNL
+    ('/khan-exercises/exercises/(.*).js', TranslateFile),
     ('/khan-exercises/exercises/.*', exercises.handler_raw.RawExercise),
     ('/viewexercisesonmap', knowledgemap.handlers.ViewKnowledgeMap),
     ('/video/(.*)', ViewVideoDeprecated),  # Backwards URL compatibility

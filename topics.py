@@ -44,6 +44,11 @@ class EditContent(request_handler.RequestHandler):
                 default_version.default = True
                 default_version.edit = False
                 default_version.put()
+                map_layout = layout.MapLayout.get_for_version(default_version)
+                if not map_layout.has_layout:
+                    # TODO(KNL): Load map layout from location
+                    map_layout.layout = json.loads('{"polylines":[],"topics":{"Getallen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"getallen","standalone_title":"Getallen","x":0,"y":4},"Verhoudingen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verhoudingen","standalone_title":"Verhoudingen","x":0,"y":7},"Meten en Meetkunde":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"meetkunde","standalone_title":"Meten en Meetkunde","x":3,"y":4},"Verbanden":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verbanden","standalone_title":"Verbanden","x":3,"y":7}}}');
+                    map_layout.put()
                 # Create empty edit version
                 old_tree = root.make_tree(types=["Topics"], include_hidden=True)
                 edit_version = TopicVersion.create_new_version()

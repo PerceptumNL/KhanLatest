@@ -59,6 +59,57 @@
       call or initialization
 */
 
+var Translate = new function(){
+
+	this.langdefault = "en";
+	this.lang = "nl";
+	this.table = {};
+	this.production = true;
+	this.current = null;
+	this.exercisefile = ( this.production ? "/khan-exercises/exercises/" : "" ) + this.current + ".lang.js";
+	this.globalfile = ( this.production ? "/khan-exercises/exercises/" : "" ) +"lang.js";
+
+	this.switchLang = function(map){
+		if(map[this.lang]){
+			return map[this.lang];
+		}
+		else{
+			return map[this.langdefault];
+		}
+	}
+
+	this.getTranslation = function(url, name){
+        console.log("URL:" + url);
+        console.log("NAME:" + name);
+		//TODO(KNL): Implement caching on client side
+		$.ajax({
+			type: "GET",
+			url: url,
+			async:false,
+			success: function(data){
+				Translate.table[name] = eval(data);
+			}
+		})
+		return this.table[name];
+	}
+
+	this.loadGlobals = function(){
+
+		Khan.Util.tokenreplace = Translate;
+		Khan.Util.translate = Translate;
+
+		var globals = this.getTranslation(this.globalfile, "globals");
+		$('.exercise-title').each(function(){
+			var title = $('title').html().substring(0, $('title').html().indexOf('|')-1)
+			if(Translate.table["globals"]["titles"][Translate.lang][title]){
+				$(this).html(Translate.table["globals"]["titles"][Translate.lang][title])
+			}
+		});
+
+	}
+
+};
+
 var Khan = (function() {
     function warn(message, showClose) {
         $(function() {
@@ -1869,6 +1920,9 @@ var Khan = (function() {
     }
 
     function prepareSite() {
+
+		Translate.loadGlobals();
+
         // TODO(david): Don't add homepage elements with "exercise" class
         exercises = exercises.add($("div.exercise").detach());
 
@@ -2734,6 +2788,18 @@ var Khan = (function() {
             newContents.filter("[data-name]").each(function() {
                 loadExercise.call(this, callback);
             });
+
+            //(KNL):Translate
+			var langfile = "/khan-exercises/exercises/" + id + ".lang.js";
+			var translation = Translate.getTranslation(langfile, id);
+			if(translation && translation[Translate.lang]){
+				newContents.find('[data-tt]').each(function(){
+					token = $(this).attr('data-tt');
+					if(translation[Translate.lang][token]){
+						$(this).html(translation[Translate.lang][token]);
+					}
+				})
+			}
 
             // Throw out divs that just load other exercises
             newContents = newContents.not("[data-name]");

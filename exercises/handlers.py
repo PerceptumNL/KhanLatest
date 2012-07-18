@@ -86,11 +86,9 @@ class ViewExercise(request_handler.RequestHandler):
                 topic = topic_models.Topic.get_by_id(topic_id)
 
             # Topics are required
-            if not topic:
-                raise MissingExerciseException("Exercise '%s' is missing a topic" % exid)
-
-            title = topic.standalone_title
-            topic_exercise_badge = topic.get_exercise_badge()
+            if topic:
+                title = topic.standalone_title
+                topic_exercise_badge = topic.get_exercise_badge()
 
             if exid:
                 practice_exercise = exercise_models.Exercise.get_by_name(exid)

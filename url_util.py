@@ -76,11 +76,11 @@ def secure_url(url):
 
     _, netloc, path, query, fragment = _get_url_parts(url)
 
-    if netloc.lower().endswith(".khanacademy.org"):
+    if netloc.lower().endswith(".khanacademie.nl"):
         # Vanity domains can't handle https - but all the ones we own
         # are simple CNAMEs to the default app engine instance.
         # http://code.google.com/p/googleappengine/issues/detail?id=792
-        netloc = "khan-academy.appspot.com"
+        netloc = "khan-netherlands.appspot.com"
 
     return urlparse.urlunsplit(("https", netloc, path, query, fragment))
 
@@ -103,10 +103,10 @@ def insecure_url(url):
 
     _, netloc, path, query, fragment = _get_url_parts(url)
 
-    if netloc.lower() == "khan-academy.appspot.com":
+    if netloc.lower() == "khan-netherlands.appspot.com":
         # https://khan-academy.appspot.com is the HTTPS equivalent of the
         # default appengine instance
-        netloc = "www.khanacademy.org"
+        netloc = "www.khanacademie.nl"
 
     return urlparse.urlunsplit(("http", netloc, path, query, fragment))
 
@@ -129,8 +129,8 @@ def opengraph_url(relative_url):
 
     """
     host = os.environ['HTTP_HOST']
-    if App.is_dev_server or not host.endswith(".khanacademy.org"):
-        return absolute_url(relative_url, host="www.khanacademy.org")
+    if App.is_dev_server or not host.endswith(".khanacademie.nl"):
+        return absolute_url(relative_url, host="www.khanacademie.nl")
     else:
         return absolute_url(relative_url)
 
@@ -142,18 +142,18 @@ def absolute_url(relative_url, host=None):
 
 def static_url(relative_url):
     host = os.environ['HTTP_HOST'].lower()
-    if App.is_dev_server or not host.endswith(".khanacademy.org"):
+    if App.is_dev_server or not host.endswith(".khanacademie.nl"):
         return relative_url
     else:
         # when using a wildcard url to serve a nondefault version, ensure
         # static urls point at the correct nondefault version
-        match = re.match(r"([\w-]+)\.wild\.khanacademy\.org", host)
+        match = re.match(r"([\w-]+)\.wild\.khanacademie\.nl", host)
         if match:
             version = match.group(1)
-            return ("http://%s.khan-academy.appspot.com%s" %
+            return ("http://%s.khan-netherlands.appspot.com%s" %
                     (version, relative_url))
         else:
-            return "http://khan-academy.appspot.com%s" % relative_url
+            return "http://khan-netherlands.appspot.com%s" % relative_url
 
 
 def iri_to_uri(iri):
@@ -191,9 +191,9 @@ def is_khanacademy_url(url):
     scheme, netloc, path, query, fragment = urlparse.urlsplit(url)
     # Check all absolute URLs
     if (netloc and
-            not netloc.endswith(".khanacademy.org") and
-            not netloc.endswith(".khan-academy.appspot.com") and
-            not netloc == "khan-academy.appspot.com"):
+            not netloc.endswith(".khanacademie.nl") and
+            not netloc.endswith(".khan-netherlands.appspot.com") and
+            not netloc == "khan-netherlands.appspot.com"):
         return False
 
     # Relative URL's are considered to be a Khan Academy URL.

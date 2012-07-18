@@ -810,7 +810,7 @@ def raw_exercise_contents(exercise_file):
 
 #KhanNL
 class TranslateFile(request_handler.RequestHandler):
-    @user_util.login_required
+    @user_util.open_access
     def get(self, path):
         path = self.request.path
         exercise_file = urllib.unquote(path.rpartition('/')[2])

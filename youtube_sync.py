@@ -22,7 +22,7 @@ def youtube_get_video_data_dict(youtube_id):
     # Now that we run these queries from the App Engine servers, we need to 
     # explicitly specify our developer_key to avoid being lumped together w/ rest of GAE and
     # throttled by YouTube's "Too many request" quota
-    yt_service.developer_key = "AI39si6ctKTnSR_Vx7o7GpkpeSZAKa6xjbZz6WySzTvKVYRDAO7NHBVwofphk82oP-OSUwIZd0pOJyNuWK8bbOlqzJc9OFozrQ"
+    yt_service.developer_key = "AI39si5NKByjOThtM6t1gnmg4N9HkzGPHHkVvRUybKuPG53277wY0Bs4zcvi-G4JiFioRs0738gaE01k1rX-_6-mIHp9jg1twQ"
     yt_service.client_id = "n/a"
 
     logging.info("trying to get info for youtube_id: %s" % youtube_id)
@@ -132,7 +132,7 @@ class YouTubeSync(request_handler.RequestHandler):
         # Now that we run these queries from the App Engine servers, we need to 
         # explicitly specify our developer_key to avoid being lumped together w/ rest of GAE and
         # throttled by YouTube's "Too many request" quota
-        yt_service.developer_key = "AI39si6ctKTnSR_Vx7o7GpkpeSZAKa6xjbZz6WySzTvKVYRDAO7NHBVwofphk82oP-OSUwIZd0pOJyNuWK8bbOlqzJc9OFozrQ"
+        yt_service.developer_key = "AI39si5NKByjOThtM6t1gnmg4N9HkzGPHHkVvRUybKuPG53277wY0Bs4zcvi-G4JiFioRs0738gaE01k1rX-_6-mIHp9jg1twQ"
         yt_service.client_id = "n/a"
 
         videos_to_put = set()

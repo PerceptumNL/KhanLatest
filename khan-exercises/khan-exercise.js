@@ -98,14 +98,6 @@ var Translate = new function(){
 		Khan.Util.tokenreplace = Translate;
 		Khan.Util.translate = Translate;
 
-		var globals = this.getTranslation(this.globalfile, "globals");
-		$('.exercise-title').each(function(){
-			var title = $('title').html().substring(0, $('title').html().indexOf('|')-1)
-			if(Translate.table["globals"]["titles"][Translate.lang][title]){
-				$(this).html(Translate.table["globals"]["titles"][Translate.lang][title])
-			}
-		});
-
 	}
 
 };

@@ -29,18 +29,16 @@
         {% endif %}
     </div>
     <div id="homepage-text" class="visited-no-recolor">
-        <h1 class="section-headline pulls"><a href="/#browse" data-tag="Homepage Headline">Watch.</a> <a href="/exercisedashboard" data-tag="Homepage Headline">Practice.</a></h1>
-        <h1>Learn almost anything for free.</h1>
+        <h1 class="section-headline pulls"><a href="/#browse" data-tag="Homepage Headline">Bekijk.</a> <a href="/exercisedashboard" data-tag="Homepage Headline">Oefen.</a></h1>
+        <h1>Leer bijna alles; gratis!.</h1>
         <p>
-            With over <a href="/#browse" data-tag="Homepage Description">{{approx_vid_count|thousands_separated}} videos</a> on
-            everything from arithmetic to physics, finance, and history and <a href="/exercisedashboard" data-tag="Homepage Description">hundreds of skills to practice</a>,
-            <a href="/about" data-tag="Homepage Description">we're on a mission</a> to help you learn what you want, when you want, at your own pace.
-        </p>
+            Met verschillende video's over rekenen en wiskunde binnenkort ook taal en in de toekomst wellicht ook andere onderwerpen </a> zijn wij op een missie</a> om jou te helpen om alles te leren over onderwerpen waar jij interesse in hebt, wanneer jij het wil en op je eigen tempo. 
+            
         <div>
-            <a href="/#browse" data-tag="Homepage C2A" class="call-to-action simple-button green watch-a-video">Watch a Video</a>
-            <a href="/exercisedashboard" data-tag="Homepage C2A" class="call-to-action simple-button blue">Take a Challenge</a>
+            <a href="/#browse" data-tag="Homepage C2A" class="call-to-action simple-button green watch-a-video">Bekijk een video</a>
+            <a href="/exercisedashboard" data-tag="Homepage C2A" class="call-to-action simple-button blue">Ga de uitdaging aan</a>
         </div>
-        <p class="try-teacher-toolkit">Teacher or administrator? <a href="/coach/resources">Explore our Teacher Resources</a>.</p>
+
         <div id="social-actions">
             <table>
                 <tr>
@@ -58,14 +56,14 @@
                 </tr>
                 <tr>
                     <td colspan=3 class="homepage-mailing">
-                        <span>{{ mailing_lists.signup_form(3, "Get Updates", "Enter your email to learn about new courses.") }}</span>
+                        <span>{{ mailing_lists.signup_form(3, "Ontvang updates", "Laat je e-mail adres achter voor info over nieuwe video's") }}</span>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
     <h2>
-        New <span class="ampersand">&amp;</span> Noteworthy
+        Nieuw <span class="ampersand">&amp;</span> Opmerkelijk
     </h2>
     {% if thumbnail_link_sets %}
     <div id="thumbnails_container">
@@ -118,10 +116,10 @@
             <span id="page_visitors">
                     <span id="page_num_visitors">
                         <!-- Content will get populated by javacript at end of page -->
-                    </span>&nbsp;lessons delivered
+                    </span>&nbsp;geleverde lessen:
             </span>
         </div>
-        <h2 class="main-headline">Browse our library of over {{approx_vid_count|thousands_separated}} educational videos...</h2>
+        <h2 class="main-headline">Neem een kijkje in onze collectie video's</h2>
         {% if DVD_list %}
         <ul class="menu" id="menu">
             {% for topic in DVD_list %}
@@ -134,7 +132,7 @@
         {{ templatetags.topic_browser("browse-fixed", version_number) }}
 
         {% endif %}
-        <a href="/mobilefullsite" class="mobile-only" data-role="button" data-ajax="false">View standard site</a>
+        <a href="/mobilefullsite" class="mobile-only" data-role="button" data-ajax="false">zie standaard site</a>
     </div>
 </div>
 <div class="clear"></div>
@@ -144,7 +142,7 @@
 
 <div id="back-to-top">
     <a class="arrow" href="#">▲</a>
-    <a class="text" href="#">Back to Top</a>
+    <a class="text" href="#">terug naar top</a>
 </div>
 {% endblock pagecontent %}
 

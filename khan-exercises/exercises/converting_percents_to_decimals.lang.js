@@ -1,8 +1,8 @@
 ({
 	"nl" : {
-		"question1"	: 'Express the percent as a decimal.',
-		
-		"hint1"		: '<code><var>PERCENT</var></code> percent = <code><var>PERCENT</var></code> per cent = <code><var>PERCENT</var></code> per hundred',
-		"hint2"		: 'Another way to convert a percent to a decimal is to divide by <code>100</code> (or move the decimal two places to the left) and remove the percent sign.'
+		"question1"	: 'Maak van het percentage een kommagetal.',
+	
+		"hint1"		: '<code><var>PERCENT</var></code> procent = <code><var>PERCENT</var></code> per cent = <code><var>PERCENT</var></code> per honderd',
+		"hint2"		: 'Een andere manier om een percentage om te zetten naar een kommagetal is door <code>100</code> te delen (of de komma 2 plaatsen naar links verplaatsen) en het procentteken te verwijderen.'
 		}
 })

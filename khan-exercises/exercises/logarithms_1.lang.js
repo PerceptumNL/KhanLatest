@@ -1,9 +1,10 @@
 ({
 	"nl" : {
-		"question1"	: 'If <code>\log_{b}x=y</code>, then <code>b^y=x</code>.',
-		"question2"	: 'First, try to write <code><var>number</var></code>, the number we are taking the logarithm of, as a power of <code><var>base</var></code>, the base of the logarithm.',
-		"question3"	: '<code><var>number</var></code> can be expressed as <code><var>power_string</var></code>.',
-		"question4"	: '<code><var>number</var></code> can be expressed as <code><var>base</var>^<var>answer</var></code>.'
+		"question1"	: 'Als <code>\\log_{b}x=y</code>, dan is <code>b^y=x</code>.',
+		
+		"question2"	: 'Probeer <code><var>number</var></code>, het getal waarvan we de logaritme nemen, te schrijven  als een macht van <code><var>base</var></code>, het grondtal van de logaritme.',
+		"question3"	: '<code><var>number</var></code> kan worden geschreven als <code><var>power_string</var></code>.',
+		"question4"	: '<code><var>number</var></code> kan worden geschreven als <code><var>base</var>^<var>answer</var></code>.'
 		
 		}
 })

@@ -33,7 +33,7 @@
 		<div class="problems">
 			<div>
 				<p class="question">
-					Express the top number in scientific notation by dragging the decimal point in the bottom number:
+					Schrijf het bovenste getal in wetenschappelijke notatie door de komma te verschuiven in het onderste getal:
 				</p>
 				<div class="problem">
 					<div class="graphie" id="scinot">
@@ -126,13 +126,13 @@
 						};
 					</div>
 					<p>
-						As you move the decimal point, the exponent will automatically change so both numbers are always equal.
+						Wanneer je de komma versleept, zal de exponent automatisch veranderen zodat de getallen altijd gelijk zijn.
 					</p>
 				</div>
 
 				<div class="solution" data-type="custom">
 					<div class="instruction">
-						Move the decimal point in the bottom number by dragging it left or right.
+						Verschuif het decimalenpunt in het onderste getal door het naar links of naar rechts te slepen.
 					</div>
 					<div class="guess">E - graph.decimal.coord[0]</div>
 					<div class="validator-function">
@@ -145,28 +145,22 @@
 
 				<div class="hints">
 					<p>
-						To write <code><var>PRETTY_DECIMAL</var></code> in scientific notation, move the decimal
-						to the <span data-if="E < 0">right</span><span data-else>left</span> so the number is greater than or equal
-						to <code>1</code>, but less than <code>10</code>.
+					Om <code><var>PRETTY_DECIMAL</var></code> in wetenschappelijke notatie te schrijven moet je de komma naar <span data-if="E < 0">rechts</span><span data-else>links</span> verschuiven zodat het getal groter of gelijk is aan <code>1</code>, maar minder dan <code>10</code>.
 					</p>
 
 					<p>
-						Moving the decimal to the <span data-if="E < 0">right</span><span data-else>left</span>
-						<code><var>abs( E )</var></code> <var>plural( "place", abs( E ) )</var> leaves us with
-						<code class="hint_pink"><var>BASE</var></code>.
+						De komma <var>abs( E )</var></code> <var>plural( "place", abs( E ) )</var> plaatsen naar <span data-if="E < 0">rechts</span><span data-else>links</span>  verschuiven geeft <code class="hint_pink"><var>BASE</var></code>.
 					</p>
-
+				
 					<p>
-						Moving the decimal to the <span data-if="E < 0">right</span><span data-else>left</span>
-						<code><var>abs( E )</var></code> <var>plural( "place", abs( E ) )</var> is the same as
-						<span data-if="E < 0">dividing</span><span data-else>multiplying</span> by ten
-						<code><var>abs( E )</var></code> <var>plural( "time", abs( E ) )</var>&mdash;which is the same as
-						multiplying by <code class="hint_blue">10^{<var>E</var>}</code>.
+					De komma <code><var>abs( E )</var></code> <var>plural( "place", abs( E ) )</var> plaatsen naar <span data-if="E < 0">rechts</span><span data-else>links</span> verschuiven 
+					is hetzelfde als 
+					<code><var>abs( E )</var></code> <var>plural( "time", abs( E ) )</var> keer <span data-if="E < 0">door 10 delen</span><span data-else>met 10 vermenigvuldigen</span>. 
 					</p>
 
 					<div>
 						<p><strong>
-							<code><var>PRETTY_DECIMAL</var></code> in scientific notation is
+							<code><var>PRETTY_DECIMAL</var></code> in wetenschappelijke notatie is
 							<code>\color{<var>PINK</var>}{<var>BASE</var>}\times \color{<var>BLUE</var>}{10^{<var>E</var>}}</code>.
 						</strong></p>
 						<div class="graphie" data-update="scinot">

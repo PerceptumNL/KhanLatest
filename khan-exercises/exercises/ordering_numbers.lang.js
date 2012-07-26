@@ -5,6 +5,6 @@
 		
 		"hint1"		: 'Converteer elk getal naar een decimaal.',
 		"hint2"		: 'Sorteer de decimalen: <code><var>NUMS_SORT_DECS</var></code>.',
-		"hint3"		: 'Converteer weer terug: <code><var>NUMS_SORT_TEXT</var></code>.'
+		"hint3"		: 'Converteer weer terug: <code>\\Large{<var>NUMS_SORT_TEX</var>}</code>.'
 		}
 })

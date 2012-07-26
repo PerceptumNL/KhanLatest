@@ -1,8 +1,8 @@
 ({
 	"nl" : {
 		"exercise1"		: 'Vereenvoudig onderstaande expressie:',
-		"hint1"				: 'First, try to factor any perfect squares out of the radicals.',
-		"hint2"				: 'Separate the radicals and simplify.',
-		"hint3"				: 'Finally, simplify by combining the terms.'
+		"hint1"			: 'Probeer eerst kwadraten uit de delen onder het wortelteken.',
+		"hint2"			: 'Scheid de wortels en vereenvoudig.',
+		"hint3"			: 'Vereenvoudig ten slotte door de termen te combineren.'
 		}
 })

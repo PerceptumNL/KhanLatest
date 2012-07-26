@@ -1,10 +1,10 @@
 ({
 	"nl" : {
-		"question1"	: 'Simplify the following expression:',
+		"question1"	: 'Vereenvoudig de volgende uitdrukking:',
 		
-		"hint1"		: 'First, try to factor a perfect square out of the radical.',
-		"hint2"		: 'Separate the radical and simplify.',
-		"hint3"		: 'There are no perfect-square factors of <var>RADICAL_TOTAL</var>.',
-		"hint4"		: 'Thus, the expression is already in its most simplified form.'
+		"hint1"		: 'Probeer eerst een kwadraat te vinden waardoor je het getal onder het wortelteken kunt delen.',
+		"hint2"		: 'Scheid de wortels en vereenvoudig.',
+		"hint3"		: 'Je kunt <var>RADICAL_TOTAL</var> niet delen door een kwadraat.',
+		"hint4"		: 'Dus de uitdrukking is al zo ver mogelijk vereenvoudigd.'
 		}
 })

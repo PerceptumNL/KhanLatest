@@ -1,22 +1,22 @@
 ({
 	"nl" : {
-		"question1"	: 'What is <var>A_SIMPLE</var>% of <var>B_SIMPLE</var>? (Round to nearest whole number.)',
-		"question2"	: '<var>B_SIMPLE</var> is <var>A_SIMPLE</var>% of what number? (Round to the hundredths place.)',
-		"question3"	: "<var>person(1)</var> has <var>BANK_MORE</var> dollars in the bank today. Yesterday, <var>he(1)</var> had <var>BANK_FEWER</var> dollars in the bank. By what percentage did <var>person(1)</var>'s bank account increase over the past day? (Round your answer to the nearest hundredth of a percent.)",
-		"question4"	: "<var>person(1)</var> has <var>BANK_FEWER</var> dollars in the bank today. Yesterday, <var>he(1)</var> had <var>BANK_MORE</var> dollars in the bank. By what percentage did <var>person(1)</var>'s bank account decrease over the past day? (Round your answer to the nearest hundredth of a percent.)",
-		"question5"	: '<var>person(1)</var> has <var>YEAR_PERCENT_MORE</var>% more money today than <var>he(1)</var> did this time last year. If <var>person(1)</var> has <var>YEAR_THIS</var> dollars today, how many dollars did <var>he(1)</var> have this time last year? (Round to the nearest penny.)',
-		"question6"	: '<b><var>person(1)</var> {has {breakfast|lunch|dinner}|eats} at a {restaurant|cafe} and the cost of <var>his(1)</var> meal is $<var>BILL_FORMAT</var>. <var>He(1)</var> would like to leave a <var>TIP_PERCENT</var>% tip. What is <var>his(1)</var> total bill including tip?</b>',
-		
-		"hint1"		: 'Let <code>x</code> be the number that <var>B_SIMPLE</var> is <var>A_SIMPLE</var>% of.',
-		"hint2"		: 'The bank account grew by <code><var>BANK_MORE</var> - <var>BANK_FEWER</var> = <var>BANK_MORE - BANK_FEWER</var></code> dollars ',
-		"hint3"		: 'The bank account decreased by <code><var>BANK_MORE</var> - <var>BANK_FEWER</var> = <var>BANK_MORE - BANK_FEWER</var></code> dollars ',
-		"hint4"		: 'Let <code>x</code> be the amount of money that <var>he(1)</var> had last year.',
-		"hint5"		: 'The tip amount is equal to <code><var>TIP_PERCENT</var>\% \times \$<var>BILL_FORMAT</var></code>.',
-		"hint7"		: 'To calculate a <code>10\%</code> tip, move the decimal point in <code>\$<var>BILL_FORMAT</var></code> one place to the left.',
-		"hint8"		: 'To calculate a <code>5\%</code> tip, divide the <code>10\%</code> tip amount in half.',
-		"hint9"		: 'To calculate a <code>20\%</code> tip, multiply the <code>10\%</code> tip amount by two.',
-		"hint10"	: 'Adding the two amounts together gives us <code>\$<var>TIP_TEN_PERCENT</var> + \$<var>TIP_FIVE_PERCENT</var> = \$<var>TIP_AMOUNT_FORMAT</var></code>.',
-		"hint11"	: 'The cost of the meal plus the amount of the tip will equal the total bill amount.',
-		"hint12"	: 'The total cost of the bill is <code>\$<var>TOTAL_FORMAT</var></code>.'
+		"question1"	: 'Wat is <var>A_SIMPLE</var>% van <var>B_SIMPLE</var>? (Afronden op het dichtstbijzijnde gehele getal.)',
+		"question2"	: '<var>B_SIMPLE</var> is <var>A_SIMPLE</var>% van welk getal? (Afronden op het dichtstbijzijnde gehele getal.)',
+		"question3"	: "<var>person(1)</var> heeft vandaag <var>BANK_MORE</var> euro op de bank staan. Gisteren, had <var>he(1)</var> <var>BANK_FEWER</var> euro op de bank staan. Met hoeveel procent is het geld op <var>person(1)</var>'s bankrekening verminderd? (Rond je antwoord af op een honderdste van een procent.)",
+		"question4"	: "<var>person(1)</var> heeft vandaag <var>BANK_MORE</var> euro op de bank staan. Gisteren, had <var>he(1)</var> <var>BANK_FEWER</var> euro op de bank staan. Met hoeveel procent is het geld op <var>person(1)</var>'s bankrekening verminderd? (Rond je antwoord af op een honderdste van een procent.)",
+		"question5"	: '<var>person(1)</var> heeft <var>YEAR_PERCENT_MORE</var>% meer geld dan <var>he(1)</var> afgelopen jaar had. Als <var>person(1)</var> vandaag <var>YEAR_THIS</var> euro heeft, hoeveel euro had <var>he(1)</var> vorig jaar rond deze tijd? (Rond af op 2 decimalen)',
+		"question6"	: '<b><var>person(1)</var> {heeft {ontbijt|lunch|avondeten}} bij een {restaurant|cafe} en de kosten van <var>his(1)</var> maaltijd zijn €<var>BILL_FORMAT</var>. <var>He(1)</var> wil graag <var>TIP_PERCENT</var>% fooi geven. Wat kost <var>his(1)</var> totale rekening inclusief de fooi?</b>',
+
+		"hint1"		: 'Laat <code>x</code> het aantal zijn waar <var>B_SIMPLE</var> <var>A_SIMPLE</var>% van is.',
+		"hint2"		: 'De bankrekening groeide met <code><var>BANK_MORE</var> - <var>BANK_FEWER</var> = <var>BANK_MORE - BANK_FEWER</var></code> euro ',
+		"hint3"		: 'Het saldo op de bankrekening verminderde met <code><var>BANK_MORE</var> - <var>BANK_FEWER</var> = <var>BANK_MORE - BANK_FEWER</var></code> euro ',
+		"hint4"		: 'Laat <code>x</code> de hoeveelheid geld zijn dat <var>he(1)</var> vorig jaar had.',
+		"hint5"		: 'De hoeveelheid fooi is gelijk aan <code><var>TIP_PERCENT</var>\\% \\times \\€<var>BILL_FORMAT</var></code>.',
+		"hint7"		: 'Om een fooi van <code>10\\%</code> te berekenen, moet je het decimale punt in <code>\\€<var>BILL_FORMAT</var></code> een plek naar links verschuiven.',
+		"hint8"		: 'Om een fooi van <code>5\\%</code> te berekenen, deel je de <code>10\\%</code> fooi door de helft.',
+		"hint9"		: 'Om een fooi van <code>20\\%</code> te berekenen, moet je de <code>10\\%</code> fooi met twee vermenigvuldigen.',
+		"hint10"	: 'Wanneer we de twee aantallen bij elkaar tellen, krijgen we <code>\\€<var>TIP_TEN_PERCENT</var> + \\€<var>TIP_FIVE_PERCENT</var> = \\€<var>TIP_AMOUNT_FORMAT</var></code>.',
+		"hint11"	: 'De kosten van de maaltijd plus de fooi resulteren in het totale aantal op de rekening.',
+		"hint12"	: 'Het totale aantal op de rekening is <code>\\€<var>TOTAL_FORMAT</var></code>.'
 		}
 })

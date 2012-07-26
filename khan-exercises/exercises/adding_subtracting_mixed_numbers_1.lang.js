@@ -1,6 +1,6 @@
 ({
 	"nl" : {
-		"exercise"		: 'Geef je antwoord als een gemengd getal, vereenvoudigt tot de laagste termen.',
+		"question1"		: 'Geef je antwoord als een gemengd getal, vereenvoudigt tot de laagste termen.',
 		"hint1"			: 'Scheid de gehele getallen van de breuken:',
 		"hint2"			: 'Vereenvoudig.',		
 		"hint3"			: 'Tel de tellers bij elkaar op.',

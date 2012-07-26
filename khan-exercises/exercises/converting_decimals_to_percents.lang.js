@@ -1,9 +1,10 @@
 ({
 	"nl" : {
-		"question1"	: 'Express the decimal as a percent.',
+		"question1"	: 'Zet een decimaal getal om in een percentage.',
 		
-		"hint1"		: 'Rewrite the decimal as a fraction with a denominator of 100.',
-		"hint2"		: '<code><var>PERCENT</var></code> per hundred = <code><var>PERCENT</var></code> per cent = <code><var>PERCENT</var></code> percent',
-		"hint3"		: 'Another way to convert a decimal to a percent is to multiply by <code>100</code> (or move the decimal two places to the right) and add a percent sign.'
+		"hint1"		: 'Herschrijf het kommagetal als een breuk met deler 100.',
+		"hint2"		: '<code><var>PERCENT</var></code> per honderd = <code><var>PERCENT</var></code> per cent = <code><var>PERCENT</var></code> procent',
+		"hint3"		: 'Een andere manier om een decimaal getal om te zetten naar een percentage is door het te vermenigvuldigen met <code>100</code> (of door de komma 2 plaatsen naar rechts te verplaatsen) en een procentteken toevoegen.'
 		}
 })
+

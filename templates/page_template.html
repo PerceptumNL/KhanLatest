@@ -187,11 +187,16 @@
                     <div id="logo">
                         <a id="logo-image" href="/" title="Take me home!" data-tag="Header"></a>
                         <div id="stats">
-                            <span id="page_visitors">
-                                    <span id="page_num_visitors">
-                                        <!-- Content will get populated by javacript at end of page -->
-                                    </span>&nbsp;lessons delivered
+                            <span id="page_visitors" style="width:500px;left:100px;">
+								<span id="cookie-notification" style="display:none;">Khanacademie.nl maakt gebruik van cookies om je te identificeren.
                             </span>
+                            <script src="http://localhost:8080/javascript/shared-package/cookies.js"></script>
+							<script>
+								if(readCookie("cookie-notification") == null){
+									$("#cookie-notification").show();
+									createCookie("cookie-notification", 1);
+								}
+							</script>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -205,6 +210,7 @@
                 {% block pagemessage %}
 
                 {% endblock pagemessage %}
+
             </header>
             {% block pagecontent %}
             {% endblock pagecontent %}

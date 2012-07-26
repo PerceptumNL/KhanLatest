@@ -21,7 +21,7 @@
 							'Het middelste punt moet zich bevinden op '+
 							'<span class="hint_green"><code><var>MEDIAN</var></code></span>.'+
 						'</span><br />'+
-						'<input type="button" value="Show me an example" onClick="javascript: '+
+						'<input type="button" value="Toon me een oplossing" onClick="javascript: '+
 							'KhanUtil.showMedianExample();'+
 						'"></button>',
 		"hint3"		: 'Zolang er zich evenveel punten links als rechts van de mediaan bevinden, blijft '+

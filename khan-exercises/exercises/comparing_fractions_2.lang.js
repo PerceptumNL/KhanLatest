@@ -1,15 +1,15 @@
 ({
 	"nl" : {
-		"question1"	: 'Fill in the blank.',
+		"question1"	: 'Vul in',
 		
-		"id1"		: 'F1 === 1 ? "remains as" : "becomes"',
-		"id2"		: 'F2 === 1 ? "remains as" : "becomes"',
+		"id1"		: 'F1 === 1 ? "blijft" : "wordt"',
+		"id2"		: 'F2 === 1 ? "blijft" : "wordt"',
 		
-		"hint1"		: 'It is easier to compare these two fractions when they have the same denominator.',
-		"hint2"		: 'Their smallest common denominator is the LCM of <var>DEN_1</var> and <var>DEN_2</var>.',
+		"hint1"		: 'Het is makkelijker om deze breuken te vergelijken als ze dezelfde noemer hebben.',
+		"hint2"		: 'De kleinste gemeenschappelijke noemer is het kleinste gemene veelvoud van <var>DEN_1</var> en <var>DEN_2</var>.',
 		"hint3"		: '<code>\lcm(<var>DEN_1</var>, <var>DEN_2</var>) = <var>LCM</var></code>',
-		"hint4"		: 'The first fraction <var>BECOMES_1</var> <code>\dfrac{<var>NUM_1 * F1</var>}{<var>LCM</var>}</code>.',
-		"hint5"		: 'The second fraction <var>BECOMES_2</var> <code>\dfrac{<var>NUM_2 * F2</var>}{<var>LCM</var>}</code>.',
-		"hint6"		: 'We see that <code>\dfrac{<var>NUM_1 * F1</var>}{<var>LCM</var>} <var>SOLUTION</var> \dfrac{<var>NUM_2 * F2</var>}{<var>LCM</var>}</code>.'
+		"hint4"		: 'De eerste breuk wordt <var>BECOMES_1</var> <code>\dfrac{<var>NUM_1 * F1</var>}{<var>LCM</var>}</code>.',
+		"hint5"		: 'De tweede breuk <var>BECOMES_2</var> <code>\dfrac{<var>NUM_2 * F2</var>}{<var>LCM</var>}</code>.',
+		"hint6"		: 'We zien dat <code>\dfrac{<var>NUM_1 * F1</var>}{<var>LCM</var>} <var>SOLUTION</var> \dfrac{<var>NUM_2 * F2</var>}{<var>LCM</var>}</code>.'
 		}
 })

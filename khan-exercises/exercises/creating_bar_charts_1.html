@@ -2,7 +2,7 @@
 <html data-translatable data-require="math math-format expressions graphie interactive word-problems">
 <head>
 	<meta charset="UTF-8" />
-	<title>Creating bar charts 1</title>
+	<title>Het maken van staafdiagrammen 1</title>
 	<script src="../khan-exercise.js"></script>
 	<style>
 		span.rotate  {
@@ -22,19 +22,19 @@
 	<div class="problems">
 		<div>
 			<div class="vars">
-				<var id="SUBJECT" data-tt="vars1">randFromArray([ "animal", "color", "fruit", "course" ])</var>
+				<var id="SUBJECT" data-tt="vars1">randFromArray([ "dier", "kleur", "fruit", "les" ])</var>
 				<var id="CATEGORIES">jQuery.map( _.range(5), function( n ) { return ( KhanUtil[ SUBJECT ] )( n + 1 ); } )</var>
-				<var id="DATA">jQuery.map( _.range(5), function() { return randRange( 0, 10 ); } )</var>
+				<var id="DATA">jQuery.map( _.range(5), function() { return randRange( 2, 10 ); } )</var>
 				<var id="TOTAL">eval( DATA.join( "+" ) )</var>
-				<var id="RESPONDENT" data-tt="vars2">randFromArray([ "student", "teacher", "person" ])</var>
+				<var id="RESPONDENT" data-tt="vars2">randFromArray([ "leerling", "leerkracht", "persoon" ])</var>
 			</div>
 
-			<code><var data-tt="question1">TOTAL</var></code> <var>plural( RESPONDENT, TOTAL )</var> were asked about their favorite <var>SUBJECT</var>.
+			<code><var data-tt="question1">TOTAL</var></code> <var>plural(RESPONDENT)</var> werden gevraagd naar hun favoriete <var>SUBJECT</var>.
 			<var data-tt="question2">toSentence( shuffle( jQuery.map( DATA, function( num, i ) {
-				return "&lt;code&gt;" + num + "&lt;/code&gt; " + plural( RESPONDENT, num ) + " said " + CATEGORIES[ i ];
+				return "&lt;code&gt;" + num + "&lt;/code&gt; " + plural( RESPONDENT, num ) + " zeiden " + CATEGORIES[ i ];
 			}) ) )</var>.
 
-			<p class="question" data-tt="question3">Create a bar chart showing everyone's favorite <var>plural( SUBJECT )</var>:</p>
+			<p class="question" data-tt="question3">Maak een staafdiagram waarin ieders favoriete <var>( SUBJECT )</var> wordt weergegeven:</p>
 
 			<div class="problem">
 
@@ -85,14 +85,14 @@
 					});
 
 					label( [ 8, -0.8 ], "&lt;b&gt;" + SUBJECT + "&lt;/b&gt;", "below", false ).css( "text-transform", "capitalize" );
-					jQuery( label( [ -1.5, 5 ], "&lt;b&gt;Number of " + plural( RESPONDENT ) + "&lt;/b&gt;", "center", false ) ).addClass( "rotate" );
-					label( [ 8, 10.5 ], "&lt;b&gt;Favorite " + SUBJECT + "s&lt;/b&gt;", "above", false );
+					jQuery( label( [ -1.5, 5 ], "&lt;b&gt;Aantal " + plural( RESPONDENT ) + "&lt;/b&gt;", "center", false ) ).addClass( "rotate" );
+					label( [ 8, 10.5 ], "&lt;b&gt;Favoriete " + SUBJECT + "&lt;/b&gt;", "above", false );
 				</div>
 
 			</div>
 			<div class="solution" data-type="custom">
 				<div class="instruction" data-tt="question4">
-					Create a bar chart by dragging the top of each bar up and down.
+					Maak een staafdiagram door de bovenkant van elke staaf omhoog en omlaag te bewegen.
 				</div>
 				<div class="guess">jQuery.map( new Array( 5 ), function( val, n ) { return graph.lines[ n ].coordA[1]; })</div>
 				<div class="validator-function">
@@ -117,15 +117,15 @@
 	<div class="hints">
 		<div data-each="DATA as INDEX, NUM">
 			<p>
-				<p data-tt="hint3"><code><var>NUM</var></code> <var>plural( RESPONDENT, NUM )</var> said <var>plural( randFromArray([ "his", "her" ]), "their", NUM )</var>
-				favorite <var>SUBJECT</var> was <var>CATEGORIES[ INDEX ]</var>.</p>
+				<p data-tt="hint3"><code><var>NUM</var></code> <var>plural( RESPONDENT, NUM )</var> zeiden dat <var>plural( randFromArray([ "his", "her" ]), "hun", NUM )</var>
+				favoriete <var>SUBJECT</var> <var>CATEGORIES[ INDEX ]</var> was.</p>
 				<span data-if="NUM > 0" data-tt="hint1">
-					So the top of the bar for "<span style="text-transform: capitalize"><var>CATEGORIES[ INDEX ]</var></span>" should line up with the number
-					<code><var>NUM</var></code> on the left side of the chart.
+					Dus moet de bovenkant van de staaf voor "<span style="text-transform: capitalize"><var>CATEGORIES[ INDEX ]</var></span>" op een lijn liggen met het getal
+					<code><var>NUM</var></code> aan de linkerkant van de grafiek.
 				</span>
 				<span data-else data-tt="hint2">
-					So there should be no bar above "<span style="text-transform: capitalize"><var>CATEGORIES[ INDEX ]</var></span>". Drag the top of the bar all
-					the way to the bottom to get rid of the bar.
+					Dus moet er geen staaf komen boven "<span style="text-transform: capitalize"><var>CATEGORIES[ INDEX ]</var></span>". Sleep de bovenkant van de staaf helemaal naar beneden om 
+					de staaf kwijt te raken.
 				</span>
 			</p>
 			<div data-if="NUM > 0" class="graphie" data-update="barchart">

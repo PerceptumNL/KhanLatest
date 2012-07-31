@@ -13,7 +13,7 @@
 		"problem4"	: 'Voordat hij op vakantie gaat, vult <var>person( 1 )</var> <var>his( 1 )</var> gastank, welke <var>GALLONS</var> liter gas kan bevatten. Na <var>0.5 * randRange( 3 / 0.5, 10 / 0.5 )</var> uur merkt <var>person( 1 )</var> op dat de gastank voor <code>\\frac{<var>N</var>}{<var>D</var>}</code> gevuld is.',
 		"problem5"	: '<var>ATTENDEES</var> mensen houden een picknick in het park. <code>\\frac{<var>N</var>}{<var>D</var>}</code> deel van de mensen op de picknick zijn volwassen.',
 		"problem6"	: '<var>person(1)</var> heeft koekjes gebakken voor een benefiet. Op basis van het recept dat <var>he(1)</var> gebruikt is <code>\\frac{<var>N</var>}{<var>D</var>}</code> van een kopje chocolade vlokken nodig.',
-		"problem7"	: 'Om genoeg koekjes te hebben voor de verkoop, moet <var>person(1)</var> <var>BATCHES</var> bakplaten met koekjes bakken',
+		"problem7"	: 'Om genoeg koekjes te hebben voor de verkoop, moet <var>person(1)</var> <var>BATCHES</var> bakplaten met koekjes bakken.',
 		
 		"hint1"		: 'We moeten erachter komen welk deel <code>\\dfrac{<var>N</var>}{<var>D</var>}</code> is van <code><var>INVITEES</var></code> om te beantwoorden hoeveel mensen er op het feestje waren.',
 		"hint2"		: 'We kunnen het antwoord op <code>\\dfrac{<var>N</var>}{<var>D</var>}</code> van <code><var>INVITEES</var></code> vinden door <code class="hint_blue">\\dfrac{<var>N</var>}{<var>D</var>}</code> met <code class="hint_orange"><var>INVITEES</var></code> te vermenigvuldigen.',
@@ -36,6 +36,6 @@
 		"hint19"	: 'We kunnen al zien dat <code class="hint_blue">\\dfrac{<var>N</var>}{<var>D</var>}</code> van <code class="hint_orange"><var>ATTENDEES</var></code> <code class="hint_green"><var>SOLUTION</var></code> is:',
 		"hint20"	: 'Er waren <strong><var>SOLUTION</var> volwassenen op de picknick.</strong>',
 		"hint21"	: 'Om te achterhalen hoeveel kopjes chocolade vlokken <var>person(1)</var> nodig heeft, vermenigvuldigen we <code class="hint_blue">\\dfrac{<var>N</var>}{<var>D</var>}</code> kopje met de <code class="hint_orange"><var>BATCHES</var></code> bakplaten.',
-		"hint22"	: '<strong><var>person(1)</var> heeft <var>plural(<var>SOLUTION</var>,"kopjes")</var> chocolade vlokken nodig om voldoende koekjes te maken voor de benefietverkoop.</strong>'
+		"hint22"	: '<strong><var>person(1)</var> heeft <var>plural(<var>SOLUTION</var>,"kopjes", "kopjes")</var> chocolade vlokken nodig om voldoende koekjes te maken voor de benefietverkoop.</strong>'
 		}
 })

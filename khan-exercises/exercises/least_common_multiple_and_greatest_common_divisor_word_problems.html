@@ -29,14 +29,14 @@
 			</div>
 
 			<p class="problem spin" data-tt="question1">
-				{Next week|On Saturday}, <var>person(1)</var> is having a party{ and <var>he(1)</var>'s planning to play <var>his(1)</var>
-				<var>randRange(2,30)</var> favorite songs. <var>He(1)</var> also|. <var>He(1)</var>} wants to get some hot dogs for the party. When <var>he(1)</var>
-				goes to the store, <var>he(1)</var> finds that hot dogs come in packages of <var>A</var> and buns come in packages of <var>B</var>.
+				Op zaterdag geeft <var>person(1)</var> een feestje en <var>he(1)</var> is van plan om <var>his(1)</var>
+				<var>randRange(2,30)</var> favoriete liedjes te draaien. <var>He(1)</var> wil ook broodjes worst kopen voor op <var>his(1)</var> feestje.
+				Als <var>he(1)</var> naar de winkel gaat ontdekt <var>he(1)</var> dat de worstjes per <var>A</var> verpakt zijn en de broodjes per <var>B</var>.
 			</p>
 
 			<p class="question" data-tt="question2">
-				If <var>person(1)</var> wants to have the same number of hot dogs and buns,
-				what is the minimum number of hot dogs <var>he(1)</var> will have to buy?
+				Als <var>person(1)</var> hetzelfde aantal worstjes en broodjes wil hebben,
+				wat is het minimum aantal worstjes dat <var>he(1)</var> moet kopen?
 			</p>
 
 			<p class="solution" data-forms="integer"><var>LCM</var></p>
@@ -44,33 +44,33 @@
 			<div class="hints">
 				<div>
 					<p data-tt="hint1">
-						We know that hot dogs come in packages of <code><var>A</var></code>. Write out the first few multiples
-						of <code><var>A</var></code> to see the possible numbers of hot dogs <var>person(1)</var> can buy:
+						We weten dat worstjes per <code><var>A</var></code> zijn verpakt. Schrijf de eerste paar veelvouden van
+						<code><var>A</var></code> uit om te zien hoeveel worstjes <var>person(1)</var> zou kunnen kopen:
 					</p>
 					<p>
-						<code>\qquad dogs: </code>
+						<code>\qquad worstjes: </code>
 						<span data-each="getMultiples( A, min( LCM * 2 + A * 2, max( A * 14, LCM ) ) ) as M"><code><var>M</var>,</code> </span>
 						<code>...</code>
 					</p>
 				</div>
 				<div>
 					<p data-tt="hint2">
-						We know that buns come in packages of <code><var>B</var></code>. Write out the first few multiples
-						of <code><var>B</var></code> to see the possible numbers of buns <var>person(1)</var> can buy:
+						We weten dan broodjes per <code><var>B</var></code> verpakt zijn. Schrijf de eerste paar veelvouden van 
+						<code><var>B</var></code> uit om te zien hoeveel broodjes <var>person(1)</var> zou kunnen kopen:
 					</p>
 					<p>
-						<code>\qquad buns: </code>
+						<code>\qquad broodjes: </code>
 						<span data-each="getMultiples( B, min( LCM * 2 + B * 2, max( B * 14, LCM ) ) ) as M"><code><var>M</var>,</code> </span>
 						<code>...</code>
 					</p>
 				</div>
 				<div>
 					<p data-tt="hint3">
-						Since <var>person(1)</var> wants to have the same number of hot dogs and buns, look for <em>common multiples</em> where it's
-						possible to buy the same number of hot dogs and buns:
+						Aangezien <var>person(1)</var> hetzelfde aantal broodjes en worstjes wil hebben, kan je opzoek gaan naar de
+						<em>gemeenschappelijke veelvouden</em> zodat ze evenveel worstjes en broodjes kan kopen:
 					</p>
 					<p>
-						<code>\qquad dogs: </code>
+						<code>\qquad worstjes: </code>
 						<span data-each="getMultiples( A, min( LCM * 2 + A * 2, max( A * 14, LCM ) ) ) as M">
 							<span data-if="M % LCM === 0 && M / LCM === 1">
 								<code>\color{<var>PINK</var>}{<var>M</var>},</code>
@@ -88,7 +88,7 @@
 						<code>...</code>
 					</p>
 					<p>
-						<code>\qquad buns: </code>
+						<code>\qquad broodjes: </code>
 						<span data-each="getMultiples( B, min( LCM * 2 + B * 2, max( B * 14, LCM ) ) ) as M">
 							<span data-if="M % LCM === 0 && M / LCM === 1">
 								<code>\color{<var>PINK</var>}{<var>M</var>},</code>
@@ -108,13 +108,13 @@
 				</div>
 
 				<p data-tt="hint4">
-					The <em>least</em> common multiple is the minimum number of hot dogs <var>person(1)</var> will have to buy to get
-					the same number of hot dogs and buns.
+					Het <em>kleinste</em> gemeenschappelijke veelvoud is het minimum aantal worstjes dat <var>person(1)</var> zou moeten kopen
+					om evenveel worstjes als broodjes te verkrijgen.
 				</p>
-				<p><code class="hint_pink" data-tt="hint50"><var>LCM</var></code> is the least common multiple of <code><var>A</var></code> and <code><var>B</var></code>.</p>
+				<p><code class="hint_pink" data-tt="hint50"><var>LCM</var></code> is het kleinste gemeenschappelijke veelvoud van <code><var>A</var></code> en <code><var>B</var></code>.</p>
 				<p data-tt="hint5">
-					To get the same number of each, <strong>the smallest amount of food <var>person(1)</var> can buy is <var>LCM</var> hot dogs and buns</strong>,
-					or <var>plural(LCM/A,"package")</var> of hot dogs and <var>plural(LCM/B,"package")</var> of buns.
+					Om van elke evenveel te krijgen, <strong> de kleinste hoeveelheid eten dat <var>person(1)</var> moet kopen is <var>LCM</var> worstjes en broodjes</strong>,
+					of <var>plural(LCM/A,"zak", "zakken")</var> met worstjes en <var>plural(LCM/B,"zak", "zakken")</var> met broodjes.
 				</p>
 			</div>
 		</div>
@@ -132,45 +132,47 @@
 			</div>
 
 			<p class="problem spin" data-tt="question3">
-				<var>person(1)</var> is organizing a {baseball|softball} league, and <var>he(1)</var> needs to purchase jerseys and
-				visors for the players. Jerseys come in sets of <var>A</var>, and visors come in sets of <var>B</var>.
+				<var>person(1)</var> organiseert een honkbalcompetitie en <var>he(1)</var> moet daarvoor shirts en honkbalpetten
+				voor de spelers kopen. Shirts worden per <var>A</var> stuks en honkbalpetten per <var>B</var> stuks verkocht.
 			</p>
 			<p class="question" data-tt="question4">
-				If <var>person(1)</var> wants to buy the same number of jerseys and visors,
-				what is the minimum number of jerseys or visors <var>he(1)</var> will have to purchase?
+				Als <var>person(1)</var> hetzelfde aantal shirts en honkbalpetten wil kopen,
+				hoeveel shirts en honkbalpetten moet <var>he(1)</var> dan minimaal kopen?
 			</p>
 			<p class="solution" data-forms="integer"><var>LCM</var></p>
 
 			<div class="hints">
 				<div>
 					<p data-tt="hint6">
-						We know that jerseys come in packages of <code><var>A</var></code>. Write out the first few multiples
-						of <code><var>A</var></code> to see the possible numbers of jerseys <var>person(1)</var> can buy:
+						We weten dat de shirts in sets van <code><var>A</var></code> verkocht worden.
+						Schrijf de eerste paar veelvouden van <code><var>A</var></code> op om het aantal 
+						shirts te bepalen dat <var>person(1)</var> zou kunnen kopen:
 					</p>
 					<p>
-						<code>\qquad jerseys: </code>
+						<code>\qquad shirts: </code>
 						<span data-each="getMultiples( A, min( LCM * 2 + A * 2, max( A * 12, LCM ) ) ) as M"><code><var>M</var>,</code> </span>
 						<code>...</code>
 					</p>
 				</div>
 				<div>
 					<p data-tt="hint7">
-						We know that visors come in packages of <code><var>B</var></code>. Write out the first few multiples
-						of <code><var>B</var></code> to see the possible numbers of visors <var>person(1)</var> can buy:
+						We weten dat de petten in sets van <code><var>B</var></code> verkocht worden.
+						Schrijf de eerste paar veelvouden van <code><var>B</var></code> op om het aantal petten 
+						te bepalen dat <var>person(1)</var> zou kunnen kopen:
 					</p>
 					<p>
-						<code>\qquad visors: </code>
+						<code>\qquad honkbalpetten: </code>
 						<span data-each="getMultiples( B, min( LCM * 2 + B * 2, max( B * 12, LCM ) ) ) as M"><code><var>M</var>,</code> </span>
 						<code>...</code>
 					</p>
 				</div>
 				<div>
 					<p data-tt="hint8">
-						Since <var>person(1)</var> wants to have the same number of jerseys and visors, look for <em>common multiples</em> where it's
-						possible to buy the same number of jerseys and visors:
+						Aangezien <var>person(1)</var> hetzelfde aantal shirts als petten wil hebben,
+						zoeken we de <em>gemeenschappelijke veelvouden</em> die het mogelijk maken om hetzelfde aantal shirts en petten te kopen:
 					</p>
 					<p>
-						<code>\qquad jerseys: </code>
+						<code>\qquad shirts: </code>
 						<span data-each="getMultiples( A, min( LCM * 2 + A * 2, max( A * 12, LCM ) ) ) as M">
 							<span data-if="M % LCM === 0 && M / LCM === 1">
 								<code>\color{<var>PINK</var>}{<var>M</var>},</code>
@@ -188,7 +190,7 @@
 						<code>...</code>
 					</p>
 					<p>
-						<code>\qquad visors: </code>
+						<code>\qquad honkbalpetten: </code>
 						<span data-each="getMultiples( B, min( LCM * 2 + B * 2, max( B * 12, LCM ) ) ) as M">
 							<span data-if="M % LCM === 0 && M / LCM === 1">
 								<code>\color{<var>PINK</var>}{<var>M</var>},</code>
@@ -208,13 +210,13 @@
 				</div>
 
 				<p data-tt="hint9">
-					The <em>least</em> common multiple is the minimum number of jerseys <var>person(1)</var> will have to buy to get
-					the same number of jerseys and visors.
+					Het <em>kleinste</em> gemeenschappelijke veelvoud is het minimale aantal shirts dat <var>person(1)</var> 
+					zou moeten kopen om even veel shirts als petten te hebben.
 				</p>
-				<p data-tt="hint10"><code class="hint_pink"><var>LCM</var></code> is the least common multiple of <code><var>A</var></code> and <code><var>B</var></code>.</p>
+				<p data-tt="hint10"><code class="hint_pink"><var>LCM</var></code> is het kleinste gemeenschappelijke veelvoud van <code><var>A</var></code> en <code><var>B</var></code>.</p>
 				<p data-tt="hint11">
-					To get the same number of each, <strong>the smallest number <var>person(1)</var> can buy is <var>LCM</var> jerseys and visors</strong>,
-					or <var>plural( LCM / A, "set" )</var> of jerseys and <var>plural( LCM / B, "set" )</var> of visors.
+					Om hetzelfde aantal van elk te krijgen, het kleinste aantal dat <var>person(1)</var> kan kopen is <var>LCM</var> shirts en petten, oftewel <var>plural( LCM / A, "set" )</var> shirts
+					en <var>plural( LCM / B, "set" )</var> petten, het kleinste aantal dat <var>person(1)</var> kan kopen.
 				</p>
 			</div>
 		</div>
@@ -233,27 +235,26 @@
 
 			<div class="problem">
 				<p class="spin" data-tt="question5">
-					<var>person(1)</var> and <var>person(2)</var> are in different <var>course(1)</var> classes at <var>school(1)</var>.
+					<var>person(1)</var> en <var>person(2)</var> zitten in verschillende groepen bij <var>course(1)</var> les op de <var>school(1)</var> school.
 					<span data-if="A > B">
-						<var>person(1)</var>'s teacher always gives <var>plural( exam(1) )</var> with <var>A</var> questions on them while
-						<var>person(2)</var>'s teacher gives more frequent <var>plural( exam(1) )</var> with only <var>B</var> questions.
+						De leerkracht van <var>person(1)</var> geeft altijd <var>plural( exam(1) )</var> met <var>A</var> vragen, terwijl de leerkracht van
+						<var>person(2)</var> vaker <var>plural( exam(1) )</var> geeft met slechts <var>B</var> vragen.
 					</span>
 					<span data-else>
-						<var>person(2)</var>'s teacher always gives <var>plural( exam(1) )</var> with <var>B</var> questions on them while
-						<var>person(1)</var>'s teacher gives more frequent <var>plural( exam(1) )</var> with only <var>A</var> questions.
+						De leerkracht van <var>person(2)</var> geeft altijd <var>plural( exam(1) )</var> met <var>B</var> vragen, terwijl de leerkacht van
+						<var>person(1)</var> vaker <var>plural( exam(1) )</var> geeft met slechts <var>A</var> vragen.
 					</span>
-					{<var>person(1)</var> has <var>randRange(15,40)</var> other students in <var>his(1)</var> class.
-					|<var>person(2)</var>'s teacher also assigns <var>randRange(3,10)</var> projects per year.}
+					{<var>person(1)</var> zit met <var>randRange(15,40)</var> andere leerlingen in <var>his(1)</var> klas.
+					|De leerkracht van <var>person(2)</var> geeft ook <var>randRange(3,10)</var> projecten per jaar.}
 				</p>
 				<p data-tt="question6">
-					Even though the two classes have to take a different number of <var>plural( exam(1) )</var>, their teachers have
-					told them that both classes will get the same total number of <var>exam(1)</var> questions each year.
+					Hoewel de twee groepen een verschillend aantal <var>plural( exam(1) )</var> maken, is hen door de leerkrachten verzekerd dat beiden groepen per jaar evenveel
+					<var>exam(1)</var>vragen krijgen.
 				</p>
 			</div>
 
 			<p class="question" data-tt="question7">
-				What is the minimum number of <var>exam(1)</var> questions <var>person(1)</var>'s or <var>person(2)</var>'s class
-				can expect to get in a year?
+				Wat is het minimum aantal <var>exam(1)</var>vragen dat de groep van <var>person(1)</var> of <var>person(2)</var> kan verwachten dit jaar?
 			</p>
 
 			<p class="solution" data-forms="integer"><var>LCM</var></p>
@@ -261,9 +262,9 @@
 			<div class="hints">
 				<div>
 					<p data-tt="hint12">
-						We know that in <var>person(1)</var>'s class, all the <var>plural( exam(1) )</var> have <code><var>A</var></code> questions. Write
-						out the first few multiples of <code><var>A</var></code> to see the possible numbers of questions
-						<var>person(1)</var> might have to answer over the whole year:
+						We weten dat in de groep van <var>person(1)</var> alle <var>plural( exam(1) )</var> <code><var>A</var></code> vragen hebben. 
+						Schrijf de eerste paar veelvouden van <code><var>A</var></code> op om te bepalen wat de mogelijke hoeveelheid vragen per jaar van
+						<var>person(1)</var> zou kunnen zijn:
 					</p>
 					<p>
 						<code>\qquad</code>
@@ -273,9 +274,9 @@
 				</div>
 				<div>
 					<p data-tt="hint13">
-						We know that in <var>person(2)</var>'s class, all the <var>plural( exam(1) )</var> have <code><var>B</var></code> questions. Write
-						out the first few multiples of <code><var>B</var></code> to see the possible numbers of questions
-						<var>person(2)</var> might have to answer over the whole year:
+						We weten dat in de groep van <var>person(2)</var> alle <var>plural( exam(1) )</var> <code><var>B</var></code> vragen hebben. 
+						Schrijf de eerste paar veelvouden van <code><var>B</var></code> op om te bepalen wat de mogelijke hoevelheid vragen per jaar van
+						<var>person(2)</var> zou kunnen zijn:
 					</p>
 					<p>
 						<code>\qquad</code>
@@ -285,9 +286,9 @@
 				</div>
 				<div>
 					<p data-tt="hint14">
-						Since <var>person(1)</var>'s and <var>person(2)</var>'s teachers have told them that both classes will have the same total
-						number of <var>exam(1)</var> questions over the whole year, look for the <em>common multiples</em> to find the possible
-						numbers of <var>exam(1)</var> questions they will have to answer.
+						Aangezien de leerkrachten van <var>person(1)</var> en <var>person(2)</var> hebben verteld dat beide klassen per jaar evenveel
+						<var>exam(1)</var>vragen krijgen, kunnen we opzoek gaan naar de <em>gemeenschappelijke veelvouden</em> om te bepalen hoeveel
+						<var>exam(1)</var>vragen ze moeten maken.
 					</p>
 					<p>
 						<code>\qquad</code>
@@ -328,14 +329,14 @@
 				</div>
 
 				<p data-tt="hint15">
-					The <em>least</em> common multiple is the minimum number questions <var>person(1)</var> and <var>person(2)</var> might
-					have to answer over the year.
+					Het <em>kleinste</em> gemeenschappelijke veelvoud is het minimum aantal vragen dat <var>person(1)</var> en <var>person(2)</var> 
+					dit jaar zullen moeten beantwoorden.
 				</p>
-				<p data-tt="hint16"><code class="hint_pink"><var>LCM</var></code> is the least common multiple of <code><var>A</var></code> and <code><var>B</var></code>.</p>
+				<p data-tt="hint16"><code class="hint_pink"><var>LCM</var></code> is het minimum gemeenschappelijke veelvoud van <code><var>A</var></code> en <code><var>B</var></code>.</p>
 				<p data-tt="hint17">
-					If <var>person(1)</var>'s and <var>person(2)</var>'s classes get the same total number of questions,
-					<strong>the minimum number of <var>exam(1)</var> questions they can expect to get in a year is <var>LCM</var> questions</strong>,
-					or <var>plural( LCM / A, exam(1) )</var> in <var>person(1)</var>'s class and <var>plural( LCM / B, exam(1) )</var> in <var>person(2)</var>'s class.
+					Als de groep van <var>person(1)</var> en <var>person(2)</var> hetzelfde aantal vragen krijgen,
+					<strong>het minimum aantal <var>exam(1)</var>vragen dat ze kunnen verwachten in een jaar is <var>LCM</var> </strong>,
+					of <var>plural( LCM / A, exam(1) )</var> in de groep van <var>person(1)</var> en <var>plural( LCM / B, exam(1) )</var> in de groep van <var>person(2)</var>.
 				</p>
 			</div>
 		</div>
@@ -355,49 +356,45 @@
 
 			<div class="question spin">
 				<p data-tt="question8">
-					At a track and field competition, there are <var>A</var> sprinters and <var>B</var> long-distance
-					runners{ and <var>randRange(5,100)</var> fans|}. <var>person(1)</var> has to assign all of the athletes
-					to teams. <var>He(1)</var> wants to make sure all of the teams have the same number of sprinters and
-					the same number of long-distance runners.
+					Tijdens een atletiek wedstrijd zijn er <var>A</var> sprinters en <var>B</var> lange afstands renners { en <var>randRange(5,100)</var> supporters|}. 
+					<var>person(1)</var> moet alle atleten indelen in teams. <var>He(1)</var> wil er zeker van zijn dat elk team evenveel sprinters als lange afstands renners heeft.
 				</p>
-				<p data-tt="question9"><strong>What is the greatest number of teams <var>person(1)</var> can form?</strong></p>
+				<p data-tt="question9"><strong> Wat is het grootst mogelijke aantal teams dat <var>person(1)</var> kan maken?</strong></p>
 			</div>
 
 			<p class="solution" data-forms="integer"><var>GCD</var></p>
 
 			<div class="hints">
 				<p data-tt="hint18">
-					Let's start by just thinking about the sprinters. We can think about all the ways to divide the
-					<var>A</var> sprinters into equally sized teams by finding the factors of <var>A</var>.
+					Laten we eerst alleen naar de sprinters kijken. We kunnen kijken op welke manier we de <var>A</var> sprinters eerlijk kunnen
+					verdelen over de teams door de delers van <var>A</var> te vinden.
 				</p>
 
 				<div>
 					<p data-tt="hint19">
-						The factors of <var>A</var> are <span class="hint_blue"><var>toSentence( getFactors( A ) )</var></span> since
-						those are all the numbers that divide evenly into <var>A</var>.
-						That means we can divide the sprinters into equally sized teams in any of the following ways:
+						De delers van <var>A</var> zijn <span class="hint_blue"><var>toSentence( getFactors( A ) )</var></span>. 
+						Dit betekent dat we de sprinters op de volgende manier over de teams kunnen verdelen:
 					</p>
 					<p style="margin-left: 20px">
 						<span data-each="getFactors( A ) as F" class="hint_blue" data-tt="hint51">
-							<var>plural( F, "team" )</var> with <var>plural( A / F, "sprinter" )</var> <var>plural( "", "each", F )</var><br />
+							<var>plural( F, "team" )</var> met <var>plural( A / F, "sprinter" )</var> <var>plural( "", "each", F )</var><br />
 						</span>
 					</p>
 				</div>
 
 				<p data-tt="hint20">
-					Now lets think about the long-distance runners. We can also list all the ways to divide the
-					<var>B</var> long-distance runners into equally sized teams by finding the factors of <var>B</var>.
+					Laten we nu kijken naar de lange afstands renners. We kunnen ook alle manieren opschrijven om <var>B</var>
+					lange afstands renners te verdelen over de teams door de delers van <var>B</var> te vinden.
 				</p>
 
 				<div>
 					<p data-tt="hint21">
-						The factors of <var>B</var> are <span class="hint_green"><var>toSentence( getFactors( B ) )</var></span> since
-						those are all the numbers that divide evenly into <var>B</var>.
-						That means we can divide the long-distance runners into equally sized teams in any of the following ways:
+						De delers van <var>B</var> zijn <span class="hint_green"><var>toSentence( getFactors( B ) )</var></span> 
+						Dit beketekent dat we de lange afstands renners op de volgende manier over de teams kunnen verdelen:
 					</p>
 					<p style="margin-left: 20px">
 						<span data-each="getFactors( B ) as F" class="hint_green" data-tt="hint52">
-							<var>plural( F, "team" )</var> with <var>plural( B / F, "long-distance runner" )</var> <var>plural( "", "each", F )</var><br />
+							<var>plural( F, "team" )</var> met <var>plural( B / F, "lange afstands renner" )</var> <var>plural( "", "each", F )</var><br />
 						</span>
 					</p>
 				</div>
@@ -405,13 +402,13 @@
 
 				<div>
 					<p data-tt="hint22">
-						Since each team will have sprinters and long-distance runners, compare the numbers of teams the sprinters can be divided into and
-						the numbers of teams the runners can be divided into to find the <em>common divisors</em>:
+						Omdat elk team sprinters en lange afstands renners moet hebben,  vergelijken we de manier waarop de 
+						sprinters en lange afstands renners over de teams verdeeld kunnen worden om de <em>gemeenschappelijke delers</em> te vinden:
 					</p>
 					<div class="gcd-column">
 						<span data-each="max( A, B ) times as N">
 							<span data-if="jQuery.inArray( N + 1, A_FACTORS ) !== -1" class="hint_blue" data-tt="hint53">
-								<var>plural( N + 1, "team" )</var> with <var>plural( A / ( N + 1 ), "sprinter" )</var><br />
+								<var>plural( N + 1, "team" )</var> met <var>plural( A / ( N + 1 ), "sprinter" )</var><br />
 							</span>
 							<span data-else-if="jQuery.inArray( N + 1, B_FACTORS ) !== -1">
 								<br />
@@ -421,7 +418,7 @@
 					<div class="gcd-column">
 						<span data-each="max( A, B ) times as N">
 							<span data-if="jQuery.inArray( N + 1, B_FACTORS ) !== -1" class="hint_green" data-tt="hint54">
-								<var>plural( N + 1, "team" )</var> with <var>plural( B / ( N + 1 ), "long-distance runner" )</var><br />
+								<var>plural( N + 1, "team" )</var> met <var>plural( B / ( N + 1 ), "lange afstand renner" )</var><br />
 							</span>
 							<span data-else-if="jQuery.inArray( N + 1, A_FACTORS ) !== -1">
 								<br />
@@ -433,27 +430,26 @@
 
 				<div>
 					<p data-tt="hint23">
-						The common divisors of <var>A</var> and <var>B</var> are <span class="hint_pink"><var>toSentence( _.intersection( A_FACTORS, B_FACTORS ) )</var></span>.
-						In other words, with <var>A</var> sprinters and <var>B</var> long-distance runners,
-						<var>person(1)</var> can make the following equal teams:
+						De gemeenschappelijke delers van <var>A</var> en <var>B</var> zijn <span class="hint_pink"><var>toSentence( _.intersection( A_FACTORS, B_FACTORS ) )</var></span>.
+						Oftewel, <var>person(1)</var> kan met <var>A</var> sprinters en <var>B</var> lange afstand renners de volgende teams maken:
 					</p>
 					<p style="margin-left: 20px">
 						<span data-each="_.intersection( A_FACTORS, B_FACTORS ) as F" class="hint_pink" data-tt="hint55">
-							<var>plural( F, "team" )</var> with <var>plural( A / F, "sprinter" )</var> and
-							<var>plural( B / F, "long-distance runner" )</var>
+							<var>plural( F, "team" )</var> met <var>plural( A / F, "sprinter" )</var> en
+							<var>plural( B / F, "lange afstand renner" )</var>
 							<br />
 						</span>
 					</p>
 				</div>
 
 				<p data-tt="hint24">
-					We want to know the <em>greatest</em> number of equal teams <var>person(1)</var> can make, so from the common divisors above,
-					we want the <em>greatest common divisor</em>.
+					We willen weten wat het <em>grootste</em> aantal identieke teams is dat <var>person(1)</var> kan maken
+					dus van de gemeenschappelijke delers die we gevonden hebben willen we de <em>grootste gemeenschappelijke deler</em> hebben.
 				</p>
 
 				<p data-tt="hint56">
-					<strong>The greatest number of teams that <var>person(1)</var> can form is <var>GCD</var> teams</strong>,
-					with <var>plural( A / GCD, "sprinter" )</var> and <var>plural( B / GCD, "long-distance runner" )</var> per team.
+					<strong>Het grootste aantal teams dat <var>person(1)</var> kan maken is <var>GCD</var> teams</strong>,
+					met <var>plural( A / GCD, "sprinter" )</var> en <var>plural( B / GCD, "lange afstand renner" )</var> per team.
 				</p>
 
 			</div>
@@ -474,68 +470,68 @@
 
 			<div class="problem spin">
 				<p data-tt="question10">
-					At <var>person(1)</var>'s bakery, <var>person(1)</var> bakes one batch of <var>A</var> chocolate chip cookies
-					and one batch of <var>B</var> oatmeal cookies each day. <var>person(1)</var> sells all <var>his(1)</var> cookies
-					the same day in gift baskets.
+					In <var>person(1)</var>'s bakkerij bakt <var>person(1)</var> iedere dag 1 partij van <var>A</var>
+					chocoladekoekjes en 1 partij van <var>B</var> havermoutkoekjes.
+					 <var>person(1)</var> verkoopt alle koekjes op dezelfde dag in doosjes.
 				</p>
 				<p data-tt="question11">
-					{Because <var>his(1)</var> customers expect consistency|To keep the price the same}, <var>person(1)</var> wants
-					to make sure each gift basket is identical.
+					{omdat <var>his(1)</var> klanten hetzelfde verwachten|Om de prijs hetzelfde te houden}, wil <var>person(1)</var> dat
+					elke doosje hetzelfde is.
 				</p>
 			</div>
 
 			<p class="question" data-tt="question12">
-				What is the greatest number of gift baskets <var>person(1)</var> can sell each day?
+				Wat is het grootste aantal doosjes dat <var>person(1)</var> iedere dag kan verkopen?
 			</p>
 
 			<p class="solution" data-forms="integer"><var>GCD</var></p>
 
 			<div class="hints">
 				<p data-tt="hint25">
-					Let's start by just thinking about the chocolate chip cookies. We can think about all the ways to equally
-					divide the <var>A</var> chocolate chip cookies into gift baskets by finding the factors of <var>A</var>.
+					Laten we eerst alleen naar de chocoladekoekjes kijken. We kunnen kijken op welke manier we de chocoladekoekjes
+					kunnen verdelen over de doosjes door de delers van <var>A</var> te vinden.
 				</p>
 
 				<div>
 					<p data-tt="hint26">
-						The factors of <var>A</var> are <span class="hint_blue"><var>toSentence( getFactors( A ) )</var></span> since
-						those are all the numbers that divide evenly into <var>A</var>.
-						That means we can equally divide the chocolate chip cookies into gift baskets in any of the following ways:
+						De delers van <var>A</var> zijn <span class="hint_blue"><var>toSentence( getFactors( A ) )</var></span> Omdat 
+						dit alle getallen zijn waar <var>A</var> mee kan worden gedeeld.
+						Dat betekent dat we de chocoladekoekjes op de volgende manier in de doosjes kunnen doen:
 					</p>
 					<p style="margin-left: 20px">
 						<span data-each="getFactors( A ) as F" class="hint_blue" data-tt="hint27">
-							<var>plural( F, "basket" )</var> with <var>plural( A / F, "chocolate chip cookie" )</var> <var>plural( "", "each", F )</var><br />
+							<var>plural( F, "doosje" )</var> met <var>plural( A / F, "chocoladekoekje" )</var> <var>plural( "", "each", F )</var><br />
 						</span>
 					</p>
 				</div>
 
 				<p data-tt="hint28">
-					Now lets think about the oatmeal cookies. We can also list all the ways to equally divide the
-					<var>B</var> oatmeal cookies into gift baskets by finding the factors of <var>B</var>.
+					Laten we nu kijken naar de havermoutkoekjes. We kunnen ook alle manieren opschrijven om <var>B</var> havermoutkoekjes
+					te verdelen over de doosjes door de delers van <var>B</var> te vinden.
 				</p>
 
 				<div>
 					<p data-tt="hint29">
-						The factors of <var>B</var> are <span class="hint_green"><var>toSentence( getFactors( B ) )</var></span> since
-						those are all the numbers that divide evenly into <var>B</var>.
-						That means we can equally divide the oatmeal cookies into gift baskets in any of the following ways:
+						De delers van <var>B</var> zijn <span class="hint_green"><var>toSentence( getFactors( B ) )</var></span> Omdat 
+						dit alle getallen zijn waar <var>B</var> mee kan worden gedeeld.
+						Dat betekent dat we de havermoutkoekjes op de volgende manieren over de doosjes kunnen verdelen:
 					</p>
 					<p style="margin-left: 20px">
 						<span data-each="getFactors( B ) as F" class="hint_green" data-tt="hint30">
-							<var>plural( F, "basket" )</var> with <var>plural( B / F, "oatmeal cookie" )</var> <var>plural( "", "each", F )</var><br />
+							<var>plural( F, "doosje" )</var> met <var>plural( B / F, "havermoutkoekje" )</var> <var>plural( "", "each", F )</var><br />
 						</span>
 					</p>
 				</div>
 
 				<div>
 					<p data-tt="hint31">
-						Since each gift basket will have chocolate chip and oatmeal cookies, compare the ways of dividing the chocolate chip cookies
-						and the ways of dividing the oatmeal cookies to find the <em>common divisors</em>:
+						Omdat ieder doosje chocoladekoekjes en havermoutkoekjes moet hebben, vergelijken we de manier waarop de chocoladekoekjes
+						en de havermoutkoekjes over de doosjes verdeeld kunnen worden om de <em>gemeenschappelijke delers</em> te vinden:
 					</p>
 					<div class="gcd-column">
 						<span data-each="max( A, B ) times as N">
 							<span data-if="jQuery.inArray( N + 1, A_FACTORS ) !== -1" class="hint_blue" data-tt="hint32">
-								<var>plural( N + 1, "basket" )</var> with <var>plural( A / ( N + 1 ), "chocolate chip cookie" )</var><br />
+								<var>plural( N + 1, "doosje" )</var> met <var>plural( A / ( N + 1 ), "chocoladekoekje" )</var><br />
 							</span>
 							<span data-else-if="jQuery.inArray( N + 1, B_FACTORS ) !== -1">
 								<br />
@@ -545,7 +541,7 @@
 					<div class="gcd-column">
 						<span data-each="max( A, B ) times as N">
 							<span data-if="jQuery.inArray( N + 1, B_FACTORS ) !== -1" class="hint_green" data-tt="hint33">
-								<var>plural( N + 1, "basket" )</var> with <var>plural( B / ( N + 1 ), "oatmeal cookie" )</var><br />
+								<var>plural( N + 1, "doosje" )</var> met <var>plural( B / ( N + 1 ), "havermoutkoekje" )</var><br />
 							</span>
 							<span data-else-if="jQuery.inArray( N + 1, A_FACTORS ) !== -1">
 								<br />
@@ -557,27 +553,26 @@
 
 				<div>
 					<p data-tt="hint34">
-						The common divisors of <var>A</var> and <var>B</var> are <span class="hint_pink"><var>toSentence( _.intersection( A_FACTORS, B_FACTORS ) )</var></span>.
-						In other words, with <var>A</var> chocolate chip and <var>B</var> oatmeal cookies,
-						<var>person(1)</var> can make any of the following gift baskets:
+						De gemeenschappelijke delers van <var>A</var> en <var>B</var> zijn <span class="hint_pink"><var>toSentence( _.intersection( A_FACTORS, B_FACTORS ) )</var></span>.
+						Oftewel, <var>person(1)</var> kan met <var>A</var> chocoladekoekjes en <var>B</var> havermoutkoekjes de volgende doosjes maken:
 					</p>
 					<p style="margin-left: 20px">
 						<span data-each="_.intersection( A_FACTORS, B_FACTORS ) as F" class="hint_pink" data-tt="hint35">
-							<var>plural( F, "basket" )</var> with <var>plural( A / F, "chocolate chip cookie" )</var> and
-							<var>plural( B / F, "oatmeal cookie" )</var>
+							<var>plural( F, "doosje" )</var> met <var>plural( A / F, "chocoladekoekje" )</var> en
+							<var>plural( B / F, "havermoutkoekje" )</var>
 							<br />
 						</span>
 					</p>
 				</div>
 
 				<p data-tt="hint36">
-					We want to know the <em>greatest</em> number of identical gift baskets <var>person(1)</var> can make, so from the common divisors above,
-					we want the <em>greatest common divisor</em>.
+					We willen weten wat het <em>grootste</em> aantal identieke doosjes is dat <var>person(1)</var> kan maken, dus 
+					van de gemeenschappelijke delers die we gevonden hebben willen we de <em>grootste gemeenschappelijke deler</em> hebben.
 				</p>
 
 				<p data-tt="hint37">
-					<strong>The greatest number of gift baskets that <var>person(1)</var> can make each day is <var>GCD</var> baskets</strong>,
-					with <var>plural( A / GCD, "chocolate chip cookie" )</var> and <var>plural( B / GCD, "oatmeal cookie" )</var> per basket.
+					<strong>Het grootste aantal doosjes dat <var>person(1)</var> elke dag kan maken is <var>GCD</var> doosjes</strong>,
+					met ieder <var>plural( A / GCD, "chocoladekoekje" )</var> en <var>plural( B / GCD, "havermoutkoekje" )</var>.
 				</p>
 			</div>
 		</div>
@@ -597,65 +592,65 @@
 
 			<div class="problem spin">
 				<p data-tt="question13">
-					<var>person(1)</var> just bought 1 package of <var>plural( A, deskItem(1) )</var> and 1 package of
-					<var>plural( B, deskItem(2) )</var>. <var>He(1)</var> wants to use all of the <var>plural( deskItem(1) )</var>
-					and <var>plural( deskItem(2) )</var> to create identical sets of office supplies for <var>his(1)</var>
-					{coworkers|friends|classmates}.
+					<var>person(1)</var> heeft zojuist 1 doosje met <var>plural( A, deskItem(1) )</var> en 1 doosje met 
+					<var>plural( B, deskItem(2) )</var> gekocht. <var>He(1)</var> wil alle <var>plural( deskItem(1) )</var> en 
+					<var>plural( deskItem(2) )</var> gebruiken om voor ieder van <var>his(1)</var>
+					{collega's|vrienden|medeleerlingen} eenzelfde setje met kantoorbenodigdheden te maken.
 				</p>
 			</div>
 			<p class="question" data-tt="question14">
-				What is the greatest number of sets of office supplies <var>person(1)</var> can make?
+				Wat is het grootste aantal setjes met kantoorbenodigdheden dat <var>person(1)</var> kan maken?
 			</p>
 
 			<p class="solution" data-forms="integer"><var>GCD</var></p>
 
 			<div class="hints">
 				<p data-tt="hint38">
-					Let's start by just thinking about the <var>plural( deskItem(1) )</var>. We can think about all the ways to
-					equally divide the <var>plural( A, deskItem(1) )</var> into sets by finding the factors of <var>A</var>.
+					Laten we beginnen met de <var>plural( deskItem(1) )</var>. We kunnen bepalen op hoeveel verschillende manieren we de 
+					<var>plural( A, deskItem(1) )</var> in gelijke setjes kunnen verdelen door de delers van <var>A</var>. te bepalen.
 				</p>
 
 				<div>
 					<p data-tt="hint39">
-						The factors of <var>A</var> are <span class="hint_blue"><var>toSentence( getFactors( A ) )</var></span> since
-						those are all the numbers that divide evenly into <var>A</var>.
-						That means we can equally divide the <var>plural( deskItem(1) )</var> into sets in any of the following ways:
+						De delers van <var>A</var> zijn <span class="hint_blue"><var>toSentence( getFactors( A ) )</var></span> 
+						omdat dit alle getallen zijn waar <var>A</var> mee kan worden gedeeld.
+						Dit betekent dat we op de volgende manieren de <var>plural( deskItem(1) )</var> gelijkmatig kunnen verdelen in setjes:
 					</p>
 					<p style="margin-left: 20px">
 						<span data-each="getFactors( A ) as F" class="hint_blue" data-tt="hint40">
-							<var>plural( F, "set" )</var> with <var>plural( A / F, deskItem(1) )</var> <var>plural( "", "each", F )</var><br />
+							<var>plural( F, "setje" )</var> met <var>plural( A / F, deskItem(1) )</var> <var>plural( "", "each", F )</var><br />
 						</span>
 					</p>
 				</div>
 
 				<p data-tt="hint41">
-					Now lets think about the <var>plural( deskItem(2) )</var>. We can also list all the ways to equally divide the
-					<var>plural( B, deskItem(2) )</var> into sets by finding the factors of <var>B</var>.
+					Laten we nu kijken naar de <var>plural( deskItem(2) )</var>. Ook hier kunnen we een lijst maken met alle manieren waarop we 
+					de <var>plural( B, deskItem(2) )</var> in gelijke setjes kunnen verdelen door de delers van <var>B</var> te bepalen.
 				</p>
 
 				<div>
 					<p data-tt="hint42">
-						The factors of <var>B</var> are <span class="hint_green"><var>toSentence( getFactors( B ) )</var></span> since
-						those are all the numbers that divide evenly into <var>B</var>.
-						That means we can equally divide the <var>plural( deskItem(2) )</var> into sets in any of the following ways:
+						De delers van <var>B</var> zijn <span class="hint_green"><var>toSentence( getFactors( B ) )</var></span> 
+						omdat dit alle getallen zijn waar <var>B</var> mee kan worden gedeeld.
+						Dit betekent dat we op de volgende manieren de <var>plural( deskItem(2) )</var> gelijkmatig kunnen verdelen in setjes:
 					</p>
 					<p style="margin-left: 20px">
 						<span data-each="getFactors( B ) as F" class="hint_green" data-tt="hint57">
-							<var>plural( F, "set" )</var> with <var>plural( B / F, deskItem(2) )</var> <var>plural( "", "each", F )</var><br />
+							<var>plural( F, "setje" )</var> met <var>plural( B / F, deskItem(2) )</var> <var>plural( "", "each", F )</var><br />
 						</span>
 					</p>
 				</div>
 
 				<div>
 					<p data-tt="hint43">
-						Since each set will have <var>plural( deskItem(1) )</var> and <var>plural( deskItem(2) )</var>, compare the
-						ways of dividing the <var>plural( deskItem(1) )</var> and the ways of dividing the
-						<var>plural( deskItem(2) )</var> to find the <em>common divisors</em>:
+						Aangezien elke set uit zowel <var>plural( deskItem(1) )</var> als <var>plural( deskItem(2) )</var> zal bestaan,
+						moeten we uit alle mogelijke verdelingen van <var>plural( deskItem(1) )</var> en <var>plural( deskItem(2) )</var>
+						de <em>gemeenschappelijke delers</em> kiezen:
 					</p>
 					<div class="gcd-column">
 						<span data-each="max( A, B ) times as N">
 							<span data-if="jQuery.inArray( N + 1, A_FACTORS ) !== -1" class="hint_blue" data-tt="hint44">
-								<var>plural( N + 1, "set" )</var> with <var>plural( A / ( N + 1 ), deskItem(1) )</var><br />
+								<var>plural( N + 1, "setje" )</var> met <var>plural( A / ( N + 1 ), deskItem(1) )</var><br />
 							</span>
 							<span data-else-if="jQuery.inArray( N + 1, B_FACTORS ) !== -1">
 								<br />
@@ -665,7 +660,7 @@
 					<div class="gcd-column">
 						<span data-each="max( A, B ) times as N">
 							<span data-if="jQuery.inArray( N + 1, B_FACTORS ) !== -1" class="hint_green" data-tt="hint45">
-								<var>plural( N + 1, "set" )</var> with <var>plural( B / ( N + 1 ), deskItem(2) )</var><br />
+								<var>plural( N + 1, "setje" )</var> met <var>plural( B / ( N + 1 ), deskItem(2) )</var><br />
 							</span>
 							<span data-else-if="jQuery.inArray( N + 1, A_FACTORS ) !== -1">
 								<br />
@@ -677,13 +672,12 @@
 
 				<div>
 					<p data-tt="hint46">
-						The common divisors of <var>A</var> and <var>B</var> are <span class="hint_pink"><var>toSentence( _.intersection( A_FACTORS, B_FACTORS ) )</var></span>.
-						In other words, with <var>plural( A, deskItem(1) )</var> and <var>plural( B, deskItem(2) )</var>,
-						<var>person(1)</var> can make any of the following sets:
+						De gemeenschappelijke deler van <var>A</var> en <var>B</var> zijn <span class="hint_pink"><var>toSentence( _.intersection( A_FACTORS, B_FACTORS ) )</var></span>.
+						Oftewel, <var>person(1)</var> kan met <var>plural( A, deskItem(1) )</var> en <var>plural( B, deskItem(2) )</var> de volgende setjes met kantoorbenodigheden maken:
 					</p>
 					<p style="margin-left: 20px">
 						<span data-each="_.intersection( A_FACTORS, B_FACTORS ) as F" class="hint_pink" data-tt="hint47">
-							<var>plural( F, "set" )</var> with <var>plural( A / F, deskItem(1) )</var> and
+							<var>plural( F, "setje" )</var> met <var>plural( A / F, deskItem(1) )</var> en
 							<var>plural( B / F, deskItem(2) )</var>
 							<br />
 						</span>
@@ -691,13 +685,13 @@
 				</div>
 
 				<p data-tt="hint48">
-					We want to know the <em>greatest</em> number of identical sets <var>person(1)</var> can make, so from the common divisors above,
-					we want the <em>greatest common divisor</em>.
+					We willen weten wat het <em>grootste</em> aantal identieke setjes is dat <var>person(1)</var> kan maken,
+					daarom kiezen we uit de mogelijke gemeenschappelijke delers de <em>grootste gemeenschappelijke deler</em>.
 				</p>
 
 				<p data-tt="hint49">
-					<strong>The greatest number of sets of office supplies that <var>person(1)</var> can make is <var>GCD</var> sets</strong>,
-					with <var>plural( A / GCD, deskItem(1) )</var> and <var>plural( B / GCD, deskItem(2) )</var> each.
+					<strong>Het grootste aantal identieke setjes kantoorbenodigheden dat <var>person(1)</var> kan maken is <var>GCD</var> setjes</strong>,
+					met elk <var>plural( A / GCD, deskItem(1) )</var> en <var>plural( B / GCD, deskItem(2) )</var>.
 				</p>
 			</div>
 		</div>

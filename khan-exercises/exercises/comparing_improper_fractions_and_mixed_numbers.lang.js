@@ -15,7 +15,7 @@
 		"question1" : 'Vul in.',
 		"question2" : 'Vul in.',
 		"hint1" : 'We schrijven eerst de gemengde breuk als een onechte breuk met dezelfde noemer.',
-	
+	        "hint00": '<code>\\kgn(<var>M_DENOM_REDUCED</var>, <var>I_DENOM</var>) = <var>LCM</var></code>',
 		"hint2" : 'Om de noemer van de onechte breuk te vinden, vermenigvuldig je eerst de noemer (<strong><var>M_DENOM_REDUCED</var></strong>) met het gehele getal (<strong><var>WHOLE</var></strong>) en tel je de teller (<strong><var>M_NUM_REDUCED</var></strong>) erbij op. <p class="hint_purple"><strong><code><var>M_DENOM_REDUCED</var> * <var>WHOLE</var>+<var>M_NUM_REDUCED</var> = <var>M_AS_I</var></code></strong>',
 		"hint3" : 'We kunnen het gemengde getal als een onechte breuk met als teller <strong><var>M_AS_I</var></strong> en als noemer <strong><var>M_DENOM_REDUCED</var></strong> schrijven.',
 		"hint4" : 'We vergelijken nu <code><var>fraction ( M_AS_I, M_DENOM_REDUCED, false, true )</var></code> met <code><var>fraction ( I_NUM, I_DENOM, false, true )</var></code>.',

@@ -892,7 +892,7 @@ function KnowledgeMap(params) {
             if (!self.admin) {
                 self.getElement("hide-on-dashboard-filter").show();
                 self.getElement("exercise-all-exercises").show();
-                self.getElement("exercise-all-exercises-text").html(self.filterSettings.get("userShowAll") ? "Hide All" : "Show All");
+                self.getElement("exercise-all-exercises-text").html(self.filterSettings.get("userShowAll") ? "Alles Verbergen" : "Alles Weergeven");
             }
         }
     };

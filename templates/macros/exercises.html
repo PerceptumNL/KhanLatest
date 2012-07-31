@@ -3,7 +3,7 @@
     <span class="exercise-color proficient"></span>
     <span class="legend-label proficient">Proficient</span>
     <span class="exercise-color suggested"></span>
-    <span class="legend-label suggested ">Suggested</span>
+    <span class="legend-label suggested ">Aanbevolen</span>
     <span class="exercise-color review"></span>
     <span class="legend-label review">Review</span>
 </div>
@@ -11,11 +11,7 @@
 
 {% macro exercise_dashboard(review_drawer=False, review_statement='', review_call_to_action='') -%}
     <div class="dashboard-header">
-        <div class="dashboard-nav">
-            <span class="selected"><a href="#">{% if App.offline_mode %} (<em>not supported in offline mode</em>){% endif %}</a></span>
-            <span class="menu"><a href="/profile">Vital Statistics</a></span>
-        </div>
-        <div class="dashboard-title"><img src="/images/dashboard-icon-active.png" class="dashboard-icon" width=22 height=22 /> Knowledge Map <a href="#" class="collapse-drawer toggle-drawer"><img src="/images/expand-left.png" width="25" height="25"/></a></div>
+        <div class="dashboard-title"><img src="/images/dashboard-icon-active.png" class="dashboard-icon" width=22 height=22 /> Kennismap <a href="#" class="collapse-drawer toggle-drawer"><img src="/images/expand-left.png" width="25" height="25"/></a></div>
             <a href="#" class="expand-drawer toggle-drawer"><img src="/images/expand-right.png" width="25" height="25" /></a>
         </div>
     <div class="dashboard-drawer drawer-hoverable">
@@ -30,21 +26,21 @@
     {%- endif -%}
     <div class="dashboard-drawer-inner fancy-scrollbar"><div>
        <div class="dashboard-filter">
-          <input type="text" class="dashboard-filter-text ui-corner-all simple-input" placeholder="Start typing the name of challenge or skill to find it" /><input type="button" value="Clear" class="dashboard-filter-clear simple-button ui-corner-right strict" style="display: none;"></input>
+          <input type="text" class="dashboard-filter-text ui-corner-all simple-input" placeholder="Zoek in oefeningen" /><input type="button" value="Clear" class="dashboard-filter-clear simple-button ui-corner-right strict" style="display: none;"></input>
        </div>
        <div class="exercise-list">
         <span class="exercise-sublist dashboard-suggested-exercises hide-on-dashboard-filter">
-        <h3>Suggested <span class="exercise-filter-count"></span></h3>
+        <h3>Aanbevolen <span class="exercise-filter-count"></span></h3>
          <div class="exercise-content suggested-exercises-content"></div>
         </span>
         <span class="exercise-sublist dashboard-all-exercises">
           <h3>
-            <a href="javascript:void 0;" class="exercise-all-exercises exercise-all-exercises-text">Show All</a>
+            <a href="javascript:void 0;" class="exercise-all-exercises exercise-all-exercises-text">Alle Weergeven</a>
             <span class="exercise-filter-count"></span>
          </h3>
          <div class="exercise-content all-exercises-content"></div>
         </span>
-        <span class="exercise-no-results" style="display: none;">No challenges or skills match your query.</span>
+        <span class="exercise-no-results" style="display: none;">Niets gevonden.</span>
        </div>
     </div></div>
     </div>

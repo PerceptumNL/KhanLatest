@@ -135,20 +135,9 @@
                                 {% if user_data and not user_data.is_pre_phantom %}
                                     {{ user.user_info(username, user_data, login_url, logout_url) }}
                                 {% else %}
-                                    <a href="{{ login_url|escape }}">Login</a>
+                                    <a href="{{ login_url|escape }}">Inloggen</a>
                                 {% endif %}
                                 </span>
-                            <span class="separator"></span>
-                            <span>
-                                <a href='{% if user_data.is_demo %}/logout?continue={% endif %}{{ donate_redirect_url or "/donate" }}'
-                                {% if selected_nav_link == "donate" %}
-                                    class="selected{%if user_data.is_demo %} show-demo-dialog{% endif %}"
-                                {% else %}
-                                    {%if user_data.is_demo %}class="show-demo-dialog"{% endif %}
-                                {% endif %}>
-                                Donate
-                                </a>
-                            </span>
                         </span>
                         <div class="clear"></div>
                         <div id="nav-and-search">
@@ -157,19 +146,17 @@
                                     <span class="links nav-subheader">
                                         <span class="dropdown topic-browser-dropdown">
                                             {% if watch_topic_browser_enabled %}
-                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/#browse" data-tag="Header" class="watch-link dropdown-toggle{%if user_data.is_demo %} show-demo-dialog{% endif %}">Watch <span class="caret"></span></a>
+                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/#browse" data-tag="Header" class="watch-link dropdown-toggle{%if user_data.is_demo %} show-demo-dialog{% endif %}">Bekijk <span class="caret"></span></a>
                                             {% else %}
-                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/#browse" data-tag="Header" class="{% if selected_nav_link == 'watch' %}selected{% endif %} watch-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Watch</a>
+                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/#browse" data-tag="Header" class="{% if selected_nav_link == 'watch' %}selected{% endif %} watch-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Bekijk</a>
                                             {% endif %}
-                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/exercisedashboard" data-tag="Header" class="{% if selected_nav_link == 'practice' %}selected{% endif %} practice-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Practice</a>
-                                            {% if user_data and not user_data.is_phantom and gandalf("scratchpads") %}
-                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/explore" data-tag="Header" class="{% if selected_nav_link == 'explore' %}selected{% endif %} explore-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Explore</a>
-                                            {%- endif %}
+                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/exercisedashboard" data-tag="Header" class="{% if selected_nav_link == 'practice' %}selected{% endif %} practice-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Oefen</a>
+                                            
                                             {% if not user_data or not user_data.is_child_account() %}
                                             <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/class_profile" data-tag="Header" class="{% if selected_nav_link == 'coach' %}selected{% endif %} coach-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Coach</a>
                                             {% endif %}
-                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/contribute" data-tag="Header" class="{% if selected_nav_link == 'contribute' %}selected{% endif %} contribute-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Volunteer</a>
-                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/about" data-tag="Header" class="{% if selected_nav_link == 'about' %}selected{% endif %} about-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">About</a>
+                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/contribute" data-tag="Header" class="{% if selected_nav_link == 'contribute' %}selected{% endif %} contribute-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Help Mee</a>
+                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/about" data-tag="Header" class="{% if selected_nav_link == 'about' %}selected{% endif %} about-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Over Ons</a>
                                             <div style="clear: both"></div>
                                             {{ handlebars_template('shared', 'topic-browser-pulldown', {'topics': templatetags.topic_browser_data()}) }}
                                         </span>
@@ -178,7 +165,7 @@
                             </div>
                             <div id="search-box">
                                 <form class="page-search" action="/search">
-                                    <input id="search-input" type="text" placeholder="Search for a video or topic" name="page_search_query" value='{{page_search_query|escape}}' class="ui-corner-all placeholder simple-input search-input blur-on-esc" /><input type="submit" value=" " class="search-submit" />
+                                    <input id="search-input" type="text" placeholder="Zoek op videos en oefeningen" name="page_search_query" value='{{page_search_query|escape}}' class="ui-corner-all placeholder simple-input search-input blur-on-esc" /><input type="submit" value=" " class="search-submit" />
                                 </form>
                             </div>
                             <div class="clear"></div>

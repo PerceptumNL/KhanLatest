@@ -1,6 +1,6 @@
 ({
 	"nl" : {
-		"question1"	: 'Als er oorspronkelijk <var>TOTAL</var> stukken waren, welk gedeelte van de <var>pizza( 1 )</var> is dan opgegeten?',
+		"question1"	: 'Als er oorspronkelijk <var>TOTAL</var> stukken waren, welk gedeelte van de <var>pizza( 1 )</var> is dan opgegeten? (Stel de breuk op die dit weergeeft)',
 		"question2"	: 'Als er <var>plural(LEFT, "stuk", "stukken")</var> over zijn, welk gedeelte van de <var>pizza( 1 )</var> is dan opgegeten?',
 		"question3"	: 'Als <var>person( 1 )</var> <code>\\dfrac{<var>A</var>}{<var>TOTAL</var>}</code> van de <var>pizza( 1 )</var> opat, welk gedeelte van de <var>pizza( 1 )</var> was dan opgegeten?',
 		"question4"	: 'Als er oorspronkelijk <var>TOTAL</var> stukken waren, welk gedeelte van de <var>pizza( 1 )</var> is dan nog over?',

@@ -6,6 +6,7 @@
 		"hint3"		: "We kunnen de noemer van de breuken veranderen door deze met een meervoud van een van de noemers te vermenigvuldigen, zoals <code>\\dfrac{2}{2}</code> of <code>\\dfrac{10}{10}</code>. Vermenigvuldig de onechte breuken hierboven met een meervoud van 1, zodat alle noemers gelijk zijn aan <code><var>LCD</var></code>.",
 		"hint4"		: 'Nu zijn alle noemers van de breuken gelijk zodat we ze kunnen vergelijken.',
 		"hint5"		: 'Zet de breuken op volgorde van de kleinste naar de grootste noemer.',
-		"hint6"		: 'Zet de breuken ten slotte weer om naar hun oorspronkelijke vorm.'
+		"hint6"		: 'Zet de breuken ten slotte weer om naar hun oorspronkelijke vorm.',
+		"instruction1"  : 'Verschuif de breuken naar links of rechts zodat ze in volgorde van klein naar groot staan.'
 		}
 })

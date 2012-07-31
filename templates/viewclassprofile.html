@@ -55,32 +55,32 @@
         <li>
             <a href="/class_profile/progress-report" class="graph-link graph-link-header header graph-link-selected graph-link-selected">Progress Report</a>
             <div class="accordion-content">
-                Shows you which skills your class has worked on and completed.
+                Laat je zien aan welke vaardigheden jouw klas heeft gewerkt en heeft afgerond.
                 <div class="graph-options">
-                    <span class="progress-legend exercise-color started">Started</span>
-                    <span class="progress-legend exercise-color proficient">Proficient</span>
-                    <span class="progress-legend exercise-color review light">Review</span>
-                    <span class="progress-legend exercise-color struggling">Struggling</span>
+                    <span class="progress-legend exercise-color started">Beginner</span>
+                    <span class="progress-legend exercise-color proficient">Gevorderd</span>
+                    <span class="progress-legend exercise-color review light">Herzien</span>
+                    <span class="progress-legend exercise-color struggling">Worstelt</span>
                 </div>
             </div>
         </li>
         <li>
-            <a href="/class_profile/progress-summary" class="graph-link graph-link-header header">Progress Summary</a>
+            <a href="/class_profile/progress-summary" class="graph-link graph-link-header header">samenvatting voortgang</a>
             <p class="accordion-content">
-                Shows you which skills your class has worked on and completed.
+                Laat je zien aan welke vaardigheden jouw klas heeft gewerkt en heef afgerond.
             </p>
         </li>
         <li>
-            <a href="/class_profile/daily-activity" class="graph-link graph-link-header header">Daily Activity Report</a>
+            <a href="/class_profile/daily-activity" class="graph-link graph-link-header header">Dagelijks Activiteiten Verslag.</a>
             <p class="accordion-content">
-                Shows your total class activity on a specific date. <br /><br />
+                Toont je de totale klassenactiviteit op een bepaalde datum. <br /><br />
 
-              <span class="instructions">Light blue activity shows normal school hours, and dark blue is outside normal hours.</span>
+              <span class="instructions">Licht blauwe activiteit toont normale schooluren en donker blauw toont de activiteit die is verricht buiten de normale schooluren.</span>
         </li>
         <li>
-            <a href="/class_profile/exercise-progress-over-time" class="graph-link graph-link-header header ">Skill Progress Over Time</a>
-            <div class="accordion-content">Shows how many skills your students have completed over time.<br /><br />
-                <span class="instructions">Highlight a <a href="#" class="highlight-section show-students-highlight">specific student</a> or a <a href="#" class="highlight-section show-exercises-highlight">specific skill</a>.</span><br />
+            <a href="/class_profile/exercise-progress-over-time" class="graph-link graph-link-header header ">Periodieke Voortgang Vaardigeheden</a>
+            <div class="accordion-content">Laat zien hoeveel vaardigheden jouw student heeft afgerond binnen een bepaalde periode.<br /><br />
+                <span class="instructions">Highlight een<a href="#" class="highlight-section show-students-highlight">specifieke student</a> of een <a href="#" class="highlight-section show-exercises-highlight">bepaalde vaardihheid</a>.</span><br />
 
                 <div id="students-highlight" class="vertical-choice-container" style="display:none;">
                     <ul>
@@ -101,20 +101,20 @@
             </div>
         </li>
         <li>
-            <a href="/class_profile/points-per-minute" class="graph-link graph-link-header header">Class Points per Minute</a>
+            <a href="/class_profile/points-per-minute" class="graph-link graph-link-header header">Klassen Punten per minuut</a>
             <p class="accordion-content">
-                Shows your total class energy points per minute as a continuously updating rolling average.
+                Toont het totale aantal energie punten per minuut als een continu ge-update rollend gemiddelde.
             </p>
         </li>
         <li>
-            <a href="/class_profile/goals" class="graph-link graph-link-header header {% if graph_type == selected_type %}graph-link-selected{% endif %}">Goals</a>
+            <a href="/class_profile/goals" class="graph-link graph-link-header header {% if graph_type == selected_type %}graph-link-selected{% endif %}">Doelen</a>
             <div class="accordion-content">
-                Shows active student goals and progress toward completion of those goals.
+                Toont de doelen van actieve studenten en hun voortgang richting het behalen van deze doelen.
                 <div class="graph-options">
-                    <span class="progress-legend exercise-color started">Started</span>
-                    <span class="progress-legend exercise-color proficient">Proficient</span>
-                    <span class="progress-legend goal-complete" title="Entire goal is complete">Complete</span>
-                    <span class="progress-legend exercise-color struggling">Struggling</span>
+                    <span class="progress-legend exercise-color started">Beginner</span>
+                    <span class="progress-legend exercise-color proficient">Gevorderd</span>
+                    <span class="progress-legend goal-complete" title="Entire goal is complete">Afgerond</span>
+                    <span class="progress-legend exercise-color struggling">Worstelt</span>
                 </div>
             </div>
         </li>
@@ -127,26 +127,26 @@
     {{ profile_macros.class_api_link(user_data_coach, "Progress Report", "progressreport", selected_graph_type, list_id) }}
 
     <div class="filter-block">
-      <h3>Progress Report</h3>
+      <h3>Voortgangs rapport</h3>
     </div>
     <div class="filter-block">
-      <p>Showing Only
+      <p>Toont alleen
         <input type="text" id="student-progressreport-search" placeholder="student or skill" class="search-input simple-input ui-corner-all blur-on-esc"></input>
         <span class="coach-filter-block">
-            <input type="checkbox" class="progressreport-filter-check" id="progressreport-struggling" name="struggling" /><label for="progressreport-struggling">Struggling</label></span>
+            <input type="checkbox" class="progressreport-filter-check" id="progressreport-struggling" name="struggling" /><label for="progressreport-struggling">Worstelt</label></span>
       <span class="coach-filter-block"><input type="checkbox" class="progressreport-filter-check" id="progressreport-recent" name="recent" /><label for="progressreport-recent">Worked on in last:</label>
-            <select id="progressreport-filter-last-time"><option value="1">day</option><option value="2">2 days</option><option value="3">3 days</option><option selected value="7">week</option><option value="30">month</option></select></span>
+            <select id="progressreport-filter-last-time"><option value="1">dag</option><option value="2">2 dagen</option><option value="3">3 dagen</option><option selected value="7">week</option><option value="30">maand</option></select></span>
     </div>
   </div>
 
   <div class="filter">
-    {{ profile_macros.class_api_link(user_data_coach, "Progress Summary", "progress/summary", selected_graph_type, list_id) }}
+    {{ profile_macros.class_api_link(user_data_coach, "Samenvatting voortgang", "progress/summary", selected_graph_type, list_id) }}
 
     <div class="filter-block">
-      <h3>Progress Summary</h3>
+      <h3>Samenvatting voortgang</h3>
     </div>
     <div class="filter-block">
-      <p>Showing Only
+      <p>Toont alleen
         <input type="text" id="student-progresssummary-search" placeholder="skill name" class="search-input simple-input ui-corner-all blur-on-esc"></input>
     </div>
   </div>
@@ -154,34 +154,34 @@
   <div class="filter">
     {{ profile_macros.class_graph_link(user_data_coach, "Daily Activity Report", "classtime", selected_graph_type, list_id) }}
     <div class="filter-block">
-        <h3>Daily Activity Report <small> for </small></h3>
+        <h3>Dagelijks Activiteiten Rapport <small> voor </small></h3>
         <input type="text" id="targetDatepicker" value="Today">
     </div>
   </div>
 
   <div class="filter">
-    {{ profile_macros.class_api_link(user_data_coach, "Goals", "goals", selected_graph_type, list_id) }}
+    {{ profile_macros.class_api_link(user_data_coach, "Doelen", "doelen", selected_graph_type, list_id) }}
 
     <div class="filter-block">
-      <h3>Goals</h3>
-      <p>Sorted by:
+      <h3>Doelen</h3>
+      <p>Gerangschikt op:
         <select id="student-goals-sort">
-          <option value="name"> Student </option>
-          <option value="progress"> Progress </option>
-          <option value="created"> Started Recently </option>
-          <option value="updated"> Updated Recently </option>
+          <option value="name"> Leerling </option>
+          <option value="progress"> Voortgang </option>
+          <option value="created"> Recentelijk begonnen </option>
+          <option value="updated"> Recentelijk ge-update </option>
         </select>
       </p>
     </div>
     <div class="filter-block">
-      <p>Showing Only
+      <p>Toont alleen
         <input type="text" id="student-goals-search" placeholder="student or objective" class="search-input simple-input ui-corner-all blur-on-esc"></input>
       <span class="coach-filter-block"><input type="checkbox" class="student-goals-filter-check" id="goal-most-recent-filter" name="most-recent" />
-        <label for="goal-most-recent-filter">Recently updated</label></span>
+        <label for="goal-most-recent-filter">Recentelijk ge-update</label></span>
       <span class="coach-filter-block"><input type="checkbox" class="student-goals-filter-check" id="goal-in-progress-filter" name="in-progress" />
-        <label for="goal-in-progress-filter">In progress</label></span>
+        <label for="goal-in-progress-filter">Aan de gang</label></span>
       <span class="coach-filter-block"><input type="checkbox" class="student-goals-filter-check" id="goal-struggling-filter" name="struggling" />
-        <label for="goal-struggling-filter">Struggling</label>
+        <label for="goal-struggling-filter">Worstelt</label>
       </span>
     </div>
   </div>

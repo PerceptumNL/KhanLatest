@@ -19,12 +19,12 @@ if (typeof Profile !== "undefined") {
                 buttons: [
                     {
                         action: guiders.ButtonAction.CLOSE,
-                        text: "No thanks",
+                        text: "Nee bedankt",
                         classString: "simple-button"
                     },
                     {
                         action: guiders.ButtonAction.CLOSE,
-                        text: "Cool. Let me login now!",
+                        text: "Cool! laat mij nu inloggen!",
                         onclick: function() {
                             var postLoginUrl = "/postlogin?continue=" +
                                     encodeURIComponent(window.location.href);
@@ -34,11 +34,11 @@ if (typeof Profile !== "undefined") {
                         classString: "simple-button green"
                     }
                 ],
-                title: "Log in to save and customize your profile!",
-                description: "Your profile page shows you all the great " +
-                             "progress you've made on Khan Academy. If you " +
-                             "login, you can even customize and share your " +
-                             "profile with your friends!",
+                title: "Login om je je profiel op te slaan en te personaliseren!",
+                description: "Jouw profielpagina laat je precies zijn welke " +
+                             "vooruitgang jij hebt geboekt op Khan Academie. Als je " +
+                             "inlogt, kun je jouw profiel aanpassen en delen " +
+                             "met je vrienden!",
                 overlay: true
             }).show();
 
@@ -56,30 +56,30 @@ if (typeof Profile !== "undefined") {
         if (!showDiscussionIntro) {
 
             guiders.createGuider({
-                id: "welcome",
+                id: "Welkom",
                 next: "basic-profile",
 
                 buttons: [
                     {
                         action: guiders.ButtonAction.CLOSE,
-                        text: "No, thanks. I know what I'm doing.",
+                        text: "Nee, bedankt, Ik weet wat ik doe.",
                         classString: "simple-button"
                     },
                     {
                         action: guiders.ButtonAction.NEXT,
-                        text: "Cool. Show me around!",
+                        text: "Cool. Geef me een rondleiding! ",
                         classString: "simple-button green"
                     }
                 ],
-                title: "Welcome to your profile page!",
-                description: "Here, you can share your achievements, " +
-                             "track your progress, " +
-                             "and browse your discussion history.",
+                title: "Welkom op jouw profielpagina!",
+                description: "Hier kun je jouw behaalde resultaten delen, " +
+                             "je voortgang bijhouden, " +
+                             "en door je discussie geschiedenis bladeren.",
                 overlay: true
             }).show();
 
             guiders.createGuider({
-                id: "basic-profile",
+                id: "basis-profiel",
                 next: "display-case",
 
                 attachTo: ".basic-user-info",
@@ -94,15 +94,15 @@ if (typeof Profile !== "undefined") {
                     },
                     {
                         action: guiders.ButtonAction.NEXT,
-                        text: "Next",
+                        text: "Volgende",
                         classString: "simple-button green"
                     }
                 ],
-                title: "It's all about you.",
+                title: "Het gaat allemaal over jou.",
                 description: isFullyEditable ?
-                    "You can click on the image to choose your avatar " +
-                    "and on your username to set your real name." :
-                    "You can click on the image to choose your avatar."
+                    "Je kunt op een afbeelding klikken om een avatar te kiezen " +
+                    "en op je gebruikersnaam om je echte naam in te stellen. " :
+                    "Je kunt op een afbeelding klikkken om een jouw avatar te kiezen."
             });
 
             guiders.createGuider({
@@ -116,18 +116,18 @@ if (typeof Profile !== "undefined") {
                 buttons: [
                     {
                         action: guiders.ButtonAction.CLOSE,
-                        text: "Close",
+                        text: "Sluit",
                         classString: "simple-button"
                     },
                     {
                         action: guiders.ButtonAction.NEXT,
-                        text: "More! Show me more.",
+                        text: "Meer! Laat me meer zien.",
                         classString: "simple-button green"
                     }
                 ],
-                title: "Show off your accomplishments.",
-                description: "You can select up to five badges to show off in " +
-                             "your very own shiny display case!"
+                title: "Laat zien wat je bereikt hebt.",
+                description: "Je kunt tot vijf badges laten zien aan anderen  " +
+                             "in je eigen glanzende prijzenkast!"
             });
 
             guiders.createGuider({
@@ -141,18 +141,18 @@ if (typeof Profile !== "undefined") {
                 buttons: [
                     {
                         action: guiders.ButtonAction.CLOSE,
-                        text: "Close",
+                        text: "Sluit",
                         classString: "simple-button"
                     },
                     {
                         action: guiders.ButtonAction.NEXT,
-                        text: "Sweet! What else is there?",
+                        text: "Wauw! Wat is er nog meer?",
                         classString: "simple-button green"
                     }
                 ],
-                title: "Check your vitals.",
-                description: "Check out your badges and visualize your stats. " +
-                             "These tabs are only visible to you and your coach."
+                title: "Check je status.",
+                description: "Bekijk je badges en krijg inzicht in je statistieken. " +
+                             "Deze tabjes kunnen alleen jij en je coach zien."
             });
 
         }
@@ -176,32 +176,32 @@ if (typeof Profile !== "undefined") {
                 (showDiscussionIntro ?
                 [{
                     action: guiders.ButtonAction.CLOSE,
-                    text: "OK, thanks!",
+                    text: "Ok, bedankt!",
                     classString: "simple-button green"
                 }] :
                 isFullyEditable ?
                 [{
                     action: guiders.ButtonAction.CLOSE,
-                    text: "Close",
+                    text: "Sluit",
                     classString: "simple-button"
                 },
                 {
                     action: guiders.ButtonAction.NEXT,
-                    text: "Next",
+                    text: "Volgende",
                     classString: "simple-button green"
                 }] :
                 [{
                     action: guiders.ButtonAction.CLOSE,
-                    text: "OK! Let me play with the page!",
+                    text: "Ok! Laat mij de pagina ontdekken!",
                     classString: "simple-button green"
                 }]
             ),
-            title: "Talk it up!",
-            description: "Both you and the community can browse your public " +
-                         "questions, answers, and comments. Sharing what " +
-                         "we've learned is what our community is all about!" +
-                         "<br><br>Check out the cool discussion pages for " +
-                         "these folks:<br>" +
+            title: "Praat erover!",
+            description: "Zowel jij als de community kunnen door jouw openbare " +
+                         "vragen, antwoorden, en commentaar. Delen wat " +
+                         "we geleerd hebben is waar het om gaat binnen de community!" +
+                         "<br><br>Check hier de coole discussie pagina's over " +
+                         "deze mensen:<br>" +
                          "<ul style='list-style-position: inside; " +
                              "list-style-type: disc;'>" +
                          "<li><a href='/profile/Sphairistrike/discussion' " +
@@ -233,7 +233,7 @@ if (typeof Profile !== "undefined") {
                 position: 5,
                 buttons: [{
                     action: guiders.ButtonAction.CLOSE,
-                    text: "Keep my profile private for now.",
+                    text: "Hou mijn profiel nog prive.",
                     classString: "simple-button"
                 },
                 {
@@ -241,14 +241,14 @@ if (typeof Profile !== "undefined") {
                                  guiders.hideAll();
                                  Profile.userCardView.toggleProfileVisibility();
                              },
-                    text: "Make my profile public!",
+                    text: "Maak mijn profiel openbaar",
                     classString: "simple-button green"
                 }],
-                title: "Share With The World " +
-                       "<span style='font-size:65%'>(but only if you want to)" +
+                title: "Deel met de Wereld " +
+                       "<span style='font-size:65%'>(alleen als je dat wilt)" +
                        "</span>",
-                description: "Make your profile public and share the information " +
-                             "highlighted here. You can always make it private again."
+                description: "Maak je profiel openbaar en deel de informatie " +
+                             "hier uitgelicht. Je kunt het altijd weer op prive zetten."
             });
         }
     };

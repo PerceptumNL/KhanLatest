@@ -16,17 +16,7 @@
 {% block pagecontent %}
 <article id="homepage">
     <div id="main-video">
-
-        {% if is_mobile_capable %}
-            {{ youtube.player_embed(marquee_video["youtube_id"], 480, 395) }}
-        {% else %}
-            <a id="main-video-link" href="{{ marquee_video["href"] }}" data-tag="Homepage Featured">
-                <div id="main-video-placeholder" style="background-image:url('{{ marquee_video["thumb_urls"]["sd"]|escape }}')">
-                    <div class="youtube-placeholder-title">{{ marquee_video["title"]|escape }}</div>
-                    <img class="youtube-play" src="/images/youtube_play.png" />
-                </div>
-            </a>
-        {% endif %}
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/tC80BNOKJtk" frameborder="0" allowfullscreen></iframe>
     </div>
     <div id="homepage-text" class="visited-no-recolor">
         <h1 class="section-headline pulls"><a href="/#browse" data-tag="Homepage Headline">Bekijk.</a> <a href="/exercisedashboard" data-tag="Homepage Headline">Oefen.</a></h1>
@@ -56,7 +46,7 @@
                 </tr>
                 <tr>
                     <td colspan=3 class="homepage-mailing">
-                        <span>{{ mailing_lists.signup_form(3, "Ontvang updates", "Laat je e-mail adres achter voor info over nieuwe video's") }}</span>
+                        <span>{{ mailing_lists.signup_form(3, "Ontvang updates", "Registeer hier je email in de mailinglist") }}</span>
                     </td>
                 </tr>
             </table>
@@ -65,6 +55,9 @@
     <h2>
         Nieuw <span class="ampersand">&amp;</span> Opmerkelijk
     </h2>
+    <h3>
+        <a href="http://blog.khanacademie.nl/">Bekijk ook ons Blog!</a>
+    </h3>
     {% if thumbnail_link_sets %}
     <div id="thumbnails_container">
         <table width="100%">

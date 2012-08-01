@@ -95,7 +95,7 @@ def main():
 
     compress_js()
     compress_css()
-    compress_exercises()
+    #compress_exercises() -- Fails on most of the old Dutch exercises.
 
     end = datetime.datetime.now()
     print "Done. Duration: %s" % (end - start)

@@ -1,11 +1,7 @@
 import os
-
-try:
-    import secrets
-except:
-    class secrets(object):
-        pass
-
+class secrets(object):
+    facebook_app_id = '419609954751528'
+    facebook_app_secret = '8af9b1131882ca2e98c6ce7f92ad28d8'
 
 # A singleton shared across requests
 class App(object):
@@ -41,11 +37,10 @@ for attr in (
     'sleep_secret',
 ):
     # These secrets are optional in development but not in production
-    if App.is_dev_server and not hasattr(secrets, attr):
+    if not hasattr(secrets, attr):
         setattr(App, attr, None)
     else:
-        setattr(App, attr, None)
-
+        setattr(App, attr, getattr(secrets, attr))
 if App.is_dev_server and App.token_recipe_key is None:
     # If a key is missing to dish out auth tokens on dev, we can't login
     # with our own auth system. So just set it to a random string.

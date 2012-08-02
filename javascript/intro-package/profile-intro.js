@@ -56,7 +56,7 @@ if (typeof Profile !== "undefined") {
         if (!showDiscussionIntro) {
 
             guiders.createGuider({
-                id: "Welkom",
+                id: "welcome",
                 next: "basic-profile",
 
                 buttons: [
@@ -79,7 +79,7 @@ if (typeof Profile !== "undefined") {
             }).show();
 
             guiders.createGuider({
-                id: "basis-profiel",
+                id: "basic-profile",
                 next: "display-case",
 
                 attachTo: ".basic-user-info",

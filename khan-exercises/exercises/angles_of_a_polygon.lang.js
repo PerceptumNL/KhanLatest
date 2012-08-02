@@ -1,20 +1,20 @@
 ({
 	"nl" : {
-		"question1"	: "What is the sum of this polygon's interior angles?",
-		"question2"	: "What is the sum of this polygon's exterior angles?",
+		"question1"	: "Wat is de som van de binnenhoeken deze veelhoek?",
+		"question2"	: "Wat is de som van de buitenhoeken van deze veelhoek?",
 					
-		"span1"		: '<span class="sol"><var>360</var></span> degrees',
+		"span1"		: '<span class="sol"><var>360</var></span> graden',
 		
-		"hint1"		: 'There are a couple ways to approach this problem.',
-		"hint2"		: 'Does it help to remember that there are 180 degrees in a triangle?',
-		"hint3"		: 'Since this polygon has <var>SIDES</var> sides, we can draw <var>SIDES</var> triangles that all meet in the center.',
-		"hint4"		: "We can combine all the triangles' angles, and then we must subtract 360 degrees because the circle in the middle is extra.",
-		"hint5"		: 'An alternative approach is shown below.',
-		"hint6"		: 'We can use four of the <var>cardinal( SIDES )</var> sides to make 2 triangles, as shown in orange.',
-		"hint7"		: 'There <var>plural( "is", SIDES - 4 )</var> <var>plural( SIDES - 4, "side" )</var> between the orange triangles, to make <var>SIDES - 4</var> additional <var>plural( "triangle", SIDES - 4 )</var>.',
-		"hint8"		: "We chopped this polygon into <var>SIDES - 2</var> triangles, and each triangle's angles sum to 180 degrees.",
-		"hint9"		: "Again, we have found that the sum of the polygon's interior angles is <var>ANSWER</var> degrees.",
-		"hint10"	: 'The exterior angles are shown above.',
-		"hint11"	: 'The exterior angles fit together to form a circle, summing to 360 degrees.'
+		"hint1"		: 'Er zijn een paar manieren om dit probleem te benaderen.',
+		"hint2"		: 'Helpt het om te bedenken dat de som van de hoeken in een driehoek 180 graden is?',
+		"hint3"		: 'Aangezien deze veelhoek <var>SIDES</var> zijden heeft, kunnen we <var>SIDES</var> driehoeken tekenen die elkaar in het midden ontmoeten.',
+		"hint4"		: 'We kunnen de hoeken van de driehoeken bij elkaar optellen, en daar moeten we 360 graden van aftrekken omdat de cirkel in het midden niet meetelt.',
+		"hint5"		: 'Een alternatieve aanpak is hieronder weergegeven.',
+		"hint6"		: 'We kunnen vier van de <var>cardinal( SIDES )</var> zijden gebruiken om 2 driehoeken te maken, zoals in oranje is aangegeven.',
+		"hint7"		: 'Er <var>plural( "is", SIDES - 4 )</var> <var>plural( SIDES - 4, "zijde" )</var>  tussen de oranje driehoeken, waarmee we <var>SIDES - 4</var> extra <var>plural( "driehoek", SIDES - 4 )</var> kunnen maken.',
+		"hint8"		: "We hebben deze veelhoek opgesplitst in <var>SIDES - 2</var> driehoeken, en de hoeken van elke driehoek tellen op tot 180 graden.",
+		"hint9"		: "We hebben weer gevonden dat de som van de binnenhoeken van de veelhoek <var>ANSWER</var> graden is.",
+		"hint10"	: 'De buitenhoeken zijn hierboven weergegeven.',
+		"hint11"	: 'De buitenhoeken vormen samen een cirkel, zodat de som van de buitenhoeken hetzelfde is als het aantal graden in een cirkel: 360 graden.'
 		}
 })

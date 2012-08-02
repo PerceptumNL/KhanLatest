@@ -2,7 +2,7 @@
 <html data-translatable data-require="math graphie graphie-helpers-arithmetic word-problems">
 <head>
 	<meta charset="UTF-8" />
-	<title>Multiplication 0.5</title>
+	<title>Vermenigvuldigen 0.5</title>
 	<script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -29,16 +29,16 @@
 			<div data-if="B > 0" data-unwrap>
 				<div>
 					<div class="graphie" data-update="numbers" data-tt="exercise">
-						label( [ 0, B - 1 ], "\\text{Draw " + plural( A, "circle" ) + ".}", "right" );
+						label( [ 0, B - 1 ], "\\text{Teken " + plural( A, "cirkel" ) + ".}", "right" );
 						drawRow( A, B - 3, "#6495ED", 1 );
 					</div>
 				</div>
 				<div>
 					<div class="graphie" data-update="numbers" data-tt="hint1">
-						label( [ 0, B - 2 ], "\\text{"
-							+ "If there" + ( B === 1 ? " is " : " are " ) + plural( B, "row" )
-							+ " with " + plural( A, "circle" ) +  ( B === 1 ? " " : " each " ) 
-							+ ", there is a total of how many circles?"
+					label( [ 0, B - 2 ], "\\text{"
+							+ "Als er " +  plural( B, "rij" ) + ( B === 1 ? " is " : " zijn " ) 
+							+ " met elk " + plural( A, "cirkel" )  
+							+ ", hoeveel cirkels zijn er dan totaal?"
 							+ "}",
 							"right" );
 						for ( var i = 1; i &lt; B; i++ ) {
@@ -49,7 +49,7 @@
 			</div>
 			<div data-else>
 				<div class="graphie" data-update="numbers" data-tt="hint2">
-					label( [ 0, B - 1 ], "\\large{\\text{Multiplying any number by 0 equals 0.}}", "right" );
+					label( [ 0, B - 1 ], "\\large{\\text{Een willekeurig getal vermenigvuldigen met 0, is altijd gelijk aan 0.}}", "right" );
 				</div>
 			</div>
 			<div class="graphie" data-update="numbers">

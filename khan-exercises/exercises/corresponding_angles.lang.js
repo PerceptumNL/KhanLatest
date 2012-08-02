@@ -1,10 +1,10 @@
 ({
-	"nl" : {
-		"question1"	: 'The two horizontal lines are parallel, and there is a third line that intersects them as shown below.',
-		"question2"	: 'If we know that the <span class="hint_blue">blue angle is <var>MEASURE</var> degrees</span>, what is the <span class="hint_orange">measure of the orange angle</span>?',
-		
-		"hint1"		: 'Notice that the blue and orange angles are in the same position but at different intersections.',
-		"hint2"		: 'One way to describe the angles is to say that they are corresponding angles.',
-		"hint3"		: "There is a proof for why corresponding angles are equal, but for now let's just take that on faith."
+	"nl" : { 
+		"question1"	: 'De twee horizontale lijnen zijn parallel, de derde lijn kruist deze horizontale lijnen zoals je hier onder ziet.',
+		"question2"	: 'Als we weten dat de <span class="hint_blue">blauwe hoek <var>MEASURE</var> graden is, <span class="hint_orange">hoe groot is dan de oranje hoek</span>?',
+	
+		"hint1"		: 'Merk op dat de blauwe en oranje hoeken in dezelfde positie staan, maar op verschillende snijpunten.',
+		"hint2"		: 'Een manier om deze hoeken te beschrijven is te zeggen dat het F-hoeken zijn.',
+		"hint3"		: 'Er is een bewijs dat F-hoeken gelijk zijn, maar voor nu nemen we dat gewoon aan.'
 		}
 })

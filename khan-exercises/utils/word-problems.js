@@ -50,6 +50,7 @@ jQuery.extend( KhanUtil, {
 			'quiz': 'quizzes',
 			'plank': 'planken',
 			'rij': 'rijen',
+			'map': 'mappen',
 			'druif': 'druiven',
 			'is': 'zijn',
 			'was': 'waren',
@@ -61,16 +62,20 @@ jQuery.extend( KhanUtil, {
 			'mango':'mango\'s',
 			'watermeloen':'watermeloenen',
 			'pen':'pennen',
+			'stift': 'stiften',
 			'potlood':'potloden',
 			'schrift':'schriften',
 			'zaag':'zagen',
 			'brood':'broden',
 			'pak melk':'pakken melk',
+			'lijmstift': 'lijmstiften',
 			'knuffelbeer':'knuffelberen',
+			'toets': 'toetsen',
 			'pop':'poppen',
 			'taart':'taarten',
 			'pizza':'pizza\'s',
 			'persoon':'personen',
+			'les': 'lessen',
 			'auto':'auto\'s',
 			'boom':'bomen',
 			'hele getal':'hele getallen',
@@ -78,11 +83,26 @@ jQuery.extend( KhanUtil, {
 			'honderdtal':'honderdtallen',
 			'duizendtal':'duizendtallen',
 			'broek':'broeken',
+			'fruit': 'fruit',
+			'gunstige uitkomst': 'gunstige uitkomsten',
 			'riem':'riemen',
 			'ketting':'kettingen',
 			'stropdas':'stropdassen',
 			'trui':'truien',
+			'kleur': 'kleuren',
+			'krokodil': 'krokodillen',
 			'jas':'jassen',
+			'boek': 'boeken',
+			'stoel': 'stoelen',
+			'blik soep': 'blikken soep',
+			'rij': 'rijen',
+			'zak': 'zakken',
+			'leerling': 'leerlingen',
+			'leerkracht': 'leerkrachten',
+			'plank': 'planken',
+			'doos': 'dozen',
+			'euro': 'euro', 
+			'lange afstand renner': 'lange afstand renners',
 			'keer':'keer'
 		};
 
@@ -204,12 +224,21 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 	]);
 
 	var courses = KhanUtil.shuffle([
-		"algebra",
-		"chemistry",
-		"geometry",
-		"history",
-		"physics",
-		"Spanish"
+		"wiskunde",
+		"scheikunde",
+		"geschiedenis",
+		"aardrijkskunde",
+		"Engelse",
+		"Biologie"
+	]);
+	
+	var lessen = KhanUtil.shuffle([
+		"wiskunde",
+		"scheikunde",
+		"geschiedenis",
+		"aardrijkskunde",
+		"Engels",
+		"Biologie"
 	]);
 
 	var exams = KhanUtil.shuffle([
@@ -238,10 +267,10 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 
 	var collections = KhanUtil.shuffle([
 		["stoel", "rij", "maakt"],
-		["snoepjes", "zak", "vult"],
-		["koekjes", "stapel", "maakt"],
-		["boek", "plank", "vult"],
-		["blikken soep", "doos", "vult"]
+		["snoepje", "zak", "vult"],
+		["koekje", "stapel", "maakt"],
+		["boek", "plank", "vult",],
+		["blik soep", "doos", "vult",]
 	]);
 
 	var stores = KhanUtil.shuffle([
@@ -259,7 +288,7 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		},
 		{
 			name: "cadeauwinkel",
-			items: KhanUtil.shuffle( ["speeltje", "game", "souvenir"] )
+			items: KhanUtil.shuffle( ["spelletje", "game", "souvenir"] )
 		},
 		{
 			name: "speelgoedwinkel",
@@ -297,14 +326,15 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		"druif"
 	]);
 
+			
 	var deskItems = KhanUtil.shuffle([
 		"schrift",
 		"krijtje",
-		"gum",
+		"gummetje",
 		"map",
-		"glue stick",
+		"lijmstift",
 		"stift",
-		"notebook",
+		"notitieboekje",
 		"pen",
 		"potlood"
 	]);
@@ -324,6 +354,21 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		"roze"
 	]);
 
+	var kleuren = KhanUtil.shuffle([
+		"rood",
+		"oranje",
+		"geel",
+		"groen",
+		"blauw",
+		"paars",
+		"wit",
+		"zwart",
+		"bruin",
+		"zilver",
+		"goud",
+		"roze"
+	]); 
+	
 	var schools = KhanUtil.shuffle([
 		"Noordwijkse school",
 		"Emmaschool",
@@ -331,8 +376,19 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		"Covington",
 		"Springer",
 		"Santa Rita",
+		"Twents Carmel College",
 		"Oak"
 	]);
+	
+	var dieren = KhanUtil.shuffle([
+		"leeuw",
+		"tijger",
+		"nijlpaard",
+		"stekelvarken",
+		"aap",
+		"hond",
+		"olifant",
+	]); 
 
 	var clothes = KhanUtil.shuffle([
 		"hoedje",
@@ -478,6 +534,7 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		groupVerb: function( i ) {
 			return collections[i - 1][2];
 		},
+		
 
 		store: function( i ) {
 			return stores[i].name;
@@ -514,7 +571,19 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		fruit: function( i ) {
 			return fruits[i];
 		},
-
+		
+		dier: function (i) {
+			return dieren[i];
+		},
+		
+		kleur: function( i ) {
+			return kleuren[i];
+		},
+		
+		les: function( i ) {
+			return lessen[i];
+		},
+			
 		deskItem: function( i ) {
 			return deskItems[i];
 		},

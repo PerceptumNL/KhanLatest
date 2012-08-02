@@ -12,7 +12,7 @@
 		"hint7"		: 'Aantal rijen: <code><var>A</var></code>',
 		"hint8"		: 'Aantal rechthoeken in een rij: <code><var>B</var> + <var>C</var> = <var>B + C</var></code>',
 		"hint9"		: 'Totale aantal rechthoeken: <code><var>A</var> \\times <var>B + C</var> = <var>RESULT</var></code>',
-		"hint10"		: 'Beide manieren van tellen geven hetzelfde aantal. Het maakt niet uit of je ',
+		"hint10"		: 'Beide manieren van tellen geven dezelfde uitkomst, en we noemen dit de distributieve eigenschap.',
 		"hint11"		: 'Tellen per kleur:',
 		"hint12"		: 'Aantal oranje rechthoeken: <code><var>A</var> \\times <var>B</var> = <var>A * B</var></code>',
 		"hint13"		: 'Aantal blauwe rechthoeken: <code><var>A</var> \\times <var>C</var> = <var>A* C</var></code>',

@@ -10,7 +10,7 @@ function submitForm(value)
 	p { margin-bottom: 1em; }
 </style>
 {% endblock pagescript %}
-{% block pagetitle %}Report an issue{% endblock pagetitle %}
+{% block pagetitle %}Meld een probleem{% endblock pagetitle %}
 {% block pagecontent %}
 <article id="report-problem">
 	{% if message %}
@@ -23,17 +23,17 @@ function submitForm(value)
         </h2>
 				{% block exercise_warning %}{% endblock exercise_warning %}
         <p>Als je geluk hebt, heeft iemand al
-        {% block submitted_the_issue %}submitted the issue{% endblock submitted_the_issue %}
-        je kunt je hier makkelijk bij aansluiten door te klikken op <b>de ster ernaast</b> in
+        {% block submitted_the_issue %}je probleem gemeld.{% endblock submitted_the_issue %}
+        Je kunt je hier makkelijk bij aansluiten door te klikken op <b>de ster ernaast</b> in
         de
-        {% block list_of_issues_link %}<a href="http://code.google.com/p/khanacademy/issues/list?can=2&q=Status:Accepted,Started%20Type:Defect&sort=-stars&colspec=Summary">lijst van bekende problemen</a>{% endblock list_of_issues_link %}.
+        {% block list_of_issues_link %}<a href="http://code.google.com/p/khanacademie-nl/issues/list?can=2&q=Status:Accepted,Started%20Type:Defect&sort=-stars&colspec=Summary">lijst van bekende problemen</a>{% endblock list_of_issues_link %}.
         Wanneer dit niet het geval is, kun het beste de onderstaande stappen volgen om een nieuw probleem aan te maken in ons volgsysteem.
 	<ol>
 		<li>Ga naar het 
-	        {% block new_issue_link %}<a href="http://code.google.com/p/khanacademy/issues/entry?template=Defect%20report%20from%20user&labels=Referer-{{referer|urlencode}},Type-Defect,{{issues_label|urlencode}}">nieuw probleem-formulier</a>{% endblock new_issue_link %}.
+	        {% block new_issue_link %}<a href="http://code.google.com/p/khanacademie-nl/issues/entry?template=Defect%20report%20from%20user">nieuw probleem-formulier</a>{% endblock new_issue_link %}.
 		</li>
 		<li>Vul de <b>Samenvatting</b> en <b>Omschrijving</b> velden in. <span style="color: red; font-size: 12px;"/>Let op: De informatie die je verstrekt wordt openbaar, dus neem geen persoonlijk informatie op.</span></li>
-		<li>Klik op de <b>Onderwerp toevoegen</b> knop.</li>
+		<li>Klik op de <b>Submit Issue</b> knop.</li>
 	</ol>
         <p>Jouw bijdrage zal in de lijst opgenomen worden nadat wij het probleem bekeken hebben.
         <p>Wanneer je je aansluit bij een bestaand probleem, of wanneer je een nieuw probleem aanmaakt, zul je e-mails ontvangen wanneer mensen op het probleem reageren.&nbsp;

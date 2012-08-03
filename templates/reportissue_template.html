@@ -18,30 +18,28 @@ function submitForm(value)
 	{{message}}
 	</p>
 	{% endif %}
-        <h2 class="main-headline">{% block have_an_issue %}Have an issue?{% endblock have_an_issue %}&nbsp;
-        We want to know about it!
+        <h2 class="main-headline">{% block have_an_issue %}Heb je een probleem?{% endblock have_an_issue %}&nbsp;
+        We horen het graag van je!
         </h2>
 				{% block exercise_warning %}{% endblock exercise_warning %}
-        <p>If you're lucky, someone has already
+        <p>Als je geluk hebt, heeft iemand al
         {% block submitted_the_issue %}submitted the issue{% endblock submitted_the_issue %}
-        and you can simply vote for it by turning on <b>the star next to it</b> in
-        the
-        {% block list_of_issues_link %}<a href="http://code.google.com/p/khanacademy/issues/list?can=2&q=Status:Accepted,Started%20Type:Defect&sort=-stars&colspec=Summary">list of known problems</a>{% endblock list_of_issues_link %}.
-        Otherwise, please use the following steps to create a new issue in our issue tracking system.
+        je kunt je hier makkelijk bij aansluiten door te klikken op <b>de ster ernaast</b> in
+        de
+        {% block list_of_issues_link %}<a href="http://code.google.com/p/khanacademy/issues/list?can=2&q=Status:Accepted,Started%20Type:Defect&sort=-stars&colspec=Summary">lijst van bekende problemen</a>{% endblock list_of_issues_link %}.
+        Wanneer dit niet het geval is, kun het beste de onderstaande stappen volgen om een nieuw probleem aan te maken in ons volgsysteem.
 	<ol>
-		<li>Go to the
-	        {% block new_issue_link %}<a href="http://code.google.com/p/khanacademy/issues/entry?template=Defect%20report%20from%20user&labels=Referer-{{referer|urlencode}},Type-Defect,{{issues_label|urlencode}}">new problem form</a>{% endblock new_issue_link %}.
+		<li>Ga naar het 
+	        {% block new_issue_link %}<a href="http://code.google.com/p/khanacademy/issues/entry?template=Defect%20report%20from%20user&labels=Referer-{{referer|urlencode}},Type-Defect,{{issues_label|urlencode}}">nieuw probleem-formulier</a>{% endblock new_issue_link %}.
 		</li>
-		<li>Fill in the <b>Summary</b> and <b>Description</b> fields. <span style="color: red; font-size: 12px;"/>Note: The information you provide will become public, so do not include any private or confidential information.</span></li>
-		<li>Click the <b>Submit Issue</b> button.</li>
+		<li>Vul de <b>Samenvatting</b> en <b>Omschrijving</b> velden in. <span style="color: red; font-size: 12px;"/>Let op: De informatie die je verstrekt wordt openbaar, dus neem geen persoonlijk informatie op.</span></li>
+		<li>Klik op de <b>Onderwerp toevoegen</b> knop.</li>
 	</ol>
-        <p>Your submission will show up in the list once we've had a chance to give it a quick review.</p>
+        <p>Jouw bijdrage zal in de lijst opgenomen worden nadat wij het probleem bekeken hebben.
+        <p>Wanneer je je aansluit bij een bestaand probleem, of wanneer je een nieuw probleem aanmaakt, zul je e-mails ontvangen wanneer mensen op het probleem reageren.&nbsp;
+        Wanneer wij denken dat we het probleem hebben opgelost zul je een e-mail ontvangen waarin staat "Status: Probleem verholpen", en je zult zelf het verschil zien
+        bij de volgende keer dat we de site upgraden. Wanneer je geen e-mails meer wilt krijgen, volg dan de Link in één van de e-mails en klik op de ster. 
         </p>
-        <p>If you vote for something or submit something new, you'll get emails as people comment on it.&nbsp;
-        When we think we've taken care of it you'll get an email saying "Status: Fixed", and you'll see the difference
-        the next time we upgrade the site. If at any point you want to stop getting the emails, just follow the
-        link in one of them and click on the star to make it dim.
-        </p>
-        <p><em>Thanks for taking the time to help us make Khan Academy better!</em></p>
+        <p><em>Hartelijk dank dat je de tijd neemt om ons te helpen met het verbeteren van de Khan Academie!</em></p>
 </article>
 {% endblock pagecontent %}

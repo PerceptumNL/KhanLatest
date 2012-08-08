@@ -9,7 +9,7 @@
  * through a subset of the full tutorial, highlighting just the discussion tab.
  * This is the case when "showDiscussionIntro" is true.
  */
-
+ 
 if (typeof Profile !== "undefined") {
     Profile.showIntro_ = function() {
         if (Profile.profile.isPhantom()) {

@@ -38,8 +38,8 @@ class ViewKnowledgeMap(request_handler.RequestHandler):
         }
 
         if show_review_drawer:
-            template_values['review_statement'] = 'Attain mastery'
-            template_values['review_call_to_action'] = "I'll do it"
+            template_values['review_statement'] = 'Bemeester je kennis'
+            template_values['review_call_to_action'] = "Aan de slag"
 
         self.render_jinja2_template('viewexercises.html', template_values)
 

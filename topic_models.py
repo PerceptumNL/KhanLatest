@@ -1963,10 +1963,10 @@ def _preload_default_version_data(version_number, run_code):
 
     map_layout = layout.MapLayout.get_for_version(version)
 
-    if not map_layout.has_layout:
-        # TODO(KNL): Load map layout from location
-        map_layout.layout = json.loads('{"polylines":[],"topics":{"Getallen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"getallen","standalone_title":"Getallen","x":0,"y":4},"Verhoudingen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verhoudingen","standalone_title":"Verhoudingen","x":0,"y":7},"Meten en Meetkunde":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"meetkunde","standalone_title":"Meten en Meetkunde","x":3,"y":4},"Verbanden":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verbanden","standalone_title":"Verbanden","x":3,"y":7}}}');
-        map_layout.put()
+    #if not map_layout.has_layout:
+    #TODO(KNL): Load map layout from location
+    map_layout.layout = json.loads('{"polylines":[],"topics":{"Breuken":{"x":-5,"y":22,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"breuken","standalone_title":"Breuken"},"Absolute waarde":{"x":-1,"y":7,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"Absolute waarde","standalone_title":"Absolute waarde"},"Volgorde van bewerken":{"x":-4,"y":14,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"Volgorde van bewerken","standalone_title":"Volgorde van bewerken"},"Machtsverheffen en worteltrekken":{"x":4,"y":21,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"macht-en-wortel","standalone_title":"Machtsverheffen en worteltrekken"}}}');
+    map_layout.put()
 
     _do_set_default_deferred_step(_change_default_version,
                                   version_number,

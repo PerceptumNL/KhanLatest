@@ -14,7 +14,6 @@ import wsgi_compat
 from api.route_decorator import api_app
 import api.api_request_class  # @UnusedImport
 import api.auth.auth_handlers  # @UnusedImport
-import api.v0.handlers  # @UnusedImport
 import api.v1  # @UnusedImport
 import api.labs.handlers  # @UnusedImport
 import api.v1_fetch_logs  # @UnusedImport

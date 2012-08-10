@@ -8,9 +8,9 @@
 
 {% block pagesubmenu %}
 <span class="breadcrumbs_nav">
-    <a href="/coach/resources" id="teacher-resources" class="selected">Teacher Resources<span style="font-size:8px;color:orange;"> NEW</span>
-    <a href="/students" id="manage-students">Manage Students</a>
-    <a href="/class_profile" id="class-stats">Class Stats</a>
+    <a href="/coach/resources" id="teacher-resources" class="selected">Middelen voor de leraar(es)<span style="font-size:8px;color:orange;"> NIEUW</span>
+    <a href="/students" id="manage-students">Manage leerlingen</a>
+    <a href="/class_profile" id="class-stats">Klassen overzicht</a>
 </span>
 {% endblock pagesubmenu %}
 
@@ -58,8 +58,8 @@
     {#
     <div class="login row">
         <span class="span1">Login</span>
-        <span class="fb span2">with facebook</span>
-        <span class="goog span2">with google</span>
+        <span class="fb span2">met facebook</span>
+        <span class="goog span2">met google</span>
     </div>
     #}
 
@@ -71,16 +71,16 @@
             </a>
         </div>
         <div class="bigcallout span6 offset1">
-            <h2>Supercharge your classroom</h2>
-            <p>Visit our teacher toolkit and see the incredible things other teachers and coaches are doing with the Khan Academy right now.
-            <p>We're committed to providing top-tier resources to our coaches. Free. Always. Comprehensive data and meaningful analytics are only the beginning.</p>
-            <p><a href="/toolkit/" class="simple-button green">Explore the toolkit</a></p>
+            <h2>Geef jouw klas een boost</h2>
+            <p>Bezoek onze gereedschapskist voor leraren en ontdek alle geweldige dingen die andere leraren en coaches doen met de Khan Academie.
+            <p>We willen onze coaches graag eerste rangs middelen bieden. Gratis. Altijd. Uitgebreide informatie en inhoudelijke analyses zijn slechts het begin.</p>
+            <p><a href="/toolkit/" class="simple-button green">Ontdek de gereedschapskist</a></p>
         </div>
     </div>
 
     <div class="middle row">
         <hr>
-        <h4><span>Plus, all coaches get access to</span></h4>
+        <h4><span>Plus, alle coaches krijgen toegang tot</span></h4>
     </div>
 
     <div class="extra-resources row">
@@ -90,8 +90,8 @@
                     <img src="/images/toolkit-01.png">
                 </a>
             </div>
-            <h3><a href="/toolkit/using-data">Rich Data</a></h3>
-            <p>Get the whole picture: from how your class is doing on <em>linear equations</em> to Brian's progress on <em>Adding Fractions</em>.
+            <h3><a href="/toolkit/using-data">Omvangrijke informatie</a></h3>
+            <p>Krijg een volledig beeld van hoe jouw klas presteert op het gebied van<em> lineare vergelijkingen of</em> de voortgang van Jan op het gebied van het <em>optellen van breuken</em>.
         </div>
 
         <div class="span3">
@@ -100,8 +100,8 @@
                     <img src="/images/toolkit-02.png">
                 </a>
             </div>
-            <h3><a href="http://khanacademy.desk.com">Your Questions</a></h3>
-            <p>Find and contribute answers to common questions like: <a href="http://khanacademy.desk.com/customer/portal/articles/414175">What is KA's vision for classroom learning?</a> <a href="http://khanacademy.desk.com/customer/portal/articles/329324-how-do-i-set-up-a-new-user-account-">How do I login to KA?</a> Or, <a href="http://khanacademy.desk.com/customer/portal/questions/new">add your own question</a>.
+            <h3><a href="http://khanacademy.desk.com">Jouw vragen</a></h3>
+            <p>Vind- en geef antwoord op veelgestelde vragen als: <a href="http://khanacademy.desk.com/customer/portal/articles/414175">Wat is het idee van Khan over het gebruik van de Khan Academie in de klas?</a> <a href="http://khanacademy.desk.com/customer/portal/articles/329324-how-do-i-set-up-a-new-user-account-">Hoe log ik in op de Khan Academie?</a> Of, <a href="http://khanacademy.desk.com/customer/portal/questions/new">voeg je eigen vragen toe</a>.
         </div>
 
         <div class="span3">
@@ -110,8 +110,8 @@
                     <img src="/images/toolkit-03.png">
                 </a>
             </div>
-            <h3><a href="/commoncore">Common Core</a> <small>alpha</small></h3>
-            <p>View KA videos and exercises that map to specific Common Core standards. <!-- TODO(Matt): Nice to have - Insert "We're in the early innings here - suggestions welcome." and form to allow CC suggestion --></a>
+            <h3><a href="/commoncore">Leerlijnen</a> <small>alpha</small></h3>
+            <p>Bekijk video's en oefeningen <!-- TODO(Matt): Nice to have - Insert "We're in the early innings here - suggestions welcome." and form to allow CC suggestion --></a>
         </div>
         <div class="span3">
             <div class="smallpic">
@@ -119,16 +119,16 @@
                     <img src="/images/toolkit-04.png">
                 </a>
             </div>
-            <h3><a href="javascript:$('#mailform').focus();">Keep In Touch</a></h3>
+            <h3><a href="javascript:$('#mailform').focus();">Blijf in contact</a></h3>
             <div class="mailing_list_container" id="mailing_list_container_2">
                 <form name="coach_mailing_list_form" class="keepintouch">
                     <input type="email" name="email" class="email simple-input ui-corner-all"
                      id="mailform" placeholder="Enter your email"
                      {% if logged_in %} value="{{ coach_email }}" {% endif %} />
-                    <input type="submit" value="Register your class" class="simple-button">
+                    <input type="submit" value="Registreer jouw klas" class="simple-button">
                 </form>
             </div>
-            <p>Sign up for our coach mailing list and keep up to date with new developments.</p>
+            <p>Schrijf je in voor onze coach mailing en blijf op de hoogte van nieuwe ontwikkelingen.</p>
             <script>
                 if (typeof MailingList !== "undefined") {
                     MailingList.init("2");

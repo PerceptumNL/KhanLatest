@@ -277,8 +277,6 @@ class TopicVersion(backup_model.BackupModel):
         for video in videos:
             if re.search("_DUP_\d*$", video.youtube_id):
                 bad_videos.append(video)
-        db.delete(exercise_video_model.ExerciseVideo
-                 .get_all_with_topicless_videos(version))
         problems = {
             "ExerciseVideos with topicless videos":
                 (exercise_video_model.ExerciseVideo

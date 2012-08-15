@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html data-require="math word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Z-scores 1</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="problems">
+            <div id="original">
+                <div class="vars">
+                    <var id="MEAN">randRange( 65, 85 )</var>
+                    <var id="STDDEV">randRange( 2, 5 ) + randRange( 0, 1 ) * 0.5</var>
+                    <var id="GRADE">randRangeWeighted( roundTo( 0, MEAN - STDDEV * 3 ), min( roundTo( 0, MEAN + STDDEV * 3 ), 100 ), MEAN, 0 )</var>
+                    <var id="ZSCORE">roundTo( 2, ( GRADE - MEAN ) / STDDEV )</var>
+                </div>
+
+                <div class="problem">
+                    De cijfers van een <var>( course( 1 ) </var> tussentoets op <var>school( 1 )</var> zijn normaal verdeeld met <code>\mu = <var>MEAN</var></code> en <code>\sigma = <var>STDDEV</var></code>.
+                    <br /><var>person( 1 )</var> haalde een <span data-if="floorTo( 0, GRADE / 10 ) === 8">n</span> <code><var>GRADE</var></code> op zijn tussentoets.
+                </div>
+
+                <p class="question">Vind de z-score voor <var>person( 1 )</var>'s tussentoets cijfer. Rond je antwoord af op twee decimalen nauwkeurig.</p>
+
+                <div class="solution" data-forms="decimal"><var>ZSCORE</var></div>
+
+                <div class="hints">
+                    <p>Een z-score is gedefinieerd als de afwijking van de <span class="hint_pink">verwachtingswaarde  uitgedrukt in eenheden van de </span><span class="hint_green">standaardafwijking</span>.</p>
+                    <div>
+                        <p>We kunnen de z-score voor <var>person( 1 )</var>'s tussentoets cijfer berekenendoor het <span class="hint_pink">gemiddelde<code>(\mu)</code></span> van
+                        <var>his( 1 )</var> cijfer af te halen en de uitkomst hiervan te delen door de <span class="hint_green">standaardafwijking<code>(\sigma)</code></span>.</p>
+                        <p>
+                            <code>
+                                \large{\quad z \quad = \quad
+                                \dfrac{x - \color{<var>PINK</var>}{\mu}}{\color{<var>GREEN</var>}{\sigma}}}
+                            </code>
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <code>
+                                \large{\quad z \quad = \quad
+                                \dfrac{<var>GRADE</var> - \color{<var>PINK</var>}{<var>MEAN</var>}}{\color{<var>GREEN</var>}{<var>STDDEV</var>}}}
+                            </code>
+                        </p>
+                    </div>
+                    <div>
+                        <p><code>\large{\quad z \quad = \quad <var>ZSCORE</var>}</code></p>
+                        <p class="final_answer">De z-score is <code><var>ZSCORE</var></code>. Met andere woorden, <var>person( 1 )</var>'s score was <code><var>abs( ZSCORE )</var></code>
+                        standaardafwijkingen<var>plural( abs( ZSCORE ) )</var> <span data-if="ZSCORE > 0">boven</span><span data-else>onder</span> het gemiddelde.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -224,7 +224,7 @@ def create_root(version):
 @layer_cache.cache(layer=layer_cache.Layers.Memcache | layer_cache.Layers.Datastore, expiration=86400)
 def getSmartHistoryContent():
     try:
-        response = urlfetch.fetch(url="http://khan.smarthistory.org/"
+        response = urlfetch.fetch(url="hxxp://khan.smarthistory.org/"
                                   "youtube-urls-for-khan-academy.html", 
                                   deadline=25)
         smart_history = json.loads(response.content)

@@ -31,13 +31,13 @@
 		"hint25"		: 'Hoeveel auto\'s stonden er geparkeerd bij de <var>store(1)</var>?',
 		"hint26"		: 'Het aantal auto\'s dat aan het begin bij de winkel geparkeerd stond, is het verschil tussen het aantal dat er nu geparkeerd staat en het aantal auto\'s dat er later perkeerde.',
 		"hint27"		: 'Het verschil is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural("auto")</var>.',
-		"hint28"		: 'Oorspronkelijk <var>plural( "was", NUM2 )</var> er <var>plural( NUM2, "auto" )</var> geparkeerd op het perkeerterrein van de <var>store(1)</var>. '+
+		"hint28"		: 'Oorspronkelijk <var>plural( "was", NUM2 )</var> er <var>plural( NUM2, "auto" )</var> geparkeerd op het parkeerterrein van de <var>store(1)</var>. '+
 					'Gedurende de volgende  <var>randRange( 2, 3 )</var> uur werden er meer auto\'s geparkeerd bij de <var>store(1)</var>, en nu <var>plural("is", TOTAL)</var> er <var>plural(TOTAL, "auto")</var> op het parkeerterrein. Er zijn geen auto\'s van het parkeerterrein verdwenen in die tijd.',
 		"hint29"		: 'Hoeveel auto\'s werden er op het parkeerterrein van de <var>store( 1 )</var> geparkeerd na de oorspronkelijke <var>plural( NUM2, "auto" )</var>?',
 		"hint30"		: 'Het aantal auto\'s dat later op het parkeerterrein werd gezet, is het verschil tussen het aantal dat er al stond en het uiteindelijke aantal geparkeerde auto\'s.',
 		"hint31"		: 'Dat verschil is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural("auto")</var>.',
 		"hint32"		: '<var>plural(NUM1, "auto")</var> <var>plural("was", NUM1)</var> geparkeerd op het parkeerterrein van de <var>store(1)</var>. '+
-					'<var>NUM2</var> more <var>plural("auto", NUM2)</var> <var>plural("stonden", "stond", NUM2)</var> bij de <var>store(1)</var>.',
+					'<var>NUM2</var> <var>plural("auto", NUM2)</var> <var>plural("stonden", "stond", NUM2)</var> bij de <var>store(1)</var>.',
 		"hint33"		: 'Hoeveel auto\'s staan er nu op het parkeerterrein?',
 		"hint34"		: 'Het aantal auto\'s dat nu op het parkeerterrein staat is het totaal van de auto\'s die aan het begin al op het parkeerterrein stonden en het aantal auto\'s dat erbij is gekomen.',
 		"hint35"		: 'Dat totaal is dus <code><var>NUM1</var> + <var>NUM2</var></code> <var>plural("auto")</var>.',

@@ -28,6 +28,8 @@ from google.appengine.api import users
 from google.appengine.ext import db
 from google.appengine.ext import deferred
 
+from search import Searchable
+
 from api import jsonify
 import app
 import backup_model
@@ -55,7 +57,8 @@ class Video(search.Searchable, backup_model.BackupModel):
     description = db.TextProperty()
     keywords = db.StringProperty()
     duration = db.IntegerProperty(default=0)
-
+    # Khan NL
+    playlists = db.StringListProperty()
     # A dict of properties that may only exist on some videos such as
     # original_url for smarthistory_videos.
     extra_properties = object_property.UnvalidatedObjectProperty()
@@ -106,6 +109,12 @@ class Video(search.Searchable, backup_model.BackupModel):
     @property
     def ka_url(self):
         return url_util.absolute_url(self.relative_url)
+
+    def first_playlist(self):
+        playlists = VideoPlaylist.get_cached_playlists_for_video(self)
+        if playlists:
+            return playlists[0]
+        return None
 
     @property
     def download_urls(self):
@@ -923,3 +932,158 @@ def _get_mangled_topic_name(topic_name):
         topic_name = topic_name.replace(char, "")
     return topic_name
 
+class Playlist(Searchable, db.Model):
+
+    youtube_id = db.StringProperty()
+    url = db.StringProperty()
+    title = db.StringProperty()
+    description = db.TextProperty()
+    readable_id = db.StringProperty() #human readable, but unique id that can be used in URLS
+    tags = db.StringListProperty()
+    INDEX_ONLY = ['title', 'description']
+    INDEX_TITLE_FROM_PROP = 'title'
+    INDEX_USES_MULTI_ENTITIES = False
+
+    _serialize_blacklist = ["readable_id"]
+
+    @property
+    def ka_url(self):
+        return util.absolute_url(self.relative_url)
+
+    @property
+    def relative_url(self):
+        return '#%s' % urllib.quote(slugify(self.title.lower()))
+
+    @staticmethod
+    def get_for_all_topics():
+        return filter(lambda playlist: playlist.title in all_topics_list,
+                Playlist.all().fetch(1000))
+
+    def get_exercises(self):
+        video_query = Video.all(keys_only=True)
+        video_query.filter('playlists = ', self.title)
+        video_keys = video_query.fetch(1000)
+
+        exercise_query = Exercise.all()
+        exercise_key_dict = Exercise.get_dict(exercise_query, lambda exercise: exercise.key())
+
+        exercise_video_query = ExerciseVideo.all()
+        exercise_video_key_dict = ExerciseVideo.get_key_dict(exercise_video_query)
+
+        playlist_exercise_dict = {}
+        for video_key in video_keys:
+            if exercise_video_key_dict.has_key(video_key):
+                for exercise_key in exercise_video_key_dict[video_key]:
+                    if exercise_key_dict.has_key(exercise_key):
+                        exercise = exercise_key_dict[exercise_key]
+                        playlist_exercise_dict[exercise_key] = exercise
+
+        playlist_exercises = []
+        for exercise_key in playlist_exercise_dict:
+            playlist_exercises.append(playlist_exercise_dict[exercise_key])
+
+        return playlist_exercises
+
+    def get_videos(self):
+        video_query = Video.all()
+        video_query.filter('playlists = ', self.title)
+        video_key_dict = Video.get_dict(video_query, lambda video: video.key())
+
+        video_playlist_query = VideoPlaylist.all()
+        video_playlist_query.filter('playlist =', self)
+        video_playlist_query.filter('live_association =', True)
+        video_playlist_key_dict = VideoPlaylist.get_key_dict(video_playlist_query)
+
+        video_playlists = sorted(video_playlist_key_dict[self.key()].values(), key=lambda video_playlist: video_playlist.video_position)
+
+        videos = []
+        for video_playlist in video_playlists:
+            video = video_key_dict[VideoPlaylist.video.get_value_for_datastore(video_playlist)]
+            video.position = video_playlist.video_position
+            videos.append(video)
+
+        return videos
+
+    def get_video_count(self):
+        video_playlist_query = VideoPlaylist.all()
+        video_playlist_query.filter('playlist =', self)
+        video_playlist_query.filter('live_association =', True)
+        return video_playlist_query.count()
+
+class VideoPlaylist(db.Model):
+
+    playlist = db.ReferenceProperty(Playlist)
+    video = db.ReferenceProperty(Video)
+    video_position = db.IntegerProperty()
+
+    # Lets us enable/disable video playlist relationships in bulk without removing the entry
+    live_association = db.BooleanProperty(default = False)
+    last_live_association_generation = db.IntegerProperty(default = 0)
+
+    _VIDEO_PLAYLIST_KEY_FORMAT = "VideoPlaylist_Videos_for_Playlist_%s"
+    _PLAYLIST_VIDEO_KEY_FORMAT = "VideoPlaylist_Playlists_for_Video_%s"
+
+    @staticmethod
+    def get_namespace():
+        return "%s_%s" % (App.version, Setting.cached_library_content_date())
+
+    @staticmethod
+    def get_cached_videos_for_playlist(playlist, limit=500):
+
+        key = VideoPlaylist._VIDEO_PLAYLIST_KEY_FORMAT % playlist.key()
+        namespace = VideoPlaylist.get_namespace()
+
+        videos = memcache.get(key, namespace=namespace)
+
+        if not videos:
+            query = VideoPlaylist.all()
+            query.filter('playlist =', playlist)
+            query.filter('live_association = ', True)
+            query.order('video_position')
+            videos = [video_playlist.video for video_playlist in query.fetch(limit)]
+
+            memcache.set(key, videos, namespace=namespace)
+
+        return videos
+
+    @staticmethod
+    def get_cached_playlists_for_video(video, limit=5):
+
+        key = VideoPlaylist._PLAYLIST_VIDEO_KEY_FORMAT % video.key()
+        namespace = VideoPlaylist.get_namespace()
+
+        playlists = memcache.get(key, namespace=namespace)
+
+        if playlists is None:
+            query = VideoPlaylist.all()
+            query.filter('video =', video)
+            query.filter('live_association = ', True)
+            playlists = [video_playlist.playlist for video_playlist in query.fetch(limit)]
+
+            memcache.set(key, playlists, namespace=namespace)
+
+        return playlists
+
+    @staticmethod
+    def get_query_for_playlist_title(playlist_title):
+        query = Playlist.all()
+        query.filter('title =', playlist_title)
+        playlist = query.get()
+        query = VideoPlaylist.all()
+        query.filter('playlist =', playlist)
+        query.filter('live_association = ', True) #need to change this to true once I'm done with all of my hacks
+        query.order('video_position')
+        return query
+
+    @staticmethod
+    def get_key_dict(query):
+        video_playlist_key_dict = {}
+        for video_playlist in query.fetch(10000):
+            playlist_key = VideoPlaylist.playlist.get_value_for_datastore(video_playlist)
+
+            if not video_playlist_key_dict.has_key(playlist_key):
+                video_playlist_key_dict[playlist_key] = {}
+
+            video_playlist_key_dict[playlist_key][VideoPlaylist.video.get_value_for_datastore(video_playlist)] = video_playlist
+
+        return video_playlist_key_dict

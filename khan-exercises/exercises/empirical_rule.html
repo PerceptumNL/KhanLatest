@@ -2,7 +2,7 @@
 <html data-require="math graphie stat word-problems">
 <head>
 	<meta charset="UTF-8" />
-	<title>Empirical rule</title>
+	<title>Vuistregel voor normale verdeling</title>
 	<script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -41,20 +41,19 @@
 				</div>
 
 				<div class="problem">
-					The lifespans of <var>ANIMALS</var> in a particular zoo are normally distributed.
-					The average <var>ANIMAL</var> lives <code><var>MEAN</var></code> years; the
-					standard deviation is <code><var>STDDEV</var></code> years.
+					De levensduur van <var>ANIMALS</var> in een bepaalde dierentuin is normaal verdeeld.
+					De gemiddelde <var>ANIMAL</var> leeft <code><var>MEAN</var></code> jaar; de standaarddeviatie is <code><var>STDDEV</var></code> jaar.
 				</div>
 
 				<p class="question">
-					Estimate the probability of <var>an( ANIMAL )</var> living longer than
-					<code><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> years.
+					Schat de kans dat een <var>( ANIMAL )</var> ouder wordt dan
+					<code><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> jaar.
 				</p>
 
 				<div class="solution" data-forms="percent"><var>ANSWER</var></div>
 
 				<div class="hints">
-					<p>We can try to estimate using the empirical rule, also known as the 68-95-99.7 percent rule.</p>
+					<p>We kunnen dit schatten met de vuistregel voor normale verdelingen, ook wel de 68-95-99,7 procent regel genoemd.</p>
 
 					<div>
 						<div class="graphie" id="normaldist">
@@ -85,8 +84,8 @@
 
 						</div>
 						<p>
-							We know the lifespans are normally distributed with an average lifespan of
-							<code class="hint_pink" id="meanHint"><var>MEAN</var></code> years.
+							We weten dat de levensduur normaal verdeeld is met een gemiddelde van
+							<code class="hint_pink" id="meanHint"><var>MEAN</var></code> jaar.
 						</p>
 					</div>
 
@@ -106,11 +105,10 @@
 							graph.zLabel[ 1 ] = label( [ MEAN + STDDEV, 0 ], roundTo( 1, MEAN + STDDEV ), "below", { color: PINK } );
 						</div>
 						<p>
-							We know the standard deviation is <code><var>STDDEV</var></code> years, so one
-							standard deviation below the mean is
-							<code id="zm1Hint" class="hint_pink"><var>roundTo( 1, MEAN - STDDEV )</var></code> years
-							and one standard deviation above the mean is
-							<code id="zp1Hint" class="hint_pink"><var>roundTo( 1, MEAN + STDDEV )</var></code> years.
+							We weten dat de standaarddeviatie <code><var>STDDEV</var></code> jaar is, dus 1 standaarddeviatie minder dan het gemiddelde is 
+							<code id="zm1Hint" class="hint_pink"><var>roundTo( 1, MEAN - STDDEV )</var></code> jaar
+							en 1 erboven is
+							<code id="zp1Hint" class="hint_pink"><var>roundTo( 1, MEAN + STDDEV )</var></code> jaar.
 						</p>
 					</div>
 
@@ -134,10 +132,10 @@
 
 						</div>
 						<p>
-							Two standard deviations below the mean is
-							<code id="zm2Hint" class="hint_pink"><var>roundTo( 1, MEAN - STDDEV * 2 )</var></code> years
-							and two standard deviations above the mean is
-							<code id="zp2Hint" class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * 2 )</var></code> years.
+							Twee standaarddeviaties onder het gemiddelde is
+							<code id="zm2Hint" class="hint_pink"><var>roundTo( 1, MEAN - STDDEV * 2 )</var></code> jaar
+							en twee erboven is
+							<code id="zp2Hint" class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * 2 )</var></code> jaar.
 						</p>
 					</div>
 
@@ -161,10 +159,10 @@
 
 						</div>
 						<p>
-							Three standard deviations below the mean is
-							<code id="zm3Hint" class="hint_pink"><var>roundTo( 1, MEAN - STDDEV * 3 )</var></code> years
-							and three standard deviations above the mean is
-							<code id="zp3Hint" class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * 3 )</var></code> years.
+							Drie standaarddeviaties onder het gemiddelde is
+							<code id="zm3Hint" class="hint_pink"><var>roundTo( 1, MEAN - STDDEV * 3 )</var></code> jaar
+							en drie erboven is
+							<code id="zp3Hint" class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * 3 )</var></code> jaar.
 						</p>
 					</div>
 
@@ -186,8 +184,8 @@
 							});
 						</div>
 						<p>
-							We are interested in the probability of <var>an( ANIMAL )</var> living longer than
-							<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> years.
+							We willen de kans weten dat een <var>an( ANIMAL )</var> langer leeft dan
+							<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> jaar.
 						</p>
 					</div>
 
@@ -219,10 +217,10 @@
 							});
 						</div>
 						<p>
-							The empirical rule (or the 68-95-99.7 rule) tells us that
+							De vuistregel (of 68-95-99,7 regel) zegt dat de levensduur van
 							<span style="color: green"><code><var>EMPIRICAL</var>\%</code></span>
-							of the <var>ANIMALS</var> will have lifespans within
-							<var>plural( abs( Z ), "standard deviation" )</var> of the average lifespan.
+							van de <var>ANIMALS</var> binnen 
+							<var>plural( abs( Z ), "standaarddeviatie" )</var> van de gemiddelde levensduur ligt.
 						</p>
 					</div>
 
@@ -249,31 +247,30 @@
 								roundTo( 2, ( 100 - EMPIRICAL ) / 2 ) + "\\%", "above", { color: "green" } );
 						</div>
 						<p>
-							The remaining <code><var>roundTo( 2, 100 - EMPIRICAL )</var>\%</code>
-							of the <var>ANIMALS</var> will have lifespans that fall outside the shaded area.
-							Because the normal distribution is symmetrical, half
+							De resterende <code><var>roundTo( 2, 100 - EMPIRICAL )</var>\%</code>
+							van de <var>ANIMALS</var> zal een levensduur hebben dat buiten het gearceerde gedeelte valt.
+							Omdat de normale verdeling symmetrisch is, zal de ene helft
 							<code>(\color{green}{<var>roundTo( 2, ( 100 - EMPIRICAL ) / 2 )</var>\%})</code>
-							will live less than <code><var>roundTo( 2, MEAN - STDDEV * abs( Z ) )</var></code> years
-							and the other half
+							minder dan <code><var>roundTo( 2, MEAN - STDDEV * abs( Z ) )</var></code> jaar oud worden, en de andere helft 
 							<code>(\color{green}{<var>roundTo( 2, ( 100 - EMPIRICAL ) / 2 )</var>\%})</code>
-							will live longer than <code><var>roundTo( 2, MEAN + STDDEV * abs( Z ) )</var></code> years.
+							ouder worden dan <code><var>roundTo( 2, MEAN + STDDEV * abs( Z ) )</var></code> jaar.
 						</p>
 					</div>
 
 					<p data-if="Z < 0" id="finalHint1">
 						<strong>
-						The probability of a particular <var>ANIMAL</var> living longer than
-						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> years is
+						De kans dat een <var>ANIMAL</var> langer leeft dan
+						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> jaar is
 						<code>\color{green}{<var>EMPIRICAL</var>\%} +
-						\color{green}{<var>roundTo( 2, ( 100 - EMPIRICAL ) / 2 )</var>\%}</code>, or
+						\color{green}{<var>roundTo( 2, ( 100 - EMPIRICAL ) / 2 )</var>\%}</code>, of
 						<code><var>ANSWER</var>\%</code>.
 						</strong>
 					</p>
 
 					<p data-else id="finalHint2">
 						<strong>
-						The probability of a particular <var>ANIMAL</var> living longer than
-						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> years is
+						De kans dat een <var>ANIMAL</var> langer leeft dan
+						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> jaar is
 						<code>\color{green}{<var>ANSWER</var>\%}</code>.
 						</strong>
 					</p>
@@ -295,8 +292,8 @@
 					</var>
 				</div>
 				<p class="question">
-					Estimate the probability of <var>an( ANIMAL )</var> living less than
-					<code><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> years.
+					Schat de kans dat een <var>( ANIMAL )</var>  minder dan
+					<code><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> jaar oud wordt.
 				</p>
 
 				<div class="hints" data-apply="appendContents">
@@ -318,25 +315,25 @@
 							});
 						</div>
 						<p>
-							We are interested in the probability of <var>an( ANIMAL )</var> living less than
-							<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> years.
+							We willen de kans weten dat een <var>( ANIMAL )</var> korter leeft dan
+							<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> jaar.
 						</p>
 					</div>
 
 					<p data-if="Z > 0" id="finalHint1">
 						<strong>
-						The probability of a particular <var>ANIMAL</var> living less than
-						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> years is
+						De kans dat een <var>ANIMAL</var> korter leeft dan
+						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> jaar is
 						<code>\color{green}{<var>EMPIRICAL</var>\%} +
-						\color{green}{<var>roundTo( 2, ( 100 - EMPIRICAL ) / 2 )</var>\%}</code>, or
+						\color{green}{<var>roundTo( 2, ( 100 - EMPIRICAL ) / 2 )</var>\%}</code>, of
 						<code><var>ANSWER</var>\%</code>.
 						</strong>
 					</p>
 
 					<p data-else id="finalHint2">
 						<strong>
-						The probability of a particular <var>ANIMAL</var> living less than
-						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> years is
+						De kans dat een <var>ANIMAL</var> korter leeft dan
+						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z )</var></code> jaar is
 						<code>\color{green}{<var>ANSWER</var>\%}</code>.
 						</strong>
 					</p>
@@ -392,8 +389,8 @@
 					<var id="AREA">TOTAL2 - TOTAL1</var>
 				</div>
 				<p class="question">
-					Estimate the probability of <var>an( ANIMAL )</var> living between
-					<code><var>roundTo( 1, MEAN + STDDEV * Z1 )</var></code> and <code><var>roundTo( 1, MEAN + STDDEV * Z2 )</var></code> years.
+					Schat de kans dat een <var>an( ANIMAL )</var> tussen de
+					<code><var>roundTo( 1, MEAN + STDDEV * Z1 )</var></code> en <code><var>roundTo( 1, MEAN + STDDEV * Z2 )</var></code> jaar oud wordt.
 				</p>
 
 				<div class="solution" data-forms="percent"><var>AREA</var></div>
@@ -420,9 +417,9 @@
 							});
 						</div>
 						<p>
-							We are interested in the probability of <var>an( ANIMAL )</var> living between
-							<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z1 )</var></code> and 
-							<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z2 )</var></code> years.
+							We willen de kans weten dat een <var>( ANIMAL )</var> tussen de
+							<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z1 )</var></code> en 
+							<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z2 )</var></code> jaar oud wordt.
 						</p>
 					</div>
 
@@ -454,10 +451,10 @@
 							});
 						</div>
 						<p>
-							The empirical rule (or the 68-95-99.7 rule) tells us that
+							De vuistregel (of 68-95-99,7 regel) zegt dat de levensduur van
 							<span style="color: green"><code><var>EMPIRICAL1</var>\%</code></span>
-							of the <var>ANIMALS</var> will have lifespans within
-							<var>plural( abs( Z_MAX ), "standard deviation" )</var> of the average lifespan.
+							van de <var>ANIMALS</var> binnen
+							<var>plural( abs( Z_MAX ), "standaarddeviatie" )</var> van de gemiddelde levensduur ligt.
 						</p>
 					</div>
 
@@ -490,21 +487,21 @@
 
 						</div>
 						<p>
-							It also tells us that <span style="color: green"><code><var>EMPIRICAL2</var>\%</code></span>
-							of the <var>ANIMALS</var> will have lifespans within <var>plural( Z_MIN, "standard deviation" )</var> 
-							of the mean. That leaves <code><var>EMPIRICAL1</var>\% - <var>EMPIRICAL2</var>\% = 
-							<var>roundTo( 2, EMPIRICAL1 - EMPIRICAL2 )</var>\%</code> of <var>ANIMALS</var> between 
-							<var>Z_MIN</var> and <var>plural( Z_MAX, "standard deviation" )</var> of the mean, or 
+							Het zegt ook dat de levensduur van <span style="color: green"><code><var>EMPIRICAL2</var>\%</code></span>
+							van de <var>ANIMALS</var> binnen <var>plural( Z_MIN, "standaarddeviatie" )</var> 
+							van het gemiddelde zal liggen. Dat geeft <code><var>EMPIRICAL1</var>\% - <var>EMPIRICAL2</var>\% = 
+							<var>roundTo( 2, EMPIRICAL1 - EMPIRICAL2 )</var>\%</code> of <var>ANIMALS</var> tussen
+							<var>Z_MIN</var> en <var>plural( Z_MAX, "standaarddeviatie" )</var> van het gemiddelde, oftewel 
 							<span style="color: orange"><code><var>roundTo( 2, ( EMPIRICAL1 - EMPIRICAL2 ) / 2 )</var>\%</code></span> 
-							on either side of the distribution.
+							aan elke kant van de verdeling.
 						</p>
 					</div>
 
 					<p data-if="abs( Z1 ) > abs( Z2 )" id="finalHint1">
 						<strong>
-						The probability of a particular <var>ANIMAL</var> living between
-						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z1 )</var></code> and 
-						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z2 )</var></code> years is 
+						De kans dat een <var>ANIMAL</var> tussen de
+						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z1 )</var></code> en 
+						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z2 )</var></code> jaar oud wordt is
 						<span data-if="Z1 * Z2 > 0"><code>\color{orange}{<var>roundTo( 2, ( EMPIRICAL1 - EMPIRICAL2 ) / 2 )</var>\%}</code>.</span>
 						<span data-else><code>\color{orange}{<var>roundTo( 2, ( EMPIRICAL1 - EMPIRICAL2 ) / 2 )</var>\%} + 
 						\color{green}{<var>EMPIRICAL2</var>\%}</code>, or <code><var>roundTo( 2, AREA )</var>\%</code>.</span>
@@ -513,9 +510,9 @@
 
 					<p data-else-if="abs( Z1 ) < abs( Z2 )" id="finalHint2">
 						<strong>
-						The probability of a particular <var>ANIMAL</var> living between
-						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z1 )</var></code> and 
-						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z2 )</var></code> years is 
+						De kans dat een <var>ANIMAL</var> tussen de
+						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z1 )</var></code> en 
+						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z2 )</var></code> jaar oud wordt is 
 						<span data-if="Z1 * Z2 > 0"><code>\color{orange}{<var>roundTo( 2, ( EMPIRICAL1 - EMPIRICAL2 ) / 2 )</var>\%}</code>.</span>
 						<span data-else><code>\color{green}{<var>EMPIRICAL2</var>\%} +
 						\color{orange}{<var>roundTo( 2, ( EMPIRICAL1 - EMPIRICAL2 ) / 2 )</var>\%}</code>, or 
@@ -525,9 +522,9 @@
 
 					<p data-else>
 						<strong>
-						The probability of a particular <var>ANIMAL</var> living between
-						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z1 )</var></code> and 
-						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z2 )</var></code> years is
+						De kans dat een <var>ANIMAL</var> tussen de
+						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z1 )</var></code> en 
+						<code class="hint_pink"><var>roundTo( 1, MEAN + STDDEV * Z2 )</var></code> jaar oud wordt is 
 						<code>\color{green}{<var>roundTo( 2, AREA )</var>\%}</code>.
 						</strong>
 					</p>

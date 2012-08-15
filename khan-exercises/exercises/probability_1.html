@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html data-translatable data-require="math math-format probability word-problems">
+<html data-require="math math-format probability word-problems">
 <head>
 	<meta charset="UTF-8" />
-	<title>Probability 1</title>
+	<title>Kansrekening 1</title>
 	<script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -10,109 +10,108 @@
 	<div class="problems">
 		<div>
 			<div class="vars">
-				<var id="CONTAINER">randFromArray(["bag", "jar", "box", "cup"])</var>
-				<var id="MARBLE">randFromArray(["marble", "ball", "jelly bean"])</var>
+				<var id="CONTAINER">randFromArray(["tas", "pot", "doos", "beker"])</var>
+				<var id="MARBLE">randFromArray(["knikker", "balletje", "snoepje"])</var>
 				<var id="RED">randRange(3, 11)</var>
 				<var id="GREEN">randRange(3, 11)</var>
 				<var id="BLUE">randRange(3, 11)</var>
 				<var id="TOTAL">RED + GREEN + BLUE</var>
 
 				<var id="NOT">rand(2) == 0</var>
-				<var id="CHOSEN_COLOR, CHOSEN_NUMBER">randFromArray([["red", RED], ["green", GREEN], ["blue", BLUE]])</var>
+				<var id="CHOSEN_COLOR, CHOSEN_NUMBER">randFromArray([["rood", RED], ["groen", GREEN], ["blauw", BLUE]])</var>
 				<var id="NUMBER">NOT ? TOTAL - CHOSEN_NUMBER : CHOSEN_NUMBER</var>
 			</div>
 
 			<div class="question">
-				<p data-tt="question1">A <var>CONTAINER</var> contains <code><var>RED</var></code> red <var>MARBLE</var>s,
-				<code><var>GREEN</var></code> green <var>MARBLE</var>s, and <code><var>BLUE</var></code> blue <var>MARBLE</var>s.</p>
+				<p data-tt="question1"> Een <var>CONTAINER</var> bevat <code><var>RED</var></code> rode <var>MARBLE</var>s,
+				<code><var>GREEN</var></code> groene <var>MARBLE</var>s, en <code><var>BLUE</var></code> blauwe <var>MARBLE</var>s.</p>
 
-				<p data-tt="question2">If a <var>MARBLE</var> is randomly chosen, what is the probability
-				that it is <em data-if="NOT">not</em> <var>CHOSEN_COLOR</var>? Write your answer as a simplified fraction.</p>
+				<p data-tt="question2">Als een <var>MARBLE</var> willekeurig gekozen wordt, wat is dan de kans dat deze
+				<em data-if="NOT">niet</em> <var>CHOSEN_COLOR</var> is? Geef je antwoord als een vereenvoudigde breuk.</p>
 			</div>
 
 			<div class="solution"><var>NUMBER / TOTAL</var></div>
 			<div class="hints">
-				<p data-tt="hint1">There are <code><var>RED</var> + <var>GREEN</var> + <var>BLUE</var> = <var>TOTAL</var></code> <var>MARBLE</var>s in the <var>CONTAINER</var>.</p>
-				<p data-tt="hint2">There are <code><var>CHOSEN_NUMBER</var></code> <var>CHOSEN_COLOR</var> <var>MARBLE</var>s.
-				<span data-if="NOT" data-tt="hint3">That means <code><var>TOTAL</var> - <var>CHOSEN_NUMBER</var> = <var>NUMBER</var></code> are <em>not</em> <var>CHOSEN_COLOR</var>.</span></p>
-				<p data-tt="hint3">The probability is <code>\displaystyle <var>fractionSimplification(NUMBER, TOTAL)</var></code>.</p>
+				<p data-tt="hint1">Er zijn <code><var>RED</var> + <var>GREEN</var> + <var>BLUE</var> = <var>TOTAL</var></code> <var>MARBLE</var>s in de <var>CONTAINER</var>.</p>
+				<p data-tt="hint2">Er zijn <code><var>CHOSEN_NUMBER</var></code> <var>CHOSEN_COLOR</var> <var>MARBLE</var>s.
+				<span data-if="NOT" data-tt="hint3">Dat betekent dat <code><var>TOTAL</var> - <var>CHOSEN_NUMBER</var> = <var>NUMBER</var></code> zijn <em>niet</em> <var>CHOSEN_COLOR</var>.</span></p>
+				<p data-tt="hint3"> De kans is <code>\displaystyle <var>fractionSimplification(NUMBER, TOTAL)</var></code>.</p>
 			</div>
 		</div>
 
 		<div>
 			<div class="vars">
 				<var id="RESULT_DESC, RESULT_POSSIBLE">randFromArray([
-					["a 1", [1]],
-					["a 2", [2]],
-					["a 3", [3]],
-					["a 4", [4]],
-					["a 5", [5]],
-					["a 6", [6]],
-					["at least 2", [2, 3, 4, 5, 6]],
-					["at least 3", [3, 4, 5, 6]],
-					["at least 4", [4, 5, 6]],
-					["more than 2", [3, 4, 5, 6]],
-					["more than 3", [4, 5, 6]],
-					["more than 4", [5, 6]],
-					["less than 4", [1, 2, 3]],
-					["less than 5", [1, 2, 3, 4]],
-					["less than 6", [1, 2, 3, 4, 5]],
-					["even", [2, 4, 6]],
-					["even", [2, 4, 6]],
-					["odd", [1, 3, 5]],
-					["odd", [1, 3, 5]],
-					["prime", [2, 3, 5]]
+					["een 1", [1]],
+					["een 2", [2]],
+					["een 3", [3]],
+					["een 4", [4]],
+					["een 5", [5]],
+					["een 6", [6]],
+					["tenminste 2", [2, 3, 4, 5, 6]],
+					["tenminste 3", [3, 4, 5, 6]],
+					["tenminste 4", [4, 5, 6]],
+					["meer dan 2", [3, 4, 5, 6]],
+					["meer dan 3", [4, 5, 6]],
+					["meer dan 4", [5, 6]],
+					["minder dan 4", [1, 2, 3]],
+					["minder dan 5", [1, 2, 3, 4]],
+					["minder dan 6", [1, 2, 3, 4, 5]],
+					["een even nummer", [2, 4, 6]],
+					["een even nummer ", [2, 4, 6]],
+					["een oneven nummer", [1, 3, 5]],
+					["een oneven nummer", [1, 3, 5]],
+					["een priemgetal", [2, 3, 5]]
 				])</var>
 				<var id="RESULT_COUNT">RESULT_POSSIBLE.length</var>
 			</div>
 
 			<div class="question">
-				<p data-tt="question3">A fair six-sided die is rolled. What is the probability that the
-				result is <var>RESULT_DESC</var>?  Write your answer as a simplified fraction.</p>
+				<p data-tt="question3">Een zuivere zes-zijdige dobbelsteen wordt gegooid. Wat is de kans dat je <var>RESULT_DESC</var> gooit?  Geef je antwoord als een vereenvoudigde breuk.</p>
 			</div>
 
 			<div class="solution"><var>RESULT_COUNT / 6</var></div>
 
 			<div class="hints">
-				<p data-tt="hint4">When rolling a die, there are <code>6</code> possibilities: 1, 2, 3, 4, 5, and 6.</p>
-				<p data-if="RESULT_COUNT == 1" data-tt="hint5">In this case, only <code>1</code> result is favorable: the number <var>RESULT_POSSIBLE[0]</var>.</p>
-				<p data-else data-tt="hint6">In this case, <code><var>RESULT_COUNT</var></code> results are favorable: <var>toSentence(RESULT_POSSIBLE)</var>.</p>
-				<p data-tt="hint7">The probability is <code>\displaystyle <var>fractionSimplification(RESULT_COUNT, 6)</var></code>.</p>
+				<p data-tt="hint4">Wanneer je een dobbelsteen gooit zijn er <code>6</code> mogelijkheden: 1, 2, 3, 4, 5, and 6.</p>
+				<p data-if="RESULT_COUNT == 1" data-tt="hint5">In dit geval is er <code>1</code> gunstige uitkomst: het getal <var>RESULT_POSSIBLE[0]</var>.</p>
+				<p data-else data-tt="hint6">In dit geval zijn er <code><var>RESULT_COUNT</var></code> gunstige uitkomsten: <var>toSentence(RESULT_POSSIBLE)</var>.</p>
+				<p data-tt="hint7">De kans is <code>\displaystyle <var>fractionSimplification(RESULT_COUNT, 6)</var></code>.</p>
 			</div>
 		</div>
 
 		<div>
 			<div class="vars">
 				<var id="REPS, DESC, WANTED">randFromArray([
-					[3, "no heads", [0]],
-					[3, "heads exactly once", [1]],
-					[3, "heads exactly twice", [2]],
-					[3, "heads at least once", [1, 2, 3]],
-					[3, "heads at least twice", [2, 3]],
-					[3, "heads every time", [3]],
-					[4, "no heads", [0]],
-					[4, "heads exactly once", [1]],
-					[4, "heads exactly twice", [2]],
-					[4, "exactly three heads", [3]],
-					[4, "heads at least once", [1, 2, 3, 4]],
-					[4, "heads at least twice", [2, 3, 4]],
-					[4, "at least three heads", [3, 4]],
-					[4, "heads every time", [4]],
+					[3, "geen enkele keer kop", [0]],
+					[3, "precies 1 keer kop", [1]],
+					[3, "precies 2 keer kop", [2]],
+					[3, "tenminste 1 keer kop", [1, 2, 3]],
+					[3, "tenminste 2 keer kop", [2, 3]],
+					[3, "elke keer kop", [3]],
+					[4, "geen enkele keer kop", [0]],
+					[4, "precies 1 keer kop", [1]],
+					[4, "precies 2 keer kop", [2]],
+					[4, "precies 3 keer kop", [3]],
+					[4, "teniminste 1 keer kop", [1, 2, 3, 4]],
+					[4, "tenminste 2 keer kop", [2, 3, 4]],
+					[4, "tenminste 3 keer kop", [3, 4]],
+					[4, "elke keer kop", [4]],
 
-					[3, "no tails", [3]],
-					[3, "tails exactly once", [2]],
-					[3, "tails exactly twice", [1]],
-					[3, "tails at least once", [0, 1, 2]],
-					[3, "tails at least twice", [0, 1]],
-					[3, "tails every time", [0]],
-					[4, "no tails", [4]],
-					[4, "tails exactly once", [3]],
-					[4, "tails exactly twice", [2]],
-					[4, "exactly three tails", [1]],
-					[4, "tails at least once", [0, 1, 2, 3]],
-					[4, "tails at least twice", [0, 1, 2]],
-					[4, "at least three tails", [0, 1]],
-					[4, "tails every time", [0]]
+					[3, "geen enkele keer munt", [3]],
+					[3, "precies 1 keer munt", [2]],
+					[3, "precies 2 keer munt", [1]],
+					[3, "tenminste 1 keer munt", [0, 1, 2]],
+					[3, "tenminste 2 keer munt", [0, 1]],
+					[3, "elke keer munt", [0]],
+					[4, "geen enkele keer munt", [4]],
+					[4, "precies 1 keer munt", [3]],
+					[4, "precies 2 keer munt", [2]],
+					[4, "precies 3 keer munt", [1]],
+					[4, "tenminste 1 keer munt", [0, 1, 2, 3]],
+					[4, "tenminste 2 keer munt", [0, 1, 2]],
+					[4, "tenminste 3 keer munt", [0, 1]],
+					[4, "elke keer munt", [0]]
 				])</var>
 
 				<var id="ALL">coinFlips(REPS)</var>
@@ -133,17 +132,17 @@
 			</div>
 
 			<div class="question">
-				<p data-tt="question4">A fair coin is flipped <var>REPS == 3 ? "three" : "four"</var> times. What is the
-				probability of getting <var>DESC</var>?  Write your answer as a simplified fraction.</p>
+				<p data-tt="question4">Er wordt <var>REPS == 3 ? "drie" : "vier"</var> keer gegooid met een zuivere munt. Wat is de kans dat er 
+				<var>DESC</var> wordt gegooid?  Geef je antwoord als een vereenvoudigde breuk.</p>
 			</div>
 
 			<div class="solution"><var>WANTED_COUNT / TWO_TO_REPS</var></div>
 
 			<div class="hints">
-				<p data-tt="hint8">There are <code><var>(new Array(REPS)).join("2 \\cdot ")</var>2 = 2^{<var>REPS</var>} = <var>TWO_TO_REPS</var></code> possibilities for the sequence of flips.</p>
-				<p data-tt="hint9">The possibilities are <var>toSentence(ALL_SEQS)</var>.</p>
-				<p data-tt="hint10">There <var>WANTED_COUNT == 1 ? "is only" : "are"</var> <var>plural(WANTED_COUNT, "favorable outcome")</var>: <var>toSentence(WANTED_LIST)</var>.</p>
-				<p data-tt="hint11">The probability is <code>\displaystyle <var>fractionSimplification(WANTED_COUNT, TWO_TO_REPS)</var></code>.</p>
+				<p data-tt="hint8">Er zijn <code><var>(new Array(REPS)).join("2 \\cdot ")</var>2 = 2^{<var>REPS</var>} = <var>TWO_TO_REPS</var></code> mogelijke uitkomsten.</p>
+				<p data-tt="hint9">De mogelijkheden zijn <var>toSentence(ALL_SEQS)</var>.</p>
+				<p data-tt="hint10">Er <var>WANTED_COUNT == 1 ? "is" : "zijn"</var> <var>plural(WANTED_COUNT, "gunstige uitkomst")</var>: <var>toSentence(WANTED_LIST)</var>.</p>
+				<p data-tt="hint11">De kans is <code>\displaystyle <var>fractionSimplification(WANTED_COUNT, TWO_TO_REPS)</var></code>.</p>
 			</div>
 		</div>
 
@@ -159,10 +158,10 @@
 				})()</var>
 
 				<var id="COND_DESC, COND_FN">randFromArray([
-					["prime", KhanUtil.isPrime],
-					["divisible by both 2 and 3", function(n) { return n % 6 &lt;= 0.5; }],
-					["divisible by either 3 or 5", function(n) { return n % 3 &lt;= 0.5 || n % 5 &lt;= 0.5; }],
-					["divisible by either 4 or 7", function(n) { return n % 4 &lt;= 0.5 || n % 7 &lt;= 0.5; }]
+					["een priemgetal is", KhanUtil.isPrime],
+					["deelbaar is door 2 en 3", function(n) { return n % 6 &lt;= 0.5; }],
+					["deelbaar is door of 3 of 5", function(n) { return n % 3 &lt;= 0.5 || n % 5 &lt;= 0.5; }],
+					["deelbaar is door of 4 or 7", function(n) { return n % 4 &lt;= 0.5 || n % 7 &lt;= 0.5; }]
 				])</var>
 
 				<var id="WANTED_LIST">jQuery.grep(POSSIBLE, COND_FN)</var>
@@ -170,16 +169,16 @@
 			</div>
 
 			<div class="question">
-				<p data-tt="question5">A positive integer is picked randomly from <var>LOW</var> to <var>HIGH</var>, inclusive.</p>
-				<p data-tt="question6">What is the probability that it is <strong><var>COND_DESC</var></strong>?  Write your answer as a simplified fraction.</p>
+				<p data-tt="question5">Er wordt willekeurig een getal gekozen van <var>LOW</var> tot en met <var>HIGH</var>.</p>
+				<p data-tt="question6">Wat is de kans dat het getal <strong><var>COND_DESC</var></strong>? Geef je antwoord als een vereenvoudigde breuk.</p>
 			</div>
 
 			<div class="solution"><var>WANTED_COUNT / POSSIBLE.length</var></div>
 
 			<div class="hints">
-				<p data-tt="hint12">There are <var>POSSIBLE.length</var> possibilities for the chosen number.<br>The possibilities are <var>toSentence(POSSIBLE)</var>.</p>
-				<p data-tt="hint13">There <var>WANTED_COUNT == 1 ? "is only" : "are"</var> <var>plural(WANTED_COUNT, "favorable outcome")</var>: <var>toSentence(WANTED_LIST)</var>.</p>
-				<p data-tt="hint14">The probability is <code>\displaystyle <var>fractionSimplification(WANTED_COUNT, POSSIBLE.length)</var></code>.</p>
+				<p data-tt="hint12">Er zijn <var>POSSIBLE.length</var> mogelijkheden voor het gekozen nummer.<br>De mogelijkheden zijn <var>toSentence(POSSIBLE)</var>.</p>
+				<p data-tt="hint13">Er <var>WANTED_COUNT == 1 ? "is er" : "zijn"</var> <var>plural(WANTED_COUNT, "gunstige uitkomst")</var>: <var>toSentence(WANTED_LIST)</var>.</p>
+				<p data-tt="hint14">De kans is <code>\displaystyle <var>fractionSimplification(WANTED_COUNT, POSSIBLE.length)</var></code>.</p>
 			</div>
 		</div>
 	</div>

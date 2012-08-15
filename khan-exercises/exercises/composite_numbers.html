@@ -2,7 +2,7 @@
 <html data-require="math word-problems">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Composite numbers</title>
+    <title>Samengestelde getallen</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -15,7 +15,7 @@
 
         <div class="problems">
             <div>
-                <p class="question">Which of these numbers is composite?</p>
+                <p class="question">Welke van deze getallen is een samengesteld getal?</p>
                 <p><code>\large{<var>CHOICES.join( ",\\ " )</var>}</code></p>
                 <p class="solution"><code><var>COMPOSITE</var></code></p>
                 <ul class="choices" data-category="true">
@@ -25,10 +25,10 @@
         </div>
 
         <div class="hints">
-            <p>A composite number is a number that has more than two factors (including 1 and itself).</p>
-            <p><var>toSentence( _.filter( CHOICES, function( p ) { return p !== COMPOSITE; } ) )</var> each have only two factors.</p>
-            <p>The factors of <var>COMPOSITE</var> are <var>toSentence( getFactors( COMPOSITE ) )</var>.</p>
-            <p>Thus, <var>COMPOSITE</var> is the composite number.</p>
+            <p>Een samengesteld getal is een getal dat meer dan 2 delers heeft (inclusief 1 en zichzelf).</p>
+            <p><var>toSentence( _.filter( CHOICES, function( p ) { return p !== COMPOSITE; } ) )</var> hebben elk maar 2 delers.</p>
+            <p>De delers van <var>COMPOSITE</var> zijn <var>toSentence( getFactors( COMPOSITE ) )</var>.</p>
+            <p>Daarom is <var>COMPOSITE</var> het samengestelde getal.</p>
         </div>
     </div>
 </body>

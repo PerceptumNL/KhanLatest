@@ -98,6 +98,7 @@ import robots
 from importer.handlers import ImportHandler
 import wsgi_compat
 import os
+import library
 
 
 class VideoDataTest(request_handler.RequestHandler):
@@ -108,6 +109,19 @@ class VideoDataTest(request_handler.RequestHandler):
         for video in videos:
             self.response.out.write('<P>Title: ' + video.title)
 
+class GenerateLibraryContent(request_handler.RequestHandler):
+
+    @user_util.open_access
+    def post(self):
+        # We support posts so we can fire task queues at this handler
+        self.get(from_task_queue = True)
+
+    @user_util.open_access
+    def get(self, from_task_queue = False):
+        library.library_content_html(bust_cache=True)
+
+        if not from_task_queue:
+            self.redirect("/")
 
 class TopicPage(request_handler.RequestHandler):
     @staticmethod
@@ -782,7 +796,7 @@ class Nuke(request_handler.RequestHandler):
     @user_util.developer_required
     def get(self):
         return
-        db.delete(db.Query(keys_only=True))
+        db.delete(Video.all(keys_only=True))
 
 #KhanNL
 @layer_cache.cache_with_key_fxn(lambda exercise_file: "exercise_raw_html_%s" % exercise_file, layer=layer_cache.Layers.InAppMemory)
@@ -901,6 +915,7 @@ application = webapp2.WSGIApplication([
     ('/mobilefullsite', MobileFullSite),
     ('/mobilesite', MobileSite),
 
+    ('/library_content', GenerateLibraryContent),
     ('/admin/import_smarthistory', topics.ImportSmartHistory),
     ('/admin/reput', bulk_update.handler.UpdateKind),
     ('/admin/retargetfeedback', RetargetFeedback),
@@ -926,7 +941,7 @@ application = webapp2.WSGIApplication([
     ('/staging/commoncore', common_core.handlers.CommonCore),
     ('/devadmin/content', topics.EditContent),
     ('/devadmin/memcacheviewer', MemcacheViewer),
-    ('/devadmin/nuke', Nuke),
+    ('/devadmin/nukevideo', Nuke),
 
     # Manually refresh the content caches
     ('/devadmin/refresh', topics.RefreshCaches),

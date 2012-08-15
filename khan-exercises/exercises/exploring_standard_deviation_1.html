@@ -2,7 +2,7 @@
 <html data-require="math graphie interactive mean-and-median">
 <head>
 	<meta charset="UTF-8" />
-	<title>Exploring standard deviation 1</title>
+	<title>Standaarddeviatie verkennen 1</title>
 	<script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -17,8 +17,8 @@
 			<div>
 				<div class="question">
 					<p>
-						Arrange the <var>POINTS</var> orange sample points in this histogram so the
-						<span class="hint_green">sample standard deviation is approximately <code><var>STDDEV</var></code></span>.
+						Verdeel de <var>POINTS</var> oranje punten in dit histogram zo dat de 
+						<span class="hint_green">standaarddeviatie ongeveer <code><var>STDDEV</var></code></span> is.
 					</p>
 					<div class="graphie" id="number-line">
 						graph.targetStddev = STDDEV;
@@ -90,7 +90,7 @@
 				</div>
 				<div class="solution" data-type="custom">
 					<div class="instruction">
-						Move the orange dots to experiment with different sample distributions.
+						Beweeg de oranje punten om verschillende verdelingen uit te probren.
 					</div>
 
 					<div class="guess">jQuery.map( graph.points, function( el ) { return el.coord[0]; } )</div>
@@ -113,15 +113,15 @@
 
 				<div class="hints">
 					<p>
-						The standard deviation is smaller if the points are closer to the mean.
-						The standard deviation is larger if the points are more spread out.
-						Try moving a point closer to and further away from the
-						<span class="hint_blue">sample mean (<code>\bar{x}</code>)</span> to see how the
-						<span class="hint_green">sample standard deviation (<code>s</code>)</span> is affected.
+						De standaarddeviatie is kleiner als de punten dichter bij het gemiddelde staan.
+						De standaarddeviatie is groter als de punten verder uit elkaar staan.
+						Probeer een punt dichter bij en verder weg van het
+						<span class="hint_blue">gemiddelde (<code>\bar{x}</code>)</span> te zetten om te zien hoe de 
+						<span class="hint_green">standaarddeviatie (<code>s</code>)</span> beinvloed wordt.
 					</p>
 					<p>
-						There are many ways to arrange the points so the sample standard deviation is
-						<span class="hint_green"><code><var>STDDEV</var></code></span>.<br />
+						Er zijn veel manieren om de punten te verdelen zodat de standaarddeviatie
+						<span class="hint_green"><code><var>STDDEV</var></code></span> is.<br />
 						<input id="example-button" type="button" value="Show me an example" onClick="javascript:
 							KhanUtil.showStddevExample();
 							jQuery( 'input#example-button' ).val( 'Show me another example' );

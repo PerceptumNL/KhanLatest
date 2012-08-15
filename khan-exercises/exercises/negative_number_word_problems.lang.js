@@ -12,7 +12,7 @@
 		"exercise10"	: 'Een dolfijn sprong vanaf <var>X</var> meter onder het wateroppervlak en dook door een hoepel op <var>Y</var> meter boven het water. {De sprong duurde ongeveer 1,<var>randRange( 1, 9 )</var> seconde.|Het water spatte na de sprong ongeveer 3,<var>randRange( 1, 9 )</var> meter op.}',
 		"exercise11"	: 'Hoeveel meter legde de dolfijn af om het hoogste punt van zijn sprong te bereiken?',
 		"exercise12"	: '<span class="sol" data-forms="integer"><var>Z</var></span> meter',		
-		"exercise13"	: '<var>person( 1 )</var> leent van de bank &euro;<var>( X )</var> om een voetbalkamp te organiseren. <var>person( 1 )</var> gebruikt de lening om materiaal aan te schaffen en trainers te betalen. Gedurende de zomer nemen <var>N</var> kinderen deel aan het kamp. Zij betalen elk &euro;<var>COST</var> om deel te nemen. <var>person( 1 )</var> gebruikt al het geld dat hij van de deelnemers ontvangt om de lening af te lossen.',
+		"exercise13"	: '<var>person( 1 )</var> leent van de bank &euro;<var>( X )</var> om een voetbalkamp te organiseren. <var>person( 1 )</var> gebruikt de lening om materiaal aan te schaffen en trainers te betalen. Gedurende de zomer nemen <var>N</var> kinderen deel aan het kamp. Zij betalen elk &euro;<var>COST</var> om deel te nemen. <var>person( 1 )</var> gebruikt al het geld dat <var>he(1)</var> van de deelnemers ontvangt om de lening af te lossen.',
 		"exercise14"	: 'Wat is aan het einde van de zomer het saldo van <var>person( 1 )</var>?',
 		"hint1"		: '<code><var>abs( X )</var></code> graden onder nul is hetzelfde als <code><var>X</var>^{\\circ}</code>.',
 		"hint2"		: 'Omdat de de temperatuur met <code><var>Y</var>^{\\circ}</code> daalde, trek je dit aantal af van de middagtemperatuur.',

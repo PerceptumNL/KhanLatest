@@ -12,7 +12,7 @@
 				'})()',
 		"array5" :	'[ "Scholen", "Boeren", "Spelers", "Provincies" ][ INDEX ]',
 		"array6" :	'[ "leerlingen", "kippen", "punten", "zonnepanelen" ][ INDEX ]',	
-		"array7" :	'[ "het aantal leerlingen op de " + ROWS[ ROW_INDEX ], "het aantal door " + ROWS[ ROW_INDEX ] + "verkochte kippen", "het aantal door " + ROWS[ ROW_INDEX ] + "gescoorde punten", "het aantal ge&iuml;nstalleerde zonnepanelen in " + ROWS [ ROW_INDEX ] ][ INDEX ]</var>',
+		"array7" :	'[ "het aantal leerlingen op de " + ROWS[ ROW_INDEX ], "het aantal door " + ROWS[ ROW_INDEX ] + " verkochte kippen", "het aantal door " + ROWS[ ROW_INDEX ] + " gescoorde punten", "het aantal ge&iuml;nstalleerde zonnepanelen in " + ROWS [ ROW_INDEX ] ][ INDEX ]</var>',
 		"hint1"	 : 	'(function() {'+
 						'if ( COL_INDEX === COLUMNS.length - 1 ) { '+
 							'return [ "het totale aantal leerlingen op elke school", "het totale aantal kippen verkocht door elk persoon", "het totale aantal punten gescoord door elk persoon", "het totale aantal zonnepanelen ge&iuml;nstalleerd in elke provincie" ][ INDEX ];'+

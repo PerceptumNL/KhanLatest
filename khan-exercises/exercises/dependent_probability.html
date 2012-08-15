@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html data-translatable data-require="math">
+<html data-require="math">
 <head>
 	<meta charset="UTF-8" />
-	<title>Dependent probability</title>
+	<title>Afhankelijke kansen</title>
 	<script src="../khan-exercise.js"></script>
 
 	<style>
@@ -88,53 +88,55 @@
 
 		<div class="problems">
 			<div>
-				<p class="problem" data-tt="question1">You have <code><var>NUM_COINS</var></code> coins in a bag. <code><var>NUM_UNFAIR_COINS</var></code> of them are unfair in that they have a <code><var>PERCENT_CHANCE_UNFAIR_HEADS</var>\%</code> chance of coming up heads when flipped (the rest are fair coins). You randomly choose one coin from the bag and flip it <code><var>NUM_FLIPS</var></code> times.</p>
-				<p class="question" data-tt="question2">What is the probability, written as a percentage, of getting <code><var>NUM_FLIPS</var></code> heads? Round your answer to the nearest hundredth of a percent.</p>
+				<p class="problem" data-tt="question1">Er zitten <code><var>NUM_COINS</var></code> munten in een zak. <code><var>NUM_UNFAIR_COINS</var></code> ervan zijn niet zuiver want je hebt <code><var>PERCENT_CHANCE_UNFAIR_HEADS</var>\%</code> kans om er kop mee te gooien (de andere munten zijn zuiver).
+				Je kiest willekeurig 1 munt uit en gooit deze <code><var>NUM_FLIPS</var></code> keer op.</p>
+				<p class="question" data-tt="question2">Wat is de kans, geschreven als een percentage, dat het <code><var>NUM_FLIPS</var></code> keer kop wordt? 
+				Rond je antwoord af op een honderdste van een procent.</p>
 				<p class="solution" data-forms="percent" data-max-error="0.01"><var>ANSWER</var></p>
 			</div>
 		</div>
 
 		<div class="hints">
 			<!-- hint indicating different coin types -->
-			<p data-tt="hint1">You can only pick a fair coin or pick an unfair coin. There is no other outcome.</p>
+			<p data-tt="hint1">Je kunt alleen een zuivere munt of een niet zuivere munt kiezen. Er is geen andere uitkomst.</p>
 
 			<!-- hint questioning coin type selection chances -->
-			<p data-tt="hint2">What chance do you have of picking an unfair coin? How about a fair coin?</p>
+			<p data-tt="hint2">Welke kans heb je om een niet zuivere munt te pakken? En hoeveel kans heb je op een zuivere munt?</p>
 
 			<!-- hint showing chance of unfair coin picked -->
-			<p data-tt="hint3">An unfair coin occurs <code class="unfair"><var>UNFAIR_COIN_FRACTION_STRING</var></code> of the time.</p>
+			<p data-tt="hint3">Een niet zuivere munt pak je <code class="unfair"><var>UNFAIR_COIN_FRACTION_STRING</var></code> keer.</p>
 
 			<!-- hint showing chance of fair coin picked -->
-			<p data-tt="hint4">A fair coin occurs the rest of the time, or <code class="unfair"><var>FAIR_COIN_FRACTION_STRING</var></code> of the time.</p>
+			<p data-tt="hint4">De rest van de tijd krijg je een zuiver munt, dus <code class="unfair"><var>FAIR_COIN_FRACTION_STRING</var></code> keer.</p>
 
 			<!-- hint questioning head-flipping chances for unfair coin -->
-			<p data-tt="hint5">For that <code class="unfair"><var>UNFAIR_COIN_FRACTION_STRING</var></code> of the time that you pick an unfair coin,
-			what is the chance of flipping <code class="unfair"><var>NUM_FLIPS</var></code> heads using that unfair coin?</p>
+			<p data-tt="hint5">Voor de <code class="unfair"><var>UNFAIR_COIN_FRACTION_STRING</var></code>  keer dat je een niet zuivere munt pakt,
+			wat is de kans dat je <code class="unfair"><var>NUM_FLIPS</var></code> keer kop gooit met deze munt?</p>
 
 			<!-- hint showing chance of flipping all heads for unfair coin -->
-			<p data-tt="hint6">The chance is <code class="unfair"><var>UNFAIR_HEADS_PERCENT_FORMULA</var></code>, or
+			<p data-tt="hint6">De kans is <code class="unfair"><var>UNFAIR_HEADS_PERCENT_FORMULA</var></code>, of
 			<code class="unfair"><var>UNFAIR_HEADS_DECIMAL_FORMULA</var></code>.</p>
 
 			<!-- hint suggesting combining unfair coin selection with all-heads-flip event -->
-			<p data-tt="hint7">Now, then, your chance of both picking the unfair coin and also flipping
-			<code class="unfair"><var>NUM_FLIPS</var></code> heads--the chance that both these events occur--is what?</p>
+			<p data-tt="hint7">Nu, wat is de kans om en een niet zuivere munt te pakken, en daar ook nog eens 
+			<code class="unfair"><var>NUM_FLIPS</var></code> keer kop mee te gooien?</p>
 
 			<!-- hint revealing computed chance with unfair coin -->
-			<p data-tt="hint8">It is <code class="unfair"><var>UNFAIR_COIN_FRACTION_STRING</var> \times <var>UNFAIR_HEADS_DECIMAL_FORMULA</var></code>.</p>
+			<p data-tt="hint8">Het is <code class="unfair"><var>UNFAIR_COIN_FRACTION_STRING</var> \times <var>UNFAIR_HEADS_DECIMAL_FORMULA</var></code>.</p>
 
 			<!-- hint questioning the fair coin computation -->
-			<p data-tt="hint9">Now, the other possibility, picking the fair coin and flipping <code class="fair"><var>NUM_FLIPS</var></code> heads is what?</p>
+			<p data-tt="hint9">Hoe groot is dan de kans om een zuivere munt te pakken en daar <code class="fair"><var>NUM_FLIPS</var></code> keer kop mee te gooien?</p>
 
 			<!-- hint showing the fair coin computation -->
-			<p data-tt="hint10">It is <code class="fair"><var>FAIR_COIN_FRACTION_STRING</var> \times <var>FAIR_HEADS_DECIMAL_FORMULA</var></code>.</p>
+			<p data-tt="hint10">Het is <code class="fair"><var>FAIR_COIN_FRACTION_STRING</var> \times <var>FAIR_HEADS_DECIMAL_FORMULA</var></code>.</p>
 
 			<!-- hint questioning how to combine previously computed events -->
-			<p data-tt="hint11">How do you combine these two mutually exclusive events to find the chance that either occurs?</p>
+			<p data-tt="hint11">Hoe combineer je deze twee onafhandelijke gebeurtenissen om de kans te vinden dat een van de twee gebeurt?</p>
 
 			<!-- hint revealing the answer -->
-			<p data-tt="hint12">Add them! So your answer is
+			<p data-tt="hint12">Tel ze op! Dus je antwoord is
 				<code class="unfair"><var>UNFAIR_COIN_FRACTION_STRING</var> \times <var>UNFAIR_HEADS_DECIMAL_FORMULA</var></code>+
-				<code class="fair"><var>FAIR_COIN_FRACTION_STRING</var> \times <var>FAIR_HEADS_DECIMAL_FORMULA</var></code>, or
+				<code class="fair"><var>FAIR_COIN_FRACTION_STRING</var> \times <var>FAIR_HEADS_DECIMAL_FORMULA</var></code>, of
 				<code><var>ANSWER</var>\%</code>.</p>
 		</div>
 	</div>

@@ -4,17 +4,29 @@ import logging
 import re
 from urlparse import urlparse
 
+import third_party.gdata.youtube
 import third_party.gdata.youtube.service
+import third_party.gdata.alt.appengine
 
 from google.appengine.api import taskqueue
 from google.appengine.api import users
 from google.appengine.ext import db
 
-from setting_model import Setting
-from video_models import Video
-from topic_models import Topic
+from models import Setting, Video, Playlist, VideoPlaylist
 import request_handler
 import user_util
+
+
+def youtube_get_video_data(video):
+    data_dict = youtube_get_video_data_dict(video.youtube_id)
+
+    if data_dict is None:
+        return None
+
+    for prop, value in data_dict.iteritems():
+        setattr(video, prop, value)
+
+    return video
 
 def youtube_get_video_data_dict(youtube_id):
     yt_service = third_party.gdata.youtube.service.YouTubeService()
@@ -63,20 +75,14 @@ def youtube_get_video_data_dict(youtube_id):
     return None
 
 
-def youtube_get_video_data(video):
-    data_dict = youtube_get_video_data_dict(video.youtube_id)
-
-    if data_dict is None:
-        return None
-
-    for prop, value in data_dict.iteritems():
-        setattr(video, prop, value)
-
-    return video
-
 class YouTubeSyncStep:
     START = 0
-    UPDATE_VIDEO_STATS = 1
+    UPDATE_VIDEO_AND_PLAYLIST_DATA = 1 # Sets all VideoPlaylist.last_live_association_generation = Setting.last_youtube_sync_generation_start
+    UPDATE_VIDEO_AND_PLAYLIST_READABLE_NAMES = 2
+    COMMIT_LIVE_ASSOCIATIONS = 3 # Put entire set of video_playlists in bulk according to last_live_association_generation
+    INDEX_VIDEO_DATA = 4
+    INDEX_PLAYLIST_DATA = 5
+    REGENERATE_LIBRARY_CONTENT = 6
 
 class YouTubeSyncStepLog(db.Model):
     step = db.IntegerProperty()
@@ -103,22 +109,30 @@ class YouTubeSync(request_handler.RequestHandler):
 
     @user_util.manual_access_checking  # superuser-only via app.yaml (/admin)
     def post(self):
-        return
         # Protected for admins only by app.yaml so taskqueue can hit this URL
         step = self.request_int("step", default = 0)
 
         if step == YouTubeSyncStep.START:
             self.startYouTubeSync()
-        elif step == YouTubeSyncStep.UPDATE_VIDEO_STATS:
-            self.updateVideoStats()
+        elif step == YouTubeSyncStep.UPDATE_VIDEO_AND_PLAYLIST_DATA:
+            self.updateVideoAndPlaylistData()
+        elif step == YouTubeSyncStep.UPDATE_VIDEO_AND_PLAYLIST_READABLE_NAMES:
+            self.updateVideoAndPlaylistReadableNames()
+        elif step == YouTubeSyncStep.COMMIT_LIVE_ASSOCIATIONS:
+            self.commitLiveAssociations()
+        elif step == YouTubeSyncStep.INDEX_VIDEO_DATA:
+            self.indexVideoData()
+        elif step == YouTubeSyncStep.INDEX_PLAYLIST_DATA:
+            self.indexPlaylistData()
+        elif step == YouTubeSyncStep.REGENERATE_LIBRARY_CONTENT:
+            self.regenerateLibraryContent()
 
         log = YouTubeSyncStepLog()
         log.step = step
         log.generation = int(Setting.last_youtube_sync_generation_start())
         log.put()
 
-        # check to see if we have more steps to go
-        if step < YouTubeSyncStep.UPDATE_VIDEO_STATS:
+        if step < YouTubeSyncStep.REGENERATE_LIBRARY_CONTENT:
             self.task_step(step + 1)
 
     def task_step(self, step):
@@ -127,46 +141,164 @@ class YouTubeSync(request_handler.RequestHandler):
     def startYouTubeSync(self):
         Setting.last_youtube_sync_generation_start(int(Setting.last_youtube_sync_generation_start()) + 1)
 
-    def updateVideoStats(self):
+    def updateVideoAndPlaylistData(self):
+        self.response.out.write('<html>')
+
         yt_service = third_party.gdata.youtube.service.YouTubeService()
+
         # Now that we run these queries from the App Engine servers, we need to 
         # explicitly specify our developer_key to avoid being lumped together w/ rest of GAE and
         # throttled by YouTube's "Too many request" quota
-        yt_service.developer_key = "AI39si5NKByjOThtM6t1gnmg4N9HkzGPHHkVvRUybKuPG53277wY0Bs4zcvi-G4JiFioRs0738gaE01k1rX-_6-mIHp9jg1twQ"
+        yt_service.developer_key = "AI39si6ctKTnSR_Vx7o7GpkpeSZAKa6xjbZz6WySzTvKVYRDAO7NHBVwofphk82oP-OSUwIZd0pOJyNuWK8bbOlqzJc9OFozrQ"
         yt_service.client_id = "n/a"
 
-        videos_to_put = set()
+        video_youtube_id_dict = Video.get_dict(Video.all(), lambda video: video.youtube_id)
+        video_playlist_key_dict = VideoPlaylist.get_key_dict(VideoPlaylist.all())
 
-        # doing fetch now otherwise query timesout later while doing youtube requests
-        # theoretically we can also change this code to use Mapper class:
-        # http://code.google.com/appengine/articles/deferred.html
-        for i, video in enumerate(Video.all().fetch(100000)):
-            entry = None
-            youtube_id = video.youtube_id
+        association_generation = int(Setting.last_youtube_sync_generation_start())
 
-            # truncating youtubeid at 11 to handle _DUP_X's
-            # handling the _DUPs to make it easier to detect content problems when duration = 0
-            if re.search("_DUP_\d*$", youtube_id):
-                youtube_id = youtube_id[0:11]
+        playlist_start_index = 1
+        playlist_feed = yt_service.GetYouTubePlaylistFeed(uri='http://gdata.youtube.com/feeds/api/users/PerceptumNL/playlists?start-index=%s&max-results=50' % playlist_start_index)
 
-            try:
-                entry = yt_service.GetYouTubeVideoEntry(video_id=youtube_id)
+        while len(playlist_feed.entry) > 0:
 
-            except Exception, e:
-                logging.info("Error trying to get %s: %s" % 
-                            (youtube_id, e))
-            
-            if entry:
-                count = int(entry.statistics.view_count)
-                if count != video.views:
-                    logging.info("%i: Updating %s from %i to %i views" % 
-                                (i, video.title, video.views, count)) 
-                    video.views = count
-                    videos_to_put.add(video)
+            for playlist in playlist_feed.entry:
+
+                self.response.out.write('<p>Playlist  ' + playlist.id.text)
+                playlist_id = playlist.id.text.replace('http://gdata.youtube.com/feeds/api/users/PerceptumNL/playlists/', '')
+                playlist_uri = playlist.id.text.replace('users/PerceptumNL/', '')
+                query = Playlist.all()
+                query.filter('youtube_id =', playlist_id)
+                playlist_data = query.get()
+                if not playlist_data:
+                    playlist_data = Playlist(youtube_id=playlist_id)
+                    self.response.out.write('<p><strong>Creating Playlist: ' + playlist.title.text + '</strong>')
+                playlist_data.url = playlist_uri
+                playlist_data.title = playlist.title.text
+                playlist_data.description = playlist.description.text
+
+                playlist_data.tags = []
+                for category in playlist.category:
+                    if "tags.cat" in category.scheme:
+                        playlist_data.tags.append(category.term)
+
+                playlist_data.put()
                 
-                duration = int(entry.media.duration.seconds)
-                if duration != video.duration:
-                    video.duration = duration
-                    videos_to_put.add(video)
+                for i in range(0, 10):
+                    start_index = i * 50 + 1
+                    video_feed = yt_service.GetYouTubePlaylistVideoFeed(uri=playlist_uri + '?start-index=' + str(start_index) + '&max-results=50')
+                    video_data_list = []
 
-        db.put(list(videos_to_put))
+                    if len(video_feed.entry) <= 0:
+                        # No more videos in playlist
+                        break
+
+                    for video in video_feed.entry:
+
+                        video_id = cgi.parse_qs(urlparse(video.media.player.url).query)['v'][0].decode('utf-8')
+
+                        video_data = None
+                        if video_youtube_id_dict.has_key(video_id):
+                            video_data = video_youtube_id_dict[video_id]
+                        
+                        if not video_data:
+                            video_data = Video(youtube_id=video_id)
+                            self.response.out.write('<p><strong>Creating Video: ' + video.media.title.text.decode('utf-8') + '</strong>')
+                            video_data.playlists = []
+
+                        video_data.title = video.media.title.text.decode('utf-8')
+                        video_data.url = video.media.player.url.decode('utf-8')
+                        video_data.duration = int(video.media.duration.seconds)
+
+                        if video.statistics:
+                            video_data.views = int(video.statistics.view_count)
+
+                        if video.media.description.text is not None:
+                            video_data.description = video.media.description.text.decode('utf-8')
+                        else:
+                            video_data.decription = ' '
+
+                        if playlist.title.text not in video_data.playlists:
+                            video_data.playlists.append(playlist.title.text.decode('utf-8'))
+
+                        if video.media.keywords.text:
+                            video_data.keywords = video.media.keywords.text.decode('utf-8')
+                        else:
+                            video_data.keywords = ''
+
+                        video_data.position = video.position
+                        video_data_list.append(video_data)
+                    db.put(video_data_list)
+
+                    playlist_videos = []
+                    for video_data in video_data_list:                
+                        playlist_video = None
+                        if video_playlist_key_dict.has_key(playlist_data.key()):
+                            if video_playlist_key_dict[playlist_data.key()].has_key(video_data.key()):
+                                playlist_video = video_playlist_key_dict[playlist_data.key()][video_data.key()]
+
+                        if not playlist_video:
+                            playlist_video = VideoPlaylist(playlist=playlist_data.key(), video=video_data.key())
+                            self.response.out.write('<p><strong>Creating VideoPlaylist(' + playlist_data.title + ',' + video_data.title + ')</strong>')
+                        else:
+                            self.response.out.write('<p>Updating VideoPlaylist(' + playlist_video.playlist.title + ',' + playlist_video.video.title + ')')
+                        playlist_video.last_live_association_generation = association_generation
+                        playlist_video.video_position = int(video_data.position.text)
+                        playlist_videos.append(playlist_video)
+                    db.put(playlist_videos)
+
+            # Check next set of playlists
+
+            playlist_start_index += 50
+            playlist_feed = yt_service.GetYouTubePlaylistFeed(uri='http://gdata.youtube.com/feeds/api/users/PerceptumNL/playlists?start-index=%s&max-results=50' % playlist_start_index)
+
+    def updateVideoAndPlaylistReadableNames(self):
+        # Makes sure every video and playlist has a unique "name" that can be used in URLs
+        query = Video.all()
+        all_videos = query.fetch(100000)
+        for video in all_videos:
+            potential_id = re.sub('[^a-z0-9]', '-', video.title.lower());
+            potential_id = re.sub('-+$', '', potential_id)  # remove any trailing dashes (see issue 1140)
+            potential_id = re.sub('^-+', '', potential_id)  # remove any leading dashes (see issue 1526)                        
+            if video.readable_id == potential_id: # id is unchanged
+                continue
+            number_to_add = 0
+            current_id = potential_id
+            while True:
+                query = Video.all()
+                query.filter('readable_id=', current_id)
+                if (query.get() is None): #id is unique so use it and break out
+                    video.readable_id = current_id
+                    video.put()
+                    break
+                else: # id is not unique so will have to go through loop again
+                    number_to_add+=1
+                    current_id = potential_id+'-'+number_to_add                       
+
+    def commitLiveAssociations(self):
+        association_generation = int(Setting.last_youtube_sync_generation_start())
+
+        video_playlists_to_put = []
+        for video_playlist in VideoPlaylist.all():
+            live = (video_playlist.last_live_association_generation >= association_generation)
+            if video_playlist.live_association != live:
+                video_playlist.live_association = live
+                video_playlists_to_put.append(video_playlist)
+
+        db.put(video_playlists_to_put)
+
+    def indexVideoData(self):
+        videos = Video.all().fetch(10000)
+        for video in videos:
+            video.index()
+            video.indexed_title_changed()
+
+    def indexPlaylistData(self):
+        playlists = Playlist.all().fetch(10000)
+        for playlist in playlists:
+            playlist.index()
+            playlist.indexed_title_changed()
+
+    def regenerateLibraryContent(self):
+        taskqueue.add(url='/library_content', queue_name='youtube-sync-queue')
+

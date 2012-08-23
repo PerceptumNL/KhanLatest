@@ -2,7 +2,7 @@
 <html  data-translatable data-require="math graphie graphie-helpers graphie-geometry math-format interactive congruence">
 <head>
 	<meta charset="UTF-8" />
-	<title>Congruency Postulates</title>
+	<title>Congruentie voorwaarden</title>
 	<script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -22,27 +22,28 @@
 						( ( TYPE !== 'SSA' ) || ( (TRIANGLE.niceSideLengths[0] + 1) < TRIANGLE.niceSideLengths[1] && abs(ANGLES[0] - 90) > 10 ) )">
 					<var id="TYPE">randFromArray([ "SSS", "SAS", "SAA", "ASA", "SSA", "SSA", "AAA" ])</var>
 					<var id="NAME">{
-							"SSS": "Side-Side-Side",
-							"SAS": "Side-Angle-Side",
-							"SAA": "Side-Angle-Angle",
-							"ASA": "Angle-Side-Angle",
-							"SSA": "Side-Side-Angle",
-							"AAA": "Angle-Angle-Angle"
+							"SSS": "Zijde-Zijde-Zijde",
+							"SAS": "Zijde-Hoek-Zijde",
+							"SAA": "Zijde-Hoek-Hoek",
+							"ASA": "Hoek-Zijde-Hoek",
+							"SSA": "Zijde-Zijde-Hoek",
+							"AAA": "Hoek-Hoek-Hoek"
 						}[ TYPE ]
 					</var>
 					<var id="ANGLES">randomTriangleAngles.triangle()</var>
 					<var id="SCALE">5 + random() * 2</var>
 					<var id="REFLECTED">randRange( 0, 1 ) === 1 ? true : false</var>
-					<var id="ANSWER">{ "SSS": "Yes", "SAS": "Yes", "SAA": "Yes", "ASA": "Yes", "SSA": "No", "AAA": "No" }[ TYPE ]</var>
+					<var id="ANSWER">{ "SSS": "Ja", "SAS": "Ja", "SAA": "Ja", "ASA": "Ja", "SSA": "Nee", "AAA": "Nee" }[ TYPE ]</var>
 					<var id="TRIANGLE">new Triangle( [ 0, 0 ], ANGLES, SCALE, {} )</var>
 				</div>
 				<p  data-tt="problem1" class="problem">
-					<strong>Is <em><var>NAME</var></em> a triangle congruency postulate?</strong><br />
-					Answer the question by clicking and dragging the points below to see what triangles you can construct.<br />
-					If you believe <var>NAME</var> is not a triangle congruency postulate, prove it by constructing incongruent triangles. Otherwise, construct congruent triangles.
+					<strong>Is <em><var>NAME</var></em> een congruentie voorwaarde?</strong><br />
+					Beantwoord de vraag door de punten hieronder te slepen om te zien hoeveel verschillende driehoeken je kunt maken.<br />
+					Als je denkt dat <var>NAME</var> niet een congruentie voorwaarde is, bewijs dit door het maken van niet congruente driehoeken.
+					Maak anders congruente driehoeken
 				</p>
 				<div  class="question">
-					<em data-tt="question1">Your triangle can be anywhere. There is no need to line up the two triangles.</em>
+					<em data-tt="question1"> Je driehoek kan overal staan. Het is niet nodig de 2 driehoeken over elkaar te leggen.</em>
 					<div class="graphie" id="triangles">
 						init({
 							range: [ [ -7, 7 ], [ -7, 7 ] ]
@@ -64,8 +65,8 @@
 
 				<div class="solution" data-type="congruence">
 					<ul>
-						<li data-tt="list1" ><input type="radio" name="solution" id="r1" value="Yes" /><label for="r1"><span class="value">Yes &mdash; And I've constructed a congruent triangle.</span></label></li>
-						<li data-tt="list2" ><input type="radio" name="solution" id="r2" value="No" /><label for="r2"><span class="value">No &mdash; And I've proven it by constructing an incongruent triangle.</span></label></li>
+						<li data-tt="list1" ><input type="radio" name="solution" id="r1" value="Ja" /><label for="r1"><span class="value">Ja &mdash; En ik heb een congruente driehoek gemaakt.</span></label></li>
+						<li data-tt="list2" ><input type="radio" name="solution" id="r2" value="Nee" /><label for="r2"><span class="value">Nee &mdash; En ik heb dit bewezen door een niet-congruente driehoek te maken.</span></label></li>
 					</ul>
 					<div class="answer"><var>ANSWER</var></div>
 				</div>

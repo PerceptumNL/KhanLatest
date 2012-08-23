@@ -83,17 +83,17 @@
 						<code>
 								\color{<var>BLUE</var>}{\mu} \quad = \quad
 								\dfrac{<var>plus.apply( KhanUtil, DATA )</var>}{\color{<var>GREEN</var>}{<var>DATA_POINTS</var>}} \quad = \quad
-								\color{<var>BLUE</var>}{<var>MEAN</var>\text{ <var>plural( "jaar", MEAN )</var> old}}
+								\color{<var>BLUE</var>}{<var>MEAN</var>\text{jaar oud}}
 						</code>
 					</p>
 
 					<div>
 						<p>
-							Bereken de <span class="hint_purple"> standaardafwijking </span> voor elk <var>animal(1)</var>.
+							Bereken de <span class="hint_purple"> standaardafwijking </span> voor elke <var>animal(1)</var>.
 						</p>
 						<div class="fake_header">
 							<span style="width: 100px;">
-								Age<br/>
+								Leeftijd<br/>
 								<code>x_i</code>
 							</span><span style="width: 150px;">
 								<span class="hint_gray">Afstand vanaf het gemiddelde</span>
@@ -104,11 +104,11 @@
 						</div>
 						<div class="fake_row" data-each="DATA as i, POINT">
 							<span style="width: 100px;">
-								<code><var>POINT</var></code> <var>plural( "jaar", POINT )</var>
+								<code><var>POINT</var></code> jaar
 							</span><span style="width: 150px;" class="hint_gray">
-								<code><var>roundTo( 2, POINT - MEAN )</var></code> <var>plural( "jaar", roundTo( 2, POINT - MEAN ) )</var>
+								<code><var>roundTo( 2, POINT - MEAN )</var></code> jaar
 							</span><span style="width: 150px;" class="hint_purple">
-								<code><var>SQR_DEV[ i ]</var></code> <var>plural( "jaar", SQR_DEV[ i ] )</var><code>^2</code>
+								<code><var>SQR_DEV[ i ]</var></code> jaar<code>^2</code>
 							</span>
 						</div>
 					</div>
@@ -145,7 +145,7 @@
 					</p>
 
 					<p><strong>
-						De gemiddelde leeftijd van de <var>animal( 1 )</var> in de dierentuin is<var>plural( MEAN, "jaar" )</var>, en de populatievariantie is <var>plural( VARIANCE_POP, "jaar" )</var><code>^2</code>.
+						De gemiddelde leeftijd van de <var>animal( 1 )</var> in de dierentuin is <var>MEAN</var> jaar, en de populatievariantie is <var>plural( VARIANCE_POP, "jaar" )</var><code>^2</code>.
 					</strong></p>
 
 				</div> <!-- hints -->
@@ -163,14 +163,14 @@
 
 				<p class="question">
 					Gebaseerd op de steekproef, wat is de gemiddelde leeftijd van de <var>plural(animal( 1 ))</var> uit de plaatselijke dierentuin? Wat is de variantie?
-					Rond je antwoord af op één decimaal.
+					Rond je antwoord af op &#233;&#233;n decimaal.
 	
 				</p>
 
 				<div class="solution" data-type="multiple">
 					<p>
 						Gemiddelde leeftijd:
-						<span class="sol short" data-type="decimal" data-inexact data-max-error="0.15"><var>mean( DATA )</var></span> jaren oud
+						<span class="sol short" data-type="decimal" data-inexact data-max-error="0.15"><var>mean( DATA )</var></span> jaar oud
 					</p>
 					<p>
 						Variantie:
@@ -213,7 +213,7 @@
 					</p>
 
 					<p>
-					Bereken de <span class="hint_purple"> standaardafwijking van het gemiddelde </span> voor elk <var>animal(1)</var>.
+					Bereken de <span class="hint_purple"> standaardafwijking van het gemiddelde </span> voor elke <var>animal(1)</var>.
 					Omdat het populatiegemiddelde onbekend is, schatten we het gemiddelde door het <span class="hint_blue">steekproefgemiddelde</span> te gebruiken
 					<code>(\color{<var>BLUE</var>}{\overline{x}} = \color{<var>BLUE</var>}{<var>MEAN</var>\text{ <var>plural( "jaar", MEAN )</var>}})</code>.
 					</p>
@@ -221,7 +221,7 @@
 					<div>
 						<div class="fake_header">
 							<span style="width: 100px;">
-								Age<br/>
+								Leeftijd<br/>
 								<code>x_i</code>
 							</span><span style="width: 150px;">
 								<span class="hint_gray">Afstand vanaf het gemiddelde</span>
@@ -232,9 +232,9 @@
 						</div>
 						<div class="fake_row" data-each="DATA as i, POINT">
 							<span style="width: 100px;">
-								<code><var>POINT</var></code> <var>plural( "jaar", POINT )</var>
+								<code><var>POINT</var></code> jaar
 							</span><span style="width: 150px;" class="hint_gray">
-								<code><var>roundTo( 2, POINT - MEAN )</var></code> <var>plural( "jaar", roundTo( 2, POINT - MEAN ) )</var>
+								<code><var>roundTo( 2, POINT - MEAN )</var></code> jaar
 							</span><span style="width: 150px;" class="hint_purple">
 								<code><var>SQR_DEV[ i ]</var></code> <var>plural( "jaar", SQR_DEV[ i ] )</var><code>^2</code>
 							</span>
@@ -281,7 +281,7 @@
 					</p>
 
 					<p><strong>
-						We vinden dat de gemiddelde leeftijd van de <var>animal( 1 )</var> in de dierentuin is <var>plural( MEAN, 'jaar', 'jaren' )</var> en dat de variantie
+						We vinden dat de gemiddelde leeftijd van de <var>animal( 1 )</var> in de dierentuin is <var>MEAN</var> jaar en dat de variantie
 						gelijk is aan
 						<var>plural( VARIANCE, 'jaar', 'jaren' )</var><code>^2</code>.
 					</strong></p>

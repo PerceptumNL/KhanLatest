@@ -2,7 +2,7 @@
 <html data-translatable data-require="math graphie graphie-helpers graphie-geometry math-format">
 <head>
 	<meta charset="UTF-8" />
-	<title>Triangle Angles 1</title>
+	<title>Hoeken in driehoeken 1</title>
 	<script src="../khan-exercise.js"></script>
 	<script>
 		function scTriangle(){
@@ -48,7 +48,7 @@
 					<var id="TRIANGLE">scTriangle()</var>
 				</div>
 				<div class="problem" data-tt="question1">
-					What is the value of the angle marked with "X" ? 
+					Wat is de waarde van de hoek die weergeven is met een "X"? 
 				</div>
 				<div class="question">
 					<div class="graphie">
@@ -64,10 +64,10 @@
 				</div>
 				<div class="solution"><var>TRIANGLE[ 0 ][ 2 ]</var></div>
 				<div class="hints">
-					<p data-tt="hint1">Angles in a triangle add up to 180 degrees.</p>
-					<p data-tt="hint2">We know two angles of the triangle.</p>
-					<p data-tt="hint3">The third angle is 180 minus the other two.</p>
-					<p data-tt="hint4">It is <code>180 - <var>TRIANGLE[ 0 ][ 0 ]</var> - <var>TRIANGLE[ 0 ][ 1 ]</var> = <var>TRIANGLE[ 0 ][ 2 ]</var></code></p>
+					<p data-tt="hint1">Alle hoeken in een driehoek zijn bij elkaar opgeteld gelijk aan 180 graden.</p>
+					<p data-tt="hint2">We weten twee hoeken van de driehoek.</p>
+					<p data-tt="hint3">De derde hoek is dan gelijk aan 180 min de andere twee. </p>
+					<p data-tt="hint4">De hoek is dan gelijk aan <code>180 - <var>TRIANGLE[ 0 ][ 0 ]</var> - <var>TRIANGLE[ 0 ][ 1 ]</var> = <var>TRIANGLE[ 0 ][ 2 ]</var></code></p>
 				</div>
 			</div>
 			<div id="isosceles1" data-type="scalene">
@@ -88,12 +88,12 @@
 				</div>
 				<div class="solution"><var>TRIANGLE[ 0 ][ 2 ]</var></div>
 				<div class="hints">
-					<p data-tt="hint5">Angles in a triangle add up to 180 degrees.</p>
-					<p data-tt="hint6">Because this triangle has two sides equal, it also has two angles equal (it is an isosceles triangle).</p>
-					<p data-tt="hint7">We can rewrite <code>A + B + C = 180</code> into <code>A + A + C = 180, 2A + C = 180 </code></p>
-					<p data-tt="hint8">The angles that are on the base (the unique side) are equal, and the angle between the equal sides is unique.</p>
-					<p data-tt="hint9">We know a base angle, which means that there is another angle equal to it, so we have two angles equal to <var>TRIANGLE[ 0 ][ 0 ]</var></p>
-					<p data-tt="hint10">Using our equation, we get <code>2 \cdot <var>TRIANGLE[ 0 ][ 0 ]</var> + X = 180,<var>2 * TRIANGLE[ 0 ][ 0 ]</var> + C = 180</code></p>
+					<p data-tt="hint5">Alle hoeken in een driehoek zijn bij elkaar opgeteld gelijk aan 180 graden.</p>
+					<p data-tt="hint6">Omdat deze driehoek twee gelijke zijden heeft, heeft het ook twee gelijke hoeken (het is een gelijkbenige driehoek).</p>
+					<p data-tt="hint7">We kunnen <code>A + B + C = 180</code> herschrijven naar <code>A + A + C = 180, 2A + C = 180 </code></p>
+					<p data-tt="hint8">De hoeken aan de basis (unieke) zijde zijn gelijk en de hoek tussen de twee gelijke zijden is uniek.</p>
+					<p data-tt="hint9">We weten 1 basishoek, dit betekent dat er nog een basishoek gelijk moet zijn aan die hoek, dus we weten dat beide hoeken gelijk zijn aan <var>TRIANGLE[ 0 ][ 0 ]</var></p>
+					<p data-tt="hint10">Met behulp van onze vergelijking, krijgen we  <code>2 \cdot <var>TRIANGLE[ 0 ][ 0 ]</var> + X = 180,<var>2 * TRIANGLE[ 0 ][ 0 ]</var> + C = 180</code></p>
 					<p><code>X = 180 - <var>2 * TRIANGLE[ 0 ][ 0 ]</var></code></p>
 					<p><code>X = <var>180 - 2 * TRIANGLE[ 0 ][ 0 ]</var></code></p>
 				</div>
@@ -117,13 +117,13 @@
 				</div>
 				<div class="solution"><var>TRIANGLE[ 0 ][ 0 ]</var></div>
 				<div class="hints">
-					<p data-tt="hint11">Angles in a triangle add up to 180 degrees.</p>
-					<p data-tt="hint12">Because this triangle has two sides equal, it also has two angles equal (it is an isosceles triangle).</p>
-					<p data-tt="hint13">We can rewrite <code>A + B + C = 180</code> into <code>A + A + C = 180, 2A + C = 180 </code></p>
-					<p data-tt="hint14">The angles that are on the base (the unique side) are equal, and the angle between the equal sides is unique.</p>
-					<p data-tt="hint15">We know the unique angle, which means that the other two angles are equal.</p>
-					<p data-tt="hint16">Therefore the angle we are looking for is <code>A</code></p>
-					<p data-tt="hint17">Using our equation, we get <code>2X  + <var>TRIANGLE[ 0 ][ 2 ]</var> = 180</code></p>
+					<p data-tt="hint11">Alle hoeken in een driehoek zijn bij elkaar opgeteld gelijk aan 180 graden.</p>
+					<p data-tt="hint12">Omdat deze driehoek twee gelijke zijden heeft, heeft het ook twee gelijke hoeken (het is een gelijkbenige driehoek).</p>
+					<p data-tt="hint13">We kunnen <code>A + B + C = 180</code> herschrijven naar <code>A + A + C = 180, 2A + C = 180 </code></p>
+					<p data-tt="hint14">De hoeken aan de basis (de unieke) zijde zijn gelijk en de hoek tussen de twee gelijke zijden is uniek.</p>
+					<p data-tt="hint15">We weten de unieke hoek, dit betekent dat de andere twee hoeken gelijk zijn aan elkaar.</p>
+					<p data-tt="hint16">Daarom is de hoek die we zoeken gelijk aan <code>A</code></p>
+					<p data-tt="hint17">Met behulp van onze vergelijking, krijgen we <code>2X  + <var>TRIANGLE[ 0 ][ 2 ]</var> = 180</code></p>
 					<p><code>2X = 180 - <var>TRIANGLE[ 0 ][ 2 ]</var> </code></p>
 					<p><code>2X = <var>180 - TRIANGLE[ 0 ][ 2 ]</var></code></p>
 					<p><code>X = \dfrac{ <var>180 - TRIANGLE[ 0 ][ 2 ]</var> }{ 2 }</code></p>
@@ -148,11 +148,11 @@
 				</div>
 				<div class="solution"><var>TRIANGLE[ 0 ][ 0 ]</var></div>
 				<div class="hints">
-					<p data-tt="hint18">Angles in a triangle add up to 180 degrees.</p>
-					<p data-tt="hint19">Because this triangle has two sides equal, it also has two angles equal (it is an isosceles triangle).</p>
-					<p data-tt="hint20">The angles that are on the base (the unique) side are equal, and the angle between the equal sides is unique.</p>
-					<p data-tt="hint21">We know that one base angle is <var>TRIANGLE[ 0 ][ 0 ]</var>, and the angle we are looking for is also on the base. </p>
-					<p data-tt="hint22">Therefore the angle we are looking for is also <var>TRIANGLE[ 0 ][ 0 ]</var>.</p>
+					<p data-tt="hint18">Alle hoeken in een driehoek zijn bij elkaar opgeteld gelijk aan 180 graden.</p>
+					<p data-tt="hint19">Omdat deze driehoek twee gelijke zijden heeft, heeft het ook twee gelijke hoeken (het is een gelijkbenige driehoek).</p>
+					<p data-tt="hint20">De hoeken aan de basis (de unieke) zijde zijn gelijk en de hoek tussen de twee gelijke zijden is uniek.</p>
+					<p data-tt="hint21">We weten dat 1 basishoek <var>TRIANGLE[ 0 ][ 0 ]</var> is en we weten dat de hoek naar waar we op zoek zijn ook aan de basiszijde zit.</p>
+					<p data-tt="hint22">Daarom is de hoek die we zoeken ook gelijk aan <var>TRIANGLE[ 0 ][ 0 ]</var>.</p>
 				</div>	
 			</div>
 		</div>

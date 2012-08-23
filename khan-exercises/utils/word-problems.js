@@ -65,6 +65,9 @@ jQuery.extend( KhanUtil, {
 			'watermeloen':'watermeloenen',
 			'boon':'bonen',
 			'pen':'pennen',
+			'aap':'apen',
+			'hond':'honden',
+			'jaar':'jaren',
 			'stift': 'stiften',
 			'potlood':'potloden',
 			'schrift':'schriften',
@@ -256,7 +259,7 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		"Engelse",
 		"Biologie"
 	]);
-	
+
 	var lessen = KhanUtil.shuffle([
 		"wiskunde",
 		"scheikunde",
@@ -351,7 +354,7 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		"druif"
 	]);
 
-			
+
 	var deskItems = KhanUtil.shuffle([
 		"schrift",
 		"krijtje",
@@ -393,7 +396,7 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		"goud",
 		"roze"
 	]); 
-	
+
 	var schools = KhanUtil.shuffle([
 		"de Noordwijkse school",
 		"de Emmaschool",
@@ -404,7 +407,7 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		"het Twents Carmel College",
 		"de Oak school"
 	]);
-	
+
 	var dieren = KhanUtil.shuffle([
 		"leeuw",
 		"tijger",
@@ -558,7 +561,7 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		groupVerb: function( i ) {
 			return collections[i - 1][2];
 		},
-		
+
 
 		store: function( i ) {
 			return stores[i].name;
@@ -595,19 +598,19 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		fruit: function( i ) {
 			return fruits[i];
 		},
-		
+
 		dier: function (i) {
 			return dieren[i];
 		},
-		
+
 		kleur: function( i ) {
 			return kleuren[i];
 		},
-		
+
 		les: function( i ) {
 			return lessen[i];
 		},
-			
+
 		deskItem: function( i ) {
 			return deskItems[i];
 		},
@@ -623,7 +626,7 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		ride: function( i ) {
 			return distanceActivities[i - 1].present;
 		},
-		
+
 		toevoeging: function (i) {
 			return distanceActivities[i - 1].voorzetsel;
 		},
@@ -631,15 +634,15 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		bike: function( i ) {
 			return distanceActivities[i - 1].noun;
 		},
-		
+
 		werkwoord: function (i) {
 			return distanceActivities[i - 1].werkwoorden;
 		},
-	
+
 		voltooiddlw: function (i) {
 			return distanceActivities[i - 1].voltooiddeelwoord;
 		},
-		
+
 		biked: function( i ) {
 			return distanceActivities[i - 1].done;
 		},
@@ -659,7 +662,7 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		fields: function (i) {
 			return farmers[i - 1].fieldss;
 		},
-		
+
 		field: function( i ) {
 			return farmers[i - 1].field;
 		},

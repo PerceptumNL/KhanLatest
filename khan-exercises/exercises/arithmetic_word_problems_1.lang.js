@@ -27,7 +27,7 @@
 		"hint23"		: 'Dat verschil is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural("boom")</var>.',
 		"hint24"		: 'Een aantal auto\'s stond geparkeerd op het parkeerterrein van de <var>store(1)</var>. '+
 					'Nog eens <var>NUM2</var> <var>plural("auto")</var> <var>plural("parkeerden", "parkeerde", NUM2)</var> later ook bij de <var>store(1)</var>, '+
-					'en nu <var>plural("staan", "staat", TOTAL)</var> er <var>plural(TOTAL, "auto")</var> op het parkeerterrein.',
+					'en nu staan er <var>plural(TOTAL, "auto")</var> op het parkeerterrein.',
 		"hint25"		: 'Hoeveel auto\'s stonden er geparkeerd bij de <var>store(1)</var>?',
 		"hint26"		: 'Het aantal auto\'s dat aan het begin bij de winkel geparkeerd stond, is het verschil tussen het aantal dat er nu geparkeerd staat en het aantal auto\'s dat er later perkeerde.',
 		"hint27"		: 'Het verschil is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural("auto")</var>.',

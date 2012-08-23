@@ -97,12 +97,12 @@
 				</div>
 				<div>
 					<p data-tt="hint7">To calculate a <code>10\%</code> tip, move the decimal point in <code>\€<var>BILL_FORMAT</var></code> one place to the left.</p>
-					<p><code>10\% \times \$<var>BILL_FORMAT</var> = \€<var>TIP_TEN_PERCENT</var></code></p>
+					<p><code>10\% \times €<var>BILL_FORMAT</var> = €<var>TIP_TEN_PERCENT</var></code></p>
 				</div>
 				<div data-if="TIP_PERCENT !== 10">
 					<div data-if="TIP_PERCENT % 10 === 5">
 						<p data-tt="hint8">To calculate a <code>5\%</code> tip, divide the <code>10\%</code> tip amount in half.</p>
-						<p><code>5\% \times \€<var>BILL_FORMAT</var> = \€<var>TIP_TEN_PERCENT</var> \div 2 = \€<var>TIP_FIVE_PERCENT</var></code>.</p>
+						<p><code>5\% \times €<var>BILL_FORMAT</var> = €<var>TIP_TEN_PERCENT</var> \div 2 = €<var>TIP_FIVE_PERCENT</var></code>.</p>
 					</div>
 					<div data-else>
 						<p data-tt="hint9">To calculate a <code>20\%</code> tip, multiply the <code>10\%</code> tip amount by two.</p>
@@ -113,7 +113,7 @@
 					<p data-tt="hint10">Adding the two amounts together gives us <code>\€<var>TIP_TEN_PERCENT</var> + \€<var>TIP_FIVE_PERCENT</var> = \€<var>TIP_AMOUNT_FORMAT</var></code>.</p>
 				</div>
 				<p data-tt="hint11">The cost of the meal plus the amount of the tip will equal the total bill amount.</p>
-				<p><code>\€<var>BILL_FORMAT</var> + \€<var>TIP_AMOUNT_FORMAT</var> = \€<var>TOTAL_FORMAT</var></code>.</p>
+				<p><code>€<var>BILL_FORMAT</var> + €<var>TIP_AMOUNT_FORMAT</var> = €<var>TOTAL_FORMAT</var></code>.</p>
 				<p data-tt="hint12">The total cost of the bill is <code>\€<var>TOTAL_FORMAT</var></code>.</p>
 			</div>
 		</div>

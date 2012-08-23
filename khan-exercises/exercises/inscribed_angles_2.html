@@ -2,7 +2,7 @@
 <html data-translatable data-require="math graphie graphie-polygon interactive">
 <head>
 	<meta charset="UTF-8" />
-	<title>Inscribed angles 2</title>
+	<title>Omtrekshoeken 2</title>
 	<script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -16,11 +16,11 @@
 				<var id="RADIUS">4</var>
 
 				<var id="GIVEN">CENTRAL</var>
-				<var data-tt="var1" id="GIVEN_LABEL">"blue"</var>
-				<var data-tt="var2" id="ASKED_LABEL">"orange"</var>
+				<var data-tt="var1" id="GIVEN_LABEL">"blauwe"</var>
+				<var data-tt="var2" id="ASKED_LABEL">"oranje"</var>
 			</div>
-			<p  data-tt="question1" class="question">If the <var>GIVEN_LABEL</var> angle measures <var>GIVEN</var> degrees, what does the <var>ASKED_LABEL</var> angle measure?</p>
-			<p  data-tt="question2" >This is a special case where the center of the circle is inside the inscribed orange angle. The blue angle is called a central angle.</p>
+			<p  data-tt="question1" class="question">Als de <var>GIVEN_LABEL</var> hoek <var>GIVEN</var> graden is, hoe groot is dan de <var>ASKED_LABEL</var> hoek?</p>
+			<p  data-tt="question2" >Dit is een bijzondere situatie omdat het middelpunt van de cirkel binnen de omtrekshoek ligt. De blauwe hoek wordt een middelpuntshoek genoemd.</p>
 			<div class="graphie" id="circle">
 				init({
 					range: [ [ -RADIUS - 1, RADIUS + 1 ], [ -RADIUS - 1, RADIUS + 1 ] ]
@@ -41,11 +41,11 @@
 				graph.circle.drawMovablePoint( SUBTENDED_POINT, START + CENTRAL, START );
 			</div>
 			<div data-tt="problem1" class="solution" data-type="multiple">
-				<span class="sol"><var>CENTRAL / 2</var></span> degrees
+				<span class="sol"><var>CENTRAL / 2</var></span> graden
 			</div>
 			<div class="hints">
 				<div>
-					<p data-tt="hint1" >What do we know about the sub-angles formed by the dashed diameter shown above?</p>
+					<p data-tt="hint1" >Wat weten we van de hoeken welke gevormd worden door de stippellijn hierboven?</p>
 					<div class="graphie" data-update="circle">
 						style({stroke: BLUE, "stroke-dasharray": "-"}, function() {
 							graph.circle.drawChord( SUBTENDED_POINT, SUBTENDED_POINT + 180 );
@@ -53,8 +53,8 @@
 					</div>
 				</div>
 				<div>
-					<p data-tt="hint2" >If we only look at the sub-angles drawn now, we see that this is the special case from the previous inscribed angles exercise!</p>
-					<p data-tt="hint3" >We know that the orange sub-angle is one half the measure of the blue sub-angle.</p>
+					<p data-tt="hint2" >Als we nu naar de getekende hoeken kijken dan zien we dat dit een speciale toepassing is van de vorige oefening met omtrekshoeken!</p>
+					<p data-tt="hint3" >We weten dat de oranje hoekjes de helft zijn van de blauwe hoekjes.</p>
 					<div class="graphie" data-update="circle">
 						graph.inscribed.arc.animate({opacity: 0.4});
 						graph.central.arc.animate({opacity: 0.4});
@@ -65,7 +65,7 @@
 					</div>
 				</div>
 				<div>
-					<p data-tt="hint4" >Likewise, the other orange sub-angle is one half the measure of the other blue sub-angle, as shown.</p>
+					<p data-tt="hint4" >Zoals je ziet is het andere oranje hoekje eveneens de helft van het blauwe hoekje.</p>
 					<div class="graphie" data-update="circle">
 						graph.centralSub.remove();
 						graph.inscribedSub.remove();
@@ -76,7 +76,7 @@
 					</div>
 				</div>
 				<div>
-					<p data-tt="hint5" >If both orange sub-angles are one half both blue sub-angles, then we know that the original orange angle is one half the original blue angle.</p>
+					<p data-tt="hint5" >Als beide blauwe hoekjes het dubbele zijn van de beide oranje hoekjes, dan weten we dat de blauwe hoek het dubbele is van de oranje hoek.</p>
 					<div class="graphie" data-update="circle">
 						graph.centralSub.remove();
 						graph.inscribedSub.remove();
@@ -84,24 +84,24 @@
 						graph.central.arc.animate({opacity: 1.0});
 					</div>
 				</div>
-				<p data-tt="color1" ><code>\color{<var>ORANGE</var>}{\text{orange angle}} = \dfrac{1}{2} \cdot \color{<var>BLUE</var>}{\text{blue angle}}</code></p>
-				<p data-tt="color2" ><code>\color{<var>ORANGE</var>}{\text{orange angle}} = \dfrac{1}{2} \cdot \color{<var>BLUE</var>}{<var>CENTRAL</var>^{\circ}}</code></p>
-				<p data-tt="color3" ><code>\color{<var>ORANGE</var>}{\text{orange angle}} =  \color{<var>ORANGE</var>}{<var>CENTRAL / 2</var>^{\circ}}</code></p>
+				<p data-tt="color1" ><code>\color{<var>ORANGE</var>}{\text{oranje hoek}} = \dfrac{1}{2} \cdot \color{<var>BLUE</var>}{\text{blauwe hoek}}</code></p>
+				<p data-tt="color2" ><code>\color{<var>ORANGE</var>}{\text{oranje hoek}} = \dfrac{1}{2} \cdot \color{<var>BLUE</var>}{<var>CENTRAL</var>^{\circ}}</code></p>
+				<p data-tt="color3" ><code>\color{<var>ORANGE</var>}{\text{oranje hoek}} =  \color{<var>ORANGE</var>}{<var>CENTRAL / 2</var>^{\circ}}</code></p>
 			</div>
 		</div>
 		<div id="find-central-on" data-type="find-angle">
 			<div class="vars">
 				<var id="GIVEN">CENTRAL / 2</var>
-				<var data-tt="var3" id="GIVEN_LABEL">"orange"</var>
-				<var data-tt="var4" id="ASKED_LABEL">"blue"</var>
+				<var data-tt="var3" id="GIVEN_LABEL">"oranje"</var>
+				<var data-tt="var4" id="ASKED_LABEL">"blauwe"</var>
 			</div>
 			<div data-tt="problem2" class="solution" data-type="multiple">
-				<span class="sol"><var>CENTRAL</var></span> degrees
+				<span class="sol"><var>CENTRAL</var></span> graden
 			</div>
 
 			<div class="hints">
 				<div>
-					<p data-tt="hint6" >What do we know about the sub-angles formed by the dashed diameter shown above?</p>
+					<p data-tt="hint6" >Wat weten we van de hoeken welke gevormd worden door de stippellijn hierboven?</p>
 					<div class="graphie" data-update="circle">
 						style({stroke: BLUE, "stroke-dasharray": "-"}, function() {
 							graph.circle.drawChord( SUBTENDED_POINT, SUBTENDED_POINT + 180 );
@@ -109,8 +109,8 @@
 					</div>
 				</div>
 				<div>
-					<p data-tt="hint7" >If we only look at the sub-angles drawn now, we see that this is the special case from the previous inscribed angles exercise!</p>
-					<p data-tt="hint8" >We know that the orange sub-angle is one half the measure of the blue sub-angle.</p>
+					<p data-tt="hint7" >Als we nu naar de getekende hoeken kijken dan zien we dat dit een speciale toepassing is van de vorige oefening met omtrekshoeken!</p>
+					<p data-tt="hint8" >We weten dat de oranje hoekjes de helft zijn van de blauwe hoekjes.</p>
 					<div class="graphie" data-update="circle">
 						graph.inscribed.arc.animate({opacity: 0.4});
 						graph.central.arc.animate({opacity: 0.4});
@@ -121,7 +121,7 @@
 					</div>
 				</div>
 				<div>
-					<p data-tt="hint9" >Likewise, the other orange sub-angle is one half the measure of the other blue sub-angle, as shown.</p>
+					<p data-tt="hint9" >Zoals je ziet is het andere oranje hoekje is eveneens de helft van het blauwe hoekje.</p>
 					<div class="graphie" data-update="circle">
 						graph.centralSub.remove();
 						graph.inscribedSub.remove();
@@ -132,7 +132,7 @@
 					</div>
 				</div>
 				<div>
-					<p data-tt="hint10" >If both blue sub-angles are twice both blue sub-angles, then we know that the blue is twice the orange angle.</p>
+					<p data-tt="hint10" >Als beide blauwe hoekjes het dubbele zijn van de beide oranje hoekjes, dan weten we dat de blauwe hoek het dubbele is van de oranje hoek.</p>
 					<div class="graphie" data-update="circle">
 						graph.centralSub.remove();
 						graph.inscribedSub.remove();
@@ -140,9 +140,9 @@
 						graph.central.arc.animate({opacity: 1.0});
 					</div>
 				</div>
-				<p data-tt="color4" ><code>\color{<var>BLUE</var>}{\text{blue angle}} = 2 \cdot \color{<var>ORANGE</var>}{\text{orange angle}}</code></p>
-				<p data-tt="color5" ><code>\color{<var>BLUE</var>}{\text{blue angle}} = 2 \cdot \color{<var>ORANGE</var>}{<var>CENTRAL / 2</var>^{\circ}}</code></p>
-				<p data-tt="color6" ><code>\color{<var>BLUE</var>}{\text{blue angle}} = \color{<var>BLUE</var>}{<var>CENTRAL</var>^{\circ}}</code></p>
+				<p data-tt="color4" ><code>\color{<var>BLUE</var>}{\text{blauwe hoek}} = 2 \cdot \color{<var>ORANGE</var>}{\text{oranje hoek}}</code></p>
+				<p data-tt="color5" ><code>\color{<var>BLUE</var>}{\text{blauwe hoek}} = 2 \cdot \color{<var>ORANGE</var>}{<var>CENTRAL / 2</var>^{\circ}}</code></p>
+				<p data-tt="color6" ><code>\color{<var>BLUE</var>}{\text{blauwe hoek}} = \color{<var>BLUE</var>}{<var>CENTRAL</var>^{\circ}}</code></p>
 			</div>
 		</diV>
 	</div>

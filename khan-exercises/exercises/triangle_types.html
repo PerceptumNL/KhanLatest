@@ -50,16 +50,16 @@
 <body>
 	<div class="exercise">
 		<div class="vars" data-tt="vars1">
-			<var id="TYPES">[ "Equilateral", "Isosceles", "Scalene" ]</var>
+			<var id="TYPES">[ "gelijkzijdig", "gelijkbenig", "ongelijkzijdig" ]</var>
 			<var id="TYPE">randFromArray( TYPES )</var>
 			<var id="TRIANGLE">function(){
-								if ( TYPE === "Equilateral" ){
+								if ( TYPE === "gelijkzijdig" ){
 									return eqTriangle();
 								}
-								if ( TYPE === "Isosceles" ){
+								if ( TYPE === "gelijkbenig" ){
 									return isoTriangle();
 								}
-								if ( TYPE === "Scalene" ){
+								if ( TYPE === "ongelijkzijdig" ){
 									return scTriangle();
 								}
 							}()

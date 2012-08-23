@@ -16,7 +16,7 @@
                 <var id="TOTAL_PRICE">roundTo(2, (1+(SALES_TAX/100))*DOLLARS).toFixed(2)</var>
             </div>
             <div class="question spin">
-                <p><var>person(1)</var> koopt een mand <var>plural(fruit(1))</var> met korting voor €<var>DOLLARS</var>.  De BTW is  <var>SALES_TAX</var>%.  Wat moet <var>person(1)</var> voor de <var>plural(fruit(1))</var> totaal betalen?  (Rond af op honderdsten of op cent.)</p>
+                <p><var>person(1)</var> koopt een mand <var>plural(fruit(1))</var> met korting voor €<var>DOLLARS</var>.  De BTW is  <var>SALES_TAX</var>%.  Wat moet <var>person(1)</var> voor de <var>plural(fruit(1))</var> totaal betalen?  (Afronden op hele centen.)</p>
             </div>
             <p class="solution" data-forms="dollar"><var>TOTAL_PRICE</var></p>
             <div class="hints">
@@ -142,29 +142,29 @@
             <p class="solution" data-forms="dollar"><var>TOTAL</var></p>
             <div class="hints">
                 <div>
-                    <p>De fooi is gelijk aan <code><var>TIP_PERCENT</var>\% \times \€<var>BILL_FORMAT</var></code>.</p>
+                    <p>De fooi is gelijk aan <code><var>TIP_PERCENT</var>\% \times €<var>BILL_FORMAT</var></code>.</p>
 					<p data-if="TIP_PERCENT !== 10">We kunnen de fooi bepalen door eerst een <code class="hint_purple">10\%</code> fooi te berekenen <span data-if="TIP_PERCENT === 5"> en dit getal te delen door 2</span><span data-else-if="TIP_PERCENT === 20"> en dit getal te vermenigvuldigen met 2.</span><span data-else> en een fooi van <code class="hint_pink">5\%</code>, en deze twee getallen bij elkaar op te tellen.</span></p>
                 </div>
                 <div>
-                    <p>Om de fooi van <code class="hint_purple">10\%</code> te berekenen, moet in <code>\€<var>BILL_FORMAT</var></code> de komma 1 plaats naar links schuiven.</p>
-                    <p><code class="hint_purple">10\%</code> <code>\times \€<var>BILL_FORMAT</var></code> = <code class="hint_purple">\€<var>TIP_TEN_PERCENT</var></code></p>
+                    <p>Om de fooi van <code class="hint_purple">10\%</code> te berekenen, moet in <code>€<var>BILL_FORMAT</var></code> de komma 1 plaats naar links schuiven.</p>
+                    <p><code class="hint_purple">10\%</code> <code>\times €<var>BILL_FORMAT</var></code> = <code class="hint_purple">€<var>TIP_TEN_PERCENT</var></code></p>
                 </div>
                 <div data-if="TIP_PERCENT !== 10">
                     <div data-if="TIP_PERCENT % 10 === 5">
                         <p>Om de fooi van <code class="hint_pink">5\%</code> te berekenen, moet je de <code class="hint_purple">10\%</code> fooi halveren.</p>
-                        <p><code class="hint_pink">5\%</code> <code>\times \€<var>BILL_FORMAT</var> = </code><code class="hint_purple">\€<var>TIP_TEN_PERCENT</var></code><code> \div 2 = </code><code class="hint_pink">\€<var>TIP_FIVE_PERCENT</var></code>.</p>
+                        <p><code class="hint_pink">5\%</code> <code>\times €<var>BILL_FORMAT</var> = </code><code class="hint_purple">€<var>TIP_TEN_PERCENT</var></code><code> \div 2 = </code><code class="hint_pink">€<var>TIP_FIVE_PERCENT</var></code>.</p>
                     </div>
                     <div data-else>
                         <p>Om de fooi van <code class="hint_green">20\%</code> te berekenen, moet je de <code class="hint_purple">10\%</code> fooi vermenigvuldigen met 2.</p>
-                        <p><code class="hint_green">20\%</code> <code>\times \€<var>BILL_FORMAT</var></code> = <code class="hint_purple">\€<var>TIP_TEN_PERCENT</var></code><code> \times 2 = </code><code class="hint_green">\€<var>TIP_AMOUNT_FORMAT</var></code>.</p>
+                        <p><code class="hint_green">20\%</code> <code>\times €<var>BILL_FORMAT</var></code> = <code class="hint_purple">€<var>TIP_TEN_PERCENT</var></code><code> \times 2 = </code><code class="hint_green">€<var>TIP_AMOUNT_FORMAT</var></code>.</p>
                     </div>
                 </div>
                 <div data-if="TIP_PERCENT === 15">
-                    <p>Deze 2 getallen opgeteld geeft samen <code class="hint_purple">\€<var>TIP_TEN_PERCENT</var></code> + <code class="hint_pink">\€<var>TIP_FIVE_PERCENT</var> =</code><code> \€<var>TIP_AMOUNT_FORMAT</var></code>.</p>
+                    <p>Deze 2 getallen opgeteld geeft samen <code class="hint_purple">€<var>TIP_TEN_PERCENT</var></code> + <code class="hint_pink">€<var>TIP_FIVE_PERCENT</var> =</code><code> €<var>TIP_AMOUNT_FORMAT</var></code>.</p>
                 </div>
                 <p>De nota voor de maaltijd plus de fooi is samen het rekening bedrag.</p>
-                <p><code>\€<var>BILL_FORMAT</var> + \€<var>TIP_AMOUNT_FORMAT</var> = </code><code class="hint_orange">\€<var>TOTAL_FORMAT</var></code>.</p>
-                <p class="final_answer">De totale kosten van de rekening zijn <code class="hint_orange">\€<var>TOTAL_FORMAT</var></code>.</p>
+                <p><code>€<var>BILL_FORMAT</var> + €<var>TIP_AMOUNT_FORMAT</var> = </code><code class="hint_orange">€<var>TOTAL_FORMAT</var></code>.</p>
+                <p class="final_answer">De totale kosten van de rekening zijn <code class="hint_orange">€<var>TOTAL_FORMAT</var></code>.</p>
             </div>
         </div>
     </div>

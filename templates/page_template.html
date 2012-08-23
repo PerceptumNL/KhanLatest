@@ -174,13 +174,17 @@
                     <div id="logo">
                         <a id="logo-image" href="/" title="Take me home!" data-tag="Header"></a>
                         <div id="stats">
-                            <span id="page_visitors" style="width:500px;left:100px;">
-								<span id="cookie-notification" style="display:none;">Khanacademie.nl maakt gebruik van cookies om je te identificeren.
-                            </span>
-                        	<script>
-								if(readCookie("cookie-notification") == null){
-									$("#cookie-notification").show();
-									createCookie("cookie-notification", 1);
+							<div id="cookieMessage" style="display:none;position:absolute;width:100%;padding:4px;bottom:0px;background:rgba(0,0,0,0.1);">
+								Video.Khanacademie maakt gebruik van cookies. Lees <a href="https://docs.google.com/document/pub?id=1qPIp5yEEHGDXMI_1No43p9uaGJnGDtj2BY3NGsyYySc">hier</a> meer over cookies en hoe wij cookies <a href="https://docs.google.com/document/pub?id=1mnNKQkW6H0RAQ4nD1qpz0L6zuny7mcTlTZh1dxc61Hs">gebruiken<a/>. <a onclick="readCookieMessage();">Ok</a>
+							</div>
+							<script src="http://video.khanacademie.nl/js/lib/jquery.cookie.js"></script>
+							<script>
+								var readCookieMessage = function(){
+									$.cookie("cookieMessage", "read");
+									$("#cookieMessage").hide();
+								};
+								if($.cookie("cookieMessage") == null){
+									$("#cookieMessage").show();
 								}
 							</script>
                         </div>

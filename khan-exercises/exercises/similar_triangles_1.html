@@ -2,7 +2,7 @@
 <html data-translatable data-require="math graphie graphie-helpers graphie-geometry math-format">
 <head>
 	<meta charset="UTF-8" />
-	<title>Similar Triangles 1</title>
+	<title>Gelijkvormige driehoeken 1</title>
 	<script src="../khan-exercise.js"></script>
 	<script>
 		function randomTriangle( current ){
@@ -30,10 +30,10 @@
 	<div class="exercise">
 		<div class="vars">
 			<var id="MAIN"> randomTriangle()</var>
-			<var id="ANSWERS">[ "B", "C", "Both", "None" ]</var>
+			<var id="ANSWERS">[ "B", "C", "Beide", "Geen van beide" ]</var>
 			<var id="ANSWER">randFromArray( ANSWERS )</var>
-			<var id="B"> ANSWER === "B" || ANSWER === "Both" ? shuffle( MAIN ) : randomTriangle( MAIN )</var>
-			<var id="C"> ANSWER === "C" || ANSWER === "Both" ? shuffle( MAIN ): randomTriangle( MAIN )</var>
+			<var id="B"> ANSWER === "B" || ANSWER === "Beide" ? shuffle( MAIN ) : randomTriangle( MAIN )</var>
+			<var id="C"> ANSWER === "C" || ANSWER === "Beide" ? shuffle( MAIN ): randomTriangle( MAIN )</var>
 			<var id="TR">
 				function(){
 					var tr = new Triangle( [ 3, -2 ],  MAIN, 5, {} );
@@ -71,7 +71,7 @@
 		<div class="problems">
 		<div id="similar">
 			<div class="problem" data-tt="question1">
-				Which triangles are similar to triangle <code>A</code>?
+				Welke driehoeken zijn gelijkvormig aan driehoek <code>A</code>?
 			</div>
 			<div class="question">
 				<div class="graphie" id="triangles" >
@@ -99,13 +99,13 @@
 			<ul class="choices" data-category="true">
 				<li>B</li>
 				<li>C</li>
-				<li data-tt="question2">Both</li>
-				<li data-tt="question3">None</li>
+				<li data-tt="question2">Beide</li>
+				<li data-tt="question3">Geen van beide</li>
 			</ul>
 			<div class="hints">
-				<p data-tt="hint1">Two triangles are similar if their angles are congruent (equal).</p>
+				<p data-tt="hint1">Twee driehoeken zijn gelijkvormig als hun hoeken gelijk zijn.</p>
 				<div>
-					<p data-tt="hint2">We see that triangle <code>A</code> has angles of <code><var>MAIN[ 0 ]</var></code> and <code><var>MAIN[ 2 ]</var></code>. The third angle is therefore <code>180 - <var>MAIN[ 0 ]</var> - <var>MAIN[ 2 ]</var> = <var>MAIN[ 1 ]</var></code></p>
+					<p data-tt="hint2">We zien dat driehoek <code>A</code> hoeken heeft van <code><var>MAIN[ 0 ]</var></code> en <code><var>MAIN[ 2 ]</var></code>. De derde hoek is daarom <code>180 - <var>MAIN[ 0 ]</var> - <var>MAIN[ 2 ]</var> = <var>MAIN[ 1 ]</var></code></p>
 	
 					<div class="graphie" data-update="triangles">
 						TR.labels.angles = TR.niceAngles;
@@ -114,7 +114,7 @@
 				</div>
 
 				<div>	
-					<p data-tt="hint3">Triangle <code>B</code> has angles of <code><var>B[ 0 ]</var></code> and <code><var>B[ 1 ]</var></code>. The third angle is <code>180 - <var>B[ 0 ]</var> -  <var>B[ 1 ]</var> = <var>B[ 2 ]</var></code>. Therefore triangle <code>B</code> is <span data-if="ANSWER === 'None' || ANSWER === 'C'" >not</span> similar to triangle <code>A</code>.</p>
+					<p data-tt="hint3">Driehoek <code>B</code> heeft hoeken van <code><var>B[ 0 ]</var></code> en <code><var>B[ 1 ]</var></code>. De derde hoek is daarom <code>180 - <var>B[ 0 ]</var> -  <var>B[ 1 ]</var> = <var>B[ 2 ]</var></code>. Daarom is driehoek <code>B</code> <span data-if="ANSWER === 'Geen van beide' || ANSWER === 'C'" >niet</span> gelijkvormig aan driehoek <code>A</code>.</p>
 					<div class="graphie" data-update="triangles">
 						style({
 						    stroke: "blue",
@@ -124,7 +124,7 @@
 					</div>
 				</div>
 				<div>	
-					<p data-tt="hint4">Triangle <code>C</code> has angles of <code><var>C[ 0 ]</var></code> and <code><var>C[ 2 ]</var></code>. The third angle is <code>180 - <var>C[ 0 ]</var> -  <var>B[ 2 ]</var> = <var>C[ 1 ]</var></code>. Therefore triangle <code>C</code> is <span data-if="ANSWER === 'None' || ANSWER === 'B'" >not</span>  similar to triangle <code>A</code>.</p>
+					<p data-tt="hint4">Driehoek <code>C</code> heeft hoeken van <code><var>C[ 0 ]</var></code> en <code><var>C[ 2 ]</var></code>. De derde hoek is <code>180 - <var>C[ 0 ]</var> -  <var>B[ 2 ]</var> = <var>C[ 1 ]</var></code>. Daarom is driehoek <code>C</code> <span data-if="ANSWER === 'Geen van beide' || ANSWER === 'B'" >niet</span>  gelijkvormig aan driehoek <code>A</code>.</p>
 					<div class="graphie" data-update="triangles">
 						style({
 							 stroke: "red",

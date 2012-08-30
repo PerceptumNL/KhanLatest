@@ -73,7 +73,7 @@ var Homepage = {
                 Homepage.renderLibraryContent(data);
             },
             error: function() {
-                KAConsole.log("Error loading initial library data.");
+                KAConsole.log("Fout bij het laden van initiele data.");
             },
             cache: true
         });

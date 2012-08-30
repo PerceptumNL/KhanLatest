@@ -11,7 +11,7 @@ Login.initCompleteSignupForm = function(options) {
     Login.basePostLoginUrl = (options && options["basePostLoginUrl"]) || "";
 
     Login.focusOnFirstEmpty([
-            "#nickname", "#gender", "#username", "#password"]);
+            "#bijnaam", "#geslacht", "#gebruikersnaam", "#wachtwoord"]);
 
     Login.attachSubmitHandler(Login.submitCompleteSignup);
 };
@@ -20,9 +20,9 @@ Login.initCompleteSignupForm = function(options) {
  * Submits the complete signup attempt if it passes pre-checks.
  */
 Login.submitCompleteSignup = function() {
-    var valid = Login.ensureValid_("#nickname", "Please tell us your name.") &&
-            Login.ensureValid_("#username", "Please pick a username.") &&
-            Login.ensureValid_("#password", "We need a password from you.");
+    var valid = Login.ensureValid_("#bijnaam", "Geef je naam op.") &&
+            Login.ensureValid_("#gebruikersnaam", "Kies een gebruikersnaam.") &&
+            Login.ensureValid_("#wachtwoord", "kies een wachtwoord");
 
     if (valid) {
         Login.asyncFormPost(
@@ -56,13 +56,13 @@ Login.onCompleteSignupSucess = function(data) {
  */
 Login.onCompleteSignupError = function(errors) {
     var firstFailed = _.find(
-            ["nickname", "username", "password"],
+            ["bijnaam", "gebruikersnaam", "wachtwoord"],
             function(fieldName) {
                 return fieldName in errors;
             });
     if (!firstFailed) {
         // Shouldn't happen, but just in case we get unknown errors.
-        $("#error-text").text("Oops. Something went wrong. Please try again.");
+        $("#error-text").text("Oeps.. Er is iets verkeerd gegaan. Probeer het opnieuw.");
         return;
     }
 

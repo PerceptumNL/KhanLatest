@@ -81,7 +81,7 @@ Exercises.UserExerciseCache = {
 
     warnSessionStorageDisabled: function() {
         $(Exercises).trigger("warning", {
-            text: "You must enable DOM storage in your browser; see <a href='https://sites.google.com/a/khanacademy.org/forge/for-developers/how-to-enable-dom-storage'>here</a> for instructions.",
+            text: "Je moet DOM storage in je browser toestaan; kijk <a href='https://sites.google.com/a/khanacademy.org/forge/for-developers/how-to-enable-dom-storage'>hier</a> voor instructies.",
             showClose: false
         });
     },

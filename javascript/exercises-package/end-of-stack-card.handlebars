@@ -27,14 +27,14 @@
 
     {{#unless practiceMode}}
     <div>
-        <h2 style="display: inline-block;">Overall Progress</h2>
-        <a href="javascript:void(0);" class="simple-button" id="show-topic-details">
+        <h2 style="display: inline-block;">Algehele voortgang</h2>
+        <a href="javascript:void(0);" class="simple-button" id="Laat details zien van dit onderwerp">
             {{proficient}}/{{total}} Skills
         </a>
     </div>
     <div class="progress-graph current-topic clearfix visited-no-recolor">
         <div class="three-col col-one">
-            <h3>Upcoming Skills</h3>
+            <h3>Toekomstige vaardigheden</h3>
             {{#each unstartedExercises}}
             <div class="skill-status">
                 <h4 class="skill-bar-title">
@@ -46,7 +46,7 @@
             {{/each}}
         </div>
         <div class="three-col col-two">
-            <h3>Skills In-Progress</h3>
+            <h3>Vaardigheden in ontwikkeling</h3>
             {{#each startedExercises}}
             <div class="skill-status">
                 <h4 class="skill-bar-title">
@@ -58,7 +58,7 @@
             {{/each}}
         </div>
         <div class="three-col col-three">
-            <h3>Proficient Skills</h3>
+            <h3>Beheerste vaardigheden</h3>
             {{#each proficientExercises}}
         	<div class="skill-status">
     	    	<h4 class="skill-bar-title">
@@ -76,27 +76,27 @@
         {{#each progress}}
         {{#if exerciseStates.proficient}}
             <h2>
-                Nice work! You're ready to move on. 
+                Goed werk! Je bent er klaar voor om verder te gaan. 
                 {{#if exerciseStates.reviewing}}
                 {{#unless exerciseStates.justEarnedProficiency}}
-                <span class="hover-disclosure review-explain" data-desc="You've earned proficiency in this skill, but we think you might want to review it because you had some trouble in this last stack.">
+                <span class="hover-disclosure review-explain" data-desc="Je beheerst deze vaardigheid beter, maar we denken dat je de stof nog een keer moet herhalen wegens problemen in de laaste fase.">
                     Why is the bar orange?
                 </span>
                 {{/unless}}
                 {{/if}}
             </h2>
             <div class="stack-controls practice-mode proficient">
-                <input type="button" class="more-stacks simple-button left" value="Give me another stack like this"><input type="button" class="skill-proficient to-dashboard default-action simple-button green right" value="Pick a new skill to work on" style="margin:0">
+                <input type="button" class="more-stacks simple-button left" value="Geef mij nog een set van deze oefeningen"><input type="button" class="skill-proficient to-dashboard default-action simple-button green right" value="Kies een nieuwe vaardigheid om aan te werken" style="margin:0">
             </div>
         {{else}}
             <div class="stack-controls practice-mode">
-                <input type="button" class="take-a-break to-dashboard simple-button left" value="Work on something else"><input type="button" class="more-stacks default-action simple-button green right" value="Give me another stack like this!">
+                <input type="button" class="take-a-break to-dashboard simple-button left" value="Werk aan iets anders"><input type="button" class="more-stacks default-action simple-button green right" value="Geef mij nog een set van deze oefeningen!">
             </div>
         {{/if}}
         {{/each}}
     {{else}}
         <div class="stack-controls">
-            <input type="button" class="take-a-break to-dashboard simple-button left" value="Work on something else"><input type="button" class="more-stacks default-action simple-button green right" value="Give me another stack like this!">
+            <input type="button" class="take-a-break to-dashboard simple-button left" value="Werk aan iets anders"><input type="button" class="more-stacks default-action simple-button green right" value="Geef mij nog een set van deze oefeningen!">
         </div>
     {{/if}}
 </div>

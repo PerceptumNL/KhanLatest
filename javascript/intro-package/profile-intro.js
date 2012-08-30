@@ -24,7 +24,7 @@ if (typeof Profile !== "undefined") {
                     },
                     {
                         action: guiders.ButtonAction.CLOSE,
-                        text: "Cool! laat mij nu inloggen!",
+                        text: "Cool! Ik wil nu inloggen!",
                         onclick: function() {
                             var postLoginUrl = "/postlogin?continue=" +
                                     encodeURIComponent(window.location.href);
@@ -34,9 +34,9 @@ if (typeof Profile !== "undefined") {
                         classString: "simple-button green"
                     }
                 ],
-                title: "Login om je je profiel op te slaan en te personaliseren!",
+                title: "Login om je profiel op te slaan en te personaliseren!",
                 description: "Jouw profielpagina laat je precies zijn welke " +
-                             "vooruitgang jij hebt geboekt op Khan Academie. Als je " +
+                             "voortgang je hebt geboekt op Khan Academie. Als je " +
                              "inlogt, kun je jouw profiel aanpassen en delen " +
                              "met je vrienden!",
                 overlay: true
@@ -62,7 +62,7 @@ if (typeof Profile !== "undefined") {
                 buttons: [
                     {
                         action: guiders.ButtonAction.CLOSE,
-                        text: "Nee, bedankt, Ik weet wat ik doe.",
+                        text: "Nee bedankt, ik weet wat ik doe.",
                         classString: "simple-button"
                     },
                     {
@@ -89,7 +89,7 @@ if (typeof Profile !== "undefined") {
                 buttons: [
                     {
                         action: guiders.ButtonAction.CLOSE,
-                        text: "Close",
+                        text: "Sluit",
                         classString: "simple-button"
                     },
                     {
@@ -102,7 +102,7 @@ if (typeof Profile !== "undefined") {
                 description: isFullyEditable ?
                     "Je kunt op een afbeelding klikken om een avatar te kiezen " +
                     "en op je gebruikersnaam om je echte naam in te stellen. " :
-                    "Je kunt op een afbeelding klikkken om een jouw avatar te kiezen."
+                    "Je kunt op een afbeelding klikken om jouw avatar te kiezen."
             });
 
             guiders.createGuider({
@@ -197,22 +197,22 @@ if (typeof Profile !== "undefined") {
                 }]
             ),
             title: "Praat erover!",
-            description: "Zowel jij als de community kunnen door jouw openbare " +
-                         "vragen, antwoorden, en commentaar. Delen wat " +
+            description: "Zowel jij als de community kunnen jouw openbare " +
+                         "vragen, antwoorden en commentaar zien. Delen wat " +
                          "we geleerd hebben is waar het om gaat binnen de community!" +
                          "<br><br>Check hier de coole discussie pagina's over " +
                          "deze mensen:<br>" +
-                         "<ul style='list-style-position: inside; " +
-                             "list-style-type: disc;'>" +
-                         "<li><a href='/profile/Sphairistrike/discussion' " +
-                                "target='_blank'>Greg Boyle</a> " +
-                                "(Art History fan)</li>" +
-                         "<li><a href='/profile/britcruise/discussion' " +
-                                "target='_blank'>Brit Cruise</a> " +
-                                "(Khan Academy's very own)</li>" +
-                         "<li><a href='/profile/Skywalker94/discussion' " +
-                                "target='_blank'>Skywalker94</a> " +
-                                "(over 1400 answers!)</li></ul>"
+   //                      "<ul style='list-style-position: inside; " +
+   //                          "list-style-type: disc;'>" +
+   //                     "<li><a href='/profile/Sphairistrike/discussion' " +
+   //                             "target='_blank'>Greg Boyle</a> " +
+   //                             "(Art History fan)</li>" +
+   //                      "<li><a href='/profile/britcruise/discussion' " +
+   //                             "target='_blank'>Brit Cruise</a> " +
+   //                             "(Khan Academy's very own)</li>" +
+   //                      "<li><a href='/profile/Skywalker94/discussion' " +
+   //                             "target='_blank'>Skywalker94</a> " +
+   //                             "(over 1400 answers!)</li></ul>"
         });
 
         // In the case of giving just the discussion tutorial, we need to kick
@@ -244,11 +244,11 @@ if (typeof Profile !== "undefined") {
                     text: "Maak mijn profiel openbaar",
                     classString: "simple-button green"
                 }],
-                title: "Deel met de Wereld " +
+                title: "Deel met de wereld " +
                        "<span style='font-size:65%'>(alleen als je dat wilt)" +
                        "</span>",
-                description: "Maak je profiel openbaar en deel de informatie " +
-                             "hier uitgelicht. Je kunt het altijd weer op prive zetten."
+                description: "Maak je profiel openbaar en deel de informatie die" +
+                             "hier wordt getoond. Je kunt het altijd weer op prive zetten."
             });
         }
     };

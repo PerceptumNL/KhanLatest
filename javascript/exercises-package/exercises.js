@@ -156,7 +156,7 @@ var Exercises = {
 
         var contextId = this.contextId();
         if (!contextId) {
-            throw "Missing exercise or topic for current session";
+            throw "Ontbrekende oefening of onderwerp voor deze sessie";
         }
 
         return [

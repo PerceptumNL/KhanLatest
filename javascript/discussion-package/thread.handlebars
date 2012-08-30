@@ -15,7 +15,7 @@
                 <span class="question_answer_count_add_yours">
                     <input type="button" 
                            class="simple-button green add_yours" 
-                           value="Add Answer" />
+                           value="Voeg antwoord toe" />
                 </span>
             </td>
             {{/unless}}
@@ -25,7 +25,7 @@
     {{/unless}}
 
     <div class="question_sig sig">
-        <a class="author-nickname" data-user-id="{{authorUserId}}">{{authorNickname}}</a> asked
+        <a class="author-nickname" data-user-id="{{authorUserId}}">{{authorNickname}}</a> vroeg
         <a class="timeago" href="?qa_expand_key={{key}}" title="{{date}}">{{date}}</a>
         {{> flag-controls}}
 
@@ -46,12 +46,12 @@
                 <input name="entity_key" type="hidden" value="{{key}}">
                 <input class="simple-button question_submit" 
                        type="button" 
-                       value="Edit this question" />
+                       value="Bewerk deze vraag" />
                 or <a href="#" class="question_cancel control">Cancel</a>
             </div>
 
             <div class="chars_remaining">
-                <span class="chars_remaining_count">500</span> characters left
+                <span class="chars_remaining_count">500</span> tekens over
             </div>
 
             <div class="clearFloat">&nbsp;</div>
@@ -72,7 +72,7 @@
                     <input type="hidden" id="video_key" name="video_key" value="{{tempVideoKey}}">
                     <input type="hidden" name="question_key" value="{{key}}">
                     <div class="answer_placeholder">
-                        <textarea name="answer_text" class="answer_text" rows="2" cols="40" placeholder="Answer this question"></textarea>
+                        <textarea name="answer_text" class="answer_text" rows="2" cols="40" placeholder="Beantwoord deze vraag"></textarea>
                     </div>
                     <!-- TODO(marcia): should be a partial helper -->
                     <div class="answer_controls_container" style="display: none;">
@@ -80,7 +80,7 @@
                             <div class="controls">
                                 <input class="simple-button green answer_submit" 
                                        type="button" 
-                                       value="Answer" />
+                                       value="Beantwoord" />
                                 or <a href="javascript:void(0)" class="answer_cancel control">
                                     Cancel
                                 </a>

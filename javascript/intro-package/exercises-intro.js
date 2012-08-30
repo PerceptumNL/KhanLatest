@@ -39,21 +39,20 @@ if (typeof Exercises !== "undefined") {
 
                 Promos.markAsSeen(promoName);
                 
-                var desc = ("You just completed a stack of cards in a " + 
-                    "new " + (Exercises.practiceMode ? "skill" : "topic") +
-                    ". If you login, you can save all the progress you " + 
-                    "just made.");
+                var desc = ("Je hebt zojuist een serie goede antwoorden gegeven in een " + 
+                    (Exercises.practiceMode ? "nieuwe oefening" : "nieuw onderwerp") +
+                    ". Als je inlogt kun je je voortgang opslaan.");
 
                 guiders.createGuider({
                     buttons: [
                         {
                             action: guiders.ButtonAction.CLOSE,
-                            text: "No thanks",
+                            text: "Nee bedankt",
                             classString: "simple-button"
                         },
                         {
                             action: guiders.ButtonAction.CLOSE,
-                            text: "Cool. Let me login now!",
+                            text: "Cool. Ik wil inloggen!",
                             onclick: function() {
                                 var postLoginUrl = "/postlogin?continue=" +
                                         encodeURIComponent(window.location.href);
@@ -63,7 +62,7 @@ if (typeof Exercises !== "undefined") {
                             classString: "simple-button green"
                         }
                     ],
-                    title: "Log in to save all this progress!",
+                    title: "Log in om alle voortgang op te slaan!",
                     description: desc,
                     overlay: true
                 }).show();

@@ -460,7 +460,7 @@ var QA = {
     },
 
     focusQuestion: function() {
-        if (QA.showNeedsLoginNote(this, "to ask your question.")) {
+        if (QA.showNeedsLoginNote(this, "om je vraag te stellen.")) {
             return false;
         }
 
@@ -544,7 +544,7 @@ var QA = {
             return;
         }
 
-        var type = $(parent).is(".answer_container") ? "answer" : "question";
+        var type = $(parent).is(".answer_container") ? "antwoord" : "vraag";
 
         $("." + type + "_text", parent).val("").placeholder();
 
@@ -592,7 +592,7 @@ var QA = {
     },
 
     focusAnswer: function() {
-        if (QA.showNeedsLoginNote(this, "to answer this question.")) {
+        if (QA.showNeedsLoginNote(this, "om deze vraag te beantwoorden.")) {
             return false;
         }
 

@@ -201,7 +201,7 @@ if (typeof Profile !== "undefined") {
                          "vragen, antwoorden en commentaar zien. Delen wat " +
                          "we geleerd hebben is waar het om gaat binnen de community!" +
                          "<br><br>Check hier de coole discussie pagina's over " +
-                         "deze mensen:<br>" +
+                         "deze mensen:<br>"
    //                      "<ul style='list-style-position: inside; " +
    //                          "list-style-type: disc;'>" +
    //                     "<li><a href='/profile/Sphairistrike/discussion' " +

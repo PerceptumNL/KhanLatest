@@ -12,7 +12,7 @@
   // plugin variables
   var months = {
     "short": ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"],
-    "long": ["januari", "februari", "maart", "pril", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"] },
+    "long": ["januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"] },
       todayDate = new Date(),
       todayYear = todayDate.getFullYear(),
       todayMonth = todayDate.getMonth() + 1,
@@ -83,9 +83,9 @@
 
       // Add the option placeholders if specified
       if (settings["placeholder"]) {
-        $("<option value='0'>Year:</option>").appendTo($year);
-        $("<option value='0'>Month:</option>").appendTo($month);
-        $("<option value='0'>Day:</option>").appendTo($day);
+        $("<option value='0'>Jaar:</option>").appendTo($year);
+        $("<option value='0'>Maand:</option>").appendTo($month);
+        $("<option value='0'>Dag:</option>").appendTo($day);
       }
 
       var hiddenDate;

@@ -1825,7 +1825,7 @@ var Khan = (function() {
         attempts = 0;
         lastAction = (new Date).getTime();
 
-        $("#hint").val("I'd like a hint");
+        $("#hint").val("Help mij");
 
         $(Khan).trigger("newProblem");
 
@@ -2144,8 +2144,8 @@ var Khan = (function() {
 
                 hintsUsed += 1;
 
-                var stepsLeft = hints.length + " step" + (hints.length === 1 ? "" : "s") + " left";
-                $(this).val($(this).data("buttonText") || "I'd like another hint (" + stepsLeft + ")");
+                var stepsLeft = "nog " hints.length + " hint" + (hints.length === 1 ? "" : "s") + " over";
+                $(this).val($(this).data("buttonText") || "Geef mij nog een hint (" + stepsLeft + ")");
 
                 var problem = $(hint).parent();
 

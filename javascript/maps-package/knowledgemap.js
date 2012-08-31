@@ -124,8 +124,8 @@ function KnowledgeMapDrawer(container, knowledgeMap) {
 function KnowledgeMap(params) {
 
     if (typeof google === "undefined") {
-        alert("Please make sure you're not using any browser extensions or addons that may be blocking google.com,\n" +
-                "which is needed to display the Khan Academy exercises.\n\nOnce you've done that, restart your browser and reload this page.");
+        alert("Zorg dat browser extensies of add-on's die google.com blokkeren worden uitgeschakeld,\n" +
+                "dit is nodig om de Khan Academie oefeningen te tonen.\n\nSchakel extensies en add-on's uit en herstart je browser.");
         return;
     }
 
@@ -207,8 +207,8 @@ function KnowledgeMap(params) {
         _.map(params.graph_dict_data, function(dict) {
             var invalidForGoal = (
                 dict.goal_req ||
-                dict.status === "Proficient" ||
-                dict.status === "Review"
+                dict.status === "Behaald" ||
+                dict.status === "Herhalen"
             );
 
             if (self.newGoal && invalidForGoal) {
@@ -627,9 +627,9 @@ function KnowledgeMap(params) {
             nodeTarget.latLng
         ];
 
-        var countProficient = this.nodeStatusCount("Proficient", nodeSource, nodeTarget);
-        var countSuggested = this.nodeStatusCount("Suggested", nodeSource, nodeTarget);
-        var countReview = this.nodeStatusCount("Review", nodeSource, nodeTarget);
+        var countProficient = this.nodeStatusCount("Voltooid", nodeSource, nodeTarget);
+        var countSuggested = this.nodeStatusCount("Aangeraden", nodeSource, nodeTarget);
+        var countReview = this.nodeStatusCount("Herhalen", nodeSource, nodeTarget);
 
         var color = KnowledgeMapGlobals.colors.gray;
         var opacity = 0.48;
@@ -885,7 +885,7 @@ function KnowledgeMap(params) {
                 self.getElement("hide-on-dashboard-filter").hide();
                 self.getElement("exercise-all-exercises").hide();
             }
-            self.getElement("dashboard-all-exercises").find(".exercise-filter-count").html("(Showing " + counts.all + " of " + self.nodeRowViews.length + ")").show();
+            self.getElement("dashboard-all-exercises").find(".exercise-filter-count").html("(Toon " + counts.all + " van " + self.nodeRowViews.length + ")").show();
         } else {
             self.getElement("dashboard-filter-clear").hide();
             self.getElement("dashboard-all-exercises").find(".exercise-filter-count").hide();
@@ -907,7 +907,7 @@ function KnowledgeMap(params) {
             el = $("." + id);
         this.elementTable[id] = el;
         if (el.length === 0)
-            throw new Error('Missing element: "' + id + '" in container "' + this.containerID + '"');
+            throw new Error('Ontbrekend element: "' + id + '" in container "' + this.containerID + '"');
         return el;
     };
 

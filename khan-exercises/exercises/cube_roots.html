@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-require="math graphie">
 <head>
-    <title>Cube roots</title>
+    <title>Derdemachtswortel</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -16,11 +16,10 @@
 
         <div class="hints">
             <p>
-                If you can't think of that number, you can break down <code><var>Q</var></code> into
-                its prime factorization and look for equal groups of numbers.
+                Als je zo'n getal niet kunt vinden, ontbindt dan <code><var>Q</var></code> in factoren en kijk of er groepen gelijke getallen zijn.
             </p>
             <div>
-                <p>Let's draw a factor tree.</p>
+                <p>Laten we een getallenboom tekenen</p>
                 <div class="graphie" id="factor-tree">
                     init({
                         range: [ [-1, FACTORIZATION.length + 2], [ -2 * FACTORIZATION.length - 1, 1] ],
@@ -48,7 +47,7 @@
                 circle( [cx + 1, y], 0.5);
             </div>
 
-            <p>So we found that the prime factorization of <code><var>Q</var></code> is <code><var>PRIMES.join( "\\times " )</var></code>.</p>
+            <p>Dus <code><var>Q</var></code> ontbinden in factoren is <code><var>PRIMES.join( "\\times " )</var></code>.</p>
         </div>
 
         <div class="problems">
@@ -60,41 +59,40 @@
                     <var id="curr">Q</var>
                 </div>
 
-                <p class="question">What is the cube root of <code><var>Q</var></code>?</p>
+                <p class="question">Wat is de derdemachtswortel van <code><var>Q</var></code>?</p>
 
                 <p class="solution"><var>N</var></p>
 
                 <div class="hints" data-apply="prependContents">
                     <p>
-                        The cube root of <code><var>Q</var></code> is the number that, when
-                        multiplied by itself three times, equals <code><var>Q</var></code>.
+                        De derdemachtswortel van <code><var>Q</var></code> is het getal dat drie maal met zichzelf vermenigvuldigd <code><var>Q</var></code> geeft.
                     </p>
                 </div>
 
                 <div class="hints" data-apply="appendContents">
-                    <p>We're looking for the cube root of <code><var>Q</var></code>, so we want to split the prime factors into three identical groups.</p>
+                    <p>We zoeken de derdemachtswortel van <code><var>Q</var></code>, dus we willen de factoren in drie gelijke groepen splitsen.</p>
 
                     <div data-if="PRIMES.length === 3" data-unwrap>
 
-                        <p>We only have three prime factors, and we want to split them into three groups, so this is easy.</p>
-                        <p><code><var>Q</var> = <var>PRIMES.join( "\\times " )</var></code>, so <code><var>N</var>^3 = <var>Q</var></code>.</p>
+                        <p>We hebben maar drie factoren en we willen splitsen in drie factoren, dus dat is eenvoudig.</p>
+                        <p><code><var>Q</var> = <var>PRIMES.join( "\\times " )</var></code>, dus <code><var>N</var>^3 = <var>Q</var></code>.</p>
 
                     </div><div data-else data-unwrap>
 
                         <div>
-                            <p>Notice that we can rearrange the factors like so:</p>
+                            <p>Merk op dat we de factoren kunnen herschrijven tot:</p>
                             <p><code><var>Q</var> = <var>PRIMES.join( "\\times " )</var> = \left(<var>[ F_N.join( "\\times " ), F_N.join( "\\times " ), F_N.join( "\\times ") ].join( "\\right)\\times\\left(" )</var>\right)</code><p>
                         </div>
 
                         <p data-if="F_N.length > 1">
-                            So <code>\left(<var>F_N.join( "\\times " )</var>\right)^3 = <var>N</var>^3 = <var>Q</var></code>.
+                            Dus <code>\left(<var>F_N.join( "\\times " )</var>\right)^3 = <var>N</var>^3 = <var>Q</var></code>.
                         </p><p data-else>
-                            So <code><var>N</var>^3 = <var>Q</var></code>.
+                            Dus <code><var>N</var>^3 = <var>Q</var></code>.
                         </p>
 
                     </div>
 
-                    <p>So the cube root of <code><var>Q</var></code> is <code><var>N</var></code>.</p>
+                    <p>Dus de derdemachtswortel van <code><var>Q</var></code> is <code><var>N</var></code>.</p>
                 </div>
 
             </div>

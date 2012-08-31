@@ -32,9 +32,8 @@
 			<div id="population">
 				<div class="problem" data-else>
 	
-					<p> De volgende leeftijden (in jaren) van <var>plural( DATA_POINTS, animal( 1 ) )</var> zijn gevonden. 
-					Deze leeftijden zijn willekeurig geselecteerd uit een groep 
-					van <var>plural( POPULATION, animal( 1 ) )</var> uit de plaatselijke dierentuin:</p>
+					<p> De volgende leeftijden (in jaren) van alle <var>plural( DATA_POINTS, animal( 1 ) )</var> uit de plaatselijke dierentuin zijn gevonden: 
+					</p>
 					<p><code>\qquad<var>DATA.join( ",\\enspace " )</var></code></p>
 				</div>
 
@@ -47,11 +46,11 @@
 				<div class="solution" data-type="multiple">
 					<p>
 						Gemiddelde leeftijd:
-						<span class="sol short" data-type="decimal" data-inexact data-max-error="0.15"><var>mean( DATA )</var></span> jaren oud
+						<span class="sol short" data-type="decimal" data-inexact data-max-error="0.15"><var>mean( DATA )</var></span> jaar oud
 					</p>
 					<p>
 						Variantie:
-						<span class="sol short" data-type="decimal" data-inexact data-max-error="0.15"><var>sum( SQR_DEV ) / DATA_POINTS</var></span> jaar<code>^2</code>
+						<span class="sol short" data-type="decimal" data-inexact data-max-error="0.15"><var>sum( SQR_DEV ) / DATA_POINTS</var></span> jaar
 					</p>
 					<div class="example">decimals, like <code>7.5</code></div>
 					<div class="example">answers within <code>\pm 0.15</code> are accepted to allow for rounding part-way through</div>
@@ -59,7 +58,7 @@
 
 				<div class="hints">
 					<p>
-						Omdat de steekproef alleen gegevens bevat van <var>plural( DATA_POINTS, animal( 1 ) )</var> uit de dierentuin, is het alleen mogelijk
+						Omdat de steekproef gegevens bevat van alle <var>plural( DATA_POINTS, animal( 1 ) )</var> uit de dierentuin, is het mogelijk
 						om het <span class="hint_blue">populatiegemiddelde</span>
 						<code>(\color{<var>BLUE</var>}{\mu})</code> en 
 						de <span class="hint_pink">populatievariantie</span> <code>(\color{<var>PINK</var>}{\sigma^2})</code> te berekenen.
@@ -89,7 +88,7 @@
 
 					<div>
 						<p>
-							Bereken de <span class="hint_purple"> standaardafwijking </span> voor elke <var>animal(1)</var>.
+							Bereken de <span class="hint_purple"> standaardafwijkingen van het gemiddelde </span> voor elke <var>animal(1)</var>.
 						</p>
 						<div class="fake_header">
 							<span style="width: 100px;">
@@ -108,7 +107,7 @@
 							</span><span style="width: 150px;" class="hint_gray">
 								<code><var>roundTo( 2, POINT - MEAN )</var></code> jaar
 							</span><span style="width: 150px;" class="hint_purple">
-								<code><var>SQR_DEV[ i ]</var></code> jaar<code>^2</code>
+								<code><var>SQR_DEV[ i ]</var></code> jaar
 							</span>
 						</div>
 					</div>
@@ -116,9 +115,9 @@
 					<div>
 						<p>
 							Omdat we gebruik hebben gemaakt van het <span class="hint_blue">populatiegemiddelde</span><code>(\color{<var>BLUE</var>}{\mu})</code> om de 
-							<span class="hint_purple">standaardafwijking</span> te berekenen, vinden we dat de <span class="hint_red">variantie</span>
+							<span class="hint_purple">standaardafwijkingen van het gemiddelde</span> te berekenen, vinden we dat de <span class="hint_red">variantie</span>
 							<code>(\color{red}{\sigma^2})</code> het gemiddelde is van de
-							<span class="hint_purple">standaardafwijkingen</span>:
+							<span class="hint_purple">standaardafwijkingen van het gemiddelde</span>:
 						</p>
 						<p>
 							<code>
@@ -140,12 +139,12 @@
 						<code>
 							\color{red}{\sigma^2} \quad = \quad
 							\dfrac{\color{purple}{<var>roundTo( 2, sum( SQR_DEV ) )</var>}}{\color{<var>GREEN</var>}{<var>DATA_POINTS</var>}} \quad = \quad
-							\color{red}{<var>VARIANCE_POP</var>\text{ <var>plural( "jaar", VARIANCE_POP )</var>}^2}
+							\color{red}{<var>VARIANCE_POP</var>\text{ jaar}}
 						</code>
 					</p>
 
 					<p><strong>
-						De gemiddelde leeftijd van de <var>animal( 1 )</var> in de dierentuin is <var>MEAN</var> jaar, en de populatievariantie is <var>plural( VARIANCE_POP, "jaar" )</var><code>^2</code>.
+						De gemiddelde leeftijd van de <var>animal( 1 )</var> in de dierentuin is <var>MEAN</var> jaar, en de populatievariantie is <var>(VARIANCE_POP)</var> jaar.
 					</strong></p>
 
 				</div> <!-- hints -->
@@ -174,7 +173,7 @@
 					</p>
 					<p>
 						Variantie:
-						<span class="sol short" data-type="decimal" data-inexact data-max-error="0.15"><var>sum( SQR_DEV ) / ( DATA_POINTS - 1 )</var></span> jaar<code>^2</code>
+						<span class="sol short" data-type="decimal" data-inexact data-max-error="0.15"><var>sum( SQR_DEV ) / ( DATA_POINTS - 1 )</var></span> jaar
 					</p>
 					<div class="example">decimals, like <code>0.75</code></div>
 					<div class="example">answers within <code>\pm 0.15</code> are accepted to allow for rounding part-way through</div>
@@ -191,7 +190,7 @@
 
 					<div>
 						<p>
-						Om het <span class="hint_blue">populatiegemiddelde</span> te vinden tel je alle <code class="hint_green"><var>DATA_POINTS</var></code>
+						Om het <span class="hint_blue">steekproefgemiddelde</span> te vinden tel je alle <code class="hint_green"><var>DATA_POINTS</var></code>
 						leeftijden bij elkaar op en deel je door <code class="hint_green"><var>DATA_POINTS</var></code>.
 							
 						</p>
@@ -208,14 +207,14 @@
 						<code>
 								\color{<var>BLUE</var>}{\overline{x}} \quad = \quad
 								\dfrac{<var>plus.apply( KhanUtil, DATA )</var>}{\color{<var>GREEN</var>}{<var>DATA_POINTS</var>}} \quad = \quad
-								\color{<var>BLUE</var>}{<var>MEAN</var>\text{ <var>plural( "jaar", MEAN )</var> old}}
+								\color{<var>BLUE</var>}{<var>MEAN</var>\text{ jaar oud}}
 						</code>
 					</p>
 
 					<p>
-					Bereken de <span class="hint_purple"> standaardafwijking van het gemiddelde </span> voor elke <var>animal(1)</var>.
+					Bereken de <span class="hint_purple"> standaardafwijkingen van het gemiddelde </span> voor elke <var>animal(1)</var>.
 					Omdat het populatiegemiddelde onbekend is, schatten we het gemiddelde door het <span class="hint_blue">steekproefgemiddelde</span> te gebruiken
-					<code>(\color{<var>BLUE</var>}{\overline{x}} = \color{<var>BLUE</var>}{<var>MEAN</var>\text{ <var>plural( "jaar", MEAN )</var>}})</code>.
+					<code>(\color{<var>BLUE</var>}{\overline{x}} = \color{<var>BLUE</var>}{<var>MEAN</var>\text{ jaar}})</code>.
 					</p>
 
 					<div>
@@ -236,7 +235,7 @@
 							</span><span style="width: 150px;" class="hint_gray">
 								<code><var>roundTo( 2, POINT - MEAN )</var></code> jaar
 							</span><span style="width: 150px;" class="hint_purple">
-								<code><var>SQR_DEV[ i ]</var></code> <var>plural( "jaar", SQR_DEV[ i ] )</var><code>^2</code>
+								<code><var>SQR_DEV[ i ]</var></code> jaar
 							</span>
 						</div>
 					</div>
@@ -247,7 +246,7 @@
 							<span class="hint_purple">stanndaardafwijkingen van het gemiddelde</span>. Maar denk eraan dat we het echte populatiegemiddelde niet weten&mdash;we hebben het geschat door het <span class="hint_blue">steekproefgemiddelde</span> te nemen.
 						</p>
 						<p>
-							De leeftijd van elk <var>animal( 1 )</var> afzonderlijk in onze steekproef is dichterbij de gemiddelde leeftijd van de <var>plural( DATA_POINTS, animal( 1 ) )</var> uit de steekproef
+							De leeftijd van elke <var>animal( 1 )</var> afzonderlijk in onze steekproef is dichterbij de gemiddelde leeftijd van de <var>plural( DATA_POINTS, animal( 1 ) )</var> uit de steekproef
 							dan bij de gemiddelde leeftijd van alle <var>plural( POPULATION, animal( 1 ) )</var> uit de dierentuin.
 							Daarom onderschatten de <span class="hint_purple">standaardafwijkingen van het gemiddelde</span> die we berekend hebben de daadwerkelijke afwijkingen van het populatiegemiddelde. 
 						</p>
@@ -276,14 +275,14 @@
 						<code>
 							\color{red}{s^2} \quad = \quad
 							\dfrac{\color{purple}{<var>roundTo( 2, sum( SQR_DEV ) )</var>}}{\color{<var>GREEN</var>}{<var>DATA_POINTS - 1</var>}} \quad = \quad
-							\color{red}{<var>VARIANCE</var>\text{ <var>plural( "jaar", VARIANCE )</var>}^2}
+							\color{red}{<var>VARIANCE</var>\text{ jaar}}
 						</code>
 					</p>
 
 					<p><strong>
-						We vinden dat de gemiddelde leeftijd van de <var>animal( 1 )</var> in de dierentuin is <var>MEAN</var> jaar en dat de variantie
+						We schatten dat de gemiddelde leeftijd van de <var>animal( 1 )</var> in de dierentuin <var>MEAN</var> jaar is en dat de variantie
 						gelijk is aan
-						<var>plural( VARIANCE, 'jaar', 'jaren' )</var><code>^2</code>.
+						<var>(VARIANCE)</var> jaar.
 					</strong></p>
 
 				</div> <!-- hints -->

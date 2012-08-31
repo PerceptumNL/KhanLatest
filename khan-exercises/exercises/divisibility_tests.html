@@ -2,7 +2,7 @@
 <html data-require="math math-format word-problems subhints">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Divisibility tests</title>
+    <title>Deelbaarheid testen</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -18,14 +18,14 @@
     </div>
 
     <p class="question">
-        Is <code>\large{<var>NUMBER</var>}</code> divisible by
+        Is <code>\large{<var>NUMBER</var>}</code> deelbaar door
         <code><var>FACTOR</var></code>?
     </p>
 
-    <p class="solution"><var>DIVISIBLE ? "Yes" : "No"</var></p>
+    <p class="solution"><var>DIVISIBLE ? "Ja" : "Nee"</var></p>
     <ul class="choices" data-category="true">
-        <li>Yes</li>
-        <li>No</li>
+        <li>Ja</li>
+        <li>Nee</li>
     </ul>
 
     <div class="problems">
@@ -35,14 +35,12 @@
             </div>
 
             <div class="hints">
-                <p>Any even number is divisible by <code>2</code>.</p>
+                <p>Een even getal is deelbaar door <code>2</code>.</p>
                 <p class="final_answer" data-if="DIVISIBLE">
-                    <code><var>NUMBER</var></code> is even, so yes, it is
-                    divisible by <code>2</code>.
+                    <code><var>NUMBER</var></code> is een even getal dus het is deelbaar door <code>2</code>.
                 </p>
                 <p class="final_answer" data-else>
-                    <code><var>NUMBER</var></code> is odd, so it is
-                    not divisible by <code>2</code>.
+                    <code><var>NUMBER</var></code> is een oneven getal dus het is niet deelbaar door <code>2</code>.
                 </p>
             </div>
         </div>
@@ -78,15 +76,15 @@
             <div class="hints">
                 <div>
                     <p>
-                        A number is divisible by <code><var>FACTOR</var></code>
-                        if the sum of its digits is divisible by
+                        Een getal is deelbaar door <code><var>FACTOR</var></code>
+                        als de som van zijn cijfers deelbaar is door
                         <code><var>FACTOR</var></code>.
                         [<a href="#" class="show-subhint"
                         data-subhint="explain-three">Why?</a>]
                     </p>
                     <div class="subhint" id="explain-three">
                         <p>
-                            First, we can break the number up by place value:
+                            Eerst delen we het getal op naar plaatswaarde:
                         </p>
                         <code>
                             \qquad\begin{eqnarray}
@@ -100,8 +98,8 @@
                             \end{eqnarray}
                         </code>
                         <p>
-                            Next, we can rewrite each of the place values as
-                            <code>1</code> plus a bunch of <code>9</code>s:
+                            Vervolgens kunnen we elke cijfer herschrijven als
+                            <code>1</code> plus een aantal <code>9</code>s:
                         </p>
                         <code>
                             \qquad\begin{eqnarray}
@@ -118,7 +116,7 @@
                             \end{eqnarray}
                         </code>
                         <p>
-                            Now if we distribute and rearrange, we get this:
+                            Dit kunnen we vervolgens herschrijven tot:
                         </p>
                         <code>
                             \qquad\begin{eqnarray}
@@ -137,50 +135,48 @@
                             \end{eqnarray}
                         </code>
                         <p>
-                            Any number consisting only of <code>9</code>s is
-                            a multiple of <code><var>FACTOR</var></code>, so
-                            the first <var>cardinal(integerToDigits(NUMBER)
-                            .length - 1)</var> terms must all be multples of
+                            Elk getal bestaande uit enkel <code>9</code>s is
+                            een veelvoud van <code><var>FACTOR</var></code> dus de eerste
+                             <var>cardinal(integerToDigits(NUMBER).length - 1)</var> termen moeten allemaal veelvouden zijn van
                             <code><var>FACTOR</var></code>.
                         </p>
                         <p>
-                            That means that to figure out whether the original
-                            number is divisible by <code><var>FACTOR</var>
-                            </code>, all we need to do is add up the digits
-                            and see if the sum is divisible by
-                            <code><var>FACTOR</var></code>. In other words,
-                            <code>\blue{<var>NUMBER</var>}</code> is divisible
-                            by <code><var>FACTOR</var></code> if <code>\blue{
+                            Dat betekent dat we erachter moeten komen of het
+                            originele getal deelbaar is door <code><var>FACTOR</var>
+                            </code>. Alles wat we moeten doen is alle cijfers 
+                            optellen en zien of de som deelbaar is door
+                            <code><var>FACTOR</var></code>. Met andere woorden, 
+                            <code>\blue{<var>NUMBER</var>}</code> is deelbaar
+                            door <code><var>FACTOR</var></code> als <code>\blue{
                             <var>integerToDigits(NUMBER).join("}+\\blue{")
-                            </var>}</code> is divisible by
+                            </var>}</code> ook deelbaar is door
                             <code><var>FACTOR</var></code>!
                         </p>
                     </div>
                 </div>
                 <div data-each="STEPS as N, STEP">
-                    <p>Add the digits of <code><var>STEP.num</var></code>:</p>
+                    <p>Tel de cijfers van <code><var>STEP.num</var></code> op:</p>
                     <p style="margin-left: 20px;"><code>
                         <var>STEP.digits.join("+")</var> =
                         <var>STEP.sum</var>
                     </code></p>
                     <p style="margin-left: 20px;">
-                        If <code><var>STEP.sum</var></code> is
-                        divisible by <code><var>FACTOR</var></code>, then
-                        <code><var>STEP.num</var></code> must also be
-                        divisible by <code><var>FACTOR</var></code>.
+                        Als <code><var>STEP.sum</var></code> deelbaar is door
+                         <code><var>FACTOR</var></code> dan moet
+                        <code><var>STEP.num</var></code> ook deelbaar zijn door <code><var>FACTOR</var></code>.
                     </p>
                 </div>
                 <p class="final_answer" data-if="DIVISIBLE">
-                    <code><var>_.last(STEPS).sum</var></code> is divisible
-                    by <code><var>FACTOR</var></code>, therefore
+                    <code><var>_.last(STEPS).sum</var></code> is deelbaar 
+                    door <code><var>FACTOR</var></code> daarom is
                     <code>\blue{<var>NUMBER</var>}</code>
-                    must also be divisible by <code><var>FACTOR</var></code>.
+                    ook deelbaar door <code><var>FACTOR</var></code>.
                 </p>
                 <p class="final_answer" data-else>
-                    <code><var>_.last(STEPS).sum</var></code> is not divisible
-                    by <code><var>FACTOR</var></code>, therefore
+                    <code><var>_.last(STEPS).sum</var></code> is niet deelbaar door
+                    <code><var>FACTOR</var></code> daarom is
                     <code>\blue{<var>NUMBER</var>}</code>
-                    must not be divisible by <code><var>FACTOR</var></code>.
+                    ook niet deelbaar door <code><var>FACTOR</var></code>.
                 </p>
             </div>
         </div>
@@ -193,15 +189,15 @@
             <div class="hints">
                 <div>
                     <p>
-                        A number is divisible by <code>4</code> if the last
-                        two digits are divisible by <code>4</code>.
+                        Een getal is deelbaar door <code>4</code> als de 
+                        laatste twee cijfers ook deelbaar zijn door <code>4</code>.
                         [<a href="#" class="show-subhint"
                         data-subhint="explain-four">Why?</a>]
                     </p>
                     <div class="subhint" id="explain-four">
                         <p>
-                            We can rewrite the number as a multiple of
-                            <code>100</code> plus the last two digits:
+                            We kunnen het getal herschijven tot een veelvoud van
+                            <code>100</code> plus de laatste twee cijfers:
                         </p>
                         <code>\qquad
                         \gray{<var>NUMBER.toString().slice(0, -2)</var>}
@@ -211,34 +207,34 @@
                         \blue{<var>("00" + (NUMBER % 100)).slice(-2)</var>}
                         </code>
                         <p>
-                            Because <code><var>NUMBER.toString().slice(0, -2)
-                            </var>00</code> is a multiple of <code>100</code>,
-                            it is also a multiple of <code>4</code>.
+                            Omdat <code><var>NUMBER.toString().slice(0, -2)
+                            </var>00</code> een veelvoud is van <code>100</code>,
+                            is het ook een veelvoud van <code>4</code>.
                         </p>
                         <p>
-                            So as long as the value of the last two digits,
-                            <code>\blue{<var>NUMBER % 100</var>}</code>,
-                            is divisible by <code>4</code>, the original
-                            number must also be divisible by <code>4</code>!
+                           Dus wanneer de laatste twee cijfers van
+                           <code>\blue{<var>NUMBER % 100</var>}</code> deelbaar zijn
+                           door <code>4</code> is het originele getal ook deelbaar door <code>4</code>.
+
                         </p>
                     </div>
                 </div>
                 <p>
-                    Is the value of the last two digits,
+                    Zijn de laatste twee cijfers van
                     <code><var>NUMBER % 100</var></code>,
-                    divisible by <code>4</code>?
+                    deelbaar door <code>4</code>?
                 </p>
                 <p class="final_answer" data-if="DIVISIBLE">
-                    Yes,
+                    Ja,
                     <code>\blue{<var>NUMBER % 100</var> \div 4 =
-                    <var>NUMBER % 100 / 4</var>}</code>, so
-                    <code><var>NUMBER</var></code> must also be divisible by
+                    <var>NUMBER % 100 / 4</var>}</code> dus
+                    <code><var>NUMBER</var></code> is dan ook deelbaar door
                     <code>4</code>.
                 </p>
                 <p class="final_answer" data-else>
-                    No, <code><var>NUMBER % 100</var></code> is not
-                    divisible by <code>4</code>, so
-                    <code><var>NUMBER</var></code> is also not divisible by
+                    Nee, <code><var>NUMBER % 100</var></code> is niet
+                    deelbaar door <code>4</code> dus
+                    <code><var>NUMBER</var></code> is dan ook niet deelbaar door
                     <code>4</code>.
                 </p>
             </div>
@@ -251,19 +247,19 @@
 
             <div class="hints">
                 <p>
-                    A number is divisible by <code>5</code> if the last
-                    digit is a <code>0</code> or a <code>5</code>.
+                    Een getal is deelbaar door <code>5</code> als het laatste cijfer een
+                     <code>0</code> of een <code>5</code> is.
                 </p>
                 <p class="final_answer" data-if="DIVISIBLE">
-                    The last digit of <code><var>NUMBER</var></code> is
-                    <code><var>NUMBER % 10</var></code>, so yes
-                    <code><var>NUMBER</var></code> is divisible by
+                    Het laatste cijfer van <code><var>NUMBER</var></code> is een
+                    <code><var>NUMBER % 10</var></code> dus
+                    <code><var>NUMBER</var></code> is deelbaar door
                     <code>5</code>.
                 </p>
                 <p class="final_answer" data-else>
-                    The last digit of <code><var>NUMBER</var></code> is
-                    <code><var>NUMBER % 10</var></code>, so no
-                    <code><var>NUMBER</var></code> is not divisible by
+                    Het laatste cijfer van <code><var>NUMBER</var></code> is een
+                    <code><var>NUMBER % 10</var></code> dus
+                    <code><var>NUMBER</var></code> is niet deelbaar door
                     <code>5</code>.
                 </p>
             </div>
@@ -282,19 +278,18 @@
 
             <div class="hints">
                 <p>
-                    A number is divisible by <code>10</code> if the last
-                    digit is a <code>0</code>.
+                    Een getal is deelbaar door <code>10</code> als het laatste cijfer een <code>0</code>.
                 </p>
                 <p class="final_answer" data-if="DIVISIBLE">
-                    The last digit of <code><var>NUMBER</var></code> is
-                    <code><var>NUMBER % 10</var></code>, so yes
-                    <code><var>NUMBER</var></code> is divisible by
+                    Het laatste cijfer van <code><var>NUMBER</var></code> is een
+                    <code><var>NUMBER % 10</var></code> dus
+                    <code><var>NUMBER</var></code> is deelbaar door
                     <code>10</code>.
                 </p>
                 <p class="final_answer" data-else>
-                    The last digit of <code><var>NUMBER</var></code> is
-                    <code><var>NUMBER % 10</var></code>, so no
-                    <code><var>NUMBER</var></code> is not divisible by
+                    Het laatste cijfer van <code><var>NUMBER</var></code> is een
+                    <code><var>NUMBER % 10</var></code> dus
+                    <code><var>NUMBER</var></code> is niet deelbaar door
                     <code>10</code>.
                 </p>
             </div>

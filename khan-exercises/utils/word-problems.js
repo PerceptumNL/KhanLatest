@@ -61,6 +61,7 @@ jQuery.extend( KhanUtil, {
 			'zeehond': 'zeehonden',
 			'kiwi':'kiwi\'s',
 			'citroen':'citroenen',
+			'vaardigheid':'vaardigheden',
 			'mango':'mango\'s',
 			'watermeloen':'watermeloenen',
 			'boon':'bonen',
@@ -87,6 +88,9 @@ jQuery.extend( KhanUtil, {
 			'persoon':'personen',
 			'zebra': 'zebra\'s',
 			'beer': 'beren',
+			'uur': 'uren',
+			'minuut': 'minuten',
+			'week': 'weken',
 			'les': 'lessen',
 			'auto':'auto\'s',
 			'boom':'bomen',
@@ -129,6 +133,7 @@ jQuery.extend( KhanUtil, {
 			'dierentuin': 'dierentuinen',
 			'supermarkt': 'supermarkten',
 			'doos': 'dozen',
+			'nijlpaard':'nijlpaarden',
 			'euro': 'euro', 
 			'lange afstand renner': 'lange afstand renners',
 			'keer':'keer'
@@ -454,8 +459,8 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		[ "gorilla", 20, 5 ],
 		[ "leeuw", 12, 5 ],
 		[ "hagedis", 3, 1 ],
-		[ "stokstaartje", 13, 5 ],
-		[ "stekelvarken", 20, 5 ],
+		[ "giraffe", 13, 5 ],
+		[ "otter", 20, 5 ],
 		[ "zeehond", 15, 10 ],
 		[ "luiaard", 16, 5 ],
 		[ "slang", 25, 10 ],
@@ -471,6 +476,16 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 
 	var distances = KhanUtil.shuffle([
 		"kilometer"
+	]);
+
+	var transportActivities = KhanUtil.shuffle([
+		{voertuig:"fiets", ww:"fietste", voorz:"op"},
+		{voertuig:"auto", ww:"reed",voorz:"in"},
+		{voertuig:"tram", ww:"reisde",voorz:"met"},
+		{voertuig:"motor", ww:"reed",voorz:"op"},
+		{voertuig:"scooter", ww:"reed",voorz:"op"},
+		{voertuig:"trein", ww:"reisde",voorz:"met"},
+		{voertuig:"bus", ww:"reisde",voorz:"met"}
 	]);
 
 	var distanceActivities = KhanUtil.shuffle([
@@ -629,6 +644,18 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 
 		toevoeging: function (i) {
 			return distanceActivities[i - 1].voorzetsel;
+		},
+		
+		voertuigen: function(i) {
+			return transportActivities[i-1].voertuig;
+		},
+		
+		transportww: function(i) {
+			return transportActivities[i-1].ww;
+		},
+		
+		voorzet: function(i) {
+			return transportActivities[i-1].voorz;
 		},
 
 		bike: function( i ) {

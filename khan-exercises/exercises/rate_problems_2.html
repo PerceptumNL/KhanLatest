@@ -2,7 +2,7 @@
 <html data-translatable data-require="math math-format word-problems">
 <head>
 	<meta charset="UTF-8" />
-	<title>Rate problems 2</title>
+	<title>Snelheidsproblemen 2</title>
 	<script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -39,47 +39,47 @@
 				<var id="TIME_DOWN">60 * DISTANCE / RATE_DOWN</var>
 				<var id="RATE_AVG">60 * 2 * DISTANCE / ( TIME_UP + TIME_DOWN )</var>
 			</div>
-			<p class="problem" data-tt="question1">Starting at home, <var>person( 1 )</var> traveled uphill to the <var>store( 1 )</var> store for <var>TIME_UP</var> minutes at just <var>RATE_UP</var> mph. <var>He( 1 )</var> then traveled back home along the same path downhill at a speed of <var>K * RATE_UP</var> mph.</p>
-			<p class="question" data-tt="question2">What is <var>his( 1 )</var> average speed for the entire trip from home to the <var>store( 1 )</var> store and back?</p>
+			<p class="problem" data-tt="question1"><var>person( 1 )</var> gaat van huis heuvelop naar de <var>store( 1 )</var> in <var>TIME_UP</var> minuten met een snelheid van <var>RATE_UP</var> kilometer per uur. Daarna ging <var>he( 1 )</var> dezelfde weg heuvel af terug naar huis met een snelheid van <var>K * RATE_UP</var> kilometer per uur.</p>
+			<p class="question" data-tt="question2">Hoe groot is de gemiddelde snelheid voor de hele rit van huis naar de <var>store( 1 )</var> en weer terug?</p>
 
 			<div class="solution" data-type="multiple" data-tt="solution1">
-				<span class="sol"><var>RATE_AVG</var></span> mph
+				<span class="sol"><var>RATE_AVG</var></span> kilometer per uur
 			</div>
 
 			<div class="hints">
-				<p data-tt="hint1">The average speed is not just the average of <var>RATE_UP</var> mph and <var>RATE_DOWN</var> mph.</p>
-				<p data-tt="hint2"><var>He( 1 )</var> traveled for a longer time uphill (since <var>he( 1 )</var> was going slower), so we can estimate that the average speed is closer to <var>RATE_UP</var> mph than <var>RATE_DOWN</var> mph.</p>
+				<p data-tt="hint1">De gemiddelde snelheid is niet het gemiddelde van <var>RATE_UP</var> kilometer per uur en <var>RATE_DOWN</var> kilometer per uur.</p>
+				<p data-tt="hint2"><var>He( 1 )</var> deed er langer over om heuvel op te gaan (omdat <var>he( 1 )</var> langzamer ging), dus kunnen we vermoeden dat de gemiddelde snelheid dichter bij <var>RATE_UP</var> km/uur dan bij <var>RATE_DOWN</var> km/uur ligt.</p>
 				<div>
-					<p data-tt="hint3">To calculate the average speed, we will make use of the following:</p>
-					<p><code>\text{average speed} = \dfrac{\color{<var>KhanUtil.BLUE</var>}{\text{total distance}}}{\color{<var>KhanUtil.ORANGE</var>}{\text{total time}}}</code></p>
-					<p><code>\text{distance uphill} = \text{distance downhill}</code></p>
+					<p data-tt="hint3">Om de gemiddelde snelheid te berekenen gebruiken we het volgende:</p>
+					<p><code>\text{gemiddelde snelheid} = \dfrac{\color{<var>KhanUtil.BLUE</var>}{\text{totale afstand}}}{\color{<var>KhanUtil.ORANGE</var>}{\text{totale tijd}}}</code></p>
+					<p><code>\text{afstand heuvel op} = \text{afstand heuvel af}</code></p>
 				</div>
-				<p data-tt="hint4">What was the total distance traveled?</p>
+				<p data-tt="hint4">Hoe groot was de totaal afgelegde afstand?</p>
 				<div>
-					<p><code>\color{<var>KhanUtil.BLUE</var>}{\begin{align*}\text{total distance} &= \text{distance uphill} + \text{distance downhill}\\
-						&= 2 \times \text{distance uphill}\end{align*}}</code></p>
-					<p><code>\begin{align*}\text{distance uphill} &= \text{speed uphill} \times \text{time uphill} \\\
-						&= <var>RATE_UP</var>\text{ mph} \times <var>TIME_UP</var>\text{ minutes}\times\dfrac{1 \text{ hour}}{60 \text{ minutes}}\\
-						&= <var>DISTANCE</var>\text{ miles}\end{align*}</code></p>
+					<p><code>\color{<var>KhanUtil.BLUE</var>}{\begin{align*}\text{totale afstand} &= \text{afstand heuvel op} + \text{afstand heuvel af}\\
+						&= 2 \times \text{afstand heuvel op}\end{align*}}</code></p>
+					<p><code>\begin{align*}\text{afstand heuvel op} &= \text{snelheid heuvel op} \times \text{tijd heuvel op} \\\
+						&= <var>RATE_UP</var>\text{ km/uur} \times <var>TIME_UP</var>\text{ minuten}\times\dfrac{1 \text{ uur}}{60 \text{ minuten}}\\
+						&= <var>DISTANCE</var>\text{ kilometer}\end{align*}</code></p>
 				</div>
 				<div>
-					<p data-tt="hint5">Substituting to find the total distance:</p>
-					<p><code>\color{<var>KhanUtil.BLUE</var>}{\text{total distance} = <var>2 * DISTANCE</var>\text{ miles}}</code></p>
+					<p data-tt="hint5">Waarden invullen om de totale afstand te berekenen:</p>
+					<p><code>\color{<var>KhanUtil.BLUE</var>}{\text{totale afstand} = <var>2 * DISTANCE</var>\text{ kilometer}}</code></p>
 				</div>
-				<p data-tt="hint6">What was the total time spent traveling?</p>
+				<p data-tt="hint6">Hoe lang heeft de hele rit geduurd?</p>
 				<div>
-					<p><code>\color{<var>KhanUtil.ORANGE</var>}{\text{total time} = \text{time uphill} + \text{time downhill}}</code></p>
-					<p><code>\begin{align*}\text{time downhill} &= \dfrac{\text{distance downhill}}{\text{speed downhill}}\\
-						&= \dfrac{<var>DISTANCE</var>\text{ miles}}{<var>RATE_DOWN</var>\text{ mph}}\times\dfrac{60 \text{ minutes}}{1 \text{ hour}}\\
-						&= <var>TIME_DOWN</var>\text{ minutes}\end{align*}</code></p>
+					<p><code>\color{<var>KhanUtil.ORANGE</var>}{\text{totale tijd} = \text{tijd heuvel op} + \text{tijd heuvel af}}</code></p>
+					<p><code>\begin{align*}\text{tijd heuvel af} &= \dfrac{\text{afstand heuvel af}}{\text{snelheid heuvel af}}\\
+						&= \dfrac{<var>DISTANCE</var>\text{ kilometer}}{<var>RATE_DOWN</var>\text{ km/uur}}\times\dfrac{60 \text{ minuten}}{1 \text{ uur}}\\
+						&= <var>TIME_DOWN</var>\text{ minuten}\end{align*}</code></p>
 				</div>
-				<p><code>\color{<var>KhanUtil.ORANGE</var>}{\begin{align*}\text{total time} &= <var>TIME_UP</var>\text{ minutes} + <var>TIME_DOWN</var>\text{ minutes}\\
-					&= <var>TIME_UP + TIME_DOWN</var>\text{ minutes}\end{align*}}</code></p>
-				<p data-tt="hint7">Now that we know both the total distance and total time, we can find the average speed.</p>
-				<p><code>\begin{align*}\text{average speed} &= \dfrac{\color{<var>KhanUtil.BLUE</var>}{\text{total distance}}}{\color{<var>KhanUtil.ORANGE</var>}{\text{total time}}}\\
-					&= \dfrac{\color{<var>KhanUtil.BLUE</var>}{<var>2 * DISTANCE</var>\text{ miles}}}{\color{<var>KhanUtil.ORANGE</var>}{<var>TIME_UP + TIME_DOWN</var>\text{ minutes}}}\times\dfrac{60 \text{ minutes}}{1 \text{ hour}}\\
-					&= <var>RATE_AVG</var>\text{ mph}\end{align*}</code></p>
-				<p data-tt="hint8">The average speed is <var>RATE_AVG</var> mph, and which is closer to <var>RATE_UP</var> mph than <var>RATE_DOWN</var> mph as we expected.</p>
+				<p><code>\color{<var>KhanUtil.ORANGE</var>}{\begin{align*}\text{totale tijd} &= <var>TIME_UP</var>\text{ minuten} + <var>TIME_DOWN</var>\text{ minuten}\\
+					&= <var>TIME_UP + TIME_DOWN</var>\text{ minuten}\end{align*}}</code></p>
+				<p data-tt="hint7">Nu we zowel de totale afstand als de totale tijd weten, kunnen we de gemiddelde snelheid berekenen.</p>
+				<p><code>\begin{align*}\text{gemiddelde snelheid} &= \dfrac{\color{<var>KhanUtil.BLUE</var>}{\text{totale afstand}}}{\color{<var>KhanUtil.ORANGE</var>}{\text{totale tijd}}}\\
+					&= \dfrac{\color{<var>KhanUtil.BLUE</var>}{<var>2 * DISTANCE</var>\text{ kilometer}}}{\color{<var>KhanUtil.ORANGE</var>}{<var>TIME_UP + TIME_DOWN</var>\text{ minuten}}}\times\dfrac{60 \text{ minuten}}{1 \text{ uur}}\\
+					&= <var>RATE_AVG</var>\text{ km/uur}\end{align*}</code></p>
+				<p data-tt="hint8">De gemiddelde snelheid is <var>RATE_AVG</var> km/uur en dat is dichter bij <var>RATE_UP</var> km/uur dan bij <var>RATE_DOWN</var> km/uur, zoals we hadden verwacht.</p>
 			</div>
 		</div>
 		<div id="collective-action-same">
@@ -91,18 +91,18 @@
 				<var id="WALL_FINAL">PEOPLE_FINAL</var>
 				<var id="TIME_FINAL">TIME_INIT</var>
 			</div>
-			<p class="problem" data-tt="question3">It takes <var>TIME_INIT</var> minutes for <var>PEOPLE_INIT</var> people to paint <var>WALL_INIT</var> walls.</p>
-			<p class="question" data-tt="question4">How many minutes does it take <var>PEOPLE_FINAL</var> people to paint <var>WALL_FINAL</var> walls?</p>
+			<p class="problem" data-tt="question3">Het duurt <var>TIME_INIT</var> minuten voor <var>PEOPLE_INIT</var> personen om <var>WALL_INIT</var> muren te schilderen.</p>
+			<p class="question" data-tt="question4">Hoeveel minuten duurt het voor <var>PEOPLE_FINAL</var> personen om <var>WALL_FINAL</var> muren te schilderen?</p>
 			
 			<div class="solution" data-type="multiple" data-tt="solution2">
-				<span class="sol"><var>TIME_FINAL</var></span> minutes
+				<span class="sol"><var>TIME_FINAL</var></span> minuten
 			</div>
 			<div class="hints">
-				<p data-tt="hint9">Imagine that each person is assigned one wall, and all <var>PEOPLE_INIT</var> people begin painting at the same time.</p>
-				<p data-tt="hint10">Since everyone will finish painting their assigned wall after <var>TIME_INIT</var> minutes, it takes one person <var>TIME_INIT</var> minutes to paint one wall.</p>
-				<p data-tt="hint11">If we have <var>PEOPLE_FINAL</var> people and <var>WALL_FINAL</var> walls, we can again assign one wall to each person.</p>
-				<p data-tt="hint12">Everyone will take <var>TIME_FINAL</var> minutes to paint their assigned wall.</p>
-				<p data-tt="hint13">In other words, it takes <var>TIME_FINAL</var> minutes for <var>PEOPLE_FINAL</var> people to paint <var>WALL_FINAL</var> walls.</p>
+				<p data-tt="hint9">Stel je voor dat elke persoon een muur doet en dat alle <var>PEOPLE_INIT</var> personen gelijk beginnen te schilderen.</p>
+				<p data-tt="hint10">Omdat iedereen na <var>TIME_INIT</var> minuten klaar zal zijn met het schilderen van zijn muur betekent dit dat 1 persoon <var>TIME_INIT</var> minuten nodig heeft om 1 muur te schilderen.</p>
+				<p data-tt="hint11">Als we <var>PEOPLE_FINAL</var> personen hebben en <var>WALL_FINAL</var> muren kunnen we opnieuw 1 muur aan elke persoon toewijzen.</p>
+				<p data-tt="hint12">Iedereen heeft <var>TIME_FINAL</var> minuten nodig om zijn muur te schilderen.</p>
+				<p data-tt="hint13">Met andere woorden, het duurt <var>TIME_FINAL</var> minuten om <var>WALL_FINAL</var> muren door <var>PEOPLE_FINAL</var> personen te laten schilderen.</p>
 			</div>
 		</div>
 		<div id="collective-action-calculate">
@@ -114,29 +114,29 @@
 				<var id="TIME_FINAL">round( WALL_FINAL * TIME_INIT * PEOPLE_INIT / ( WALL_INIT * PEOPLE_FINAL ) )</var>
 				<var id="NEED_TO_ROUND">getGCD( WALL_FINAL * TIME_INIT * PEOPLE_INIT, WALL_INIT * PEOPLE_FINAL ) !== (WALL_INIT * PEOPLE_FINAL)</var>
 			</div>
-			<p class="problem" data-tt="question5"><var>PEOPLE_INIT</var> people can paint <var>WALL_INIT</var> walls in <var>TIME_INIT</var> minutes.</p>
-			<p class="question" data-tt="question6">How many minutes will it take for <var>PEOPLE_FINAL</var> people to paint <var>WALL_FINAL</var> walls? Round to the nearest minute.</p>
+			<p class="problem" data-tt="question5"><var>PEOPLE_INIT</var> personen kunnen <var>WALL_INIT</var> muren schilderen in <var>TIME_INIT</var> minuten.</p>
+			<p class="question" data-tt="question6">Hoeveel minuten zal het voor <var>PEOPLE_FINAL</var> personen duren om <var>WALL_FINAL</var> muren te schilderen? (Afronden op hele minuten)</p>
 			<div class="solution" data-type="multiple" data-tt="solution3">
-				<span class="sol"><var>TIME_FINAL</var></span> minutes
+				<span class="sol"><var>TIME_FINAL</var></span> minuten
 				<p class="example">the number of minutes, rounded to the nearest minute</p>
 			</div>
 			<div class="hints">
 				<div>
-					<p data-tt="hint14">We know the following about the number of walls <code>w</code> painted by <code>p</code> people in <code>t</code> minutes at a constant rate <code>r</code>.</p>
-					<p><code>w = r \cdot t \cdot p</code></p>
-					<p><code>\begin{align*}w &= <var>WALL_INIT</var>\text{ walls}\\
-						p &= <var>PEOPLE_INIT</var>\text{ people}\\
-						t &= <var>TIME_INIT</var>\text{ minutes}\end{align*}</code></p>
+					<p data-tt="hint14">We weten het volgende over het aantal muren <code>m</code> door <code>p</code> personen geschilderd in <code>t</code> minuten met een constante snelheid van <code>r</code>.</p>
+					<p><code>m = r \cdot t \cdot p</code></p>
+					<p><code>\begin{align*}m &= <var>WALL_INIT</var>\text{ muren}\\
+						p &= <var>PEOPLE_INIT</var>\text{ personen}\\
+						t &= <var>TIME_INIT</var>\text{ minuten}\end{align*}</code></p>
 				</div>
 				<div>
-					<p data-tt="hint15">Substituting known values and solving for <code>r</code>:</p>
-					<p><code>r = \dfrac{w}{t \cdot p}= \dfrac{<var>WALL_INIT</var>}{<var>TIME_INIT</var> \cdot <var>PEOPLE_INIT</var>} = <var>fractionReduce( WALL_INIT, TIME_INIT * PEOPLE_INIT )</var>\text{ walls painted per minute per person}</code></p>
+					<p data-tt="hint15">Vul de bekende waarden in en los op<code>r</code>:</p>
+					<p><code>r = \dfrac{m}{t \cdot p}= \dfrac{<var>WALL_INIT</var>}{<var>TIME_INIT</var> \cdot <var>PEOPLE_INIT</var>} = <var>fractionReduce( WALL_INIT, TIME_INIT * PEOPLE_INIT )</var>\text{ muur per minuut per persoon}</code></p>
 				</div>
-				<p data-tt="hint16">We can now calculate the amount of time to paint <var>WALL_FINAL</var> walls with <var>PEOPLE_FINAL</var> people.</p>
-				<p><code>t = \dfrac{w}{r \cdot p} = \dfrac{<var>WALL_FINAL</var>}{<var>fractionReduce( WALL_INIT, TIME_INIT * PEOPLE_INIT )</var> \cdot <var>PEOPLE_FINAL</var>} = \dfrac{<var>WALL_FINAL</var>}{<var>fractionReduce( WALL_INIT * PEOPLE_FINAL, TIME_INIT * PEOPLE_INIT )</var>} = <var>fractionReduce( WALL_FINAL * TIME_INIT * PEOPLE_INIT, WALL_INIT * PEOPLE_FINAL )</var>\text{ minutes}</code><span data-if="NEED_TO_ROUND"><code>= <var>mixedFractionFromImproper( WALL_FINAL * TIME_INIT * PEOPLE_INIT, WALL_INIT * PEOPLE_FINAL, true, true )</var>\text{ minutes}</code></span></p>
+				<p data-tt="hint16">Nu kunnen we de tijd uitrekenen om <var>WALL_FINAL</var> muren te schilderen door <var>PEOPLE_FINAL</var> personen.</p>
+				<p><code>t = \dfrac{m}{r \cdot p} = \dfrac{<var>WALL_FINAL</var>}{<var>fractionReduce( WALL_INIT, TIME_INIT * PEOPLE_INIT )</var> \cdot <var>PEOPLE_FINAL</var>} = \dfrac{<var>WALL_FINAL</var>}{<var>fractionReduce( WALL_INIT * PEOPLE_FINAL, TIME_INIT * PEOPLE_INIT )</var>} = <var>fractionReduce( WALL_FINAL * TIME_INIT * PEOPLE_INIT, WALL_INIT * PEOPLE_FINAL )</var>\text{ minuten}</code><span data-if="NEED_TO_ROUND"><code>= <var>mixedFractionFromImproper( WALL_FINAL * TIME_INIT * PEOPLE_INIT, WALL_INIT * PEOPLE_FINAL, true, true )</var>\text{ minuten}</code></span></p>
 				<div data-if="NEED_TO_ROUND">
-					<p data-tt="hint17">Round to the nearest minute:</p>
-					<p data-tt="hint18"><code>t = <var>TIME_FINAL</var>\text{ minutes}</code></p>
+					<p data-tt="hint17">Afronden op hele minuten:</p>
+					<p data-tt="hint18"><code>t = <var>TIME_FINAL</var>\text{ minuten}</code></p>
 				</div>
 			</div>
 		</div>

@@ -2,7 +2,7 @@
 <html data-require="math math-format word-problems graphie interactive">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>The fundamental theorem of arithmetic</title>
+    <title>De hoofdstelling van de rekenkunde</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -50,13 +50,12 @@
             </div>
 
             <p class="question">
-                Find the prime factorization of <code><var>NUMBER</var></code>.
+                Ontbind <code><var>NUMBER</var></code> in priemgetallen.
             </p>
 
             <div class="problem">
                 <p>
-                    Use the arrows to change the exponent on each prime number below to see if you can find the
-                    prime factorization.
+                   Gebruik de pijlen om de macht van elk priemgetal hieronder aan te passen om de ontbinding in priemgetallen te vinden.
                 </p>
                 <div class="graphie">
                     // Save a reference to KhanUtil.currentGraph.graph to workaround the issue
@@ -216,8 +215,8 @@
                 });
                 label([graph.cx + 1, graph.y], graph.curr);
             </div>
-            <p style="height: 60px">We can use a factor tree to break <code><var>NUMBER</var></code> into its prime
-            factorization. Which of the prime numbers divides into <code><var>NUMBER</var></code>?</p>
+            <p style="height: 60px">We kunnen een boomdiagram met factoren gebruiken om <code><var>NUMBER</var></code> te ontbinden.  
+            Door welke priemgetallen kun je <code><var>NUMBER</var></code> delen?</p>
         </div>
         <div data-each="FACTORIZATION.slice(0, -1) as I, FACTOR">
             <div class="graphie" data-update="factor-tree">
@@ -231,8 +230,8 @@
                 graph.lastLabel = label( [graph.cx + 1, graph.y], graph.curr );
             </div>
             <p style="height: 38px">
-                <code><var>REMAINING[I]</var></code> is divisible by <code class="hint_blue"><var>FACTOR</var></code>,
-                leaving us with <code><var>REMAINING[I] / FACTOR</var></code>.
+                <code><var>REMAINING[I]</var></code> is deelbaar door <code class="hint_blue"><var>FACTOR</var></code>,
+                met als resultaat <code><var>REMAINING[I] / FACTOR</var></code>.
             </p>
         </div>
         <div>
@@ -243,22 +242,14 @@
             </div>
             <p>
                 <code class="hint_blue"><var>FACTORIZATION[FACTORIZATION.length-1]</var></code>
-                is prime, so we're done factoring.
+                 is een priemgetal, dus we zijn klaar met ontbinden.
             </p>
         </div>
         <div>
             <p>
-                The prime factorization of <code><var>NUMBER</var></code> is:
-            </p>
-            <p><code class="hint_blue">
-                \qquad<var>FACTORIZATION.join("\\space\\color{black}{\\cdot}\\space")</var>
-            </code></p>
-            <div data-if="HAS_EXPONENTS">
-                <p>
-                    Because there <var>FACTORIZATION[0] === FACTORIZATION[1] ? "are" : "is"</var>
-                    <var>toSentence(EXPONENT_HINT)</var>, we can use exponents to write the prime factorization as:
-                </p>
-                <p><code>\qquad\blue{<var>SOLUTION</var>} = <var>NUMBER</var></code></p>
+                De ontbinding in priemgetallen van <code><var>NUMBER</var></code> is:
+                <code>(\color{<var>BLUE</var>}{\<var>SOLUTION</var> = <var>NUMBER</var>})</code>
+    		</p>
             </div>
         </div>
     </div>

@@ -22,7 +22,7 @@
 					'	})()'+
 					'</var>',
 		"question1"	: '<var>person( 1 )</var> heeft de afgelopen <var>VALUES.length</var> dagen elke dag <var>TYPES[ 0 ]</var>.',
-		"question2"	: 'In onderstaande tabel staan de hoeveelheden die <var>he( 1 )</var> elke dag heeft <var>TYPES[ 0 ]</var>. Schat hoeveel <var>he( 1 )</var> in totaal heeft <var>TYPES[ 1 ]</var> door de hoeveelheid per dag eerst af te ronden en vervolgens bij elkaar op te tellen.',
+		"question2"	: 'In onderstaande tabel staan de hoeveelheden die <var>he( 1 )</var> elke dag heeft <var>TYPES[ 1 ]</var>. Schat hoeveel <var>he( 1 )</var> in totaal heeft <var>TYPES[ 1 ]</var> door de hoeveelheid per dag eerst af te ronden en vervolgens bij elkaar op te tellen.',
 		"note1"     : "Als je alle hoeveelheden bij elkaar optelt voordat je afrondt, kom je uit op <var>SUM.toFixed( 2 )</var>. Vergelijk dat voor de grap zometeen eens met jouw uitkomst.",		
 		"hint1"		: 'Rond alle getallen af tot op de hele <var>TYPES[ 2 ]</var> en tel ze dan bij elkaar op.',
 		"hint2"		: 'De schatting komt dus uit op <code><var>ANSWER</var></code> <var>( TYPES[ 2 ] )</var>.',

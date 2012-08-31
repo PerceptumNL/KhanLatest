@@ -1,4 +1,3 @@
-
 /**
  * Utilities for changing a user's password.
  * This is intended to be used in a minimal form, usually in an iframe.
@@ -59,13 +58,13 @@ var Settings = {
 
         // Check basic length.
         if (password1.length < Settings.MIN_PASSWORD_LENGTH) {
-            $(".message-container").addClass("error").text("The new password is too short");
+            $(".message-container").addClass("error").text("Nieuwe wachtwoord is niet lang genoeg");
             $("#password1").focus();
             return false;
 
         // Check matching.
         } else if (password2 !== password1) {
-            $(".message-container").addClass("error").text("The passwords don't match");
+            $(".message-container").addClass("error").text("Wachtwoorden komen niet overeen");
             $("#password1").focus();
             return false;
         }

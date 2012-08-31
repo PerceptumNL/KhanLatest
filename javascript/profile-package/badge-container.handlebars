@@ -7,7 +7,7 @@
       </div>
       {{#if userBadges.length}}
       <div id="user-owned">
-      <h2 style="display: block; margin-left: 10px;">Badges Earned</h2>
+      <h2 style="display: block; margin-left: 10px;">Verdiende badges</h2>
         {{#each userBadges}}
           {{> shared_user-badge}}
         {{/each}}
@@ -15,7 +15,7 @@
       </div>
       {{/if}}
       <div id="all-badges">
-        <h2 style="display: block; margin-left: 10px;">Possible Badges</h2>
+        <h2 style="display: block; margin-left: 10px;">Mogelijke badges</h2>
         {{#each badges}}
           {{#unless isRetired}}
             {{> shared_badge}}

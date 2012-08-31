@@ -11,7 +11,7 @@ Login.initCompleteSignupForm = function(options) {
     Login.basePostLoginUrl = (options && options["basePostLoginUrl"]) || "";
 
     Login.focusOnFirstEmpty([
-            "#bijnaam", "#geslacht", "#gebruikersnaam", "#wachtwoord"]);
+            "#nickname", "#gender", "#username", "#password"]);
 
     Login.attachSubmitHandler(Login.submitCompleteSignup);
 };
@@ -20,9 +20,9 @@ Login.initCompleteSignupForm = function(options) {
  * Submits the complete signup attempt if it passes pre-checks.
  */
 Login.submitCompleteSignup = function() {
-    var valid = Login.ensureValid_("#bijnaam", "Geef je naam op.") &&
-            Login.ensureValid_("#gebruikersnaam", "Kies een gebruikersnaam.") &&
-            Login.ensureValid_("#wachtwoord", "kies een wachtwoord");
+    var valid = Login.ensureValid_("#nickname", "Geef je naam op.") &&
+            Login.ensureValid_("#username", "Kies een gebruikersnaam.") &&
+            Login.ensureValid_("#password", "kies een wachtwoord");
 
     if (valid) {
         Login.asyncFormPost(
@@ -56,7 +56,7 @@ Login.onCompleteSignupSucess = function(data) {
  */
 Login.onCompleteSignupError = function(errors) {
     var firstFailed = _.find(
-            ["bijnaam", "gebruikersnaam", "wachtwoord"],
+            ["nickname", "username", "password"],
             function(fieldName) {
                 return fieldName in errors;
             });

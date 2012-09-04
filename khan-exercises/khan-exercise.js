@@ -2144,7 +2144,7 @@ var Khan = (function() {
 
                 hintsUsed += 1;
 
-                var stepsLeft = "nog " hints.length + " hint" + (hints.length === 1 ? "" : "s") + " over";
+                var stepsLeft = "nog " + hints.length + " hint" + (hints.length === 1 ? "" : "s") + " over";
                 $(this).val($(this).data("buttonText") || "Geef mij nog een hint (" + stepsLeft + ")");
 
                 var problem = $(hint).parent();

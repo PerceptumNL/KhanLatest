@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math graphie math-format">
+<head>
+	<meta charset="UTF-8" />
+	<title>Stelling van pythagoras 2</title>
+	<script src="../khan-exercise.js"></script>
+	<script>
+		function betterTriangle(width, height, A, B, C, a, b, c) {
+			var scale = 5 / Math.sqrt(width * width + height * height);
+			width *= scale;
+			height *= scale;
+
+			with ( KhanUtil.currentGraph ) {
+				// Leave some space for the labels
+				init({ range: [[-1.5, width + 1], [-1, height + 1]] });
+
+				path([ [0, 0], [width, 0], [0, height], true ]);
+
+				label( [0, height], A, "above left" );
+				label( [0, 0], C, "below left" );
+				label( [width, 0], B, "below right" );
+
+				label( [0, height/2], b, "left" );
+				label( [width/2, 0], a, "below" );
+				label( [width/2, height/2], c, "above right", {
+					labelDistance: 3
+				} );
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="exercise">
+	<div class="problems">
+		<div id="45-45-90-find-hypotenuse">
+			<div class="vars">
+				<var id="AC">randRange( 2, 7 )</var>
+			</div>
+
+			<div class="question">
+				<p data-tt="question1" >In deze rechthoekige driehoek is, <code>AC = BC = <var>AC</var></code>. Wat is <code>AB</code>?</p>
+
+				<div class="graphie">
+					betterTriangle( 1, 1, "A", "B", "C", AC, AC, "?" );
+				</div>
+			</div>
+
+			<div class="solution" data-type="radical"><var>AC * AC * 2</var></div>
+
+			<div class="hints">
+				<p data-tt="hint1" >Dit is een 45-45-90 driehoek omdat de twee rechthoekszijden even lang zijn.</p>
+				<p data-tt="hint2" >Dus de schuine zijde is <code>\sqrt{2}</code> keer zo lang als de rechthoekszijden.</p>
+				<p><code>AB = <var>AC</var>\sqrt{2}</code></p>
+			</div>
+		</div>
+
+		<div id="45-45-90-find-leg" data-weight="0.5">
+			<div class="vars">
+				<var id="AB">2 * randRange( 2, 6 )</var>
+			</div>
+
+			<div class="question">
+				<p data-tt="question2" >In deze rechthoekige driehoek is, <code>AC = BC</code> en <code>AB = <var>AB</var></code>. Hoe lang is elke rechthoekszijde?</p>
+
+				<div class="graphie">
+					betterTriangle( 1, 1, "A", "B", "C", "?", "?", AB );
+				</div>
+			</div>
+
+			<div class="solution" data-type="radical"><var>AB * AB / 2</var></div>
+
+			<div class="hints">
+				<p data-tt="hint3" >Dit is een 45-45-90 driehoek omdat de twee rechthoekszijden even lang zijn.</p>
+				<p data-tt="hint4" >Dus elke rechthoekszijde is <code>\frac{1}{\sqrt{2}}</code> keer zo lang als de schuine zijde.</p>
+				<p><code>AC = BC = \frac{1}{\sqrt{2}} <var>AB</var> = <var>AB / 2</var> \sqrt{2}</code></p>
+			</div>
+		</div>
+
+		<div id="45-45-90-find-leg-2" data-weight="0.5">
+			<div class="vars">
+				<var id="AB">2 * randRange( 2, 6 )</var>
+			</div>
+
+			<div class="question">
+				<p data-tt="question3" >In deze driehoek is <code>AC = BC</code> en <code>AB = <var>AB</var>\sqrt{2}</code>. Hoe lang is elke rechthoekszijde?</p>
+
+				<div class="graphie">
+					betterTriangle( 1, 1, "A", "B", "C", "?", "?", AB + "\\sqrt{2}" );
+				</div>
+			</div>
+
+			<div class="solution" data-type="radical"><var>AB * AB</var></div>
+
+			<div class="hints">
+				<p data-tt="hint5" >Dit is een 45-45-90 driehoek omdat de twee rechthoekszijden even lang zijn.</p>
+				<p data-tt="hint6" >Dus elke rechthoekszijde is <code>\frac{1}{\sqrt{2}}</code> keer zo lang als de schuine zijde.</p>
+				<p><code>AC = BC = \frac{1}{\sqrt{2}} <var>AB</var> \sqrt{2} = <var>AB</var></code></p>
+			</div>
+		</div>
+
+		<div id="30-60-90-find-hypotenuse-given-short-leg">
+			<div class="vars">
+				<var id="BC">randRange( 2, 6 )</var>
+				<var id="BCr, BCrs">randFromArray([ [1, ""], [3, "\\sqrt{3}"] ])</var>
+
+				<var id="mAB">randFromArray([ "\\angle A = 30^\\circ", "\\angle B = 60^\\circ" ])</var>
+			</div>
+
+			<div class="question">
+				<p data-tt="question4" >In deze driehoek is <code><var>mAB</var></code> en <code>BC = <var>BC + BCrs</var></code>. Hoe lang is <code>AB</code>?</p>
+
+				<div class="graphie">
+					betterTriangle( 1, sqrt(3), "A", "B", "C", BC + BCrs, "", "?" );
+				</div>
+			</div>
+
+			<div class="solution" data-type="radical"><var>4 * BC * BC * BCr</var></div>
+
+			<div class="hints">
+				<p data-tt="hint7" >Dit is een 30-60-90 driehoek.</p>
+				<p data-tt="hint8" >Dus de schuine zijde is twee keer zo lang als de kortste rechthoekszijde.</p>
+				<p><code>AB = 2 \cdot BC = 2 \cdot (<var>BC + BCrs</var>) = <var>( 2 * BC ) + BCrs</var></code></p>
+			</div>
+		</div>
+
+		<div id="30-60-90-find-hypotenuse-given-long-leg">
+			<div class="vars">
+				<var id="AC">3 * randRange( 2, 6 )</var>
+				<var id="ACr, ACrs, ABs, AB">randFromArray([
+					[1,  "",         (AC * 2 / 3) + "\\sqrt{3}", AC * AC * 4 / 3],
+					[3, "\\sqrt{3}", (AC * 2),                   AC * AC * 4]
+				])</var>
+
+				<var id="mAB">randFromArray([ "\\angle A = 30^\\circ", "\\angle B = 60^\\circ" ])</var>
+			</div>
+
+			<div class="question">
+				<p data-tt="question5" >In deze driehoek is <code><var>mAB</var></code> en <code>AC = <var>AC + ACrs</var></code>. Hoe lang is <code>AB</code>?</p>
+
+				<div class="graphie">
+					betterTriangle( 1, sqrt(3), "A", "B", "C", "", AC + ACrs, "?" );
+				</div>
+			</div>
+
+			<div class="solution" data-type="radical"><var>AB</var></div>
+
+			<div class="hints">
+				<p data-tt="hint9" >Dit is een 30-60-90 driehoek.</p>
+				<p data-tt="hint10" >Dus de schuine zijde is <code>\frac{2}{\sqrt{3}}</code> keer zo lang als de kortste rechthoekszijde.</p>
+				<p><code>AB = \frac{2}{\sqrt{3}} \cdot AC = \frac{2}{\sqrt{3}} \cdot (<var>AC + ACrs</var>) = <var>ABs</var></code></p>
+			</div>
+		</div>
+
+		<div id="30-60-90-find-short-leg-given-hypotenuse">
+			<div class="vars">
+				<var id="BC">randRange( 2, 6 )</var>
+				<var id="BCr, BCrs">randFromArray([ [1, ""], [3, "\\sqrt{3}"] ])</var>
+
+				<var id="mAB">randFromArray([ "\\angle A = 30^\\circ", "\\angle B = 60^\\circ" ])</var>
+			</div>
+
+			<div class="question">
+				<p data-tt="question6" >In deze driehoek is <code><var>mAB</var></code> en <code>AB = <var>( 2 * BC ) + BCrs</var></code>. Hoe lang is <code>BC</code>?</p>
+
+				<div class="graphie">
+					betterTriangle( 1, sqrt(3), "A", "B", "C", "?", "", ( 2 * BC ) + BCrs );
+				</div>
+			</div>
+
+			<div class="solution" data-type="radical"><var>BC * BC * BCr</var></div>
+
+			<div class="hints">
+				<p data-tt="hint11" >Dit is een 30-60-90 driehoek.</p>
+				<p data-tt="hint12" >Dus de kortste rechthoekszijde is de helft van de schuine zijde.</p>
+				<p><code>BC = \frac12 \cdot AB = \frac12 \cdot (<var>( 2 * BC ) + BCrs</var>) = <var>( BC ) + BCrs</var></code></p>
+			</div>
+		</div>
+
+		<div id="30-60-90-find-long-leg-given-hypotenuse">
+			<div class="vars">
+				<var id="AC">3 * randRange( 2, 6 )</var>
+				<var id="ACr, ACrs, ABs, AB">randFromArray([
+					[1,  "",         (AC * 2 / 3) + "\\sqrt{3}", AC * AC * 4 / 3],
+					[3, "\\sqrt{3}", (AC * 2),                   AC * AC * 4]
+				])</var>
+
+				<var id="mAB">randFromArray([ "\\angle A = 30^\\circ", "\\angle B = 60^\\circ" ])</var>
+			</div>
+
+			<div class="question">
+				<p data-tt="question7" >In deze driehoek is <code><var>mAB</var></code> en <code>AB = <var>ABs</var></code>. Hoe lang is <code>AC</code>?</p>
+
+				<div class="graphie">
+					betterTriangle( 1, sqrt(3), "A", "B", "C", "", "?", ABs );
+				</div>
+			</div>
+
+			<div class="solution" data-type="radical"><var>AC * AC * ACr</var></div>
+
+			<div class="hints">
+				<p data-tt="hint13" >Dit is een 30-60-90 driehoek.</p>
+				<p data-tt="hint14" >Dus de langste rechthoekszijde is <code>\frac{\sqrt{3}}{2}</code> keer zo langs als de schuine zijde.</p>
+				<p><code>AC = \frac{\sqrt{3}}{2} \cdot AB = \frac{\sqrt{3}}{2} \cdot (<var>ABs</var>) = <var>AC + ACrs</var></code></p>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

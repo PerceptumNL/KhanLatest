@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math word-problems">
+<head>
+	<meta charset="UTF-8" />
+	<title>Rekenkundige tekst problemen</title>
+	<script src="../khan-exercise.js"></script>
+</head>
+<body>
+	<div class="exercise">
+		<div class="problems">
+			<div>
+
+				<div class="vars" data-ensure="!isPrime( TOTAL_ITEMS )">
+					<var id="ITEMS_PER_GROUP">randRange( 3, 12 )</var>
+					<var id="ITEMS_LEFT">randRange( 2, ITEMS_PER_GROUP - 1 )</var>
+					<var id="GROUPS">randRange( 2, 12 )</var>
+					<var id="ITEMS_IN_GROUPS">GROUPS * ITEMS_PER_GROUP</var>
+					<var id="TOTAL_ITEMS">ITEMS_IN_GROUPS + ITEMS_LEFT</var>
+					<var id="NEW_ITEMS_PER_GROUP">getNontrivialFactor( TOTAL_ITEMS )</var>
+					<var id="NEW_GROUPS">TOTAL_ITEMS / NEW_ITEMS_PER_GROUP</var>
+				</div>
+
+				<div data-tt="question1" class="question" >
+					<var>person(1)</var> <var>groupVerb(1)</var> <var>plural( group(1) )</var> met <var>plural( item(1) )</var>.
+					Als <var>he(1)</var> elke <var>group(1)</var> met <var>plural( ITEMS_PER_GROUP, item(1) )</var>
+					<var>groupVerb(1)</var>, dan heeft <var>person(1)</var>
+					<var>plural( GROUPS, group(1) )</var> met <var>plural( item(1) )</var> en <var>plural( ITEMS_LEFT, item(1) )</var> over.
+
+					Als <var>he(1)</var> in plaats daarvan elke <var>group(1)</var> met <var>plural( NEW_ITEMS_PER_GROUP, item(1) )</var>
+					<var>groupVerb(1)</var>, hoeveel <var>plural( group(1) )</var> met <var>plural( item(1) )</var> <var>groupVerb(1)</var>
+					<var>he(1)</var> dan?
+					
+				</div>
+
+				<p class="solution"><var>NEW_GROUPS</var></p>
+
+				<div class="hints">
+					<p data-tt="hint1.1">
+						<var>plural( GROUPS, group(1) )</var> met elk
+						<var>plural( ITEMS_PER_GROUP, item(1) )</var>.
+						In totaal zijn dat  <code><var>GROUPS</var> \times <var>ITEMS_PER_GROUP</var> = <var>ITEMS_IN_GROUPS</var></code>
+						<var>plural( item )</var> <var>plural( item )</var>.
+					</p>
+
+					<p data-tt="hint1.2">
+						<var>plural( ITEMS_IN_GROUPS, item(1) )</var> plus
+						<var>ITEMS_LEFT</var> overgebleven <var>plural( item(1) )</var>. 
+						Het totaal aantal <var>plural( item(1) )</var> is dan gelijk aan <var>TOTAL_ITEMS</var>
+				
+					</p>
+
+					<p data-tt="hint1.3">
+						Verdeel de <var>plural( TOTAL_ITEMS, item(1) )</var> in <var>NEW_ITEMS_PER_GROUP</var> groepen is 
+						<code><var>TOTAL_ITEMS</var> \div <var>NEW_ITEMS_PER_GROUP</var> = <var>NEW_GROUPS</var></code>
+						<var>plural( group(1) )</var>.
+						
+					</p>
+				</div>
+			</div>
+
+			<div>
+
+				<div class="vars">
+					<var id="ITEM_1_COUNT">randRange( 4, 12 )</var>
+					<var id="ITEM_1_COST">randRange( 4, 12 )</var>
+					<var id="ITEM_2_COST">randRange( 4, 12 )</var>
+					<var id="TOTAL_SPENT_ON_1">ITEM_1_COUNT * ITEM_1_COST</var>
+					<var id="TOTAL_SPENT">TOTAL_SPENT_ON_1 + ITEM_2_COST</var>
+				</div>
+
+				<div data-tt="question2" class="question">
+					<var>person(1)</var> koopt <var>plural( ITEM_1_COUNT, storeItem(1, 1) )</var> in de <var>store(1)</var>,
+					ze kosten allemaal evenveel.
+
+					<var>He(1)</var> koopt ook voor <var>plural( ITEM_2_COST, "euro" , "euro" )</var> aan <var>plural(storeItem(1, 2))</var>.
+
+					In totaal geeft <var>he(1)</var> <var>plural( TOTAL_SPENT, "euro" , "euro" )</var> uit.
+
+					Hoeveel kost 1 <var>storeItem(1, 1)</var>?
+				</div>
+
+				<p class="solution"><var>ITEM_1_COST</var></p>
+
+				<div class="hints">
+					<p data-tt="hint2.1">
+						Van de <var>plural( TOTAL_SPENT, "euro" , "euro" )</var> besteedt 
+						<var>he(1)</var> <var>plural( ITEM_2_COST, "euro", "euro" )</var> 
+						aan <var>plural(storeItem(1, 2))</var>. In totaal heeft <var>he(1)</var> dan 
+						<code><var>TOTAL_SPENT</var> - <var>ITEM_2_COST</var> = 
+						<var>TOTAL_SPENT_ON_1</var></code> euro uitgegeven aan <var>plural( storeItem(1, 1) )</var>.
+					</p>
+
+					<p data-tt="hint2.2">
+						<var>He(1)</var> besteedt <var>plural( TOTAL_SPENT_ON_1, "euro" , "euro" )</var>
+						aan <var>plural( ITEM_1_COUNT, storeItem(1, 1) )</var>.
+						Dus dan besteedt <var>he(1)</var> <code><var>TOTAL_SPENT_ON_1</var> \div 
+						<var>ITEM_1_COUNT</var> = <var>ITEM_1_COST</var></code> euro aan 1
+						<var>storeItem(1, 1)</var>.
+					</p>
+				</div>
+			</div>
+
+			<div>
+
+				<div class="vars" data-ensure="!isPrime( TOTAL_ITEMS ) && NEW_ITEMS !== ITEMS">
+					<var id="TOTAL_ITEMS">randRange( 10, 99 )</var>
+					<var id="ITEMS">getNontrivialFactor( TOTAL_ITEMS )</var>
+					<var id="GROUPS">TOTAL_ITEMS / ITEMS</var>
+					<var id="NEW_ITEMS">getNontrivialFactor( TOTAL_ITEMS )</var>
+					<var id="NEW_GROUPS">TOTAL_ITEMS / NEW_ITEMS</var>
+				</div>
+
+				<div data-tt="question3" class="question">
+					<var>person(1)</var> heeft een partij <var>plural( item(1) )</var>.
+					Als <var>person(1)</var> elke <var>group(1)</var>  <var>groupVerb(1)</var> 
+					met <var>plural( ITEMS, item(1) )</var>, dan <var>groupVerb(1)</var>   
+					<var>person(1)</var> <var>plural( GROUPS, group(1) )</var>.
+					
+					Als <var>he(1)</var> nu <var>plural( NEW_GROUPS, group(1) )</var> <var>groupVerb(1)</var>, 
+					hoeveel <var>plural( item(1) )</var> gebruikt <var>he(1)</var> per <var>group(1)</var>?
+
+				</div>
+
+				<p class="solution"><var>NEW_ITEMS</var></p>
+
+				<div class="hints">
+					<p data-tt="hint3.1">
+						<var>plural( ITEMS, item(1) )</var> <code>\times</code>
+						<var>plural( GROUPS, group(1) )</var> <code>=</code>
+						<var>plural( TOTAL_ITEMS, item(1) )</var>.
+					</p>
+
+					<p data-tt="hint3.2">
+						Als we de <var>plural( TOTAL_ITEMS, item(1) )</var> verdelen
+						over <var>plural( NEW_GROUPS, group(1) )</var>, dan krijgen we 
+						per <var>group(1)</var> <code><var>TOTAL_ITEMS</var> \div <var>NEW_GROUPS</var> 
+						= <var>NEW_ITEMS</var></code> <var>plural( item(1) )</var>.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

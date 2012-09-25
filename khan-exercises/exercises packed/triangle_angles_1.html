@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math graphie graphie-helpers graphie-geometry math-format">
+<head>
+	<meta charset="UTF-8" />
+	<title>Hoeken in driehoeken 1</title>
+	<script src="../khan-exercise.js"></script>
+	<script>
+		function scTriangle(){
+			while( ! a || Math.abs( a - b ) < 5 || Math.abs( a - c ) < 5 || Math.abs( b - c ) < 5 ){
+				var a = KhanUtil.randRange( 25, 150 );
+				var b = KhanUtil.randRange( 25, 180 - a );
+				if ( a + b > 170 ){
+					a = Math.max( 30, a - 15  );
+					b = Math.max( 30, b - 15  );
+				}
+				var c = 180 - a - b;
+			}
+
+			var sa = KhanUtil.randRange( 4, 8 );
+			var sb = sa * Math.sin( b * Math.PI / 180 )  / Math.sin( a * Math.PI / 180 );
+			var sc = sa * Math.sin( c * Math.PI / 180 )  / Math.sin( a * Math.PI / 180 );
+			return [ [ a, b, c ] , [ sc.toFixed( 1 ),  sa.toFixed( 1 ), sb.toFixed( 1 ) ] ];
+		}
+
+		function eqTriangle(){
+			var a = KhanUtil.randRange( 4, 8 );
+			return [ [ 60, 60, 60 ], [ a, a, a ] ];
+		}
+		
+		function isoTriangle(){
+			var a = KhanUtil.randRangeExclude( 25, 75, [ 60 ] );
+			var c = 180 - 2 * a;
+			var sa = KhanUtil.randRange( 4, 8 );
+			var sc = sa * Math.sin( c * Math.PI / 180 )  / Math.sin( a * Math.PI / 180 );
+			var ang =  [ a, a, c ];
+			var sides = [ sc.toFixed( 1 ), sa,  sa ];
+			return [ ang , sides ];
+			
+		}
+	
+	</script>
+</head>
+<body>
+	<div class="exercise">
+		<div class="problems">
+			<div id="scalene">
+				<div class="vars">
+					<var id="TRIANGLE">scTriangle()</var>
+				</div>
+				<div class="problem" data-tt="question1">
+					Wat is de waarde van de hoek die weergeven is met een "X"? 
+				</div>
+				<div class="question">
+					<div class="graphie">
+						init({
+							range: [ [-1, 10 ], [ -8, 1 ] ]
+						})
+						var tr = new Triangle( [ 3, -4 ],  TRIANGLE[ 0 ], 5, { "sides" : TRIANGLE[ 1 ], "angles" : [ TRIANGLE[ 0 ][ 0 ]  + "^{\\circ}", TRIANGLE[ 0 ][ 1 ] + "^{\\circ}",  "X" ] } );
+						tr.rotate( randRange( 0, 90 ) );
+						tr.boxOut( [ [ [ -10, 1 ], [ 10, 1 ] ] ], [ 0,-0.5 ] ) 
+						tr.draw();
+						tr.drawLabels();
+					</div>
+				</div>
+				<div class="solution"><var>TRIANGLE[ 0 ][ 2 ]</var></div>
+				<div class="hints">
+					<p data-tt="hint1">Alle hoeken in een driehoek zijn bij elkaar opgeteld gelijk aan 180 graden.</p>
+					<p data-tt="hint2">We weten twee hoeken van de driehoek.</p>
+					<p data-tt="hint3">De derde hoek is dan gelijk aan 180 min de andere twee. </p>
+					<p data-tt="hint4">De hoek is dan gelijk aan <code>180 - <var>TRIANGLE[ 0 ][ 0 ]</var> - <var>TRIANGLE[ 0 ][ 1 ]</var> = <var>TRIANGLE[ 0 ][ 2 ]</var></code></p>
+				</div>
+			</div>
+			<div id="isosceles1" data-type="scalene">
+				<div class="vars">
+					<var id="TRIANGLE">isoTriangle()</var>
+				</div>
+				<div class="question">
+					<div class="graphie">
+						init({
+							range: [ [-1, 10 ], [ -8, 1 ] ]
+						})
+						var tr = new Triangle( [ 3, -4 ],  TRIANGLE[ 0 ], 5, { "sides" : TRIANGLE[ 1 ], "angles" : [ TRIANGLE[ 0 ][ 0 ] + "^{\\circ}", "",  "X" ] } );
+						tr.rotate( randRange( 0, 90 ), 3, -3 );
+						tr.boxOut( [ [ [ -10, 1 ], [ 10, 1 ] ] ], [ 0,-0.5 ] ) 
+						tr.draw();
+						tr.drawLabels();
+					</div>
+				</div>
+				<div class="solution"><var>TRIANGLE[ 0 ][ 2 ]</var></div>
+				<div class="hints">
+					<p data-tt="hint5">Alle hoeken in een driehoek zijn bij elkaar opgeteld gelijk aan 180 graden.</p>
+					<p data-tt="hint6">Omdat deze driehoek twee gelijke zijden heeft, heeft het ook twee gelijke hoeken (het is een gelijkbenige driehoek).</p>
+					<p data-tt="hint7">We kunnen <code>A + B + C = 180</code> herschrijven naar <code>A + A + C = 180, 2A + C = 180 </code></p>
+					<p data-tt="hint8">De hoeken aan de basis (unieke) zijde zijn gelijk en de hoek tussen de twee gelijke zijden is uniek.</p>
+					<p data-tt="hint9">We weten 1 basishoek, dit betekent dat er nog een basishoek gelijk moet zijn aan die hoek, dus we weten dat beide hoeken gelijk zijn aan <var>TRIANGLE[ 0 ][ 0 ]</var></p>
+					<p data-tt="hint10">Met behulp van onze vergelijking, krijgen we  <code>2 \cdot <var>TRIANGLE[ 0 ][ 0 ]</var> + X = 180,<var>2 * TRIANGLE[ 0 ][ 0 ]</var> + C = 180</code></p>
+					<p><code>X = 180 - <var>2 * TRIANGLE[ 0 ][ 0 ]</var></code></p>
+					<p><code>X = <var>180 - 2 * TRIANGLE[ 0 ][ 0 ]</var></code></p>
+				</div>
+			</div
+>
+			<div id="isosceles2" data-type="scalene">
+				<div class="vars">
+					<var id="TRIANGLE">isoTriangle()</var>
+				</div>
+				<div class="question">
+					<div class="graphie">
+						init({
+							range: [ [-1, 10 ], [ -8, 1 ] ]
+						})
+						var tr = new Triangle( [ 3, -4 ],  TRIANGLE[ 0 ], 5, { "sides" : TRIANGLE[ 1 ], "angles" : [ "X", "", TRIANGLE[ 0 ][ 2 ] + "^{\\circ}" ]  } );
+						tr.rotate( randRange( 0, 90 ), 3, -3 );
+						tr.boxOut( [ [ [ -10, 1 ], [ 10, 1 ] ] ], [ 0,-0.5 ] ) 
+						tr.draw();
+						tr.drawLabels();
+					</div>
+				</div>
+				<div class="solution"><var>TRIANGLE[ 0 ][ 0 ]</var></div>
+				<div class="hints">
+					<p data-tt="hint11">Alle hoeken in een driehoek zijn bij elkaar opgeteld gelijk aan 180 graden.</p>
+					<p data-tt="hint12">Omdat deze driehoek twee gelijke zijden heeft, heeft het ook twee gelijke hoeken (het is een gelijkbenige driehoek).</p>
+					<p data-tt="hint13">We kunnen <code>A + B + C = 180</code> herschrijven naar <code>A + A + C = 180, 2A + C = 180 </code></p>
+					<p data-tt="hint14">De hoeken aan de basis (de unieke) zijde zijn gelijk en de hoek tussen de twee gelijke zijden is uniek.</p>
+					<p data-tt="hint15">We weten de unieke hoek, dit betekent dat de andere twee hoeken gelijk zijn aan elkaar.</p>
+					<p data-tt="hint16">Daarom is de hoek die we zoeken gelijk aan <code>A</code></p>
+					<p data-tt="hint17">Met behulp van onze vergelijking, krijgen we <code>2X  + <var>TRIANGLE[ 0 ][ 2 ]</var> = 180</code></p>
+					<p><code>2X = 180 - <var>TRIANGLE[ 0 ][ 2 ]</var> </code></p>
+					<p><code>2X = <var>180 - TRIANGLE[ 0 ][ 2 ]</var></code></p>
+					<p><code>X = \dfrac{ <var>180 - TRIANGLE[ 0 ][ 2 ]</var> }{ 2 }</code></p>
+					<p><code>X = <var>TRIANGLE[ 0 ][ 0 ]</var></code></p>
+				</div>
+			</div>
+			<div id="isosceles3" data-type="scalene">
+				<div class="vars">
+					<var id="TRIANGLE">isoTriangle()</var>
+				</div>
+				<div class="question">
+					<div class="graphie">
+						init({
+							range: [ [-1, 10 ], [ -8, 1 ] ]
+						})
+						var tr = new Triangle( [ 3, -4 ],  TRIANGLE[ 0 ], 5, { "sides" : TRIANGLE[ 1 ], "angles" : [ TRIANGLE[ 0 ][ 0 ]+ "^{\\circ}",  "X", "" ]  } );
+						tr.rotate( randRange( 0, 90 ), 3, -3 );
+						tr.boxOut( [ [ [ -10, 1 ], [ 10, 1 ] ] ], [ 0,-0.5 ] ) 
+						tr.draw();
+						tr.drawLabels();
+					</div>
+				</div>
+				<div class="solution"><var>TRIANGLE[ 0 ][ 0 ]</var></div>
+				<div class="hints">
+					<p data-tt="hint18">Alle hoeken in een driehoek zijn bij elkaar opgeteld gelijk aan 180 graden.</p>
+					<p data-tt="hint19">Omdat deze driehoek twee gelijke zijden heeft, heeft het ook twee gelijke hoeken (het is een gelijkbenige driehoek).</p>
+					<p data-tt="hint20">De hoeken aan de basis (de unieke) zijde zijn gelijk en de hoek tussen de twee gelijke zijden is uniek.</p>
+					<p data-tt="hint21">We weten dat 1 basishoek <var>TRIANGLE[ 0 ][ 0 ]</var> is en we weten dat de hoek naar waar we op zoek zijn ook aan de basiszijde zit.</p>
+					<p data-tt="hint22">Daarom is de hoek die we zoeken ook gelijk aan <var>TRIANGLE[ 0 ][ 0 ]</var>.</p>
+				</div>	
+			</div>
+		</div>
+	</div>
+</body>
+</html>

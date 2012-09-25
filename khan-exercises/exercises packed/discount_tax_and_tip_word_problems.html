@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html data-require="math word-problems spin graphie graphie-helpers-arithmetic">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Discount, tax, and tip word problems</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="problems">
+
+        <div id="tax-total-cost">
+            <div class="vars">
+                <var id="DOLLARS">randRange(4,25).toFixed(2)</var>
+                <var id="SALES_TAX">randRange(3,19)</var>
+                <var id="TOTAL_PRICE">roundTo(2, (1+(SALES_TAX/100))*DOLLARS).toFixed(2)</var>
+            </div>
+            <div class="question spin">
+                <p><var>person(1)</var> koopt een mand <var>plural(fruit(1))</var> met korting voor €<var>DOLLARS</var>.  De BTW is  <var>SALES_TAX</var>%.  Wat moet <var>person(1)</var> voor de <var>plural(fruit(1))</var> totaal betalen?  (Afronden op hele centen.)</p>
+            </div>
+            <p class="solution" data-forms="dollar"><var>TOTAL_PRICE</var></p>
+            <div class="hints">
+                <div>
+                    <p>Om de totale prijs te berekenen moet eerst de te betalen BTW berekend worden door de BTW te vermenigvuldigen met de originele prijs van de <var>plural(fruit(1))</var>.</p>
+                    <p><code class="hint_blue"><var>SALES_TAX</var>\%</code> <code>\times</code> <code class="hint_green">€<var>DOLLARS</var></code> =</p>
+                </div>
+                <div>
+                    <p>Procent betekent honderdste deel, dus <code class="hint_blue"><var>SALES_TAX</var>\%</code> is gelijk aan <code class="hint_blue">\displaystyle\frac{<var>SALES_TAX</var>}{100}</code> wat hetzelfde is als <code class="hint_blue"><var>SALES_TAX</var> \div 100</code>.</p>
+                    <p><code class="hint_blue"><var>SALES_TAX</var> \div 100 = <var>(SALES_TAX/100).toFixed(2)</var></code>
+                </div>
+                <div>
+                    <p>Vermenigvuldig de zojuist in een decimaal getal omgerekende BTW met de originele prijs om zo de te betalen BTW te berekenen.</p>
+                    <p><code class="hint_blue"><var>SALES_TAX/100</var></code> <code>\times</code> <code class="hint_green">€<var>DOLLARS</var></code> <code>=</code> <code class="hint_purple">€<var>((SALES_TAX/100) * DOLLARS).toFixed(2)</var></code>
+                </div>
+                <div>
+                    <p>Tel de zojuist berekende BTW op bij de originele prijs om de prijs te vinden die <var>person(1)</var> moet betalen.<p>
+                    <p><code class="hint_purple">€<var>((SALES_TAX/100) * DOLLARS).toFixed(2)</var></code> + <code class="hint_green">€<var>DOLLARS</var></code> <code>=</code> <code class="hint_orange">€<var>TOTAL_PRICE</var></code>
+                    <p class="final_answer"><var>person(1)</var> moet <code class="hint_orange">€<var>TOTAL_PRICE</var></code> betalen.</p>
+                </div>
+                </div>
+            </div>
+
+        <div id="simple-tax">
+            <div class="vars">
+                <var id="TAX">roundTo(1, randRange(31,139) / 10 )</var>
+                <var id="PRICE">randRange(3,200).toFixed(2)</var>
+                <var id="TOTAL_TAX">roundTo(2, (TAX / 100) * PRICE).toFixed(2)</var>
+            </div>
+            <div class="question spin">
+                    <p>Als de BTW <var>TAX</var>% is, hoeveel BTW moet je dan betalen als iets een bruto prijs van €<var>PRICE</var> heeft? Afronden op hele centen.</p>
+            </div>
+            <p class="solution" data-forms="dollar"><var>TOTAL_TAX</var></p>
+            <div class="hints">
+                <div>
+                    <p>Om de te betalen hoeveelheid BTW te vinden, vermenigvuldig dan de BTW met de originele prijs.</p>
+                    <p><code class="hint_blue"><var>TAX</var>\%</code> <code>\times</code> <code class="hint_green">€<var>PRICE</var></code><code> =</code></p>
+                </div>
+                <div>
+                    <p>Procent betekent honderdste deel, dus <code class="hint_blue"><var>TAX</var>\%</code> is gelijk aan <code class="hint_blue"><var>TAX</var> \div 100</code>.</p>
+                    <p><code class="hint_blue"><var>TAX</var> \div 100 = <var>(TAX/100).toFixed(3)</var></code>
+                </div>
+                <div>
+                    <p>Vermenigvuldig de zojuist in een decimaal getal omgerekende BTW met de originele prijs om zo de te betalen BTW te berekenen. Afronden op hele centen.</p>
+                    <p><code class="hint_blue"><var>(TAX/100).toFixed(3)</var></code> <code>\times</code> <code class="hint_green">€<var>PRICE</var></code> = <code class="hint_orange">€<var>TOTAL_TAX</var></code>
+                    <p class="final_answer">Je moet <code class="hint_orange">€<var>TOTAL_TAX</var></code> aan BTW betalen.</p>
+                </div>
+            </div>
+            </div>
+
+            <div id="total-price-with-discount">
+            <div class="vars">
+                <var id="PRICE">(randRange(8,85)).toFixed(2)</var>
+                <var id="DISCOUNT">randRange(1,11)*5</var>
+                <var id="DISCOUNT_PRICE">roundTo(2, PRICE - ( (DISCOUNT/100) * PRICE)).toFixed(2)</var>
+            </div>
+            <div class="question spin">
+                    <p><var>person(1)</var> kocht een nieuwe <var>clothing( 1 )</var> in de winkel toen er <var>DISCOUNT</var>% korting was. Als de normale verkoopprijs voor de <var>clothing( 1 )</var> €<var>PRICE</var> was, hoeveel betaalde <var>person(1)</var> dan met de korting?</p>
+            </div>
+            <p class="solution" data-forms="dollar"><var>DISCOUNT_PRICE</var></p>
+            <div class="hints">
+                <div>
+                    <p>Bereken eerst de hoeveelheid korting door de originele prijs van de <var>clothing( 1 )</var> te vermenigvuldigen met de korting.</p>
+                    <p><code class="hint_blue">€<var>PRICE</var></code> <code>\times</code> <code class="hint_green"><var>DISCOUNT</var>\%</code> <code>=</code></p>
+                </div>
+                <div>
+                    <p>Procent betekent honderdste deel, dus <code class="hint_green"><var>DISCOUNT</var>\%</code> is gelijk aan <code class="hint_green">\displaystyle\frac{<var>DISCOUNT</var>}{100}</code> wat hetzelfde is als <code class="hint_green"><var>DISCOUNT</var> \div 100</code>.</p>
+                    <p><code class="hint_green"><var>DISCOUNT</var> \div 100 = <var>(DISCOUNT/100).toFixed(2)</var></code>
+                </div>
+                <div>
+                    <p>Vermenigvuldig de korting die je zojuist hebt omgerekend naar een decimaal getal met de oorspronkelijke prijs om te weten hoeveel zij heeft bespaard.</p>
+                    <p><code class="hint_green"><var>(DISCOUNT/100).toFixed(2)</var></code> <code>\times</code> <code class="hint_blue">€<var>PRICE</var></code><code> = </code><code class="hint_purple">€<var>((DISCOUNT/100) * PRICE).toFixed(2)</var></code>
+                </div>
+                <div>
+                    <p>Trek de korting die je zojuist berekende van de originele prijs af om te vinden wat <var>person(1)</var> betaalde.<p>
+                    <p><code class="hint_blue">€<var>PRICE</var></code> <code>-</code> <code class="hint_purple">€<var>(DISCOUNT/100*PRICE).toFixed(2)</var></code><code> = </code><code class="hint_orange">€<var>DISCOUNT_PRICE</var></code>,</p>
+                    <p class="final_answer"><var>person(1)</var> betaalde <code class="hint_orange">€<var>DISCOUNT_PRICE</var></code> voor de <var>clothing(1)</var>.</p>
+                </div>
+            </div>
+            </div>
+
+            <div id="simple-discount">
+            <div class="vars">
+                <var id="DISCOUNT">randRange(1,11)*5</var>
+                <var id="PRICE">randRange(6,20)</var>
+                <var id="TOTAL_DISCOUNT">roundTo(2, (DISCOUNT / 100) * PRICE).toFixed(2)</var>
+            </div>
+            <div class="question spin">
+                    <p>De <var>pizza(1)</var> winkel geeft <var>DISCOUNT</var>% korting op alle <var>plural(pizza(1))</var>. Als de <var>pizza(1)</var> die je wilt normaal €<var>PRICE</var> kost, hoeveel zou je dan besparen als je deze met korting koopt?</p>
+            </div>
+            <p class="solution" data-forms="dollar"><var>TOTAL_DISCOUNT</var></p>
+            <div class="hints">
+                <div>
+                    <p>Vermenigvuldig de korting met de oorspronkelijke prijs om uit te vinden hoeveel je zult besparen.</p>
+                    <p><code class="hint_blue"><var>DISCOUNT</var>\%</code> <code>\times</code> <code class="hint_green">€<var>PRICE</var></code> =</p>
+                </div>
+                <div>
+                    <p>Procent betekent honderdste deel, dus <code class="hint_green"><var>DISCOUNT</var>\%</code> is gelijk aan <code class="hint_green">\displaystyle\frac{<var>DISCOUNT</var>}{100}</code> wat hetzelfde is als <code class="hint_green"><var>DISCOUNT</var> \div 100</code>.</p>
+                    <p><code class="hint_blue"><var>DISCOUNT</var> \div 100 = <var>(DISCOUNT/100).toFixed(2)</var></code>
+                </div>
+                <div>
+                    <p>Vermenigvuldig de korting die je zojuist hebt geschreven als een decimaal met de oorspronkelijke prijs om te weten hoeveel geld je hebt bespaard.</p>
+                    <p><code class="hint_blue"><var>(DISCOUNT/100).toFixed(2)</var></code> <code>\times</code> <code class="hint_green">$<var>PRICE</var></code> = <code class="hint_orange">€<var>TOTAL_DISCOUNT</var></code></p>
+                    <p class="final_answer">Je zou <code class="hint_orange">€<var>TOTAL_DISCOUNT</var></code> besparen vanwege de korting.</p>
+                </div>
+            </div>
+            </div>
+        <div id="tip">
+            <div class="vars">
+                <var id="BILL">randRange(20,50)</var>
+                <var id="BILL_FORMAT">parseFloat(BILL).toFixed(2)</var>
+                <var id="TIP_PERCENT">randRange(1, 4) * 5</var>
+                <var id="TIP_AMOUNT">BILL * (TIP_PERCENT / 100)</var>
+                <var id="TIP_AMOUNT_FORMAT">parseFloat(TIP_AMOUNT).toFixed(2)</var>
+                <var id="TIP_TEN_PERCENT">parseFloat(BILL * 0.1).toFixed(2)</var>
+                <var id="TIP_FIVE_PERCENT">parseFloat(BILL * 0.05).toFixed(2)</var>
+                <var id="TOTAL">BILL + TIP_AMOUNT</var>
+                <var id="TOTAL_FORMAT">roundTo(2, parseFloat(TOTAL)).toFixed(2)</var>
+            </div>
+            <div class="question">
+                <p class="spin"><var>person(1)</var> {{ontbijt|luncht|dineert}|eet} bij een {restaurant|cafe} en de kosten van <var>his(1)</var> maaltijd zijn €<var>BILL_FORMAT</var>. <var>He(1)</var> wil graag <var>TIP_PERCENT</var>% fooi geven. Wat is <var>his(1)</var> totale rekening inclusief fooi?</p>
+            </div>
+            <p class="solution" data-forms="dollar"><var>TOTAL</var></p>
+            <div class="hints">
+                <div>
+                    <p>De fooi is gelijk aan <code><var>TIP_PERCENT</var>\% \times €<var>BILL_FORMAT</var></code>.</p>
+					<p data-if="TIP_PERCENT !== 10">We kunnen de fooi bepalen door eerst een <code class="hint_purple">10\%</code> fooi te berekenen <span data-if="TIP_PERCENT === 5"> en dit getal te delen door 2</span><span data-else-if="TIP_PERCENT === 20"> en dit getal te vermenigvuldigen met 2.</span><span data-else> en een fooi van <code class="hint_pink">5\%</code>, en deze twee getallen bij elkaar op te tellen.</span></p>
+                </div>
+                <div>
+                    <p>Om de fooi van <code class="hint_purple">10\%</code> te berekenen, moet in <code>€<var>BILL_FORMAT</var></code> de komma 1 plaats naar links schuiven.</p>
+                    <p><code class="hint_purple">10\%</code> <code>\times €<var>BILL_FORMAT</var></code> = <code class="hint_purple">€<var>TIP_TEN_PERCENT</var></code></p>
+                </div>
+                <div data-if="TIP_PERCENT !== 10">
+                    <div data-if="TIP_PERCENT % 10 === 5">
+                        <p>Om de fooi van <code class="hint_pink">5\%</code> te berekenen, moet je de <code class="hint_purple">10\%</code> fooi halveren.</p>
+                        <p><code class="hint_pink">5\%</code> <code>\times €<var>BILL_FORMAT</var> = </code><code class="hint_purple">€<var>TIP_TEN_PERCENT</var></code><code> \div 2 = </code><code class="hint_pink">€<var>TIP_FIVE_PERCENT</var></code>.</p>
+                    </div>
+                    <div data-else>
+                        <p>Om de fooi van <code class="hint_green">20\%</code> te berekenen, moet je de <code class="hint_purple">10\%</code> fooi vermenigvuldigen met 2.</p>
+                        <p><code class="hint_green">20\%</code> <code>\times €<var>BILL_FORMAT</var></code> = <code class="hint_purple">€<var>TIP_TEN_PERCENT</var></code><code> \times 2 = </code><code class="hint_green">€<var>TIP_AMOUNT_FORMAT</var></code>.</p>
+                    </div>
+                </div>
+                <div data-if="TIP_PERCENT === 15">
+                    <p>Deze 2 getallen opgeteld geeft samen <code class="hint_purple">€<var>TIP_TEN_PERCENT</var></code> + <code class="hint_pink">€<var>TIP_FIVE_PERCENT</var> =</code><code> €<var>TIP_AMOUNT_FORMAT</var></code>.</p>
+                </div>
+                <p>De nota voor de maaltijd plus de fooi is samen het rekening bedrag.</p>
+                <p><code>€<var>BILL_FORMAT</var> + €<var>TIP_AMOUNT_FORMAT</var> = </code><code class="hint_orange">€<var>TOTAL_FORMAT</var></code>.</p>
+                <p class="final_answer">De totale kosten van de rekening zijn <code class="hint_orange">€<var>TOTAL_FORMAT</var></code>.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html  data-translatable data-require="math graphie graphie-helpers graphie-geometry math-format interactive congruence">
+<head>
+	<meta charset="UTF-8" />
+	<title>Congruentie voorwaarden</title>
+	<script src="../khan-exercise.js"></script>
+</head>
+<body>
+	<div class="exercise">
+		<div class="problems">
+			<div>
+				<!--
+				All angles should be at least 10 degrees different from each other so the
+				effect of rotating and reflecting is more apparent. For SSA, the second
+				side must be longer than first and first angle must not be close to 90 to
+				ensure the resulting shape can make two visually distinct triangles
+				-->
+				<div class="vars" data-ensure="
+						( abs( ANGLES[0] - ANGLES[1] ) > 10 ) &&
+						( abs( ANGLES[1] - ANGLES[2] ) > 10 ) &&
+						( abs( ANGLES[0] - ANGLES[2] ) > 10 ) &&
+						( ( TYPE !== 'SSA' ) || ( (TRIANGLE.niceSideLengths[0] + 1) < TRIANGLE.niceSideLengths[1] && abs(ANGLES[0] - 90) > 10 ) )">
+					<var id="TYPE">randFromArray([ "SSS", "SAS", "SAA", "ASA", "SSA", "SSA", "AAA" ])</var>
+					<var id="NAME">{
+							"SSS": "Zijde-Zijde-Zijde",
+							"SAS": "Zijde-Hoek-Zijde",
+							"SAA": "Zijde-Hoek-Hoek",
+							"ASA": "Hoek-Zijde-Hoek",
+							"SSA": "Zijde-Zijde-Hoek",
+							"AAA": "Hoek-Hoek-Hoek"
+						}[ TYPE ]
+					</var>
+					<var id="ANGLES">randomTriangleAngles.triangle()</var>
+					<var id="SCALE">5 + random() * 2</var>
+					<var id="REFLECTED">randRange( 0, 1 ) === 1 ? true : false</var>
+					<var id="ANSWER">{ "SSS": "Ja", "SAS": "Ja", "SAA": "Ja", "ASA": "Ja", "SSA": "Nee", "AAA": "Nee" }[ TYPE ]</var>
+					<var id="TRIANGLE">new Triangle( [ 0, 0 ], ANGLES, SCALE, {} )</var>
+				</div>
+				<p  data-tt="problem1" class="problem">
+					<strong>Is <em><var>NAME</var></em> een congruentie voorwaarde?</strong><br />
+					Beantwoord de vraag door de punten hieronder te slepen om te zien hoeveel verschillende driehoeken je kunt maken.<br />
+					Als je denkt dat <var>NAME</var> niet een congruentie voorwaarde is, bewijs dit door het maken van niet congruente driehoeken.
+					Maak anders congruente driehoeken
+				</p>
+				<div  class="question">
+					<em data-tt="question1"> Je driehoek kan overal staan. Het is niet nodig de 2 driehoeken over elkaar te leggen.</em>
+					<div class="graphie" id="triangles">
+						init({
+							range: [ [ -7, 7 ], [ -7, 7 ] ]
+						});
+						addMouseLayer();
+						initCongruence({ triangle: TRIANGLE, type: TYPE, reflected: REFLECTED });
+
+						TRIANGLE.rotate( randRange( 0, 360 ) );
+						style({ stroke: "#b1c9f5", "stroke-width": 5 });
+						TRIANGLE.translate([
+							-5 - Math.min(TRIANGLE.points[0][0], TRIANGLE.points[1][0], TRIANGLE.points[2][0]),
+							6 - Math.max(TRIANGLE.points[0][1], TRIANGLE.points[1][1], TRIANGLE.points[2][1])
+						]);
+
+						path( [ lineMidpoint( TRIANGLE.sides[ 2 ] ), TRIANGLE.points[2], TRIANGLE.points[1], TRIANGLE.points[0], lineMidpoint( TRIANGLE.sides[ 2 ] ) ] );
+						addTriangleDecorations( TRIANGLE, TYPE );
+					</div>
+				</div>
+
+				<div class="solution" data-type="congruence">
+					<ul>
+						<li data-tt="list1" ><input type="radio" name="solution" id="r1" value="Ja" /><label for="r1"><span class="value">Ja &mdash; En ik heb een congruente driehoek gemaakt.</span></label></li>
+						<li data-tt="list2" ><input type="radio" name="solution" id="r2" value="Nee" /><label for="r2"><span class="value">Nee &mdash; En ik heb dit bewezen door een niet-congruente driehoek te maken.</span></label></li>
+					</ul>
+					<div class="answer"><var>ANSWER</var></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

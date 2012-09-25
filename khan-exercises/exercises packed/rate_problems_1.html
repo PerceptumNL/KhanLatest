@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math word-problems">
+<head>
+	<meta charset="UTF-8" />
+	<title>Snelheidsproblemen 1</title>
+	<script src="../khan-exercise.js"></script>
+</head>
+<body>
+	<div class="exercise">
+		<div class="vars">
+			<var id="SPEED1">11 + rand(9)</var>
+			<var id="SPEED2">41 + rand(9)</var>
+			<var id="AVG">31 + rand(9)</var>
+			<var id="TIME">1 + rand(9)</var>
+			<var id="DIST">AVG * TIME</var>
+			<var id="DIST2">(SPEED1 * SPEED2 * TIME - DIST * SPEED2) / (SPEED1 - SPEED2)</var>
+			<var id="DIST1">DIST - DIST2</var>
+		</div>
+
+		<div class="problems">
+			<div id="original">
+				<div class="problem">
+					<p data-tt="problem1" ><var>person(1)</var> <var>transportww(1)</var> <var>voorzet(1)</var> de <var>voertuigen(1)</var> met een gemiddelde snelheid van <var>SPEED1</var> kilometer per uur.</p>
+					<p data-tt="problem2" >Daarna <var>transportww(2)</var> <var>he(1)</var> <var>voorzet(2)</var> de <var>voertuigen(2)</var> met een gemiddelde snelheid van <var>SPEED2</var> kilometer per uur.</p>
+					<p data-tt="problem3" >In totaal reisde <var>he(1)</var> <var>DIST</var> kilometer in <var>TIME</var> uur.</p>
+				</div>
+				<p data-tt="question1" class="question">Hoeveel kilometer <var>transportww(1)</var> <var>person(1)</var> <var>voorzet(1)</var> de <var>voertuigen(1)</var>? (Afronden op hele kilometers)</p>
+				<p class="solution"><var>round(DIST1)</var></p>
+				<div class="hints" data-apply="appendContents">
+					<p data-tt="hint1" id="final-hint"><code>s_<var>vehicleVar(1)</var> = <var>round(DIST1)</var></code> kilometer</p>
+				</div>
+			</div>
+			<div data-type="original">
+				<p data-tt="question2"  class="question">Hoeveel kilometer <var>transportww(2)</var> <var>person(1)</var> <var>voorzet(2)</var> de <var>voertuigen(2)</var>? (Afronden op hele kilometers)</p>
+				<p class="solution"><var>round(DIST2)</var></p>
+				<div class="hints" data-apply="appendContents">
+					<p  data-tt="hint2" id="final-hint"><code>s_<var>vehicleVar(2)</var> = <var>round(DIST2)</var></code> kilometer</p>
+				</div>
+			</div>
+			<div data-type="original">
+				<p data-tt="question3"  class="question">Hoeveel minuten <var>transportww(1)</var> <var>person(1)</var> <var>voorzet(1)</var> de <var>voertuigen(1)</var>? (Afronden op hele minuten)</p>
+				<p class="solution"><var>round(DIST1 / SPEED1 * 60)</var></p>
+				<div class="hints" data-apply="appendContents">
+					<p  data-tt="hint3" id="final-hint"><code>t_<var>vehicleVar(1)</var> = <var>round(DIST1 / SPEED1 * 60)</var></code> minuten</p>
+				</div>
+			</div>
+			<div data-type="original">
+				<p data-tt="question4"  class="question">Hoeveel minuten <var>transportww(2)</var> <var>person(1)</var> <var>voorzet(2)</var> de <var>voertuigen(2)</var>? (Afronden op hele minuten)</p>
+				<p class="solution"><var>round(DIST2 / SPEED2 * 60)</var></p>
+				<div class="hints" data-apply="appendContents">
+					<p  data-tt="hint4" id="final-hint"><code>t_<var>vehicleVar(2)</var> = <var>round(DIST2 / SPEED2 * 60)</var></code> minuten</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="hints">
+			<p data-tt="hint5">Herinner je dat <code>S = v * t</code>, of anders geschreven, <code>t = S / v</code>.</p>
+			<div>
+				<p data-tt="hint6"><code>S_<var>vehicleVar(1)</var> =</code> afstand dat <var>person(1)</var> <var>transportww(1)</var> <var>voorzet(1)</var> de <var>voertuigen(1)</var></p>
+				<p data-tt="hint7"><code>S_<var>vehicleVar(2)</var> =</code> afstand dat <var>person(1)</var> <var>transportww(2)</var> <var>voorzet(2)</var> de <var>voertuigen(2)</var></p>
+				<p data-tt="hint8">Totale afstand: <code class="hint_orange">S_<var>vehicleVar(1)</var> + S_<var>vehicleVar(2)</var> = <var>DIST</var></code></p>
+			</div>
+			<p data-tt="hint9">Totale tijd: <code class="hint_blue">t_<var>vehicleVar(1)</var> + t_<var>vehicleVar(2)</var> = <var>TIME</var></code></p>
+			<p data-tt="hint10"><code class="hint_blue">t_<var>vehicleVar(1)</var> = (s_<var>vehicleVar(1)</var> / <var>SPEED1</var>)</code> en
+				<code class="hint_blue">t_<var>vehicleVar(2)</var> = (s_<var>vehicleVar(2)</var> / <var>SPEED2</var>)</code></p>
+			<p data-tt="hint11">Vervang de blauwe vergelijking voor:
+				<code>(s_<var>vehicleVar(1)</var> / <var>SPEED1</var>) + (s_<var>vehicleVar(2)</var> / <var>SPEED2</var>) = <var>TIME</var></code></p>
+			<p data-tt="hint12">Vermenigvuldig de bovenstaande vergelijking met <var>-1 * SPEED1</var>:
+				<code class="hint_orange">-s_<var>vehicleVar(1)</var> - (<var>SPEED1</var> / <var>SPEED2</var>) * s_<var>vehicleVar(2)</var>  = <var>-SPEED1 * TIME</var></code></p>
+			<p data-tt="hint13">Tel de twee oranje vergelijkingen bij elkaar op:
+				<code>(<var>SPEED2 - SPEED1</var> / <var>SPEED2</var>) * s_<var>vehicleVar(2)</var> = <var>DIST - (SPEED1 * TIME)</var></code></p>
+			<p data-tt="hint14">Bereken nu alle variabelen (en afronden op hele getallen):<br>
+				<code>s_<var>vehicleVar(2)</var> =</code> <var>roundTo( 4 , DIST2 )</var> <code>(<var>round(DIST2)</var>)</code> kilometer<br>
+				<code>s_<var>vehicleVar(1)</var> =</code> <var>roundTo( 4 , DIST1 )</var> <code>(<var>round(DIST1)</var>)</code> kilometer<br>
+				<code>t_<var>vehicleVar(1)</var> =</code> <var>roundTo( 4 , DIST1 / SPEED1 * 60 )</var> <code>(<var>round(DIST1 / SPEED1 * 60)</var>)</code> minuten<br>
+				<code>t_<var>vehicleVar(2)</var> =</code> <var>roundTo( 4 , DIST2 / SPEED2 * 60 )</var> <code>(<var>round(DIST2 / SPEED2 * 60)</var>)</code> minuten</p>
+		</div>
+	</div>
+</body>
+</html>

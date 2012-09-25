@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html  data-translatable data-require="math graphie graphie-polygon interactive">
+<head>
+	<meta charset="UTF-8" />
+	<title>Omtrekshoeken 1</title>
+	<script src="../khan-exercise.js"></script>
+</head>
+<body>
+	<div class="exercise">
+	<div class="problems">
+		<div id="find-angle">
+			<div class="vars">
+				<var id="START">randRange( 0, 360 )</var>
+				<var id="CENTRAL">randRange( 10, 80 ) * 2</var>
+				<var id="SUBTENDED_POINT">( START + 180 ) % 360</var>
+				<var id="RADIUS">4</var>
+
+				<var id="GIVEN">CENTRAL</var>
+				<var data-tt="var2" id="GIVEN_LABEL">"blauwe"</var>
+				<var data-tt="var3" id="ASKED_LABEL">"oranje"</var>
+			</div>
+			<p  data-tt="question1" class="question">Als de <var>GIVEN_LABEL</var> hoek <var>GIVEN</var> graden is, hoe groot is dan de <var>ASKED_LABEL</var> hoek?</p>
+			<p  data-tt="question2" >Dit is een bijzondere situatie omdat de blauwe en oranje hoeken eenzelfde lijn delen. De blauwe hoek wordt een buitenhoek en de oranje hoek een binnenhoek genoemd.</p>
+			<div class="graphie" id="circle">
+				init({
+					range: [ [ -RADIUS - 1, RADIUS + 1 ], [ -RADIUS - 1, RADIUS + 1 ] ]
+				});
+				addMouseLayer();
+				graph.circle = new Circle( RADIUS );
+
+				style({ stroke: BLUE, fill: BLUE });
+				graph.circle.drawCenter();
+				graph.circle.drawPoint( START );
+				graph.circle.drawPoint( START + CENTRAL );
+
+				graph.circle.drawCentralAngle( START, START + CENTRAL );
+
+				style({ stroke: ORANGE, fill: ORANGE });
+				graph.circle.drawInscribedAngle( SUBTENDED_POINT, START, START + CENTRAL );
+
+				graph.circle.drawMovablePoint( SUBTENDED_POINT, START + CENTRAL, START );
+			</div>
+			<div data-tt="span0" class="solution" data-type="multiple">
+				<span class="sol"><var>CENTRAL / 2</var></span> graden
+			</div>
+			<div class="hints">
+				<div>
+					<p data-tt="hint1" >De groene en blauwe hoeken zijn aanvullende hoeken. Omdat de blauwe hoek <var>CENTRAL</var> graden is moet de groene hoek <var>180 - CENTRAL</var> graden zijn.</p>
+					<div class="graphie" data-update="circle">
+						style({ stroke: GREEN }, function() {
+							graph.circle.drawCentralArc( START + CENTRAL, SUBTENDED_POINT );
+						})
+					</div>
+				</div>
+				<div>
+					<p data-tt="hint2" >We weten dat de hoeken van een driehoek samen 180 graden zijn.</p>
+					<div class="graphie" data-update="circle">
+						style({ stroke: PINK }, function() {
+							graph.circle.drawInscribedArc( START + CENTRAL, SUBTENDED_POINT, START + CENTRAL + 180 );
+						});
+					</div>
+					<p data-tt="color1" ><code>\color{<var>GREEN</var>}{\text{groene hoek}} + \color{<var>PINK</var>}{\text{roze hoek}} + \color{<var>ORANGE</var>}{\text{oranje hoek}} = 180^{\circ}</code></p>
+				</div>
+				<div>
+					<p data-tt="hint3" >De roze zijden van de driehoek zijn stralen, ze moeten dus gelijk zijn.</p>
+					<div class="graphie" data-update="circle">
+						style({ stroke: PINK }, function() {
+							graph.circle.drawRadius( START + CENTRAL );
+							graph.circle.drawRadius( SUBTENDED_POINT );
+						});
+					</div>
+				</div>
+				<p data-tt="hint4" >Dit betekent dat de driehoek gelijkbenig is en dat de basishoeken, of de roze en oranje hoeken, gelijk zijn.</p>
+				<p data-tt="color2" ><code>\color{<var>GREEN</var>}{\text{groene hoek}} + 2 \cdot \color{<var>ORANGE</var>}{\text{oranje hoek}} = 180^{\circ}</code></p>
+				<p data-tt="color3" ><code>2 \cdot \color{<var>ORANGE</var>}{\text{oranje hoek}}  = 180^{\circ} - \color{<var>GREEN</var>}{<var>180 - CENTRAL</var>^{\circ}}</code></p>
+				<p data-tt="color4" ><code>2 \cdot \color{<var>ORANGE</var>}{\text{oranje hoek}}  = \color{<var>BLUE</var>}{<var>CENTRAL</var>^{\circ}}</code></p>
+				<p data-tt="color5" ><code>\color{<var>ORANGE</var>}{\text{oranje hoek}} = \dfrac{1}{2} \cdot \color{<var>BLUE</var>}{<var>CENTRAL</var>^{\circ}}</code></p>
+				<p data-tt="color6" ><code>\color{<var>ORANGE</var>}{\text{oranje hoek}} = \color{<var>ORANGE</var>}{<var>CENTRAL / 2</var>^{\circ}}</code></p>
+			</div>
+		</div>
+		<div id="find-central-on" data-type="find-angle">
+			<div class="vars">
+				<var id="GIVEN">CENTRAL / 2</var>
+				<var data-tt="color7" id="GIVEN_LABEL">"oranje"</var>
+				<var data-tt="color8"  id="ASKED_LABEL">"blauwe"</var>
+			</div>
+			<div data-tt="span1" class="solution" data-type="multiple">
+				<span class="sol"><var>CENTRAL</var></span> graden
+			</div>
+
+			<div class="hints">
+				<div>
+					<p data-tt="hint5" >De roze zijden van de driehoek zijn stralen, ze moeten dus gelijk zijn. Dit betekent dat de driehoek gelijkbenig is en dat de basishoeken, of de roze en oranje hoeken, gelijk zijn.</p>
+					<div class="graphie" data-update="circle">
+						style({ stroke: PINK }, function() {
+							graph.circle.drawRadius( START + CENTRAL );
+							graph.circle.drawRadius( SUBTENDED_POINT );
+						});
+						style({ stroke: PINK }, function() {
+							graph.circle.drawInscribedArc( START + CENTRAL, SUBTENDED_POINT, START + CENTRAL + 180 );
+						});
+					</div>
+				</div>
+				<div>
+					<p data-tt="hint6" >We weten dat de hoeken van een driehoek samen 180 graden zijn.</p>
+					<div class="graphie" data-update="circle">
+						style({ stroke: GREEN }, function() {
+							graph.circle.drawCentralArc( START + CENTRAL, SUBTENDED_POINT );
+						})
+					</div>
+					<p data-tt="color9" ><code>\color{<var>GREEN</var>}{\text{groene hoek}} + \color{<var>PINK</var>}{\text{roze hoek}} + \color{<var>ORANGE</var>}{\text{oranje hoek}} = 180^{\circ}</code></p>
+				</div>
+				<p data-tt="hint7" >De groene en blauwe hoeken zijn aanvullende hoeken.</p>
+				<p data-tt="color10" ><code>\color{<var>GREEN</var>}{\text{groene hoek}} + \color{<var>BLUE</var>}{\text{blauwe hoek}} = 180^{\circ}</code></p>
+				<p data-tt="color11" ><code>\color{<var>BLUE</var>}{\text{blauwe hoek}} = 180^{\circ} - \color{<var>GREEN</var>}{\text{groene hoek}} </code></p>
+				<p data-tt="color12" ><code>\color{<var>BLUE</var>}{\text{blauwe hoek}} = 180^{\circ} - \color{<var>GREEN</var>}{\text{<var>180 - CENTRAL</var>}^{\circ}} </code></p>
+				<p data-tt="color13" ><code>\color{<var>BLUE</var>}{\text{blauwe hoek}} = \color{<var>BLUE</var>}{<var>CENTRAL</var>^{\circ}} </code></p>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math">
+<head>
+	<meta charset="UTF-8" />
+	<title>Kleinste gemene veelvoud</title>
+	<script src="../khan-exercise.js"></script>
+</head>
+<body>
+	<div class="exercise">
+		<div class="vars">
+			<var id="C">randRange( 2, 6 )</var>
+			<var id="START_A">randRange( 1, 10 )</var>
+			<var id="START_B">randRangeExclude( 1, 10, [ START_A ] )</var>
+			<var id="A">START_A * C</var>
+			<var id="B">START_B * C</var>
+			<var id="BIGGER">Math.max( A, B )</var>
+			<var id="SMALLER">Math.min( A, B )</var>
+			<var id="PRODUCT">A * B</var>
+			<var id="GCD">getGCD( A, B )</var>
+			<var id="LCM">PRODUCT / GCD</var>
+			<var id="MULTIPLES">getMultiples( BIGGER, LCM )</var>
+		</div>
+
+		<div class="problems">
+			<div>
+				<div class="question">
+					<p data-tt="question1">What is the least common multiple of <var>A</var> and <var>B</var>?</p>
+					<p data-tt="question2">Another way to say this is:</p>
+					<p data-tt="question3"><code>\lcm(<var>A</var>, <var>B</var>) = {?}</code></p>
+				</div>
+				<p class="solution" data-forms="integer"><var>LCM</var></p>
+			</div>
+		</div>
+
+		<div class="hints">
+			<p data-tt="hint1">The least common multiple is the smallest number that is a multiple of <var>A</var> and <var>B</var>.</p>
+			<p data-tt="hint2">We know that <var>A</var> x <var>B</var> (or <var>PRODUCT</var>) is a common multiple,
+				but is it the least common multiple?</p>
+			<p data-tt="hint3">Write out the multiples of <var>BIGGER</var> until we find a number divisible by <var>SMALLER</var>.</p>
+			<span data-each="MULTIPLES as M"> <var>M</var>, </span>
+			<p data-tt="hint4">So, <var>LCM</var> is the least common multiple of <var>A</var> and <var>B</var>.</p>
+		</div>
+	</div>
+</body>
+</html>

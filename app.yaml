@@ -1,5 +1,5 @@
 application: khan-netherlands
-version: 8
+version: 9
 runtime: python27
 api_version: 1
 default_expiration: "365d"

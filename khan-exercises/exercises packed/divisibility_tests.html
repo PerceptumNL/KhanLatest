@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html data-require="math math-format word-problems subhints">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Deelbaarheid testen</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+<div class="exercise">
+    <div class="vars">
+        <var id="FACTOR">0</var>
+        <!-- ensure equal probability of yes or no -->
+        <var id="DIVISIBLE">randFromArray([true, false])</var>
+        <var id="NUMBER"
+            data-ensure="!DIVISIBLE ^ (NUMBER % FACTOR === 0)">
+            randRange(10000, 1000000)
+        </var>
+    </div>
+
+    <p class="question">
+        Is <code>\large{<var>NUMBER</var>}</code> deelbaar door
+        <code><var>FACTOR</var></code>?
+    </p>
+
+    <p class="solution"><var>DIVISIBLE ? "Ja" : "Nee"</var></p>
+    <ul class="choices" data-category="true">
+        <li>Ja</li>
+        <li>Nee</li>
+    </ul>
+
+    <div class="problems">
+        <div id="two" data-weight="1">
+            <div class="vars" data-apply="appendVars">
+                <var id="FACTOR">2</var>
+            </div>
+
+            <div class="hints">
+                <p>Een even getal is deelbaar door <code>2</code>.</p>
+                <p class="final_answer" data-if="DIVISIBLE">
+                    <code><var>NUMBER</var></code> is een even getal dus het is deelbaar door <code>2</code>.
+                </p>
+                <p class="final_answer" data-else>
+                    <code><var>NUMBER</var></code> is een oneven getal dus het is niet deelbaar door <code>2</code>.
+                </p>
+            </div>
+        </div>
+
+        <div id="three" data-weight="2">
+            <div class="vars" data-apply="appendVars">
+                <var id="FACTOR">3</var>
+                <var id="STEPS">(function(){
+                    var steps = [];
+                    var colors = [PINK, PURPLE, GREEN, BLUE];
+                    var num = NUMBER;
+                    var numColor = colors.pop();
+                    while (num &gt; FACTOR * 11) {
+                        var sumColor = colors.pop();
+                        var digits = integerToDigits(num);
+                        var sum = _.reduce(digits,
+                            function(m, v) { return m + v; }, 0);
+                        steps.push({
+                            num: "\\color{" + numColor + "}{" + num + "}",
+                            digits: _.map(digits, function(digit) {
+                                return "\\color{" + numColor + "}{" +
+                                    digit + "}";
+                            }),
+                            sum: "\\color{" + sumColor + "}{" + sum + "}",
+                        });
+                        num = sum;
+                        numColor = sumColor;
+                    }
+                    return steps;
+                })()</var>
+            </div>
+
+            <div class="hints">
+                <div>
+                    <p>
+                        Een getal is deelbaar door <code><var>FACTOR</var></code>
+                        als de som van zijn cijfers deelbaar is door
+                        <code><var>FACTOR</var></code>.
+                        [<a href="#" class="show-subhint"
+                        data-subhint="explain-three">Why?</a>]
+                    </p>
+                    <div class="subhint" id="explain-three">
+                        <p>
+                            Eerst delen we het getal op naar plaatswaarde:
+                        </p>
+                        <code>
+                            \qquad\begin{eqnarray}
+                            \blue{<var>NUMBER</var>}=
+                            <var>integerToDigits(NUMBER).map(function(v, p) {
+                                var placeValue = pow(10,
+                                    integerToDigits(NUMBER).length - p - 1);
+                                return "&amp;&amp;\\blue{" + v + "}\\cdot" +
+                                    placeValue;
+                            }).join("+ \\\\")</var>
+                            \end{eqnarray}
+                        </code>
+                        <p>
+                            Vervolgens kunnen we elke cijfer herschrijven als
+                            <code>1</code> plus een aantal <code>9</code>s:
+                        </p>
+                        <code>
+                            \qquad\begin{eqnarray}
+                            \blue{<var>NUMBER</var>}=
+                            <var>integerToDigits(NUMBER).map(function(v, p) {
+                                var placeValue = pow(10,
+                                    integerToDigits(NUMBER).length - p - 1);
+                                if (placeValue === 1) {
+                                    return "&amp;&amp;\\blue{" + v + "}";
+                                }
+                                return "&amp;&amp;\\blue{" + v + "}(" +
+                                    (placeValue - 1) + "+1)";
+                            }).join("+ \\\\")</var>
+                            \end{eqnarray}
+                        </code>
+                        <p>
+                            Dit kunnen we vervolgens herschrijven tot:
+                        </p>
+                        <code>
+                            \qquad\begin{eqnarray}
+                            \blue{<var>NUMBER</var>}=
+                            <var>integerToDigits(NUMBER).map(function(v, p) {
+                                var placeValue = pow(10,
+                                    integerToDigits(NUMBER).length - p - 1);
+                                if (placeValue === 1) {
+                                    return "";
+                                }
+                                return "&amp;&amp;\\gray{" + v + "\\cdot" +
+                                    (placeValue - 1) + "}";
+                            }).join("+ \\\\")</var>&amp;&amp;
+                            \blue{<var>integerToDigits(NUMBER)
+                                .join("}+\\blue{")</var>}
+                            \end{eqnarray}
+                        </code>
+                        <p>
+                            Elk getal bestaande uit enkel <code>9</code>s is
+                            een veelvoud van <code><var>FACTOR</var></code> dus de eerste
+                             <var>cardinal(integerToDigits(NUMBER).length - 1)</var> termen moeten allemaal veelvouden zijn van
+                            <code><var>FACTOR</var></code>.
+                        </p>
+                        <p>
+                            Dat betekent dat we erachter moeten komen of het
+                            originele getal deelbaar is door <code><var>FACTOR</var>
+                            </code>. Alles wat we moeten doen is alle cijfers 
+                            optellen en zien of de som deelbaar is door
+                            <code><var>FACTOR</var></code>. Met andere woorden, 
+                            <code>\blue{<var>NUMBER</var>}</code> is deelbaar
+                            door <code><var>FACTOR</var></code> als <code>\blue{
+                            <var>integerToDigits(NUMBER).join("}+\\blue{")
+                            </var>}</code> ook deelbaar is door
+                            <code><var>FACTOR</var></code>!
+                        </p>
+                    </div>
+                </div>
+                <div data-each="STEPS as N, STEP">
+                    <p>Tel de cijfers van <code><var>STEP.num</var></code> op:</p>
+                    <p style="margin-left: 20px;"><code>
+                        <var>STEP.digits.join("+")</var> =
+                        <var>STEP.sum</var>
+                    </code></p>
+                    <p style="margin-left: 20px;">
+                        Als <code><var>STEP.sum</var></code> deelbaar is door
+                         <code><var>FACTOR</var></code> dan moet
+                        <code><var>STEP.num</var></code> ook deelbaar zijn door <code><var>FACTOR</var></code>.
+                    </p>
+                </div>
+                <p class="final_answer" data-if="DIVISIBLE">
+                    <code><var>_.last(STEPS).sum</var></code> is deelbaar 
+                    door <code><var>FACTOR</var></code> daarom is
+                    <code>\blue{<var>NUMBER</var>}</code>
+                    ook deelbaar door <code><var>FACTOR</var></code>.
+                </p>
+                <p class="final_answer" data-else>
+                    <code><var>_.last(STEPS).sum</var></code> is niet deelbaar door
+                    <code><var>FACTOR</var></code> daarom is
+                    <code>\blue{<var>NUMBER</var>}</code>
+                    ook niet deelbaar door <code><var>FACTOR</var></code>.
+                </p>
+            </div>
+        </div>
+
+        <div id="four" data-weight="3">
+            <div class="vars" data-apply="appendVars">
+                <var id="FACTOR">4</var>
+            </div>
+
+            <div class="hints">
+                <div>
+                    <p>
+                        Een getal is deelbaar door <code>4</code> als de 
+                        laatste twee cijfers ook deelbaar zijn door <code>4</code>.
+                        [<a href="#" class="show-subhint"
+                        data-subhint="explain-four">Why?</a>]
+                    </p>
+                    <div class="subhint" id="explain-four">
+                        <p>
+                            We kunnen het getal herschijven tot een veelvoud van
+                            <code>100</code> plus de laatste twee cijfers:
+                        </p>
+                        <code>\qquad
+                        \gray{<var>NUMBER.toString().slice(0, -2)</var>}
+                        \blue{<var>("00" + (NUMBER % 100)).slice(-2)</var>} =
+                        \gray{<var>NUMBER.toString().slice(0, -2)</var>}
+                        \gray{00} +
+                        \blue{<var>("00" + (NUMBER % 100)).slice(-2)</var>}
+                        </code>
+                        <p>
+                            Omdat <code><var>NUMBER.toString().slice(0, -2)
+                            </var>00</code> een veelvoud is van <code>100</code>,
+                            is het ook een veelvoud van <code>4</code>.
+                        </p>
+                        <p>
+                           Dus wanneer de laatste twee cijfers van
+                           <code>\blue{<var>NUMBER % 100</var>}</code> deelbaar zijn
+                           door <code>4</code> is het originele getal ook deelbaar door <code>4</code>.
+
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    Zijn de laatste twee cijfers van
+                    <code><var>NUMBER % 100</var></code>,
+                    deelbaar door <code>4</code>?
+                </p>
+                <p class="final_answer" data-if="DIVISIBLE">
+                    Ja,
+                    <code>\blue{<var>NUMBER % 100</var> \div 4 =
+                    <var>NUMBER % 100 / 4</var>}</code> dus
+                    <code><var>NUMBER</var></code> is dan ook deelbaar door
+                    <code>4</code>.
+                </p>
+                <p class="final_answer" data-else>
+                    Nee, <code><var>NUMBER % 100</var></code> is niet
+                    deelbaar door <code>4</code> dus
+                    <code><var>NUMBER</var></code> is dan ook niet deelbaar door
+                    <code>4</code>.
+                </p>
+            </div>
+        </div>
+
+        <div id="five" data-weight="1">
+            <div class="vars" data-apply="appendVars">
+                <var id="FACTOR">5</var>
+            </div>
+
+            <div class="hints">
+                <p>
+                    Een getal is deelbaar door <code>5</code> als het laatste cijfer een
+                     <code>0</code> of een <code>5</code> is.
+                </p>
+                <p class="final_answer" data-if="DIVISIBLE">
+                    Het laatste cijfer van <code><var>NUMBER</var></code> is een
+                    <code><var>NUMBER % 10</var></code> dus
+                    <code><var>NUMBER</var></code> is deelbaar door
+                    <code>5</code>.
+                </p>
+                <p class="final_answer" data-else>
+                    Het laatste cijfer van <code><var>NUMBER</var></code> is een
+                    <code><var>NUMBER % 10</var></code> dus
+                    <code><var>NUMBER</var></code> is niet deelbaar door
+                    <code>5</code>.
+                </p>
+            </div>
+        </div>
+
+        <div id="nine" data-type="three" data-weight="2">
+            <div class="vars" data-apply="appendVars">
+                <var id="FACTOR">9</var>
+            </div>
+        </div>
+
+        <div id="ten" data-weight="1">
+            <div class="vars" data-apply="appendVars">
+                <var id="FACTOR">10</var>
+            </div>
+
+            <div class="hints">
+                <p>
+                    Een getal is deelbaar door <code>10</code> als het laatste cijfer een <code>0</code>.
+                </p>
+                <p class="final_answer" data-if="DIVISIBLE">
+                    Het laatste cijfer van <code><var>NUMBER</var></code> is een
+                    <code><var>NUMBER % 10</var></code> dus
+                    <code><var>NUMBER</var></code> is deelbaar door
+                    <code>10</code>.
+                </p>
+                <p class="final_answer" data-else>
+                    Het laatste cijfer van <code><var>NUMBER</var></code> is een
+                    <code><var>NUMBER % 10</var></code> dus
+                    <code><var>NUMBER</var></code> is niet deelbaar door
+                    <code>10</code>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

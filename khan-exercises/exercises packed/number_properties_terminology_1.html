@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html data-require="math">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Number properties terminology 1</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+
+    <div class="vars">
+        <var id="A,B,C,D">randRangeUnique( 2, 10, 4 )</var>
+        <var id="PROPERTIES">[ "Associatieve", "Commutatieve", "Distributieve" ]</var>
+        <var id="EQUATIONS">shuffle( [ "a+b=b+a", "a+b(c+d)=a+bc+bd", "a+(b+c)=(a+b)+c" ] )</var>
+        <var id="ASSOCIATIVE_RESULT">A+B+C</var>
+        <var id="COMMUTATIVE_RESULT">A+B</var>
+        <var id="DISTRIBUTIVE_RESULT">A+B*C+B*D</var>
+    </div>
+
+
+        <div class="problems">
+
+            <div id="associative">
+                <p class="question">Welke Eigenschap wordt er voorgesteld door de vergelijking <code>a+(b+c)=(a+b)+c</code></p>
+                <p class="solution">Associatieve</p>
+                <ul class="choices" data-category="true">
+                    <li data-each="PROPERTIES as place"><var>place</var></li>
+                </ul>
+                <div class="hints">
+				
+                    <p>Merk op dat aan de linkerzijde van de vergelijking de haakjes aangeven dat eerst <code>b</code> en <code>c</code> moeten worden opgeteld, en daarna pas <code>a</code>.</p>
+                    <p>Aan de rechterkant van de vergelijking, tellen we eerst <code>a</code> en <code>b</code> op en daarna pas <code>c</code>.</p>
+                    <p>De volgorde van de variabelen is niet veranderd, maar de groepen (wat er tussen de haakjes staat) wel.</p>
+                    <p>De groepen zijn veranderd. En een ander woord voor een groep is een <em>associatie</em>.De bovenstaande vergelijking toont de Associatieve Eigenschap bij het optellen.</p>
+                </div>
+            </div>
+
+            <div id="associate-values">
+                <p class="question">Welke van de volgende Eigenschappen wordt er aangeduid met <code><var>A</var>+(<var>B</var>+<var>C</var>)=(<var>A</var>+<var>B</var>)+<var>C</var></code></p>
+                <p class="solution">Associatieve</p>
+                <ul class="choices" data-category="true">
+                    <li data-each="PROPERTIES as place"><var>place</var></li>
+                </ul>
+                <div class="hints">
+                    <p>Aan de linkerzijde van de vergelijking geven de haakjes aan dat eerst <var>B</var> en <var>C</var> moeten worden opgeteld, en daarna pas <var>A</var>. Aan de rechterkant van de vergelijking, tellen we eerst <var>A</var> en <var>B</var> op en daarna pas <var>C</var>.</p>
+                    <p>De volgorde van de variabelen is niet veranderd, maar de groepen (wat er tussen de haakjes staat) wel.</p>
+                    <div>
+                        <p>Bekijken we de linkerkant:</p>
+                        <p><code><var>A</var>+(<var>B</var>+<var>C</var>)=<var>ASSOCIATIVE_RESULT</var></code></p>
+                        <p>Als je kijkt naar de rechterkant, zie je dat het resultaat hetzelfde is:</p>
+                        <p><code>(<var>A</var>+<var>B</var>)+<var>C</var>=<var>ASSOCIATIVE_RESULT</var></code></p>
+                    </div>
+                    <p>De groepen zijn veranderd. En een ander woord voor een groep is een <em>associatie</em>. De bovenstaande vergelijking toont de Associatieve Eigenschap bij het optellen.</p>
+                </div>
+            </div>
+
+            <div id="associative-variable">
+                <p class="question">Welke van de vergelijkingen aan de rechterkant vertegenwoordigt de Associatieve Eigenschap bij het optellen?</p>
+                <p class="solution"><code>a+(b+c)=(a+b)+c</code></p>
+                <ul class="choices" data-category="true">
+                    <li data-each="EQUATIONS as value"><code><var>value</var></code></li>
+                </ul>
+                <div class="hints">
+                    <p>De Associatieve Eigenschap moet niet worden verward met de Commutatieve Eigenschap, waarin de volgorde of het aantal getallen is gewijzigd.</p>
+                    <p>In tegenstelling tot de Commutatieve Eigenschap staat de Associatieve Eigenschap toe om de haakjes te herschikken. Bijvoorbeeld: het optellen van <code>(4+2)+3</code> heeft hetzelfde resultaat als het optellen van <code>4+(2+3)</code> en demonstreert de  Associatieve Eigenschap.</p>
+                    <p><code>a+(b+c)=(a+b)+c</code> toont de Associatieve Eigenschap.</p>
+                </div>
+            </div>
+
+            <div id="commutative">
+                <p class="question"><code>a+b=b+a</code> toont de Associatieve Eigenschap.</p>
+                <p class="solution">Commutatieve</p>
+                <ul class="choices" data-category="true">
+                    <li data-each="PROPERTIES as value"><var>value</var></li>
+                </ul>
+                <div class="hints">
+                    <p>Zoals je in deze vergelijking ziet zal de volgorde van <code>a</code> en <code>b</code> het eindresultaat niet veranderen.</p>
+                    <p>Verwar deze Eigenschap niet met de Associatieve Eigenschap, waarin groepen (wat er tussen de haakjes staat ) worden veranderd.</p>
+                    <p>Deze vergelijking stelt de <em>Commutatieve Eigenschap</em> voor. Het volgende ezelsbruggetje kan je helpen om de Commutatieve Eigenschap te onthouden: "in een commune zijn we allemaal aan elkaar gelijk".</p>
+                </div>
+            </div>
+
+            <div id="commutative-values">
+                <p class="question">Welke Eigenschap wordt er voorgesteld door de vergelijking <code><var>A</var>+<var>B</var>=<var>B</var>+<var>A</var></code></p>
+                <p class="solution">Commutatieve</p>
+                <ul class="choices" data-category="true">
+                    <li data-each="PROPERTIES as value"><var>value</var></li>
+                </ul>
+                <div class="hints">
+                    <p>Verwar deze Eigenschap niet met de Associatieve Eigenschap, waarin groepen (wat er tussen de haakjes staat ) worden veranderd.</p>
+                    <p>Zoals je in deze vergelijking ziet zal de volgorde van <var>A</var> en <var>B</var> het eindresultaat niet veranderen.</p>
+                    <div>
+                        <p>Bekijken we de linkerkant:</p>
+                        <p><code><var>A</var>+<var>B</var>=<var>COMMUTATIVE_RESULT</var></code></p>
+                    </div>
+                    <div>
+                        <p>Als je kijkt naar de rechterkant, zie je dat het resultaat hetzelfde is:</p>
+                        <p><code><var>B</var>+<var>A</var>=<var>COMMUTATIVE_RESULT</var></code></p>
+                    </div>
+                    <p>Deze vergelijking stelt de Commutatieve Eigenschap voor. Het volgende ezelsbruggetje kan je helpen om de Commutatieve Eigenschap te onthouden: "in een commune zijn we allemaal aan elkaar gelijk".</p>
+                </div>
+            </div>
+
+            <div id="commutative-variable">
+                <p class="question">Welke van de vergelijkingen aan de rechterkant vertegenwoordigt de Commutatieve Eigenschap bij het optellen?</p>
+                <p class="solution"><code>a+b=b+a</code></p>
+                <ul class="choices" data-category="true">
+                    <li data-each="EQUATIONS as value"><code><var>value</var></code></li>
+                </ul>
+                <div class="hints">
+                    <p>Volgens de Commutatieve Eigenschap is de volgorde van de getallen niet van belang.</p>
+                    <p>De Commutatieve Eigenschap moet niet verward worden met de Associatieve Eigenschap, waarin groepen (wat er tussen de haakjes staat) worden veranderd.</p>
+                    <p>Het volgende ezelsbruggetje kan je helpen om de Commutatieve Eigenschap te onthouden: "in een commune zijn we allemaal aan elkaar gelijk".</p>
+                    <p><code>a+b=b+a</code> toont de Commutatieve Eigenschap.</p>
+                </div>
+            </div>
+
+            <div id="distributive">
+                <p class="problem"></p>
+                <p class="question">Welke van de volgende Eigenschappen wordt er aangeduid met <code>a+b(c+d)=a+bc+bd</code></p>
+                <p class="solution">Distributieve</p>
+                <ul class="choices" data-category="true">
+                    <li data-each="PROPERTIES as value"><var>value</var></li>
+                </ul>
+                <div class="hints">
+                    <p>Aan de linkerzijde van de vergelijking wordt <code>b</code> vermenigvuldigd met de som van <code>c</code> en <code>d</code>.</p>
+                    <p>Aan de rechterkant van deze vergelijking vermenigvuldigen we eerst <code>b</code> met <code>c</code> en daarna met <code>d</code> en tellen vervolgens deze producten op.</p>
+                    <p>Wij zeggen dat de vermenigvuldiging van <code>b</code> zich "verdeelt" over de optelling van <code>c</code> en <code>d</code>  en deze vergelijking zo de Distributieve Eigenschap toont.</p>
+			   </div>
+            </div>
+
+            <div id="distributive-values">
+                <p class="question">Welke Eigenschap wordt er voorgesteld door de vergelijking<code><var>A</var>+<var>B</var>(<var>C</var>+<var>D</var>)=<var>A</var>+(<var>B</var>)(<var>C</var>)+(<var>B</var>)(<var>D</var>)</code></p>
+                <p class="solution">Distributieve</p>
+                <ul class="choices" data-category="true">
+                    <li data-each="PROPERTIES as value"><var>value</var></li>
+                </ul>
+                <div class="hints">
+                    <p>Aan de linkerzijde van de vergelijking wordt <code><var>B</var> </code> vermenigvuldigd met de som van <code><var>C</var></code> en <code><var>D</var></code>. Aan de rechterkant van deze vergelijking vermenigvuldigen we eerst <code><var>B</var></code> met <code><var>C</var></code> en daarna met <code><var>D</var></code> en tellen vervolgens deze producten op.</p>
+                    <div>
+                        <p>Bekijken we de linkerkant:</p>
+                        <p><code><var>A</var>+<var>B</var>(<var>C</var>+<var>D</var>)=<var>DISTRIBUTIVE_RESULT</var></code></p>
+                    </div>
+                    <div>
+                        <p>Als je kijkt naar de rechterkant, zie je dat het resultaat hetzelfde is:</p>
+                        <p><code><var>A</var>+(<var>B</var>)(<var>C</var>)+(<var>B</var>)(<var>D</var>)=<var>DISTRIBUTIVE_RESULT</var></code></p>
+                    </div>
+                    <p>Bij het vermenigvuldigen "verdelen" (of distribueren) wij <code><var>B</var></code> over <code><var>C</var></code> en <code><var>D</var></code> en daarom noemen we dit de Distributieve Eigenschap.</p>
+                </div>
+            </div>
+
+            <div id="distributive-variable">
+                <p class="question">Welke van de vergelijkingen aan de rechterkant vertegenwoordigt de Distributieve Eigenschap bij het optellen?</p>
+                <p class="solution"><code>a+b(c+d)=a+bc+bd</code></p>
+                <ul class="choices" data-category="true">
+                    <li data-each="EQUATIONS as value"><code><var>value</var></code></li>
+                </ul>
+                <div class="hints">
+                    <p>In het juiste antwoord is de linkerkant van de vergelijking <code>b</code> vermenigvuldigd met de som van <code>c</code> en <code>d</code>.</p>
+                    <p>Aan de rechterkant van deze vergelijking vermenigvuldigen we eerst <code>b</code> met <code>c</code> en daarna met <code>d</code> en tellen vervolgens deze producten op.</p>
+                    <p>In deze vergelijking, wordt <code>b</code> "verdeeld" over <code>c</code> en  <code>d</code>,en daarom noemen we dit de Distributieve Eigenschap.</p>
+                    <p><code>a+b(c+d)=a+bc+bd</code> is een korte schrijfwijze voor de Distributieve Eigenschap.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

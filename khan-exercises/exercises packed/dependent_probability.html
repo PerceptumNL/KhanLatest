@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html data-require="math">
+<head>
+	<meta charset="UTF-8" />
+	<title>Afhankelijke kansen</title>
+	<script src="../khan-exercise.js"></script>
+
+	<style>
+		.fair {
+			color: #33cc33;
+		}
+
+		.unfair {
+			color: #cc3333;
+		}
+	</style>
+</head>
+<body>
+	<div class="exercise">
+		<div class="vars" data-ensure="PERCENT_CHANCE_UNFAIR_HEADS !== 50">
+			<!-- CONSTANTS -->
+			<!-- random range for % chance heads shows on the unfair coin -->
+			<var id="PERCENT_UNFAIR_HEADS_MIN">30</var>
+			<var id="PERCENT_UNFAIR_HEADS_MAX">70</var>
+
+			<!-- increment of selected random value (i.e. 20, 25, 30, 35... are possible values for incr of 5 -->
+			<var id="PERCENT_UNFAIR_HEADS_INCR">5</var>
+
+
+			<!-- PROBLEM-SPECIFIC VALUES -->
+			<!-- random range for total coins in bag -->
+			<var id="NUM_COINS">randRange(5, 15)</var>
+
+			<!-- random range for unfair coins -->
+			<!-- NOTE: MAX must be <= COINS_MIN -->
+			<var id="NUM_UNFAIR_COINS">randRange(2, 4)</var>
+
+			<var id="NUM_INCR">(PERCENT_UNFAIR_HEADS_MAX - PERCENT_UNFAIR_HEADS_MIN) / PERCENT_UNFAIR_HEADS_INCR</var>
+
+			<var id="PERCENT_CHANCE_UNFAIR_HEADS">PERCENT_UNFAIR_HEADS_MIN + rand(NUM_INCR + 1) * PERCENT_UNFAIR_HEADS_INCR</var>
+
+			<!-- random range for number of coin flips -->
+			<var id="NUM_FLIPS">randRange(2, 4)</var>
+
+			<var id="UNFAIR_COIN_FRACTION_STRING">"\\frac{" + NUM_UNFAIR_COINS + "}{" + NUM_COINS + "}"</var>
+
+			<!-- create some convenience variables for forming the hint text -->
+			<var id="UNFAIR_COIN_FRACTION_STRING">"\\frac{" + NUM_UNFAIR_COINS + "}{" + NUM_COINS + "}"</var>
+			<var id="FAIR_COIN_FRACTION_STRING">"\\frac{" + (NUM_COINS-NUM_UNFAIR_COINS) + "}{" + NUM_COINS + "}"</var>
+			<var id="DECIMAL_CHANCE_UNFAIR_HEADS">PERCENT_CHANCE_UNFAIR_HEADS / 100</var>
+			<var id="UNFAIR_HEADS_DECIMAL_FORMULA">
+				(function() {
+					var uhdf = DECIMAL_CHANCE_UNFAIR_HEADS.toString()
+					for (var i = 0; i < NUM_FLIPS - 1; i++) {
+						uhdf += " \\times " + DECIMAL_CHANCE_UNFAIR_HEADS;
+					}
+					return uhdf;
+				})()
+			</var>
+			<var id="UNFAIR_HEADS_PERCENT_FORMULA">
+				(function() {
+					var uhpf = PERCENT_CHANCE_UNFAIR_HEADS + "\\%";
+					for (var i = 0; i < NUM_FLIPS - 1; i++) {
+						uhpf += " \\times " + PERCENT_CHANCE_UNFAIR_HEADS + "\\%";
+					}
+					return uhpf;
+				})()
+			</var>
+			<var id="DECIMAL_CHANCE_FAIR_HEADS">0.5</var>
+			<var id="FAIR_HEADS_DECIMAL_FORMULA">
+				(function() {
+					var fhdf = DECIMAL_CHANCE_FAIR_HEADS.toString();
+					for (var i = 0; i < NUM_FLIPS - 1; i++) {
+						fhdf += " \\times " + DECIMAL_CHANCE_FAIR_HEADS;
+					}
+					return fhdf;
+				})()
+			</var>
+
+			<!-- For answer computing -->
+			<var id="CHANCE_UNFAIR_PICKED">NUM_UNFAIR_COINS / NUM_COINS</var>
+			<var id="CHANCE_FAIR_PICKED">1 - CHANCE_UNFAIR_PICKED</var>
+
+			<var id="ANSWER">round(10000 * (CHANCE_UNFAIR_PICKED * pow((PERCENT_CHANCE_UNFAIR_HEADS / 100), NUM_FLIPS) +
+				CHANCE_FAIR_PICKED * pow(.5,NUM_FLIPS))) / 100</var>
+
+		</div>
+
+		<div class="problems">
+			<div>
+				<p class="problem" data-tt="question1">Er zitten <code><var>NUM_COINS</var></code> munten in een zak. <code><var>NUM_UNFAIR_COINS</var></code> ervan zijn niet zuiver want je hebt <code><var>PERCENT_CHANCE_UNFAIR_HEADS</var>\%</code> kans om er kop mee te gooien (de andere munten zijn zuiver).
+				Je kiest willekeurig 1 munt uit en gooit deze <code><var>NUM_FLIPS</var></code> keer op.</p>
+				<p class="question" data-tt="question2">Wat is de kans, geschreven als een percentage, dat het <code><var>NUM_FLIPS</var></code> keer kop wordt? 
+				Rond je antwoord af op een honderdste van een procent.</p>
+				<p class="solution" data-forms="percent" data-max-error="0.01"><var>ANSWER</var></p>
+			</div>
+		</div>
+
+		<div class="hints">
+			<!-- hint indicating different coin types -->
+			<p data-tt="hint1">Je kunt alleen een zuivere munt of een niet zuivere munt kiezen. Er is geen andere uitkomst.</p>
+
+			<!-- hint questioning coin type selection chances -->
+			<p data-tt="hint2">Welke kans heb je om een niet zuivere munt te pakken? En hoeveel kans heb je op een zuivere munt?</p>
+
+			<!-- hint showing chance of unfair coin picked -->
+			<p data-tt="hint3">Een niet zuivere munt pak je <code class="unfair"><var>UNFAIR_COIN_FRACTION_STRING</var></code> keer.</p>
+
+			<!-- hint showing chance of fair coin picked -->
+			<p data-tt="hint4">De rest van de tijd krijg je een zuiver munt, dus <code class="unfair"><var>FAIR_COIN_FRACTION_STRING</var></code> keer.</p>
+
+			<!-- hint questioning head-flipping chances for unfair coin -->
+			<p data-tt="hint5">Voor de <code class="unfair"><var>UNFAIR_COIN_FRACTION_STRING</var></code>  keer dat je een niet zuivere munt pakt,
+			wat is de kans dat je <code class="unfair"><var>NUM_FLIPS</var></code> keer kop gooit met deze munt?</p>
+
+			<!-- hint showing chance of flipping all heads for unfair coin -->
+			<p data-tt="hint6">De kans is <code class="unfair"><var>UNFAIR_HEADS_PERCENT_FORMULA</var></code>, of
+			<code class="unfair"><var>UNFAIR_HEADS_DECIMAL_FORMULA</var></code>.</p>
+
+			<!-- hint suggesting combining unfair coin selection with all-heads-flip event -->
+			<p data-tt="hint7">Nu, wat is de kans om en een niet zuivere munt te pakken, en daar ook nog eens 
+			<code class="unfair"><var>NUM_FLIPS</var></code> keer kop mee te gooien?</p>
+
+			<!-- hint revealing computed chance with unfair coin -->
+			<p data-tt="hint8">Het is <code class="unfair"><var>UNFAIR_COIN_FRACTION_STRING</var> \times <var>UNFAIR_HEADS_DECIMAL_FORMULA</var></code>.</p>
+
+			<!-- hint questioning the fair coin computation -->
+			<p data-tt="hint9">Hoe groot is dan de kans om een zuivere munt te pakken en daar <code class="fair"><var>NUM_FLIPS</var></code> keer kop mee te gooien?</p>
+
+			<!-- hint showing the fair coin computation -->
+			<p data-tt="hint10">Het is <code class="fair"><var>FAIR_COIN_FRACTION_STRING</var> \times <var>FAIR_HEADS_DECIMAL_FORMULA</var></code>.</p>
+
+			<!-- hint questioning how to combine previously computed events -->
+			<p data-tt="hint11">Hoe combineer je deze twee onafhandelijke gebeurtenissen om de kans te vinden dat een van de twee gebeurt?</p>
+
+			<!-- hint revealing the answer -->
+			<p data-tt="hint12">Tel ze op! Dus je antwoord is
+				<code class="unfair"><var>UNFAIR_COIN_FRACTION_STRING</var> \times <var>UNFAIR_HEADS_DECIMAL_FORMULA</var></code>+
+				<code class="fair"><var>FAIR_COIN_FRACTION_STRING</var> \times <var>FAIR_HEADS_DECIMAL_FORMULA</var></code>, of
+				<code><var>ANSWER</var>\%</code>.</p>
+		</div>
+	</div>
+</body>
+</html>

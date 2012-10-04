@@ -339,10 +339,9 @@ footer {
         left: 5px;
         top: 6px;
         z-index: 1;
-        width: 280px;
-        height: 65px;
-        background-image: url(/images/non-repeating-sprites.4.png);
-        background-position: -10px -465px;
+        width: 167px;
+        height: 92px;
+        background-image: url(/images/khan-logo-header.png);
     }
         .dark #top-header #logo #logo-image {
             background-image: url(/images/non-repeating-sprites.4.png);

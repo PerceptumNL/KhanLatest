@@ -682,9 +682,9 @@ if (typeof Profile !== "undefined") {
             var rampOff = 300;
 
             jel.delay(initialPause)
-                .animate({"backgroundColor": "#edf2df"}, rampOn)
+                .animate({"backgroundColor": "#DEF2ED"}, rampOn)
                 .delay(hiOn)
-                .animate({"backgroundColor": "#f4f7ed"}, rampOff);
+                .animate({"backgroundColor": "#EDF7F5"}, rampOff);
         }
     };
 }

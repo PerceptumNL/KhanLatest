@@ -12,7 +12,7 @@ var ActivityGraph = {
     exerciseMinutes: {
         type: "column",
         name: "Skill Minutes",
-        color: "#00C9AF",
+        color: "#007EC7",
         data: [],
         defaultPoint: {
             y: 0
@@ -134,7 +134,7 @@ var ActivityGraph = {
             y: 5,
             itemHoverStyle: {
                 cursor: "default",
-                color: "#3E576F"
+                color: "#3E586F"
             }
         }
     },

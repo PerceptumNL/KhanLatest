@@ -4,7 +4,7 @@
 
 #profile-header {
     font-family: "MuseoSans300",sans-serif;
-    border-bottom: 1px solid #c6d1ad;
+    border-bottom: 1px solid #ADD1CA;
     padding: 4px 20px;
     margin: 0 -20px;
 }
@@ -735,7 +735,7 @@ div.profile-notification.cover-top {
 }
 
 .user-info-container .avatar-pic-container.editable:hover {
-  background-color: #d6e0ba;
+  background-color: #B9DFD6;
   border: 1px solid #ccc;
   border-bottom: 1px solid #999;
   -webkit-border-radius: 5px;
@@ -891,7 +891,7 @@ li.profile-tab {
   margin-left: -5px;
 }
 .nickname-container.fully-editable:hover {
-  background-color: #d6e0ba;
+  background-color: #B9DFD6;
   border: 1px solid #ccc;
   border-bottom: 1px solid #999;
   -webkit-border-radius: 5px;
@@ -1027,7 +1027,7 @@ li.profile-tab {
     word-wrap: break-word;
 }
 .username-picker .example-username {
-    color: #678D00;
+    color: #26008F;
 }
 .sidenote {
     background-repeat: no-repeat;
@@ -1164,9 +1164,9 @@ li.profile-tab {
     font-size: 13px;
 }
 .user-profile-controls .dropdown-toggle:hover {
-    background-color: #89B908;
+    background-color: #088BBA;
     color: #FFF;
-    border: 1px solid #76A005;
+    border: 1px solid #059E7B;
 }
 .user-profile-controls .dropdown-menu {
     width: 153px;
@@ -1286,7 +1286,7 @@ a.discussion-message-item {
 .discussion-item:hover {
     /** !important is required to override inline CSS added
         by Profile.highlight in profile.js **/
-    background-color: #ebf1df !important;
+    background-color: #DFEBF1 !important;
     color: #000;
     text-decoration: none;
 }
@@ -1365,7 +1365,7 @@ a.more-button {
 }
 
 a.discussion-award:hover {
-    background-color: #ebf1df;
+    background-color: #DFEBF1;
     text-decoration: none;
 }
 

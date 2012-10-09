@@ -27,7 +27,7 @@ div.envelopeContainer {
 }
 
 body {
-    background-color: #E9EFDD;
+    background-color: #DCEFEC;
 }
 
 .left-header-container {
@@ -188,7 +188,7 @@ h2.stories-header {
 }
 
 .slit-overlay-background {
-    background: #E9EFDD;
+    background: #DCEFEC;
     position: relative;
     left: 50%;
     margin-left: -165px; /* half the width */
@@ -202,7 +202,7 @@ h2.stories-header {
 }
 
 .modal-header {
-    background-color: #E9EFDD;
+    background-color: #DCEFEC;
 
     -webkit-border-top-left-radius: 6px;
     -webkit-border-top-right-radius: 6px;

@@ -300,7 +300,7 @@ a.main-video-link:hover {
     height: 102px;
 }
 .content-pane div.subtopics-list a.subtopic-link-and-scroll:hover {
-    background-color: #ebf1df;
+    background-color: #DFEBF1;
     color: #000;
     text-decoration: none;
 }
@@ -383,7 +383,7 @@ a.main-video-link:hover {
     margin-left: 8px;
 }
 .content-pane div.videos-list ol > li > a:hover {
-    background-color: #ebf1df;
+    background-color: #DFEBF1;
     color: #356700;
 }
 .content-pane div.videos-list ol > li > a .vid-progress {

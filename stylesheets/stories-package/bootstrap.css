@@ -756,11 +756,11 @@ form .clearfix.warning .input-prepend .add-on, form .clearfix.warning .input-app
   border-color: #c09853;
 }
 form .clearfix.success > label, form .clearfix.success .help-block, form .clearfix.success .help-inline {
-  color: #468847;
+  color: #456587;
 }
 form .clearfix.success input, form .clearfix.success textarea {
-  color: #468847;
-  border-color: #57a957;
+  color: #456587;
+  border-color: #5780A8;
 }
 form .clearfix.success input:focus, form .clearfix.success textarea:focus {
   border-color: #458845;
@@ -769,9 +769,9 @@ form .clearfix.success input:focus, form .clearfix.success textarea:focus {
   box-shadow: 0 0 6px #9acc9a;
 }
 form .clearfix.success .input-prepend .add-on, form .clearfix.success .input-append .add-on {
-  color: #468847;
+  color: #456587;
   background-color: #bcddbc;
-  border-color: #468847;
+  border-color: #456587;
 }
 .input-mini,
 input.mini,
@@ -989,7 +989,7 @@ textarea[readonly] {
 }
 .input-prepend .active, .input-append .active {
   background: #a9dba9;
-  border-color: #46a546;
+  border-color: #4675A4;
 }
 .input-prepend .add-on {
   *margin-top: 1px;
@@ -1263,8 +1263,8 @@ table .headerSortUp.blue, table .headerSortDown.blue {
   background-color: #ade6fe;
 }
 table .green {
-  color: #46a546;
-  border-bottom-color: #46a546;
+  color: #4675A4;
+  border-bottom-color: #4675A4;
 }
 table .headerSortUp.green, table .headerSortDown.green {
   background-color: #cdeacd;
@@ -1841,18 +1841,18 @@ footer {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 .btn.success, .alert-message.success {
-  background-color: #57a957;
+  background-color: #5780A8;
   background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#62c462), to(#57a957));
-  background-image: -moz-linear-gradient(top, #62c462, #57a957);
-  background-image: -ms-linear-gradient(top, #62c462, #57a957);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #62c462), color-stop(100%, #57a957));
-  background-image: -webkit-linear-gradient(top, #62c462, #57a957);
-  background-image: -o-linear-gradient(top, #62c462, #57a957);
-  background-image: linear-gradient(top, #62c462, #57a957);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#57a957', GradientType=0);
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#6494C4), to(#5780A8));
+  background-image: -moz-linear-gradient(top, #6494C4, #5780A8);
+  background-image: -ms-linear-gradient(top, #6494C4, #5780A8);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6494C4), color-stop(100%, #5780A8));
+  background-image: -webkit-linear-gradient(top, #6494C4, #5780A8);
+  background-image: -o-linear-gradient(top, #6494C4, #5780A8);
+  background-image: linear-gradient(top, #6494C4, #5780A8);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6494C4', endColorstr='#5780A8', GradientType=0);
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  border-color: #57a957 #57a957 #3d773d;
+  border-color: #5780A8 #5780A8 #3d773d;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 .btn.info, .alert-message.info {
@@ -2426,7 +2426,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   background-color: #f89406;
 }
 .label.success {
-  background-color: #46a546;
+  background-color: #4675A4;
 }
 .label.notice {
   background-color: #62cffc;

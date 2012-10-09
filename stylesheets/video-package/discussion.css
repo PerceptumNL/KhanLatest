@@ -299,7 +299,7 @@ span.question_answer_count_add_yours input {
 
 .sticky_note_content {
     /* Same color as end-of-stack box bg */
-    background-color: #E9EFDD;
+    background-color: #DCEFEC;
     padding: 20px 20px 8px 20px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -318,7 +318,7 @@ span.question_answer_count_add_yours input {
 /* Make the links always appear green */
 .sticky_note_content a:link,
 .sticky_note_content a:visited {
-    color: #678D00;
+    color: #26008F;
 }
 
 .sticky_note_content .question-note {

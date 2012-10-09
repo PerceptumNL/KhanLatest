@@ -221,7 +221,7 @@ a:visited {
 }
 #forgot-hint {
     font-size: 90%;
-    color: #678d00;
+    color: #26008F;
 
     /* HACK(benkomalo): need to left-align with password field, so we apply a left
      * padding equal to the password-label's margin-box-width */
@@ -245,7 +245,7 @@ a:visited {
     color: #666;
 }
 a.signup-link {
-    color: #678d00;
+    color: #26008F;
 }
 
 

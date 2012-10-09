@@ -19,12 +19,12 @@
   line-height: 18px;
 }
 .alert-success {
-  background-color: #dff0d8;
+  background-color: #D7EAEF;
   border-color: #d6e9c6;
 }
 .alert-success,
 .alert-success .alert-heading {
-  color: #468847;
+  color: #456587;
 }
 .alert-danger,
 .alert-error {

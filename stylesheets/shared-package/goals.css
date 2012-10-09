@@ -96,10 +96,10 @@ ul.inline-list, ul.inline-list li {
 }
 
 .goal a.objective:hover:before {
-    border-color: #89B908;
+    border-color: #088BBA;
 }
 .goal a.objective:hover {
-    border-color: #89B908 !important;
+    border-color: #088BBA !important;
 }
 
 .goal a.objective.video .objective-progress-meter,
@@ -337,7 +337,7 @@ input.goal-title:-moz-placeholder {
 }
 input.goal-title:focus {
     background-color: #FAFAFA;
-    border-color: #C6D1AD;
+    border-color: #ADD1CA;
     padding-left: 5px;
 }
 
@@ -582,9 +582,9 @@ a.simple-button.seethrough.goal-history {
 
 .goalpicker .newgoal:hover{
     z-index:10;
-    -webkit-box-shadow:0 0 6px 1px #678D00;
-    -moz-box-shadow:0 0 6px 1px #678D00;
-    box-shadow:0 0 6px 1px #678D00;
+    -webkit-box-shadow:0 0 6px 1px #26008F;
+    -moz-box-shadow:0 0 6px 1px #26008F;
+    box-shadow:0 0 6px 1px #26008F;
 }
 .goalpicker .newgoal.disabled:hover {
     -webkit-box-shadow: none;
@@ -598,7 +598,7 @@ a.simple-button.seethrough.goal-history {
 
 .goalpicker .newgoal:hover a,
 .goalpicker .info button {
-    color:#678D00;
+    color:#26008F;
 }
 
 .goalpicker .info button {

@@ -145,7 +145,7 @@ body.debug .graphie { outline: 1px dashed red; }
 #answer_area input.simple-button[disabled=disabled] { opacity: 0.5; filter: alpha(opacity = 50); cursor: default; }
 #answer_area input.simple-button[disabled=disabled]:hover { color: #fff !important; }
 #answer_area input.simple-button.orange[disabled=disabled]:hover { border-color: #bf4f04 !important; border-bottom-color: #803503 !important; }
-#answer_area input.simple-button.green[disabled=disabled]:hover { border-color: #76a005 !important; border-bottom-color: #557303 !important; }
+#answer_area input.simple-button.green[disabled=disabled]:hover { border-color: #059E7B !important; border-bottom-color: #557303 !important; }
 
 .simple-button.disabled { opacity: 0.5; filter: alpha(opacity = 50); cursor: default; }
 
@@ -234,7 +234,7 @@ div.timeline-total {
 }
 
 #timelinecontainer {
-  border: 1px solid #c6d1ad;
+  border: 1px solid #ADD1CA;
   border-top: 0px;
   position: relative;
 }
@@ -257,8 +257,8 @@ div.timeline-total {
   position: absolute;
   left: 265px;
   right: 225px;
-  border-left: 1px solid #c6d1ad;
-  border-right: 1px solid #c6d1ad;
+  border-left: 1px solid #ADD1CA;
+  border-right: 1px solid #ADD1CA;
 }
 
 #timeline-events {

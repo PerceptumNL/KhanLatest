@@ -1,5 +1,9 @@
 application: khan-netherlands
+<<<<<<< HEAD
 version: 36
+=======
+version: 32
+>>>>>>> new version
 runtime: python27
 api_version: 1
 default_expiration: "365d"

@@ -690,7 +690,7 @@ footer {
     .user-notification .icon:hover {
         background-image: url("/images/discussions-hi-16px.png");
         background-color: #088BBA;
-        border: 1px solid #05759E;
+        border: 1px solid #059E7B;
         background-position: 5px 9px;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
@@ -3055,12 +3055,12 @@ a.control:hover { color: #DD6900; }
 }
 
 .demo-notification-bar { /* for demo notifications when logged in as demo user */
-    background: #007099 url(/images/candy-stripe.png) repeat-x; /*! data-uri(/images/candy-stripe.png) */
+    background: #6e9700 url(/images/candy-stripe.png) repeat-x; /*! data-uri(/images/candy-stripe.png) */
     width:100%;
     height:35px;
     text-align:center;
     vertical-align:middle;
-    border-bottom: 1px solid #05759E;
+    border-bottom: 1px solid #059E7B;
     outline:solid 1px #557303;
     color: #eee;
     position:fixed;

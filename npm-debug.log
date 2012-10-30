@@ -1,0 +1,43 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'lessc' ]
+2 info using npm@1.1.61
+3 info using node@v0.8.9
+4 verbose read json /Users/milaharmelink/Desktop/KhanLatest/package.json
+5 verbose read json /Users/milaharmelink/Desktop/KhanLatest/node_modules/less/package.json
+6 verbose read json /Users/milaharmelink/Desktop/KhanLatest/package.json
+7 verbose cache add [ 'lessc', null ]
+8 silly cache add name=undefined spec="lessc" args=["lessc",null]
+9 verbose parsed url { pathname: 'lessc', path: 'lessc', href: 'lessc' }
+10 silly lockFile 8b3a335c-lessc lessc
+11 verbose lock lessc /Users/milaharmelink/.npm/8b3a335c-lessc.lock
+12 silly lockFile 8b3a335c-lessc lessc
+13 verbose addNamed [ 'lessc', '' ]
+14 verbose addNamed [ null, '' ]
+15 silly lockFile a47c36bc-lessc lessc@
+16 verbose lock lessc@ /Users/milaharmelink/.npm/a47c36bc-lessc.lock
+17 silly addNameRange { name: 'lessc', range: '', hasData: false }
+18 verbose url raw lessc
+19 verbose url resolving [ 'https://registry.npmjs.org/', './lessc' ]
+20 verbose url resolved https://registry.npmjs.org/lessc
+21 info trying registry request attempt 1 at 12:48:34
+22 http GET https://registry.npmjs.org/lessc
+23 http 404 https://registry.npmjs.org/lessc
+24 silly registry.get cb [ 404,
+24 silly registry.get   { server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+24 silly registry.get     date: 'Wed, 24 Oct 2012 10:48:31 GMT',
+24 silly registry.get     'content-type': 'application/json',
+24 silly registry.get     'content-length': '52',
+24 silly registry.get     'cache-control': 'must-revalidate' } ]
+25 silly lockFile a47c36bc-lessc lessc@
+26 error 404 'lessc' is not in the npm registry.
+26 error 404 You should bug the author to publish it
+26 error 404
+26 error 404 Note that you can also install from a
+26 error 404 tarball, folder, or http url, or git url.
+27 error System Darwin 12.0.0
+28 error command "node" "/usr/local/bin/npm" "install" "lessc"
+29 error cwd /Users/milaharmelink/Desktop/KhanLatest
+30 error node -v v0.8.9
+31 error npm -v 1.1.61
+32 error code E404
+33 verbose exit [ 1, true ]

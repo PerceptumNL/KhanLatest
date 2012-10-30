@@ -1,0 +1,6 @@
+[submodule "khan-exercises"]
+	path = khan-exercises
+	url = https://github.com/PerceptumNL/khan-exercises.git
+[submodule "third_party/wtforms-src"]
+	path = third_party/wtforms-src
+	url = https://github.com/Khan/wtforms.git

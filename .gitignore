@@ -31,3 +31,4 @@ tools/node_modules/*
 .tags
 .tags_sorted_by_file
 *.orig
+third_party/appengine-search-src

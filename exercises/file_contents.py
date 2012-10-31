@@ -34,7 +34,7 @@ def exercise_sha1(exercise):
     layer=layer_cache.Layers.InAppMemory)
 def raw_exercise_contents(exercise_file):
     if templatetags.use_compressed_packages():
-        exercises_dir = "../khan-exercises/exercises-packed"
+        exercises_dir = "../khan-exercises/exercises"
         safe_to_cache = True
     else:
         exercises_dir = "../khan-exercises/exercises"

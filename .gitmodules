@@ -1,3 +1,12 @@
 [submodule "third_party/wtforms-src"]
 	path = third_party/wtforms-src
 	url = https://github.com/Khan/wtforms.git
+[submodule "third_party/werkzeug-src"]
+	path = third_party/werkzeug-src
+	url = https://github.com/Khan/werkzeug
+[submodule "third_party/appengine-search-src"]
+	path = third_party/appengine-search-src
+	url = https://github.com/DocSavage/appengine-search.git
+[submodule "third_party/flask-src"]
+	path = third_party/flask-src
+	url = https://github.com/Khan/flask.git

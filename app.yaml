@@ -1,5 +1,5 @@
 application: khan-netherlands
-version: 36
+version: 103
 runtime: python27
 api_version: 1
 default_expiration: "365d"
@@ -36,6 +36,7 @@ skip_files:
 - ^third-party/agar-src
 - ^testutil
 - ^tools
+- ^deploy/env
 
 handlers:
 - url: /videos

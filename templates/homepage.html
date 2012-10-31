@@ -2,7 +2,10 @@
 
 {% import 'macros/youtube.html' as youtube %}
 {% import 'macros/analytics.html' as analytics %}
+
+{#
 {% import 'macros/mailing_lists.html' as mailing_lists %}
+#}
 
 {% block pagecss %}
 <style>
@@ -24,9 +27,9 @@
         <p>
             <b><i>Vanaf heden is de vernieuwde omgeving van Khan Academie actief. Deelnemers die reeds actief waren op de oude site kunnen deze nog steeds bereiken op: <a href="http://oud.khanacademie.nl">oud.khanacademie.nl</a>
             Deze site wordt echter niet meer up-to-date gehouden, daarom raden wij jullie aan om zo snel mogelijk over te stappen naar de nieuwe omgeving.</i></b><br><br>
-            
-            Met verschillende video's over rekenen en wiskunde binnenkort ook taal en in de toekomst wellicht ook andere onderwerpen zijn wij op een missie om jou te helpen om alles te leren over onderwerpen waar jij interesse in hebt, wanneer jij het wilt en in je eigen tempo. 
-            
+
+            Met verschillende video's over rekenen en wiskunde binnenkort ook taal en in de toekomst wellicht ook andere onderwerpen zijn wij op een missie om jou te helpen om alles te leren over onderwerpen waar jij interesse in hebt, wanneer jij het wilt en in je eigen tempo.
+
         <div>
             <a href="/#browse" data-tag="Homepage C2A" class="call-to-action simple-button green watch-a-video">Bekijk een video</a>
             <a href="/exercisedashboard" data-tag="Homepage C2A" class="call-to-action simple-button blue">Ga de uitdaging aan</a>
@@ -35,11 +38,13 @@
         <div id="social-actions">
             <table>
                 <tr>
+                    {#
                     <td class="social-action">
                         <span id="fb-like-badge">
                             <div id="fb-root"></div><fb:like href="http://www.khanacademie.nl" send="true" layout="button_count" width="100" show_faces="false" font=""></fb:like>
                         </span>
                     </td>
+                    #}
                     <td class="social-action">
                         <a href="http://twitter.com/share" class="twitter-share-button" data-counturl="http://www.khanacademie.nl" data-url="http://www.khanacademie.nl" data-text="Kijk. Oefen. Leer bijna alles online, en gratis." data-count="horizontal" data-via="khanacademie">Tweet</a>
                     </td>
@@ -48,9 +53,11 @@
                     </td>
                 </tr>
                 <tr>
+                    {#
                     <td colspan=3 class="homepage-mailing">
                         <span>{{ mailing_lists.signup_form(3, "Ontvang updates", "Registeer hier je email in de mailinglist") }}</span>
                     </td>
+                    #}
                 </tr>
             </table>
         </div>
@@ -78,7 +85,7 @@
                             {% for thumbnail_link in thumbnail_link_set %}
                             <td style="width:25%" class="thumbnail_td {{ thumbnail_link["type"] }} {% if thumbnail_link["selected"] %}selected{% endif %}" data-key="{{ thumbnail_link["key"]|escape }}" data-youtube-id="{{ thumbnail_link["youtube_id"]|escape }}">
 
-                                <a href="{{ thumbnail_link["href"]|escape }}" data-tag="Homepage Featured" class="thumbnail_link"><div 
+                                <a href="{{ thumbnail_link["href"]|escape }}" data-tag="Homepage Featured" class="thumbnail_link"><div
                                         {% if outerloop.first %}
                                         class="thumb" style="background-image:url('{{ thumbnail_link["thumb_urls"]["hq"]|escape }}')"
                                         {% else %}

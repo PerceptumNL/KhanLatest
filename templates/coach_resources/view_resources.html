@@ -1,6 +1,8 @@
 {% extends "page_template.html" %}
 
+{#
 {% import 'macros/mailing_lists.html' as mailing_lists %}
+#}
 
 {% block pagecss %}
     {{ js_css_packages.css_package("bootstrap-grids") }}
@@ -113,6 +115,7 @@
             <h3><a href="/commoncore">Leerlijnen</a> <small>alpha</small></h3>
             <p>Bekijk video's en oefeningen <!-- TODO(Matt): Nice to have - Insert "We're in the early innings here - suggestions welcome." and form to allow CC suggestion --></a>
         </div>
+        {#
         <div class="span3">
             <div class="smallpic">
                 <a href="javascript:$('#mailform').focus();">
@@ -135,7 +138,7 @@
                 }
             </script>
         </div>
-
+        #}
     </div>
 
 </article>

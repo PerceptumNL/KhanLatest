@@ -2,7 +2,7 @@
 <html data-translatable data-require="math graphie math-format">
 <head>
 	<meta charset="UTF-8" />
-	<title>Distance formula</title>
+	<title>Afstand formule</title>
 	<script src="../khan-exercise.js"></script>
 	<style>
 		.point1 {
@@ -28,7 +28,7 @@
 
 		<div class="problems">
 			<div>
-				<p class="question" data-tt="question1">Find the distance between the points <span class="point1">(<var>X1</var>, <var>Y1</var>)</span> and <span class="point2">(<var>X2</var>, <var>Y2</var>)</span>.</p>
+				<p class="question" data-tt="question1">Wat is de afstand tussen de punten <span class="point1">(<var>X1</var>, <var>Y1</var>)</span> en <span class="point2">(<var>X2</var>, <var>Y2</var>)</span>.</p>
 				<div class="graphie" id="graph">
 					graphInit({
 						range: 11,
@@ -54,7 +54,7 @@
 		<div class="hints">
 			<div>
 				<p data-tt="hint1">
-					Change in <span style="color: #679B00"> <code>x</code>:</span>
+					Vervang <span style="color: #679B00"> <code>x</code></span> voor:
 					<span data-if="X2 - X1 > 0">
 						<span class="point2"><var>X2</var></span> - <span class="point1"><var>negParens(X1)</var></span>
 					</span>
@@ -77,7 +77,7 @@
 
 			<div>
 				<p data-tt="hint2">
-				Change in <span style="color: #A66000"><code>y</code>:</span>
+				Vervang <span style="color: #A66000"><code>y</code></span> voor:
 					<span data-if="Y2 - Y1 > 0">
 						<span class="point2"><var>Y2</var></span> - <span class="point1"><var>negParens(Y1)</var></span>
 					</span>
@@ -99,7 +99,7 @@
 			</div>
 
 			<div data-if="Y2 - Y1 !== 0 && X1 - X2 !== 0 " >
-				<p data-tt="hint3">The distance is the <span style="color: #FF4900">length of the hypotenuse</span> of this right triangle.</p>
+				<p data-tt="hint3">De afstand is de<span style="color: #FF4900"> lengte van de hypotenusa</span> van deze rechte driehoek.</p>
 
 				<div class="graphie" data-update="graph">
 					style({
@@ -111,7 +111,7 @@
 			</div>
 
 			<div data-if="Y2 - Y1 !== 0 && X1 - X2 !== 0 ">
-				<p data-tt="hint4">By the Pythagorean Theorem, <span style="color: #FF4900">that length</span> is equal to:</p>
+				<p data-tt="hint4">Volgens de stelling van Pythagoras, <span style="color: #FF4900">is de lengte</span> gelijk aan:</p>
 				<p><code>\sqrt{<var>X_DIST</var>^2 + <var>Y_DIST</var>^2}</code></p>
 				<p><code>{}= \sqrt{<var>Math.pow( X_DIST, 2 ) + pow( Y_DIST, 2 )</var>}</code></p>
 				<p data-if="squareRootCanSimplify(HYP2)" style="color: #FF4900"><code>{}= <var>formattedSquareRootOf(HYP2)</var></code></p>

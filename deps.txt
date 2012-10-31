@@ -1,0 +1,7 @@
+pip install itsdangerous django
+git clone https://github.com/Khan/flask.git third_party/flask-src
+git clone https://github.com/DocSavage/appengine-search.git third_party/appengine-search-src
+git clone https://github.com/mdirolf/pyporter2.git third_party/appengine-search-src/search/pyporter2
+touch third_party/search/pyporter2/__init__.py
+
+

@@ -1,7 +1,12 @@
 import os
-class secrets(object):
-    facebook_app_id = '419609954751528'
-    facebook_app_secret = '8af9b1131882ca2e98c6ce7f92ad28d8'
+import sys
+
+try:
+    import secrets
+except:
+    class secrets(object):
+        pass
+
 
 # A singleton shared across requests
 class App(object):
@@ -41,6 +46,7 @@ for attr in (
         setattr(App, attr, None)
     else:
         setattr(App, attr, getattr(secrets, attr))
+
 if App.is_dev_server and App.token_recipe_key is None:
     # If a key is missing to dish out auth tokens on dev, we can't login
     # with our own auth system. So just set it to a random string.

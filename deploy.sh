@@ -21,13 +21,21 @@ export COLMSG=$COLOR_LIGHT_BLUE
 export COLNC=$COLOR_NC
 alias echo="echo -e"
 
+PASS=
+EMAIL=
+APPCFG=
+
+. deploy_settings.sh &> /dev/null
+
 DEPLOY=deploy
 REQUIREMENTS=$DEPLOY/requirements.txt
 VE=$DEPLOY/env
-APPCFG=$VE/lib/python2.7/site-packages/google/appengine/tools/appcfg.py
 
 command_exists() {
   CMD=$1
+  if [ -z "$1" ];then
+    return 0
+  fi
   if command -v $CMD &>/dev/null;then
     return 1
   else
@@ -66,9 +74,10 @@ create_virtualenv() {
 
 load_env() {
   echo "${COLMSG}Loading virtual environment $VE... $COLNC"
+  CURR=`pwd`
   cd $VE &>/dev/null
   source bin/activate
-  cd - &>/dev/null
+  cd $CURR &>/dev/null
 }
 
 
@@ -76,10 +85,10 @@ init_submodules() {
   echo "${COLMSG}Initializing submodules ... $COLNC"
   git submodule init
   git submodule update
-  cd third_party/appengine-search-src/search/
-  rm -rf pyporter2
-  ln  -s ../../../search/pyporter2
-  cd -
+#  cd third_party/appengine-search-src/search/
+#  rm -rf pyporter2
+#  ln  -s ../../../search/pyporter2
+#  cd -
 }
 
 install_deps() {
@@ -91,20 +100,35 @@ install_deps() {
 create_deploy() {
   echo "${COLMSG}Creating a deployment version ... $COLNC"
   python deploy/deploy.py
-#  $APPCFG upload .
-  ls
+}
+
+upload_deploy() {
+  command_exists $APPCFG
+  if [ $? -eq 0 ];then
+    echo "${COLMSG}OK, now you need to upload the version with the AppEngine${COLNC}"
+  else
+    echo "${COLMSG}Uploading version ... $COLNC"
+    echo $PASS | $APPCFG --passin -e $EMAIL update .
+  fi
+
+  command_exists notify-send
+  if [ $? -eq 0 ];then
+    notify-send "Depoyment complete!"
+  fi
 }
 
 start_deploy() {
   if [ -d $VE ];then
     load_env
     create_deploy
+    upload_deploy
   else
     init_submodules
     create_virtualenv
     load_env
     install_deps
     create_deploy
+    upload_deploy
   fi
 }
 

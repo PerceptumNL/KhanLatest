@@ -73,8 +73,13 @@ load_env() {
 
 
 init_submodules() {
-  git init submodules
+  echo "${COLMSG}Initializing submodules ... $COLNC"
+  git submodule init
   git submodule update
+  cd third_party/appengine-search-src/search/
+  rm -rf pyporter2
+  ln  -s ../../../search/pyporter2
+  cd -
 }
 
 install_deps() {
@@ -95,9 +100,9 @@ start_deploy() {
     load_env
     create_deploy
   else
+    init_submodules
     create_virtualenv
     load_env
-    init_submodules
     install_deps
     create_deploy
   fi

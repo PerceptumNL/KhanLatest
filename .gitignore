@@ -32,3 +32,5 @@ tools/node_modules/*
 .tags_sorted_by_file
 *.orig
 third_party/appengine-search-src
+deploy_settings.sh
+

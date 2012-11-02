@@ -33,4 +33,5 @@ tools/node_modules/*
 *.orig
 third_party/appengine-search-src
 deploy_settings.sh
+deploy/env
 

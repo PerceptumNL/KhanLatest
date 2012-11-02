@@ -35,3 +35,5 @@ third_party/appengine-search-src
 deploy_settings.sh
 deploy/env
 
+
+khan-exercises

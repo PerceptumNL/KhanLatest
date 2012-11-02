@@ -94,7 +94,6 @@ init_submodules() {
 install_deps() {
   pip install ez_setup
   pip install -r $REQUIREMENTS
-  touch third_party/appengine-search-src/search/pyporter2/__init__.py
 }
 
 create_deploy() {

@@ -3,40 +3,40 @@ cron:
 - description: badge update
   url: /admin/startnewbadgemapreduce
   schedule: every 72 hours
-  timezone: US/Pacific
+  timezone: Europe/Amsterdam
 
 - description: badge statistics
   url: /admin/badgestatistics
   schedule: every day 22:00
-  timezone: US/Pacific
+  timezone: Europe/Amsterdam
 
 - description: daily_activity_log
   url: /admin/dailyactivitylog
   schedule: every 48 hours
-  timezone: US/Pacific
+  timezone: Europe/Amsterdam
 
 - description: exercise statistics update
   url: /admin/startnewexercisestatisticsmapreduce
   schedule: every sunday 03:00
-  timezone: US/Pacific
+  timezone: Europe/Amsterdam
 
 - description: youtube video sync
   url: /admin/youtubesync?start=1
   schedule: every day 03:00
-  timezone: US/Pacific
+  timezone: Europe/Amsterdam
 
 - description: record daily dashboard statistics
   url: /admin/dashboard/record_statistics
   schedule: every day 22:30
-  timezone: US/Pacific
+  timezone: Europe/Amsterdam
 
 - description: fancy exercise stats
   url: /admin/exercisestats/collectfancyexercisestatistics
   schedule: every day 00:30
-  timezone: US/Pacific
+  timezone: Europe/Amsterdam
 
 - description: update smarthistory to default and edit topic trees
   url: /admin/import_smarthistory
   schedule: every day 01:00
-  timezone: US/Pacific
+  timezone: Europe/Amsterdam
 

@@ -5,7 +5,7 @@
 <html itemscope itemtype="http://schema.org/Organization"
     xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:og="http://opengraphprotocol.org/schema/"
     xmlns:fb="http://www.facebook.com/2008/fbml" {{ data_require }}>
-      <head prefix="og: http://ogp.me/ns# {{ App.facebook_app_namespace }}:
+      <head prefix="og: http://ogp.me/ns#{{ App.facebook_app_namespace }}:
                         http://ogp.me/ns/apps/{{ App.facebook_app_namespace }}#">
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
         {% if include_errorception and not hide_analytics -%}
@@ -30,16 +30,16 @@
         <meta name="keywords" content="{% block meta_keywords %}khan academy, learn, videos, lectures, practice, exercises, skills{% endblock %}" />
 
         <meta property="fb:app_id" content="{{ App.facebook_app_id }}"/>
-        <meta property="fb:admins" content="100000121497109,1305017,100001572496923"/> {# Sal/Ben/Jason #}
-        <meta property="og:site_name" content="Khan Academy"/>
+        <meta property="fb:admins" content="100004182250626"/> 
+        <meta property="og:site_name" content="Khan Academie"/>
         {% block meta_facebook_tags %}
-        <meta property="og:url" content="http://www.khanacademy.org"/>
+        <meta property="og:url" content="http://www.khanacademie.nl"/>
         <meta property="og:type" content="non_profit"/>
-        <meta property="og:title" content="Khan Academy"/>
+        <meta property="og:title" content="Khan Academie"/>
         <meta property="og:description"
               content="With a library of over 3,000 videos covering everything from arithmetic to physics, finance, and history and hundreds of skills to practice, we're on a mission to help you learn what you want, when you want, at your own pace."/>
-        <meta property="og:image" content="http://www.khanacademy.org/images/handtreehorizontal_facebook.png"/>
-        <meta property="fb:page_id" content="159403248441" />
+        <meta property="og:image" content="http://www.khanacademie.nl/images/khan-logo-header.png" />
+        <meta property="fb:page_id" content="123650984422563" />
         {% endblock meta_facebook_tags %}
 
         {# Google+ -#}

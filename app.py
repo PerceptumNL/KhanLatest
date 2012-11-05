@@ -55,4 +55,4 @@ if App.is_dev_server and App.token_recipe_key is None:
 # Not a secret but behaves like one. Used by Facebook Open Graph for
 # namespacing custom OG objects (ex: khanacademy:earn). Can be configured in
 # the Facebook app developer dashboard, but this generally should never change.
-App.facebook_app_namespace = "khanacademy"
+App.facebook_app_namespace = "khanacademie"

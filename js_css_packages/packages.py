@@ -324,7 +324,7 @@ javascript = {
         "base_path": "../khan-exercises",
         "base_url": "/khan-exercises",
         "files": [
-            "khan-exercise.js",
+            "khan-exercise-deploy.js",
             "utils/angles.js",
             "utils/answer-types.js",
             "utils/ast.js",

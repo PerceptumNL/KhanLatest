@@ -13,26 +13,35 @@
         #credits dd:before {
             content: "- ";
         }
+        #page_sub_nav {
+            display: none;
+        }
     </style>
 {% endblock pagescript %}
+{#
 {% block pagesubmenu %}
     <span class="breadcrumbs_nav">
+        <!--
         <a href="/about">De Site</a>
         <a href="http://blog.khanacademie.nl/p/het-team.html">Het Team</a>
         <a href="http://blog.khanacademie.nl/">Blog</a>
+        -->
+        <!--
         <a href="/about/contact">Contact</a>
         <a href="/about/faq">FAQ</a>
         <a href="/about/start">Aan de slag!</a>
+        -->
     </span>
 {% endblock pagesubmenu %}
+#}
 
 {% block pagecontent %}
 <article id="about-us">
 {% block aboutcontent %}
 {% endblock aboutcontent %}
+<div class="clear"></div>
 </article>
 {% endblock pagecontent %}
 
 {% block bottompagescript %}
-    {{ analytics.crazyegg_tracker(False) }}
 {% endblock bottompagescript %}

@@ -54,6 +54,8 @@
 {% endblock pagescript %}
 {% block pagetitle %}Exercise Dashboard{% endblock pagetitle %}
 {% block pagecontent %}
+<article id="exercise-dashboard">
+<br />
 <div id="background">
   <div id="container" class="dashboard{% if not logged_in %} unregistered{% endif %}">
 
@@ -65,4 +67,7 @@
     </div>
 </div>
 </div>
+<div class="clear"></div>
+<br />
+</article>
 {% endblock pagecontent %}

@@ -40,7 +40,6 @@ body {
     margin: 0 0 -77px;
 }
 #page-container, #page-container-inner {
-    background: transparent url(/images/content-border.1.png) no-repeat right 85px; /*! data-uri(/images/content-border.1.png) */
 }
 #page-container {
     background-position: 0 85px;
@@ -55,7 +54,7 @@ article {
     background: #fff;
     position: relative;
     margin: 0 1px;
-    border-top: 1px solid #ADD1CA;
+    border: 1px solid #ADD1CA;
 }
 
 /* Basic typography for the entire site */
@@ -330,7 +329,6 @@ footer {
 #top-header #logo {
     height: 100px;
     position: relative;
-    background-image: url(/images/non-repeating-sprites.4.png);
     background-position: -10px -261px;
     width: 317px;
 }
@@ -1070,10 +1068,12 @@ span.youTube:hover {
     position: relative;
 }
     #container.dashboard {
+        /*
         background: #fff;
         border-left: 1px solid #ddd;
         border-right: 1px solid #ddd;
         border-top: 1px solid #ddd;
+        */
         line-height: 18px;
     }
     #container.dashboard .exercise-legend {
@@ -1263,7 +1263,9 @@ span.youTube:hover {
     }
 
     #container .dashboard-header {
+            /*
         background: #fafafa;
+        */
         border-width: 0 0 1px 0;
         border-color: #ddd;
         border-style: solid;
@@ -2612,7 +2614,8 @@ ul.topic-browser-menu > li > ul > li > a {
     padding: 4px 10px;
     background: #DCEFEC;
     border: 1px solid #ADD1CA;
-    margin-bottom: 0;
+    margin-bottom: 0px;
+    margin-top: 20px;
 }
 #homepage .subtopic_browser {
     padding: 4px 10px;

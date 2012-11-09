@@ -6,6 +6,9 @@
 {% block meta_page_title %}About | {% endblock meta_page_title %}
 {% block pagescript %}
     <style>
+        #page_sub_nav {
+            display: none;
+        }
         #credits dt {
             font-weight: bold;
             float: left;
@@ -14,33 +17,31 @@
         #credits dd:before {
             content: "- ";
         }
-    </style>
-	<style>
-    #faq {
-        padding-top: 18px;
-    }
-    #faq-nav {
-        background: #eee;
-        padding: 9px;
-        max-width: 31%;
-        min-width: 31%;
-        margin-right: 3%;
-        margin-bottom: 90px;
-    }
-    #faq-nav ul {
-        list-style: outside decimal;
-        margin-left: 18px;
-    }
-    #faq-nav li {
-        margin-bottom: 5px;
-    }
-    #faq-nav li a {
-        text-decoration: none;
-        text-shadow: 0 1px 0 #fff;
-    }
-    #faq-nav li a:hover {
-        text-decoration: underline;
-    }
+        #faq {
+            padding-top: 18px;
+        }
+        #faq-nav {
+            background: #eee;
+            padding: 9px;
+            max-width: 31%;
+            min-width: 31%;
+            margin-right: 3%;
+            margin-bottom: 90px;
+        }
+        #faq-nav ul {
+            list-style: outside decimal;
+            margin-left: 18px;
+        }
+        #faq-nav li {
+            margin-bottom: 5px;
+        }
+        #faq-nav li a {
+            text-decoration: none;
+            text-shadow: 0 1px 0 #fff;
+        }
+        #faq-nav li a:hover {
+            text-decoration: underline;
+        }
 	</style>
 	<script type="text/javascript" src="/javascript/homepage-package/waypoints.min.js?{{App.version}}"></script>
 {% endblock pagescript %}
@@ -51,6 +52,22 @@
 </br>
     <div class="col1">
         <h2>Contact</h2>
+        <a name="teachers"><h4>Ik ben een docent, coach of ouder, hoe kan ik de site met mijn leerlingen gebruiken?</h4></a>
+        <p>
+            Allereerst heb je zelf een account nodig om in te kunnen loggen op de Khan Academie. Dus <a href="/login">login</a> of <a href="https://www.google.com/accounts/NewAccount">vraag een account aan</a>. 
+            Zodra je bent ingelogd op de Khan Academie, kun je je door leerlingen laten toevoegen als coach.
+        </p>
+        <p>
+            Volgende stap: je leerlingen hebben ook een account nodig. Leerlingen ouder dan 13 jaar kunnen zelf een Google account aanvragen. Is een leerling nog geen 13 jaar, dan heb je twee opties: 
+            <ul>
+	    		<li style="font-size:14px;margin-left:23px;">1. zorg dat de leerlingen samen met hu ouders een <a href="https://www.google.com/accounts/NewAccount">Google account</a> aanvragen</li>
+	    		<li style="font-size:14px;margin-left:23px;">2. vraag voor de hele school <a href="http://www.google.com/apps/intl/en/edu/">Google Apps for Education</a> aan.</li>
+	    	</ul>
+        </p>
+        <a name="schools"><h4>Ik wil graag een pilot doen op onze school, kan dat?</h4></a>
+        <p>
+            Allereerst hartelijk dank voor de interesse in de Khan Academie. We zijn momenteel al bezig met een aantal pilot-projecten, maar zijn erg benieuwd naar meer ervaringen "in het veld". Gebruik onderstaand formulier om aan te melden voor een pilot en we nemen contact op.
+        </p>
         <h4>Kunnen wij iets voor jou doen of wil je ons helpen?</h4>
 		<p>Laat het ons weten.</p>
         <div class="general-contact" style="padding-top: 0;">

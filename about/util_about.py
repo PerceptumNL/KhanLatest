@@ -5,7 +5,8 @@ from video_models import Video
 
 class AboutRequestHandler(request_handler.RequestHandler):
     def render_jinja2_template(self, template_name, template_values):
-        template_values["selected_nav_link"] = "about"
+        if not hasattr(template_values, "selected_nav_link"):
+            template_values["selected_nav_link"] = nav_link
         request_handler.RequestHandler.render_jinja2_template(
             self, template_name, template_values)
 
@@ -20,22 +21,24 @@ class ViewAbout(AboutRequestHandler):
 class ViewStart(AboutRequestHandler):
     @user_util.open_access
     def get(self):
-        self.render_jinja2_template('about/gettingstarted.html',
-                                    {"selected_id": "the-team"})
-
+        self.render_jinja2_template('about/gettingstarted.html', {
+            "selected_id": "gettingstarted",
+            "selected_nav_link": "gettingstarted"
+        })
 
 class ViewContact(AboutRequestHandler):
     @user_util.open_access
     def get(self):
         self.render_jinja2_template('about/contact.html', {
-            "selected_id": "discovery-lab"})
-
+            "selected_id": "discovery-lab",
+            "selected_nav_link": "",
+        })
 
 class ViewFAQ(AboutRequestHandler):
     @user_util.open_access
     def get(self):
         self.render_jinja2_template('about/faq.html', {
             "selected_id": "faq",
+            "selected_nav_link": "faq",
             "approx_vid_count": Video.approx_count()
         })
-

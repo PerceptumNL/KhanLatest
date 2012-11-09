@@ -293,6 +293,22 @@ class ViewVideoDeprecated(request_handler.RequestHandler):
 
         ViewVideo.show_video(self, readable_id, topic_id, True)
 
+from datetime import *
+class GMT1(tzinfo):
+    def utcoffset(self, dt):
+        return timedelta(hours=1) + self.dst(dt)
+    def dst(self, dt):
+        # DST starts last Sunday in March
+        d = datetime(dt.year, 4, 1)   # ends last Sunday in October
+        self.dston = d - timedelta(days=d.weekday() + 1)
+        d = datetime(dt.year, 11, 1)
+        self.dstoff = d - timedelta(days=d.weekday() + 1)
+        if self.dston <=  dt.replace(tzinfo=None) < self.dstoff:
+            return timedelta(hours=1)
+        else:
+            return timedelta(0)
+    def tzname(self,dt):
+         return "GMT +1"
 
 class ReportIssue(request_handler.RequestHandler):
     @user_util.open_access
@@ -301,6 +317,32 @@ class ReportIssue(request_handler.RequestHandler):
         self.write_response(issue_type, {
             'issue_labels': self.request.get('issue_labels'),
         })
+    @user_util.open_access
+    def post(self):
+        title = self.request_string("title", default="")
+        description = self.request_string("description", default="")
+        email = self.request_string("email", default="")
+
+        from third_party import gspread
+        from secrets import *
+        gc = gspread.login(google_docs_user, google_docs_pw)
+        sh = gc.open_by_key(google_docs_spreadsheet_problems)
+        wks = sh.get_worksheet(0)
+        cell_list = wks.col_values(1)
+        row = len(cell_list) + 1
+        currdate = datetime.now(GMT1()).strftime("%d %b %Y %I:%M:%S %p") 
+        wks.update_acell('A'+str(row), currdate) 
+        wks.update_acell('B'+str(row), title)
+        wks.update_acell('C'+str(row), description)
+        wks.update_acell('D'+str(row), email)
+        template_values = {
+            'currdate': currdate,
+            'title': title,
+            'description': description,
+            'email': email,
+            }
+        self.render_jinja2_template('reportissue_resume.html', template_values)
+
 
     def write_response(self, issue_type, extra_template_values):
         user_agent = self.request.headers.get('User-Agent')

@@ -319,9 +319,13 @@ class ReportIssue(request_handler.RequestHandler):
         })
     @user_util.open_access
     def post(self):
+        issue_type = self.request.get('type')
+
         title = self.request_string("title", default="")
-        description = self.request_string("description", default="")
-        email = self.request_string("email", default="")
+        page = self.request_string("page", default="")
+        ureport = self.request_string("ureport", default="")
+        ucontact = self.request_string("ucontact", default="")
+        utype = self.request_string("utype", default="")
 
         from third_party import gspread
         from secrets import *
@@ -332,14 +336,16 @@ class ReportIssue(request_handler.RequestHandler):
         row = len(cell_list) + 1
         currdate = datetime.now(GMT1()).strftime("%d %b %Y %I:%M:%S %p") 
         wks.update_acell('A'+str(row), currdate) 
-        wks.update_acell('B'+str(row), title)
-        wks.update_acell('C'+str(row), description)
-        wks.update_acell('D'+str(row), email)
+        wks.update_acell('B'+str(row), page)
+        wks.update_acell('C'+str(row), utype)
+        wks.update_acell('D'+str(row), title)
+        wks.update_acell('E'+str(row), ureport)
+        wks.update_acell('F'+str(row), ucontact)
         template_values = {
             'currdate': currdate,
             'title': title,
-            'description': description,
-            'email': email,
+            'description': ureport,
+            'email': ucontact,
             }
         self.render_jinja2_template('reportissue_resume.html', template_values)
 

@@ -6,7 +6,7 @@ from video_models import Video
 class AboutRequestHandler(request_handler.RequestHandler):
     def render_jinja2_template(self, template_name, template_values):
         if not hasattr(template_values, "selected_nav_link"):
-            template_values["selected_nav_link"] = nav_link
+            template_values["selected_nav_link"] = "about"
         request_handler.RequestHandler.render_jinja2_template(
             self, template_name, template_values)
 

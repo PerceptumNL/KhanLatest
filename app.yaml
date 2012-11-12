@@ -101,6 +101,14 @@ handlers:
   static_files: khan-exercises/khan-exercise.js
   upload: khan-exercises/khan-exercise.js
 
+- url: /khan-exercises/khan-exercise-deploy.js
+  static_files: khan-exercises/khan-exercise-deploy.js
+  upload: khan-exercises/khan-exercise-deploy.js
+
+- url: /khan-exercises/jquery-ui.js
+  static_files: khan-exercises/jquery-ui.js
+  upload: khan-exercises/jquery-ui.js
+
 - url: /khan-exercises/utils
   static_dir: khan-exercises/utils
 

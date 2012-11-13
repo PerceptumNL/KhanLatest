@@ -324,7 +324,7 @@ javascript = {
         "base_path": "../khan-exercises",
         "base_url": "/khan-exercises",
         "files": [
-            "khan-exercise-deploy.js",
+            "khan-exercise.js",
             "utils/angles.js",
             "utils/answer-types.js",
             "utils/ast.js",
@@ -352,7 +352,7 @@ javascript = {
             "utils/math.js",
             "utils/math-model.js",
             "utils/mean-and-median.js",
-            "utils/nba.js",
+#            "utils/nba.js",
             "utils/parabola-intuition.js",
             "utils/polynomials.js",
             "utils/probability.js",

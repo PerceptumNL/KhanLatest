@@ -70,7 +70,7 @@ def youtube_timestamp_links(content):
 
 
 def phantom_login_link(login_notifications, continue_url):
-    return login_notifications.replace("[login]", "<a href='/login?continue="+continue_url+"' class='simple-button green'>inloggen om je vorderingen op te slaan</a>")
+    return login_notifications.replace("[login]", "<a href='/login?continue="+continue_url+"' class='simple-button green'>Log in to save your progress</a>")
 
 def append_ago(s_time):
     if not s_time:

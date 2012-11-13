@@ -1,5 +1,5 @@
 application: khan-netherlands
-version: test-exercises 
+version: 10
 runtime: python27
 api_version: 1
 default_expiration: "365d"

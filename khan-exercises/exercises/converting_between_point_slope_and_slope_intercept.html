@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html data-require="math math-format expressions">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Vertaling van een "punt-helling" naar een lineaire vorm</title>
+    <script src="../khan-exercise.js"></script>
+    <style type="text/css">
+        #answer_area input[type=text] {
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise">
+    <div class="problems">
+        <div id="point-to-intercept">
+            <div class="vars" data-ensure="y1 != 0">
+                <var id="m">(random() > 0.5 ? -1 : 1) * (rand(5) + 1)</var>
+                <var id="b">(random() > 0.5 ? -1 : 1) * (rand(5) + 1)</var>
+                <var id="x1">(random() > 0.5 ? -1 : 1) * (rand(3) + 1)</var>
+                <var id="y1">m*x1+b</var>
+                <var id="var1">m*x1</var>
+            </div>
+            <p class="question">Vervang de volgende vergelijking door de lineaire formule.</p>
+            <p>Met andere woorden, als de vergelijking wordt herschreven naar de vorm <code>y = mx + b</code>, wat zijn dan de waarden voor <code>m</code> en <code>b</code>?</p>
+            <p><code>y - <var>y1</var> = <var>m</var>(x - <var>x1</var>)</code></p>
+            <div class="solution" data-type="multiple">
+                <p><code>y = \space</code><span class="sol"><var>m</var></span><code>\space \cdot x + \space</code><span class="sol"><var>b</var></span></p>
+            </div>
+            <div class="hints">
+                <div>
+                    <p>Verwerk de <code><var>m</var></code> in de <code class="hint_blue"><var>m</var>(x - <var>x1</var>)</code> rechterterm.</p>
+                    <p><code>y - <var>y1</var> = \color{<var>BLUE</var>}{<var>expr([ "*", m, "x" ])</var> - <var>var1</var>}</code></p>
+                </div>
+                <div>
+                    <p>
+            
+                        
+                        Maak de y vrij door aan beide kanten
+                        <span data-if="y1 < 0"> <code><var>-y1</var></code> af te trekken.</span>
+                        <span data-else><code><var>y1</var></code> op te tellen.</span>
+                    </p>
+                    <p><code>y = <var>expr([ "*", m, "x" ])</var> - <var>var1</var> + <var>y1</var></code></p>
+                </div>
+                <div>
+                    <p>Combineer de constanten in de rechter term.</p>
+                    <p><code>y = <var>expr([ "*", m, "x" ])</var> + <var>b</var></code></p>
+                </div>
+                <div>
+                    <p><strong>
+                        De vergelijking is nu in de lineaire vorm, met een helling van <code><var>m</var></code> n een y-startwaarde van <code><var>b</var></code>.
+                    </strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>

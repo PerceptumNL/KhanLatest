@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html data-require="math graphie">
+<head>
+    <title>Square roots</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+            <var id="cx">0</var>
+            <var id="y">0</var>
+
+            <var id="N">randRange( 2, 12 )</var>
+            <var id="F_N">getPrimeFactorization( N )</var>
+        </div>
+
+        <div class="hints">
+            <p>
+                Als je dit getal niet kunt vinden, deel dan <code><var>Q</var></code> in factoren en kijk of er groepjes gelijke getallen zijn.
+            </p>
+            <div>
+                <p>Laten we een getallenboom tekenen.</p>
+                <div class="graphie" id="factor-tree">
+                    init({
+                        range: [ [-1, FACTORIZATION.length + 2], [ -2 * FACTORIZATION.length - 1, 1] ],
+                        scale: [30, 30]
+                    });
+
+                    label( [cx + 1, y], curr );
+                </div>
+            </div>
+
+            <div class="graphie" data-update="factor-tree" data-each="FACTORIZATION as factor">
+                    path( [ [cx + 1, y - 0.5], [cx, y - 1.5] ] );
+                    path( [ [cx + 1, y - 0.5], [cx + 2, y - 1.5] ] );
+                    y -= 2;
+                    cx += 1;
+
+                    curr = curr / factor;
+
+                    label( [cx - 1, y], factor );
+                    circle( [cx - 1, y], 0.5);
+                    label( [cx + 1, y], curr );
+            </div>
+
+            <div class="graphie" data-update="factor-tree">
+                circle( [cx + 1, y], 0.5);
+            </div>
+
+            <p>Dus de factoren van <code><var>Q</var></code> zijn <code><var>PRIMES.join( "\\times " )</var></code>.</p>
+        </div>
+
+        <div class="problems">
+            <div id="square">
+                <div class="vars">
+                    <var id="Q">N * N</var>
+                    <var id="PRIMES">getPrimeFactorization( Q )</var>
+                    <var id="FACTORIZATION">PRIMES.slice( 0, PRIMES.length - 1 )</var>
+                    <var id="curr">Q</var>
+                </div>
+
+                <p class="question">Wat is de vierkantswortel van <code><var>Q</var></code>?</p>
+
+                <p class="solution"><var>N</var></p>
+
+                <div class="hints" data-apply="prependContents">
+                    <p>
+                        De vierkantswortel van <code><var>Q</var></code> is het getal dat, wanneer je het vermenigvuldigt met zichzelf, gelijk is aan <code><var>Q</var></code>.
+                    </p>
+                </div>
+
+                <div class="hints" data-apply="appendContents">
+                    <p>We zoeken de vierkantswortel van <code><var>Q</var></code>, dus we willen de priemfactoren splitsen in 2 gelijke groepen.</p>
+
+                    <div data-if="PRIMES.length === 2" data-unwrap>
+
+                        <p>We hebben maar 2 factoren en die willen we verdelen in 2 groepen, dus dat is eenvoudig.</p>
+                        <p><code><var>Q</var> = <var>PRIMES.join( "\\times " )</var></code>, dus <code><var>N</var>^2 = <var>Q</var></code>.</p>
+
+                    </div><div data-else data-unwrap>
+
+                        <div>
+                            <p>We kunnen de factoren opnieuw opstellen op deze manier:</p>
+                            <p><code><var>Q</var> = <var>PRIMES.join(" &times; ")</var> = \left(<var>F_N.join( "\\times " )</var>\right) \times \left(<var>F_N.join(" &times; ")</var>\right)</code></p>
+                        </div>
+
+                        <p data-if="F_N.length > 1">
+                            Dus <code>\left(<var>F_N.join( "\\times " )</var>\right)^2 = <var>N</var>^2 = <var>Q</var></code>.
+                        </p><p data-else>
+                            Dus <code><var>N</var>^2 = <var>Q</var></code>.
+                        </p>
+
+                    </div>
+
+                    <p>Dus de vierkantswortel van <code><var>Q</var></code> is <code><var>N</var></code>.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

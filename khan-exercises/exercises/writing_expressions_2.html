@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math expressions">
+<head>
+    <meta charset="UTF-8" />
+    <title>Formules schrijven 2</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+
+    <div class="exercise">
+        <div class="vars">
+            <var id="A">randRangeNonZero( -9, 9 )</var>
+            <var id="B" data-ensure="abs( A ) !== abs( B )">randRangeNonZero( -9, 9 )</var>
+            <var id="C" data-ensure="abs( C ) !== 1">randRangeNonZero( -9, 9 )</var>
+            <var id="D">randRangeNonZero( -9, 9 )</var>
+        </div> <!-- C ( Bx + A ) + D is the expression we are creating -->
+
+        <div class="problems">
+            <div id="original">
+                <div class="problem">
+                    <p data-tt="question1">Bedenk eerst de formule of vergelijking voor:</p>
+                </div>
+                <p class="question" data-tt="question2">De som van <code><var>A</var></code> en <code><var>B</var></code> <code>x</code>.</p>
+                <p class="middle" data-tt="question3">Kies nu het antwoord dat overeenkomt met het volgende:</p>
+                <p class="part-two" data-tt="question4"><b><code><var>D</var></code> De som van <code><var>C</var></code> plus het product van</b></p>
+                <p class="solution"><code><var>expr(["+",["*", C,["+",["*", B, "x"], A]], D])</var></code></p>
+<!-- Solution: C ( A + Bx ) + D, wrong 1: -C SAME, wrong 2: -C (B + Ax) - D, wrong 3: D ( -A + Bx ) + C, wrong 4: D ( -B + Ax ) + C -->
+                <ul class="choices" data-show="5" data-none="true">
+                    <li><code><var>expr(["+",["*", -C,["+",["*", B, "x"], A]], D])</var></code></li>
+                    <li><code><var>expr(["+",["*", -C,["+",["*", A, "x"], B]], D])</var></code></li>
+                    <li><code><var>expr(["+",["*", D,["+",["*", B, "x"], -A]], C])</var></code></li>
+                    <li><code><var>expr(["+",["*", D,["+",["*", A, "x"], -B]], C])</var></code></li>
+                </ul>
+
+                <div class="hints" data-apply="appendContents">
+                    <p id="hint1" data-tt="hint1">Wat is <span class="hint_orange">het product van <code><var>B</var></code> en <code>x</code></span>?</p>
+                    <p id="hint2" data-tt="hint2">Wat is <span class="hint_blue">de som van <code><var>A</var></code></span> en <code class="hint_orange"><var>expr(["*", B, "x"])</var></code>?</p>
+                    <p id="hint3" data-tt="hint3">Wat is <span class="hint_orange"> de hoeveelheid<code><var>C</var></code> van die expressie</span>?</p>
+                    <p id="hint4" data-tt="hint4">Wat is <span class="hint_blue"><code><var>D</var></code> plus</span> <code>\color{orange}{<var>expr(["*", C,["+",["*", B, "x"], A]])</var>}</code>?</p>
+                </div>
+
+            </div>
+            <div id="type-2" data-type="original">
+                <p class="question" data-tt="question5"> de som van <code><var>A</var></code> en de hoeveelheid van <code><var>B</var></code> maal <code>x</code></p>
+                <p class="part-two" data-tt="question6"><b><code><var>D</var></code> plus het product van <code><var>C</var></code> en die expressie</b></p>
+
+                <div class="hints" data-apply="appendContents">
+                    <p id="hint1" data-tt="hint5">Wat is <span class="hint_orange">het product van <code><var>B</var></code> times <code>x</code></span>?</p>
+                    <p id="hint2" data-tt="hint6">Wat is <span class="hint_blue">de som van <code><var>A</var></code></span> and <code class="hint_orange"><var>expr(["*", B, "x"])</var></code>?</p>
+                    <p id="hint3" data-tt="hint7">Wat is <span class="hint_orange">het product van <code><var>C</var></code> maal die expressie</span>?</p>
+                    <p id="hint4" data-tt="hint8">Wat is <span class="hint_blue"><code><var>D</var></code> plus</span> <code>\color{orange}{<var>expr(["*", C,["+",["*", B, "x"], A]])</var>}</code>?</p>
+                </div>
+
+            </div>
+            <div id="type-3" data-type="original">
+                <p class="question" data-tt="question7"><code><var>A</var></code> plus het product van <code><var>B</var></code> en <code>x</code></p>
+                <p class="part-two" data-tt="question8"><b>Neem de hoeveelheid van <code><var>C</var></code> maal de expressie en voeg <code><var>D</var></code> toe.</b></p>
+
+                <div class="hints" data-apply="appendContents">
+                    <p id="hint1" data-tt="hint9">Wat is <span class="hint_orange">the product of <code><var>B</var></code> and <code>x</code></span>?</p>
+                    <p id="hint2" data-tt="hint10">Wat is <span class="hint_blue"><code><var>A</var></code> plus</span> <code class="hint_orange"><var>expr(["*", B, "x"])</var></code>?</p>
+                    <p id="hint3" data-tt="hint11">Wat is <span class="hint_orange">de hoeveelheid van<code><var>C</var></code> maal die expressie</span>?</p>
+                    <p id="hint4" data-tt="hint12">Wat doet <span class="hint_blue">het toevoegen van <code><var>D</var></code></span> aan <code>\color{orange}{<var>expr(["*", C,["+",["*", B, "x"], A]])</var>}</code>?</p>
+                </div>
+
+            </div>
+            <div id="type-4" data-type="original">
+                <p class="question" data-tt="question9"><code><var>A</var></code> plus de hoeveelheid van <code><var>B</var></code> maal <code>x</code></p>
+                <p class="part-two" data-tt="question10"><b>Neem het product van <code><var>C</var></code> en die expressie en tel er <code><var>D</var></code> bij op.</b></p>
+
+                <div class="hints" data-apply="appendContents">
+                    <p id="hint1" data-tt="hint13">Wat is <span class="hint_orange">de hoeveelheid van <code><var>B</var></code> maal <code>x</code></span>?</p>
+                    <p id="hint2" data-tt="hint14">Wat is <span class="hint_blue"><code><var>A</var></code> plus</span> <code class="hint_orange"><var>expr(["*", B, "x"])</var></code>?</p>
+                    <p id="hint3" data-tt="hint15">Wat is <span class="hint_orange">het product van <code><var>C</var></code> maal die expressie</span>?</p>
+                    <p id="hint4" data-tt="hint16">Wat doet <span class="hint_blue">het toevoegen van<code><var>D</var></code></span> met <code>\color{orange}{<var>expr(["*", C,["+",["*", B, "x"], A]])</var>}</code>?</p>
+                </div>
+
+            </div>
+            <div id="type-5" data-type="original">
+                <p class="question" data-tt="question11">Neem het product van <code><var>B</var></code> en <code>x</code> en voeg <code><var>A</var></code> toe.</p>
+                <p class="part-two" data-tt="question12"><b>De som van <code><var>D</var></code> en het product van <code><var>C</var></code> en die expressie.</b></p>
+                
+                <div class="hints" data-apply="appendContents">
+                    <p id="hint1" data-tt="hint17">Wat is <span class="hint_orange">het product van<code><var>B</var></code> en <code>x</code></span>?</p>
+                    <p id="hint2" data-tt="hint18">Wat doet <span class="hint_blue">het toevoegen van <code><var>A</var></code></span> met <code class="hint_orange"><var>expr(["*", B, "x"])</var></code>?</p>
+                    <p id="hint3" data-tt="hint19">Wat is <span class="hint_orange">de hoeveelheid van <code><var>C</var></code> maal die expressie</span>?</p>
+                    <p id="hint4" data-tt="hint20">Wat is <span class="hint_blue">de som van <code><var>D</var></code> en </span><code>\color{orange}{<var>expr(["*", C,["+",["*", B, "x"], A]])</var>}</code>?</p>
+                </div>
+
+            </div>
+            <div id="type-6" data-type="original">
+                <p class="question" data-tt="question13">Neem de hoeveelheid van <code><var>B</var></code> maal <code>x</code> en tel er <code><var>A</var></code> bij op.</p>
+                <p class="part-two" data-tt="question14"><b> De som van <code><var>D</var></code> en het product van <code><var>C</var></code> en die expressie</b></p>
+
+                <div class="hints" data-apply="appendContents">
+                    <p id="hint1" data-tt="hint21">Wat is <span class="hint_orange">de hoeveelheid van <code><var>B</var></code> maal <code>x</code></span>?</p>
+                    <p id="hint2" data-tt="hint22">Wat doet <span class="hint_blue">het toevoegen van <code><var>A</var></code></span> met <code class="hint_orange"><var>expr(["*", B, "x"])</var></code>?</p>
+                    <p id="hint3" data-tt="hint23">Wat is <span class="hint_orange">het product van <code><var>C</var></code> maal die expressie</span>?</p>
+                    <p id="hint4" data-tt="hint24">Wat is <span class="hint_blue">de som van <code><var>D</var></code> en </span><code>\color{orange}{<var>expr(["*", C,["+",["*", B, "x"], A]])</var>}</code>?</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="hints">
+            <p data-tt="hint25">Laten we deze opgave opdelen in kleinere en makkelijkere stukken.</p>
+            <p id="hint1"></p>
+            <p><code><var>B</var> \times x = \color{orange}{<var>expr(["*", B, "x"])</var>}</code></p>
+            <p id="hint2"></p>
+            <p><code class="hint_orange"><var>B</var>x</code><code class="hint_blue">{} + <var>A</var></code></p>
+            <p id="hint3"></p>
+            <p><code><var>C</var> \times (<var>B</var>x + <var>A</var>) = \color{orange}{<var>expr(["*", C,["+",["*", B, "x"], A]])</var>}</code></p>
+            <p id="hint4"></p>
+            <p><code class="hint_orange"><var>expr(["*", C,["+",["*", B, "x"], A]])</var></code><code class="hint_blue">{} + <var>D</var></code></p>
+            <p data-tt="hint26">De hele vergelijking kan dus worden geschreven als <code><var>expr(["+",["*", C,["+",["*", B, "x"], A]], D])</var></code>.</p>
+        </div>
+    </div>
+</body>
+</html>

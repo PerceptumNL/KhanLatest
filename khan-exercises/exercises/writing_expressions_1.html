@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math expressions">
+<head>
+    <meta charset="UTF-8" />
+    <title>Formules schrijven</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+            <var id="A">(random() > 0.5 ? -1 : 1) * (rand(9) + 1)</var>
+            <var id="B">(random() > 0.5 ? -1 : 1) * (rand(9) + 1)</var>
+        </div>
+
+        <div class="problems">
+            <div id="original">
+                <div class="problem">
+                    <p data-tt="question1">Kies de formule of vergelijking die overeenkomt met de volgende beschrijving:</p>
+                </div>
+                <p class="question" data-tt="question2">De som van <code><var>B</var></code> plus <code><var>A</var></code><code>x</code>.</p>
+                <p class="solution"><code><var>expr(["+", ["*", A, "x"], B])</var></code></p>
+                <ul class="choices" data-show="5" data-none="true">
+                    <li><code><var>expr(["+", ["*", -A, "x"], B])</var></code></li>
+                    <li><code><var>expr(["+", ["*", A, "x"], -B])</var></code></li>
+                    <li><code><var>expr(["+", ["*", B, "x"], A])</var></code></li>
+                    <li><code><var>expr(["+", ["*", -B, "x"], -A])</var></code></li>
+                </ul>
+                <div class="hints" data-apply="appendContents">
+                    <p id="hint1" data-tt="hint1">Hoeveel is<span class="hint_orange"><code><var>A</var></code> en <code>x</code></span>?</p>
+                    <p id="hint2" data-tt="hint2">Hoeveel is <span class="hint_blue">  <code><var>B</var></code></span> and <code class="hint_orange"><var>expr(["*", A, "x"])</var></code>?</p>
+                </div>
+            </div>
+            <div data-type="original">
+                <p class="question" data-tt="question3">Neem de hoeveelheid <code><var>A</var></code> keer <code>x</code>, en voeg <code><var>B</var></code> toe.</p>
+                <div class="hints" data-apply="appendContents">
+                    <p id="hint1" data-tt="hint3">Hoeveel is <span class="hint_orange">de hoeveelheid <code><var>A</var></code> keer <code>x</code></span>?</p>
+                    <p id="hint2" data-tt="hint4">Wat <span class="hint_blue">doet het toevoegen van <code><var>B</var></code></span> ?</p>
+                </div>
+            </div>
+            <div data-type="original">
+                <p class="question" data-tt="question4"><code><var>B</var></code> plus <code><var>A</var></code><code>x</code>.</p>
+                <div class="hints" data-apply="appendContents">
+                    <p id="hint1" data-tt="hint5">Hoeveel is <span class="hint_orange">de som van <code><var>A</var></code> en <code>x</code></span>?</p>
+                    <p id="hint2" data-tt="hint6">Hoeveel is <span class="hint_blue"><code><var>B</var></code> en </span> <code class="hint_orange"><var>expr(["*", A, "x"])</var></code>?</p>
+                </div>
+            </div>
+            <div data-type="original">
+                <p class="question" data-tt="question5">De som van <code><var>B</var></code> en <code><var>A</var></code><code>x</code>.</p>
+                <div class="hints" data-apply="appendContents">
+                    <p id="hint1" data-tt="hint7">Hoeveel is <span class="hint_orange"> <code><var>A</var></code> <code>x</code></span>?</p>
+                    <p id="hint2" data-tt="hint8">Hoeveel is <span class="hint_blue"> de som van <code><var>B</var></code></span> and <code class="hint_orange"><var>expr(["*", A, "x"])</var></code>?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hints">
+            <p data-tt="hint9">Laten we deze opgave opdelen in kleinere en makkelijkere stukken.</p>
+            <p id="hint1"></p>
+            <p><code><var>A</var> \times x = \color{orange}{<var>expr(["*", A, "x"])</var>}</code></p>
+            <p id="hint2"></p>
+            <p><code class="hint_orange"><var>A</var>x</code><code class="hint_blue">{} + <var>B</var></code></p>
+            <p data-tt="hint10">Dus, de oorspronkelijke beschrijving kan geschreven worden als <code><var>expr(["+", ["*", A, "x"], B])</var></code>.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format expressions graphie">
+<head>
+    <meta charset="UTF-8" />
+    <title>Vertaling van de lineaire naar de standaard formule.</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="problems">
+        <div id="standard-to-slope">
+            <div class="vars">
+                <var id="A">randRangeNonZero( -5, 5 )</var>
+                <var id="B">randRangeNonZero( -5, 5 )</var>
+                <var id="C">randRangeNonZero( -5, 5 )</var>
+                <var id="SLOPE">-1 * A / B</var>
+                <var id="Y_INTERCEPT">C / B</var>
+            </div>
+            <p  data-tt="question1" class="question">Vertaal de volgende formule van standaard naar de lineaire vorm.</p>
+            <p data-tt="question2" >Met andere woorden,als de vergelijking wordt herschreven naar de vorm <code>y = mx + b</code>, wat zijn dan de waarden voor <code>m</code> en <code>b</code>?</p>
+            <p><code><var>expr([ "*", A, "x"])</var> + <var>expr([ "*", B, "y" ])</var> = <var>C</var></code></p>
+            <div class="solution" data-type="multiple">
+                <p><code>m</code> = <span class="sol"><var>SLOPE</var></span></p>
+                <p><code>b</code> = <span class="sol"><var>Y_INTERCEPT</var></span></p>
+            </div>
+            <div class="hints">
+                <div>
+                    <p data-tt="hint1" >Verplaats de <code>x</code> term naar de andere kant van de formule.</p>
+                    <p><code><var>expr([ "*", B, "y" ])</var> = <var>expr([ "*", -1 * A, "x"])</var> + <var>C</var></code></p>
+                </div>
+                <div data-if="B !== 1">
+                    <p data-tt="hint2" >Deel beide kanten door <code><var>B</var></code>.</p>
+                    <p><code>y = <span data-if="abs( SLOPE ) !== 1"><var>fractionReduce( -1 * A, B)</var></span><span data-if="SLOPE === -1">-</span>x + <var>fractionReduce( C, B )</var></code></p>
+                </div>
+                <div>
+                    <p data-tt="hint3" >Bekijken we de vergelijking in de lineaire vorm dan zien we:</p>
+                    <p><code>\begin{align*}m &amp;= <var>fractionReduce( -1 * A, B)</var>\\
+                        b &amp;= <var>fractionReduce( C, B )</var>\end{align*}</code></p>
+                </div>
+                <div>
+                    <p data-tt="hint4" >Aanschouw! De magie van de wiskunde, beide vergelijkingen betreffen dezelfde lijn!</p>
+                    <div class="graphie" id="grid">
+                        graphInit({
+                            range: 10,
+                            scale: 20,
+                            axisArrows: "&lt;-&gt;",
+                            tickStep: 1,
+                            labelStep: 1
+                        });
+
+                        style({ stroke: BLUE, fill: BLUE });
+
+                        plot(function( x ) {
+                            return x * SLOPE + Y_INTERCEPT;
+                        }, [ -10, 10 ]);
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="slope-to-standard">
+            <div class="vars">
+                <var id="SLOPE">randRange( -3, 3 )</var>
+                <var id="Y_INTERCEPT">randRangeNonZero( -3, 3 )</var>
+                <var id="A">SLOPE &lt;= 0 ? -1 * SLOPE : SLOPE</var>
+                <var id="B">SLOPE &lt;= 0 ? 1 : -1</var>
+                <var id="C">SLOPE &lt;= 0 ? Y_INTERCEPT: -1 * Y_INTERCEPT</var>
+            </div>
+            <p  data-tt="question3" class="question">Vertaal de volgende formule van standaard naar de lineaire vorm.</p>
+            <p data-tt="question4" >Met andere woorden, als de vergelijking wordt herschreven naar de vorm <code>Ax + By = C</code>, wat zijn dan de waarden voor <code>A</code>, <code>B</code>, en <code>C</code>?</p>
+            <p data-tt="question5" >Neem aan dat <code>A</code> positief is.</p>
+            <p><code>y = <var>expr([ "+", [ "*", SLOPE, "x" ], Y_INTERCEPT ])</var></code></p>
+            <div class="solution" data-type="multiple">
+                <p><code>A</code> = <span class="sol"><var>A</var></span></p>
+                <p><code>B</code> = <span class="sol"><var>B</var></span></p>
+                <p><code>C</code> = <span class="sol"><var>C</var></span></p>
+            </div>
+            <div class="hints">
+                <div data-if="SLOPE !== 0">
+                    <p data-tt="hint5" >Move the <code>x</code> term to the same side as the <code>y</code> term.</p>
+                    <p><code><var>expr([ "*", -SLOPE, "x" ])</var> + y = <var>Y_INTERCEPT</var></code></p>
+                </div>
+                <div data-else>
+                    <p data-tt="hint6" >Aangezien de helling <code>0</code> is, en dat er geen <code>x</code> aanwezig is, is de vergelijking al in de lineaire vorm.</p>
+                    <p><code>y = <var>Y_INTERCEPT</var></code></p>
+                </div>
+                <div data-if="SLOPE > 0">
+                    <p data-tt="hint7" >Vermenigvuldig beide kanten met <code>-1</code> zodat, <code>A</code> positief is.</p>
+                    <p><code><var>expr([ "*", SLOPE, "x" ])</var> - y = <var>-Y_INTERCEPT</var></code></p>
+                </div>
+                <div>
+                    <p data-tt="hint8" >Bekijken we de vergelijking in de lineaire vorm dan zien we:</p>
+                    <p><code>\begin{align*}A &amp;= <var>A</var>\\
+                        B &amp;= <var>B</var>\\
+                        C &amp;= <var>C</var>\end{align*}</code></p>
+                </div>
+                <div>
+                    <p data-tt="hint9" >Aanschouw! De magie van de wiskunde, beide vergelijkingen betreffen dezelfde lijn!</p>
+                    <div class="graphie" id="grid">
+                        graphInit({
+                            range: 10,
+                            scale: 20,
+                            axisArrows: "&lt;-&gt;",
+                            tickStep: 1,
+                            labelStep: 1
+                        });
+
+                        style({ stroke: BLUE, fill: BLUE });
+
+                        plot(function( x ) {
+                            return x * SLOPE + Y_INTERCEPT;
+                        }, [ -10, 10 ]);
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>

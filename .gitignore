@@ -34,8 +34,3 @@ tools/node_modules/*
 third_party/appengine-search-src
 deploy_settings.sh
 deploy/env
-
-
-khan-exercises
-
-third_party/appengine-search-src

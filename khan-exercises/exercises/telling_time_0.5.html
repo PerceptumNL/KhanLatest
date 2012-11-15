@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html data-translatable data-require="math math-format graphie graphie-helpers word-problems">
+<html data-translatable data-require="math math-format graphie time word-problems">
 <head>
-    <meta charset="UTF-8" />
-    <title>Telling time 0.5</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Telling time</title>
     <script src="../khan-exercise.js"></script>
     <style type="text/css">
         #answer_area .short input[type=text] {
@@ -16,7 +16,7 @@
         <var id="HOUR">randRange( 1, 12 )</var>
         <var id="MINUTE">randRange( 0, 3 ) * 15 </var>
         <var id="NICE_MINUTE"> MINUTE &gt; 5 ? MINUTE : "0" + "" + MINUTE</var>
-        <var id="AM_PM">randFromArray([ "a.m.", "p.m." ])</var>
+        <var id="AM_PM">HOUR >= 7 ? "a.m" : "p.m."</var>
     </div>
 
     <div class="problems">
@@ -24,10 +24,9 @@
             <div class="question">
                 <p data-tt="exercise1">What time is it?</p>
                 <div class="graphie" id="pie" style="float: left;">
-                    init({ range: [ [-4, 4 ], [ -4, 4] ], scale: 25 });
-                    PIECH = new analogClock( HOUR, MINUTE,  3.5, false );
-                    PIECH.drawLabels();
-                    PIECH.draw();
+                    init({ range: [ [-4, 4 ], [ -4, 4 ] ], scale: 25 });
+                    clock = addAnalogClock({ hour: HOUR, minute: MINUTE, minuteTicks: 0 });
+                    clock.draw();
                 </div>
                 <div class="graphie" id="digital" style="float: left;">
                     init({ range: [ [-5, 5], [-3, 3] ], scale: 25 });

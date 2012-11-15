@@ -63,16 +63,16 @@ var Translate = new function(){
 	this.langdefault = "en";
 	this.lang = "nl";
 	this.table = {};
-	this.production = false;
 	this.current = null;
-	this.exercisefile = ( this.production ? "/khan-exercises/exercises/" : "/exercises/" ) + this.current + ".lang.js";
-	this.globalfile = ( this.production ? "/khan-exercises/exercises/" : "/exercises/" ) +"lang.js";
+    this.testMode = typeof Exercises === "undefined";
+	this.production = !this.testMode;
+	this.exercisepath = this.production ? "/khan-exercises/exercises/" : "/exercises/";
+
 
 	this.switchLang = function(map){
-		if(map[this.lang]){
+		if(map[this.lang]) {
 			return map[this.lang];
-		}
-		else{
+		} else {
 			return map[this.langdefault];
 		}
 	}
@@ -95,7 +95,7 @@ var Translate = new function(){
     //(KNL):Translate
     this.compile = function(id, ele) {
 
-		var langfile = "/exercises/" + id + ".lang.js";
+		var langfile = this.exercisepath + id + ".lang.js";
 		var translation = Translate.getTranslation(langfile, id);
 		if(translation && translation[Translate.lang]){
 			ele.find('[data-tt]').each(function(){

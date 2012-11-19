@@ -67,7 +67,7 @@ var Translate = new function(){
     this.testMode = typeof Exercises === "undefined";
 	this.production = !this.testMode;
 	this.exercisepath = this.production ? "/khan-exercises/exercises/" : "/exercises/";
-
+	this.globalfile = (this.production ? "/khan-exercises/exercises/" : "/exercises/") + "lang.js";
 
 	this.switchLang = function(map){
 		if(map[this.lang]) {
@@ -80,19 +80,20 @@ var Translate = new function(){
 	this.getTranslation = function(url, name){
         console.log("URL:" + url);
         console.log("NAME:" + name);
-		//TODO(KNL): Implement caching on client side
+        if (name in this.table)
+		    return this.table[name];
+        var self = this;
 		$.ajax({
 			type: "GET",
 			url: url,
 			async:false,
 			success: function(data){
-				Translate.table[name] = eval(data);
+				self.table[name] = eval(data);
 			}
 		})
 		return this.table[name];
 	}
 
-    //(KNL):Translate
     this.compile = function(id, ele) {
 
 		var langfile = this.exercisepath + id + ".lang.js";
@@ -107,14 +108,23 @@ var Translate = new function(){
 		}
     }
 
-	this.loadGlobals = function(){
+    this.compileTitle = function($html) {
+        var globals = this.getTranslation(this.globalfile, "globals")['titles'][this.lang];
+        var $title = $('title');
+        var $extitle = $(".practice-exercise-displayname");
+        if ($extitle.text() in globals) {
+            $extitle.text(globals[$extitle.text()]);
+            var post_title = $title.html().substring($title.html().indexOf('|')-1)
+            $title.html($extitle.text() + post_title);
+        }
+    }
 
-		Khan.Util.tokenreplace = Translate;
-		Khan.Util.translate = Translate;
-
-	}
-
+    this.loadGlobals = function() {
+        this.globals = this.getTranslation(this.globalfile, "globals");
+    }
 };
+
+Translate.compileTitle();
 
 var Khan = (function() {
     function warn(message, showClose) {
@@ -972,12 +982,13 @@ var Khan = (function() {
 
         var exerciseElem = $("<div>")
             .data("name", exerciseId)
-            .data("displayName", exerciseName)
+            .data("displayName", "ble")
             .data("fileName", exerciseFile)
             .data("rootName", exerciseId);
 
         // Queue up an exercise load
         loadExercise.call(exerciseElem, function() {
+
 
             // Trigger load completion event for this exercise
             $(Khan).trigger("exerciseLoaded:" + exerciseId);
@@ -990,7 +1001,7 @@ var Khan = (function() {
     }
 
     function loadAndRenderExercise(nextUserExercise) {
-        console.log("loadAndRenderExer");
+        debugLog("loadAndRenderExer");
 
         setUserExercise(nextUserExercise);
 
@@ -999,6 +1010,7 @@ var Khan = (function() {
 
         exerciseId = userExercise.exerciseModel.name;
         exerciseName = userExercise.exerciseModel.displayName;
+        userExercise.exerciseModel.displayName = "bla";
         exerciseFile = userExercise.exerciseModel.fileName;
 
         // TODO(eater): remove this once all of the exercises in the datastore have filename properties
@@ -2084,7 +2096,7 @@ var Khan = (function() {
                 cards_left: !testMode && (Exercises.incompleteStack.length - 1),
 
                 //Get Custom Stack Id if it exists
-                custom_stack_id: !testMode && Exercises.completeStack.getCustomStackID()
+                custom_stack_id: !testMode && ''//Exercises.completeStack.getCustomStackID()
             };
         }
 
@@ -2939,6 +2951,7 @@ var Khan = (function() {
         // Packing occurs on the server but at the same "exercises/" URL
         $.get(urlBase + "exercises/" + fileName, function(data, status, xhr) {
             var match, newContents;
+            //(KNL):Translate
 
             if (!(/success|notmodified/).test(status)) {
                 // Maybe loading from a file:// URL?
@@ -2953,6 +2966,7 @@ var Khan = (function() {
             data = data.replace(/<script(\s)+src=([^<])*<\/script>/, "");
 
             newContents = $(data);
+            Translate.compileTitle(newContents);
 
             // Name of the top-most ancestor exercise
             newContents.data("rootName", rootName);
@@ -2962,17 +2976,6 @@ var Khan = (function() {
                 loadExercise.call(this, callback);
             });
 
-            //(KNL):Translate
-			var langfile = "/khan-exercises/exercises/" + id + ".lang.js";
-			var translation = Translate.getTranslation(langfile, id);
-			if(translation && translation[Translate.lang]){
-				newContents.find('[data-tt]').each(function(){
-					token = $(this).attr('data-tt');
-					if(translation[Translate.lang][token]){
-						$(this).html(translation[Translate.lang][token]);
-					}
-				})
-			}
 
             // Throw out divs that just load other exercises
             newContents = newContents.not("[data-name]");
@@ -3027,7 +3030,6 @@ var Khan = (function() {
                 }
 
             }
-
         });
 
     }

@@ -1,3 +1,0 @@
-PASS=
-EMAIL=
-APPCFG=

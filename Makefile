@@ -1,12 +1,15 @@
 -include gae_login.mk
 SHELL := /bin/bash
-PATH := ${VE}/bin:${PATH}:tools/google_appengine
-PYTHONPATH := ./tools/google_appengine
 
 VE = ./deploy/env
+
+PATH := ${VE}/bin:tools/google_appengine:${PATH}
+PYTHONPATH := ./tools/google_appengine
+
 APPDIR = ./tools/google_appengine
 APPCFG = ./$(APPDIR)/appcfg.py
 APPDEV = ./$(APPDIR)/dev_appserver.py
+
 COLOR_LIGHT_BLUE = '\e[1;34m'
 COLOR_NC = '\e[0m' #
 

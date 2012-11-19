@@ -1,26 +1,70 @@
+-include gae_login.mk
+SHELL := /bin/bash
+PATH := ${VE}/bin:${PATH}:tools/google_appengine
+PYTHONPATH := ./tools/google_appengine
+
+VE = ./deploy/env
+APPDIR = ./tools/google_appengine
+APPCFG = ./$(APPDIR)/appcfg.py
+APPDEV = ./$(APPDIR)/dev_appserver.py
+COLOR_LIGHT_BLUE = '\e[1;34m'
+COLOR_NC = '\e[0m' #
+
 help:
-	@echo "Some make commands you can run (eg 'make allclean'):"
+	@echo
+	@echo "Some make commands you can run (eg 'make deploy'):"
 	@echo
 	@echo "MOST USEFUL:"
-	@echo "   check: run 'small' and 'medium' tests, and linter"
-	@echo "   clean: safe remove of auto-generated files (.pyc, etc)"
-	@echo "   refresh: safeupdate + install_deps: can be run in cron!"
-	@echo "   secrets_decrypt: to create secrets.py"
+	@echo "   deploy: create package and upload to the App Engine"
+#	@echo "   check: run 'small' and 'medium' tests, and linter"
+	@echo "   clean: safe remove of auto-generated files (.pyc, virtualenv, etc)"
+	@echo "   install_deps: install packages needed for development"
 	@echo
 	@echo "ALSO USEFUL:"
-	@echo "   allcheck: run all tests (including 'large') and linter"
-	@echo "   allclean: remove all non-source-controlled files"
 	@echo "   handlebars/jinja/exercises/js/css/less: used by deploy"
-	@echo "   install_deps: install packages needed for development"
-	@echo "   lint: run lint checks over the entire source tree"
-	@echo "   quickcheck: run 'small' tests and linter"
-	@echo "   safeupdate: hg pull && hg update -c"
-	@echo "   secrets_encrypt: to update secrets.py.cast5"
-	@echo "   test: run 'small' and 'medium' tests, but no linter"
+	@echo
+#	@echo "   allcheck: run all tests (including 'large') and linter"
+#	@echo "   allclean: remove all non-source-controlled files"
+#	@echo "   lint: run lint checks over the entire source tree"
+#	@echo "   quickcheck: run 'small' tests and linter"
+#	@echo "   safeupdate: hg pull && hg update -c"
+#	@echo "   secrets_encrypt: to update secrets.py.cast5"
+#	@echo "   test: run 'small' and 'medium' tests, but no linter"
 
+deploy: install_deps package_deploy upload_deploy
+	@if [ $? -eq 1 ];then \
+		notify-send "Depoyment complete!" \
+	fi
+
+package_deploy:
+	@PYTHONPATH=${PYTHONPATH} python deploy/deploy.py
+
+upload_deploy:
+	@if [ -z $(PASS) ] | [ -z $(EMAIL) ]; \
+	then \
+		echo "Please proceed to enter the user/pass"; \
+		read -p "User email: " EMAIL; \
+		if [ -z $${EMAIL} ]; \
+		then \
+		    echo "Email empty"; \
+		    exit 1; \
+		fi; \
+		read -p "Password: " PASS; \
+		if [ -z $${PASS} ]; \
+		then \
+		    echo "Password empty"; \
+		    exit 1; \
+		fi; \
+		echo -e "PASS=$${PASS}\nEMAIL=$${EMAIL}" > credentials.mk; \
+		echo "Uploading version ..."; \
+		echo $${PASS} | python $${APPCFG} --passin -e $${EMAIL} update . ; \
+	else \
+		echo "Uploading version ..."; \
+		echo $(PASS) | python $(APPCFG) --passin -e $(EMAIL) update . ; \
+	fi
+	
 # Not as thorough as 'make allclean', but a lot safer.  Feel free to
 # add stuff here as you notice it not getting cleaned properly.
-# TODO(csilvers): move all generated files into their own directory.
 clean:
 	find . \( -name '*.pyc' -o -name '*.pyo' \
 	    -o -name '*.orig' \
@@ -34,33 +78,50 @@ clean:
 	    -o -name 'compiled_templates' \
 	    -o -name 'node_modules' \
             \) -print0 | xargs -0 rm -rf
-
-
-# Run hg purge & git clean, but exclude secrets and other dev env files
-# Requires Mercurial PurgeExtension. Add to your .hgrc it not installed:
-#   [extensions]
-#   hgext.purge=
-# Note that this is dangerous! -- if you have new files that haven't
-# been 'hg add'ed yet, this command will nuke them!
-allclean:
-	hg purge --all \
-	   --exclude 'secrets*.py' \
-	   --exclude '.tags*' \
-	   --exclude 'deploy/node_modules'
-	cd khan-exercises && git clean -xdf
+	rm -rf $(VE)
+	rm -rf $(APPDIR)
 
 # Install dependencies required for development.
-install_deps:
-	pip install -r requirements.txt
+VE:
+VE-install: VE
+	@which virtualenv > /dev/null
+	@if test -d ; \
+	then \
+		echo "Found 'virtualenv'"; \
+	else \
+		echo "Please install virtualenv"; \
+		echo " easy_install virtualenv"; \
+	fi
 
-# Attempt to update (abort if uncommitted changes found).
-safeupdate:
-	hg pull
-	hg update -c
+VE-prepare: VE-install
+	@$(ls $(VE) > /dev/null)
+	@if [ -d $(VE) ]; \
+    then \
+		echo "Existing virtual environment in $(VE)"; \
+    else \
+		echo "Creating new virtual environment in $(VE)"; \
+		virtualenv $(VE); \
+    fi
 
-# Update to the latest source and installed dependencies.
-# Run this as a cron job to keep your source tree up-to-date.
-refresh: safeupdate install_deps ;
+install_deps: VE-prepare
+	@echo "Initialize and update Git submodules..."
+	@git submodule init
+	@git submodule update
+	@echo "Done."
+	@echo "Installing PIP packages..."
+	@pip install -r deploy/requirements.txt --exists-action=i
+	@echo "Done."
+	@if [ ! -d $(APPDIR) ]; \
+	then \
+		echo "Downloading the Google App Engine..."; \
+		python tools/appengine_download.py tools/; \
+		echo "Done."; \
+	else \
+		echo "Existing Google AppEngine in $(APPDIR)"; \
+	fi
+
+run-local:
+	python $(APPDEV) --high_replication --use_sqlite --allow_skipped_files --datastore_path=testutil/test_db2.sqlite . 
 
 # Run tests.  If COVERAGE is set, run them in coverage mode.  If
 # MAX_TEST_SIZE is set, only tests of this size or smaller are run.
@@ -141,3 +202,4 @@ secrets_encrypt: _pwd_prompt
 # aliases for the sake of remembering word order
 decrypt_secrets: secrets_decrypt ;
 encrypt_secrets: secrets_encrypt ;
+

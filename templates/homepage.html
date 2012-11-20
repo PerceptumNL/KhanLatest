@@ -49,10 +49,6 @@
 {% block pagetitle %}{% endblock pagetitle %}
 {% block pagecontent %}
 <article id="homepage">
-        <div id="browse-control-anchor"></div>
-        {{ templatetags.topic_browser("browse", version_number) }}
-        {{ templatetags.topic_browser("browse-fixed", version_number) }}
-        <br />
 <!--
     <div id="main-video">
       <iframe width="560" height="315" src="http://www.youtube.com/embed/tC80BNOKJtk" frameborder="0" allowfullscreen></iframe>
@@ -174,7 +170,6 @@
         <!--
         <h2 class="main-headline">Neem een kijkje in onze collectie video's</h2>
         -->
-        {#
         {% if DVD_list %}
         <ul class="menu" id="menu">
             {% for topic in DVD_list %}
@@ -187,14 +182,12 @@
         {{ templatetags.topic_browser("browse-fixed", version_number) }}
 
         {% endif %}
-#}
         <a href="/mobilefullsite" class="mobile-only" data-role="button" data-ajax="false">zie standaard site</a>
     </div>
 </div>
 <div class="clear"></div>
-{#
+
 {{ library_content }}
-#}
 
 <br />
 </article>

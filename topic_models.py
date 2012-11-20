@@ -48,12 +48,7 @@ import url_util
 import user_models
 import util
 import video_models
-import urllib2
-# use json in Python 2.7, fallback to simplejson for Python 2.5
-try:
-    import json
-except ImportError:
-    import simplejson as json
+
 
 class TopicVersion(backup_model.BackupModel):
     """Metadata describing a particular version of the topic-tree data."""
@@ -277,6 +272,7 @@ class TopicVersion(backup_model.BackupModel):
         for video in videos:
             if re.search("_DUP_\d*$", video.youtube_id):
                 bad_videos.append(video)
+
         problems = {
             "ExerciseVideos with topicless videos":
                 (exercise_video_model.ExerciseVideo
@@ -488,10 +484,7 @@ class Topic(search.Searchable, backup_model.BackupModel):
                layer_cache.Layers.Datastore))
     def get_topic_page_html(self):
         main_topic = self
-        if self.parent_keys:
-            parent_topic = db.get(self.parent_keys[0])
-        else:
-            parent_topic = main_topic
+        parent_topic = db.get(self.parent_keys[0])
 
         # If the parent is a supertopic, use that instead
         if parent_topic.id in Topic._super_topic_ids:
@@ -565,10 +558,7 @@ class Topic(search.Searchable, backup_model.BackupModel):
                layer_cache.Layers.Datastore))
     def get_topic_page_nav_html(self):
         main_topic = self
-        if self.parent_keys:
-            parent_topic = db.get(self.parent_keys[0])
-        else:
-            parent_topic = main_topic
+        parent_topic = db.get(self.parent_keys[0])
 
         # If the parent is a supertopic, use that instead
         if parent_topic.id in Topic._super_topic_ids:
@@ -1960,11 +1950,24 @@ def _preload_default_version_data(version_number, run_code):
     logging.info("synced topic exercise badges")
 
     map_layout = layout.MapLayout.get_for_version(version)
+    if not map_layout.has_layout:
+        # Copy the previous maplayout to current version's maplayout
+        # if it doesn't already exist.
+        # TODO: this is temporary. Eventually this should be generated
+        # correctly, once the topics admin UI can send maplayout info.
 
-    #if not map_layout.has_layout:
-    #TODO(KNL): Load map layout from location
-    map_layout.layout = json.loads('{"polylines":[],"topics":{"Breuken":{"x":-5,"y":22,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"breuken","standalone_title":"Breuken"},"Absolute waarde":{"x":-1,"y":7,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"Absolute waarde","standalone_title":"Absolute waarde"},"Volgorde van bewerken":{"x":-4,"y":14,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"Volgorde van bewerken","standalone_title":"Volgorde van bewerken"},"Machtsverheffen en worteltrekken":{"x":4,"y":21,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"macht-en-wortel","standalone_title":"Machtsverheffen en worteltrekken"},"Optellen en Aftrekken":{"x":3,"y":1,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"getallen","standalone_title":"Optellen en Aftrekken"},"Kommagetallen":{"x":4,"y":13,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"kommagetallen","standalone_title":"Kommagetallen"},"Klokkijken":{"x":2,"y":11,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"klokkijken","standalone_title":"Klokkijken"},"Delen en vermenigvuldigen":{"x":-5,"y":6,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"delen-en-vermenigvuldigen","standalone_title":"Delen en vermenigvuldigen"},"Deler en Veelvoud":{"x":-11,"y":14,"icon_url":"/images/power-mode/badges/default-40x40.png","id":"Del&veel","standalone_title":"Deler en Veelvoud"}}}');
-    map_layout.put()
+        previous_version = TopicVersion.get_by_id(version.copied_from_number)
+        map_layout_previous = layout.MapLayout.get_for_version(
+            previous_version)
+
+        if not map_layout_previous.has_layout:
+            setting_model.Setting.topic_admin_task_message(
+                "Error - missing map layout and no previous version to "
+                "copy from.")
+            raise deferred.PermanentTaskFailure
+
+        map_layout.layout = map_layout_previous.layout
+        map_layout.put()
 
     _do_set_default_deferred_step(_change_default_version,
                                   version_number,

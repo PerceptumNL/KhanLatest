@@ -195,6 +195,8 @@ class YouTubeSync(request_handler.RequestHandler):
 
                     for video in video_feed.entry:
 
+                        if (video.media.player == None):
+                            continue
                         video_id = cgi.parse_qs(urlparse(video.media.player.url).query)['v'][0].decode('utf-8')
 
                         video_data = None

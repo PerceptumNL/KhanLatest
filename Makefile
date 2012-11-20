@@ -1,8 +1,7 @@
--include gae_login.mk
 SHELL := /bin/bash
+SETTINGS := gae_login.mk
 
 VE = ./deploy/env
-
 PATH := ${VE}/bin:tools/google_appengine:${PATH}
 PYTHONPATH := ./tools/google_appengine
 
@@ -42,6 +41,8 @@ deploy: install_deps package_deploy upload_deploy
 package_deploy:
 	@PYTHONPATH=${PYTHONPATH} python deploy/deploy.py
 
+-include $(SETTINGS)
+
 upload_deploy:
 	@if [ -z $(PASS) ] | [ -z $(EMAIL) ]; \
 	then \
@@ -58,11 +59,14 @@ upload_deploy:
 		    echo "Password empty"; \
 		    exit 1; \
 		fi; \
-		echo -e "PASS=$${PASS}\nEMAIL=$${EMAIL}" > credentials.mk; \
+		echo -e "PASS=$${PASS}\nEMAIL=$${EMAIL}" > ${SETTINGS}; \
 		echo "Uploading version ..."; \
-		echo $${PASS} | python $${APPCFG} --passin -e $${EMAIL} update . ; \
+		echo $${PASS} | python $(APPCFG) --passin -e $${EMAIL} update . ; \
 	else \
 		echo "Uploading version ..."; \
+        echo $(APPCFG); \
+        echo $(EMAIL); \
+        echo $(PASS); \
 		echo $(PASS) | python $(APPCFG) --passin -e $(EMAIL) update . ; \
 	fi
 	

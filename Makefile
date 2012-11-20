@@ -10,7 +10,7 @@ APPCFG = ./$(APPDIR)/appcfg.py
 APPDEV = ./$(APPDIR)/dev_appserver.py
 
 COLOR_LIGHT_BLUE = '\e[1;34m'
-COLOR_NC = '\e[0m' #
+COLOR_NC = '\e[0m' 
 
 help:
 	@echo
@@ -18,7 +18,7 @@ help:
 	@echo
 	@echo "MOST USEFUL:"
 	@echo "   deploy: create package and upload to the App Engine"
-#	@echo "   check: run 'small' and 'medium' tests, and linter"
+	@echo "   check: run 'small' and 'medium' tests, and linter"
 	@echo "   clean: safe remove of auto-generated files (.pyc, virtualenv, etc)"
 	@echo "   install_deps: install packages needed for development"
 	@echo
@@ -29,21 +29,38 @@ help:
 #	@echo "   allclean: remove all non-source-controlled files"
 #	@echo "   lint: run lint checks over the entire source tree"
 #	@echo "   quickcheck: run 'small' tests and linter"
-#	@echo "   safeupdate: hg pull && hg update -c"
-#	@echo "   secrets_encrypt: to update secrets.py.cast5"
 #	@echo "   test: run 'small' and 'medium' tests, but no linter"
 
-deploy: install_deps package_deploy upload_deploy
-	@if [ $? -eq 1 ];then \
-		notify-send "Depoyment complete!" \
-	fi
+deploy: install_deps package_deploy upload_deploy notify
 
 package_deploy:
 	@PYTHONPATH=${PYTHONPATH} python deploy/deploy.py
 
+#NOTIFY := `which notify-send`
+
+notify: 
+#ifneq ($(wildcard $(NOTIFY)),) 
+#	@notify-send "Depoyment complete!" 
+#else
+#    @echo "bla"
+#endif
+
 -include $(SETTINGS)
 
-upload_deploy:
+CONFIGFILE:=app.yaml
+
+read_version:
+	@echo `sed '/^ *#/d;s/:/ /;' < "$(CONFIGFILE)" | while read key val; \
+	do \
+		if [ "$$key" == "version" ]; then \
+			VERSION=$$val; \
+			export VERSION; \
+			echo "Current app.yaml version: $$val"; \
+			break; \
+		fi \
+	done` 
+
+upload_deploy: read_version
 	@if [ -z $(PASS) ] | [ -z $(EMAIL) ]; \
 	then \
 		echo "Please proceed to enter the user/pass"; \
@@ -64,9 +81,6 @@ upload_deploy:
 		echo $${PASS} | python $(APPCFG) --passin -e $${EMAIL} update . ; \
 	else \
 		echo "Uploading version ..."; \
-        echo $(APPCFG); \
-        echo $(EMAIL); \
-        echo $(PASS); \
 		echo $(PASS) | python $(APPCFG) --passin -e $(EMAIL) update . ; \
 	fi
 	
@@ -90,6 +104,7 @@ clean:
 
 # Install dependencies required for development.
 VE:
+
 VE-install: VE
 	@which virtualenv > /dev/null
 	@if test -d ; \
@@ -130,6 +145,9 @@ install_deps: VE-prepare
 run-local:
 	python $(APPDEV) --high_replication --use_sqlite --allow_skipped_files --datastore_path=testutil/test_db2.sqlite . 
 
+clear-local:
+	python $(APPDEV) -c --high_replication --use_sqlite --allow_skipped_files --datastore_path=testutil/test_db2.sqlite . 
+
 # Run tests.  If COVERAGE is set, run them in coverage mode.  If
 # MAX_TEST_SIZE is set, only tests of this size or smaller are run.
 MAX_TEST_SIZE = medium
@@ -153,8 +171,6 @@ test:
 # Run lint checks
 lint:
 	third_party/khan_linter/runlint.py
-
-# Run unit tests with XML test and code coverage reports
 
 # Run the tests we want to run before committing.  Once you've run
 # these, you can be confident (well, more confident) the commit is a
@@ -192,21 +208,4 @@ css:
 # Package less stylesheets
 less:
 	python deploy/compile_less.py
-
-# 'private' task for echoing instructions
-_pwd_prompt:
-	@echo "Get the password from here:"
-	@echo "https://www.dropbox.com/home/Khan%20Academy%20All%20Staff/Secrets"
-
-# to create secrets.py
-secrets_decrypt: _pwd_prompt
-	openssl cast5-cbc -d -in secrets.py.cast5 -out secrets.py && chmod 600 secrets.py
-
-# for updating secrets.py
-secrets_encrypt: _pwd_prompt
-	openssl cast5-cbc -e -in secrets.py -out secrets.py.cast5
-
-# aliases for the sake of remembering word order
-decrypt_secrets: secrets_decrypt ;
-encrypt_secrets: secrets_encrypt ;
 

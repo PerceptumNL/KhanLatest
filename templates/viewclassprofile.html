@@ -16,9 +16,9 @@
 
 {% block pagesubmenu %}
 <span class="breadcrumbs_nav">
-    <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/coach/resources" id="teacher-resources" {%if user_data.is_demo %}class="show-demo-dialog"{% endif %}>Teacher Resources<span style="font-size:8px;color:orange;font-weight:bold"> NEW</span></a>
-    <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/students" id="manage-students" {%if user_data.is_demo %}class="show-demo-dialog"{% endif %}>Manage Students</a>
-    <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/class_profile" id="class-stats" class="selected{%if user_data.is_demo %} show-demo-dialog{% endif %}">Class Stats For</a>
+    <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/coach/resources" id="teacher-resources" {%if user_data.is_demo %}class="show-demo-dialog"{% endif %}>Middelen voor de leraar(es)<span style="font-size:8px;color:orange;font-weight:bold"> NEW</span></a>
+    <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/students" id="manage-students" {%if user_data.is_demo %}class="show-demo-dialog"{% endif %}>Manage leerlingen</a>
+    <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/class_profile" id="class-stats" class="selected{%if user_data.is_demo %} show-demo-dialog{% endif %}">Klassen overzicht voor</a>
     <span id="studentlists_dropdown" style="display:none;">
         <a>{{ student_list.name|escape }}</a>
         <div id="studentlists_menu">

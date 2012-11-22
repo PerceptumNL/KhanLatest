@@ -323,7 +323,7 @@ var Khan = (function() {
             "<p><a id=\"issue-link\" href=\"", url, "\">", title, "</a>",
             "<p>", suggestion, "</p>"].join("");
     },
-    issueIntro = "Remember to check the hints and double check your math. All provided information will be public. Thanks for your help!",
+    issueIntro = "Bekijk de hints en check nog een keer je berekeningen. Alle beschikbare informatie wordt openbaar gemaakt. Bedankt voor je hulp!",
 
     // True once we've sent a request to load all modules
     modulesLoaded = false,
@@ -388,8 +388,8 @@ var Khan = (function() {
         },
 
         warnTimeout: function() {
-            warn("Your internet might be too slow to see an exercise. Refresh the page " +
-                'or <a href="" id="warn-report">report a problem</a>.', false);
+            warn("Je internet is te traag waardoor je een opgave niet kan zien. Vernieuw de pagina" +
+                'of <a href="" id="warn-report">meld een probleem</a>.', false);
             $("#warn-report").click(function(e) {
                 e.preventDefault();
                 $("#report").click();
@@ -953,14 +953,14 @@ var Khan = (function() {
         $("#check-answer-button")
             .removeAttr("disabled")
             .removeClass("buttonDisabled")
-            .val("Check Answer");
+            .val("Check antwoord");
     }
 
     function disableCheckAnswer() {
         $("#check-answer-button")
             .attr("disabled", "disabled")
             .addClass("buttonDisabled")
-            .val("Please wait...");
+            .val("Even geduld a.u.b.");
     }
 
     function isExerciseLoaded(exerciseId) {
@@ -1922,7 +1922,7 @@ var Khan = (function() {
         attempts = 0;
         lastAction = (new Date).getTime();
 
-        $("#hint").val("I'd like a hint");
+        $("#hint").val("Geef mij een hint");
 
         $(Khan).trigger("newProblem");
 
@@ -2128,7 +2128,7 @@ var Khan = (function() {
             if (pass !== true) {
                 checkAnswerButton
                     .effect("shake", {times: 3, distance: 5}, 80)
-                    .val("Try Again");
+                    .val("Probeer opnieuw");
 
                 // Is this a message to be shown?
                 if (typeof pass === "string") {

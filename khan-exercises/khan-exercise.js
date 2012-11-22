@@ -63,16 +63,16 @@ var Translate = new function(){
 	this.langdefault = "en";
 	this.lang = "nl";
 	this.table = {};
-	this.production = false;
 	this.current = null;
-	this.exercisefile = ( this.production ? "/khan-exercises/exercises/" : "/exercises/" ) + this.current + ".lang.js";
-	this.globalfile = ( this.production ? "/khan-exercises/exercises/" : "/exercises/" ) +"lang.js";
+    this.testMode = typeof Exercises === "undefined";
+	this.production = !this.testMode;
+	this.exercisepath = this.production ? "/khan-exercises/exercises/" : "/exercises/";
+	this.globalfile = (this.production ? "/khan-exercises/exercises/" : "/exercises/") + "lang.js";
 
 	this.switchLang = function(map){
-		if(map[this.lang]){
+		if(map[this.lang]) {
 			return map[this.lang];
-		}
-		else{
+		} else {
 			return map[this.langdefault];
 		}
 	}
@@ -80,22 +80,23 @@ var Translate = new function(){
 	this.getTranslation = function(url, name){
         console.log("URL:" + url);
         console.log("NAME:" + name);
-		//TODO(KNL): Implement caching on client side
+        if (name in this.table)
+		    return this.table[name];
+        var self = this;
 		$.ajax({
 			type: "GET",
 			url: url,
 			async:false,
 			success: function(data){
-				Translate.table[name] = eval(data);
+				self.table[name] = eval(data);
 			}
 		})
 		return this.table[name];
 	}
 
-    //(KNL):Translate
     this.compile = function(id, ele) {
 
-		var langfile = "/exercises/" + id + ".lang.js";
+		var langfile = this.exercisepath + id + ".lang.js";
 		var translation = Translate.getTranslation(langfile, id);
 		if(translation && translation[Translate.lang]){
 			ele.find('[data-tt]').each(function(){
@@ -107,14 +108,23 @@ var Translate = new function(){
 		}
     }
 
-	this.loadGlobals = function(){
+    this.compileTitle = function($html) {
+        var globals = this.getTranslation(this.globalfile, "globals")['titles'][this.lang];
+        var $title = $('title');
+        var $extitle = $(".practice-exercise-displayname");
+        if ($extitle.text() in globals) {
+            $extitle.text(globals[$extitle.text()]);
+            var post_title = $title.html().substring($title.html().indexOf('|')-1)
+            $title.html($extitle.text() + post_title);
+        }
+    }
 
-		Khan.Util.tokenreplace = Translate;
-		Khan.Util.translate = Translate;
-
-	}
-
+    this.loadGlobals = function() {
+        this.globals = this.getTranslation(this.globalfile, "globals");
+    }
 };
+
+Translate.compileTitle();
 
 var Khan = (function() {
     function warn(message, showClose) {
@@ -313,7 +323,7 @@ var Khan = (function() {
             "<p><a id=\"issue-link\" href=\"", url, "\">", title, "</a>",
             "<p>", suggestion, "</p>"].join("");
     },
-    issueIntro = "Bekijk de hints en check nog een keer je berekeningen. Alle beschikbare informatie wordt openbaar gemaakt. Bedankt voor je hulp!",
+    issueIntro = "Remember to check the hints and double check your math. All provided information will be public. Thanks for your help!",
 
     // True once we've sent a request to load all modules
     modulesLoaded = false,
@@ -378,8 +388,8 @@ var Khan = (function() {
         },
 
         warnTimeout: function() {
-            warn("Je internet is te traag waardoor je een opgave niet kan zien. Vernieuw de pagina" +
-                'of <a href="" id="warn-report">meld een probleem</a>.', false);
+            warn("Your internet might be too slow to see an exercise. Refresh the page " +
+                'or <a href="" id="warn-report">report a problem</a>.', false);
             $("#warn-report").click(function(e) {
                 e.preventDefault();
                 $("#report").click();
@@ -943,14 +953,14 @@ var Khan = (function() {
         $("#check-answer-button")
             .removeAttr("disabled")
             .removeClass("buttonDisabled")
-            .val("Check antwoord");
+            .val("Check Answer");
     }
 
     function disableCheckAnswer() {
         $("#check-answer-button")
             .attr("disabled", "disabled")
             .addClass("buttonDisabled")
-            .val("Even geduld a.u.b.");
+            .val("Please wait...");
     }
 
     function isExerciseLoaded(exerciseId) {
@@ -979,6 +989,7 @@ var Khan = (function() {
         // Queue up an exercise load
         loadExercise.call(exerciseElem, function() {
 
+
             // Trigger load completion event for this exercise
             $(Khan).trigger("exerciseLoaded:" + exerciseId);
             $(Khan).trigger("contentLoaded");
@@ -990,7 +1001,7 @@ var Khan = (function() {
     }
 
     function loadAndRenderExercise(nextUserExercise) {
-        console.log("loadAndRenderExer");
+        debugLog("loadAndRenderExer");
 
         setUserExercise(nextUserExercise);
 
@@ -999,6 +1010,7 @@ var Khan = (function() {
 
         exerciseId = userExercise.exerciseModel.name;
         exerciseName = userExercise.exerciseModel.displayName;
+        userExercise.exerciseModel.displayName = "bla";
         exerciseFile = userExercise.exerciseModel.fileName;
 
         // TODO(eater): remove this once all of the exercises in the datastore have filename properties
@@ -1910,7 +1922,7 @@ var Khan = (function() {
         attempts = 0;
         lastAction = (new Date).getTime();
 
-        $("#hint").val("Geef mij een hint");
+        $("#hint").val("I'd like a hint");
 
         $(Khan).trigger("newProblem");
 
@@ -2084,7 +2096,7 @@ var Khan = (function() {
                 cards_left: !testMode && (Exercises.incompleteStack.length - 1),
 
                 //Get Custom Stack Id if it exists
-                custom_stack_id: !testMode && Exercises.completeStack.getCustomStackID()
+                custom_stack_id: !testMode && ''//Exercises.completeStack.getCustomStackID()
             };
         }
 
@@ -2116,7 +2128,7 @@ var Khan = (function() {
             if (pass !== true) {
                 checkAnswerButton
                     .effect("shake", {times: 3, distance: 5}, 80)
-                    .val("Probeer opnieuw");
+                    .val("Try Again");
 
                 // Is this a message to be shown?
                 if (typeof pass === "string") {
@@ -2939,6 +2951,7 @@ var Khan = (function() {
         // Packing occurs on the server but at the same "exercises/" URL
         $.get(urlBase + "exercises/" + fileName, function(data, status, xhr) {
             var match, newContents;
+            //(KNL):Translate
 
             if (!(/success|notmodified/).test(status)) {
                 // Maybe loading from a file:// URL?
@@ -2953,6 +2966,7 @@ var Khan = (function() {
             data = data.replace(/<script(\s)+src=([^<])*<\/script>/, "");
 
             newContents = $(data);
+            Translate.compileTitle(newContents);
 
             // Name of the top-most ancestor exercise
             newContents.data("rootName", rootName);
@@ -2962,17 +2976,6 @@ var Khan = (function() {
                 loadExercise.call(this, callback);
             });
 
-            //(KNL):Translate
-			var langfile = "/khan-exercises/exercises/" + id + ".lang.js";
-			var translation = Translate.getTranslation(langfile, id);
-			if(translation && translation[Translate.lang]){
-				newContents.find('[data-tt]').each(function(){
-					token = $(this).attr('data-tt');
-					if(translation[Translate.lang][token]){
-						$(this).html(translation[Translate.lang][token]);
-					}
-				})
-			}
 
             // Throw out divs that just load other exercises
             newContents = newContents.not("[data-name]");
@@ -3027,7 +3030,6 @@ var Khan = (function() {
                 }
 
             }
-
         });
 
     }

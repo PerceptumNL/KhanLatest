@@ -2,26 +2,26 @@
 
 {% block col1content %}
 		
-	<h1>Setting up a class</h1>
-	<p class="lead">To get the most out of Khan Academy, you'll need to set up accounts. We've created a handy guide to make sure you'll be up and running in no time.</p>
-	<p>We now have our own Khan Academy login, so you can sign up for Khan Academy with any email address. If your students are over age 13, they can set up accounts with Khan Academy by clicking "login" in the upper right-hand corner of the screen, then clicking "create one" under "Login with a Khan Academy account." Students will then be prompted to enter their birthdate and any email address.</p>
-	<p>Students under age 13 can have their own Khan Academy accounts too! To create an account for your child, make sure you are logged into your own account and go to <a href="www.khanacademy.org/createchild">www.khanacademy.org/createchild</a>. You will remain your child's permanent coach and can manage his or her password. Students under age 13 cannot make their profiles public or post public messages in discussion forums. If you'd like your child to be able to add other coaches (e.g., his or her teacher), click "coach" in the upper right-hand corner of the screen and choose "manage students." Hover next to your child's name and select "allow other coaches." You can find more information about under-13 accounts <a href="http://www.khanacademy.org/about/blog/post/24003343446/parents-can-now-create-accounts-for-their-children">here</a>.</p>
+	<h1>Een klas opstarten</h1>
+	<p class="lead">Om het meeste uit Khan Academie te halen moet je een aantal accounts opzetten. In onze handige gids wordt uitgelegd hoe je dit het snelst kunt doen.</p>
+	<p>Om gebruik te maken van Khan Academie kun je inloggen met een Facebook- of Google-account. In de toekomst wordt het mogelijk om met andere, al bestaande, e-mailadressen aan te melden.</p>
 	
 	
-	<p>You can also log into Khan Academy with personal Google and facebook accounts or with Google Apps for Education accounts (most school systems qualify). If you'd like to set up Google Apps for Education accounts to register your class on Khan Academy, you can find more information here:</p>
+	
+	<p>Meer informatie over Google accounts vind je hier</p>
 	<ul class="bullet">
-		<li><a href="http://www.google.com/apps/intl/en/edu/k12.html">Google Apps for Education registration</a></li>
-		<li><a href="http://www.google.com/support/a/bin/answer.py?answer=139019">Google Apps for Education common questions</a></li>
+		<li><a href="http://www.google.com/apps/intl/en/edu/k12.html">Google Apps for Education registratie</a></li>
+		<li><a href="http://www.google.com/support/a/bin/answer.py?answer=139019">Google Apps for Education veel gestelde vragen</a></li>
 	</ul>
 	
-	<h3>A smooth start to class</h3>
+	<h3>Een vlotte start van de klas</h3>
 	<p class="has-media"><span class="toolkit-media"><img width="100%" src="/images/toolkit/login-with-Google.png"/></span>
-	To get started easily, we recommend pre-registering students for class with assigned email accounts (e.g., john-appleseed@school.org for the student John Appleseed) and passwords (e.g., school2012). Students can use these email addresses and passwords to log into Khan Academy through the Khan Academy login or the Google login.</p>
+	Om snel met Khan Academie aan de slag te kunnen, raden wij het gebruik van Google apps for education aan. Elke leerling heeft zo zijn eigen e-mailadres. (voornaam.achternaam@schoolnaam.nl)</p>
 		
-        <p>Logging in to a new system for the first time can be a bit hectic, so we included <a href="http://dl.dropbox.com/u/33113979/KA_add_students.pdf">a sample handout</a> to guide students through the initial login process.
+        <p>Aangezien het werken met een nieuw systeem soms lastig is, staat <a href="http://dl.dropbox.com/u/33113979/KA_add_students.pdf">hier</a> beschreven hoe dat werkt. 
         <!--- <strong>TODO: add in sample document</strong></p>	--->
 	
-	<p>Coaches can see students' data and help support their learning. If you want to see your students' data, you'll need to be their coach. We also encourage students to add their parents as coaches for extra support. To add a coach to their accounts, students should follow the instructions below:</p>
+	<p>Coaches kunnen de gegevens van studenten zien en zien waar hulp nodig is. Om deze data te kunnen zien, moet je hun coach zijn. Meerdere coaches (bijvoorbeeld ouders) kunnen ook toegevoegd worden. Om een coach aan de account van een leerling toe te voegen dienen zij onderstaand schema te volgen:</p>
 		
 	<!-- TODO(Matt): Link to coach.html template instead of copying in file contents. -->
 						
@@ -29,25 +29,25 @@
 
     <div id="empty-class">
         {% if class_is_empty %}
-        <h1>You don't have any students yet.</h1>
+        <h1>Je hebt nog geen leerlingen.</h1>
         {% endif %}
-        <h3>Each of your students needs to sign in and follow these steps:</h3>
+        <h3>Elke student dient zich in te schrijven en deze stappen te volgen:</h3>
         <ol>
             <li>
-                <p>First, they should visit <a href="/profile">their profile</a> by clicking on their name at the top of the page.</p>
+                <p>Ten eerste, moeten zij <a href="/profile">hun profiel</a> bezoeken door bovenaan de pagina op hun naam te klikken.</p>
                 <img src="/images/profile-link-in-header.png?1" class="vertical-shadow rounded-background" />
             </li>
             <li>
-                <p>Then, they should click on the Coaches tab.</p>
+                <p>Daarna moeten zij op de "coach" tab klikken.p>
                 <img src="/images/coaches-nav.png?1" class="vertical-shadow rounded-background"/>
             </li>
             <li class="enter-email">
                 <!-- Are you a flying chimpanzee? Are you changing this element or anything inside?
                 If you answered yes to any of these questions, please update the positioning of the coach email.
                 Look in default.css for #empty-class ol li.enter-email div.coach-email -->
-                <p>Finally, they need to enter your Coach id and click the <em>Add coach</em> button.</p>
+                <p>Tenslotte moeten zij het e-mailadres van hun coach invullen en op<em>Coach toevoegen</em> klikken.</p>
                 {% if UserData.current() %}
-                    <p>Your Coach id is <strong>{{ coach_email|escape }}</strong>.</p>
+                    <p>Jouw coach ID is <strong>{{ coach_email|escape }}</strong>.</p>
                 {% else %}
                     <p>{{ coach_email|escape}}</p>
                 {% endif %}
@@ -55,37 +55,37 @@
                 <img src="/images/coaches-tab-in-profile.png?1" class="vertical-shadow rounded-background"/>
             </li>
         </ol>
-        <p>Once students make you their coach, you'll have access to all types of interesting data about their progress and achievements.</p>
-        <p>You can access that data via the <a href="/class_profile">Class Report</a>.</p>
+        <p>Zodra je coach van je leerlingen bent, heb je toegang tot alle vormen van interessante gegevens over hun voortgang en prestaties.</p>
+        <p>Via<a href="/class_profile">Klassenoverzicht</a> heb je toegang.</p>
     </div>
     
-    <h1>Creating class lists</h1>
+    <h1>Het creëren van klassenlijsten</h1>
     <hr>
-    <p>You can find all students who have added you as their coach by clicking “Coach” in the upper-right-hand corner of the site and choosing “manage students.” Some teachers like to separate their students into multiple class lists (e.g., one list for each class period they teach). If you’d like to split students into more than one class list,</p>
+    <p>Je kunt alle studenten die jou hebben toegevoegd als coach vinden onder “Coach”, rechtsbovenaan. Kies hier: "Beheer leerlingen". Sommige leraren willen hun leerlingen scheiden in meerdere klassen (bijvoorbeeld per periode). Als je dit wilt, volg dan deze stappen;</p>
      <ul class="bullet">
-    	<li>Click “create a new list” on the left-hand side of the screen</li>
-    	<li>Name the list (e.g., first period or Algebra) and select "OK"</li>
-    	<li>Repeat for as many class lists as you'd like to create</li>
+    	<li>Klik op "Creëer een nieuwe lijst", aan de linkerzijde van het scherm.</li>
+    	<li>Geef de lijst een naam (bijv. eerste periode wiskunde) en klik op "Oke".</li>
+    	<li>Herhaal dit zoveel als je zelf wilt.</li>
     </ul>
-    <p>Now you'll want to add students to the class lists you just created. In the center of the screen, you'll see a list of all of your students.
+    <p>Nu moet je nog studenten toevoegen aan de lijsten die je net gemaakt hebt. In het midden staat een lijst met alle leerlingen.
     <ul class="bullet">
-    	<li>Hover your mouse to the right of each student’s name; you’ll see a drop-down menu of all of your class lists appear</li>
-    	<li>Click the list to which you’d like to add each student. For example, if you want to add Jane to “Algebra,” hover next to her name and click the box for “Algebra.” You can add students to more than one list if you'd like</li></ul>
-    <p>You can see all of the real-time reports for all of your students and for each class list you created by clicking on the “all students” drop-down menu on the upper right-hand side of the coach page and selecting the class list you’d like to view.</p>
+    	<li>Ga met je muis naar de rechterzijde van elke leerling. Hier verschijnt een drop-down menu met alle lijsten.</li>
+    	<li>Klik op de lijst waaraan je de student wilt toevoegen. Als je bijvoorbeeld Jan aan de lijst Wiskunde wilt toevoegen, ga je met de muis naar "Jan" en klik in het drop-down menu op "Wiskunde". Je kunt zoveel leerlingen toevoegen als je zelf wilt.</li></ul>
+    <p>Je kunt alle rapporten van alle leerlingen en voor elke categorie terugzien onder "Alle studenten" aan de rechterkant van de coach-pagina. Selecteer hier de klassenlijst die je wilt bekijken. </p>
     
-	<p><a href="{{base_url}}/technology" class="call-to-action simple-button green">Next: Technology →</a></p>
+	<p><a href="{{base_url}}/technology" class="call-to-action simple-button green">Volgende: Techniek →</a></p>
 
 {% endblock col1content %}	
 		
 {% block col2content %}	
 <div class="callout">
-		<h3>Useful links</h3>
+		<h3>Handige links</h3>
                 <ul class="bullet">
-			<li><a href="http://dl.dropbox.com/u/33113979/KA_add_students.pdf">Download handout for students to add a coach</a></li>
-			<li><a href="http://khanacademy.desk.com/customer/portal/articles/414069-how-can-i-add-my-class-to-khan-academy-">How can I add my class to Khan Academy?</a></li>
-			<li><a href="http://khanacademy.desk.com/customer/portal/articles/414096-we-cannot-use-gmail-or-facebook-in-our-school-how-can-we-log-in-to-khan-academy-">How can we log in without gmail or facebook?</a></li>
-			<li><a href="http://khanacademy.desk.com/customer/portal/articles/414103-do-you-support-any-other-ways-to-log-into-khan-academy-">Are there other ways to log into Khan Academy?</a></li>
-			<li><a href="http://khanacademy.desk.com/customer/portal/articles/414104-does-khan-academy-have-its-own-login-">Does Khan Academy have its own login?</a></li>
+			<li><a href="http://dl.dropbox.com/u/33113979/KA_add_students.pdf">Download handout voor leerlingen "hoe een coach toe te voegen" </a></li>
+			<li><a href="http://khanacademy.desk.com/customer/portal/articles/414069-how-can-i-add-my-class-to-khan-academy-">Hoe voeg ik mijn klas toe aan Khan Academie?</a></li>
+			<li><a href="http://khanacademy.desk.com/customer/portal/articles/414096-we-cannot-use-gmail-or-facebook-in-our-school-how-can-we-log-in-to-khan-academy-">Hoe kan ik inloggen zonder Facebook of Google?</a></li>
+			<li><a href="http://khanacademy.desk.com/customer/portal/articles/414103-do-you-support-any-other-ways-to-log-into-khan-academy-">Zijn er andere manieren om in te loggen?</a></li>
+			<li><a href="http://khanacademy.desk.com/customer/portal/articles/414104-does-khan-academy-have-its-own-login-">Heeft de Khan Academie een eigen log-in?</a></li>
 		</ul>	
 </div>
 

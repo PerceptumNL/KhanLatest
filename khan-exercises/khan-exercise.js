@@ -604,7 +604,7 @@ var Khan = (function() {
 
                     var makeVisible = function() {
                         $("#scratchpad").show();
-                        $("#scratchpad-show").text("Hide scratchpad");
+                        $("#scratchpad-show").text("Verbreg kladblok");
 
                         // If pad has never been created or if it's empty
                         // because it was removed from the DOM, recreate a new
@@ -2335,8 +2335,8 @@ var Khan = (function() {
 
                 hintsUsed += 1;
 
-                var stepsLeft = hints.length + " step" + (hints.length === 1 ? "" : "s") + " left";
-                $(this).val($(this).data("buttonText") || "I'd like another hint (" + stepsLeft + ")");
+                var stepsLeft = hints.length + " hint" + (hints.length === 1 ? "" : "s") + " over";
+                $(this).val($(this).data("buttonText") || "Geef mij nog een hint (" + stepsLeft + ")");
 
                 var problem = $(hint).parent();
 

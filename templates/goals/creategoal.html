@@ -21,10 +21,10 @@ function createGoalInitialize() {
 <div class="create-goal-page">
 <form id="create-goal" action="javascript:">
     <div class="section-headline">
-        <a id="goal-submit-button" onclick="javascript:GoalCreator.submit();" class="simple-button green">Create New Goal</a>
+        <a id="goal-submit-button" onclick="javascript:GoalCreator.submit();" class="simple-button green">Maak een nieuwe doelstelling aan</a>
         <a class="simple-button close goals-close-button">Cancel</a>
         <span id="goal-commit-response" style="display:none;" class="goal-response-text"></span>
-        <input type="text" name="title" class="goal-title simple-input ui-corner-all blur-on-esc" placeholder="New Goal (click to set a title)"></input>
+        <input type="text" name="title" class="goal-title simple-input ui-corner-all blur-on-esc" placeholder="Nieuwe doelstelling (Klik hier om een titel toe te voegen)"></input>
     </div>
     <div id="goal-info-section">
         <div id="create-goal-view"></div>
@@ -34,8 +34,8 @@ function createGoalInitialize() {
 
 <div id="container" class="dashboard{% if not logged_in %} unregistered{% endif %}">
     <div class="objective-type-picker clearfix">
-        <a href="javascript:GoalCreator.showExercises();" class="simple-button" id="show-ex-btn">Choose skills (<span id="goal-exercise-count">0</span> selected)</a>
-        <a href="javascript:GoalCreator.showVideos();" class="simple-button" id="show-vid-btn">Choose videos (<span id="goal-video-count">0</span> selected)</a>
+        <a href="javascript:GoalCreator.showExercises();" class="simple-button" id="show-ex-btn">Kies vaardigheden (<span id="goal-exercise-count">0</span> geselecteerd)</a>
+        <a href="javascript:GoalCreator.showVideos();" class="simple-button" id="show-vid-btn">Kies video&#39; (<span id="goal-video-count">0</span> geselecteerd)</a>
     </div>
     <div id="goal-spacer"></div>
     <div id="goal-choose-exercises">
@@ -54,7 +54,7 @@ function createGoalInitialize() {
             </div>
             <div class="dashboard-title">
                 <img src="/images/video.png" class="dashboard-icon" width=22 height=22 />
-                Videos
+                Video#39;s
             </div>
         </div>
         <div class="dashboard-content-stretch">

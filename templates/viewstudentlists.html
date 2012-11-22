@@ -9,9 +9,9 @@
 
 {% block pagesubmenu %}
 <span class="breadcrumbs_nav">
-    <a href="/coach/resources" id="teacher-resources">Teacher Resources<span style="font-size:8px;color:orange;font-weight:bold"> NEW</span>
-    <a href="/students" id="manage-students" class="selected">Manage Students</a>
-    <a href="/class_profile" id="class-stats">Class Stats</a>
+    <a href="/coach/resources" id="teacher-resources">Middelen voor de leraar(es)<span style="font-size:8px;color:orange;font-weight:bold"> NEW</span>
+    <a href="/students" id="manage-students" class="selected">Manage Leerlingen</a>
+    <a href="/class_profile" id="class-stats">Klassen overzicht</a>
 </span>
 {% endblock pagesubmenu %}
 
@@ -23,9 +23,9 @@
     <span class="float-right student-controls">
         <div class="css-menu lists-css-menu">
             <ul>
-                <li>Edit Lists
+                <li>Voeg een lijst toe
                     <ul>
-                        <li class="list-option-newlist">+ Create a new list...</li>
+                        <li class="list-option-newlist">+ Maak een nieuwe lijst...</li>
                     </ul>
                 </li>
             </ul>
@@ -48,14 +48,14 @@
     <span class="float-right student-controls">
         <div class="allow-coaches-control">
             <input type="checkbox" id="allow-coaches-checkbox" class="allow-coaches-checkbox" {% if student.can_modify_coaches %}checked{% endif %}>
-            <label for="allow-coaches-checkbox" class="allow-coaches-label">Allow other coaches</label>
+            <label for="allow-coaches-checkbox" class="allow-coaches-label">Sta andere coaches toe</label>
         </div>
         <input type="button" class="simple-button ui-corner-all change-password-button" value="Change password">
         <div class="css-menu lists-css-menu">
             <ul>
-                <li>Edit Lists
+                <li>Voeg lijst toe
                     <ul>
-                        <li class="list-option-newlist">+ Create a new list...</li>
+                        <li class="list-option-newlist">+ Maak een nieuwe lijst aan...</li>
                     </ul>
                 </li>
             </ul>
@@ -72,12 +72,12 @@
 
 <div id="sidebar">
     <ul class="student-list-links">
-        <li id="student-list-allstudents" data-list_id="allstudents"><a href="/students" class="bullet bullet-active">All students</a></li>
-        <li id="student-list-requests" data-list_id="requests"><a href="/students?list_id=requests" class="bullet" title="Students that appear here have not yet responded to your request to coach them">Requests</a></li>
+        <li id="student-list-allstudents" data-list_id="allstudents"><a href="/students" class="bullet bullet-active">All leerlingen</a></li>
+        <li id="student-list-requests" data-list_id="requests"><a href="/students?list_id=requests" class="bullet" title="Students that appear here have not yet responded to your request to coach them">Verzoeken</a></li>
     </ul>
     {% if child_accounts %}
     <ul id="child-lists" class="student-list-links">
-        <li data-list_id="child-accounts"><a href="students?list_id=child-accounts" class="bullet">Child Accounts</a></li>
+        <li data-list_id="child-accounts"><a href="students?list_id=child-accounts" class="bullet">Account voor leerlingen</a></li>
     </ul>
     {% endif %}
     <ul id="custom-lists" class="student-list-links">
@@ -85,12 +85,12 @@
         <li data-list_id="{{list.key}}"><a href="students?list_id={{list.key}}" class="bullet">{{list.name|escape}}</a></li>
         {% endfor %}
     </ul>
-    <div id="newlist-div" style="display: none;"><div>New list name:</div>
+    <div id="newlist-div" style="display: none;"><div>Nieuwe lijst naam:</div>
     <input type="textbox" id="newlist-box" />
     <a id="newlist-ok" class="simple-button" href="#">OK</a>
     <a id="newlist-cancel" class="simple-button" href="#">Cancel</a>
     </div>
-    <a id="newlist-button" class="simple-button" href="#">Create a new list</a>
+    <a id="newlist-button" class="simple-button" href="#">Maak een nieuwe lijst</a>
 </div>
 
 <div id="students-container">
@@ -100,22 +100,22 @@
 
             <a class="delete-button" id="delete-list" href="#"><img src="images/circled_cross.png" title="Delete this list (the students will still appear in 'All students')"/></a>
         </span>
-        <h2 class="visited-no-recolor"><a href="/class_profile?student_list=allstudents" title="View the class statistics page for this set of students">All students</a></h2>
-        <span id="nstudents">0 students</span>
+        <h2 class="visited-no-recolor"><a href="/class_profile?student_list=allstudents" title="View the class statistics page for this set of students">All leerlingen</a></h2>
+        <span id="nstudents">0 studenten</span>
         <a id="create-child-button" style="display: none"
             href="/createchild"
-            class="simple-button ui-corner-all float-right">Create child account</a>
-        <span id="coach-id-indicator" class="float-right">Your coach id is <strong>{{email|escape}}</strong></span>
+            class="simple-button ui-corner-all float-right">Maak een leerlingen account aan</a>
+        <span id="coach-id-indicator" class="float-right">Jouw coach id is: <strong>{{email|escape}}</strong></span>
     </div>
 
     <div id="textbox-container">
-        <input type="text" id="request-student" class="simple-input ui-corner-all blur-on-esc" placeholder="Type a student's email address to propose becoming their coach"/>
-        <input type="text" id="add-to-list" class="simple-input ui-corner-all blur-on-esc" placeholder="Type a student's name to add them to this list" style="display: none"/>
+        <input type="text" id="request-student" class="simple-input ui-corner-all blur-on-esc" placeholder="Type hier het emailadres van de leerling om voortestellen zijn of haar coache te worden"/>
+        <input type="text" id="add-to-list" class="simple-input ui-corner-all blur-on-esc" placeholder="Type hier de naam van de leerling om hem of haar toe te voegen aan de lijst" style="display: none"/>
     </div>
 
     <div class="alert error" id="addstudent-error">
-        <span class="float-right close-button">(<a href="#">close</a>)</span>
-        No student was found with that ID. The student must log in at least once. Also, check that the student ID is correct. Here are some examples of student IDs:<br>
+        <span class="float-right close-button">(<a href="#">sluiten</a>)</span>
+        Geen leerling gevonden met dat ID. De leerling moet minimaal 1 keer ingelogd zijn. Check ook of het ID van de leerling correct is. Hier zijn een paar voorbeelden van leerlingen IDs:<br>
         <ul>
             <li>student@gmail.com</li>
             <li>http://facebookid.khanacademy.org/123456789</li>

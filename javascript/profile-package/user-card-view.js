@@ -82,11 +82,11 @@ UserCardView = Backbone.View.extend({
         this.$(".edit-visibility").qtip({
             content: {
                 text:
-                    "If you make your profile public, " +
-                    "the information in this user card will be " +
-                    "visible to anyone who visits your profile page.",
+                    "Als je jouw profiel openbaar maakt zal" +
+                    "de informatie op deze kaart " +
+                    "zichtbaar zijn voor iedereen die jouw profiel bezoekt.",
                 title: {
-                    text: "Profile Privacy Setting"
+                    text: "Profiel Privacy Instelling"
                 }
             },
             style: {
@@ -177,7 +177,7 @@ UserCardView = Backbone.View.extend({
         } else {
             jel.removeClass("public")
                 .addClass("private")
-                .text("Profile is private");
+                .text("Profiel is prive");
         }
         jel.effect("bounce");
     }

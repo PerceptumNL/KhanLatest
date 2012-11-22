@@ -58,17 +58,17 @@
     </span>
     <ul class="dropdown-menu no-submenus">
         {% if user_data.is_phantom %}
-        <li><a class="dropdown-link" href="{{login_url}}">Log in to save</a></li>
+        <li><a class="dropdown-link" href="{{login_url}}">Log in om alles te bewaren</a></li>
         {% endif %}
 
-        <li><a class="dropdown-link{% if user_data.is_demo %} show-demo-dialog{% endif %}" href="{{profile_root}}">Visit profile</a></li>
+        <li><a class="dropdown-link{% if user_data.is_demo %} show-demo-dialog{% endif %}" href="{{profile_root}}">Bekijk je profiel</a></li>
 
         {% if user_data.has_password() and not user_data.is_child_account() %}
         <li><a class="dropdown-link" href="{{profile_root}}settings">Change settings</a></li>
         {% endif %}
 
         <!-- Facebook's JS logout requires the page_logout ID -->
-        <li><a id="page_logout" href="{{logout_url}}">Logout</a></li>
+        <li><a id="page_logout" href="{{logout_url}}">Log uit</a></li>
     </ul>
 </span>
 {%- endmacro %}

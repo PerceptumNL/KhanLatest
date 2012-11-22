@@ -7,17 +7,17 @@ def all_avatars():
     """ Authoritative list of all avatars available to users. """
 
     return [
-        PointsAvatar("greenleaf", "Green Leaf",
+        PointsAvatar("greenleaf", "Groen blad",
                      "/images/avatars/leaf-green.png", 0),
-        PointsAvatar("blueleaf", "Blue Leaf",
+        PointsAvatar("blueleaf", "Blauw blad",
                      "/images/avatars/leaf-blue.png", 0),
-        PointsAvatar("greyleaf", "Grey Leaf",
+        PointsAvatar("greyleaf", "Grijs blad",
                      "/images/avatars/leaf-grey.png", 0),
-        PointsAvatar("redleaf", "Red Leaf",
+        PointsAvatar("redleaf", "Rood blad",
                      "/images/avatars/leaf-red.png", 0),
-        PointsAvatar("orangeleaf", "Orange Leaf",
+        PointsAvatar("orangeleaf", "Oranje blad",
                      "/images/avatars/leaf-orange.png", 0),
-        PointsAvatar("yellowleaf", "Yellow Leaf",
+        PointsAvatar("yellowleaf", "Geel blad",
                      "/images/avatars/leaf-yellow.png", 0),
 
         PointsAvatar("spunkysam", "Spunky Sam",
@@ -75,11 +75,11 @@ def avatars_by_category():
     """ Full list of all avatars available to users segmented by AvatarCategory
     """
     categories = [
-        AvatarPointsCategory("Starter", 0),
-        AvatarPointsCategory("Common", 10000),
-        AvatarPointsCategory("Uncommon", 50000),
-        AvatarPointsCategory("Rare", 100000),
-        AvatarPointsCategory("Epic", 250000),
+        AvatarPointsCategory("Beginner", 0),
+        AvatarPointsCategory("gevorderd", 10000),
+        AvatarPointsCategory("vergevorder", 50000),
+        AvatarPointsCategory("expert", 100000),
+        AvatarPointsCategory("episch", 250000),
     ]
 
     avatars = all_avatars()

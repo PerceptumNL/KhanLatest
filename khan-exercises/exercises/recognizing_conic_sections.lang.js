@@ -1,22 +1,22 @@
 ({
 	"nl" : {
-		"question1"	: 'Identify this conic section.',
-		"question2"	: 'Parabola',
-		"question3"	: 'Hyperbola',
-		"question4"	: 'Circle',
-		"question5"	: 'Ellipse',
-		"question6"	: 'Parabola',
-		"question7"	: 'Ellipse',
-		"question8"	: 'Circle',
-		"question9"	: 'Hyperbola',
+		"question1"	: 'Wat is dit voor een kromme?',
+		"question2"	: 'Parabool',
+		"question3"	: 'Hyperbool',
+		"question4"	: 'Cirkel',
+		"question5"	: 'Ellips',
+		"question6"	: 'Parabool',
+		"question7"	: 'Ellips',
+		"question8"	: 'Cirkel',
+		"question9"	: 'Hyperbool',
 		
-		"hint1"		: 'This graph has a vertex and is U-shaped. It extends to infinity on both ends.',
-		"hint2"		: 'That describes a <em>parabola</em>.',
-		"hint3"		: 'You can see that the graph resembles a squished circle.',
-		"hint4"		: 'This shape is an <em>ellipse</em>.',
-		"hint5"		: 'This shape is perfectly round and symmetrical. All the points on it are equidistant from its center.',
-		"hint6"		: 'A <em>circle</em> has those properties.',
-		"hint7"		: "This graph has two asymptotes which it approaches. It's also U-shaped on each side.",
+		"hint1"		: 'De grafiek heeft een top en heeft een U-vorm. Aan beide zijden loopt hij door tot oneindig.',
+		"hint2"		: 'Dat is de beschrijving van een <em>parabool</em>.',
+		"hint3"		: 'Je kunt zien dat deze grafiek op een afgeplatte cirkel lijkt.',
+		"hint4"		: 'Deze grafiek is een <em>ellips</em>.',
+		"hint5"		: 'De grafiek is perfect rond en symmetrisch. Alle punten hebben dezelfde afstand tot het middelpunt.',
+		"hint6"		: 'Een <em>cirkel</em> heeft deze eigenschappen.',
+		"hint7"		: "Deze grafiek nadert de twee assen. Het is ook een U-vorm aan beide kanten.",
 		"hint8"		: 'This conic section is therefore a <em>hyperbola</em>.'
 		}
 })

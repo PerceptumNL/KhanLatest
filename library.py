@@ -120,9 +120,10 @@ def library_content_html(ajax=False, version_number=None):
         version = topic_models.TopicVersion.get_by_number(version_number)
     else:
         version = topic_models.TopicVersion.get_default_version()
-
-    tree = topic_models.Topic.get_root(version).make_tree(
-        types=["Topics", "Video", "Url"])
+    root = topic_models.Topic.get_root(version)
+    if root == None:
+        return ""
+    tree = root.make_tree(types=["Topics", "Video", "Url"])
     topics = flatten_tree(tree)
 
     topics.sort(key=lambda topic: topic.standalone_title)

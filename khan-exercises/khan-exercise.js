@@ -124,7 +124,7 @@ var Translate = new function(){
     }
 };
 
-Translate.compileTitle();
+//Translate.compileTitle();
 
 var Khan = (function() {
     function warn(message, showClose) {

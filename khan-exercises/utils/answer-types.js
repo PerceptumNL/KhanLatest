@@ -1,8 +1,8 @@
 (function() {
 
 var inexactMessages = {
-    unsimplified: "Your answer is almost correct, but it needs to be simplified.",
-    missingPercentSign: "Your answer is almost correct, but it is missing a <code>\\%</code> at the end."
+    unsimplified: "Je antwoord is bijna goed, maar moet nog vereenvoudigd worden.",
+    missingPercentSign: "Je antwoord is bijna goed, maar mist nog een <code>\\%</code>."
 };
 
 Khan.answerTypes = Khan.answerTypes || {};
@@ -31,7 +31,7 @@ $.extend(Khan.answerTypes, {
             // is empty and the fallback doesn't exist.
             var val = input.val().length > 0 ?
                 input.val() :
-                (typeof fallback !== "undefined") ?
+                (typeof fallback !== "onbepaald") ?
                     fallback + "" :
                     "";
 
@@ -79,7 +79,7 @@ $.extend(Khan.answerTypes, {
             }
             return result;
         };
-        verifier.examples = "An equation of a line, like 3(x+1)/2 or 2x + 1";
+        verifier.examples = "Een vergelijking van een lijn, zoals 3(x+1)/2 or 2x + 1";
         return Khan.answerTypes.text(solutionarea, solution, fallback, verifier);
 
     },
@@ -90,7 +90,7 @@ $.extend(Khan.answerTypes, {
             simplify: "required",
             ratio: false,
             maxError: Math.pow(2, -42),
-            forms: "literal, integer, proper, improper, mixed, decimal"
+            forms: "letters, heel getal, echte, onechte, gemengde, decimale"
         }, $(solution).data());
         var acceptableForms = (accForms || options.forms).split(/\s*,\s*/);
 
@@ -142,7 +142,7 @@ $.extend(Khan.answerTypes, {
                 transformer: function(text) {
                     return forms.decimal.transformer(text);
                 },
-                example: "an integer, like <code>6</code>"
+                example: "Een heel getal, zoals <code>6</code>"
             },
 
             proper: {
@@ -157,9 +157,9 @@ $.extend(Khan.answerTypes, {
                 },
                 example: (function() {
                     if (options.simplify === "optional") {
-                        return "a <em>proper</em> fraction, like <code>1/2</code> or <code>6/10</code>";
+                        return "Een <em>echte </em> breuk, zoals <code>1/2</code> of <code>6/10</code>";
                     } else {
-                        return "a <em>simplified proper</em> fraction, like <code>3/5</code>";
+                        return "Een <em>vereenvoudigde </em> breuk, zoals <code>3/5</code>";
                     }
                 })()
             },
@@ -176,9 +176,9 @@ $.extend(Khan.answerTypes, {
                 },
                 example: (function() {
                     if (options.simplify === "optional") {
-                        return "an <em>improper</em> fraction, like <code>10/7</code> or <code>14/8</code>";
+                        return "Een <em>onechte</em> breuk, zoals <code>10/7</code> of <code>14/8</code>";
                     } else {
-                        return "a <em>simplified improper</em> fraction, like <code>7/4</code>";
+                        return "Een <em>vereenvoudigde onechte</em> breuk, zoals <code>7/4</code>";
                     }
                 })()
             },
@@ -225,7 +225,7 @@ $.extend(Khan.answerTypes, {
                     });
                     return possibilities;
                 },
-                example: "a multiple of pi, like <code>12\\ \\text{pi}</code> or <code>2/3\\ \\text{pi}</code>"
+                example: "Een meervoud van pi, zoals <code>12\\ \\text{pi}</code> of <code>2/3\\ \\text{pi}</code>"
             },
 
             // simple log(c) form
@@ -244,7 +244,7 @@ $.extend(Khan.answerTypes, {
                     }
                     return possibilities;
                 },
-                example: "an expression, like <code>\\log(100)</code>"
+                example: "Een formule, zoals <code>\\log(100)</code>"
             },
 
             percent: {
@@ -263,7 +263,7 @@ $.extend(Khan.answerTypes, {
                     });
                     return transformed;
                 },
-                example: "a percent, like <code>12.34\\%</code>"
+                example: "Een percentage, zoals <code>12.34\\%</code>"
             },
 
             dollar: {
@@ -272,7 +272,7 @@ $.extend(Khan.answerTypes, {
 
                     return forms.decimal.transformer(text);
                 },
-                example: "a money amount, like <code>$2.75</code>"
+                example: "Valuta , zoals <code>$2.75</code>"
             },
 
             mixed: {
@@ -302,7 +302,7 @@ $.extend(Khan.answerTypes, {
 
                     return [];
                 },
-                example: "a mixed number, like <code>1\\ 3/4</code>"
+                example: "Een gemengd getal, zoals <code>1\\ 3/4</code>"
             },
 
             decimal: {
@@ -344,9 +344,9 @@ $.extend(Khan.answerTypes, {
                 },
                 example: (function() {
                     if (options.inexact === undefined) {
-                        return "an <em>exact</em> decimal, like <code>0.75</code>";
+                        return "Een <em>exacte </em> decimaal, zoals <code>0.75</code>";
                     } else {
-                        return "a decimal, like <code>0.75</code>";
+                        return "Een decimaal, zoals <code>0.75</code>";
                     }
                 })()
             }
@@ -370,11 +370,11 @@ $.extend(Khan.answerTypes, {
                             correct.toLowerCase() === val.toLowerCase()) {
                         ret = true;
                         return false; // break;
-                    } if (typeof val === "number" &&
+                    } if (typeof val === "nummer" &&
                             Math.abs(correctFloat - val) < options.maxError) {
-                        if (exact || options.simplify === "optional") {
+                        if (exact || options.simplify === "optioneel") {
                             ret = true;
-                        } else if (form === "percent") {
+                        } else if (form === "percentage") {
                             ret = inexactMessages.missingPercentSign;
                         } else {
                             ret = inexactMessages.unsimplified;
@@ -413,20 +413,20 @@ $.extend(Khan.answerTypes, {
     },
 
     decimal: function(solutionarea, solution, fallback) {
-        return Khan.answerTypes.number(solutionarea, solution, fallback, "decimal");
+        return Khan.answerTypes.number(solutionarea, solution, fallback, "decimaal");
     },
 
     rational: function(solutionarea, solution, fallback) {
-        return Khan.answerTypes.number(solutionarea, solution, fallback, "integer, proper, improper, mixed");
+        return Khan.answerTypes.number(solutionarea, solution, fallback, "heel getal, echt, onecht, gemengd");
     },
 
     // A little bit of a misnomer as proper fractions are also accepted
     improper: function(solutionarea, solution, fallback) {
-        return Khan.answerTypes.number(solutionarea, solution, fallback, "integer, proper, improper");
+        return Khan.answerTypes.number(solutionarea, solution, fallback, "heel getal, echt, onecht");
     },
 
     mixed: function(solutionarea, solution, fallback) {
-        return Khan.answerTypes.number(solutionarea, solution, fallback, "integer, proper, mixed");
+        return Khan.answerTypes.number(solutionarea, solution, fallback, "heel getal, echt, gemengd");
     },
 
     radical: function(solutionarea, solution) {
@@ -735,9 +735,9 @@ $.extend(Khan.answerTypes, {
                     });
                 });
                 if (unusedValidators.length == 1) {
-                    $("<span>").text(" is also correct").appendTo(otherSolutions);
+                    $("<span>").text(" is ook goed").appendTo(otherSolutions);
                 } else {
-                    $("<span>").text(" are also correct").appendTo(otherSolutions);
+                    $("<span>").text(" is ook goed").appendTo(otherSolutions);
                 }
             }
 
@@ -952,8 +952,8 @@ $.extend(Khan.answerTypes, {
             return guess === correct;
         };
         verifier.examples = [
-            "a product of prime factors, like <code>2 \\times 3</code>",
-            "a single prime number, like <code>5</code>"
+            "een vermenigvuldiging van getallen, zoals <code>2 \\keer 3</code>",
+            "een getal, zoals <code>5</code>"
         ];
 
         return Khan.answerTypes.text(solutionarea, solution, fallback, verifier);
@@ -1069,7 +1069,7 @@ $.extend(Khan.answerTypes, {
             if (isTimeline) {
                 guessCorrect = validator(guess);
                 $(solutionarea).empty();
-                $(solutionarea).append(guessCorrect === true ? "Answer correct" : "Answer incorrect");
+                $(solutionarea).append(guessCorrect === true ? "Goed antwoord" : "Fout antwoord");
             } else {
                 redrawComplexPolarForm(guess[0], guess[1]);
             }
@@ -1121,7 +1121,7 @@ $.extend(Khan.answerTypes, {
             if (isTimeline) {
                 guessCorrect = validator(guess);
                 $(solutionarea).empty();
-                $(solutionarea).append(guessCorrect === true ? "Answer correct" : "Answer incorrect");
+                $(solutionarea).append(guessCorrect === true ? "Goed antwoord" : "Fout antwoord");
             } else {
                 var code = "(function() { var guess = " + (JSON.stringify(guess) || "[]") + ";" + showGuessSolutionCode + "})()";
                 KhanUtil.tmpl.getVAR(code, KhanUtil.currentGraph);

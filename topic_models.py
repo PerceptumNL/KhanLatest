@@ -1615,13 +1615,13 @@ class Topic(search.Searchable, backup_model.BackupModel):
             if exercise_id in user_exercise_dict:
                 exercise_dict = user_exercise_dict[exercise_id]
 
-                if exercise_dict["proficient"]:
+                if exercise_dict["Bedreven"]:
                     status_flags["ExerciseProficient"] = 1
 
-                if exercise_dict["struggling"]:
+                if exercise_dict["Worstelt"]:
                     status_flags["ExerciseStruggling"] = 1
 
-                if exercise_dict["total_done"] > 0:
+                if exercise_dict["Klaar"] > 0:
                     status_flags["ExerciseStarted"] = 1
 
             if status_flags != {}:

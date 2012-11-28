@@ -953,7 +953,7 @@ var Khan = (function() {
         $("#check-answer-button")
             .removeAttr("disabled")
             .removeClass("buttonDisabled")
-            .val("Check Answer");
+            .val("Check Antwoord");
     }
 
     function disableCheckAnswer() {

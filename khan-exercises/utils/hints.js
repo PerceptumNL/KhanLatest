@@ -26,7 +26,7 @@ $(Khan).bind("newProblem", function() {
     $("#hint")
         .removeClass("green")
         .addClass("orange")
-        .val("geef mij een hint")
+        .val("Geef mij een hint")
         .data("buttonText", false)
         .stop(true /* clear */, true /* jump */)
         .appendTo("#get-hint-button-container");

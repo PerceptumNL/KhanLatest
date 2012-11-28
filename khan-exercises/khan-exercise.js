@@ -768,7 +768,7 @@ var Khan = (function() {
         },
 
         showSolutionButtonText: function() {
-            return hintsUsed ? "Laat de volgende stap zien (" + hints.length + " over)" : "Laat de oplossing zien";
+            return hintsUsed ? "Laat de volgende stap zien (" + hints.length + " over)" : "Geef mij een hint";
         }
 
     };
@@ -2128,7 +2128,7 @@ var Khan = (function() {
             if (pass !== true) {
                 checkAnswerButton
                     .effect("shake", {times: 3, distance: 5}, 80)
-                    .val("Try Again");
+                    .val("Probeer nog eens");
 
                 // Is this a message to be shown?
                 if (typeof pass === "string") {

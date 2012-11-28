@@ -8,7 +8,7 @@
 </div>
 <div id="warning-bar">
     <span id="warning-bar-content"></span>
-    <span id="warning-bar-close">(<a href="">close</a>)</span>
+    <span id="warning-bar-close">(<a href="">sluit</a>)</span>
 </div>
 <div id="problem-and-answer">
     <div id='problemarea'>
@@ -20,8 +20,8 @@
         <form id="answerform" action="/exercisedashboard" method="get" name="answerform">
             <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px">
             <div id="answercontent" class="info-box">
-                <span id="examples-show">Acceptable formats</span>
-                <span class="info-box-header">Answer</span>
+                <span id="examples-show">Antwoordformaat</span>
+                <span class="info-box-header">Antwoord</span>
                 <div id="solutionarea" class="fancy-scrollbar"></div>
                 <ul id="examples" style="display: none"></ul>
                 <div class="answer-buttons">
@@ -34,11 +34,11 @@
             </div>
             <div id="readonly" class="info-box">
                 <span id="readonly-problem" class="info-box-header"></span>
-                <span id="readonly-title" class="info-box-subheader">You are viewing a problem.</span>
-                <span class="info-box-sub-description">To work on problems like this, <a id="readonly-start" href="">start this exercise</a>.</span>
+                <span id="readonly-title" class="info-box-subheader">Je hebt een probleem.</span>
+                <span class="info-box-sub-description">Om aan dit probleem te werken, <a id="readonly-start" href="">start deze oefening</a>.</span>
             </div>
             <div class="info-box hint-box">
-                <span class="info-box-header">Need help?</span>
+                <span class="info-box-header">Hulp nodig?</span>
                 <div id="get-hint-button-container">
                     <input id="hint" type="button" class="simple-button orange full-width" value="I'd like a hint" name="hint"/>
                 </div>
@@ -46,10 +46,10 @@
             </div>
             <div class="info-box related-video-box" style="display:none;">
                 <div id="related-video-content">
-                    <span class="info-box-header">Stuck? Watch a video.</span>
+                    <span class="info-box-header">Problemen? Bekijk een filmpje.</span>
 
                     <div id="related-video-list">
-                        <span class="related-content-title">Related videos:</span>
+                        <span class="related-content-title">Gerelateerde video's</span>
                         <ul class="related-video-list"></ul>
                     </div>
                     <div class="clear"></div>
@@ -57,7 +57,7 @@
             </div>
         </form>
         <div id="calculator" class="info-box" style="display: none;">
-            <span class="info-box-header">Calculator</span>
+            <span class="info-box-header">Rekenmachine</span>
             <div class="calculator">
                 <div class="history fancy-scrollbar">
                     <div class="calc-row input"><input type="text"><div class="status"><a href="#" data-behavior="angle-mode"><br>DEG</a></div></div>
@@ -89,29 +89,29 @@
             <span id="issue-status" class="info-box-sub-description"></span>
             <form>
                 <fieldset>
-                    <legend>Issue Type</legend>
+                    <legend>Probleemtype</legend>
                     <ul>
                         <li>
                             <input type="radio" name="issue-type" id="issue-wrong-or-unclear">
-                            <label for="issue-wrong-or-unclear">Answer is wrong or question is unclear</label>
+                            <label for="issue-wrong-or-unclear">Antwoord is fout, of vraag onduidelijk.</label>
                         </li>
                         <li>
                             <input type="radio" name="issue-type" id="issue-hard">
-                            <label for="issue-hard">I'm frustrated (tell us why) or this is too hard</label>
+                            <label for="issue-hard">Dit is te moeilijk.</label>
                         </li>
                         <li>
                             <input type="radio" name="issue-type" id="issue-not-showing">
-                            <label for="issue-not-showing">I can't see the problem or website is stuck</label>
+                            <label for="issue-not-showing">Ik zie geen vraag of de website doet het niet.</label>
                         </li>
                         <li>
                             <input type="radio" name="issue-type" id="issue-other">
-                            <label for="issue-other">Other (please describe below)</label>
+                            <label for="issue-other">Anders (omschreef hieronder)</label>
                         </li>
                     </ul>
                 </fieldset>
-                <label for="issue-title">Issue Title:<input type="text" name="issue-title" id="issue-title" /></label>
-                <label for="issue-email">Your Email (optional):<input type="text" name="issue-email" id="issue-email" /></label>
-                <label for="issue-body">Description of Issue:<textarea name="issue-body" id="issue-body"></textarea></label>
+                <label for="issue-title">Probleem titel:<input type="text" name="issue-title" id="issue-title" /></label>
+                <label for="issue-email">Jouw Email (optioneel):<input type="text" name="issue-email" id="issue-email" /></label>
+                <label for="issue-body">Beschrijving probleem:<textarea name="issue-body" id="issue-body"></textarea></label>
                 <input type="submit" class="simple-button" value="Submit Issue">
                 <a href="/#" id="issue-cancel">Cancel</a>
                 <img id="issue-throbber" style="display:none;" name="issue-throbber">

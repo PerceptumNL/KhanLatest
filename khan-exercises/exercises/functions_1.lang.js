@@ -1,9 +1,9 @@
 ({
 	"nl" : {
-		"question1"	: 'The function <code>f(x)</code> is graphed. Find <code>f(<var>CORRECT_X</var>)</code>.',
+		"question1"	: 'De functie <code>f(x)</code> is hier weergegeven. Wat is <code>f(<var>CORRECT_X</var>)</code>.',
 		
-		"hint1"		: 'At what point does <code>f(x)</code> intersect <code>x = <var>CORRECT_X</var></code>?',
-		"hint2"		: 'They intersect at <code>(<var>CORRECT_X</var>, <var>CORRECT_Y</var>)</code>.',
-		"hint3"		: 'Thus, <code>f(<var>CORRECT_X</var>) = <var>CORRECT_Y</var></code>.'
+		"hint1"		: 'Waar snijdt <code>f(x)</code> het punt <code>x = <var>CORRECT_X</var></code>?',
+		"hint2"		: 'Ze snijden elkaar op <code>(<var>CORRECT_X</var>, <var>CORRECT_Y</var>)</code>.',
+		"hint3"		: 'Dus, <code>f(<var>CORRECT_X</var>) = <var>CORRECT_Y</var></code>.'
 		}
 })

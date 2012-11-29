@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+set -e
+
+#Activate mac-terminal colors
+CLICOLOR=1
+export CLICOLOR
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+export COLOR_NC='\e[0m' # No Color
+export COLOR_WHITE='\e[1;37m'
+export COLOR_BLACK='\e[0;30m'
+export COLOR_BLUE='\e[0;34m'
+export COLOR_LIGHT_BLUE='\e[1;34m'
+export COLOR_GREEN='\e[0;32m'
+export COLOR_LIGHT_GREEN='\e[1;32m'
+export COLOR_CYAN='\e[0;36m'
+export COLOR_LIGHT_CYAN='\e[1;36m'
+export COLOR_RED='\e[0;31m'
+export COLOR_LIGHT_RED='\e[1;31m'
+export COLOR_PURPLE='\e[0;35m'
+export COLOR_LIGHT_PURPLE='\e[1;35m'
+export COLOR_BROWN='\e[0;33m'
+export COLOR_YELLOW='\e[33m'
+export COLOR_GRAY='\e[0;30m'
+export COLOR_LIGHT_GRAY='\e[0;37m'
+
+export COLMSG=$COLOR_LIGHT_BLUE
+export COLNC=$COLOR_NC
+
+print_msg() {
+  printf "${COLOR_PURPLE}${1}${COLNC}\n"
+}
+
+print_start() {
+  printf "${COLOR_YELLOW}${1}${COLNC}"
+}
+print_error() {
+  printf "${COLOR_RED}${1}\n${COLNC}"
+}
+print_done() {
+  printf "${COLOR_GREEN}Done!\n${COLNC}"
+}
+
+export -f print_start
+export -f print_error
+export -f print_done
+export -f print_msg
+
+resolve_link() {
+  $(type -p greadlink readlink | head -1) "$1"
+}
+
+abs_dirname() {
+  local cwd="$(pwd)"
+  local path="$1"
+
+  while [ -n "$path" ]; do
+    cd "${path%/*}"
+    local name="${path##*/}"
+    path="$(resolve_link "$name" || true)"
+  done
+
+  pwd
+  cd "$cwd"
+}
+
+libexec_path="$(abs_dirname "$0")"
+export _KENV_ROOT="$(abs_dirname "$libexec_path")"
+export _KHAN_ROOT=`dirname $_KENV_ROOT`
+export _GAE_ROOT=$_KHAN_ROOT/tools/google_appengine
+export _TOOLS="$_KHAN_ROOT/tools"
+export _DEPLOY="$_KHAN_ROOT/deploy"
+export _SHARE="$_KENV_ROOT/share"
+
+export PATH="${libexec_path}:${_GAE_ROOT}:$PATH"
+export PYTHONPATH="${_KHAN_ROOT}:${_GAE_ROOT}:$PYTHONPATH"
+export SETTINGS="$_SHARE/kenv/settings"
+command="$1"
+case "$command" in
+"" | "-h" | "--help" )
+  exec kenv-help
+  ;;
+* )
+  command_path="$(command -v "kenv-$command" || true)"
+  if [ ! -x "$command_path" ]; then
+    echo "kenv: no such command \`$command'" >&2
+    exit 1
+  fi
+
+  shift
+  exec "$command_path" "$@"
+  ;;
+esac
+

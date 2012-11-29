@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Usage: kenv firstrun
+# Summary: Install the dependecies (to be run once)
+
+set -e
+
+print_start "Initializing submodules...  "
+git submodule init > /dev/null
+if [ $? -eq 0 ];then
+  print_done 
+else
+  print_error "problems initilizing submodules" 
+  exit 1
+fi
+
+git submodule update > /dev/null
+print_start "Downloading submodules...  "
+if [ $? -eq 0 ];then
+  print_done 
+else
+  print_error "problems downloading submodules" 
+  exit 1
+fi
+
+cd $_KHAN_ROOT 
+
+if [ ! -e "$_GAE_ROOT" ];then
+  print_start "Downloading the Google App Engine...  "
+  python $_TOOLS/appengine_download.py $_TOOLS/
+  if [ $? -eq 0 ];then
+    print_done 
+  else
+    print_error "problems downloading Google App Engine" 
+    exit 1
+  fi
+fi
+
+python deploy/npm.py
+if [ ! $? -eq 0 ];then
+    exit 1
+fi
+
+print_msg "The kenv dependencies are ready!"

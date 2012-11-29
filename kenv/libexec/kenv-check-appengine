@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo $BB
+#kenv-check-appengine
+#APPCFG=$_KHAN_ROOT
+#
+#if [ ! -e $APPCFG ];then
+#  echo_install "Downloading the Google App Engine"
+#  python tools/appengine_download.py tools/
+#fi

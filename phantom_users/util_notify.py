@@ -22,27 +22,27 @@ def update(user_data, user_exercise, threshold=False, isProf=False, gotBadge=Fal
 
     # First question
     if (numquest == 1):
-        notification = notifications.PhantomNotification("You&rsquo;ve answered your first question! You should [login]")
+        notification = notifications.PhantomNotification("Je hebt je eerste vraag beantwoord! Je moet[login]")
     # Every 10 questions, more than 20 every 5
     if (numquest != None and numquest % 10 == 0) or \
        (numquest != None and numquest > 20 and numquest % 5 == 0):
-        notification = notifications.PhantomNotification("You&rsquo;ve answered %d questions! You should [login]" % numquest)
+        notification = notifications.PhantomNotification("Je hebt %d vragen beantwoord! Je moet [login]" % numquest)
     #Proficiency
     if isProf:
-        notification = notifications.PhantomNotification("You&rsquo;re proficient in %s. You should [login]" % prof)
+        notification = notifications.PhantomNotification("Je bent gevorderd in %s. Je moet [login]" % prof)
     #First Badge
     if numbadge != None and len(numbadge) == 1 and gotBadge:
         achievements_url = "%sachievements" % user_data.profile_root
         notification = notifications.PhantomNotification(
-                "Congrats on your first <a href='%s'>badge</a>! You should [login]" %
+                "Gefeliciteerd met het behalen van je eerste <a href='%s'>badge</a>! Je moet [login]" %
                         achievements_url)
     #Every badge after
     if numbadge != None and len(numbadge) > 1 and gotBadge:
-        notification = notifications.PhantomNotification("You&rsquo;ve earned <a href='/profile'>%d badges</a> so far. You should [login]" % len(numbadge))
+        notification = notifications.PhantomNotification("Je hebt tot nu toe <a href='/profile'>%d badges</a> verdiend. Je moet [login]" % len(numbadge))
     #Every 2.5k points
     if numpoint != None and threshold:
         numpoint = 2500 * (numpoint / 2500) + 2500
-        notification = notifications.PhantomNotification("You&rsquo;ve earned over <a href='/profile'>%d points</a>! You should [login]" % numpoint)
+        notification = notifications.PhantomNotification("Je hebt meer dan <a href='/profile'>%d punten</a> behaald! Je moet [login]" % numpoint)
 
     if notification:
         notification.push(user_data)

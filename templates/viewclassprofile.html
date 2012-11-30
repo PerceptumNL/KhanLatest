@@ -42,18 +42,18 @@
         <span class="profile-header-icon"><img src="/images/class-students-icon-shadow.png" /></span>
         <span class="count">
             <span id="count_students">&hellip;</span><br />
-            <span class="label">Students</span>
+            <span class="label">Leerlingen</span>
         </span>
     </span>
     <span id="energy-points">
         <span class="energy-points-badge">&hellip;</span><br />
-        <span class="label">Class Energy Points</span>
+        <span class="label">Puntentotaal van de klas</span>
     </span>
 </div>
 
     <ul id="nav-accordion">
         <li>
-            <a href="/class_profile/progress-report" class="graph-link graph-link-header header graph-link-selected graph-link-selected">Progress Report</a>
+            <a href="/class_profile/progress-report" class="graph-link graph-link-header header graph-link-selected graph-link-selected">Voortgangsrapport</a>
             <div class="accordion-content">
                 Laat je zien aan welke vaardigheden jouw klas heeft gewerkt en heeft afgerond.
                 <div class="graph-options">
@@ -65,7 +65,7 @@
             </div>
         </li>
         <li>
-            <a href="/class_profile/progress-summary" class="graph-link graph-link-header header">samenvatting voortgang</a>
+            <a href="/class_profile/progress-summary" class="graph-link graph-link-header header">Samenvatting voortgang</a>
             <p class="accordion-content">
                 Laat je zien aan welke vaardigheden jouw klas heeft gewerkt en heef afgerond.
             </p>
@@ -75,10 +75,10 @@
             <p class="accordion-content">
                 Toont je de totale klassenactiviteit op een bepaalde datum. <br /><br />
 
-              <span class="instructions">Licht blauwe activiteit toont normale schooluren en donker blauw toont de activiteit die is verricht buiten de normale schooluren.</span>
+              <span class="instructions">Lichtblauwe activiteit toont normale schooluren en donkerblauw toont de activiteit die is verricht buiten de normale schooluren.</span>
         </li>
         <li>
-            <a href="/class_profile/exercise-progress-over-time" class="graph-link graph-link-header header ">Periodieke Voortgang Vaardigeheden</a>
+            <a href="/class_profile/exercise-progress-over-time" class="graph-link graph-link-header header ">Periodieke Voortgang Vaardigheden</a>
             <div class="accordion-content">Laat zien hoeveel vaardigheden jouw student heeft afgerond binnen een bepaalde periode.<br /><br />
                 <span class="instructions">Highlight een<a href="#" class="highlight-section show-students-highlight">specifieke student</a> of een <a href="#" class="highlight-section show-exercises-highlight">bepaalde vaardihheid</a>.</span><br />
 
@@ -101,7 +101,7 @@
             </div>
         </li>
         <li>
-            <a href="/class_profile/points-per-minute" class="graph-link graph-link-header header">Klassen Punten per minuut</a>
+            <a href="/class_profile/points-per-minute" class="graph-link graph-link-header header">Punten per minuut per klas</a>
             <p class="accordion-content">
                 Toont het totale aantal energie punten per minuut als een continu ge-update rollend gemiddelde.
             </p>
@@ -131,10 +131,10 @@
     </div>
     <div class="filter-block">
       <p>Toont alleen
-        <input type="text" id="student-progressreport-search" placeholder="student or skill" class="search-input simple-input ui-corner-all blur-on-esc"></input>
+        <input type="text" id="student-progressreport-search" placeholder="leerling of vaardigheid" class="search-input simple-input ui-corner-all blur-on-esc"></input>
         <span class="coach-filter-block">
             <input type="checkbox" class="progressreport-filter-check" id="progressreport-struggling" name="struggling" /><label for="progressreport-struggling">Worstelt</label></span>
-      <span class="coach-filter-block"><input type="checkbox" class="progressreport-filter-check" id="progressreport-recent" name="recent" /><label for="progressreport-recent">Worked on in last:</label>
+      <span class="coach-filter-block"><input type="checkbox" class="progressreport-filter-check" id="progressreport-recent" name="recent" /><label for="progressreport-recent">Heeft gewerkt aan in de laatste:</label>
             <select id="progressreport-filter-last-time"><option value="1">dag</option><option value="2">2 dagen</option><option value="3">3 dagen</option><option selected value="7">week</option><option value="30">maand</option></select></span>
     </div>
   </div>

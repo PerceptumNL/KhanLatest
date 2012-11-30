@@ -321,7 +321,7 @@ var Profile = {
             $("#tab-content-achievements").show()
                 .siblings().hide();
             this.activateRelatedTab($("#tab-content-achievements").attr("rel"));
-            this.updateTitleBreadcrumbs(["Achievements"]);
+            this.updateTitleBreadcrumbs(["Successen"]);
         },
 
         showGoals: function(type) {
@@ -333,7 +333,7 @@ var Profile = {
             $("#tab-content-goals").show()
                 .siblings().hide();
             this.activateRelatedTab($("#tab-content-goals").attr("rel"));
-            this.updateTitleBreadcrumbs(["Goals"]);
+            this.updateTitleBreadcrumbs(["Doelen"]);
         },
 
         showCoaches: function() {
@@ -342,7 +342,7 @@ var Profile = {
             $("#tab-content-coaches").show()
                 .siblings().hide();
 
-            this.activateRelatedTab("community coaches");
+            this.activateRelatedTab("communitie coaches");
             this.updateTitleBreadcrumbs(["Coaches"]);
 
             if (Profile.profile.get("isPhantom")) {
@@ -354,27 +354,27 @@ var Profile = {
             type = type || "discussion";
 
             if (type === "answers") {
-                this.updateTitleBreadcrumbs(["Discussion", "Answers"]);
-                Profile.Discussion.populateTab("answers");
+                this.updateTitleBreadcrumbs(["Discussie", "Antwoorden"]);
+                Profile.Discussion.populateTab("questions");
             }
 
             else if (type === "questions") {
-                this.updateTitleBreadcrumbs(["Discussion", "Questions"]);
+                this.updateTitleBreadcrumbs(["Discussie", "Vragen"]);
                 Profile.Discussion.populateTab("questions");
             }
 
             else if (type === "comments") {
-                this.updateTitleBreadcrumbs(["Discussion", "Comments"]);
+                this.updateTitleBreadcrumbs(["Discussie", "opmerkingen"]);
                 Profile.Discussion.populateTab("comments");
             }
 
             else if (type === "notifications") {
-                this.updateTitleBreadcrumbs(["Discussion", "Notifications"]);
+                this.updateTitleBreadcrumbs(["Discussie", "Opmerkingen"]);
                 Profile.Discussion.populateNotifications();
             }
 
             else {
-                this.updateTitleBreadcrumbs(["Discussion"]);
+                this.updateTitleBreadcrumbs(["Discussie"]);
                 Profile.Discussion.populateSummary();
             }
 
@@ -411,7 +411,7 @@ var Profile = {
                 .siblings().hide();
 
             this.activateRelatedTab("community explorations");
-            this.updateTitleBreadcrumbs(["Explorations"]);
+            this.updateTitleBreadcrumbs(["Ontdekkingen"]);
 
             Profile.populateExplorations();
         },
@@ -449,7 +449,7 @@ var Profile = {
             // Show.
             $("#tab-content-settings").show().siblings().hide();
             this.activateRelatedTab("");
-            this.updateTitleBreadcrumbs(["Settings"]);
+            this.updateTitleBreadcrumbs(["Instellingen"]);
         },
 
         activateRelatedTab: function(rel) {

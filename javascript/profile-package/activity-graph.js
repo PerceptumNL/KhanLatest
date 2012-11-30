@@ -84,7 +84,7 @@ var ActivityGraph = {
         yAxis: [
             {
                 title: {
-                    text: "Time Spent (Minutes)",
+                    text: "Bestede tijd (Minuten)",
                     style: {
                         color: "#0080C9"
                     }
@@ -104,7 +104,7 @@ var ActivityGraph = {
             },
             {
                 title: {
-                    text: "Energy Points Earned",
+                    text: "Verdiende punten",
                     style: {
                         color: "#C9001B"
                     }
@@ -283,7 +283,7 @@ var ActivityGraph = {
                     }
                     else if (this.points[ix].point.fEnergyPoints)
                     {
-                        sTitle += "<br/>" + this.points[ix].point.y + " energy points";
+                        sTitle += "<br/>" + this.points[ix].point.y + " punten";
                     }
                 }
                 return sTitle + s;

@@ -79,6 +79,7 @@ jinja2.default_config = {
         "static_url": url_util.static_url,
         "login_url": url_util.create_login_url,
         "fix_url_domain": templatefilters.fix_url_domain,
+        "formatdate": templatefilters.formatdate,
     },
     "environment_args": {
         "autoescape": False,

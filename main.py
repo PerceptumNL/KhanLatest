@@ -20,6 +20,10 @@ import webapp2
 from webapp2_extras.routes import DomainRoute
 from webapp2_extras.routes import RedirectRoute
 
+#from google.appengine.ext.webapp import template
+#template.register_template_library('templatetags')
+
+
 # It's important to have this prior to the imports below that require imports
 # to request_handler.py. The structure of the imports are such that this
 # module causes a lot of circular imports to happen, so including it once out
@@ -38,6 +42,7 @@ import youtube_sync
 import warmup
 import login
 import homepage
+import rssblog
 
 from third_party import search
 
@@ -334,8 +339,8 @@ class ReportIssue(request_handler.RequestHandler):
         wks = sh.get_worksheet(0)
         cell_list = wks.col_values(1)
         row = len(cell_list) + 1
-        currdate = datetime.now(GMT1()).strftime("%d %b %Y %I:%M:%S %p") 
-        wks.update_acell('A'+str(row), currdate) 
+        currdate = datetime.now(GMT1()).strftime("%d %b %Y %I:%M:%S %p")
+        wks.update_acell('A'+str(row), currdate)
         wks.update_acell('B'+str(row), page)
         wks.update_acell('C'+str(row), utype)
         wks.update_acell('D'+str(row), title)
@@ -967,6 +972,7 @@ application = webapp2.WSGIApplication([
     ('/admin/import_smarthistory', topics.ImportSmartHistory),
     ('/admin/reput', bulk_update.handler.UpdateKind),
     ('/admin/retargetfeedback', RetargetFeedback),
+    ('/admin/updateblogentries', rssblog.UpdateBlogEntries),
     ('/admin/startnewbadgemapreduce', badges.handlers.StartNewBadgeMapReduce),
     ('/admin/badgestatistics', badges.handlers.BadgeStatistics),
     ('/admin/startnewexercisestatisticsmapreduce',

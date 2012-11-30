@@ -172,6 +172,9 @@ def bingo_redirect_url(url, conversions):
 def fix_url_domain(url):
     """ Fix up the domain of the URL to point to the current domain. """
 
+def fix_url_domain(url):
+    """ Fix up the domain of the URL to point to the current domain. """
+
     parsed_url = urlparse.urlsplit(url)
     if parsed_url.netloc == '':
         # Leave relative paths alone
@@ -180,3 +183,5 @@ def fix_url_domain(url):
     url = urlparse.urlunsplit((parsed_url[0], os.environ['HTTP_HOST'], parsed_url[2], parsed_url[3], parsed_url[4]))
     return url
 
+def formatdate(date):
+    return date.strftime("%d-%m-%Y")

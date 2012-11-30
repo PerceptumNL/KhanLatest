@@ -226,7 +226,9 @@ class ViewHomePage(request_handler.RequestHandler):
         donate_redirect_url = create_redirect_url("/donate",
                                                   "hp_donate_button_click")
 
+        from rssblog_model import RSSBlog
         template_values = {
+            'rssblog': RSSBlog.get(0, 4),
             'marquee_video': marquee_video,
             'thumbnail_link_sets': thumbnail_link_sets,
             'library_content': library_content,

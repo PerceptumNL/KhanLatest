@@ -12,9 +12,30 @@
 	#page_sub_nav { display: none; }
 	td { vertical-align: top; }
 	.ui-tooltip, .qtip { max-width: 200px; }
+  .rssentry { 
+    margin-top:20px;
+  }
+  .rssdate {
+    font-color: gray;
+  }
   #homepage-left-col {
+    text-align: justify;
     max-width: 55%;
     margin-top: 20px;
+    float: left;
+  }
+  #homepage-right-col h3 {
+	  border-bottom: 1px solid black;
+	  margin-top: 20px;
+	  padding-bottom: 10px;
+	  text-align: center;
+  }
+
+
+  #homepage-right-col {
+    float: right;
+    max-width: 40%;
+    margin-top:20px;
   }
   #homepage-logo {
     background: url("images/logo-horizontal-large.png") -231px 0px;
@@ -104,6 +125,16 @@
     
         </div>
         
+    </div>
+    <div id="homepage-right-col">
+        <h3>Laatste Nieuws</h3>
+        {% for entry in rssblog %}
+        <div class="rssentry">
+        <span class="rssdate">{{ entry.pub_date|formatdate }}</span>
+        <a href="{{ entry.link }}" target="_blank"><h5>{{ entry.title }}</h5></a><br />
+        <div>{{ entry.description|striptags|truncate }}</div>
+        </div>
+        {% endfor %}
     </div>
     <!--
     <h2>

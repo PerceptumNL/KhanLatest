@@ -2,274 +2,274 @@
 <html data-translatable data-require="math math-format">
 <head>
     <meta charset="UTF-8" />
-    <title>Domain of a function</title>
-    <script src="../khan-exercise.js"></script>
-    <script type="text/javascript">
-        function filter( o, f ) {
-            var n = {};
-            for ( var p in o ) {
-                if ( o.hasOwnProperty( p ) && f( p ) ) n[p] = o[p];
-            }
-            return n;
-        }
-    </script>
+	<title>Domein van een functie</title>
+	<script src="../khan-exercise.js"></script>
+	<script type="text/javascript">
+		function filter( o, f ) {
+			var n = {};
+			for ( var p in o ) {
+				if ( o.hasOwnProperty( p ) && f( p ) ) n[p] = o[p];
+			}
+			return n;
+		}
+	</script>
 </head>
 <body>
-    <div class="exercise">
-        <div class="vars">
-            <var id="A">randRange( 1, 10 )</var>
-            <var id="B" data-ensure="A !== B">randRange( 1, 10 )</var>
-            <var id="C" data-ensure="A !== C && B !== C">randRange( 1, 10 )</var>
+	<div class="exercise">
+		<div class="vars">
+			<var id="A">randRange( 1, 10 )</var>
+			<var id="B" data-ensure="A !== B">randRange( 1, 10 )</var>
+			<var id="C" data-ensure="A !== C && B !== C">randRange( 1, 10 )</var>
 
-            <var id="SET">function() { return "\\{ \\, x \\in \\RR \\mid " + Array.prototype.join.call( arguments, ", \\," ) + "\\, \\}"; }</var>
-            <var id="FN">function( n, sym ) { return "x " + sym + n; }</var>
-            <var id="FN2">function( n, m, sym1, sym2 ) { return n + sym1 + " x " + sym2 + m; }</var>
-            <var id="NEQ">function( n ) { return FN( n, "\\neq" ); }</var>
-            <var id="GEQ">function( n ) { return FN( n, "\\geq" ); }</var>
-            <var id="LEQ">function( n ) { return FN( n, "\\leq" ); }</var>
-            <var id="GE">function( n ) { return FN( n, ">" ); }</var>
-            <var id="LE">function( n ) { return FN( n, "&lt;" ); }</var>
-            <var id="LE_LEQ">function( n, m ) { return FN2( n, m, "&lt;", "\\leq" ); }</var>
-            <var id="LEQ_LEQ">function( n, m ) { return FN2( n, m, "\\leq", "\\leq" ); }</var>
-            <var id="LE_LE">function( n, m ) { return FN2( n, m, "&lt;", "&lt;" ); }</var>
+			<var id="SET">function() { return "\\{ \\, x \\in \\RR \\mid " + Array.prototype.join.call( arguments, ", \\," ) + "\\, \\}"; }</var>
+			<var id="FN">function( n, sym ) { return "x " + sym + n; }</var>
+			<var id="FN2">function( n, m, sym1, sym2 ) { return n + sym1 + " x " + sym2 + m; }</var>
+			<var id="NEQ">function( n ) { return FN( n, "\\neq" ); }</var>
+			<var id="GEQ">function( n ) { return FN( n, "\\geq" ); }</var>
+			<var id="LEQ">function( n ) { return FN( n, "\\leq" ); }</var>
+			<var id="GE">function( n ) { return FN( n, ">" ); }</var>
+			<var id="LE">function( n ) { return FN( n, "&lt;" ); }</var>
+			<var id="LE_LEQ">function( n, m ) { return FN2( n, m, "&lt;", "\\leq" ); }</var>
+			<var id="LEQ_LEQ">function( n, m ) { return FN2( n, m, "\\leq", "\\leq" ); }</var>
+			<var id="LE_LE">function( n, m ) { return FN2( n, m, "&lt;", "&lt;" ); }</var>
 
-            <var id="CHOICES">{
-                "two-denom-simplify": SET( NEQ( -1*A ), NEQ( B ) ),
-                "two-denom-cond": SET( NEQ( -1*A ) ),
-                "sqrt": SET( GEQ( A ) ),
-                "inverse-sqrt": SET( GE( A ) ),
-                "inverse-sqrt-cond": SET( NEQ( A ) ),
-                "sqrt-frac": SET( LE_LEQ( A, A+B ) ),
-                "two-denom-cond-weird": SET( NEQ( -1*A ), NEQ( C ) ),
-                "sqrt-poly-frac": SET( GEQ( C ) ),
-                "sqrt-abs": SET( LEQ_LEQ( -1*A, A ) ),
-                "inverse-sqrt-abs": SET( LE_LE( -1*A, A ) )
-            }</var>
+			<var id="CHOICES">{
+				"two-denom-simplify": SET( NEQ( -1*A ), NEQ( B ) ),
+				"two-denom-cond": SET( NEQ( -1*A ) ),
+				"sqrt": SET( GEQ( A ) ),
+				"inverse-sqrt": SET( GE( A ) ),
+				"inverse-sqrt-cond": SET( NEQ( A ) ),
+				"sqrt-frac": SET( LE_LEQ( A, A+B ) ),
+				"two-denom-cond-weird": SET( NEQ( -1*A ), NEQ( C ) ),
+				"sqrt-poly-frac": SET( GEQ( C ) ),
+				"sqrt-abs": SET( LEQ_LEQ( -1*A, A ) ),
+				"inverse-sqrt-abs": SET( LE_LE( -1*A, A ) )
+			}</var>
 
-        </div>
+		</div>
 
-        <div class="problems">
+		<div class="problems">
 
-            <div id="two-denom-simplify">
+			<div id="two-denom-simplify">
 
-                <p class="problem"><code>f(x) = \dfrac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>B</var> ) }</code></p>
+				<p class="problem"><code>f(x) = \dfrac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>B</var> ) }</code></p>
 
-                <p class="question" data-tt="question1">What is the domain of <code>f(x)</code>?</p>
+				<p class="question" data-tt="question1">Wat is het domein van <code>f(x)</code>?</p>
 
-                <p class="solution"><code><var>CHOICES["two-denom-simplify"]</var></code></p>
-                <ul class="choices" data-show="5" data-none="true">
-                    <li data-each="filter( CHOICES, function( c ) { return c !== 'two-denom-simplify'; } ) as c"><code><var>c</var></code></li>
-                </ul>
+				<p class="solution"><code><var>CHOICES["two-denom-simplify"]</var></code></p>
+				<ul class="choices" data-show="5" data-none="true">
+					<li data-each="filter( CHOICES, function( c ) { return c !== 'two-denom-simplify'; } ) as c"><code><var>c</var></code></li>
+				</ul>
 
-                <div class="hints">
-                    <p data-tt="hint1"><code>f(x)</code> is undefined when the denominator is 0.</p>
-                    <p data-tt="hint2">The denominator is 0 when <code>x=<var>(-1*A)</var></code> or <code>x=<var>B</var></code>.</p>
-                    <p data-tt="hint3">So we know that <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>B</var></code>.</p>
-                    <p data-tt="hint4">Expressing this mathematically, the domain is <code><var>CHOICES["two-denom-simplify"]</var></code>.</p>
-                </div>
+				<div class="hints">
+					<p data-tt="hint1"><code>f(x)</code> is ongedefinieerd als de noemer 0 is.</p>
+					<p data-tt="hint2">De noemer is 0 als <code>x=<var>(-1*A)</var></code> of <code>x=<var>B</var></code>.</p>
+					<p data-tt="hint3">Dus we weten dat <code>x \neq <var>-1*A</var></code> en <code>x \neq <var>B</var></code>.</p>
+					<p data-tt="hint4">Vertalen we dit in wiskundige notatie dan is het bereik: <code><var>CHOICES["two-denom-simplify"]</var></code>.</p>
+				</div>
 
-            </div>
+			</div>
 
-            <div id="two-denom-cond" data-type="two-denom-simplify">
+			<div id="two-denom-cond" data-type="two-denom-simplify">
 
-                <p class="problem"><code>f(x)= \begin{cases} \dfrac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>B</var> ) } & \text{if $x \neq <var>B</var>$} \\ <var>C</var> & \text{if $x = <var>B</var>$} \end{cases}</code></p>
+				<p class="problem"><code>f(x)= \begin{cases} \dfrac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>B</var> ) } & \text{if $x \neq <var>B</var>$} \\ <var>C</var> & \text{if $x = <var>B</var>$} \end{cases}</code></p>
 
-                <p class="solution"><code><var>CHOICES["two-denom-cond"]</var></code></p>
-                <ul class="choices" data-show="5" data-none="true">
-                    <li data-each="filter( CHOICES, function( c ) { return c !== 'two-denom-cond'; } ) as c"><code><var>c</var></code></li>
-                </ul>
+				<p class="solution"><code><var>CHOICES["two-denom-cond"]</var></code></p>
+				<ul class="choices" data-show="5" data-none="true">
+					<li data-each="filter( CHOICES, function( c ) { return c !== 'two-denom-cond'; } ) as c"><code><var>c</var></code></li>
+				</ul>
 
-                <div class="hints">
-                    <p data-tt="hint5"><code>f(x)</code> is a piecewise function, so we need to examine where each piece is undefined.</p>
-                    <p data-tt="hint6">The first piecewise definition of <code>f(x)</code>, <code>\frac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>B</var> ) }</code>, is undefined when its denominator is 0.</p>
-                    <p data-tt="hint7">The denominator is 0 when <code>x=<var>-1*A</var></code> or <code>x=<var>B</var></code>.</p>
-                    <p data-tt="hint8">So, based on the first piecewise definition, we know that <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>B</var></code>.</p>
-                    <p data-tt="hint9">However, the second piecewise definition applies when <code>x = <var>B</var></code>, and the second piecewise definition, <code><var>C</var></code>, has no weird gaps or holes, so <code>f(x)</code> is defined at <code>x = <var>B</var></code>.</p>
-                    <p data-tt="hint10">So the only restriction on the domain is that <code>x \neq <var>-1*A</var></code>.</p>
-                    <p data-tt="hint11">Expressing this mathematically, the domain is <code><var>CHOICES["two-denom-cond"]</var></code>.</p>
-                </div>
+				<div class="hints">
+					<p data-tt="hint5"><code>f(x)</code> is een gedeelde functie, dus we moeten onderzoeken waar elk deel ongedefinieerd is.</p>
+					<p data-tt="hint6">Het eerste deel van de definitie van <code>f(x)</code>, <code>\frac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>B</var> ) }</code>, is ongedefinieerd als de noemer 0 is.</p>
+					<p data-tt="hint7">De noemer is 0 als <code>x=<var>-1*A</var></code> of <code>x=<var>B</var></code>.</p>
+					<p data-tt="hint8">Dus gebaseerd op het eerste deel van de definitie weten we dat <code>x \neq <var>-1*A</var></code> en <code>x \neq <var>B</var></code>.</p>
+					<p data-tt="hint9">Maar het tweede deel van de definitie is van toepassing als <code>x = <var>B</var></code>, en de tweede definitie, <code><var>C</var></code>, heeft geen vreemde onderbrekingen of gaten, dus <code>f(x)</code> is gedefinieerd als <code>x = <var>B</var></code>.</p>
+					<p data-tt="hint10">Dus de enige beperking voor het bereik is dat <code>x \neq <var>-1*A</var></code>.</p>
+					<p data-tt="hint11">Vertalen we dit in wiskundige notatie dan is het bereik: <code><var>CHOICES["two-denom-cond"]</var></code>.</p>
+				</div>
 
-            </div>
+			</div>
 
-            <div id="sqrt" data-type="two-denom-simplify">
+			<div id="sqrt" data-type="two-denom-simplify">
 
-                <p class="problem"><code>f(x) = \sqrt{ x - <var>A</var> }</code></p>
+				<p class="problem"><code>f(x) = \sqrt{ x - <var>A</var> }</code></p>
 
-                <p class="solution"><code><var>CHOICES["sqrt"]</var></code></p>
-                <ul class="choices" data-show="5" data-none="true">
-                    <li data-each="filter( CHOICES, function( c ) { return c !== 'sqrt'; } ) as c"><code><var>c</var></code></li>
-                </ul>
+				<p class="solution"><code><var>CHOICES["sqrt"]</var></code></p>
+				<ul class="choices" data-show="5" data-none="true">
+					<li data-each="filter( CHOICES, function( c ) { return c !== 'sqrt'; } ) as c"><code><var>c</var></code></li>
+				</ul>
 
-                <div class="hints">
-                    <p data-tt="hint12"><code>f(x)</code> is undefined when the radicand (the expression under the radical) is less than zero.</p>
-                    <p data-tt="hint13">So the radicand, <code>x - <var>A</var></code>, must be greater than or equal to zero.</p>
-                    <p data-tt="hint14">So <code>x - <var>A</var> \geq 0</code>; this means <code>x \geq <var>A</var></code>.</p>
-                    <p data-tt="hint15">Expressing this mathematically, the domain is <code><var>CHOICES["sqrt"]</var></code>.</p>
-                </div>
+				<div class="hints">
+					<p data-tt="hint12"><code>f(x)</code> is ongedefinieerd als de wortel (de formule onder het wortelteken) kleiner is dan 0.</p>
+					<p data-tt="hint13">Dus de wortel, <code>x - <var>A</var></code>, moet groter of gelijk aan 0 zijn.</p>
+					<p data-tt="hint14">Dus <code>x - <var>A</var> \geq 0</code>; dit betekent <code>x \geq <var>A</var></code>.</p>
+					<p data-tt="hint15">Vertalen we dit in wiskundige notatie dan is het bereik: <code><var>CHOICES["sqrt"]</var></code>.</p>
+				</div>
 
-            </div>
+			</div>
 
-            <div id="inverse-sqrt" data-type="two-denom-simplify">
+			<div id="inverse-sqrt" data-type="two-denom-simplify">
 
-                <p class="problem"><code>f(x) = \dfrac{ 1 }{ \sqrt{ x - <var>A</var> } }</code></p>
+				<p class="problem"><code>f(x) = \dfrac{ 1 }{ \sqrt{ x - <var>A</var> } }</code></p>
 
-                <p class="solution"><code><var>CHOICES["inverse-sqrt"]</var></code></p>
-                <ul class="choices" data-show="5" data-none="true">
-                    <li data-each="filter( CHOICES, function( c ) { return c !== 'inverse-sqrt'; } ) as c"><code><var>c</var></code></li>
-                </ul>
+				<p class="solution"><code><var>CHOICES["inverse-sqrt"]</var></code></p>
+				<ul class="choices" data-show="5" data-none="true">
+					<li data-each="filter( CHOICES, function( c ) { return c !== 'inverse-sqrt'; } ) as c"><code><var>c</var></code></li>
+				</ul>
 
-                <div class="hints">
-                    <p data-tt="hint16">First, we need to consider that <code>f(x)</code> is undefined when the radicand (the expression under the radical) is less than zero.</p>
-                    <p data-tt="hint17">So the radicand, <code>x - <var>A</var></code>, must be greater than or equal to zero.</p>
-                    <p data-tt="hint18">So <code>x - <var>A</var> \geq 0</code>; this means <code>x \geq <var>A</var></code>.</p>
-                    <p data-tt="hint19">Next, we also need to consider that <code>f(x)</code> is undefined when the denominator, <code>\sqrt{ x - <var>A</var> }</code>, is zero.</p>
-                    <p data-tt="hint20">So <code>\sqrt{ x - <var>A</var> } \neq 0</code>.</p>
-                    <p data-tt="hint21"><code>\sqrt{ z } = 0</code> only when <code>z = 0</code>, so <code>\sqrt{ x - <var>A</var> } \neq 0</code> means that <code>x - <var>A</var> \neq 0</code>.</p>
-                    <p data-tt="hint22">So <code>x \neq <var>A</var></code>.</p>
-                    <p data-tt="hint23">So we have two restrictions: <code>x \geq <var>A</var></code> and <code>x \neq <var>A</var></code>.</p>
-                    <p data-tt="hint24">Combining these two restrictions, we are left with simply <code>x > <var>A</var></code>.</p>
-                    <p data-tt="hint25">Expressing this in mathematical notation, the domain is <code><var>CHOICES["inverse-sqrt"]</var></code>.</p>
-                </div>
+				<div class="hints">
+					<p data-tt="hint16">Eerst moeten we bedenken dat <code>f(x)</code> ongedefinieerd is als de wortel (de formule onder het wortelteken) kleiner is dan 0.</p>
+					<p data-tt="hint17">Dus de wortel <code>x - <var>A</var></code>, moet groter of gelijk aan 0 zijn.</p>
+					<p data-tt="hint18">Dus <code>x - <var>A</var> \geq 0</code>; dit betekent <code>x \geq <var>A</var></code>.</p>
+					<p data-tt="hint19">Verder moeten we bedenken dat <code>f(x)</code> ongedefinieerd is als de noemer, <code>\sqrt{ x - <var>A</var> }</code>, 0 is.</p>
+					<p data-tt="hint20">Dus<code>\sqrt{ x - <var>A</var> } \neq 0</code>.</p>
+					<p data-tt="hint21"><code>\sqrt{ z } = 0</code> alleen als <code>z = 0</code>, dus <code>\sqrt{ x - <var>A</var> } \neq 0</code> betekent <code>x - <var>A</var> \neq 0</code>.</p>
+					<p data-tt="hint22">Dus <code>x \neq <var>A</var></code>.</p>
+					<p data-tt="hint23">Dus we hebben twee voorwaarden: <code>x \geq <var>A</var></code> en <code>x \neq <var>A</var></code>.</p>
+					<p data-tt="hint24">Combineren we deze twee voorwaarden dan blijft alleen <code>x > <var>A</var></code> over.</p>
+					<p data-tt="hint25">Vertalen we dit in wiskundige notatie dan is het bereik: <code><var>CHOICES["inverse-sqrt"]</var></code>.</p>
+				</div>
 
-            </div>
+			</div>
 
-            <div id="inverse-sqrt-cond" data-type="two-denom-simplify">
+			<div id="inverse-sqrt-cond" data-type="two-denom-simplify">
 
-                <p class="problem"><code>f(x) = \begin{cases} \dfrac{ 1 }{ \sqrt{ x - <var>A</var> } } & \text{if $x \geq <var>A</var>$} \\ \dfrac{ 1 }{ \sqrt{ <var>A</var> - x } } & \text{if $x < <var>A</var>$} \end{cases}</code></p>
+				<p class="problem"><code>f(x) = \begin{cases} \dfrac{ 1 }{ \sqrt{ x - <var>A</var> } } & \text{if $x \geq <var>A</var>$} \\ \dfrac{ 1 }{ \sqrt{ <var>A</var> - x } } & \text{if $x < <var>A</var>$} \end{cases}</code></p>
 
-                <p class="solution"><code><var>CHOICES["inverse-sqrt-cond"]</var></code></p>
-                <ul class="choices" data-show="5" data-none="true">
-                    <li data-each="filter( CHOICES, function( c ) { return c !== 'inverse-sqrt-cond'; } ) as c"><code><var>c</var></code></li>
-                </ul>
+				<p class="solution"><code><var>CHOICES["inverse-sqrt-cond"]</var></code></p>
+				<ul class="choices" data-show="5" data-none="true">
+					<li data-each="filter( CHOICES, function( c ) { return c !== 'inverse-sqrt-cond'; } ) as c"><code><var>c</var></code></li>
+				</ul>
 
-                <div class="hints">
-                    <p data-tt="hint26"><code>f(x)</code> is a piecewise function, so we need to examine where each piece is undefined.</p>
-                    <p data-tt="hint27">The first piecewise definition of <code>f(x)</code>, <code>\frac{ 1 }{ \sqrt{ x - <var>A</var> } }</code>, is undefined where the denominator is zero and where the radicand (the expression under the radical) is less than zero.</p>
-                    <p data-tt="hint28">The denominator, <code>\sqrt{ x - <var>A</var> }</code>, is zero when <code>x - <var>A</var> = 0</code>, so we know that <code>x \neq <var>A</var></code>.</p>
-                    <p data-tt="hint29">The radicand, <code>x - <var>A</var></code>, is less than zero when <code>x < <var>A</var></code>, so we know that <code>x \geq <var>A</var></code>.</p>
-                    <p data-tt="hint30">So the first piecewise definition of <code>f(x)</code> is defined when <code>x \neq <var>A</var></code> and <code>x \geq <var>A</var></code>. Combining these two restrictions, the first piecewise definition is defined when <code>x > <var>A</var></code>. The first piecewise defintion applies when <code>x \geq <var>A</var></code>, so this restriction is relevant.</p>
-                    <p data-tt="hint31">The second piecewise definition of <code>f(x)</code>, <code>\frac{ 1 }{ \sqrt{ <var>A</var> - x } }</code>, applies when <code>x < <var>A</var></code> and is undefined where the denominator is zero and where the radicand is less than zero.</p>
-                    <p data-tt="hint32">The denominator, <code>\sqrt{ <var>A</var> - x }</code>, is zero when <code><var>A</var> - x = 0</code>, so we know that <code>x \neq <var>A</var></code>.</p>
-                    <p data-tt="hint33">The radicand, <code><var>A</var> - x</code>, is less than zero when <code>x > <var>A</var></code>, so we know that <code>x \leq <var>A</var></code>.</p>
-                    <p data-tt="hint34">So the second piecewise definition of <code>f(x)</code> is defined when <code>x \neq <var>A</var></code> and <code>x \leq <var>A</var></code>. Combining these two restrictions, the second piecewise definition is defined when <code>x < <var>A</var></code>. However, the second piecewise definition of <code>f(x)</code> only applies when <code>x < <var>A</var></code>, so restriction isn't actually relevant to the domain of <code>f(x)</code>.</p>
-                    <p data-tt="hint35">So the first piecewise definition is defined when <code>x > <var>A</var></code> and applies when <code>x \geq <var>A</var></code>; the second piecewise definition is defined when <code>x < <var>A</var></code> and applies when <code>x < <var>A</var></code>. Putting the restrictions of these two together, the only place where a definition applies and the value is undefined is at <code>x = <var>A</var></code>. So the only restriction on the domain of <code>f(x)</code> is <code>x \neq <var>A</var></code>.</p>
-                    <p data-tt="hint36">Expressing this mathematically, the domain is <code><var>CHOICES["inverse-sqrt-cond"]</var></code>.</p>
-                </div>
+				<div class="hints">
+					<p data-tt="hint26"><code>f(x)</code> is een gedeelde functie, dus we moeten onderzoeken waar elk deel ongedefinieerd is.</p>
+					<p data-tt="hint27">Het eerste deel van de definitie van <code>f(x)</code>, <code>\frac{ 1 }{ \sqrt{ x - <var>A</var> } }</code>, is ongedefinieerd waar de noemer 0 is en waar de wortel (de formule onder het wortelteken) kleiner is dan 0.</p>
+					<p data-tt="hint28">De noemer, <code>\sqrt{ x - <var>A</var> }</code>, is 0 als <code>x - <var>A</var> = 0</code>, dus we weten dat <code>x \neq <var>A</var></code>.</p>
+					<p data-tt="hint29">De wortel, <code>x - <var>A</var></code>, is kleiner dan 0 als <code>x < <var>A</var></code>, dus we weten dat <code>x \geq <var>A</var></code>.</p>
+					<p data-tt="hint30">Dus het eerste deel van de definitie van <code>f(x)</code> is gedefinieerd als <code>x \neq <var>A</var></code> en <code>x \geq <var>A</var></code>. Combineren we deze twee voorwaarden, het eerste deel van de definitie is gedefinieerd als <code>x > <var>A</var></code>. Het eerste deel van de definitie is van toepassing als <code>x \geq <var>A</var></code>, dus deze voorwaarde is van belang.</p>
+					<p data-tt="hint31">Het tweede deel van de definitie <code>f(x)</code>, <code>\frac{ 1 }{ \sqrt{ <var>A</var> - x } }</code>, is van toepassing als <code>x < <var>A</var></code> en is ongedefinieerd als de noemer 0 is en wanneer de wortel kleiner is dan 0.</p>
+					<p data-tt="hint32">De noemer, <code>\sqrt{ <var>A</var> - x }</code>, is 0 als <code><var>A</var> - x = 0</code>, dus we weten dat <code>x \neq <var>A</var></code>.</p>
+					<p data-tt="hint33">De wortel, <code><var>A</var> - x</code>, is kleiner dan 0 als <code>x > <var>A</var></code>, dus we weten <code>x \leq <var>A</var></code>.</p>
+					<p data-tt="hint34">Dus het tweede deel van de definitie <code>f(x)</code> is gedefinieerd als <code>x \neq <var>A</var></code> en <code>x \leq <var>A</var></code>. Deze twee voorwaarden gecombineerd, het tweede deel van de definitie is gedefinieerd als <code>x < <var>A</var></code>. Maar het tweede deel van de definitie <code>f(x)</code> is alleen van toepassing als <code>x < <var>A</var></code>, dus de voorwaarde is niet van belang voor het domein <code>f(x)</code>.</p>
+					<p data-tt="hint35">Dus het eerste deel van de definitie is gedefinieerd wanneer <code>x > <var>A</var></code> en is van toepassing als <code>x \geq <var>A</var></code>; het tweede deel van de definitie is gedefinieerd als <code>x < <var>A</var></code> en is van toepassing als <code>x < <var>A</var></code>. Als we deze voorwaarden bij elkaar bekijken, is de enige plaats waar een definitie van toepassing is en de waarde ongedefinieerd is bij <code>x = <var>A</var></code>. Dus de enige voorwaarde voor het domein van <code>f(x)</code> is <code>x \neq <var>A</var></code>.</p>
+					<p data-tt="hint36">Vertalen we dit in wiskundige notatie dan is het domein: <code><var>CHOICES["inverse-sqrt-cond"]</var></code>.</p>
+				</div>
 
-            </div>
+			</div>
 
-            <div id="sqrt-frac" data-type="two-denom-simplify">
+			<div id="sqrt-frac" data-type="two-denom-simplify">
 
-                <p class="problem"><code>f(x) = \dfrac{ \sqrt{ <var>A+B</var> - x } }{ \sqrt{ x - <var>A</var> } }</code></p>
+				<p class="problem"><code>f(x) = \dfrac{ \sqrt{ <var>A+B</var> - x } }{ \sqrt{ x - <var>A</var> } }</code></p>
 
-                <p class="solution"><code><var>CHOICES["sqrt-frac"]</var></code></p>
-                <ul class="choices" data-show="5" data-none="true">
-                    <li data-each="filter( CHOICES, function( c ) { return c !== 'sqrt-frac'; } ) as c"><code><var>c</var></code></li>
-                </ul>
+				<p class="solution"><code><var>CHOICES["sqrt-frac"]</var></code></p>
+				<ul class="choices" data-show="5" data-none="true">
+					<li data-each="filter( CHOICES, function( c ) { return c !== 'sqrt-frac'; } ) as c"><code><var>c</var></code></li>
+				</ul>
 
-                <div class="hints">
-                    <p data-tt="hint37">First, we need to consider that <code>f(x)</code> is undefined anywhere where either radical is undefined, so anywhere where either radicand (the expression under the radical symbol) is less than zero.</p>
-                    <p data-tt="hint38">The top radical is undefined when <code><var>A+B</var> - x < 0</code>.</p>
-                    <p data-tt="hint39">So the top radical is undefined when <code>x > <var>A+B</var></code>, so we know <code>x \leq <var>A+B</var></code>.</p>
-                    <p data-tt="hint40">The bottom radical is undefined when <code>x - <var>A</var> < 0</code>.</p>
-                    <p data-tt="hint41">So the bottom radical is undefined when <code>x < <var>A</var></code>, so we know <code>x \geq <var>A</var></code>.</p>
-                    <p data-tt="hint42">Next, we need to consider that <code>f(x)</code> is undefined anywhere where the denominator, <code>\sqrt{ x - <var>A</var> }</code>, is zero.</p>
-                    <p data-tt="hint43">So <code>\sqrt{ x - <var>A</var> } \neq 0</code>, so <code>x - <var>A</var> \neq 0</code>, so <code>x \neq <var>A</var></code>.</p>
-                    <p data-tt="hint44">So we have three restrictions: <code>x \leq <var>A+B</var></code>, <code>x \geq <var>A</var></code>, and <code>x \neq <var>A</var></code>.</p>
-                    <p data-tt="hint45">Combining these three restrictions, we know that <code><var>A</var> < x \leq <var>A+B</var></code>.</p>
-                    <p data-tt="hint46">Expressing this mathematically, the domain is <code><var>CHOICES["sqrt-frac"]</var></code>.</p>
-                </div>
+				<div class="hints">
+					<p data-tt="hint37">Eerst moeten we bedenken dat <code>f(x)</code> overal ongedefinieerd is waar de wortel ongedefinieerd is, dus overal waar de wortel (de formule onder het wortelteken) kleiner is dan 0.</p>
+					<p data-tt="hint38">De bovenste wortel is ongedefinieerd als <code><var>A+B</var> - x < 0</code>.</p>
+					<p data-tt="hint39">Dus de bovenste wortels is ongedefinieerd als <code>x > <var>A+B</var></code>, dus we weten <code>x \leq <var>A+B</var></code>.</p>
+					<p data-tt="hint40">De onderste wortel is ongedefinieerd als <code>x - <var>A</var> < 0</code>.</p>
+					<p data-tt="hint41">Dus de onderste wortel is ongedefinieerd als <code>x < <var>A</var></code>, dus we weten <code>x \geq <var>A</var></code>.</p>
+					<p data-tt="hint42">Vervolgens moeten we bedenken dat <code>f(x)</code> overal ongedefinieerd is waar de noemer, <code>\sqrt{ x - <var>A</var> }</code>, 0 is.</p>
+					<p data-tt="hint43">Dus <code>\sqrt{ x - <var>A</var> } \neq 0</code>, dus <code>x - <var>A</var> \neq 0</code>, dus <code>x \neq <var>A</var></code>.</p>
+					<p data-tt="hint44">Dus we hebben drie voorwaarden: <code>x \leq <var>A+B</var></code>, <code>x \geq <var>A</var></code>, en <code>x \neq <var>A</var></code>.</p>
+					<p data-tt="hint45">Deze drie voorwaarden gecombineerd, weten we dat <code><var>A</var> < x \leq <var>A+B</var></code>.</p>
+					<p data-tt="hint46">Vertalen we dit in wiskundige notatie dan is het domein: <code><var>CHOICES["sqrt-frac"]</var></code>.</p>
+				</div>
 
-            </div>
+			</div>
 
-            <div id="two-denom-cond-weird" data-type="two-denom-simplify">
+			<div id="two-denom-cond-weird" data-type="two-denom-simplify">
 
-                <p class="problem"><code>f(x) = \begin{cases} \dfrac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>C</var> ) } & \text{if $x \neq <var>B</var>$} \\ <var>A</var> & \text{if $x = <var>B</var>$} \end{cases}</code></p>
+				<p class="problem"><code>f(x) = \begin{cases} \dfrac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>C</var> ) } & \text{if $x \neq <var>B</var>$} \\ <var>A</var> & \text{if $x = <var>B</var>$} \end{cases}</code></p>
 
-                <p class="solution"><code><var>CHOICES["two-denom-cond-weird"]</var></code></p>
-                <ul class="choices" data-show="5" data-none="true">
-                    <li data-each="filter( CHOICES, function( c ) { return c !== 'two-denom-cond-weird'; } ) as c"><code><var>c</var></code></li>
-                </ul>
+				<p class="solution"><code><var>CHOICES["two-denom-cond-weird"]</var></code></p>
+				<ul class="choices" data-show="5" data-none="true">
+					<li data-each="filter( CHOICES, function( c ) { return c !== 'two-denom-cond-weird'; } ) as c"><code><var>c</var></code></li>
+				</ul>
 
-                <div class="hints">
-                    <p data-tt="hint47"><code>f(x)</code> is a piecewise function, so we need to examine where each piece is undefined.</p>
-                    <p data-tt="hint48">The first piecewise definition of <code>f(x)</code>, <code>\frac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>C</var> ) }</code>, is undefined where the denominator is zero.</p>
-                    <p data-tt="hint49">The denominator, <code>(x + <var>A</var>)(x - <var>C</var>)</code>, is zero when <code>x = <var>-1*A</var></code> or <code>x = <var>C</var></code>.</p>
-                    <p data-tt="hint50">So the first piecewise definition of <code>f(x)</code> is defined when <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>C</var></code>. The first piecewise definition applies when <code>x = <var>-1*A</var></code> and <code>x = <var>C</var></code>, so these restrictions are relevant to the domain of <code>f(x)</code>.</p>
-                    <p data-tt="hint51">The second piecewise definition of <code>f(x)</code>, <code><var>A</var></code>, is a simple horizontal line function and so has no holes or gaps to worry about, so it is defined everywhere.</p>
-                    <p data-tt="hint52">So the first piecewise definition is defined when <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>C</var></code> and applies when <code>x \neq <var>B</var></code>; the second piecewise definition is defined always and applies when <code>x = <var>B</var></code>. Putting the restrictions of these two together, the only places where a definition applies and is undefined are at <code>x = <var>-1*A</var></code> and <code>x = <var>C</var></code>. So the restriction on the domain of <code>f(x)</code> is that <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>C</var></code>.</p>
-                    <p data-tt="hint53">Expressing this mathematically, the domain is <code><var>CHOICES["two-denom-cond-weird"]</var></code>.</p>
-                </div>
+				<div class="hints">
+					<p data-tt="hint47"><code>f(x)</code> is een gedeelde functie, dus we moeten onderzoeken waar elk deel ongedefinieerd is.</p>
+					<p data-tt="hint48">Het eerste deel van de definitie van <code>f(x)</code>, <code>\frac{ x + <var>A</var> }{ ( x + <var>A</var> )( x - <var>C</var> ) }</code>, is ongedefinieerd als de noemer 0 is.</p>
+					<p data-tt="hint49">De noemer <code>(x + <var>A</var>)(x - <var>C</var>)</code>, is 0 als <code>x = <var>-1*A</var></code> of <code>x = <var>C</var></code>.</p>
+					<p data-tt="hint50">Dus het eerste deel van de definitie van <code>f(x)</code> is gedefinieerd als <code>x \neq <var>-1*A</var></code> en <code>x \neq <var>C</var></code>. Het eerste deel van de definitie is van toepassing als <code>x = <var>-1*A</var></code> en <code>x = <var>C</var></code>, dus deze voorwaarden zijn van belang voor het domein <code>f(x)</code>.</p>
+					<p data-tt="hint51">Het tweede deel van de definitie <code>f(x)</code>, <code><var>A</var></code>, is een simpele functie van een horizontale lijn en heeft dus geen vreemde onderbrekingen of gaten om je zorgen over te maken, dus het is overal gedefinieerd.</p>
+					<p data-tt="hint52">Dus het eerste deel van de definitie is gedefinieerd als <code>x \neq <var>-1*A</var></code> en <code>x \neq <var>C</var></code> en is van toepassing als <code>x \neq <var>B</var></code>; het tweede deel van de definitie is altijd gedefinieerd en is altijd van toepassing als <code>x = <var>B</var></code>. Als we deze voorwaarden samenvoegen, is te zien dat de enige plaatsen waar een definitie van toepassing is als <code>x = <var>-1*A</var></code> en <code>x = <var>C</var></code>. Dus de voorwaarden voor het domein van <code>f(x)</code> zijn dat <code>x \neq <var>-1*A</var></code> en <code>x \neq <var>C</var></code>.</p>
+					<p data-tt="hint53">Vertalen we dit in wiskundige notatie dan is het bereik: <code><var>CHOICES["two-denom-cond-weird"]</var></code>.</p>
+				</div>
 
-            </div>
+			</div>
 
-            <div id="sqrt-poly-frac" data-type="two-denom-simplify">
+			<div id="sqrt-poly-frac" data-type="two-denom-simplify">
 
-                <p class="problem"><code>f(x) = \dfrac{ \sqrt{ x - <var>C</var> } }{ x^2 + <var>A+B</var> x + <var>A*B</var> }</code></p>
+				<p class="problem"><code>f(x) = \dfrac{ \sqrt{ x - <var>C</var> } }{ x^2 + <var>A+B</var> x + <var>A*B</var> }</code></p>
 
-                <p class="solution"><code><var>CHOICES["sqrt-poly-frac"]</var></code></p>
-                <ul class="choices" data-show="5" data-none="true">
-                    <li data-each="filter( CHOICES, function( c ) { return c !== 'sqrt-poly-frac'; } ) as c"><code><var>c</var></code></li>
-                </ul>
+				<p class="solution"><code><var>CHOICES["sqrt-poly-frac"]</var></code></p>
+				<ul class="choices" data-show="5" data-none="true">
+					<li data-each="filter( CHOICES, function( c ) { return c !== 'sqrt-poly-frac'; } ) as c"><code><var>c</var></code></li>
+				</ul>
 
-                <div class="hints">
-                    <p data-tt="hint54"><code>f(x) = \dfrac{ \sqrt{ x - <var>C</var> } }{ x^2 + <var>A+B</var> x + <var>A*B</var> } = \dfrac{ \sqrt{ x - <var>C</var> } }{ ( x + <var>A</var> )( x + <var>B</var> ) }</code></p>
-                    <p data-tt="hint55">First, we need to consider that <code>f(x)</code> is undefined anywhere where the radical is undefined, so the radicand (the expression under the radical) cannot be less than zero.</p>
-                    <p data-tt="hint56">So <code>x - <var>C</var> \geq 0</code>, which means <code>x \geq <var>C</var></code>.</p>
-                    <p data-tt="hint57">Next, we also need to consider that <code>f(x)</code> is undefined anywhere where the denominator is zero.</p>
-                    <p data-tt="hint58">So <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>-1*B</var></code>.</p>
-                    <p data-tt="hint59">However, these last two restrictions are irrelevant since <code><var>C</var> > <var>-1*A</var></code> and <code><var>C</var> > <var>-1*B</var></code> and so <code>x \geq <var>C</var></code> will ensure that <code>x \neq <var>-1*A</var></code> and <code>x \neq <var>-1*B</var></code>.</p>
-                    <p data-tt="hint60">Combining these restrictions, then, leaves us with simply <code>x \geq <var>C</var></code>.</p>
-                    <p data-tt="hint61">Expressing this mathematically, the domain is <code><var>CHOICES["sqrt-poly-frac"]</var></code>.</p>
-                </div>
+				<div class="hints">
+					<p data-tt="hint54"><code>f(x) = \dfrac{ \sqrt{ x - <var>C</var> } }{ x^2 + <var>A+B</var> x + <var>A*B</var> } = \dfrac{ \sqrt{ x - <var>C</var> } }{ ( x + <var>A</var> )( x + <var>B</var> ) }</code></p>
+					<p data-tt="hint55">Eerst moeten we bedenken dat <code>f(x)</code> overal ongedefinieerd is waar de wortel ongedefinieerd is, dus de wortel (de formule onder het wortelteken) kan niet kleiner zijn dan 0.</p>
+					<p data-tt="hint56">Dus <code>x - <var>C</var> \geq 0</code>, wat betekent <code>x \geq <var>C</var></code>.</p>
+					<p data-tt="hint57">Vervolgens moeten we ook bedenken dat <code>f(x)</code> overal ongedefinieerd is waar de noemer 0 is.</p>
+					<p data-tt="hint58">Dus <code>x \neq <var>-1*A</var></code> en <code>x \neq <var>-1*B</var></code>.</p>
+					<p data-tt="hint59">Maar deze laatste twee voorwaarden zijn niet belangrijk omdat <code><var>C</var> > <var>-1*A</var></code> en <code><var>C</var> > <var>-1*B</var></code> en dus zal <code>x \geq <var>C</var></code> er voor zorgen dat <code>x \neq <var>-1*A</var></code> en <code>x \neq <var>-1*B</var></code>.</p>
+					<p data-tt="hint60">Combineren we deze twee voorwaarden dan blijft alleen <code>x \geq <var>C</var></code>over.</p>
+					<p data-tt="hint61">Vertalen we dit in wiskundige notatie dan is het bereik: <code><var>CHOICES["sqrt-poly-frac"]</var></code>.</p>
+				</div>
 
-            </div>
+			</div>
 
-            <div id="sqrt-abs" data-type="two-denom-simplify">
+			<div id="sqrt-abs" data-type="two-denom-simplify">
 
-                <p class="problem"><code>f(x) = \sqrt{ <var>A</var> - \lvert x \rvert }</code></p>
+				<p class="problem"><code>f(x) = \sqrt{ <var>A</var> - \lvert x \rvert }</code></p>
 
-                <p class="solution"><code><var>CHOICES["sqrt-abs"]</var></code></p>
-                <ul class="choices" data-show="5" data-none="true">
-                    <li data-each="filter( CHOICES, function( c ) { return c !== 'sqrt-abs'; } ) as c"><code><var>c</var></code></li>
-                </ul>
+				<p class="solution"><code><var>CHOICES["sqrt-abs"]</var></code></p>
+				<ul class="choices" data-show="5" data-none="true">
+					<li data-each="filter( CHOICES, function( c ) { return c !== 'sqrt-abs'; } ) as c"><code><var>c</var></code></li>
+				</ul>
 
-                <div class="hints">
-                    <p data-tt="hint62"><code>f(x)</code> is undefined when the radicand (the expression under the radical) is less than zero.</p>
-                    <p data-tt="hint63">So we know that <code><var>A</var> - \lvert x \rvert \geq 0</code>.</p>
-                    <p data-tt="hint64">So <code>\lvert x \rvert \leq <var>A</var></code>.</p>
-                    <p data-tt="hint65">This means <code>x \leq <var>A</var></code> and <code>x \geq <var>-1*A</var></code>; or, equivalently, <code><var>-1*A</var> \leq x \leq <var>A</var></code>.</p>
-                    <p data-tt="hint66">Expressing this mathematically, the domain is <code><var>CHOICES["sqrt-abs"]</var></code>.</p>
-                </div>
+				<div class="hints">
+					<p data-tt="hint62"><code>f(x)</code> is ongedefinieerd als de wortel 9(de formule onder het wortelteken) kleiner is dan 0.</p>
+					<p data-tt="hint63">Dus we weten dat <code><var>A</var> - \lvert x \rvert \geq 0</code>.</p>
+					<p data-tt="hint64">Dus <code>\lvert x \rvert \leq <var>A</var></code>.</p>
+					<p data-tt="hint65">Dit betekent dat <code>x \leq <var>A</var></code> en <code>x \geq <var>-1*A</var></code>; of, anders geschreven, <code><var>-1*A</var> \leq x \leq <var>A</var></code>.</p>
+					<p data-tt="hint66">Vertalen we dit in wiskundige notatie dan is het domein: <code><var>CHOICES["sqrt-abs"]</var></code>.</p>
+				</div>
 
-            </div>
+			</div>
 
-            <div id="inverse-sqrt-abs" data-type="two-denom-simplify">
+			<div id="inverse-sqrt-abs" data-type="two-denom-simplify">
 
-                <p class="problem"><code>f(x) = \dfrac{ <var>B</var> }{ \sqrt{ <var>A</var> - \lvert x \rvert } }</code></p>
+				<p class="problem"><code>f(x) = \dfrac{ <var>B</var> }{ \sqrt{ <var>A</var> - \lvert x \rvert } }</code></p>
 
-                <p class="solution"><code><var>CHOICES["inverse-sqrt-abs"]</var></code></p>
-                <ul class="choices" data-show="5" data-none="true">
-                    <li data-each="filter( CHOICES, function( c ) { return c !== 'inverse-sqrt-abs'; } ) as c"><code><var>c</var></code></li>
-                </ul>
+				<p class="solution"><code><var>CHOICES["inverse-sqrt-abs"]</var></code></p>
+				<ul class="choices" data-show="5" data-none="true">
+					<li data-each="filter( CHOICES, function( c ) { return c !== 'inverse-sqrt-abs'; } ) as c"><code><var>c</var></code></li>
+				</ul>
 
-                <div class="hints">
-                    <p data-tt="hint67">First, we need to consider that <code>f(x)</code> is undefined anywhere where the radicand (the expression under the radical) is less than zero.</p>
-                    <p data-tt="hint68">So we know that <code><var>A</var> - \lvert x \rvert \geq 0</code>.</p>
-                    <p data-tt="hint69">This means <code>\lvert x \rvert \leq <var>A</var></code>, which means <code><var>-1*A</var> \leq x \leq <var>A</var></code>.</p>
-                    <p data-tt="hint70">Next, we need to consider that <code>f(x)</code> is also undefined anywhere where the denominator is zero.</p>
-                    <p data-tt="hint71">So we know that <code>\sqrt{ <var>A</var> - \lvert x \rvert } \neq 0</code>, so <code>\lvert x \rvert \neq <var>A</var></code>.</p>
-                    <p data-tt="hint72">This means that <code>x \neq <var>A</var></code> and <code>x \neq <var>-1*A</var></code>.</p>
-                    <p data-tt="hint73">So we have four restrictions: <code>x \geq <var>-1*A</var></code>, <code>x \leq <var>A</var></code>, <code>x \neq <var>-1*A</var></code>, and <code>x \neq <var>A</var></code>.</p>
-                    <p data-tt="hint74">Combining these four, we know that <code>x > <var>-1*A</var></code> and <code>x < <var>A</var></code>; alternatively, that <code><var>-1*A</var> < x < <var>A</var></code>.</p>
-                    <p data-tt="hint75">Expressing this mathematically, the domain is <code><var>CHOICES["inverse-sqrt-abs"]</var></code>.</p>
-                </div>
+				<div class="hints">
+					<p data-tt="hint67">Eerst moeten we bedenken dat <code>f(x)</code> overal ongedefinieerd is waar de wortel (de functie onder het wortelteken) kleiner is dan 0.</p>
+					<p data-tt="hint68">Dus we weten dat <code><var>A</var> - \lvert x \rvert \geq 0</code>.</p>
+					<p data-tt="hint69">Dit betekent <code>\lvert x \rvert \leq <var>A</var></code>, wat betekent <code><var>-1*A</var> \leq x \leq <var>A</var></code>.</p>
+					<p data-tt="hint70">Vervolgens moeten we bedenken dat <code>f(x)</code> overal ongedefinieerd is waar de noemer 0 is.</p>
+					<p data-tt="hint71">Dus we weten dat <code>\sqrt{ <var>A</var> - \lvert x \rvert } \neq 0</code>, dus <code>\lvert x \rvert \neq <var>A</var></code>.</p>
+					<p data-tt="hint72">Dit betekent dat <code>x \neq <var>A</var></code> en <code>x \neq <var>-1*A</var></code>.</p>
+					<p data-tt="hint73">Dus we hebben vier voorwaarden <code>x \geq <var>-1*A</var></code>, <code>x \leq <var>A</var></code>, <code>x \neq <var>-1*A</var></code>, en <code>x \neq <var>A</var></code>.</p>
+					<p data-tt="hint74">Deze vier voorwaarden gecombineerd weten we dat <code>x > <var>-1*A</var></code> en <code>x < <var>A</var></code> en <code><var>-1*A</var> < x < <var>A</var></code>.</p>
+					<p data-tt="hint75">Vertalen we dit in wiskundige notatie dan is het bereik: <code><var>CHOICES["inverse-sqrt-abs"]</var></code>.</p>
+				</div>
 
-            </div>
+			</div>
 
 
 
-        </div>
-    </div>
+		</div>
+	</div>
 </body>
 </html>

@@ -58,7 +58,7 @@
     </span>
     <ul class="dropdown-menu no-submenus">
         {% if user_data.is_phantom %}
-        <li><a class="dropdown-link" href="{{login_url}}">Log in om alles te bewaren</a></li>
+        <li><a class="dropdown-link" href="{{login_url}}">Log in</a></li>
         {% endif %}
 
         <li><a class="dropdown-link{% if user_data.is_demo %} show-demo-dialog{% endif %}" href="{{profile_root}}">Bekijk je profiel</a></li>

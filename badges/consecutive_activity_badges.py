@@ -14,8 +14,8 @@ class ConsecutiveActivityBadge(badges.Badge):
                 self.days_required)
 
     def extended_description(self):
-        return ("Watch part of any video or work on any skill each day for "
-                 "%s consecutive days") % self.days_required
+        return ("Bekijk een gedeelte van een willekeurige video of werk  elke dag een aan vaardigheid voor "
+                 "de komende %s dagen") % self.days_required
 
 
 @badges.active_badge
@@ -23,7 +23,7 @@ class FiveDayConsecutiveActivityBadge(ConsecutiveActivityBadge):
     def __init__(self):
         ConsecutiveActivityBadge.__init__(self)
         self.days_required = 5
-        self.description = "Good Habits"
+        self.description = "Goede Gewoonten"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -33,7 +33,7 @@ class FifteenDayConsecutiveActivityBadge(ConsecutiveActivityBadge):
     def __init__(self):
         ConsecutiveActivityBadge.__init__(self)
         self.days_required = 15
-        self.description = "Like Clockwork"
+        self.description = "Op rolletjes"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0
 

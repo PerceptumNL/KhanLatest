@@ -22,7 +22,7 @@
         "isOwned": false,
         "name": "powerfifteenminutesbadge",
         "points": 0,
-        "safeExtendedDescription": "Correctly answer 10 problems and watch 10 minutes of video in 15 minutes"
+        "safeExtendedDescription": "Beantwoord 10 problemen correct en bekijk een video van 10  minuten in 15 minuten"
     },
     "dt": "2012-03-09T20:13:14Z",
     "sType": "Badge",
@@ -45,7 +45,7 @@
 }, {
     "badge": {
         "badgeCategory": 0,
-        "description": "Picking Up Steam",
+        "description": "De vaart erin",
         "hideContext": false,
         "iconSrc": "/images/badges/meteorite-small.png",
         "icons": {
@@ -56,7 +56,7 @@
         "isOwned": false,
         "name": "nicetimedproblembadge",
         "points": 100,
-        "safeExtendedDescription": "Quickly & correctly answer 5 exercise problems in a row (time limit depends on exercise difficulty)"
+        "safeExtendedDescription": "Beantwoord snel & correct 5 vaardigheden problemen achter elkaar (tijdslimiet hangt af van de moeilijkheidsgraad)"
     },
     "dt": "2012-03-09T20:01:05Z",
     "sType": "Badge",

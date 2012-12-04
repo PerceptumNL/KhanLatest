@@ -35,8 +35,8 @@ class TimedProblemBadge(ExerciseBadge):
         return False
 
     def extended_description(self):
-        return ("Quickly & correctly answer %s skill problems in a row "
-                "(time limit depends on skill difficulty)" %
+        return ("Beantwoord snel & correct %s vaardigheden problemen achter elkaar "
+                "(tijdslimiet hangt af van de moeilijkheidsgraad)" %
                 str(self.problems_required))
 
 
@@ -46,7 +46,7 @@ class NiceTimedProblemBadge(TimedProblemBadge):
     def __init__(self):
         TimedProblemBadge.__init__(self)
         self.problems_required = 5
-        self.description = "Picking Up Steam"
+        self.description = "De vaart erin"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 100
 

@@ -14,7 +14,7 @@ class ExerciseCompletionCountBadge(badges.Badge):
                 self.required_exercises)
 
     def extended_description(self):
-        return "Bekwaamheid in %d vaardigheden" % self.required_exercises
+        return "Wordt bekwaam in %d willekeurige vaardigheden" % self.required_exercises
 
 
 @badges.active_badge
@@ -32,7 +32,7 @@ class MakingProgressBadge(ExerciseCompletionCountBadge):
     def __init__(self):
         ExerciseCompletionCountBadge.__init__(self)
         self.required_exercises = 7
-        self.description = "Op dreef"
+        self.description = "Vooruitgang boeken"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 1000
 
@@ -52,7 +52,7 @@ class HardAtWorkBadge(ExerciseCompletionCountBadge):
     def __init__(self):
         ExerciseCompletionCountBadge.__init__(self)
         self.required_exercises = 25
-        self.description = "Hard aan het werk"
+        self.description = "Hard gewerkt"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 6000
 

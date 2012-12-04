@@ -10,13 +10,12 @@ class FirstFlagBadge(badges.Badge):
 
     def __init__(self):
         badges.Badge.__init__(self)
-        self.description = "Flag Duty"
+        self.description = "Markeer Verplichting"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
     def extended_description(self):
-        return ("Flag your first question, comment, or answer beneath a "
-                "video for a moderator's attention")
+        return ("Markeer je eerste vraag of plaats een opmerkinge onder een video")
 
     def is_manually_awarded(self):
         return True
@@ -27,13 +26,13 @@ class FirstUpVoteBadge(badges.Badge):
 
     def __init__(self):
         badges.Badge.__init__(self)
-        self.description = "Thumbs Up"
+        self.description = "Duimen op"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
     def extended_description(self):
-        return ("Cast your first up vote for a helpful question, answer, "
-                "or comment beneath a video")
+        return ("Breng je eerste positieve stem uit voor een nuttige vraag, antwoord "
+                "of opmerking onder een video")
 
     def is_manually_awarded(self):
         return True
@@ -44,13 +43,13 @@ class FirstDownVoteBadge(badges.Badge):
 
     def __init__(self):
         badges.Badge.__init__(self)
-        self.description = "Thumbs Down"
+        self.description = "Duimen omlaag"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
     def extended_description(self):
-        return ("Cast your first down vote for an unhelpful question, "
-                "answer, or comment beneath a video")
+        return ("Breng je eerste negatieve stem uit voor nutteloze vraag, "
+                "antwoord, of opmerking onder een video")
 
     def is_manually_awarded(self):
         return True
@@ -61,7 +60,7 @@ class ModeratorBadge(badges.Badge):
 
     def __init__(self):
         badges.Badge.__init__(self)
-        self.description = "Moderator"
+        self.description = "Beheerder"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0
 
@@ -69,8 +68,8 @@ class ModeratorBadge(badges.Badge):
         self.is_hidden_if_unknown = True
 
     def extended_description(self):
-        return ("Become a moderator of questions, answers, and comments "
-                "beneath videos")
+        return ("Word beheerder van vragen, antwoorden en opmerkingen "
+                "onder video&#39;s")
 
     def is_manually_awarded(self):
         return True
@@ -104,10 +103,10 @@ class AnswerTimestampReferenceBadge(FeedbackTimestampReferenceBadge):
 
     def __init__(self):
         FeedbackTimestampReferenceBadge.__init__(self)
-        self.description = "Researcher"
+        self.description = "Onderzoeker"
 
     def extended_description(self):
-        return "Reference a timestamp when answering a question on a video"
+        return "Verwijs naar de datum wanneer je een vraag beantwoord bij een video"
 
     def required_feedback_type(self):
         return discussion.discussion_models.FeedbackType.Answer
@@ -119,10 +118,10 @@ class QuestionTimestampReferenceBadge(FeedbackTimestampReferenceBadge):
 
     def __init__(self):
         FeedbackTimestampReferenceBadge.__init__(self)
-        self.description = "Bibliographer"
+        self.description = "Bibliograaf"
 
     def extended_description(self):
-        return "Reference a timestamp when asking a question on a video"
+        return "Verwijs naar de datum wanneer je een vraag stelt bij een video"
 
     def required_feedback_type(self):
         return discussion.discussion_models.FeedbackType.Question

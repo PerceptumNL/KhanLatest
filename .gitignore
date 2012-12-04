@@ -34,3 +34,4 @@ tools/node_modules/*
 third_party/appengine-search-src
 gae_login.mk
 deploy/env
+tools/google_appengine/*

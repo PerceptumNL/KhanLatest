@@ -14,7 +14,7 @@ class ExerciseCompletionCountBadge(badges.Badge):
                 self.required_exercises)
 
     def extended_description(self):
-        return "Achieve proficiency in any %d skills" % self.required_exercises
+        return "Wordt bekwaam in %d willekeurige vaardigheden" % self.required_exercises
 
 
 @badges.active_badge
@@ -22,7 +22,7 @@ class GettingStartedBadge(ExerciseCompletionCountBadge):
     def __init__(self):
         ExerciseCompletionCountBadge.__init__(self)
         self.required_exercises = 3
-        self.description = "Just Getting Started"
+        self.description = "Net begonnen"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 100
 
@@ -32,7 +32,7 @@ class MakingProgressBadge(ExerciseCompletionCountBadge):
     def __init__(self):
         ExerciseCompletionCountBadge.__init__(self)
         self.required_exercises = 7
-        self.description = "Making Progress"
+        self.description = "Vooruitgang boeken"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 1000
 
@@ -42,7 +42,7 @@ class ProductiveBadge(ExerciseCompletionCountBadge):
     def __init__(self):
         ExerciseCompletionCountBadge.__init__(self)
         self.required_exercises = 15
-        self.description = "Productive"
+        self.description = "Productief"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 2000
 
@@ -52,7 +52,7 @@ class HardAtWorkBadge(ExerciseCompletionCountBadge):
     def __init__(self):
         ExerciseCompletionCountBadge.__init__(self)
         self.required_exercises = 25
-        self.description = "Hard at Work"
+        self.description = "Hard gewerkt"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 6000
 
@@ -62,7 +62,7 @@ class WorkHorseBadge(ExerciseCompletionCountBadge):
     def __init__(self):
         ExerciseCompletionCountBadge.__init__(self)
         self.required_exercises = 50
-        self.description = "Work Horse"
+        self.description = "Werkpaard"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 14000
 

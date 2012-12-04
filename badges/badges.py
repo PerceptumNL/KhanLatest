@@ -53,23 +53,23 @@ class BadgeCategory(object):
     @staticmethod
     def get_description(category):
         if category == BadgeCategory.BRONZE:
-            return ("Meteorite badges are common and easy to earn when just "
-                    "getting started.")
+            return ("Meteoriet badges komen vaak voor en zijn makkelijk te verdienen wanneer "
+                    "je net begint.")
         elif category == BadgeCategory.SILVER:
-            return ("Moon badges are uncommon and represent an investment in "
-                    "learning.")
+            return ("Maan badges zijn ongebruikelijk en geven aan dat je veel tijd hebt gestoken om "
+                    "te leren rekenen.")
         elif category == BadgeCategory.GOLD:
-            return ("Earth badges are rare. They require a significant amount "
+            return ("Aarde badges zijn zeldzaam. Deze vereisen een aanzienlijke hoeveel tijd "
                     "of learning.")
         elif category == BadgeCategory.PLATINUM:
-            return ("Sun badges are epic. Earning them is a true challenge, "
-                    "and they require impressive dedication.")
+            return ("Zon badges zijn episch. Deze verdienen is een ware uitdaging "
+                    "en ze vereisen een enorme toewijding.")
         elif category == BadgeCategory.DIAMOND:
-            return ("Black Hole badges are legendary and unknown. They are "
-                    "the most unique Khan Academy awards.")
+            return ("Zwarte gad badges zijn legendarisch en onbekend. Dit zijn "
+                    "de meest unieke badges die te verdienen zijn bij de Khan Academie.")
         elif category == BadgeCategory.MASTER:
-            return ("Challenge Patches are special awards for completing "
-                    "topic challenges.")
+            return ("Uitdagings buttons zijn speciale beloningen die je kunt verdienen als je een  "
+                    "onderwerp hebt voltooid.")
         return ""
 
     @staticmethod

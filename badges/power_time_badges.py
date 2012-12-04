@@ -55,7 +55,7 @@ class PowerTimeBadge(badges.Badge):
         return True
 
     def extended_description(self):
-        return "Correctly answer %s problems and watch %s of video in %s" % (
+        return "Beantwoord %s problemen correct en bekijk %s van de video van de %s" % (
             self.problems_required,
             templatefilters.seconds_to_time_string(
                 self.video_seconds_required),
@@ -70,7 +70,7 @@ class PowerFifteenMinutesBadge(PowerTimeBadge):
         self.problems_required = 10
         self.video_seconds_required = 60 * 10
         self.seconds_allotted = 60 * 15
-        self.description = "Inspired 15 Minutes"
+        self.description = "15 Minuten"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -83,7 +83,7 @@ class PowerHourBadge(PowerTimeBadge):
         self.problems_required = 90
         self.video_seconds_required = 15 * 60
         self.seconds_allotted = 3600
-        self.description = "Power Hour"
+        self.description = "Power Uur"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0
 
@@ -96,6 +96,6 @@ class DoublePowerHourBadge(PowerTimeBadge):
         self.problems_required = 90 * 2
         self.video_seconds_required = 30 * 60
         self.seconds_allotted = 3600 * 2
-        self.description = "Double Power Hour"
+        self.description = "Dubbel Power Uur"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 0

@@ -14,7 +14,7 @@ class PointBadge(badges.Badge):
         return user_data.points >= self.required_points
 
     def extended_description(self):
-        return ("Earn %s energy points" %
+        return ("Verdien %s energie punten" %
                 util.thousands_separated_number(self.required_points))
 
 
@@ -23,7 +23,7 @@ class TenThousandaireBadge(PointBadge):
     def __init__(self):
         PointBadge.__init__(self)
         self.required_points = 10000
-        self.description = "Ten to the Fourth"
+        self.description = "Tien tot de macht Vier"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -33,7 +33,7 @@ class HundredThousandaireBadge(PointBadge):
     def __init__(self):
         PointBadge.__init__(self)
         self.required_points = 100000
-        self.description = "Ten to the Fifth"
+        self.description = "Tien tot de macht Vijf"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0
 
@@ -43,7 +43,7 @@ class FiveHundredThousandaireBadge(PointBadge):
     def __init__(self):
         PointBadge.__init__(self)
         self.required_points = 500000
-        self.description = "Five Times Ten to the Fifth"
+        self.description = "Vijf maal Tien tot de macht Vijf"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 0
 
@@ -53,7 +53,7 @@ class MillionaireBadge(PointBadge):
     def __init__(self):
         PointBadge.__init__(self)
         self.required_points = 1000000
-        self.description = "Millionaire"
+        self.description = "Miljonair"
         self.badge_category = badges.BadgeCategory.PLATINUM
         self.points = 0
 

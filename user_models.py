@@ -278,7 +278,7 @@ class UserData(gae_bingo.models.GAEBingoIdentityModel,
                 (ex: "Addition 1")
             ignore_target_context: Whether to ignore the target context.
                 (ex: True if we are only interested in checking that this user
-                has earned a "Just Getting Started" badge, regardless of what
+                has earned a "Net begonnen" badge, regardless of what
                 exercise(s) it was in.)
 
         """

@@ -36,10 +36,10 @@
                   {{#if isFullyEditable}}
                   <li><a class="edit-basic-info" href="javascript:void(0)">Voeg algemene info toe</a></li>
                   {{/if}}
-                  <li><a class="edit-display-case" href="javascript:void(0)">Edit display case</a></li>
+                  <li><a class="edit-display-case" href="javascript:void(0)">Voeg mini avatar toe</a></li>
                   <li><a class="edit-avatar" href="javascript:void(0)">Voeg avatar toe</a></li>
                   {{#if isFullyEditable}}
-                  <li><a class="edit-visibility" href="javascript:void(0)">Toggle privacy setting</a></li>
+                  <li><a class="edit-visibility" href="javascript:void(0)">Privacy instellingen</a></li>
                   {{/if}}
               </ul>
             </span>
@@ -58,7 +58,7 @@
 </div>
 {{#if isFullyEditable}}
 <a href="javascript:void(0)"
-    class="edit-visibility visibility-toggler {{#if isPublic}}public{{else}}private{{/if}}">Profile is {{#if isPublic}}public{{else}}private{{/if}}</a>
+    class="edit-visibility visibility-toggler {{#if isPublic}}public{{else}}private{{/if}}">Profiel is {{#if isPublic}}openbaar{{else}}priv&#233{{/if}}</a>
 <div id="username-picker-container" class="modal fade hide" style="display: none;">
 </div>
 {{/if}}

@@ -56,7 +56,7 @@ def seconds_to_time_string(seconds_init, short_display = True):
     else:
         if seconds and not minutes:
             return "%d second%s" % (seconds, pluralize(seconds))
-        return "%d minute%s" % (minutes, pluralize(minutes))
+        return "%d %s" % (minutes, "minuut" if minutes == 1 else "minuten")
 
 
 def youtube_timestamp_links(content):

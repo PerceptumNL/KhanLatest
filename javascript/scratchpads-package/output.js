@@ -395,7 +395,7 @@ window.Output = {
         testAnswer: function(name, val) {
             Output.testAnswers.push({ answer: val, text: "<form>" + name +
                 "<br/><input type='text'/>" +
-                "<input type='submit' value='Check Answer' class='ui-button'/></form>" });
+                "<input type='submit' value='Check antwoord' class='ui-button'/></form>" });
         },
 
         task: function(msg, tip) {

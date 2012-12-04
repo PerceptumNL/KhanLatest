@@ -10,6 +10,7 @@ import urllib2
 import webbrowser
 
 sys.path.append(os.path.abspath("."))
+sys.path.append(os.path.abspath("./tools/google_appengine/"))
 import compress
 import npm
 
@@ -75,8 +76,8 @@ def compile_templates():
 def main():
     start = datetime.datetime.now()
     print "Checking for node and dependencies"
-    if not check_deps():
-        return
+    #if not check_deps(): - We do this only once
+    #    return
 
     # Delete obsolete .pyc files, that do not have an associated .py file.
     delete_orphan_pyc_files('.')

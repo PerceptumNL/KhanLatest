@@ -25,11 +25,6 @@ help:
 	@echo "ALSO USEFUL:"
 	@echo "   handlebars/jinja/exercises/js/css/less: used by deploy"
 	@echo
-#	@echo "   allcheck: run all tests (including 'large') and linter"
-#	@echo "   allclean: remove all non-source-controlled files"
-#	@echo "   lint: run lint checks over the entire source tree"
-#	@echo "   quickcheck: run 'small' tests and linter"
-#	@echo "   test: run 'small' and 'medium' tests, but no linter"
 
 deploy: install_deps package_deploy upload_deploy notify
 
@@ -102,35 +97,25 @@ clean:
 	rm -rf $(VE)
 	rm -rf $(APPDIR)
 
-# Install dependencies required for development.
-VE:
-
-VE-install: VE
-	@which virtualenv > /dev/null
-	@if test -d ; \
+# Install dependencies required for development.c
+create_env:
+	@if [ ! -d $(VE) ]; \
 	then \
-		echo "Found 'virtualenv'"; \
+		echo "Creating virtual environment in $(VE)..."; \
+		virtualenv $(VE); \
+		echo "Done."; \
 	else \
-		echo "Please install virtualenv"; \
-		echo " easy_install virtualenv"; \
+		echo "Existing virtual environment in $(VE)."; \
 	fi
 
-VE-prepare: VE-install
-	@$(ls $(VE) > /dev/null)
-	@if [ -d $(VE) ]; \
-    then \
-		echo "Existing virtual environment in $(VE)"; \
-    else \
-		echo "Creating new virtual environment in $(VE)"; \
-		virtualenv $(VE); \
-    fi
-
-install_deps: VE-prepare
+install_deps: create_env
 	@echo "Initialize and update Git submodules..."
 	@git submodule init
 	@git submodule update
 	@echo "Done."
+
 	@echo "Installing PIP packages..."
+	@source deploy/env/bin/activate
 	@pip install -r deploy/requirements.txt --exists-action=i
 	@echo "Done."
 	@if [ ! -d $(APPDIR) ]; \
@@ -142,11 +127,12 @@ install_deps: VE-prepare
 		echo "Existing Google AppEngine in $(APPDIR)"; \
 	fi
 
-run-local:
-	python $(APPDEV) --high_replication --use_sqlite --allow_skipped_files --datastore_path=testutil/test_db2.sqlite . 
+run-local: install_deps
+	python $(APPDEV) --high_replication --use_sqlite --allow_skipped_files --datastore_path=testutil/test_db.sqlite . 
 
 clear-local:
-	python $(APPDEV) -c --high_replication --use_sqlite --allow_skipped_files --datastore_path=testutil/test_db2.sqlite . 
+	rm testutil/test_db.sqlite
+	python $(APPDEV) --high_replication --use_sqlite --allow_skipped_files --datastore_path=testutil/test_db.sqlite . 
 
 # Run tests.  If COVERAGE is set, run them in coverage mode.  If
 # MAX_TEST_SIZE is set, only tests of this size or smaller are run.

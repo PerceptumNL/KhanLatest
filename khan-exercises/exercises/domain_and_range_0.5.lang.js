@@ -1,7 +1,7 @@
 ({
 	"nl" : {
-		"question1"	: 'The function <code>f(x)</code> is graphed; what is its domain?',
-		"question2"	: 'The function <code>f(x)</code> is graphed; what is its range?',
+		"question1"	: 'De functie <code>f(x)</code> is opgenomen in een grafiek; wat is het domein?',
+		"question2"	: 'De functie <code>f(x)</code> is opgenomen in een grafiek; wat is het bereik?',
 		"question3"	: '',
 		"question4"	: '',
 		"question5"	: '',
@@ -15,10 +15,10 @@
 		"problem5"	: '',
 		"problem6"	: '',
 		
-		"hint1"		: 'For what values of <code>x</code> does <code>f(x)</code> have a value?',
+		"hint1"		: 'Voor welke waarden van <code>x</code> heeft <code>f(x)</code> een waarde?',
 		"hint2"		: 'What values can <code>f(x)</code> have?',
-		"hint3"		: 'Look at the vertical axis as if it were a number line.',
-		"hint4"		: 'Look at the horizontal axis as if it were a number line.',
+		"hint3"		: 'Kijk naar de horizontale as, alsof het een getallenlijn is..',
+		"hint4"		: 'Kijk naar de verticale as, alsof het een getallenlijn is.',
 		"hint5"		: '',
 		"hint6"		: '',
 		"hint7"		: '',

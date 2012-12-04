@@ -86,3 +86,6 @@ def check_dependencies():
 
     print npm_results
     return True
+
+if __name__ == "__main__":
+    check_dependencies()

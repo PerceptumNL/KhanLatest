@@ -6,18 +6,18 @@
     {{else}}
       {{#if topic.previous_topic_video }}
         <label id="prev_video">
-          <a rel=prev class="previous-video" href="/{{ topic.previous_topic_subtopic_slug }}/v/{{ topic.previous_topic_video }}"><b>Previous Topic:</b> {{ topic.previous_topic_title }}</a>
+          <a rel=prev class="previous-video" href="/{{ topic.previous_topic_subtopic_slug }}/v/{{ topic.previous_topic_video }}"><b>Vorig onderwerp:</b> {{ topic.previous_topic_title }}</a>
         </label>
       {{/if}}
     {{/if}}
     {{#if video.next_video }}
     <label id="next_video">
-      <a rel=next class="next-video" href="/{{ topic.extended_slug }}/v/{{ video.next_video.readable_id }}"><b>Next Video:</b>  <span class='vid-progress v{{ video.next_video.key_id }}'>{{ video.next_video.title }}</span> </a>
+      <a rel=next class="next-video" href="/{{ topic.extended_slug }}/v/{{ video.next_video.readable_id }}"><b>Volgende Video:</b>  <span class='vid-progress v{{ video.next_video.key_id }}'>{{ video.next_video.title }}</span> </a>
     </label>
     {{else}}
       {{#if topic.next_topic_video }}
         <label id="next_video">
-          <a rel=next class="next-video" href="/{{ topic.next_topic_subtopic_slug }}/v/{{ topic.next_topic_video }}"><b>Next Topic:</b> {{ topic.next_topic_title }}</a>
+          <a rel=next class="next-video" href="/{{ topic.next_topic_subtopic_slug }}/v/{{ topic.next_topic_video }}"><b>Volgende onderwerp:</b> {{ topic.next_topic_title }}</a>
         </label>
       {{/if}}
     {{/if}}

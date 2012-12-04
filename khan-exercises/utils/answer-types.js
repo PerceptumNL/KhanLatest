@@ -31,7 +31,7 @@ $.extend(Khan.answerTypes, {
             // is empty and the fallback doesn't exist.
             var val = input.val().length > 0 ?
                 input.val() :
-                (typeof fallback !== "onbepaald") ?
+                (typeof fallback !== "undefined") ?
                     fallback + "" :
                     "";
 
@@ -90,7 +90,7 @@ $.extend(Khan.answerTypes, {
             simplify: "required",
             ratio: false,
             maxError: Math.pow(2, -42),
-            forms: "letters, heel getal, echte, onechte, gemengde, decimale"
+            forms: "literal, integer, proper, improper, mixed, decimal"
         }, $(solution).data());
         var acceptableForms = (accForms || options.forms).split(/\s*,\s*/);
 
@@ -370,11 +370,11 @@ $.extend(Khan.answerTypes, {
                             correct.toLowerCase() === val.toLowerCase()) {
                         ret = true;
                         return false; // break;
-                    } if (typeof val === "nummer" &&
+                    } if (typeof val === "number" &&
                             Math.abs(correctFloat - val) < options.maxError) {
-                        if (exact || options.simplify === "optioneel") {
+                        if (exact || options.simplify === "optional") {
                             ret = true;
-                        } else if (form === "percentage") {
+                        } else if (form === "percent") {
                             ret = inexactMessages.missingPercentSign;
                         } else {
                             ret = inexactMessages.unsimplified;
@@ -413,20 +413,20 @@ $.extend(Khan.answerTypes, {
     },
 
     decimal: function(solutionarea, solution, fallback) {
-        return Khan.answerTypes.number(solutionarea, solution, fallback, "decimaal");
+        return Khan.answerTypes.number(solutionarea, solution, fallback, "decimal");
     },
 
     rational: function(solutionarea, solution, fallback) {
-        return Khan.answerTypes.number(solutionarea, solution, fallback, "heel getal, echt, onecht, gemengd");
+        return Khan.answerTypes.number(solutionarea, solution, fallback, "integer, proper, improper, mixed");
     },
 
     // A little bit of a misnomer as proper fractions are also accepted
     improper: function(solutionarea, solution, fallback) {
-        return Khan.answerTypes.number(solutionarea, solution, fallback, "heel getal, echt, onecht");
+        return Khan.answerTypes.number(solutionarea, solution, fallback, "integer, proper, improper");
     },
 
     mixed: function(solutionarea, solution, fallback) {
-        return Khan.answerTypes.number(solutionarea, solution, fallback, "heel getal, echt, gemengd");
+        return Khan.answerTypes.number(solutionarea, solution, fallback, "integer, proper, mixed");
     },
 
     radical: function(solutionarea, solution) {

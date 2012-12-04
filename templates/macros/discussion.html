@@ -3,29 +3,29 @@
 
     <div class="video_comments requires_script">
         <a name="comments"></a>
-        <strong>Comments:</strong>
+        <strong>Opmerkingen:</strong>
 
-        <div class="comments_container"><em>Loading...</em> <img class="icon" src="{{ "/images/throbber.gif"|static_url }}"/></div>
+        <div class="comments_container"><em>Laden...</em> <img class="icon" src="{{ "/images/throbber.gif"|static_url }}"/></div>
 
         {% if logged_in %}
             {% if not user_data.is_child_account() %}
             <a href="#" class="control comment_add">
                 <img class="icon" src="{{ "/images/balloon-plus.png"|static_url }}" />
-                Add a comment
+                Voeg een opmerking toe
             </a>
             {% endif %}
         
         {% else %}
         <a href="{{ ("/video?v=%s" % video.youtube_id)|login_url }}" class="control">
             <img class="icon" src="{{ "/images/balloon-plus.png"|static_url }}" />
-            Log in to add a comment
+            Log in om een opmerking toe te voegen
         </a>
         {% endif %}
 
         <span class="comments_show_more">
             <a href="javascript:void(0);" class="comment_show control uses_script">
                 <img class="icon" src="{{ "/images/balloons.png"|static_url }}" />
-                Show more
+                Laat meer zien
             </a>
         </span>
 
@@ -122,7 +122,7 @@
                        type="button" 
                        value="{{ button_label }}" />
 
-                of <a href="#" class="{{ feedback_type }}_cancel control">Cancel</a>
+                of <a href="#" class="{{ feedback_type }}_cancel control">Sluit</a>
             </div>
 
             {% if show_chars_remaining %}

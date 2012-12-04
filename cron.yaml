@@ -1,5 +1,10 @@
 cron:
 
+- description: check for new blog entries
+  url: /admin/updateblogentries
+  schedule: every 2 hours
+  timezone: Europe/Amsterdam
+
 - description: badge update
   url: /admin/startnewbadgemapreduce
   schedule: every 72 hours

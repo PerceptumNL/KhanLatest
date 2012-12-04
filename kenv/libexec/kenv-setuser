@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Usage: kenv setuser 
+# Summary: Prompts for username/password and saves it for further deployments
+
+read -p "User email: " EMAIL; 
+if [ -z ${EMAIL} ]; 
+then 
+    print_error "Email empty"; 
+    exit 1; 
+fi; 
+unset PASS 
+prompt="Enter Password: "
+while IFS= read -p "$prompt" -r -s -n 1 char
+  do
+    if [[ $char == $'\0' ]]
+    then
+    break
+  fi
+  prompt='*'
+  PASS+="$char"
+done
+
+if [ -z ${PASS} ]; 
+then 
+    print_error "Password empty"; 
+    exit 1; 
+fi; 
+
+echo -e "PASS=${PASS}\nEMAIL=${EMAIL}" > ${SETTINGS}; 
+echo
+print_msg "Saved in file ${SETTINGS}"

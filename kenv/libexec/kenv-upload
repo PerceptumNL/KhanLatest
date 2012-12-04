@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -e
+
+APPCFG=$_GAE_ROOT/appcfg.py
+CONFIGFILE=$_KHAN_ROOT/app.yaml
+source $SETTINGS
+
+read_version() {
+	APP_VERSION=`sed '/^ *#/d;s/:/ /;' < "$CONFIGFILE" | while read key val; 
+	do 
+		if [ "${key}" == "version" ]; then 
+			echo $val; 
+			break; 
+		fi 
+	done` 
+	read -p  "Version to deploy [${APP_VERSION}]: " INPUT_VERSION; 
+	if [ ! -z $INPUT_VERSION ]; then
+		APP_VERSION=$INPUT_VERSION
+	fi
+	export APP_VERSION
+}
+
+read_version
+
+if [ -z $PASS ] | [ -z $EMAIL ]; then 
+  kenv-setuser
+  if [ ! -z $? ]; then
+		exit 1
+  fi
+fi
+
+print_msg "Uploading version ..."; 
+echo $PASS | python $APPCFG --passin -e $EMAIL -V $APP_VERSION update . ; 
+

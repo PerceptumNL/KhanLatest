@@ -1,0 +1,2 @@
+eval "$(kenv/bin/kenv init -)"
+

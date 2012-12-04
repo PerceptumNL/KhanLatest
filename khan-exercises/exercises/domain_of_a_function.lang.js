@@ -1,6 +1,6 @@
 ({
 	"nl" : {
-		"question1"	: 'What is the domain of <code>f(x)</code>?'
+		"question1"	: 'Wat is het domein van <code>f(x)</code>?'
 		
 		"hint1"		: '<code>f(x)</code> is undefined when the denominator is 0.',
 		"hint2"		: 'The denominator is 0 when <code>x=<var>(-1*A)</var></code> or <code>x=<var>B</var></code>.',

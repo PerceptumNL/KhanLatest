@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Usage: kenv runlocal
+# Summary: Starts a local server accessible via http://localhost:8080
+
+APPDEV=$_GAE_ROOT/dev_appserver.py
+
+python $APPDEV --high_replication --use_sqlite --allow_skipped_files --datastore_path=testutil/test_db.sqlite . 
+

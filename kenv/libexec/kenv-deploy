@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Usage: kenv deploy 
+# Summary: Deploys a version to production server
+# Help: This will print out when you run `kenv help deploy`.
+#
+# Example:
+#
+#    kenv deploy testing
+#    
+
+set -e
+
+cd $_KHAN_ROOT 
+source deploy/env/bin/activate
+python deploy/deploy.py
+if [ ! $? -eq 0 ]; then
+  exit 1
+fi
+kenv upload
+cd -

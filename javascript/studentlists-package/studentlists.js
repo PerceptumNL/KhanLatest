@@ -260,7 +260,7 @@ var StudentLists = {
                 jelAll.show();
 
                 nstudents = jelAll.length;
-                title = "All students";
+                title = "All leerlingen";
                 titleHref = "/class_profile";
                 $("#delete-list").hide();
                 if (StudentLists.Data.students.length === 0) {

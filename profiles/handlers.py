@@ -44,7 +44,7 @@ class ViewClassProfile(request_handler.RequestHandler):
 
         student_lists_list = [{
             'key': 'allstudents',
-            'name': 'All students',
+            'name': 'Alle leerlingen',
         }]
         for student_list in student_lists:
             student_lists_list.append({

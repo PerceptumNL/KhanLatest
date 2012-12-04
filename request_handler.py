@@ -240,52 +240,52 @@ class RequestHandler(webapp2.RequestHandler, RequestInputHandler):
 
     def handle_exception(self, e, *args):
 
-        title = "Oops. We made a mistake."
-        message_html = "We ran into a problem. It's our fault, and we're working on it."
-        sub_message_html = "This has been reported to us, and we'll be looking for a fix. If the problem continues, feel free to <a href='/reportissue?type=Defect'>send us a report directly</a>."
+        title = "Oeps. We hebben een fout gemaakt."
+        message_html = "Er is een probleem, onze schuld, er wordt aan gewerkt."
+        sub_message_html = "Dit probleem is al aan ons gerapporteerd, en we proberen het te repareren. Als het probleem zich voor blijft doen, neem gerust contact met ons op.<a href='/reportissue?type=Defect'></a>."
 
         if type(e) is CapabilityDisabledError:
 
             # App Engine maintenance period
-            title = "Shhh. We're studying."
-            message_html = "We're temporarily down for maintenance, and we expect this to end shortly. In the meantime, you can watch all of our videos at the <a href='http://www.youtube.com/user/khanacademy'>Khan Academy YouTube channel</a>."
-            sub_message_html = "We're really sorry for the inconvenience, and we're working to restore access as soon as possible."
+            title = "Ssst. Wij zijn aan het studeren."
+            message_html = "We zijn even offline, dit probleem wordt zo spoedig mogelijk verholpen. In de tussentijd kun je alle video's bekijken op ons Youtube-kanaal <a href='http://www.youtube.com/user/khanacademy'>Khan Academy YouTube channel</a>."
+            sub_message_html = "Het spijt ons zeer, er wordt aan een oplossing gewerkt."
 
         elif type(e) is MissingExerciseException:
 
-            title = "This exercise isn't here right now."
-            message_html = "Either this exercise doesn't exist or it's temporarily hiding. You should <a href='/exercisedashboard'>head back to our other exercises</a>."
-            sub_message_html = "If this problem continues and you think something is wrong, please <a href='/reportissue?type=Defect'>let us know by sending a report</a>."
+            title = "Deze oefening is nu niet beschikbaar."
+            message_html = "Deze oefening bestaat niet (meer) of is tijdelijk offline. Ga terug naar  <a href='/exercisedashboard'> om andere oefeningen te maken</a>."
+            sub_message_html = "Als dit probleem zich voor blijft doen, neem gerust contact met ons op <a href='/reportissue?type=Defect'></a>."
 
         elif type(e) is MissingVideoException:
 
             # We don't log missing videos as errors because they're so common due to malformed URLs or renamed videos.
             # Ask users to report any significant problems, and log as info in case we need to research.
-            title = "This video is no longer around."
-            message_html = "You're looking for a video that either never existed or wandered away. <a href='/'>Head to our video library</a> to find it."
-            sub_message_html = "If this problem continues and you think something is wrong, please <a href='/reportissue?type=Defect'>let us know by sending a report</a>."
+            title = "Deze video is niet langer beschikbaar."
+            message_html = "Deze video is niet langer beschikbaar, of is door de eigenaar offline gehaald. <a href='/'>Zoek in onze bibliotheek</a> om hem te vinden."
+            sub_message_html = "Als dit probleem zich voor blijft doen, neem gerust contact met ons op <a href='/reportissue?type=Defect'></a>."
 
         elif type(e) is SmartHistoryLoadException:
             # 404s are very common with Smarthistory as bots have gotten hold of bad urls, silencing these reports and log as info instead
-            title = "This page of the Smarthistory section of Khan Academy does not exist"
-            message_html = "Go to <a href='/'>our Smarthistory homepage</a> to find more art history content."
-            sub_message_html = "If this problem continues and you think something is wrong, please <a href='/reportissue?type=Defect'>let us know by sending a report</a>."
+            title = "Deze pagina bestaat niet."
+            message_html = "Ga naar <a href='/'>our Smarthistory homepage</a> om hier meer over te lezen."
+            sub_message_html = "Als dit probleem zich voor blijft doen, neem gerust contact met ons op <a href='/reportissue?type=Defect'></a>."
 
         elif type(e) is PageNotFoundException:
 
-            title = "Sorry, we can't find what you're looking for."
-            message_html = "This page doesn't seem to be around. <a href='/'>Head to our homepage</a> instead."
-            sub_message_html = "If this problem continues and you think something is wrong, please <a href='/reportissue?type=Defect'>let us know by sending a report</a>."
+            title = "Sorry, hetgene waarnaar je zoekt kunnen we niet vinden."
+            message_html = "Deze pagina lijkt niet te bestaan. <a href='/'>Ga naar de homepage</a>."
+            sub_message_html = "Als dit probleem zich voor blijft doen, neem dan contact met ons opIf this problem continues and you think something is wrong, please <a href='/reportissue?type=Defect'>let us know by sending a report</a>."
 
         elif type(e) is ClosedBetaException:
 
             title = "Shhh. It's a secret."
             message_html = ("This feature is in closed beta at the moment. "
-                "We'll let the world know when it's ready.")
-            sub_message_html = ("You can subscribe to updates on the "
+                "We laten weten wanneer dit verholpen is.")
+            sub_message_html = ("Je kunt je inschrijven om updates te ontvangen "
                 "<a href='/about/blog'>Khan Academy Blog</a> "
                 "or by following us on twitter "
-                "<a href='https://twitter.com/khanacademy'>@khanacademy</a>.")
+                "<a href='https://twitter.com/KhanAcademie'>@KhanAcademie</a>.")
 
         if isinstance(e, QuietException):
             logging.info(e)

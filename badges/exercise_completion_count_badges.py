@@ -72,7 +72,7 @@ class MagellanBadge(ExerciseCompletionCountBadge):
     def __init__(self):
         ExerciseCompletionCountBadge.__init__(self)
         self.required_exercises = 100
-        self.description = "Magellan"
+        self.description = "Ferdinand Magellan"
         self.badge_category = badges.BadgeCategory.PLATINUM
         self.points = 30000
 
@@ -82,7 +82,7 @@ class CopernicusBadge(ExerciseCompletionCountBadge):
     def __init__(self):
         ExerciseCompletionCountBadge.__init__(self)
         self.required_exercises = 200
-        self.description = "Copernicus"
+        self.description = "Nicolaus Copernicus"
         self.badge_category = badges.BadgeCategory.PLATINUM
         self.points = 80000
 

@@ -59,19 +59,19 @@
             <ul data-role="listview" data-inset="true">
                 <li style="color:black;">
                     {% if sort_order == 2 %}
-                        Recentste vragen eerst
+                        Nieuwe vragen eerst
                     {% else %}
                         Meeste stemmen eerst
                     {% endif %}
                     <ul>
-                        <li><a href="/discussion/updateqasort?sort=1&readable_id={{video.readable_id}}&topic_title={{topic.title|urlencode}}#qa">Most votes first</a></li>
-                        <li><a href="/discussion/updateqasort?sort=2&readable_id={{video.readable_id}}&topic_title={{topic.title|urlencode}}#qa">Newest questions first</a></li>
+                        <li><a href="/discussion/updateqasort?sort=1&readable_id={{video.readable_id}}&topic_title={{topic.title|urlencode}}#qa">Meeste stemmen eerst</a></li>
+                        <li><a href="/discussion/updateqasort?sort=2&readable_id={{video.readable_id}}&topic_title={{topic.title|urlencode}}#qa">Nieuwe vraag eerst</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
 
-        <strong>Vraag en antwoord over {{ video.title|lower|escape|truncate(50) }}:</strong>
+        <strong>Vragen en antwoorden over {{ video.title|lower|escape|truncate(50) }}:</strong>
         <div class="questions_container"><em>Laden...</em> <img class="icon" src="{{ "/images/throbber.gif"|static_url }}"/></div>
 
         <!-- HACK(marcia): Clean up the below id and keys -->
@@ -84,13 +84,13 @@
 
         <div class="info_note note" style="display:none;">
             <span class="note_desc"></span>
-            <a href="#" class="close_note">sluit</a>
+            <a href="#" class="close_note">Sluit</a>
         </div>
 
         {% if not logged_in %}
             <div class="login_note note" style="display:none;">
                 <a class="login_link" href="{{ ("/video?v=%s" % video.youtube_id )|login_url }}">
-                    Log eerst in
+                    Log in om verder te gaan
                 </a>
                 <span class="note_desc"></span>
                 <a href="#" class="close_note">Sluit</a>
@@ -122,7 +122,7 @@
                        type="button" 
                        value="{{ button_label }}" />
 
-                of <a href="#" class="{{ feedback_type }}_cancel control">sluit</a>
+                of <a href="#" class="{{ feedback_type }}_cancel control">Sluit</a>
             </div>
 
             {% if show_chars_remaining %}
@@ -163,11 +163,11 @@
             <a href="#" class="control flag_show" title="Flag for moderator attention"><img class="feedback_flag_gray" src="{{ "/images/flag_gray.png"|static_url }}" /><img class="feedback_flag" src="{{ "/images/flag.png"|static_url }}" /></a>
         </span>
         <span class="flag_tools_hidden message" style="display:none;">
-            Markeer als:
-            <a href="#" class="control flag_as" title="Flag as inappropriate content" data-flag="inappropriate" data-key="{{ target.key() }}">ongepast</a>
-            | <a href="#" class="control flag_as" title="Flag as low quality content" data-flag="lowquality" data-key="{{ target.key() }}">lage kwaliteit</a>
-            | <a href="#" class="control flag_as" title="Flag as content that does not belong here" data-flag="doesnotbelong" data-key="{{ target.key() }}">hoort hier niet</a>
-            | <a href="#" class="control flag_as" title="Flag as spam" data-flag="spam" data-key="{{ target.key() }}">spam</a>
+            Flag as:
+            <a href="#" class="control flag_as" title="Flag as inappropriate content" data-flag="inappropriate" data-key="{{ target.key() }}">Ongepast</a>
+            | <a href="#" class="control flag_as" title="Flag as low quality content" data-flag="lowquality" data-key="{{ target.key() }}">Slechte kwaliteit</a>
+            | <a href="#" class="control flag_as" title="Flag as content that does not belong here" data-flag="doesnotbelong" data-key="{{ target.key() }}">Hoort hier niet</a>
+            | <a href="#" class="control flag_as" title="Flag as spam" data-flag="spam" data-key="{{ target.key() }}">Spam</a>
         </span>
     </span>
 {%- endmacro %}
@@ -175,9 +175,9 @@
 {% macro mod_tools(target) -%}
     <span class="mod_tools">
         mod tools:
-        <a href="javascript:void(0)" class="control mod_delete" data-key="{{ target.key() }}">delete</a>
-        | <a href="javascript:void(0)" class="control mod_change" data-target-type="question" data-key="{{ target.key() }}">ga naar een vraag</a>
-        | <a href="Javascript:void(0)" class="control mod_clear_flags" data-key="{{target.key()}}">verwijder markeringen</a>
+        <a href="javascript:void(0)" class="control mod_delete" data-key="{{ target.key() }}">Verwijder</a>
+        | <a href="javascript:void(0)" class="control mod_change" data-target-type="question" data-key="{{ target.key() }}">Verander naar vraag</a>
+        | <a href="Javascript:void(0)" class="control mod_clear_flags" data-key="{{target.key()}}">Verwijder markeeringspunten</a>
         <span class="message"></span>
     </span>
 {%- endmacro %}
@@ -186,10 +186,10 @@
     <span class="mod_tools">
         <span class="mod_tools_hidden">
             {% if not target.is_type("comment") %}
-                <a href="#" class="control mod_edit" data-key="{{ target.key() }}">voeg toe</a>
+                <a href="#" class="control mod_edit" data-key="{{ target.key() }}">Aanpassen</a>
                 | 
             {% endif %}
-            <a href="#" class="control mod_delete" data-key="{{ target.key() }}">verwijder</a>
+            <a href="#" class="control mod_delete" data-key="{{ target.key() }}">Verwijder</a>
         </span>
     </span>
 {%- endmacro %}

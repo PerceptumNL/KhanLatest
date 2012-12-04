@@ -90,7 +90,7 @@ $.extend(Khan.answerTypes, {
             simplify: "required",
             ratio: false,
             maxError: Math.pow(2, -42),
-            forms: "letters, heel getal, echte, onechte, gemengde, decimale"
+            forms: "literal, integer, proper, improper, mixed, decimal"
         }, $(solution).data());
         var acceptableForms = (accForms || options.forms).split(/\s*,\s*/);
 

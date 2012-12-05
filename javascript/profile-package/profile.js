@@ -918,7 +918,7 @@ var Profile = {
                     // TODO: save and cache these objects
                     var fullBadgeList = new Badges.UserBadgeList();
 
-                    var collection = data["badgeCollections"];
+                    var collection = data["badgeCollections"].reverse();
                     $.each(collection, function(i, categoryJson) {
                         $.each(categoryJson["userBadges"], function(j, json) {
                             fullBadgeList.add(new Badges.UserBadge(json));

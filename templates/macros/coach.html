@@ -9,7 +9,7 @@
         <h3>Elk van je leerlingen moet de volgende stappen ondernemen:</h3>
         <ol>
             <li>
-                <p>Allereerst, moeten ze naar <a href="/profile">hun profiel</a> door bovenaan de pagina op hun naam te klikken.</p>
+                <p>Ten eerste moeten ze naar <a href="/profile">hun profiel</a> gaan door bovenaan de pagina op hun naam te klikken. (zie 'test' in afbeelding)</p>
                 <img src="/images/profile-link-in-header.png?1" class="vertical-shadow rounded-background" />
             </li>
             <li>
@@ -20,9 +20,9 @@
                 <!-- Are you a flying chimpanzee? Are you changing this element or anything inside?
                 If you answered yes to any of these questions, please update the positioning of the coach email.
                 Look in default.css for #empty-class ol li.enter-email div.coach-email -->
-                <p>Tenslotte, moeten ze jouw Coach id invoeren en klikken op <em>Add coach</em> button.</p>
+                <p>Tenslotte, moeten ze jouw Coach id invoeren en op <em>voeg coach toe</em> klikken.</p>
                 {% if UserData.current() %}
-                    <p>Jouw coach is <strong>{{ coach_email|escape }}</strong>.</p>
+                    <p>Jouw coach id is <strong>{{ coach_email|escape }}</strong>.</p>
                 {% else %}
                     <p>{{ coach_email|escape}}</p>
                 {% endif %}

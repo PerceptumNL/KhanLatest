@@ -28,19 +28,19 @@
       strings: {
         prefixAgo: null,
         prefixFromNow: null,
-        suffixAgo: "ago",
-        suffixFromNow: "from now",
-        seconds: "%d seconds",  // Local modification.
-        minute: "about a minute",
-        minutes: "%d minutes",
-        hour: "about an hour",
-        hours: "about %d hours",
-        day: "a day",
-        days: "%d days",
-        month: "about a month",
-        months: "%d months",
-        year: "about a year",
-        years: "%d years",
+        suffixAgo: "geleden",
+        suffixFromNow: "sinds nu",
+        seconds: "%d seconden",  // Local modification.
+        minute: "ongeveer een minuut",
+        minutes: "%d minuten",
+        hour: "ongeveer een uur",
+        hours: "ongeveer %d uur",
+        day: "een dag",
+        days: "%d dagen",
+        month: "ongeveer een maand",
+        months: "%d maanden",
+        year: "ongeveer een jaar",
+        years: "%d jaren",
         numbers: []
       }
     },

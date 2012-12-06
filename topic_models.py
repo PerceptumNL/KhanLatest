@@ -484,7 +484,10 @@ class Topic(search.Searchable, backup_model.BackupModel):
                layer_cache.Layers.Datastore))
     def get_topic_page_html(self):
         main_topic = self
-        parent_topic = db.get(self.parent_keys[0])
+        try:
+            parent_topic = db.get(self.parent_keys[0])
+        except:
+            logging.error("No parent topic found for %s" % main_topic.id)
 
         # If the parent is a supertopic, use that instead
         if parent_topic.id in Topic._super_topic_ids:
@@ -558,7 +561,10 @@ class Topic(search.Searchable, backup_model.BackupModel):
                layer_cache.Layers.Datastore))
     def get_topic_page_nav_html(self):
         main_topic = self
-        parent_topic = db.get(self.parent_keys[0])
+        try:
+            parent_topic = db.get(self.parent_keys[0])
+        except:
+            return ""
 
         # If the parent is a supertopic, use that instead
         if parent_topic.id in Topic._super_topic_ids:

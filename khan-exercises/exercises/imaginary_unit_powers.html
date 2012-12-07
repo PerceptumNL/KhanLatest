@@ -2,7 +2,7 @@
 <html data-require="math">
 <head>
     <meta charset="UTF-8" />
-    <title>Imaginary unit powers</title>
+    <title>Machten van i</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -23,7 +23,7 @@
 
             <div class="problem">
                 <p class="question">
-                    Simplify.
+                    Vereenvoudig.
                 </p>
                 <p>
                     <code>i ^ {<var>EXP</var>}</code>
@@ -38,11 +38,11 @@
             </ul>
             <div class="hints">
                 <p data-if="EXP === 1">
-                    Anything to the first power is the number itself.
+                    Alles tot de eerste macht is het getal zelf.
                 </p>
                 <p data-if="EXP >= 2">
-                    The most important property of the imaginary unit <code>i</code> is
-                    that <code>\color{<var>BLUE</var>}{i ^ 2} = \color{<var>ORANGE</var>}{-1}</code>.
+                    De belangrijkste eigenschap van het imaginaire getal <code>i</code> is
+                    dat <code>\color{<var>BLUE</var>}{i ^ 2} = \color{<var>ORANGE</var>}{-1}</code>.
                 </p>
                 <p data-if="EXP === 3">
                     <code>i ^ 3 = (\color{<var>ORANGE</var>}{i ^ 2}) \cdot i = (\color{<var>BLUE</var>}{-1}) \cdot i = -i</code>
@@ -70,7 +70,7 @@
 
             <div class="problem">
                 <p class="question">
-                    Simplify.
+                    Vereenvoudig.
                 </p>
                 <p>
                     <code>i ^ {<var>EXP</var>}</code>
@@ -85,23 +85,23 @@
             </ul>
             <div class="hints">
                 <p>
-                    The most important property of the imaginary unit <code>i</code> is
-                    that <code>\color{<var>BLUE</var>}{i ^ 2} = \color{<var>ORANGE</var>}{-1}</code>.
+                    De belangrijkste eigenschap van het imaginaire getal <code>i</code> is
+                    dat <code>\color{<var>BLUE</var>}{i ^ 2} = \color{<var>ORANGE</var>}{-1}</code>.
                 </p>
                 <p>
-                    When this property is plugged into <code>i ^ 4</code>, we get:
+                 Als we deze eigenschappen toepassen op <code>i ^ 4</code>, krijgen we:
                     <code>i ^ 4 = (\color{<var>BLUE</var>}{i ^ 2}) ^ 2 = (\color{<var>ORANGE</var>}{-1}) ^ 2 = 1</code>
                 </p>
                 <p>
-                    So, we can reduce the exponent by multiples of 4 and have the same result.  
+                    Dus kunnen we de exponent verkleinen met veelvouden van 4 voor hetzelfde resultaat.  
                 </p>
                 <p>
-                    The remainder after dividing <var>EXP</var> by 4 is <var>EXP % 4</var>, <!-- maybe add a reference to mod here... probably after a mod module is made -->
-                    so <code>i ^ {<var>EXP</var>} = i ^ {<var>EXP % 4</var>}</code>.
+                    De rest na deling van <var>EXP</var> door 4 is <var>EXP % 4</var>, <!-- maybe add a reference to mod here... probably after a mod module is made -->
+                    dus <code>i ^ {<var>EXP</var>} = i ^ {<var>EXP % 4</var>}</code>.
                 </p>
                 <div data-if="(EXP % 4) === 0">
                     <p>
-                        Any number but zero to the zeroth power is one.
+                        Elk getal, behalve nul, tot de nulde macht is 1.
                     </p>
                     <p>
                         <code>i ^ 0 = 1</code>
@@ -109,14 +109,14 @@
                 </div>
                 <div data-if="(EXP % 4) === 1">
                     <p>
-                        Anything to the first power is the number itself.
+                        Alles tot de eerste macht is het getal zelf.
                     </p>
                     <p>
                         <code>i ^ 1 = i</code>
                     </p>
                 </div>
                 <p data-if="(EXP % 4) >= 2">
-                    As stated above, <code>\color{<var>BLUE</var>}{i ^ 2} = \color{<var>ORANGE</var>}{-1}</code>.
+                    Zoals hierboven al gezegd, is <code>\color{<var>BLUE</var>}{i ^ 2} = \color{<var>ORANGE</var>}{-1}</code>.
                 </p>
                 <p data-if="(EXP % 4) === 3">
                     <code>i ^ 3 = (\color{<var>BLUE</var>}{i ^ 2}) \cdot i = (\color{<var>ORANGE</var>}{-1}) \cdot i = -i</code>

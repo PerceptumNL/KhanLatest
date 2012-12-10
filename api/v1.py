@@ -1168,6 +1168,9 @@ def get_exercise(exercise_name, version_id=None):
     # already be set
     if exercise and not hasattr(exercise, "related_video_readable_ids"):
         exercise_videos = exercise.related_videos_query()
+        exercise.related_videos = (
+            map(lambda exercise_video: exercise_video.video.youtube_id,
+                exercise_videos))
         exercise.related_video_readable_ids = (
             map(lambda exercise_video: exercise_video.video.readable_id,
                 exercise_videos))

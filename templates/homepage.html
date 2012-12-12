@@ -15,12 +15,15 @@
   .blog-entry { 
     margin-top:20px;
   }
-  .blog-title { 
+  a.blog-title { 
     font-size: 16px;
     color: #26a8e0;
     display: block;
   }
-  .begin-button {
+  a.blog-title:visited { 
+    color: #1688b0;
+  }
+  a.begin-button {
     width: 340px;
     height: 100%;
     background: -webkit-linear-gradient(top, #26a8e0 40%,#8cc4eb 100%);
@@ -171,7 +174,7 @@
         {% for entry in rssblog %}
         <div class="blog-entry">
         <span class="blog-date">{{ entry.pub_date|formatdate }}</span>
-        <a href="{{ entry.link }}" target="_blank"><span class="blog-title">{{ entry.title }}</span></a>
+        <a href="{{ entry.link }}" class="blog-title" target="_blank">{{ entry.title }}</a>
         <div class="blog-body">{{ entry.description|striptags|truncate }}</div>
         </div>
         {% endfor %}

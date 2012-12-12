@@ -2,7 +2,7 @@
 <html data-translatable data-require="math math-format expressions graphie interactive">
 <head>
     <meta charset="UTF-8" />
-    <title>Graphing linear equations</title>
+    <title>Lineaire vergelijkingen tekenen</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -21,7 +21,7 @@
                 <var id="STD_FORM">random() &lt; 0.2</var>
             </div>
 
-            <p class="question">Graph the following equation:</p>
+            <p class="question">Geef de volgende vergelijking weer:</p>
 
             <div class="problem">
                 <p class="hint_blue" data-if="STD_FORM">
@@ -88,7 +88,7 @@
             </div>
             <div class="solution" data-type="custom">
                 <div class="instruction" data-tt="question1">
-                    Drag the two points to move the line into the correct position.
+                    Sleep de twee punten om de lijn op de goede positie te krijgen.
                 </div>
                 <div class="guess"> [ graph.pointA.coord, graph.pointB.coord ] </div>
                 <div class="validator-function">
@@ -108,19 +108,19 @@
     <div class="hints">
         <div data-if="STD_FORM" data-unwrap>
             <p data-tt="hint1">
-                Convert <code><var>expr([ "+", [ "*", A, "x" ], [ "*", B, "y" ] ])</var> = <var>C</var></code>
-                to slope-intercept form by solving for <code>y</code>.
+                Zet <code><var>expr([ "+", [ "*", A, "x" ], [ "*", B, "y" ] ])</var> = <var>C</var></code>
+                om in de helling-startwaarde vorm door <code>y</code> op te lossen.
             </p>
             <div>
                 <p data-tt="hint2">
-                    <var>A &lt; 0 ? "Add" : "Subtract"</var> <code><var>abs( A )</var>x</code> <var>A &lt; 0 ? "to" : "from"</var> both sides:
+                    <var>A &lt; 0 ? "Tel" : "Trek"</var> <code><var>abs( A )</var>x</code> <var>A &lt; 0 ? "op bij" : "af van"</var> beide zijden:
                 </p><p>
                     <code>\qquad <var>expr( [ "*", B, "y" ] )</var> = <var>expr([ "+", [ "*", -A, "x" ], C ])</var></code>
                 </p>
             </div>
             <div data-if="B !== 1">
                 <p data-tt="hint3">
-                    Divide both sides by <code><var>B</var></code>:
+                    Deel beide zijden door <code><var>B</var></code>:
                 </p><p>
                     <code>\qquad y = <var>expr([ "+", "\\dfrac{" + expr([ "*", -A, "x" ]) + "}{" + B + "}", "\\dfrac{" + C + "}{" + B + "}" ])</var></code>
                 </p>
@@ -130,12 +130,12 @@
             <p>
                 <code>\qquad y = \color{purple}{<var>PRETTY_SLOPE</var>} x \color{<var>GREEN</var>}{+ <var>YINT</var>}</code>
             </p><p data-tt="hint4">
-                The y-intercept is <code class="hint_green"><var>YINT</var></code> and the slope is <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>.
+               De y-startwaarde is <code class="hint_green"><var>YINT</var></code> en de helling is <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>.
             </p>
         </div>
         <div>
             <p data-tt="hint5">
-                The y-intercept is <code class="hint_green"><var>YINT</var></code>, so the line must pass through the point <code class="hint_green">(0, <var>YINT</var>)</code>.
+                De y-startwaarde is <code class="hint_green"><var>YINT</var></code>, dus moet de lijn door het punt <code class="hint_green">(0, <var>YINT</var>)</code>.
             </p>
             <div class="graphie" data-update="grid">
                 style({ stroke: GREEN, fill: GREEN }, function() {
@@ -145,17 +145,16 @@
         </div>
         <div>
             <p data-tt="hint6">
-                The slope is <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>. Remember that
-                the slope tells you rise over run. So in this case for every
+                De helling is <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>. Bedenk dat de helling de verhouding is tussen de verticale en de horizontale positie. Dus in dit geval moet je voor elke
                 <code><var>abs( SLOPE_FRAC[0] )</var></code>
-                <var>"position" + ( abs( SLOPE_FRAC[0] ) !== 1 ? "s" : "" )</var>
-                you move
-                <span data-if="SLOPE_FRAC[0] < 0"><em>down</em> (because it's negative)</span>
-                <span data-else>up</span>
-                you must also move
+                <var>"positie" + ( abs( SLOPE_FRAC[0] ) !== 1 ? "s" : "" )</var>
+                
+                <span data-if="SLOPE_FRAC[0] < 0"><em>omlaag</em> (omdat hij negatief is)</span>
+                <span data-else>omhoog</span>
+                   
                 <code><var>SLOPE_FRAC[1]</var></code>
-                <var>"position" + ( abs( SLOPE_FRAC[1] ) !== 1 ? "s" : "" )</var>
-                to the right.
+                <var>"plaatsen" + ( abs( SLOPE_FRAC[1] ) !== 1 ? "s" : "" )</var>
+                naar rechts.
             </p>
             <div class="graphie" data-update="grid"  data-tt="hint7">
                 style({
@@ -166,13 +165,13 @@
                     path([ [ 0, YINT ], [ 0, YINT + SLOPE_FRAC[0] ] ]).toBack();
                     path([ [ 0, YINT + SLOPE_FRAC[0] ], [ SLOPE_FRAC[1], YINT + SLOPE_FRAC[0] ] ]).toBack();
                 });
-                label( [ 0, YINT + SLOPE_FRAC[0] / 2 ], abs( SLOPE_FRAC[0] ) + " \\text{ " + ( SLOPE_FRAC[0] &lt; 0 ? "down" : "up" ) + "} \\quad", "left", { color: "purple" } );
-                label( [ 0, YINT + SLOPE_FRAC[0] ], SLOPE_FRAC[1] + " \\text{ right}", ( SLOPE_FRAC[0] &lt; 0 ? "below right" : "above right" ), { color: "purple" } );
+                label( [ 0, YINT + SLOPE_FRAC[0] / 2 ], abs( SLOPE_FRAC[0] ) + " \\text{ " + ( SLOPE_FRAC[0] &lt; 0 ? "omlaag" : "omhoog" ) + "} \\quad", "left", { color: "purple" } );
+                label( [ 0, YINT + SLOPE_FRAC[0] ], SLOPE_FRAC[1] + " \\text{ rechts}", ( SLOPE_FRAC[0] &lt; 0 ? "below right" : "above right" ), { color: "purple" } );
                 graph.yint.toBack();
             </div>
         </div>
         <div>
-            <p data-tt="hint8">So the line must also pass through <code class="hint_purple">(<var>SLOPE_FRAC[1]</var>, <var>YINT + SLOPE_FRAC[0]</var>)</code></p>
+            <p data-tt="hint8">Dus de lijn moet door <code class="hint_purple">(<var>SLOPE_FRAC[1]</var>, <var>YINT + SLOPE_FRAC[0]</var>)  </code>  lopen.</p> 
             <div class="graphie" data-update="grid">
                 style({ stroke: BLUE, strokeWidth: 2, strokeDasharray: "." }, function() {
                     plot( function( x ) {

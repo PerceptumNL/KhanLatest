@@ -379,6 +379,7 @@ javascript = {
             "utils/spin.js",
             "utils/time.js",
             "utils/unit-circle.js",
+            "utils/liesbeth-helpers.js",
         ]
     },
     "scratchpads": {

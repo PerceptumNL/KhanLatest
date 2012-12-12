@@ -142,7 +142,7 @@ def library_content_html(ajax=False, version_number=None):
 
     template_values = {
         'topics': topics,
-        'ajax': ajax,
+        'ajax': False,
         'version_date': str(version.made_default_on),
         'version_id': version.number
     }

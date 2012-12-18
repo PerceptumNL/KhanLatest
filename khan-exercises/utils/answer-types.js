@@ -856,7 +856,7 @@ $.extend(Khan.answerTypes, {
         }
 
         if (showNone) {
-            var none = $("<span>None of the above.</span>");
+            var none = $("<span>Geen van de bovenstaande.</span>");
 
             if (noneIsCorrect) {
                 none.data("correct", true);
@@ -969,11 +969,11 @@ $.extend(Khan.answerTypes, {
 
         var solutionArray = [];
 
-        var realArea = $("<p />").html("Real part: ");
+        var realArea = $("<p />").html("Reëele deel: ");
         var realControl = $('<span data-inexact data-max-error="0.01" />').html(correct[0]);
         var realValidator = Khan.answerTypes["number"](realArea, realControl, 0);
 
-        var imagArea = $("<p />").html("Imaginary part: ");
+        var imagArea = $("<p />").html("Imaginaire deel: ");
         var imagControl = $('<span data-inexact data-max-error="0.01" />').html(correct[1]);
         var imagValidator = Khan.answerTypes["number"](imagArea, imagControl, 0);
 

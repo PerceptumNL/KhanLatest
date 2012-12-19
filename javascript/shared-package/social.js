@@ -81,7 +81,7 @@ var Social = {
             link: "http://www.khanacademie.nl/exercisedashboard",
             picture: "http://www.khanacademie.nl/images/proficient-badge-complete.png",
             caption: "www.khanacademie.nl",
-            description: "Ik heb zojuist " + amount + "geantwoord" " question" + plural + " " + prof + " " + exer + " op www.khanacademie.nl" ,
+            description: "Ik heb zojuist " + amount + "geantwoord" + plural + " " + prof + " " + exer + " op www.khanacademie.nl" ,
             message: "Ik heb " + exer + " geoefend op http://www.khanacademie.nl"
         });
         return false;

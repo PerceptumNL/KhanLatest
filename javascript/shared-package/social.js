@@ -40,7 +40,7 @@ var Social = {
         deferred.
             fail(function(response) {
                 // TODO(stephanie): ask user for permissions
-                KAConsole.log("Error: Facebook 'earn' action failed. " + response.error.message);
+                KAConsole.log("Error: Facebook 'earn' mislukt. " + response.error.message);
             });
 
         return deferred;
@@ -50,11 +50,11 @@ var Social = {
     facebookPostBadge: function(url, desc, icon, ext, activity) {
         FB.ui({
             method: "feed",
-            name: "I just earned the " + desc + " badge" + (activity ? " in " + activity : "") + " at Khan Academy!",
+            name: "Ik heb zojuist de  " + desc + " badge" + (activity ? " in " + activity : "") + " op Khan Academie!",
             link: url,
-            picture: (icon.substring(0, 7) === "http://" ? icon : "http://www.khanacademy.org/" + icon),
+            picture: (icon.substring(0, 7) === "http://" ? icon : "http://www.khanacademie.nl/" + icon),
             caption: url,
-            description: "You can earn this too if you " + ext
+            description: "Deze kan je ook verdienen als je " + ext
         });
     },
 
@@ -63,11 +63,11 @@ var Social = {
         FB.ui({
             method: "feed",
             name: name,
-            link: "http://www.khanacademy.org/" + url,
-            picture: "http://www.khanacademy.org/images/handtreehorizontal_facebook.png",
-            caption: "www.khanacademy.org",
+            link: "http://www.khanacademie.nl/" + url,
+            picture: "http://www.khanacademie.nl/images/handtreehorizontal_facebook.png",
+            caption: "www.khanacademie.nl",
             description: desc,
-            message: "I just learned about " + name + " on Khan Academy"
+            message: "Ik heb zojuist " + name + " geleerd op Khan Academie"
         });
         return false;
 
@@ -77,12 +77,12 @@ var Social = {
 
         FB.ui({
             method: "feed",
-            name: amount + " question" + plural + " answered!",
-            link: "http://www.khanacademy.org/exercisedashboard",
-            picture: "http://www.khanacademy.org/images/proficient-badge-complete.png",
-            caption: "www.khanacademy.org",
-            description: "I just answered " + amount + " question" + plural + " " + prof + " " + exer + " on www.khanacademy.org" ,
-            message: "I\'ve been practicing " + exer + " on http://www.khanacademy.org"
+            name: amount + " vraag/vragen" + plural + " beantwoord!",
+            link: "http://www.khanacademie.nl/exercisedashboard",
+            picture: "http://www.khanacademie.nl/images/proficient-badge-complete.png",
+            caption: "www.khanacademie.nl",
+            description: "Ik heb zojuist " + amount + "geantwoord" " question" + plural + " " + prof + " " + exer + " op www.khanacademie.nl" ,
+            message: "Ik heb " + exer + " geoefend op http://www.khanacademie.nl"
         });
         return false;
 
@@ -90,8 +90,8 @@ var Social = {
 
     emailBadge: function(url, desc) {
 
-        var subject = "I just earned the " + desc + " badge on Khan Academy!";
-        var body = "Check it out at " + url + ".";
+        var subject = "Ik heb zojuist de " + desc + " badge verdiend op Khan Academie!";
+        var body = "Kijk zelf op " + url + "!";
 
         var href = "mailto:?Subject=" + subject + "&amp;Body=" + body;
 
@@ -100,8 +100,8 @@ var Social = {
 
     twitterBadge: function(url, desc) {
 
-        var text = "I just earned the " + desc + " badge on @khanacademy";
-        var related = "khanacademy:Khan Academy";
+        var text = "Ik heb zojuist de " + desc + " badge verdiend op @khanacademie";
+        var related = "khanacademie:Khan Academie";
 
         var href = "http://twitter.com/share?url=" + encodeURIComponent(url) + "&text=" + text + "&related=" + related;
 

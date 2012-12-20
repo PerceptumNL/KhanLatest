@@ -1358,8 +1358,8 @@ TopicTreeEditor.AddExistingItemView = Backbone.View.extend({
         this.results = {};
         _.each(json, function(item) {
             if (self.type == "video") {
-                elements.push($('<option value="' + item.readable_id + '">' + item.title + '</option>'));
-                self.results[item.readable_id] = item.title;
+                elements.push($('<option value="' + item.id + '">' + item.title + '</option>'));
+                self.results[item.id] = item.title;
             } else {
                 elements.push($('<option value="' + item.name + '">' + item.display_name + '</option>'));
                 self.results[item.name] = item.display_name;

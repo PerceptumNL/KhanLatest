@@ -2,7 +2,7 @@
 <html data-translatable data-require="math graphie">
 <head>
     <meta charset="UTF-8" />
-    <title>Angles 2</title>
+    <title>Hoeken 2</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -26,13 +26,13 @@
                 </div>
 
                 <div class="question">
-                    <p data-tt="question1">Given the following:</p>
+                    <p data-tt="question1">Gegeven:</p>
                     <ul>
                         <li><code>\color{green}{\angle{ABC}} = <var>Tri_Y</var>&deg;</code></li>
                         <li><code>\color{purple}{\angle{BAC}} = <var>Tri_Z</var>&deg;</code></li>
                         <li><code>\overline{DE} \parallel \overline{BC}</code></li>
                     </ul>
-                    <p data-tt="question2">What is <code>\color{blue}{\angle{<var>RAND_SWITCH2 === 0 ? "DAF" : "CAE"</var>}} {?}</code></p>
+                    <p data-tt="question2">Hoe groot is <code>\color{blue}{\angle{<var>RAND_SWITCH2 === 0 ? "DAF" : "CAE"</var>}} {?}</code></p>
                 </div>
 
                 <div class="problem">
@@ -96,7 +96,7 @@
                         }
                     </div>
 
-                    <p data-tt="note1" style="font-size:70%; color:grey"><strong>NOTE:</strong> Angles not drawn to scale.</p>
+                    <p data-tt="note1" style="font-size:70%; color:grey"><strong>Opmerking:</strong> de hoeken zijn niet op schaal getekend.</p>
 
                 </div> <!-- end problem block -->
 
@@ -104,10 +104,10 @@
 
                 <div class="hints">
                     <p data-tt="hint1">
-                        Remember that the measure of the angles in a triangle sum to 180&deg;.
-                        Solve for <code>\color{orange}{\angle{BCA}}</code> by subtracting the
-                        measures of angles <code>\color{purple}{\angle{BAC}}</code> and
-                        <code>\color{green}{\angle{ABC}}</code> from 180&deg;.  We find that
+                        Herinner je dat de hoeken in een driehoek samen 180&deg; zijn.
+                        Vind <code>\color{orange}{\angle{BCA}}</code> door de maat van de hoeken
+                        <code>\color{purple}{\angle{BAC}}</code> en
+                        <code>\color{green}{\angle{ABC}}</code> van 180&deg; af te trekken.  We vinden dat
                         <code>\color{orange}{\angle{BCA}} = <var>Tri_X</var>&deg;</code>.
                         <span class="graphie" data-update="tri-and-parallel">
                             // label angle BAC
@@ -117,10 +117,9 @@
                         </span>
                     </p>
                     <p data-tt="hint2">
-                        Solve for
+                        Vind
                         <span data-if="RAND_SWITCH2 === 0">
-                            <code>\color{blue}{\angle{DAF}}</code> by using the fact
-                            that it is a corresponding angle to
+                            <code>\color{blue}{\angle{DAF}}</code> door het feit dat dit een gelijke hoek is als
                             <span class="graphie" data-update="tri-and-parallel">
                                 LABEL.remove();
                                 LABEL = label([-3.3, 0],
@@ -129,8 +128,8 @@
                             </span>
                         </span>
                         <span data-else>
-                            <code>\color{blue}{\angle{CAE}}</code> by using the fact
-                            that it is an alternate interior angle to
+                            <code>\color{blue}{\angle{CAE}}</code> door het feit dat
+                            dit een wisselende hoek is van
                             <span class="graphie" data-update="tri-and-parallel">
                                 LABEL.remove();
                                 LABEL = label([1, 0],
@@ -138,10 +137,10 @@
                                     "above", { color: "blue"});
                             </span>
                         </span>
-                        <code>\color{orange}{\angle{BCA}}.</code> That means those
-                        angles are equal because they are both created by the same
-                        set of parallel lines <code>\overline{BC}</code>
-                        and <code>\overline{DE}</code>, and transversal line
+                        <code>\color{orange}{\angle{BCA}}.</code> Dat betekent dat beide hoeken gelijk zijn omdat ze worden gevormd door twee 
+                        evenwijdige lijnen BC en DE,
+                         <code>\overline{BC}</code>
+                        and <code>\overline{DE}</code>, doorsneden door
                         <code>\overline{CF}</code>.
                     </p>
                 </div>
@@ -156,9 +155,9 @@
                 </div>
 
                 <div class="question">
-                    <p data-tt="question3">Given the following:</p>
+                    <p data-tt="question3">Gegeven:</p>
                     <ul>
-                        <li><code>\overline{AB} \parallel \overline{CD}</code> (line AB is parallel to line CD)</li>
+                        <li><code>\overline{AB} \parallel \overline{CD}</code> (lijn AB is evenwijdig aan lijn CD)</li>
                         <li data-if="RAND_SWITCH3 === 0">
                             <code>\color{purple}{\angle{EGB}} = <var>X</var>&deg;.</code>
                         </li><li data-else-if="RAND_SWITCH3 === 1">
@@ -167,7 +166,7 @@
                             <code>\color{purple}{\angle{BGH}} = <var>180 - X</var>&deg;</code>
                         </li>
                     </ul>
-                    <p data-tt="question4">What is <code>\color{blue}{\angle{<var>RAND_SWITCH2 === 0 ? "GHD" : "CHF"</var>}} {?}</code></p>
+                    <p data-tt="question4">Hoe groot is <code>\color{blue}{\angle{<var>RAND_SWITCH2 === 0 ? "GHD" : "CHF"</var>}} {?}</code></p>
                 </div>
 
                 <div class="problem">
@@ -235,7 +234,7 @@
                                 "below right");
                         }
                     </div>
-                    <p data-tt="note2" style="font-size:70%; color:grey"><strong>NOTE:</strong> Angles not drawn to scale.</p>
+                    <p data-tt="note2" style="font-size:70%; color:grey"><strong>Opmerking:</strong> Hoeken zijn niet op schaal getekend.</p>
 
 
                 </div> <!-- end problem block -->
@@ -245,13 +244,12 @@
                 <div class="hints">
                     <p data-tt="hint3" data-if="RAND_COMBO === 0">
                         <code>\color{blue}{\angle{GHD}} = \color{purple}{\angle{EGB}}</code>.
-                        We know this because they are 2 complementary angles of a set of
-                        parallel lines bisected by a single line.
+                        We weten dit omdat het twee complementaire hoeken van een set evenwijdige lijnen zijn, die worden doorsneden door een enkele lijn.
                     </p>
                     <p data-tt="hint4" data-if="RAND_COMBO === 1">
-                        First solve for <code>\color{orange}{\angle{AGH}}</code>.  We know that
+                        Los eerst <code>\color{orange}{\angle{AGH}}</code> op.  We weten dat
                         <code>\color{orange}{\angle{AGH}} = \color{purple}{\angle{EGB}}</code>
-                        because opposite angles are equal.
+                       omdat de tegengestelde hoeken gelijk zijn.
                         <span class="graphie" data-update="opposite-parallel">
                             arc([1,2], .88, 180, 225, {stroke:"orange"});
                             label([0,2], "\\color{orange}{<var>X</var>&deg;}", "below left");
@@ -259,20 +257,18 @@
                     </p>
                     <p data-tt="hint5" data-else-if="RAND_COMBO === 10">
                         <code>\color{blue}{\angle{GHD}} = \color{purple}{\angle{AGH}}</code>
-                        We know this because they are 2 alternate interior angles of a set of
-                        parallel lines bisected by a single line.
+                        We weten dit omdat het twee wisselende binnenhoeken zijn van twee evenwijdige lijnen, doorsneden door een andere lijn.
                     </p>
                     <p data-tt="hint6" data-if="RAND_COMBO === 11">
                         <code>\color{blue}{\angle{CHF}} = \color{purple}{\angle{AGH}}</code>.
-                        We know this because they are 2 corresponding angles of a set of
-                        parallel lines bisected by a single line.
+                        We weten dit omdat het twee complementaire hoeken van een set evenwijdige lijnen zijn, die worden doorsneden door een enkele lijn.
                     </p>
                     <p data-tt="hint7" data-else-if="RAND_COMBO === 20 || RAND_COMBO === 21">
-                        First solve for  <code>\color{orange}{\angle{AGH}}</code>.  We know that
+                        Los eerst  <code>\color{orange}{\angle{AGH}}</code> op.  We weten dat
                         <code>
                             \color{orange}{\angle{AGH}} = 180&deg; - \color{purple}{\angle{BGH}}
                         </code>,
-                        because angles along a line plane add up to 180&deg;.
+                        omdat hoeken bij elkaar opgeteld altijd 180&deg; zijn.
                         <span class="graphie" data-update="opposite-parallel">
                             arc([1,2], .88, 180, 225, {stroke:"orange"});
                             label([0,2], "\\color{orange}{<var>X</var>&deg;}", "below left");
@@ -280,16 +276,14 @@
                     </p>
                     <p data-tt="hint8" data-if="RAND_COMBO == 20">
                         <code>\color{blue}{\angle{GHD}} = \color{orange}{\angle{AGH}}</code>.
-                        We know those 2 angles are equal because they are alternate interior angles
-                        of 2 parallel lines.
+                        We weten dat deze 2 hoeken gelijk zijn omdat het wisselende binnenhoeken zijn van 2 evenwijdige lijnen.
                     </p>
                     <p data-tt="hint9" data-else-if="RAND_COMBO == 21 || RAND_COMBO == 1">
                         <code>\color{blue}{\angle{CHF}} = \color{orange}{\angle{AGH}}</code>.
-                        We know those 2 angles are equal because they are corresponding angles
-                        formed by parallel lines, and a single bisecting lines.
+                        We weten dat de twee hoeken gelijk zijn omdat het overeenkomstige hoeken zijn die zijn gevormd door twee evenwijdige lijnen, gekruist door een lijn.                      
                     </p>
                     <p data-tt="hint10">
-                        Therefore,
+                        Daarom,
                         <span data-if="RAND_SWITCH2 == 0">
                             <code>\angle{GHD} = <var>X</var>&deg;</code>
                             <span class="graphie" data-update="opposite-parallel">
@@ -323,13 +317,13 @@
                 </div>
 
                 <div class="question">
-                    <p data-tt="question5" >Given the following:</p>
+                    <p data-tt="question5" >Gegeven:</p>
                     <ul>
                         <li><code>\color{green}{\angle{BDC}&deg;} = <var>Tri1_Y</var></code></li>
                         <li><code>\color{orange}{\angle{DBE}&deg;} = <var>Tri1_X</var></code></li>
                     </ul>
                     <p data-tt="question6">
-                        What is <code>\color{blue}{\angle{<var>RAND_SWITCH3 === 0 ? "CHE" : ( RAND_SWITCH3 === 1 ? "GHC" : "DHE" )</var>}} {?}</code>
+                        Hoe groot is <code>\color{blue}{\angle{<var>RAND_SWITCH3 === 0 ? "CHE" : ( RAND_SWITCH3 === 1 ? "GHC" : "DHE" )</var>}} {?}</code>
                     </p>
                 </div>
 
@@ -383,7 +377,7 @@
                         }
                     </div>
 
-                    <p data-tt="note3" style="font-size:70%; color:grey"><strong>NOTE:</strong> Angles not drawn to scale.</p>
+                    <p data-tt="note3" style="font-size:70%; color:grey"><strong>Operking:</strong> Hoeken zijn niet op schaal getekend.</p>
 
 
                 </div> <!-- end problem block -->
@@ -399,7 +393,7 @@
                             \color{purple}{\angle{BHD}} =
                             180&deg; - \color{green}{\angle{BDC}} - \color{orange}{\angle{DBE}} =
                             <var>Tri1_Z</var>&deg;.
-                        </code> This is because the interior angles of a triangle add up to 180&deg;.
+                        </code> Dit is omdat de hoeken op 1 lijn samen 180&deg; zijn.
                         <span class="graphie" data-update="star1">
                             // label angle BHD
                             arc([3.2, 1.3], .75, 118, 220, { stroke: "purple" });
@@ -410,8 +404,7 @@
 
                     <div data-tt="hint12" data-if="RAND_SWITCH3 === 0">
                         <p><code>\color{blue}{\angle{CHE}} = \color{purple}{\angle{BHD}}</code>.
-                        This is because they are opposite each other, and opposite angles are
-                        equal.</p>
+                        Dit komt omdat ze tegenovergesteld zijn, en tegenovergestelde hoeken zijn gelijk.</p>
                         <p><code>\color{blue}{\angle{CHE}} = <var>Tri1_Z</var>&deg;</code></p>
                         <span class="graphie" data-update="star1">
                             LABEL.remove();
@@ -429,8 +422,7 @@
                             <code>\color{blue}{\angle{DHE}}</code>
                         </span>
                         <code> = 180&deg; - \color{purple}{\angle{BHD}}</code>.
-                        This is because angles along a line add up to
-                        180&deg;.
+                        Dit is omdat hoeken bij elkaar opgeteld 180&deg; zijn.
                         </p>
                         <p>
                         <span data-if="RAND_SWITCH3 === 1">
@@ -467,7 +459,7 @@
                 </div>
 
                 <div class="question">
-                    <p data-tt="question7" >Given the following:</p>
+                    <p data-tt="question7" >Gegeven:</p>
                     <ul data-if="RAND_SWITCH2 === 0">
                         <li><code>\color{green}{\angle{BDC}&deg;} = <var>Tri2_Y</var>&deg;</code></li>
                         <li><code>\color{orange}{\angle{AIC}&deg;} = <var>180 - Tri2_Z</var>&deg;</code></li>
@@ -475,7 +467,7 @@
                         <li><code>\color{green}{\angle{GCH}&deg;} = <var>Tri2_Y</var>&deg;</code></li>
                         <li><code>\color{orange}{\angle{FGH}&deg;} = <var>180 - Tri2_Z</var>&deg;</code></li>
                     </ul>
-                    <p data-tt="question8">What is <code>\color{blue}{\angle{<var>RAND_SWITCH2 === 0 ? "AJF" : "IHE"</var>}} {?}</code></p>
+                    <p data-tt="question8">Hoe groot is <code>\color{blue}{\angle{<var>RAND_SWITCH2 === 0 ? "AJF" : "IHE"</var>}} {?}</code></p>
                 </div>
 
                 <div class="problem">
@@ -535,7 +527,7 @@
                             }
                     </div>
 
-                    <p data-tt="note4" style="font-size:70%; color:grey"><strong>NOTE:</strong> Angles not drawn to scale.</p>
+                    <p data-tt="note4" style="font-size:70%; color:grey"><strong>Opmerking:</strong> Hoeken zijn niet op schaal getekend.</p>
 
 
                 </div> <!-- end problem block -->
@@ -545,7 +537,7 @@
                 <div class="hints">
                     <p data-tt="hint14" data-if="RAND_SWITCH2==0">
                         <code>\color{purple}{\angle{DIJ}} = 180&deg; - \color{orange}{\angle{AIC}}</code>.
-                        This is because angles along a line total 180&deg;.
+                        Hoeken op een lijn zijn samen altijd 180&deg;.
                         <span class="graphie" data-update="star2">
                             // label angle JID
                             arc([0, -1.2], .75, 143, 220, { stroke: "purple" });
@@ -555,7 +547,7 @@
                     </p>
                     <p data-tt="hint15" data-else>
                         <code>\color{purple}{\angle{HGC}} = 180&deg; - \color{orange}{\angle{FGH}}</code>.
-                        This is because angles along a line or flat plane total 180&deg;.
+                        Hoeken op een platte lijn zijn samen altijd 180&deg;.
                         <span class="graphie" data-update="star2">
                             // label angle HGC
                             arc([1.8, 5], 1, 280, 0, { stroke: "purple" });
@@ -567,7 +559,7 @@
                     <p data-tt="hint16" data-if="RAND_SWITCH2==0">
                         <code>\color{teal}{\angle{DJI}} = 180&deg; - \color{green}{\angle{BDC}} -
                             \color{purple}{\angle{DIJ}}</code>.
-                        We know this because the sum of angles inside a triangle add up to 180&deg;.
+                        We weten dit omdat de som van de hoeken binnen een driehoek 180&deg; is.
                         <span class="graphie" data-update="star2">
                             // label angle JID
                             arc([-3.2, 1.3], .75, 260, 320, { stroke: "teal" });
@@ -578,7 +570,7 @@
                     <p data-tt="hint17" data-else>
                         <code>\color{teal}{\angle{CHG}} = 180&deg; - \color{green}{\angle{ACD}} -
                             \color{purple}{\angle{HGC}}</code>.
-                        We know this, because the sum of angles inside a triangle add up to 180&deg;.
+                        We weten dit omdat de som van de hoeken binnen een driehoek 180&deg; is.
                         <span class="graphie" data-update="star2">
                             // label angle CHG
                             arc([3.2, 1.3], .75, 38, 120, { stroke: "teal" });
@@ -590,15 +582,15 @@
 
                     <p data-tt="hint18" data-if="RAND_SWITCH2==0">
                         <code>\color{blue}{\angle{AJF}} = \color{teal}{\angle{DJI}}</code>.
-                        We know they are equal because they are opposite angles.
+                        We weten dat ze gelijk zijn omdat het tegenovergestelde hoeken zijn.
                     </p>
                     <p data-tt="hint19" data-else>
                         <code>\color{blue}{\angle{IHE}} = \color{teal}{\angle{CHG}}</code>.
-                        We know they are equal because they are opposite angles.
+                        We weten dat ze gelijk zijn omdat het tegenovergestelde hoeken zijn.
                     </p>
 
                     <p data-tt="hint20">
-                        Therefore,
+                        Daarom,
                         <span data-if="RAND_SWITCH2 == 0">
                             <code>\angle{AJF} = <var>Tri2_X</var>&deg;</code>
                             <span class="graphie" data-update="star2">

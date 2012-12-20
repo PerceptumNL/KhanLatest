@@ -1,6 +1,6 @@
 ({
 	"nl" : {
-		"exercise1"	: 'Hoe laat is het?',
+		"exercise1"	: 'Hoe laat is het? Let op: Het is voor 12uur smiddags',
 		"solution1"	: 'Het is <span class="sol"><var>HOUR</var></span> : <span class="sol"><var>NICE_MINUTE</var></span> uur.',
 		"solution2"	: 'een 12-uurs tijd in uren en minuten.',
 		"hint1"		: 'De kleine wijzer wijst de uren aan en de grote wijzer wijst de minuten aan.',

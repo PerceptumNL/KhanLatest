@@ -33,13 +33,13 @@
 
             <div id="population">
                 <div class="problem" data-else>
-                    <p> Jij hebt de volgende leeftijden (in jaren) gevonden van <var>plural( DATA_POINTS, animal( 1 ) )</var> uit de plaatselijke dierentuin:</p>
+                    <p> Je hebt de volgende leeftijden (in jaren) gevonden van <var>plural( DATA_POINTS, animal( 1 ) )</var> uit de plaatselijke dierentuin:</p>
                     <p><code>\qquad<var>DATA.join( ",\\enspace " )</var></code></p>
                 </div>
 
                 <p class="question">
-                    wat is op basis van uw steekproef, de gemiddelde leeftijd van de  <var>plural( animal( 1 ) )</var> uit de dierentuin? Wat is de standaardafwijking?
-                    U kunt uw antwoorden afronden op tienden.
+                    Wat is op basis van je steekproef, de gemiddelde leeftijd van de  <var>plural( animal( 1 ) )</var> uit de dierentuin? Wat is de standaardafwijking?
+                    Je kan je antwoorden afronden op tienden.
                 </p>
 
                 <div class="solution" data-type="multiple">
@@ -51,8 +51,8 @@
                         Standaardafwijking:
                         <span class="sol short" data-type="decimal" data-inexact data-max-error="0.15"><var>stdDevPop( DATA )</var></span> years
                     </p>
-                    <div class="example">decimals, like <code>7.5</code></div>
-                    <div class="example">answers within <code>\pm 0.15</code> are accepted to allow for rounding part-way through</div>
+                    <div class="example">decimalen, zoals <code>7.5</code></div>
+                    <div class="example">antwoorden die <code>\pm 0.15</code> afwijken worden nog goedgerekend</div>
                 </div> <!-- solution -->
 
                 <div class="hints">

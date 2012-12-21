@@ -33,7 +33,7 @@
                         <td style="font-weight:bold;">Custom Badge</td>
                         <td style="padding-bottom:9px;">
                             <select name="name" style="width:200px;">
-                                <option value="-1"> - Choose a badge - </option>
+                                <option value="-1"> - Kies een badge - </option>
                                 {% for custom_badge in custom_badges %}
                                     <option value="{{ custom_badge.name|escape }}">{{ custom_badge.description|escape }}</option>
                                 {% endfor %}
@@ -46,7 +46,7 @@
                         <td style="padding-bottom:9px;">
                             <textarea name="emails" rows="5" cols="40"></textarea><br/>
                             <em>
-                                Specify all student ids to be awarded, separated by newlines.
+                                Specificeer alle ids van de leerlingen, van elkaar gescheiden door nieuwe regels.
                             </em>
                         </td>
                     </tr>

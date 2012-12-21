@@ -7,7 +7,7 @@ from promo_record_model import PromoRecord
 class ProfileCustomizationBadge(badges.Badge):
     def __init__(self):
         badges.Badge.__init__(self)
-        self.description = "Express Yourself"
+        self.description = "Geef jezelf weer"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
         
@@ -26,7 +26,7 @@ class ProfileCustomizationBadge(badges.Badge):
                 PromoRecord.has_user_seen_promo(promo_display_case, user_id))
 
     def extended_description(self):
-        return "Customize your profile avatar and fill up your display case"
+        return "Pas je profiel aan en kies je profiel avatar"
     
     def is_manually_awarded(self):
         return True

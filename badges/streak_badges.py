@@ -14,7 +14,7 @@ class StreakBadge(ExerciseBadge):
         return user_exercise.longest_streak >= self.streak_required
 
     def extended_description(self):
-        return ("Correctly answer %s problems in a row in a single skill" %
+        return ("Beantwoord %s vragen op rij juist" %
                 str(self.streak_required))
 
 
@@ -23,7 +23,7 @@ class NiceStreakBadge(StreakBadge):
     def __init__(self):
         StreakBadge.__init__(self)
         self.streak_required = 20
-        self.description = "Nice Streak"
+        self.description = "Mooie reeks"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -33,7 +33,7 @@ class GreatStreakBadge(StreakBadge):
     def __init__(self):
         StreakBadge.__init__(self)
         self.streak_required = 40
-        self.description = "Great Streak"
+        self.description = "Goede reeks"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -43,7 +43,7 @@ class AwesomeStreakBadge(StreakBadge):
     def __init__(self):
         StreakBadge.__init__(self)
         self.streak_required = 60
-        self.description = "Awesome Streak"
+        self.description = "Geweldige reeks"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -53,7 +53,7 @@ class RidiculousStreakBadge(StreakBadge):
     def __init__(self):
         StreakBadge.__init__(self)
         self.streak_required = 80
-        self.description = "Ridiculous Streak"
+        self.description = "Belachelijke reeks"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0
 
@@ -63,6 +63,6 @@ class LudicrousStreakBadge(StreakBadge):
     def __init__(self):
         StreakBadge.__init__(self)
         self.streak_required = 100
-        self.description = "Ludicrous Streak"
+        self.description = "Bespottelijke reeks"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0

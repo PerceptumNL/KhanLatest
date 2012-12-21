@@ -15,7 +15,7 @@ class VideoTimeBadge(badges.Badge):
         return user_data.total_seconds_watched >= self.seconds_required
 
     def extended_description(self):
-        return ("Watch %s of video" %
+        return ("Bekijk %s van een video" %
                 templatefilters.seconds_to_time_string(self.seconds_required))
 
 

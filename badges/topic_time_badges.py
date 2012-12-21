@@ -24,7 +24,7 @@ class TopicTimeBadge(TopicBadge):
         return user_topic.seconds_watched >= self.seconds_required
 
     def extended_description(self):
-        return ("Watch %s of video in a single topic" %
+        return ("Bekijk %s van een video" %
                 templatefilters.seconds_to_time_string(self.seconds_required))
 
 
@@ -33,7 +33,7 @@ class NiceTopicTimeBadge(TopicTimeBadge):
     def __init__(self):
         TopicTimeBadge.__init__(self)
         self.seconds_required = 60 * 15
-        self.description = "Nice Listener"
+        self.description = "Mooie luisteraar"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -43,7 +43,7 @@ class GreatTopicTimeBadge(TopicTimeBadge):
     def __init__(self):
         TopicTimeBadge.__init__(self)
         self.seconds_required = 60 * 30
-        self.description = "Great Listener"
+        self.description = "Goede luisteraar"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -53,7 +53,7 @@ class AwesomeTopicTimeBadge(TopicTimeBadge):
     def __init__(self):
         TopicTimeBadge.__init__(self)
         self.seconds_required = 60 * 60
-        self.description = "Awesome Listener"
+        self.description = "Geweldige Listener"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0
 
@@ -63,7 +63,7 @@ class RidiculousTopicTimeBadge(TopicTimeBadge):
     def __init__(self):
         TopicTimeBadge.__init__(self)
         self.seconds_required = 60 * 60 * 4
-        self.description = "Ridiculous Listener"
+        self.description = "Zeer goede luisteraar"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 0
 
@@ -73,6 +73,6 @@ class LudicrousTopicTimeBadge(TopicTimeBadge):
     def __init__(self):
         TopicTimeBadge.__init__(self)
         self.seconds_required = 60 * 60 * 10
-        self.description = "Ludicrous Listener"
+        self.description = "Super goede luisteraar"
         self.badge_category = badges.BadgeCategory.PLATINUM
         self.points = 0

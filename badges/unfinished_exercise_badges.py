@@ -64,8 +64,8 @@ class UnfinishedExerciseBadge(ExerciseBadge):
         return True
 
     def extended_description(self):
-        return ("Answer more than %d problems mostly correctly in a skill "
-                "before becoming proficient" % self.problems_required)
+        return ("Beantwoord meer dan %d vragen juist in een vaardigheid "
+                "voordat je bekwaam wordt" % self.problems_required)
 
 
 @badges.active_badge
@@ -74,7 +74,7 @@ class SoCloseBadge(UnfinishedExerciseBadge):
     def __init__(self):
         UnfinishedExerciseBadge.__init__(self)
         self.problems_required = 30
-        self.description = "Perseverance"
+        self.description = "Volharding"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -85,7 +85,7 @@ class KeepFightingBadge(UnfinishedExerciseBadge):
     def __init__(self):
         UnfinishedExerciseBadge.__init__(self)
         self.problems_required = 40
-        self.description = "Steadfastness"
+        self.description = "Standvastig"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0
 
@@ -96,6 +96,6 @@ class UndeterrableBadge(UnfinishedExerciseBadge):
     def __init__(self):
         UnfinishedExerciseBadge.__init__(self)
         self.problems_required = 50
-        self.description = "Tenacity"
+        self.description = "Vasthoudendheid"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0

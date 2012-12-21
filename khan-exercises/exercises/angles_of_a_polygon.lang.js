@@ -1,6 +1,6 @@
 ({
 	"nl" : {
-		"question1"	: "Wat is de som van de binnenhoeken deze veelhoek?",
+		"question1"	: "Wat is de som van de binnenhoeken van deze veelhoek?",
 		"question2"	: "Wat is de som van de buitenhoeken van deze veelhoek?",
 					
 		"span1"		: '<span class="sol"><var>360</var></span> graden',

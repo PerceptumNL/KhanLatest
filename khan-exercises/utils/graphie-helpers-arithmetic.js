@@ -46,7 +46,7 @@ function Adder(a, b, digitsA, digitsB) {
         var x = pos.max - index;
 
         if (prevCarry !== 0) {
-            highlights.push(graph.label([x, pos.carry], "\\color{#6495ED}{" + prevCarry + "}", "onder"));
+            highlights.push(graph.label([x, pos.carry], "\\color{#6495ED}{" + prevCarry + "}", "below"));
             prevCarryStr = "\\color{#6495ED}{" + prevCarry + "} + ";
         }
 
@@ -65,7 +65,7 @@ function Adder(a, b, digitsA, digitsB) {
         carry = Math.floor(sum / 10);
         if (carry !== 0) {
             highlights.push(graph.label([x - 1, pos.carry],
-                "\\color{#FFA500}{" + carry + "}", "onder"));
+                "\\color{#FFA500}{" + carry + "}", "below"));
             carryStr = "\\color{#FFA500}{" + carry + "}";
         }
 
@@ -83,7 +83,7 @@ function Adder(a, b, digitsA, digitsB) {
 
     this.showFinalCarry = function() {
         highlights.push(graph.label([pos.max - index, pos.carry],
-            "\\color{#6495ED}{" + carry + "}", "onder"));
+            "\\color{#6495ED}{" + carry + "}", "below"));
         graph.label([pos.max - index, pos.sum], "\\LARGE{" + carry + "}");
         highlights.push(graph.label([pos.max - index, pos.sum],
             "\\LARGE{\\color{#28AE7B}{" + carry + "}}"));
@@ -170,11 +170,11 @@ function Subtractor(a, b, digitsA, digitsB, decimalPlaces) {
         var depth = borrowedIdx - idx - 1;
 
         highlights[idx].push(graph.label([pos.max - idx, pos.carry + (0.5 * depth)],
-                                             "\\color{#6495ED}{" + workingDigitsA[idx] + "}", "onder"));
+                                             "\\color{#6495ED}{" + workingDigitsA[idx] + "}", "below"));
         highlights[idx].push(graph.path([[pos.max - 0.3 - idx, pos.first - 0.4], [pos.max + 0.3 - idx, pos.first + 0.4]]));
 
         highlights[idx + 1].push(graph.label([pos.max - 1 - idx, pos.carry + (0.5 * depth)],
-                                                 "\\color{#FFA500}{" + workingDigitsA[idx + 1] + "}", "onder"));
+                                                 "\\color{#FFA500}{" + workingDigitsA[idx + 1] + "}", "below"));
         highlights[idx + 1].push(graph.path([[pos.max - 1.3 - idx, pos.first - 0.4], [pos.max - 0.7 - idx, pos.first + 0.4]]));
         if (depth !== 0) {
             highlights[idx + 1].push(graph.path([[pos.max - 1.3 - idx, pos.carry - 1 + (0.5 * depth)], [pos.max - 0.7 - idx, pos.carry - 0.7 + (0.5 * depth)]]));
@@ -204,7 +204,7 @@ function Subtractor(a, b, digitsA, digitsB, decimalPlaces) {
                 "\\LARGE{\\color{#6495ED}{" + workingDigitsA[index] + "}}"));
         } else {
             highlights[index].push(graph.label([pos.max - index, pos.carry],
-                "\\color{#6495ED}{" + workingDigitsA[index] + "}", "onder"));
+                "\\color{#6495ED}{" + workingDigitsA[index] + "}", "below"));
         }
 
         if (withinB) {
@@ -248,7 +248,7 @@ function Subtractor(a, b, digitsA, digitsB, decimalPlaces) {
     };
 
     this.showSideLabel = function(str) {
-        highlights[index].push(graph.label([pos.sideX, pos.sideY], str, "rechts"));
+        highlights[index].push(graph.label([pos.sideX, pos.sideY], str, "right"));
     };
 
     this.showDecimals = function(deciA, deciB) {
@@ -453,21 +453,21 @@ function Multiplier(a, b, digitsA, digitsB, deciA, deciB) {
         highlights = highlights.concat(drawDigits([bigDigit], -indexA, 2, KhanUtil.BLUE));
         highlights = highlights.concat(drawDigits([smallDigit], -indexB, 1, KhanUtil.PINK));
         if (carry) {
-            highlights = highlights.concat(graph.label([-indexA, 3], "\\color{#FFA500}{" + carry + "}", "onder"));
+            highlights = highlights.concat(graph.label([-indexA, 3], "\\color{#FFA500}{" + carry + "}", "below"));
         }
         graph.label([2, -indexB * digitsA.length - indexA + 2],
             "\\color{#6495ED}{" + bigDigit + "}"
-            + "\\keer"
+            + "\\times"
             + "\\color{#FF00AF}{" + smallDigit + "}"
             + (carry ? "+\\color{#FFA500}{" + carry + "}" : "")
             + "="
-            + "\\color{#28AE7B}{" + product + "}", "rechts");
+            + "\\color{#28AE7B}{" + product + "}", "right");
 
         drawDigits([ones], -indexB - indexA, -indexB);
         highlights = highlights.concat(drawDigits([ones], -indexB - indexA, -indexB, KhanUtil.GREEN));
 
         if (currCarry) {
-            highlights = highlights.concat(graph.label([-1 - indexA, 3], "\\color{#28AE7B}{" + currCarry + "}", "onder"));
+            highlights = highlights.concat(graph.label([-1 - indexA, 3], "\\color{#28AE7B}{" + currCarry + "}", "below"));
             if (indexA === digitsA.length - 1) {
                 drawDigits([currCarry], -indexB - indexA - 1, -indexB);
                 highlights = highlights.concat(drawDigits([currCarry], -indexB - indexA - 1, -indexB, KhanUtil.GREEN));
@@ -513,13 +513,14 @@ function Multiplier(a, b, digitsA, digitsB, deciA, deciB) {
     this.showDecimalsInProduct = function() {
         var x = -maxNumDigits;
         var y = -digitsB.length * digitsA.length;
+
         graph.label([x, y + 2],
-            "\\text{Het bovenste getal heeft " + KhanUtil.plural(deciA, "cijfers") + " achter de komma.}", "rechts");
+            "\\text{Het bovenste getal heeft " + KhanUtil.plural(deciA, "cijfers") + " achter de komma.}", "right");
         graph.label([x, y + 1],
-            "\\text{Het onderste getal heeft " + KhanUtil.plural(deciB, "cijfers") + " cijfers achter de komma.}", "rechts");
+            "\\text{Het onderste getal heeft " + KhanUtil.plural(deciB, "cijfers") + " cijfers achter de komma.}", "right");
         graph.label([x, y],
             "\\text{Het product heeft " + deciA + " + " + deciB + " = " + (deciA + deciB)
-             + "  cijfers achter de komma.}", "rechts");
+             + "  cijfers achter de komma.}", "right");
         graph.style({
             fill: "#000"
         }, function() {
@@ -601,7 +602,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
                 + divisor
                 + "\\text{ in }"
                 + "\\color{#6495ED}{" + total + "}"
-                + "\\text{?}", "rechts");
+                + "\\text{?}", "right");
 
             fShowFirstHalf = false;
         } else {
@@ -631,12 +632,12 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
                 + "\\div"
                 + divisor + "="
                 + "\\color{#28AE7B}{" + quotient + "}"
-                + "\\text{ of }"
+                + "\\text{ or }"
                 + divisor
                 + "\\times"
                 + "\\color{#28AE7B}{" + quotient + "}"
                 + " = "
-                + "\\color{#FFA500}{" + (divisor * quotient) + "}", "rechts");
+                + "\\color{#FFA500}{" + (divisor * quotient) + "}", "right");
             index++;
             fShowFirstHalf = true;
         }

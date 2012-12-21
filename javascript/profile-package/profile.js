@@ -1075,12 +1075,12 @@ var Profile = {
                                 .fail(function(err) {
                                     var error = err.responseText;
                                     button.addClass("failure")
-                                        .text("oh no!").attr("title", "This goal could not be saved.");
-                                    KAConsole.log("Error while saving new badge goal", goal);
+                                        .text("oh nee!").attr("title", "Deze doelstelling kan niet opgeslagen worden.");
+                                    KAConsole.log("Foutmelding tijdens het opslaan", goal);
                                     window.GoalBook.remove(goal);
                                 })
                                 .success(function() {
-                                    button.text("Goal Added!").addClass("success");
+                                    button.text("Doelstelling toegevoegd!").addClass("succes");
                                     badge.find(".energy-points-badge").addClass("goal-added");
                                 });
                         });

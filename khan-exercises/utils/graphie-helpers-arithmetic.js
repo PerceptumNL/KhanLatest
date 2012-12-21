@@ -115,7 +115,7 @@ function Adder(a, b, digitsA, digitsB) {
                 graph.ellipse([pos.max - Math.max(deciA, deciB) + 0.5, i - 0.2], [0.08, 0.04]);
             });
         }
-        this.showSideLabel("\\text{Make sure the decimals are lined up.}");
+        this.showSideLabel("\\text{Zorg er voor dat de kommagetallen op de goede rij staan.}");
     }
 }
 
@@ -257,7 +257,7 @@ function Subtractor(a, b, digitsA, digitsB, decimalPlaces) {
                 graph.ellipse([pos.max - Math.max(deciA, deciB) + 0.5, i - 0.2], [0.08, 0.04]);
             });
         }
-        this.showSideLabel("\\text{Make sure the decimals are lined up.}");
+        this.showSideLabel("\\text{Zorg er voor dat de kommagetallen op de goede rij staan.}");
     };
 }
 
@@ -513,13 +513,14 @@ function Multiplier(a, b, digitsA, digitsB, deciA, deciB) {
     this.showDecimalsInProduct = function() {
         var x = -maxNumDigits;
         var y = -digitsB.length * digitsA.length;
+
         graph.label([x, y + 2],
-            "\\text{The top number has " + KhanUtil.plural(deciA, "digit") + " to the right of the decimal.}", "right");
+            "\\text{Het bovenste getal heeft " + KhanUtil.plural(deciA, "cijfers") + " achter de komma.}", "right");
         graph.label([x, y + 1],
-            "\\text{The bottom number has " + KhanUtil.plural(deciB, "digit") + " to the right of the decimal.}", "right");
+            "\\text{Het onderste getal heeft " + KhanUtil.plural(deciB, "cijfers") + " cijfers achter de komma.}", "right");
         graph.label([x, y],
-            "\\text{The product has " + deciA + " + " + deciB + " = " + (deciA + deciB)
-             + " digits to the right of the decimal.}", "right");
+            "\\text{Het product heeft " + deciA + " + " + deciB + " = " + (deciA + deciB)
+             + "  cijfers achter de komma.}", "right");
         graph.style({
             fill: "#000"
         }, function() {
@@ -597,9 +598,9 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
             highlights = highlights.concat(drawDigits(totalDigits, index - totalDigits.length + 1, -2 * index, KhanUtil.BLUE));
 
             graph.label([digitsDividend.length + 0.5, -2 * index],
-                "\\text{How many times does }"
+                "\\text{Hoe vaak past }"
                 + divisor
-                + "\\text{ go into }"
+                + "\\text{ in }"
                 + "\\color{#6495ED}{" + total + "}"
                 + "\\text{?}", "right");
 
@@ -651,7 +652,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
         this.addDecimal();
         this.show();
         graph.label([digitsDividend.length, 1],
-                "\\text{Write in a decimal and a zero and continue dividing.}", "right");
+                "\\text{Schrijf een komma en een nul en ga door met delen.}", "rechts");
     };
 
     this.getNumHints = function() {
@@ -680,7 +681,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
 
         if (deciDivisor !== 0) {
             graph.label([digitsDividend.length + 1 + (deciDiff > 0 ? deciDiff : 0), 1],
-                "\\text{Shift the decimal " + deciDivisor + " to the right.}", "right");
+                "\\text{Verplaats het kommagetal " + deciDivisor + " naar rechts.}", "rechts");
             graph.style({
                 fill: "#000"
             }, function() {
@@ -688,9 +689,9 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
             });
         } else {
             graph.label([digitsDividend.length + 0.5, 1.2],
-                "\\text{Bring the decimal up into the}", "right");
+                "\\text{Breng het decimale getal}", "rechts");
             graph.label([digitsDividend.length + 0.5, 0.8],
-                "\\text{answer (the quotient).}", "right");
+                "\\text{in het antwoord (de quotiënt).}", "rechts");
         }
 
         this.addDecimal();

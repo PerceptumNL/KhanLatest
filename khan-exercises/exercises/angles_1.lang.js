@@ -289,8 +289,8 @@
  						'<span class="graphie" data-update="alternate-exterior-and-complementary">'+
 							'ORIGINAL_LABEL.remove();'+
 							'label( [0, 3.5], '+
-								"\\\\color{blue}{\\\\angle{IAK}} = <var>90 - Tri_Y</var>&deg;", '+
-								"above left" );							'+
+								'"\\\\color{blue}{\\\\angle{IAK}} = <var>90 - Tri_Y</var>&deg;", '+
+								'"above left" );							'+
 						'</span>',
 		"hint21"	: '<code>\\color{orange}{\\angle{IAK}} = 90&deg; - \\color{green}{\\angle{IAK}} = '+
 						'<var>90 - Tri_Y</var>&deg;</code>, '+
@@ -299,7 +299,7 @@
 						'<code>\\color{purple}{\\angle{DAK}}</code> vormen.'+
 						'<span class="graphie" data-update="alternate-exterior-and-complementary">'+
 							'label( [-.80, 2], "\\\\color{orange}{<var>90-Tri_Y</var>&deg;}", '+
-								"above left" );'+
+								'"above left" );'+
 							'arc( [0, 2], 1, 135, 180, {stroke: "orange"} );'+
 						'</span>',
 		"hint22"	: '<code>\\color{blue}{\\angle{GCJ}} = \\color{orange}{\\angle{DAI}} = '+

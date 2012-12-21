@@ -3,7 +3,7 @@
 <html data-translatable data-require="math math-format graphie expressions">
 <head>
     <meta charset="UTF-8" />
-    <title>Inverses of functions</title>
+    <title>Omgekeerde functies</title>
     <script src="../khan-exercise.js"></script>
     <script type="text/javascript">
         // Formats a fraction when there might be a variable (a string) as the
@@ -49,7 +49,7 @@
 </head>
 <body>
     <div class="exercise">
-        <p class="summary" data-tt="question1">This exercise covers inverses of linear functions.</p>
+        <p class="summary" data-tt="question1">Deze oefening gaat over omgekeerde lineaire functies.</p>
 
         <div class="vars">
             <var id="M">randRangeNonZero( -3, 3 )</var>
@@ -75,9 +75,9 @@
         <div class="problems">
             <div>
                 <div class="problem">
-                    <p data-tt="question2"><code>f(x) = <var>M_X</var> + <var>B</var></code> for all real numbers.</p>
+                    <p data-tt="question2"><code>f(x) = <var>M_X</var> + <var>B</var></code> voor alle reële getallen.</p>
                 </div>
-                <p class="question" data-tt="question3">What is <code>f^{-1}(x)</code>, the inverse of <code>f(x)</code>?</p>
+                <p class="question" data-tt="question3">Wat is <code>f^{-1}(x)</code>, het omgekeerde van <code>f(x)</code>?</p>
 
                 <div class="graphie" id="G">
                     graphInit({
@@ -115,13 +115,13 @@
         </div>
 
         <div class="hints">
-            <p data-tt="hint1"><code>y = f(x)</code>, so solving for <code>x</code> in terms of <code>y</code> gives <code>x=f^{-1}(y)</code></p>
+            <p data-tt="hint1"><code>y = f(x)</code>, dus <code>x</code> opgelost in termen van <code>y</code> geeft <code>x=f^{-1}(y)</code></p>
             <p><code>f(x) = y = <var>expr([ "+", M_X, B ])</var></code></p>
             <p><code><var>expr([ "+", "y", -B ])</var> = <var>M_X</var></code></p>
             <p data-if="M !== 1"><code><var>Y_OVER_M + MINUS_B_OVER_M</var> = x</code></p>
             <p><code>x = <var>Y_OVER_M + MINUS_B_OVER_M</var></code></p>
-            <p data-tt="hint2">So we know: <br /> <code>f^{-1}(y) = <var>Y_OVER_M + MINUS_B_OVER_M</var></code></p>
-            <p data-tt="hint3">Rename <code>y</code> to <code>x</code>: <br /> <code>f^{-1}(x) = <var>X_OVER_M + MINUS_B_OVER_M</var></code></p>
+            <p data-tt="hint2">Dus we weten: <br /> <code>f^{-1}(y) = <var>Y_OVER_M + MINUS_B_OVER_M</var></code></p>
+            <p data-tt="hint3">Hernoem <code>y</code> naar <code>x</code>: <br /> <code>f^{-1}(x) = <var>X_OVER_M + MINUS_B_OVER_M</var></code></p>
             <div class="graphie" data-update="G">
                 var pos = function( n ) {
                         if ( n >= 1 ) {
@@ -174,9 +174,10 @@
                         plot( function( x ) { return x; }, [ -10, 10 ] );
                     });
                 </div>
-                <p data-tt="hint4">Notice that <code>f^{-1}(x)</code> is just <code>f(x)</code> reflected across the line <code>y=x</code>.</p>
+                <p data-tt="hint4">Merk op dat <code>f^{-1}(x)</code> hetzelfde is als <code>f(x)</code> gespiegeld over de lijn <code>y=x</code>.</p>
             </div>
         </div>
     </div>
 </body>
 </html>
+

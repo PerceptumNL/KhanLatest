@@ -12,10 +12,45 @@
 	#page_sub_nav { display: none; }
 	td { vertical-align: top; }
 	.ui-tooltip, .qtip { max-width: 200px; }
-  .rssentry { 
+  .blog-entry { 
     margin-top:20px;
   }
-  .rssdate {
+  a.blog-title { 
+    font-size: 16px;
+    color: #26a8e0;
+    display: block;
+  }
+  a.blog-title:visited { 
+    color: #1688b0;
+  }
+  a.begin-button {
+    width: 340px;
+    height: 100%;
+    background: -webkit-linear-gradient(top, #26a8e0 40%,#8cc4eb 100%);
+    border-radius: 8px;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    margin-left:auto;
+    margin-right:auto;
+    box-shadow: 5px 5px 5px grey;
+    text-shadow: 0px 1px 1px black;
+    color: white;
+    padding: 30px;
+    margin-top: 16px;
+  }
+  a.begin-button:hover {
+    box-shadow: 3px 3px 4px grey;
+    color: white;
+    text-shadow: 0px 0px 2px black;
+    text-decoration: none;
+  }
+  a.begin-button:visited {
+    color: white;
+    text-decoration: none;
+  }
+  .blog-date {
     font-color: gray;
   }
   #homepage-left-col {
@@ -30,8 +65,6 @@
 	  padding-bottom: 10px;
 	  text-align: center;
   }
-
-
   #homepage-right-col {
     float: right;
     max-width: 40%;
@@ -42,15 +75,8 @@
     width: 325px;
     height: 186px;
     display: block;
-  }
-  #spare-leaves {
-    background:url('images/missing-leaf.png') 0px 0px;
-    width:344px;
-    height:313px;
-    position:relative;
-    top:-17px;
-    left:158px;
-    z-index:10;
+    margin-left: auto;
+    margin-right: auto;
   }
   #homepage-text {
     margin-left: 0px;
@@ -63,6 +89,21 @@
   #social-actions {
     margin-bottom: 26px;
     margin-top: 33px;
+  }
+  #social-actions table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+  }
+  td.social-action { 
+    text-align: center;
+    display: inline-block;
+    margin-right: auto;
+    width: 100px;
+  }
+  td.social-action.gplus { 
+    padding-left: 15px;
+    width: 85px;
   }
 </style>
 {% endblock pagecss %}
@@ -92,11 +133,11 @@
                     <td class="social-action">
                         <a href="http://twitter.com/share" class="twitter-share-button" data-counturl="http://www.khanacademie.nl" data-url="http://www.khanacademie.nl" data-text="Kijk. Oefen. Leer bijna alles online, en gratis." data-count="horizontal" data-via="khanacademie">Tweet</a>
                     </td>
-                    <td class="social-action">
+                    <td class="social-action gplus">
                         <g:plusone size="medium" href="http://www.khanacademie.nl"></g:plusone>
                     </td>
                     <td class="social-action">
-                        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fkhanacademie&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+                        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fkhanacademie&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;" allowTransparency="true"></iframe>
                     </td>
                 </tr>
                 <tr>
@@ -110,12 +151,11 @@
         </div>
         <div id="homepage-text" class="visited-no-recolor">
             <p>
-                <b><i>Welkom op de site van de Nederlandse Khan Academie.(Bètaversie)<br> Wij zijn op een missie om jou te helpen alles te leren over onderwerpen waar jij interesse in hebt, wanneer jij het wilt en in je eigen tempo.</b><br><br> 
-                Achter de schermen wordt er hard gewerkt om de site te optimaliseren. Wij hebben ons ten doel gesteld alle bestaande oefeningen voor het einde van 2012 vertaald te hebben naar het Nederlands en deze in te delen volgens de referentieniveaus van Meijerink. 
-                Daarnaast gaan er nieuwe oefeningen toegevoegd worden en worden alle oefeningen van video-uitleg voorzien.</i><br><br>
+                <b><i>Welkom op de site van de Nederlandse Khan Academie. (Bètaversie)<br> Wij zijn op een missie om jou te helpen alles te leren over onderwerpen waar jij interesse in hebt, wanneer jij het wilt en in je eigen tempo.</b><br><br> 
+                Achter de schermen wordt er hard gewerkt om de site te optimaliseren. Wij hebben ons ten doel gesteld alle oefeningen die op dit moment op de website staan rond nieuwjaar vertaald te hebben naar het Nederlands en bij elke video een oefening te plaatsen. 
+                Vanaf 2013 gaan er nieuwe oefeningen toegevoegd worden en worden de oefeningen ingedeeld volgens de referentieniveaus van Meijerink. Ook komt er een mogelijkheid om de bestaande video's te vervangen door eigen gemaakte video's. Wij geloven namelijk in de kracht van onderwijzers en willen samen een krachtig platform maken.</i><br><br>
                  
-                <I><SMALL>Deelnemers die reeds actief waren op de oude site kunnen deze nog steeds bereiken op: <a href="http://oud.khanacademie.nl">oud.khanacademie.nl</a>
-                Deze site wordt echter niet meer up-to-date gehouden, daarom raden wij jullie aan om zo snel mogelijk over te stappen naar de nieuwe omgeving.</SMALL></I></b><br><br>
+    
                 <!--
             <div>
                 <a href="/#browse" data-tag="Homepage C2A" class="call-to-action simple-button green watch-a-video">Bekijk een video</a>
@@ -124,15 +164,17 @@
             -->
     
         </div>
+        <a class="begin-button" href="/exercisedashboard">Begin met Oefenen!</a>
+        <br />
         
     </div>
     <div id="homepage-right-col">
         <h3>Laatste Nieuws</h3>
         {% for entry in rssblog %}
-        <div class="rssentry">
-        <span class="rssdate">{{ entry.pub_date|formatdate }}</span>
-        <a href="{{ entry.link }}" target="_blank"><h5>{{ entry.title }}</h5></a><br />
-        <div>{{ entry.description|striptags|truncate }}</div>
+        <div class="blog-entry">
+        <span class="blog-date">{{ entry.pub_date|formatdate }}</span>
+        <a href="{{ entry.link }}" class="blog-title" target="_blank">{{ entry.title }}</a>
+        <div class="blog-body">{{ entry.description|striptags|truncate }}</div>
         </div>
         {% endfor %}
     </div>

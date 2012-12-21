@@ -1,6 +1,6 @@
 ({
 	"nl" : {
-		"question1"	: 'The two horizontal lines are parallel, and there is a third line that intersects them as shown below.',
+		"question1"	: 'De twee horizontale lijnen zijn evenwijdig, and there is a third line that intersects them as shown below.',
 		"question2"	: 'If we know that the <span class="hint_blue">blue angle is <var>MEASURE</var> degrees</span>, what is the <span class="hint_orange">measure of the orange angle</span>?',
 		
 		"hint1"		: 'The pink angles are adjacent to the blue angle and form a straight line, so we know that they measure <var>180 - MEASURE</var> degrees.',

@@ -1,6 +1,8 @@
 from google.appengine.ext import db
 import feedparser
-from datetime import tzinfo, timedelta, datetime, date
+from datetime import datetime
+from operator import attrgetter
+import logging
 
 
 """
@@ -34,7 +36,7 @@ class RSSBlog(db.Model):
         query = RSSBlog.all()
         last = query.order('-pub_date').get()
         if last is None:
-            return date(1984, 1, 1)
+            return datetime(1984, 1, 1)
         return last.pub_date
 
     @staticmethod
@@ -49,31 +51,23 @@ class RSSBlog(db.Model):
 
     @staticmethod
     def fetch_feed():
-        ZERO = timedelta(0)
-
-        class UTC(tzinfo):
-            """UTC"""
-
-            def utcoffset(self, dt):
-                return ZERO
-
-            def tzname(self, dt):
-                return "UTC"
-
-            def dst(self, dt):
-                return ZERO
-
-        from operator import attrgetter
-        from dateutil.parser import parse
-        latest_date = RSSBlog.get_latest_date()
 
         python_wiki_rss_url = "http://blog.khanacademie.nl/feeds/posts/default?alt=rss"
         feed = feedparser.parse(python_wiki_rss_url)
-        count = 0
         entries = feed["items"]
-        for entry in sorted(entries, key=attrgetter('date'), reverse=False):
-            pub_date = parse(entry['date']).astimezone(UTC())
-            if int(pub_date.strftime("%s")) > (int(latest_date.strftime("%s"))):
+
+        #Wed, 19 Sep 2012 08:50:00 +0000
+        #Convert published date string to date object.
+        for entry in entries:
+            entry['published'] = datetime.strptime(entry.published[:-6], "%a, %d %b %Y %H:%M:%S")
+
+        count = 0
+        latest_date = RSSBlog.get_latest_date()
+        for entry in sorted(entries, key=attrgetter('published'), reverse=False):
+            pub_date = entry['published']
+            if pub_date > latest_date:
                 count += 1
+                logging.info("New blog entry: " + str(entry['title'] + " [published] " + pub_date))
                 RSSBlog.insert_for(pub_date, entry['title'], entry['description'], entry['link'])
+
         return count

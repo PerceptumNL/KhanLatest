@@ -27,31 +27,33 @@
                 graph.pl.drawTransverse( ANCHOR );
                 graph.pl.drawAngle( KNOWN_INDEX, true );
                 graph.pl.drawAngle( UNKNOWN_INDEX, false, "#FFA500" );
+            
             </div>
+              <div class="hints">
+   	 <div>
+			<p data-tt="hint1">Opposite angles are equal, so the pink angle measures <var>MEASURE</var> degrees.</p>
+			<div class="graphie" data-update="parallel-lines">
+				graph.pl.drawVerticalAngle( KNOWN_INDEX, true, "#FF00AF" );
+			</div>
+		</div>
+		<p data-tt="hint2">The pink and orange angles are corresponding angles, so they are also equal.</p>
+		<div>
+			<p data-tt="hint3">The orange angle measures <var>MEASURE</var> degrees.</p>
+			<div class="graphie" data-update="parallel-lines">
+				graph.pl.drawAngle( UNKNOWN_INDEX, true, "#FFA500" );
+			</div>
+		</div>
+		<div>
+			<p data-tt="hint4">Note that the green angle also measures <var>MEASURE</var> degrees. This makes sense because it is opposite the orange angle and corresponds with the blue angle.</p>
+			<div class="graphie" data-update="parallel-lines">
+				graph.pl.drawVerticalAngle( UNKNOWN_INDEX, true, "#28AE7B" );
+			</div>
+		</div>
+	</div>
+	</div>
         </div>
     </div>
 
-    <div class="hints">
-        <div>
-            <p data-tt="hint1">Opposite angles are equal, so the pink angle measures <var>MEASURE</var> degrees.</p>
-            <div class="graphie" data-update="parallel-lines">
-                graph.pl.drawVerticalAngle( KNOWN_INDEX, true, "#FF00AF" );
-            </div>
-        </div>
-        <p data-tt="hint2">The pink and orange angles are corresponding angles, so they are also equal.</p>
-        <div>
-            <p data-tt="hint3">The orange angle measures <var>MEASURE</var> degrees.</p>
-            <div class="graphie" data-update="parallel-lines">
-                graph.pl.drawAngle( UNKNOWN_INDEX, true, "#FFA500" );
-            </div>
-        </div>
-        <div>
-            <p data-tt="hint4">Note that the green angle also measures <var>MEASURE</var> degrees. This makes sense because it is opposite the orange angle and corresponds with the blue angle.</p>
-            <div class="graphie" data-update="parallel-lines">
-                graph.pl.drawVerticalAngle( UNKNOWN_INDEX, true, "#28AE7B" );
-            </div>
-        </div>
-    </div>
-    </div>
+  
 </body>
 </html>

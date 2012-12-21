@@ -777,7 +777,7 @@ div.profile-notification.cover-top {
 
 .profile-navigation {
     position: absolute;
-    width: 150px; /* must be the same as left margin of .tab-content */
+    width: 200px; /* must be the same as left margin of .tab-content */
 }
 .profile-navigation ul {
     /* force a position-context and background color so that it can be
@@ -872,7 +872,7 @@ li.profile-tab {
     vertical-align: middle;
 }
 .tab-content {
-    margin-left: 150px; /* must be the same as width of profile-navigation */
+    margin-left: 200px; /* must be the same as width of profile-navigation */
     padding: 20px 0 20px 20px;
     min-height: 570px;
     border-left: 1px solid #ccc;

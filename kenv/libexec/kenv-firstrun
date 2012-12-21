@@ -40,4 +40,10 @@ if [ ! $? -eq 0 ];then
     exit 1
 fi
 
+VE=$PWD/deploy/env
+
+virtualenv $VE
+source $VE/bin/activate
+pip install -r requirements.txt
+
 print_msg "The kenv dependencies are ready!"

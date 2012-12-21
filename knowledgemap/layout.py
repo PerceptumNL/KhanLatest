@@ -20,7 +20,7 @@ def update_from_live(edit_version):
     site into the edit_version
     """
     logging.info("importing knowledge map layout")
-    request = urllib2.Request("http://www.khanacademy.org/api/v1/maplayout")
+    request = urllib2.Request("http://www.khanacademie.nl/api/v1/maplayout")
     try:
         opener = urllib2.build_opener()
         f = opener.open(request)

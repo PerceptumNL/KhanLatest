@@ -2,7 +2,7 @@
 <html data-translatable data-require="math math-format expressions graphie interactive">
 <head>
     <meta charset="UTF-8" />
-    <title>Graphing inequalities</title>
+    <title>Ongelijkheden tekenen</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@
 
             </div>
 
-            <p data-tt="question1" class="question">Graph the following inequality:</p>
+            <p data-tt="question1" class="question">Geef de volgende ongelijkheid weer:</p>
 
             <div class="problem">
                 <p class="hint_blue" data-if="STD_FORM">
@@ -46,14 +46,14 @@
                             KhanUtil.currentGraph.graph.dasharray = '';
                             KhanUtil.currentGraph.graph.update();
                         " />
-                        Solid line
+                        Gesloten lijn
                     </label>
                     <label data-tt="label2">
                         <input name="dashradio" type="radio" value="dashed" onClick="javascript:
                             KhanUtil.currentGraph.graph.dasharray = '- ';
                             KhanUtil.currentGraph.graph.update();
                         " />
-                        Dashed line
+                        Gestippelde lijn
                     </label>
                 </form>
                 <div class="graphie" id="grid">
@@ -152,7 +152,7 @@
             </div>
             <div class="solution" data-type="custom">
                 <div data-tt="instruction1" class="instruction">
-                    Drag the two points to move the line into the correct position.
+                    Versleep de twee punten op de lijn, zodat de lijn op de correcte plaats komt.
                 </div>
                 <div class="guess">[ graph.pointA.coord, graph.pointB.coord,
                     graph.pointA.coord[0] &gt; graph.pointB.coord[0] ? graph.shadetop : !graph.shadetop,
@@ -179,9 +179,9 @@
                     }
                     graph.update();
                 </div>
-                <div data-tt="example1" class="example">graph the inequality</div>
-                <div data-tt="example2" class="example">make sure the correct side is shaded</div>
-                <div data-tt="example3" class="example">make sure the line is correctly shown as solid or dashed</div>
+                <div data-tt="example1" class="example">Geef de ongelijkheid weer.</div>
+                <div data-tt="example2" class="example">zorg er voor dat de correcte kant gearceerd is.</div>
+                <div data-tt="example3" class="example">zorg er voor dat de lijn correct weergegeven is als gesloten of gestippeld.</div>
             </div>
         </div>
     </div>
@@ -189,19 +189,19 @@
     <div class="hints">
         <div data-if="STD_FORM" data-unwrap>
             <p data-tt="hint1" >
-                Convert <code><var>expr([ "+", [ "*", A, "x" ], [ "*", B, "y" ] ])</var> <var>STD_FORM_COMP</var> <var>C</var></code>
-                to slope-intercept form by solving for <code>y</code>.
+                Zet <code><var>expr([ "+", [ "*", A, "x" ], [ "*", B, "y" ] ])</var> <var>STD_FORM_COMP</var> <var>C</var></code>
+                om naar helling-startwaarde vorm om <code>y</code> op te lossen.
             </p>
             <div>
                 <p data-tt="hint2" >
-                    <var>A &lt; 0 ? "Add" : "Subtract"</var> <code><var>abs( A )</var>x</code> <var>A &lt; 0 ? "to" : "from"</var> both sides:
+                    <var>A &lt; 0 ? "Tel" : "Trek"</var> <code><var>abs( A )</var>x</code> <var>A &lt; 0 ? "op bij" : "af van"</var> beide zijden:
                 </p><p>
                     <code>\qquad <var>expr( [ "*", B, "y" ] )</var> <var>STD_FORM_COMP</var> <var>expr([ "+", [ "*", -A, "x" ], C ])</var></code>
                 </p>
             </div>
             <div data-if="B !== 1">
                 <p data-tt="hint3" >
-                    Divide both sides by <code><var>B</var></code><span data-if="B < 0">. Since you're multiplying or dividing by a negative number, <strong>don't forget</strong> to flip the inequality sign</span>:
+                    Deel beide zijden door <code><var>B</var></code><span data-if="B < 0">. Omdat je vermenigvuldigt met of deelt door een negatief getal,  <strong>vergeet dan niet</strong> het ongelijkheidsteken om te draaien:</span>:
                 </p><p>
                     <code>\qquad y <var>COMP</var> <var>expr([ "+", "\\dfrac{" + expr([ "*", -A, "x" ]) + "}{" + B + "}", "\\dfrac{" + C + "}{" + B + "}" ])</var></code>
                 </p>
@@ -211,8 +211,8 @@
             <p>
                 <code>\qquad y <var>COMP</var> \color{purple}{<var>PRETTY_SLOPE</var>} x \color{<var>GREEN</var>}{+ <var>YINT</var>}</code>
             </p><p data-tt="hint4" >
-                The y-intercept is <code class="hint_green"><var>YINT</var></code> and the slope is <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>.
-                Since the y-intercept is <code class="hint_green"><var>YINT</var></code>, the line must pass through the point <code class="hint_green">(0, <var>YINT</var>)</code>.
+                De y-startwaarde is <code class="hint_green"><var>YINT</var></code> en de helling <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>.
+                Omdat de y-startwaarde <code class="hint_green"><var>YINT</var></code> is, moet de lijn door het punt <code class="hint_green">(0, <var>YINT</var>)</code> lopen.
             </p>
             <div class="graphie" data-update="grid">
                 style({ stroke: GREEN, fill: GREEN }, function() {
@@ -222,17 +222,16 @@
         </div>
         <div>
             <p data-tt="hint5" >
-                The slope is <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>. Remember that
-                the slope tells you rise over run. So in this case for every
+                De helling is <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>. Bedenk dat de helling de verhouding is tussen de verticale en de horizontale positie. Dus in dit geval moet je voor elke
                 <code><var>abs( SLOPE_FRAC[0] )</var></code>
-                <var>"position" + ( abs( SLOPE_FRAC[0] ) !== 1 ? "s" : "" )</var>
-                you move
-                <span data-if="SLOPE_FRAC[0] < 0"><em>down</em> (because it's negative)</span>
-                <span data-else>up</span>
-                you must also move
+                <var>"positie" + ( abs( SLOPE_FRAC[0] ) !== 1 ? "s" : "" )</var>
+                
+                <span data-if="SLOPE_FRAC[0] < 0"><em>omlaag</em> (omdat hij negatief is)</span>
+                <span data-else>omhoog</span>
+                
                 <code><var>SLOPE_FRAC[1]</var></code>
-                <var>"position" + ( abs( SLOPE_FRAC[1] ) !== 1 ? "s" : "" )</var>
-                to the right. So the line must also pass through <code class="hint_purple">(<var>SLOPE_FRAC[1]</var>, <var>YINT + SLOPE_FRAC[0]</var>)</code>
+                <var>"positie" + ( abs( SLOPE_FRAC[1] ) !== 1 ? "s" : "" )</var>
+                naar rechts. Dus de lijn moet door <code class="hint_purple">(<var>SLOPE_FRAC[1]</var>, <var>YINT + SLOPE_FRAC[0]</var>) </code> lopen.
             </p>
             <div class="graphie" data-update="grid">
                 style({
@@ -243,24 +242,22 @@
                     path([ [ 0, YINT ], [ 0, YINT + SLOPE_FRAC[0] ] ]).toBack();
                     path([ [ 0, YINT + SLOPE_FRAC[0] ], [ SLOPE_FRAC[1], YINT + SLOPE_FRAC[0] ] ]).toBack();
                 });
-                label( [ 0, YINT + SLOPE_FRAC[0] / 2 ], abs( SLOPE_FRAC[0] ) + " \\text{ " + ( SLOPE_FRAC[0] &lt; 0 ? "down" : "up" ) + "} \\quad", "left", { color: "purple" } );
-                label( [ 0, YINT + SLOPE_FRAC[0] ], SLOPE_FRAC[1] + " \\text{ right}", ( SLOPE_FRAC[0] &lt; 0 ? "below right" : "above right" ), { color: "purple" } );
+                label( [ 0, YINT + SLOPE_FRAC[0] / 2 ], abs( SLOPE_FRAC[0] ) + " \\text{ " + ( SLOPE_FRAC[0] &lt; 0 ? "omlaag" : "omhoog" ) + "} \\quad", "left", { color: "purple" } );
+                label( [ 0, YINT + SLOPE_FRAC[0] ], SLOPE_FRAC[1] + " \\text{ rechts}", ( SLOPE_FRAC[0] &lt; 0 ? "below right" : "above right" ), { color: "purple" } );
                 graph.yint.toBack();
             </div>
         </div>
         <p data-tt="hint6" >
-            Since our inequality has a <var>LESS_THAN ? "less-than" : "greater-than"</var><var>INCLUSIVE ? " or equal to" : ""</var> sign, that means that any point
-            <strong><var>LESS_THAN ? "below" : "above"</var></strong> the line is a solution to the inequality, so the area <var>LESS_THAN ? "below" : "above"</var>
-            the line should be shaded.
+            Omdat onze ongelijkheid een <var>LESS_THAN ? "kleiner dan" : "groter dan"</var><var>INCLUSIVE ? " gelijk aan" : ""</var> teken heeft, betekent dit dat elk punt
+            <strong><var>LESS_THAN ? "onder" : "boven"</var></strong> de lijn een oplossing is van de ongelijkheid, dus het gebied <var>LESS_THAN ? "onder" : "boven"</var> de lijn moet gearceerd worden.
+            
         </p>
         <div>
             <p  data-tt="hint7" data-if="INCLUSIVE">
-                Note that since the sign is <var>LESS_THAN ? "less-than" : "greater-than"</var> or <strong>equal to</strong>, any point on the line is also a solution, so the
-                line should be solid.
+                   Merk op dat, omdat het teken een <var>LESS_THAN ? "kleiner dan" : "groter dan"</var> of <strong>gelijk aan</strong> teken is, is elk punt van de lijn zelf een oplossing, dus de lijn moet gevuld zijn.
             </p>
             <p  data-tt="hint8" data-else>
-                Note that since the sign is <var>LESS_THAN ? "less-than" : "greater-than"</var> (and not equal to), any point on the line is <strong>not</strong> part of the solution,
-                so the line should be dashed to indicate this.
+                Merk op dat, omdat het teken een <var>LESS_THAN ? "kleiner dan" : "groter dan"</var> teken is (en niet gelijk aan teken), <strong>geen enkel</strong> punt van de lijn zelf een oplossing is, dus de lijn zou gestippeld moeten worden om dit aan te geven.
             </p>
         </div>
     </div>

@@ -2,7 +2,7 @@
 <html data-require="math graphie graphie-helpers angles">
 <head>
     <meta charset="UTF-8" />
-    <title>Alternate exterior angles 2</title>
+    <title>Alternatieve buitenhoeken 2</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -23,8 +23,8 @@
 
     <div class="problems">
         <div>
-            <p>The two horizontal lines are parallel, and there is a third line that intersects them as shown below.</p>
-            <p class="question">Solve for <code>x</code>:</p>
+            <p>De twee horizontale lijnen zijn evenwijdig, de derde lijn snijdt ze.</p>
+            <p class="question">Los <code>x</code> op:</p>
             <p class="solution"><var>SOLUTION</var></p>
             <div class="graphie" id="parallel-lines">
 
@@ -44,49 +44,49 @@
     </div>
 
     <div class="hints">
-        <p>Alternate exterior angles are equal to one another. <a class="related-video" href="/video/angles-formed-by-parallel-lines-and-transversals?playlist=Geometry" data-youtube-id="gRKZaojKeP0">Watch this video</a> to understand why.</p>
+        <p>Alternatieve buitenhoeken zijn gelijk aan elkaar. </p>
         <div>
-            <p>The <code>\color{<var>BLUE</var>}{\text{blue angle}}</code> and the <code>\color{<var>ORANGE</var>}{\text{orange angle}}</code> are alternate interior angles. Therefore, we can set them equal to one another.</p>
+            <p>De <code>\color{<var>BLUE</var>}{\text{blauwe hoek}}</code> en de <code>\color{<var>ORANGE</var>}{\text{oranje hoek}}</code> zijn alternatieve binnenhoeken. Daarom zijn ze gelijk aan elkaar.</p>
             <p><code>\color{<var>BLUE</var>}{<var>A</var>x + <var>B</var>} = \color{<var>ORANGE</var>}{<var>C</var>x + <var>D</var>}</code></p>
         </div>
 
         <div data-if="A > C" data-unwrap>
             <div>
-                <p>Subtract <code>\color{<var>PINK</var>}{<var>C</var>x}</code> from both sides.</p>
+                <p>Trek <code>\color{<var>PINK</var>}{<var>C</var>x}</code> van beide kanten af.</p>
                 <p><code>(<var>A</var>x + <var>B</var>) \color{<var>PINK</var>}{- <var>C</var>x} = (<var>C</var>x + <var>D</var>) \color{<var>PINK</var>}{- <var>C</var>x}</code></p>
                 <p><code><var>A - C</var>x + <var>B</var> = <var>D</var></code></p>
             </div>
             <div>
-                <p><var>B > 0 ? "Subtract" : "Add"</var> <code>\color{<var>PINK</var>}{<var>abs(B)</var>}</code> <var>B > 0 ? "from" : "to"</var> both sides.</p>
+                <p><var>B > 0 ? "Min" : "Plus"</var> <code>\color{<var>PINK</var>}{<var>abs(B)</var>}</code> <var>B > 0 ? "" : ""</var> van beide kanten.</p>
                 <p><code>(<var>A - C</var>x + <var>B</var>) \color{<var>PINK</var>}{+ <var>-B</var>} = <var>D</var> \color{<var>PINK</var>}{+ <var>-B</var>}</code></p>
                 <p><code><var>A - C</var>x = <var>D - B</var></code></p>
             </div>
             <div>
-                <p>Divide both sides by <code>\color{<var>PINK</var>}{<var>A - C</var>}</code>.</p>
+                <p>Deel beide kanten door <code>\color{<var>PINK</var>}{<var>A - C</var>}</code>.</p>
                 <p><code>\dfrac{<var>A - C</var>x}{\color{<var>PINK</var>}{<var>A - C</var>}} = \dfrac{<var>D - B</var>}{\color{<var>PINK</var>}{<var>A - C</var>}}</code></p>
             </div>
             <div>
-                <p>Simplify.</p>
+                <p>Vereenvoudig.</p>
                 <p><code>x = <var>SOLUTION</var></code></p>
             </div>
         </div>
         <div data-else data-unwrap>
             <div>
-                <p>Subtract <code>\color{<var>PINK</var>}{<var>A</var>x}</code> from both sides.</p>
+                <p>Trek <code>\color{<var>PINK</var>}{<var>A</var>x}</code> van beide kanten af.</p>
                 <p><code>(<var>A</var>x + <var>B</var>) \color{<var>PINK</var>}{- <var>A</var>x} = (<var>C</var>x + <var>D</var>) \color{<var>PINK</var>}{- <var>A</var>x}</code></p>
                 <p><code><var>B</var> = <var>C - A</var>x + <var>D</var></code></p>
             </div>
             <div>
-                <p><var>D > 0 ? "Subtract" : "Add"</var> <code>\color{<var>PINK</var>}{<var>abs(D)</var>}</code> <var>D > 0 ? "from" : "to"</var> both sides.</p>
+                <p><var>D > 0 ? "Min" : "Plus"</var> <code>\color{<var>PINK</var>}{<var>abs(D)</var>}</code> <var>D > 0 ? "" : ""</var> aan beide kanten.</p>
                 <p><code><var>B</var> \color{<var>PINK</var>}{+ <var>-D</var>} = (<var>C - A</var>x + <var>D</var>) \color{<var>PINK</var>}{+ <var>-D</var>}</code></p>
                 <p><code><var>B - D</var> = <var>C - A</var>x</code></p>
             </div>
             <div>
-                <p>Divide both sides by <code>\color{<var>PINK</var>}{<var>C - A</var>}</code>.</p>
+                <p>Deel beide kanten door <code>\color{<var>PINK</var>}{<var>C - A</var>}</code>.</p>
                 <p><code>\dfrac{<var>B - D</var>}{\color{<var>PINK</var>}{<var>C - A</var>}} = \dfrac{<var>C - A</var>x}{\color{<var>PINK</var>}{<var>C - A</var>}}</code></p>
             </div>
             <div>
-                <p>Simplify.</p>
+                <p>Vereenvoudig.</p>
                 <p><code><var>SOLUTION</var> = x</code></p>
             </div>
         </div>

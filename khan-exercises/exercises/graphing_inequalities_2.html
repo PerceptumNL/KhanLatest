@@ -2,7 +2,7 @@
 <html data-require="math math-format expressions graphie interactive">
 <head>
     <meta charset="UTF-8" />
-    <title>Graphing inequalities 2</title>
+    <title>Ongelijkheden tekenen 2</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -42,9 +42,9 @@
             </div>
 
             <p class="question">
-                Graph the following inequality and determine if the points
-                <code>(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> or
-                <code>(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> are solutions:
+                Geef de volgende ongelijkheid weer en kijk of de punten
+                <code>(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> en
+                <code>(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> oplossingen zijn:
             </p>
 
             <div class="problem">
@@ -65,14 +65,14 @@
                             KhanUtil.currentGraph.graph.dasharray = '';
                             KhanUtil.currentGraph.graph.update();
                         " />
-                        Solid line
+                        Gesloten lijn
                     </label>
                     <label>
                         <input name="dashradio" type="radio" value="dashed" onClick="javascript:
                             KhanUtil.currentGraph.graph.dasharray = '- ';
                             KhanUtil.currentGraph.graph.update();
                         " />
-                        Dashed line
+                        Gestippelde lijn
                     </label>
                 </form>
                 <div class="graphie" id="grid">
@@ -172,7 +172,7 @@
             <div class="solution" data-type="multiple">
                 <div class="sol" data-type="custom">
                     <div class="instruction">
-                        Drag the two points to move the line into the correct position.
+                        Versleep de twee punten om de de lijn op de correcte plaats te krijgen.
                     </div>
                     <div class="guess">[ graph.pointA.coord, graph.pointB.coord,
                         graph.pointA.coord[0] &gt; graph.pointB.coord[0] ? graph.shadetop : !graph.shadetop,
@@ -202,13 +202,13 @@
                 </div>
                 <div class="sol" data-type="set">
                     <p class="input-format">
-                        <label><span class="checkbox">POINT_1_SOLUTION</span><code>(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> is a solution</label><br />
-                        <label><span class="checkbox">POINT_2_SOLUTION</span><code>(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> is a solution</label>
+                        <label><span class="checkbox">POINT_1_SOLUTION</span><code>(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> is een oplossing</label><br />
+                        <label><span class="checkbox">POINT_2_SOLUTION</span><code>(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> is een oplossing</label>
                     </p>
                 </div>
-                <div class="example">graph the inequality</div>
-                <div class="example">make sure the correct side is shaded</div>
-                <div class="example">make sure the line is correctly shown as solid or dashed</div>
+                <div class="example">geef de ongelijkheid weer</div>
+                <div class="example">zorg er voor dat de correcte kant is gearceerd</div>
+                <div class="example">zorg er voor dat de lijn correct is weergegeven als gesloten of gestippeld</div>
             </div>
         </div>
     </div>
@@ -216,19 +216,19 @@
     <div class="hints">
         <div data-if="STD_FORM" data-unwrap>
             <p>
-                Convert <code><var>expr([ "+", [ "*", A, "x" ], [ "*", B, "y" ] ])</var> <var>STD_FORM_COMP</var> <var>C</var></code>
-                to slope-intercept form by solving for <code>y</code>.
+                Zet <code><var>expr([ "+", [ "*", A, "x" ], [ "*", B, "y" ] ])</var> <var>STD_FORM_COMP</var> <var>C</var></code>
+                om naar helling-startwaarde vorm om <code>y</code> op te lossen.
             </p>
             <div>
                 <p>
-                    <var>A &lt; 0 ? "Add" : "Subtract"</var> <code><var>abs( A )</var>x</code> <var>A &lt; 0 ? "to" : "from"</var> both sides:
+                    <var>A &lt; 0 ? "Tel" : "Trek"</var> <code><var>abs( A )</var>x</code> <var>A &lt; 0 ? "op bij" : "af van"</var> beide zijden:
                 </p><p>
                     <code>\qquad <var>expr( [ "*", B, "y" ] )</var> <var>STD_FORM_COMP</var> <var>expr([ "+", [ "*", -A, "x" ], C ])</var></code>
                 </p>
             </div>
             <div data-if="B !== 1">
                 <p>
-                    Divide both sides by <code><var>B</var></code><span data-if="B < 0">. Since you're multiplying or dividing by a negative number, <strong>don't forget</strong> to flip the inequality sign</span>:
+                    Deel beide zijden door <code><var>B</var></code><span data-if="B < 0">. Omdat je vermenigvuldigt of deelt door een negatief getal, <strong>vergeet niet</strong> het ongelijkheid-teken om te klappen</span>:
                 </p><p>
                     <code>\qquad y <var>COMP</var> <var>expr([ "+", "\\dfrac{" + expr([ "*", -A, "x" ]) + "}{" + B + "}", "\\dfrac{" + C + "}{" + B + "}" ])</var></code>
                 </p>
@@ -238,8 +238,8 @@
             <p>
                 <code>\qquad y <var>COMP</var> \color{purple}{<var>PRETTY_SLOPE</var>} x \color{<var>GREEN</var>}{+ <var>YINT</var>}</code>
             </p><p>
-                The y-intercept is <code class="hint_green"><var>YINT</var></code> and the slope is <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>.
-                Since the y-intercept is <code class="hint_green"><var>YINT</var></code>, the line must pass through the point <code class="hint_green">(0, <var>YINT</var>)</code>.
+                De y-startwaarde is <code class="hint_green"><var>YINT</var></code> en de helling is <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>.
+                Omdat de y-startwaarde <code class="hint_green"><var>YINT</var></code> is, moet de lijn door het punt <code class="hint_green">(0, <var>YINT</var>) </code> lopen.
             </p>
             <div class="graphie" data-update="grid">
                 style({ stroke: GREEN, fill: GREEN }, function() {
@@ -249,17 +249,16 @@
         </div>
         <div>
             <p>
-                The slope is <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>. Remember that
-                the slope tells you rise over run. So in this case for every
+                De helling is <code class="hint_purple"><var>decimalFraction( SLOPE, true, true )</var></code>. Bedenk dat de helling de verhouding is tussen de verticale en de horizontale positie. Dus in dit gebal moet je voor elke
                 <code><var>abs( SLOPE_FRAC[0] )</var></code>
-                <var>"position" + ( abs( SLOPE_FRAC[0] ) !== 1 ? "s" : "" )</var>
-                you move
-                <span data-if="SLOPE_FRAC[0] < 0"><em>down</em> (because it's negative)</span>
-                <span data-else>up</span>
-                you must also move
+                <var>"positie" + ( abs( SLOPE_FRAC[0] ) !== 1 ? "s" : "" )</var>
+                
+                <span data-if="SLOPE_FRAC[0] < 0"><em>omlaag</em> (omdat hij negatief is)</span>
+                <span data-else>omhoog</span>
+                
                 <code><var>SLOPE_FRAC[1]</var></code>
-                <var>"position" + ( abs( SLOPE_FRAC[1] ) !== 1 ? "s" : "" )</var>
-                to the right. So the line must also pass through <code class="hint_purple">(<var>SLOPE_FRAC[1]</var>, <var>YINT + SLOPE_FRAC[0]</var>)</code>
+                <var>"positie" + ( abs( SLOPE_FRAC[1] ) !== 1 ? "s" : "" )</var>
+                naar rechts. Dus de lijn moet door <code class="hint_purple">(<var>SLOPE_FRAC[1]</var>, <var>YINT + SLOPE_FRAC[0]</var>) </code> lopen.
             </p>
             <div class="graphie" data-update="grid">
                 style({
@@ -270,30 +269,28 @@
                     path([ [ 0, YINT ], [ 0, YINT + SLOPE_FRAC[0] ] ]).toBack();
                     path([ [ 0, YINT + SLOPE_FRAC[0] ], [ SLOPE_FRAC[1], YINT + SLOPE_FRAC[0] ] ]).toBack();
                 });
-                label( [ 0, YINT + SLOPE_FRAC[0] / 2 ], abs( SLOPE_FRAC[0] ) + " \\text{ " + ( SLOPE_FRAC[0] &lt; 0 ? "down" : "up" ) + "} \\quad", "left", { color: "purple" } );
-                label( [ 0, YINT + SLOPE_FRAC[0] ], SLOPE_FRAC[1] + " \\text{ right}", ( SLOPE_FRAC[0] &lt; 0 ? "below right" : "above right" ), { color: "purple" } );
+                label( [ 0, YINT + SLOPE_FRAC[0] / 2 ], abs( SLOPE_FRAC[0] ) + " \\text{ " + ( SLOPE_FRAC[0] &lt; 0 ? "omlaag" : "omhoog" ) + "} \\quad", "left", { color: "purple" } );
+                label( [ 0, YINT + SLOPE_FRAC[0] ], SLOPE_FRAC[1] + " \\text{ rechts}", ( SLOPE_FRAC[0] &lt; 0 ? "below right" : "above right" ), { color: "purple" } );
                 graph.yint.toBack();
             </div>
         </div>
         <p>
-            Since our inequality has a <var>LESS_THAN ? "less-than" : "greater-than"</var><var>INCLUSIVE ? " or equal to" : ""</var> sign, that means that any point
-            <strong><var>LESS_THAN ? "below" : "above"</var></strong> the line is a solution to the inequality, so the area <var>LESS_THAN ? "below" : "above"</var>
-            the line should be shaded.
+            Omdat onze gelijkheid een <var>LESS_THAN ? "kleiner dan" : "groter dan"</var><var>INCLUSIVE ? " of gelijk aan" : ""</var> teken heeft, betekent dit dat elk punt
+            <strong><var>LESS_THAN ? "onder" : "boven"</var></strong> de lijn een oplossing is voor de ongelijkhed, dus het gebied <var>LESS_THAN ? "onder" : "boven"</var>
+            de lijn moet worden gearceerd.
         </p>
         <div>
             <p data-if="INCLUSIVE">
-                Note that since the sign is <var>LESS_THAN ? "less-than" : "greater-than"</var> or <strong>equal to</strong>, any point on the line is also a solution, so the
-                line should be solid.
+                Merk op dat omdat de lijn een <var>LESS_THAN ? "kleiner dan" : "groter dan"</var> of <strong>gelijk aan</strong>  teken heeft, dat elk punt op de lijn zelf een oplossing is, dus de lijn moet gevuld zijn.
             </p>
             <p data-else>
-                Note that since the sign is <var>LESS_THAN ? "less-than" : "greater-than"</var> (and not equal to), any point on the line is <strong>not</strong> part of the solution,
-                so the line should be dashed to indicate this.
+                Merk op dat de lijn een <var>LESS_THAN ? "kleiner dan" : "groter dan"</var> (en niet gelijk aan) teken heeft, dus <strong>geen elk punt</strong> deel van de oplossing is, dus om dit weer te geven moet de lijn gestippeld zijn.
             </p>
         </div>
         <div>
             <p>
-                Plot each of the points to determine which are solutions:
-                <code class="hint_pink">(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> and
+                Plot allebei de punten om te bepalen welke een oplossing is:
+                <code class="hint_pink">(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> en
                 <code class="hint_pink">(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code>
             </p>
             <div class="graphie" data-update="grid">
@@ -305,20 +302,20 @@
         </div>
         <div>
             <p data-if="POINT_1_SOLUTION && !POINT_2_SOLUTION">
-                <code class="hint_pink">(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> is a solution because it's inside the shaded area, but
-                <code class="hint_pink">(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> is not.
+                <code class="hint_pink">(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> is een oplossing omdat het punt in het gearceerde vlak ligt, maar
+                <code class="hint_pink">(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> is geen oplossing.
             </p>
             <p data-else-if="POINT_2_SOLUTION && !POINT_1_SOLUTION">
-                <code class="hint_pink">(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> is outside the shaded area, so it's not a solution, but
-                <code class="hint_pink">(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> is a solution.
+                <code class="hint_pink">(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> is geen oplossing omdat het punt buiten het gearceerde vlak ligt, maar
+                <code class="hint_pink">(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> is wel een oplossing.
             </p>
             <p data-else-if="POINT_1_SOLUTION && POINT_2_SOLUTION"> Both
-                <code class="hint_pink">(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> and
-                <code class="hint_pink">(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> are solutions because they're inside the shaded area.
+                <code class="hint_pink">(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> en
+                <code class="hint_pink">(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> zijn oplossingen omdat het punt in het gearceerde vlak ligt.
             </p>
             <p data-else> Neither
-                <code class="hint_pink">(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> nor
-                <code class="hint_pink">(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> are solutions because they are not within the shaded area.
+                <code class="hint_pink">(<var>POINT_1[0]</var>, <var>POINT_1[1]</var>)</code> en
+                <code class="hint_pink">(<var>POINT_2[0]</var>, <var>POINT_2[1]</var>)</code> zijn beide geen oplossing omdat de punten buiten het gearceerde vlak liggen.
             </p>
         </div>
     </div>

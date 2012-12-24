@@ -17,6 +17,6 @@
 		"hint5"		: 'De grafiek is perfect rond en symmetrisch. Alle punten hebben dezelfde afstand tot het middelpunt.',
 		"hint6"		: 'Een <em>cirkel</em> heeft deze eigenschappen.',
 		"hint7"		: "Deze grafiek nadert de twee assen. Het is ook een U-vorm aan beide kanten.",
-		"hint8"		: 'This conic section is therefore a <em>hyperbola</em>.'
+		"hint8"		: 'Deze kromme is daarom een <em>hyperbool</em>.'
 		}
 })

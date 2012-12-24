@@ -332,10 +332,7 @@ var Khan = (function() {
         "http://github.com/Khan/khan-exercises/issues/new\">GitHub</a>. " +
         "Please reference exercise: " + exerciseId + ".",
     issueSuccess = function(url, title, suggestion) {
-        return ["Thank you for your feedback! Your issue has been created and can be ",
-            "found at the following link:",
-            "<p><a id=\"issue-link\" href=\"", url, "\">", title, "</a>",
-            "<p>", suggestion, "</p>"].join("");
+        return "Bedankt voor het melden van een probleem!";
     },
     issueIntro = "Remember to check the hints and double check your math. All provided information will be public. Thanks for your help!",
 

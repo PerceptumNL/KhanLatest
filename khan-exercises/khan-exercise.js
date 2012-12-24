@@ -89,7 +89,6 @@ var Translate = new function(){
 		    	url: url,
 		    	async:false,
 		    	success: function(data){
-                  console.log(data)
 		    		self.table[name] = eval(data);
 		    	}
 		    })
@@ -104,9 +103,7 @@ var Translate = new function(){
 		var langfile = this.exercisepath + id + ".lang.js";
 		var translation = Translate.getTranslation(langfile, id);
 		if(translation && translation[Translate.lang]){
-            console.log(ele);
 			ele.find('[data-tt]').each(function(){
-              console.log("data");
 				token = $(this).attr('data-tt');
 				if(translation[Translate.lang][token]){
 					$(this).html(translation[Translate.lang][token]);
@@ -2510,6 +2507,7 @@ var Khan = (function() {
             var pretitle = exerciseName,
                 type = $("input[name=issue-type]:checked").prop("id"),
                 title = $("#issue-title").val(),
+                ucontact = $("#issue-email").val(),
                 path = exerciseFile + "?seed=" +
                     problemSeed + "&problem=" + problemID,
                 pathlink = "[" + path + (exercise.data("name") !== exerciseId ? " (" + exercise.data("name") + ")" : "") + "](http://sandcastle.khanacademy.org/media/castles/Khan:master/exercises/" + path + "&debug)",
@@ -2593,8 +2591,9 @@ var Khan = (function() {
 
             var dataObj = {
                 title: pretitle + " - " + title,
-                body: body,
-                labels: labels
+                ureport: body,
+                ucontact: ucontact,
+                utype: type 
             };
 
             // we try to post ot github without a cross-domain request, but if we're
@@ -2602,12 +2601,13 @@ var Khan = (function() {
             // to fall back to jsonp.
             $.ajax({
 
-                url: (testMode ? "http://www.khanacademy.org/" : "/") + "githubpost",
+                url: (testMode ? "http://www.khanacademie.nl/" : "/") + "reportissue",
                 type: testMode ? "GET" : "POST",
-                data: testMode ? {json: JSON.stringify(dataObj)} :
-                    JSON.stringify(dataObj),
-                contentType: testMode ? "application/x-www-form-urlencoded" : "application/json",
-                dataType: testMode ? "jsonp" : "json",
+                data: dataObj,
+                    //testMode ? {json: JSON.stringify(dataObj)} :
+                    //JSON.stringify(dataObj),
+                //contentType: testMode ? "application/x-www-form-urlencoded" : "application/json",
+                //dataType: testMode ? "jsonp" : "json",
                 success: function(json) {
 
                     var data = json.data || json;

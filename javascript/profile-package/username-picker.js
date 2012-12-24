@@ -83,7 +83,7 @@ UsernamePickerView = Backbone.View.extend({
         this.setPublicAfterSave_ = setPublic;
         if (setPublic) {
             $(".notification.info").show();
-            $("#save-profile-info").val("Save and make profile public");
+            $("#save-profile-info").val("Opslaan en maak profiel openbaar");
         }
     },
 

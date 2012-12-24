@@ -20,7 +20,7 @@ class TenureBadge(badges.Badge):
         return True
 
     def extended_description(self):
-        return ("Remain a member of the Khan Academy for %s" %
+        return ("Blijf lid van de Khan Academie voor %s" %
                 templatefilters.seconds_to_time_string(self.seconds_required))
 
 

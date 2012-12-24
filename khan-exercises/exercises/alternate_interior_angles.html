@@ -15,8 +15,8 @@
 
     <div class="problems">
         <div>
-            <p data-tt="exercise1">The two horizontal lines are parallel, and there is a third line that intersects them as shown below.</p>
-            <p class="question" data-tt="exercise2">If we know that the <span class="hint_blue">blue angle is <var>MEASURE</var> degrees</span>, what is the <span class="hint_orange">measure of the orange angle</span>?</p>
+            <p data-tt="exercise1">De twee horizontale lijnen zijn evenwijdig, en er is een lijn die deze snijdt.</p>
+            <p class="question" data-tt="exercise2">Als we weten dat de <span class="hint_blue">blauwe hoek <var>MEASURE</var> graden is</span>, hoeveel graden is de <span class="hint_orange">oranje hoek</span> dan?</p>
             <p class="solution" data-forms="integer"><var>MEASURE</var></p>
             <div class="graphie" id="parallel-lines">
                 init({
@@ -33,20 +33,20 @@
 
     <div class="hints">
         <div>
-            <p data-tt="hint1">Opposite angles are equal, so the pink angle measures <var>MEASURE</var> degrees.</p>
+            <p data-tt="hint1">Tegengestelde hoeken zijn gelijk, dus de roze hoek is<var>MEASURE</var> graden.</p>
             <div class="graphie" data-update="parallel-lines">
                 graph.pl.drawVerticalAngle( KNOWN_INDEX, true, "#FF00AF" );
             </div>
         </div>
-        <p data-tt="hint2">The pink and orange angles are corresponding angles, so they are also equal.</p>
+        <p data-tt="hint2">De roze en oranje hoeken zijn gelijk, dus zijn ook hetzelfde aantal graden.</p>
         <div>
-            <p data-tt="hint3">The orange angle measures <var>MEASURE</var> degrees.</p>
+            <p data-tt="hint3">De oranje hoek is <var>MEASURE</var> graden.</p>
             <div class="graphie" data-update="parallel-lines">
                 graph.pl.drawAngle( UNKNOWN_INDEX, true, "#FFA500" );
             </div>
         </div>
         <div>
-            <p data-tt="hint4">Note that the green angle also measures <var>MEASURE</var> degrees. This makes sense because it is opposite the orange angle and corresponds with the blue angle.</p>
+            <p data-tt="hint4">Zie dat de groene hoek ook <var>MEASURE</var> graden is. Dat is logisch, want dit zijn gelijke hoeken.</p>
             <div class="graphie" data-update="parallel-lines">
                 graph.pl.drawVerticalAngle( UNKNOWN_INDEX, true, "#28AE7B" );
             </div>

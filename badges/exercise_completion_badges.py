@@ -51,7 +51,7 @@ class ExerciseCompletionBadge(badges.Badge):
 
         s_exercises = ", ".join(badges)
 
-        return "Achieve proficiency in %s" % s_exercises
+        return "Bereik bekwaamheid in %s" % s_exercises
 
 
 class ChallengeCompletionBadge(ExerciseCompletionBadge):
@@ -67,7 +67,7 @@ class ChallengeCompletionBadge(ExerciseCompletionBadge):
                 s_exercises += ", "
             s_exercises += exercise_models.Exercise.to_display_name(
                 exercise_name)
-        return "Complete the %s" % s_exercises
+        return "Maak de %s" % s_exercises
 
     @property
     def compact_icon_src(self):

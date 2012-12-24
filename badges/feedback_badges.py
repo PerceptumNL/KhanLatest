@@ -55,7 +55,7 @@ class AnswerVoteCountBadge(FeedbackVoteCountBadge):
         return discussion.discussion_models.FeedbackType.Answer
 
     def extended_description(self):
-        return ("Post an answer that earns %d+ votes" %
+        return ("Plaats een antwoord dat %d+ stemmen verdient" %
                 self.required_votes)
 
 
@@ -65,7 +65,7 @@ class QuestionVoteCountBadge(FeedbackVoteCountBadge):
         return discussion.discussion_models.FeedbackType.Question
 
     def extended_description(self):
-        return ("Ask a question that earns %d+ votes" %
+        return ("Stel een vraag dat %d+ stemmen verdient" %
                 self.required_votes)
 
 
@@ -74,7 +74,7 @@ class LevelOneAnswerVoteCountBadge(AnswerVoteCountBadge):
     def __init__(self):
         AnswerVoteCountBadge.__init__(self)
         self.required_votes = 10
-        self.description = "Good Answer"
+        self.description = "Goed antwoord"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0
 
@@ -84,7 +84,7 @@ class LevelTwoAnswerVoteCountBadge(AnswerVoteCountBadge):
     def __init__(self):
         AnswerVoteCountBadge.__init__(self)
         self.required_votes = 25
-        self.description = "Great Answer"
+        self.description = "Geweldig antwoord"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 0
 
@@ -94,7 +94,7 @@ class LevelThreeAnswerVoteCountBadge(AnswerVoteCountBadge):
     def __init__(self):
         AnswerVoteCountBadge.__init__(self)
         self.required_votes = 50
-        self.description = "Incredible Answer"
+        self.description = "Ongelofelijk antwoord"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 0
 
@@ -104,7 +104,7 @@ class LevelOneQuestionVoteCountBadge(QuestionVoteCountBadge):
     def __init__(self):
         QuestionVoteCountBadge.__init__(self)
         self.required_votes = 10
-        self.description = "Good Question"
+        self.description = "Goede vraag"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0
 
@@ -114,7 +114,7 @@ class LevelTwoQuestionVoteCountBadge(QuestionVoteCountBadge):
     def __init__(self):
         QuestionVoteCountBadge.__init__(self)
         self.required_votes = 25
-        self.description = "Great Question"
+        self.description = "Geweldige vraag"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 0
 
@@ -124,6 +124,6 @@ class LevelThreeQuestionVoteCountBadge(QuestionVoteCountBadge):
     def __init__(self):
         QuestionVoteCountBadge.__init__(self)
         self.required_votes = 50
-        self.description = "Incredible Question"
+        self.description = "Ongelofelijke vraag"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 0

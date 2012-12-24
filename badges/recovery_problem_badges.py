@@ -48,8 +48,8 @@ class RecoveryProblemBadge(ExerciseBadge):
         return False
 
     def extended_description(self):
-        return ("Answer a problem correctly after having some trouble with %s "
-                "and sticking with the skill" % self.s_problems_description)
+        return ("Beantwoord een probleem juist na moeite gehad te hebben met %s "
+                "en vast te houden aan de vaardigheid" % self.s_problems_description)
 
 
 @badges.active_badge
@@ -59,8 +59,8 @@ class RecoveryBadge(RecoveryProblemBadge):
         RecoveryProblemBadge.__init__(self)
         self.problems_wrong = 5
         self.problems_wrong_out_of = 10
-        self.description = "Persistence"
-        self.s_problems_description = "a few problems"
+        self.description = "Volharding"
+        self.s_problems_description = "een paar vragen"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -73,6 +73,6 @@ class ResurrectionBadge(RecoveryProblemBadge):
         self.problems_wrong = 10
         self.problems_wrong_out_of = 20
         self.description = "Sticktoitiveness"
-        self.s_problems_description = "many problems"
+        self.s_problems_description = "veel problemen"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0

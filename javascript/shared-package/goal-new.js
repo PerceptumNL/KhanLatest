@@ -168,11 +168,11 @@ var GoalCreator = {
 
         var message = "";
         if (GoalCreator.objectives.length === 0) {
-            message = "This goal currently has no objectives selected. Select <b>up to 10</b> exercises or videos to complete below.";
+            message = "Deze doelstelling heeft geen objecten. Selecteer <b>tot maximaal 10</b> oefeningen of video&#39;s.";
         } else {
             var matchingObjectives;
 
-            message = "To complete this goal, you will have to <ul>";
+            message = "Om deze doelstelling te halen moet je <ul>";
 
             // Exercises
             matchingObjectives = [];
@@ -181,7 +181,7 @@ var GoalCreator = {
                     matchingObjectives.push(objective);
             });
             if (matchingObjectives.length > 0) {
-                message += "<li class='exercise-objectives'>become proficient in exercise";
+                message += "<li class='exercise-objectives'>word bekwaam in een oefening";
                 if (matchingObjectives.length == 1) {
                     message += " <em>" + matchingObjectives[0].description + "</em>";
                 } else {
@@ -192,7 +192,7 @@ var GoalCreator = {
                         else if (idx < matchingObjectives.length - 1)
                             message += ", <em>" + objective.description + "</em>";
                         else
-                            message += " and <em>" + objective.description + "</em>";
+                            message += " en <em>" + objective.description + "</em>";
                     });
                 }
                 message += "</li>";
@@ -216,7 +216,7 @@ var GoalCreator = {
                         else if (idx < matchingObjectives.length - 1)
                             message += ", <em>" + objective.description + "</em>";
                         else
-                            message += " and <em>" + objective.description + "</em>";
+                            message += " en <em>" + objective.description + "</em>";
                     });
                 }
                 message += ".</li>";
@@ -382,7 +382,7 @@ var GoalCreator = {
 
         if (GoalCreator.objectives.length < 2)
         {
-            error = "We'd like you to pick at least two (2) objectives";
+            error = "We zouden graag zien dat je minimaal two (2) objecten kiest";
         }
 
         if (error !== "") {
@@ -420,7 +420,7 @@ var GoalCreator = {
         GoalBook.add(goal);
         goal.save()
             .fail(function(jqXHR) {
-                KAConsole.log("Goal creation failed: " + jqXHR.responseText, goal);
+                KAConsole.log("Doelstelling maken mislukt: " + jqXHR.responseText, goal);
                 GoalBook.remove(goal);
             });
 

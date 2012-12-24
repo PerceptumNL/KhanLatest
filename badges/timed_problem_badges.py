@@ -90,6 +90,6 @@ class LudicrousTimedProblemBadge(TimedProblemBadge):
     def __init__(self):
         TimedProblemBadge.__init__(self)
         self.problems_required = 75
-        self.description = "299,792,458 Meters per Second"
+        self.description = "299,792,458 meter per seconde"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 5000

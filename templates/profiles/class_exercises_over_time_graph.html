@@ -3,7 +3,7 @@
 {% block graph_content %}
 
 {% if not dict_student_exercises %}
-    <div class="graph-notification">Your students aren't proficient in any skills...yet. Point them to <a href="/exercisedashboard">the exercise dashboard</a>.</div>
+    <div class="graph-notification">Jouw studenten hebben nog geen vaardigheden...Nog niet. Verwijs ze naar het <a href="/exercisedashboard">oefeningen overzicht</a>.</div>
 {% endif %}
 
 <script>
@@ -213,7 +213,7 @@ $(document).ready(function() {
                     },
                     xAxis: {
                         title: {
-                            text: 'Days working on the site'
+                            text: 'Aantal dagen aan het werk op de site'
                         },
                         min: 0,
                         plotLines: [{
@@ -225,7 +225,7 @@ $(document).ready(function() {
                     yAxis: {
                         min: 1,
                         title: {
-                            text: 'Skills Completed'
+                            text: 'Vaardigheden behaald'
                         },
                         plotLines: [{
                             value: 0,

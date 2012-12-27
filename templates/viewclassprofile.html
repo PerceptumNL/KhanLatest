@@ -57,10 +57,10 @@
             <div class="accordion-content">
                 Laat je zien aan welke vaardigheden jouw klas heeft gewerkt en heeft afgerond.
                 <div class="graph-options">
-                    <span class="progress-legend exercise-color started">Beginner</span>
-                    <span class="progress-legend exercise-color proficient">Gevorderd</span>
-                    <span class="progress-legend exercise-color review light">Herzien</span>
-                    <span class="progress-legend exercise-color struggling">Worstelt</span>
+                    <span class="progress-legend exercise-color started">Begonnen</span>
+                    <span class="progress-legend exercise-color proficient">Gehaald</span>
+                    <span class="progress-legend exercise-color review light">Herhalen</span>
+                    <span class="progress-legend exercise-color struggling">Moeite</span>
                 </div>
             </div>
         </li>
@@ -71,14 +71,14 @@
             </p>
         </li>
         <li>
-            <a href="/class_profile/daily-activity" class="graph-link graph-link-header header">Dagelijks Activiteiten Verslag.</a>
+            <a href="/class_profile/daily-activity" class="graph-link graph-link-header header">Dagelijks activiteiten verslag</a>
             <p class="accordion-content">
                 Toont je de totale klassenactiviteit op een bepaalde datum. <br /><br />
 
               <span class="instructions">Lichtblauwe activiteit toont normale schooluren en donkerblauw toont de activiteit die is verricht buiten de normale schooluren.</span>
         </li>
         <li>
-            <a href="/class_profile/exercise-progress-over-time" class="graph-link graph-link-header header ">Periodieke Voortgang Vaardigheden</a>
+            <a href="/class_profile/exercise-progress-over-time" class="graph-link graph-link-header header ">Periodieke voortgang vaardigheden</a>
             <div class="accordion-content">Laat zien hoeveel vaardigheden jouw student heeft afgerond binnen een bepaalde periode.<br /><br />
                 <span class="instructions">Licht een<a href="#" class="highlight-section show-students-highlight">specifieke student</a> of een <a href="#" class="highlight-section show-exercises-highlight">bepaalde vaardigheid uit</a>.</span><br />
 
@@ -103,7 +103,7 @@
         <li>
             <a href="/class_profile/points-per-minute" class="graph-link graph-link-header header">Punten per minuut per klas</a>
             <p class="accordion-content">
-                Toont het totale aantal energie punten per minuut als een continu ge-update rollend gemiddelde.
+                Toont het totale aantal energiepunten per minuut als een continu geüpdatet rollend gemiddelde.
             </p>
         </li>
         <li>
@@ -111,10 +111,10 @@
             <div class="accordion-content">
                 Toont de doelen van actieve studenten en hun voortgang richting het behalen van deze doelen.
                 <div class="graph-options">
-                    <span class="progress-legend exercise-color started">Beginner</span>
-                    <span class="progress-legend exercise-color proficient">Gevorderd</span>
-                    <span class="progress-legend goal-complete" title="Entire goal is complete">Afgerond</span>
-                    <span class="progress-legend exercise-color struggling">Worstelt</span>
+                    <span class="progress-legend exercise-color started">Begonnen</span>
+                    <span class="progress-legend exercise-color proficient">Gehaald</span>
+                    <span class="progress-legend goal-complete" title="Entire goal is complete">Herhalen</span>
+                    <span class="progress-legend exercise-color struggling">Moeite</span>
                 </div>
             </div>
         </li>
@@ -133,7 +133,7 @@
       <p>Toont alleen
         <input type="text" id="student-progressreport-search" placeholder="leerling of vaardigheid" class="search-input simple-input ui-corner-all blur-on-esc"></input>
         <span class="coach-filter-block">
-            <input type="checkbox" class="progressreport-filter-check" id="progressreport-struggling" name="struggling" /><label for="progressreport-struggling">Worstelt</label></span>
+            <input type="checkbox" class="progressreport-filter-check" id="progressreport-struggling" name="struggling" /><label for="progressreport-struggling">Problemen</label></span>
       <span class="coach-filter-block"><input type="checkbox" class="progressreport-filter-check" id="progressreport-recent" name="recent" /><label for="progressreport-recent">Heeft gewerkt aan in de laatste:</label>
             <select id="progressreport-filter-last-time"><option value="1">dag</option><option value="2">2 dagen</option><option value="3">3 dagen</option><option selected value="7">week</option><option value="30">maand</option></select></span>
     </div>
@@ -147,7 +147,7 @@
     </div>
     <div class="filter-block">
       <p>Toont alleen
-        <input type="text" id="student-progresssummary-search" placeholder="skill name" class="search-input simple-input ui-corner-all blur-on-esc"></input>
+        <input type="text" id="student-progresssummary-search" placeholder="Vaardigheden" class="search-input simple-input ui-corner-all blur-on-esc"></input>
     </div>
   </div>
 
@@ -155,7 +155,7 @@
     {{ profile_macros.class_graph_link(user_data_coach, "Daily Activity Report", "classtime", selected_graph_type, list_id) }}
     <div class="filter-block">
         <h3>Dagelijks Activiteiten Rapport <small> voor </small></h3>
-        <input type="text" id="targetDatepicker" value="Today">
+        <input type="text" id="targetDatepicker" value="Vandaag">
     </div>
   </div>
 
@@ -168,8 +168,8 @@
         <select id="student-goals-sort">
           <option value="name"> Leerling </option>
           <option value="progress"> Voortgang </option>
-          <option value="created"> Recentelijk begonnen </option>
-          <option value="updated"> Recentelijk ge-update </option>
+          <option value="created"> Recentelijk aan begonnen </option>
+          <option value="updated"> Recentelijk geupdate </option>
         </select>
       </p>
     </div>
@@ -177,11 +177,11 @@
       <p>Toont alleen
         <input type="text" id="student-goals-search" placeholder="student or objective" class="search-input simple-input ui-corner-all blur-on-esc"></input>
       <span class="coach-filter-block"><input type="checkbox" class="student-goals-filter-check" id="goal-most-recent-filter" name="most-recent" />
-        <label for="goal-most-recent-filter">Recentelijk ge-update</label></span>
+        <label for="goal-most-recent-filter">Recentelijk geupdate</label></span>
       <span class="coach-filter-block"><input type="checkbox" class="student-goals-filter-check" id="goal-in-progress-filter" name="in-progress" />
-        <label for="goal-in-progress-filter">Aan de gang</label></span>
+        <label for="goal-in-progress-filter">Aan begonnen</label></span>
       <span class="coach-filter-block"><input type="checkbox" class="student-goals-filter-check" id="goal-struggling-filter" name="struggling" />
-        <label for="goal-struggling-filter">Worstelt</label>
+        <label for="goal-struggling-filter">Heeft moeite</label>
       </span>
     </div>
   </div>

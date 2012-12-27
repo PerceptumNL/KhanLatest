@@ -6,7 +6,7 @@
     xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:og="http://opengraphprotocol.org/schema/"
     xmlns:fb="http://www.facebook.com/2008/fbml" {{ data_require }}>
       <head prefix="og: http://ogp.me/ns#{{ App.facebook_app_namespace }}:
-                        http://ogp.me/ns/apps/{{ App.facebook_app_namespace }}#">
+                        http://ogp.me/ns/apps/{{ App.facebook_app_namespace }}#" >
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
         {% if include_errorception and not hide_analytics -%}
         <script>
@@ -16,6 +16,14 @@
         c.parentNode.insertBefore(a,c)};a.addEventListener?a.addEventListener("load",d,!1):
         a.attachEvent("onload",d)})(window,document);
         </script>
+        <script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = '//www.bugherd.com/sidebarv2.js?apikey=vcq6yh4qdcky76aqxkveeq';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
         {%- endif %}
         <!--[if lte IE 7]><script src="/javascript/ie-warning.js"></script><script>window.onload=function(){e("/images/ie-warning/")}</script><![endif]-->
         {{ app.globals(username, is_mobile_capable, logged_in_user_profile, user_data, server_time) }}

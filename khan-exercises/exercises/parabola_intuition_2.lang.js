@@ -1,6 +1,6 @@
 ({
 	"nl" : {
-		"question1"	: 'Adjust the focus coordinates and the equation of the directrix to make the blue parabola match the orange parabola',
+		"question1"	: 'Verplaats the focus coordinates and the equation of the directrix to make the blue parabola match the orange parabola',
 		"question2"	: 'All points on the blue parabola are equidistant from the focus and the directrix. How does changing the numbers affect the shape of the parabola?',
 		"question3"	: 'focus x coordinate: <span id="focus-x-label"><code>0</code></span><span class="mini-buttons">'+
 						'<input type="button" class="simple-button action-gradient" value="+" onclick="updateFocusDirectrix( 1, 0, 0 )" />'+

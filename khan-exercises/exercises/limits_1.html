@@ -2,7 +2,7 @@
 <html data-translatable data-require="math graphie math-format expressions">
 <head>
     <meta charset="UTF-8" />
-    <title>Limits 1</title>
+    <title>Limieten 1</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -54,7 +54,7 @@
                     <li><code><var>q_lcoef</var></code></li>
                     <li><code><var>l_cons</var></code></li>
                     <li><code><var>curFunc(0)</var></code></li>
-                    <li data-tt="question2">Does not exist.</li>
+                    <li data-tt="question2">Meer gegevens nodig.</li>
                 </ul>
             </div>
             <div>
@@ -94,7 +94,7 @@
                         circle( [-abs_cons, abs_coef], 4 / 20, { fill: "white" } )
                     });
                 </div>
-                <p class="solution" data-tt="question1">Does not exist.</p>
+                <p class="solution" data-tt="question1">Meer gegevens nodig.</p>
                 <ul class="choices" data-show="5" data-none="true">
                     <li><code>0</code></li>
                     <li><code><var>a</var></code></li>
@@ -107,7 +107,7 @@
                     <li><code><var>randRangeNonZero(-3, 3)</var></code></li>
                 </ul>
                 <div class="hints" data-apply="appendContents">
-                    <p id="final" data-tt="hint1">The limit as we approach from the left doesn't match the limit as we approach from the right, so <code>f(x)</code> has no limit as <code>x \to <var>a</var></code>.</p>
+                    <p id="final" data-tt="hint1">De linkerlimiet en de rechterlimiet leveren niet dezelfde waarde op, dus <code>f(x)</code> heeft geen limiet voor <code>x \to <var>a</var></code>.</p>
                 </div>
             </div>
             <div>
@@ -127,10 +127,10 @@
                     <var id="r_limtoa">limtoa</var>
                 </div>
 
-                <p>If <code>f(x) = \begin{cases}
-                    <var>d_cons</var> & \text{if $x = <var>a</var>$} \\
-                    <var>d_line</var> & \text{otherwise}
-                \end{cases}</code>, find <code>\displaystyle \lim_{x \to <var>a</var>} f(x)</code>.</p>
+                <p>Als <code>f(x) = \begin{cases}
+                    <var>d_cons</var> & \text{als $x = <var>a</var>$} \\
+                    <var>d_line</var> & \text{anders}
+                \end{cases}</code>, vind <code>\displaystyle \lim_{x \to <var>a</var>} f(x)</code>.</p>
                 <div class="graphie" id="graph">
                     graphInit({
                         range: 10,
@@ -162,7 +162,7 @@
                     <li><code><var>fractionReduce(l_cons * -1, l_coef)</var></code></li>
                     <li><code><var>randRangeNonZero(-3, 3)</var></code></li>
                     <li><code><var>randRangeNonZero(-3, 3)</var></code></li>
-                    <li data-tt="question2">Does not exist.</li>
+                    <li data-tt="question2">Meer gegevens nodig.</li>
                 </ul>
             </div>
             <div>
@@ -213,7 +213,7 @@
 
         <div class="hints">
             <div>
-                <p data-tt="hint2">What happens as we approach <code>x = <var>a</var></code> from the left?</p>
+                <p data-tt="hint2">Wat gebeurt er als <code>x = <var>a</var></code> nadert vanaf links?</p>
                 <div class="graphie" data-update="graph" data-style="stroke: orange; marker: arrow;">
                     line( [a - 2, 0], [a, 0], {
                         stroke: "#ff00af",
@@ -226,15 +226,15 @@
                     <tr><th><code>x</code></th><th><var>a - 0.1</var></th><th><var>a - 0.01</var></th><th><var>a - 0.001</var></th></tr>
                     <tr><th><code>f(x)</code></th><td><var>curFunc(a - 0.1).toFixed(4)</var></td><td><var>curFunc(a - 0.01).toFixed(4)</var></td><td><var>curFunc(a - 0.001).toFixed(4)</var></td></tr>
                 </table>
-                It looks like <code>f(x)</code> is approaching <code><var>l_limtoa</var></code> from the left.
+                Het ziet ernaar uit dat <code>f(x)</code> vanaf links nadert tot <code><var>l_limtoa</var></code>.
             </div>
             <div data-tt="hint4">
-                <p>When we approach <code>x = <var>a</var></code> from the right, we get:</p>
+                <p>Wanneer we <code>x = <var>a</var></code> vanaf rechts naderen, vinden we dat:</p>
                 <table class="limit">
                     <tr><th><code>x</code></th><th><var>a + 0.1</var></th><th><var>a + 0.01</var></th><th><var>a + 0.001</var></th></tr>
                     <tr><th><code>f(x)</code></th><td><var>curFunc(a + 0.1).toFixed(4)</var></td><td><var>curFunc(a + 0.01).toFixed(4)</var></td><td><var>curFunc(a + 0.001).toFixed(4)</var></td></tr>
                 </table>
-                It looks like <code>f(x)</code> is approaching <code><var>r_limtoa</var></code> from the right.
+                Het ziet ernaar uit dat <code>f(x)</code> <code><var>r_limtoa</var></code> nadert, vanaf rechts.
                 <div class="graphie" data-update="graph" data-style="stroke: orange; marker: arrow;">
                     line( [a + 2, 0], [a, 0], {
                         stroke: "#ff00af",
@@ -242,7 +242,7 @@
                     });
                 </div>
             </div>
-            <p id="final" data-tt="hint6">So the limit is <code><var>limtoa</var></code>.</p>
+            <p id="final" data-tt="hint6">De limiet is dus <code><var>limtoa</var></code>.</p>
         </div>
     </div>
 </body>

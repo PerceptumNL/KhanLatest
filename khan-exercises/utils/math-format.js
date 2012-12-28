@@ -234,9 +234,9 @@ $.extend(KhanUtil, {
 
     // Ported from https://github.com/clojure/clojure/blob/master/src/clj/clojure/pprint/cl_format.clj#L285
     cardinal: function(n) {
-        var cardinalScales = ["", "thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion", "decillion", "undecillion", "duodecillion", "tredecillion", "quattuordecillion", "quindecillion", "sexdecillion", "septendecillion", "octodecillion", "novemdecillion", "vigintillion"];
-        var cardinalUnits = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-        var cardinalTens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+        var cardinalScales = ["", "duizend", "miljoen", "biljoen", "triljoen", "biljard", "quintiljoen", "sextiljoen", "septiljoen", "octiljoen", "noniljoen", "deciljoen", "undeciljoen", "duodeciljoen", "tredeciljoen", "quattuordeciljoen", "quindeciljoen", "sexdeciljoen", "septendeciljoen", "octodeciljoen", "novemdeciljoen", "vigintiljoen"];
+        var cardinalUnits = ["nul", "een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen", "tien", "elf", "twaalf", "dertien", "viertien", "vijftien", "zestien", "zeventien", "achttien", "negentien"];
+        var cardinalTens = ["", "", "twintig", "dertig", "veertig", "vijftig", "zestig", "zeventig", "tachtig", "negentig"];
         // For formatting numbers less than 1000
         var smallNumberWords = function(n) {
             var hundredDigit = Math.floor(n / 100);
@@ -244,7 +244,7 @@ $.extend(KhanUtil, {
             var str = "";
 
             if (hundredDigit) {
-                str += cardinalUnits[hundredDigit] + " hundred";
+                str += cardinalUnits[hundredDigit] + " honderdtal";
             }
 
             if (hundredDigit && rest) {
@@ -276,7 +276,7 @@ $.extend(KhanUtil, {
         };
 
         if (n === 0) {
-            return "zero";
+            return "nul";
         } else {
             var neg = false;
             if (n < 0) {
@@ -302,7 +302,7 @@ $.extend(KhanUtil, {
             }
 
             if (neg) {
-                words.unshift("negative");
+                words.unshift("negatief");
             }
 
             return words.join(" ");

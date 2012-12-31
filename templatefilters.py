@@ -39,23 +39,23 @@ def seconds_to_time_string(seconds_init, short_display = True):
     seconds -= minutes * 60
 
     if years:
-        return "%d year%s" % (years, pluralize(years))
+        return "%d %s" % (years, "jaar" if (years ==1) else "jaren")
     elif months:
-        return "%d month%s" % (months, pluralize(months))
+        return "%d maand%en" % (months, pluralize(months))
     elif weeks:
-        return "%d week%s" % (weeks, pluralize(weeks))
+        return "%d %s" % (weeks, "week" if (years ==1) else "weken")
     elif days and hours and not short_display:
-        return "%d day%s and %d hour%s" % (days, pluralize(days), hours, pluralize(hours))
+        return "%d dag%en and %d %s" % (hours, "uur" if (hours ==1) else "uur")
     elif days:
-        return "%d day%s" % (days, pluralize(days))
+        return "%d dag%en" % (days, pluralize(days))
     elif hours:
         if minutes and not short_display:
-            return "%d hour%s and %d minute%s" % (hours, pluralize(hours), minutes, pluralize(minutes))
+            return "%d %s en %d %s" % (hours, "uur" if (hours ==1) else "uur", minutes, "minuut" if (minutes ==1) else "minuten")
         else:
-            return "%d hour%s" % (hours, pluralize(hours))
+            return "%d %s" % (hours, "uur" if (hours ==1) else "uur")        
     else:
         if seconds and not minutes:
-            return "%d second%s" % (seconds, pluralize(seconds))
+            return "%d second%en" % (seconds, pluralize(seconds))
         return "%d %s" % (minutes, "minuut" if minutes == 1 else "minuten")
 
 
@@ -75,7 +75,7 @@ def phantom_login_link(login_notifications, continue_url):
 def append_ago(s_time):
     if not s_time:
         return ""
-    return re.sub("^0 minutes ago", "just now", s_time + " ago")
+    return re.sub("^0 minuten geleden", "zojuist", s_time + " geleden")
 
 def in_list(content, list):
     return content in list

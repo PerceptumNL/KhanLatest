@@ -115,7 +115,7 @@ var StudentLists = {
 
         if (StudentLists.currentList === StudentLists.Id.All) {
             // this deletes the student-coach relationship: be sure
-            var sure = confirm("Are you sure you want to stop coaching this student?");
+            var sure = confirm("Weet je zeker dat je geen coach van deze leerling wilt zijn?");
             if (sure) {
                 $.ajax({
                     type: "GET",
@@ -212,7 +212,7 @@ var StudentLists = {
         var nstudents = 0;
         var title;
         var titleHref;
-        var countstring = "student";
+        var countstring = "studenten";
 
         if (StudentLists.currentList === StudentLists.Id.Requests) {
             $("#actual-students").hide();
@@ -223,12 +223,12 @@ var StudentLists = {
             $("#empty-class").show();
             $("#textbox-container").show();
 
-            title = "Requests";
+            title = "Verzoeken";
             $(".students-header h2 a").removeAttr("href");
             $(".students-header #coach-id-indicator").show();
             $(".students-header #create-child-button").hide();
             $("#delete-list").hide();
-            countstring = "potential student";
+            countstring = "potentiële leerlingen";
         } else if (StudentLists.currentList === StudentLists.Id.ChildAccounts) {
             $("#actual-students").hide();
             $("#child-students").show();
@@ -241,7 +241,7 @@ var StudentLists = {
             $("#empty-class").hide();
             $("#textbox-container").hide();
 
-            title = "My child accounts";
+            title = "Mijn leerling accounts";
             $(".students-header h2 a").removeAttr("href");
             $(".students-header #coach-id-indicator").hide();
             $(".students-header #create-child-button").show();

@@ -39,23 +39,23 @@ def seconds_to_time_string(seconds_init, short_display = True):
     seconds -= minutes * 60
 
     if years:
-        return "%d %s" % (years, "jaar" if (years ==1) else "jaren")
+        return "%d %s" % (years, "jaar" if years == 1 else "jaren")
     elif months:
-        return "%d maand%en" % (months, pluralize(months))
+        return "%d maand%s" % (months, pluralize(months))
     elif weeks:
-        return "%d %s" % (weeks, "week" if (years ==1) else "weken")
+        return "%d %s" % (weeks, "week" if years == 1 else "weken")
     elif days and hours and not short_display:
-        return "%d dag%en and %d %s" % (hours, "uur" if (hours ==1) else "uur")
+        return "%d dag%s and %d %s" % (days, pluralize(days), hours, "uur")
     elif days:
-        return "%d dag%en" % (days, pluralize(days))
+        return "%d dag%s" % (days, pluralize(days))
     elif hours:
         if minutes and not short_display:
-            return "%d %s en %d %s" % (hours, "uur" if (hours ==1) else "uur", minutes, "minuut" if (minutes ==1) else "minuten")
+            return "%d %s en %d %s" % (hours, "uur", minutes, "minuut" if minutes == 1 else "minuten")
         else:
-            return "%d %s" % (hours, "uur" if (hours ==1) else "uur")        
+            return "%d %s" % (hours, "uur")
     else:
         if seconds and not minutes:
-            return "%d second%en" % (seconds, pluralize(seconds))
+            return "%d seconde%s" % (seconds, "" if seconds == 1 else "n")
         return "%d %s" % (minutes, "minuut" if minutes == 1 else "minuten")
 
 

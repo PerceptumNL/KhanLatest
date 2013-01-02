@@ -168,17 +168,18 @@
                                 <nav>
                                     <span class="links nav-subheader">
                                         <span class="dropdown topic-browser-dropdown">
-                                            {% if watch_topic_browser_enabled %}
-                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/#browse" data-tag="Header" class="watch-link dropdown-toggle{%if user_data.is_demo %} show-demo-dialog{% endif %}">Bekijk <span class="caret"></span></a>
-                                            {% else %}
-                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/#browse" data-tag="Header" class="{% if selected_nav_link == 'watch' %}selected{% endif %} watch-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Bekijk</a>
-                                            {% endif %}
                                             <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/exercisedashboard" data-tag="Header" class="{% if selected_nav_link == 'practice' %}selected{% endif %} practice-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Oefen</a>
+                                            {% if watch_topic_browser_enabled %}
+                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/#browse" data-tag="Header" class="watch-link dropdown-toggle{%if user_data.is_demo %} show-demo-dialog{% endif %}">Video's <span class="caret"></span></a>
+                                            {% else %}
+                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/#browse" data-tag="Header" class="{% if selected_nav_link == 'watch' %}selected{% endif %} watch-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Video's</a>
+                                            {% endif %}
+                                           
                                             
                                             {% if not user_data or not user_data.is_child_account() %}
                                             <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/class_profile" data-tag="Header" class="{% if selected_nav_link == 'coach' %}selected{% endif %} coach-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Coach</a>
                                             {% endif %}
-                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/contribute" data-tag="Header" class="{% if selected_nav_link == 'contribute' %}selected{% endif %} contribute-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Help Mee</a>
+                                            <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/contribute" data-tag="Header" class="{% if selected_nav_link == 'contribute' %}selected{% endif %} contribute-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Help mee</a>
                                             <a href="http://blog.khanacademie.nl/" target="_blank" data-tag="Header">Blog</a>
                                             <!--
                                             <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/about" data-tag="Header" class="{% if selected_nav_link == 'about' %}selected{% endif %} about-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Over Ons</a>

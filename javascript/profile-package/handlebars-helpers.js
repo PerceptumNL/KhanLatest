@@ -52,3 +52,18 @@ Handlebars.registerHelper("secondsToTime", function(seconds) {
         return minutes + " minute" + (minutes > 1 ? "s" : "");
     }
 });
+Handlebars.registerHelper("questions_string", function(number) {
+    return (number==1)? "vraag":"vragen";
+});
+Handlebars.registerHelper("votes_string", function(number) {
+    return (number==1)? "stem verzameld":"stemmen verzameld";
+});
+Handlebars.registerHelper("answers_string", function(number) {
+    return (number==1)? "antwoord":"antwoorden";
+});
+Handlebars.registerHelper("flags_string", function(number) {
+    return (number==1)? "vlag verzameld":"vlaggen verzameld";
+});
+Handlebars.registerHelper("comments_string", function(number) {
+    return (number==1)? "opmerking":"opmerkingen";
+});

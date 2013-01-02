@@ -14,15 +14,26 @@
         a.src="//d15qhc0lu1ghnk.cloudfront.net/beacon.js";a.async=!0;
         c.parentNode.insertBefore(a,c)};a.addEventListener?a.addEventListener("load",d,!1):
         a.attachEvent("onload",d)})(window,document);
-        </script>
-       	 <script type='text/javascript'>
-		(function (d, t) {
- 		var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
-  		bh.type = 'text/javascript';
- 		bh.src = '//www.bugherd.com/sidebarv2.js?apikey=vcq6yh4qdcky76aqxkveeq';
-  		s.parentNode.insertBefore(bh, s);
- 		 })(document, 'script');
-		</script> 
+       
+  		var BugHerdConfig = {
+    		feedback: {
+    			tab_text: "Geef feedback", 
+    			option_title_text: "Kies een optie",
+    			option_pin_text: "Ik wil graag iets op deze pagina aanwijzen.",
+    			option_site_text: "Ik heb feedback over deze pagina in z'n geheel.",
+    			feedback_entry_placeholder: "schrijf hier uw feedback",
+    			feedback_email_placeholder: "uw email adres",
+    			feedback_submit_text: "verstuur feedback"
+    		}
+  		};
+
+  (function (d, t) {
+    var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    bh.type = 'text/javascript';
+    bh.src = '//www.bugherd.com/sidebarv2.js?apikey=vcq6yh4qdcky76aqxkveeq';
+    s.parentNode.insertBefore(bh, s);
+   })(document, 'script');
+</script> 
 		
 		
         <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>

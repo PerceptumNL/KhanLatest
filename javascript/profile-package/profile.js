@@ -932,34 +932,34 @@ var Profile = {
 
                 var badgeInfo = [
                         {
-                            icon: "/images/badges/meteorite-medium.png",
+                            icon: "/images/badges/Meteorite-medium.png",
                             className: "bronze",
                             label: "Meteorite"
                         },
                         {
                             icon: "/images/badges/moon-medium.png",
                             className: "silver",
-                            label: "Moon"
+                            label: "Maan"
                         },
                         {
                             icon: "/images/badges/earth-medium.png",
                             className: "gold",
-                            label: "Earth"
+                            label: "Aarde"
                         },
                         {
                             icon: "/images/badges/sun-medium.png",
                             className: "diamond",
-                            label: "Sun"
+                            label: "Zon"
                         },
                         {
                             icon: "/images/badges/eclipse-medium.png",
                             className: "platinum",
-                            label: "Black Hole"
+                            label: "Zwarte Gat"
                         },
                         {
                             icon: "/images/badges/master-challenge-blue.png",
                             className: "master",
-                            label: "Challenge"
+                            label: "Uitdaging"
                         }
                     ];
 
@@ -1039,7 +1039,7 @@ var Profile = {
 
                 $("abbr.timeago").timeago();
 
-                // Start with meteorite badges displayed
+                // Start with Meteorite badges displayed
                 $("#category-0").click();
 
                 // TODO: move into profile-goals.js?

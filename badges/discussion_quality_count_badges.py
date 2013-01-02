@@ -33,7 +33,7 @@ class AnswersQualityCountBadge(DiscussionQualityCountBadge):
         return discussion.discussion_models.FeedbackType.Answer
 
     def extended_description(self):
-        return ("Post %d answers that earn %d+ votes" %
+        return ("Plaats %d antwoorden die %d of meer stemmen verdienen" %
                 (self.required_count, self.required_sum_votes + 1))
 
 
@@ -43,7 +43,7 @@ class QuestionQualityCountBadge(DiscussionQualityCountBadge):
         return discussion.discussion_models.FeedbackType.Question
 
     def extended_description(self):
-        return ("Ask %d questions that earn %d+ votes" %
+        return ("Stel %d vragen die %d of meer stemmen verdienen" %
                 (self.required_count, self.required_sum_votes + 1))
 
 
@@ -75,7 +75,7 @@ class LevelOneQuestionQualityCountBadge(QuestionQualityCountBadge):
         QuestionQualityCountBadge.__init__(self)
         self.required_sum_votes = 2
         self.required_count = 10
-        self.description = "Investigator"
+        self.description = "Onderzoeker"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 0
 

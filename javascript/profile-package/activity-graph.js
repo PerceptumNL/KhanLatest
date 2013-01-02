@@ -190,7 +190,7 @@ var ActivityGraph = {
             var lastIndex = this.videoMinutes.data.length - 1,
                 y = this.videoMinutes.data[lastIndex].y + this.exerciseMinutes.data[lastIndex].y,
                 symbol = (tag === "Achievements" ?
-                        "url(/images/badges/meteorite-small-chart.png)" :
+                        "url(/images/badges/Meteorite-small-chart.png)" :
                         "url(/images/node-complete-chart.png)"
                         );
             return {

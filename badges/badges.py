@@ -60,12 +60,12 @@ class BadgeCategory(object):
                     "te leren rekenen.")
         elif category == BadgeCategory.GOLD:
             return ("Aarde badges zijn zeldzaam. Deze vereisen een aanzienlijke hoeveel tijd "
-                    "of learning.")
+                    "aan studeren.")
         elif category == BadgeCategory.PLATINUM:
             return ("Zon badges zijn episch. Deze verdienen is een ware uitdaging "
                     "en ze vereisen een enorme toewijding.")
         elif category == BadgeCategory.DIAMOND:
-            return ("Zwarte gad badges zijn legendarisch en onbekend. Dit zijn "
+            return ("Zwarte gat badges zijn legendarisch en onbekend. Dit zijn "
                     "de meest unieke badges die te verdienen zijn bij de Khan Academie.")
         elif category == BadgeCategory.MASTER:
             return ("Uitdagings buttons zijn speciale beloningen die je kunt verdienen als je een  "
@@ -78,7 +78,7 @@ class BadgeCategory(object):
         name = "half-moon"
 
         if category == BadgeCategory.BRONZE:
-            name = "meteorite"
+            name = "Meteorite"
         elif category == BadgeCategory.SILVER:
             name = "moon"
         elif category == BadgeCategory.GOLD:

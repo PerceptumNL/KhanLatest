@@ -9,11 +9,11 @@
         <div class="achievement-title">{{ badge.description|escape }}{% if frequency %} <span class="frequency">(x{{ frequency }})</span>{% endif %}</div>
         <div class="achievement-desc {% if not user_badge %}achievement-desc-no-count{% endif %}">
             {% if badge.is_retired %}
-                This badge has been <span class="badge-context-retired">retired</span>!
-                You get to keep it forever, but nobody else can earn it.
+                Deze badge bestaat niet <span class="badge-context-retired">meer</span>!
+                Jij kunt deze badge behouden maar niemand anders kan deze nog verdienen.
             {% else %}
                 {% if user_badge %}
-                    Last achieved {{ user_badge.date|timesince_ago }}
+                    Onlangs bereikt {{ user_badge.date|timesince_ago }}
                     {% if user_badge.count > 1 %}
                         in
                         {% for context_name in badges.visible_context_names(user_badge) %}

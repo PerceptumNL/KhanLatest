@@ -78,7 +78,7 @@ class BadgeCategory(object):
         name = "half-moon"
 
         if category == BadgeCategory.BRONZE:
-            name = "Meteorite"
+            name = "meteorite"
         elif category == BadgeCategory.SILVER:
             name = "moon"
         elif category == BadgeCategory.GOLD:
@@ -141,7 +141,7 @@ class BadgeCategory(object):
     @staticmethod
     def get_type_label(category):
         if category == BadgeCategory.BRONZE:
-            return "Meteorite"
+            return "meteorite"
         elif category == BadgeCategory.SILVER:
             return "Moon"
         elif category == BadgeCategory.GOLD:

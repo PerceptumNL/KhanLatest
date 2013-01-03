@@ -30,10 +30,10 @@
                 </li>
             </ul>
         </div>
-        <a class="delete-button" href="#" title="Remove this student from this list"><img src="images/circled_cross.png"/></a>
+        <a class="delete-button" href="#" title="Verwijder deze leerling uit de lijst."><img src="images/circled_cross.png"/></a>
     </span>
     <div>
-        <span class="student-name visited-no-recolor"><a href="{{student.profile_root}}" title="View this student's profile page">{{ student.nickname|escape }}</a></span>
+        <span class="student-name visited-no-recolor"><a href="{{student.profile_root}}" title="Bekijk de profielpagina van deze leerling.">{{ student.nickname|escape }}</a></span>
         <span class="student-email">{{ (student.email or "")|escape }}</span>
     </div>
 </div>
@@ -50,7 +50,7 @@
             <input type="checkbox" id="allow-coaches-checkbox" class="allow-coaches-checkbox" {% if student.can_modify_coaches %}checked{% endif %}>
             <label for="allow-coaches-checkbox" class="allow-coaches-label">Sta andere coaches toe</label>
         </div>
-        <input type="button" class="simple-button ui-corner-all change-password-button" value="Change password">
+        <input type="button" class="simple-button ui-corner-all change-password-button" value="Verander wachtwoord">
         <div class="css-menu lists-css-menu">
             <ul>
                 <li>Voeg lijst toe
@@ -62,7 +62,7 @@
         </div>
     </span>
     <div>
-        <span class="student-name visited-no-recolor"><a href="{{student.profile_root}}" title="View this student's profile page">{{ student.nickname|escape }}</a></span>
+        <span class="student-name visited-no-recolor"><a href="{{student.profile_root}}" title="Bekijk de profielpagina van deze student.">{{ student.nickname|escape }}</a></span>
     </div>
 </div>
 {% endmacro %}
@@ -72,8 +72,8 @@
 
 <div id="sidebar">
     <ul class="student-list-links">
-        <li id="student-list-allstudents" data-list_id="allstudents"><a href="/students" class="bullet bullet-active">All leerlingen</a></li>
-        <li id="student-list-requests" data-list_id="requests"><a href="/students?list_id=requests" class="bullet" title="Students that appear here have not yet responded to your request to coach them">Verzoeken</a></li>
+        <li id="student-list-allstudents" data-list_id="allstudents"><a href="/students" class="bullet bullet-active">Alle leerlingen</a></li>
+        <li id="student-list-requests" data-list_id="requests"><a href="/students?list_id=requests" class="bullet" title="Leerlingen die hier verschijnen hebben nog niet op jouw verzoek gereageerd.">Verzoeken</a></li>
     </ul>
     {% if child_accounts %}
     <ul id="child-lists" class="student-list-links">
@@ -88,7 +88,7 @@
     <div id="newlist-div" style="display: none;"><div>Nieuwe lijst naam:</div>
     <input type="textbox" id="newlist-box" />
     <a id="newlist-ok" class="simple-button" href="#">OK</a>
-    <a id="newlist-cancel" class="simple-button" href="#">Cancel</a>
+    <a id="newlist-cancel" class="simple-button" href="#">Annuleer</a>
     </div>
     <a id="newlist-button" class="simple-button" href="#">Maak een nieuwe lijst</a>
 </div>
@@ -98,10 +98,10 @@
     <div class="students-header">
         <span class="float-right">
 
-            <a class="delete-button" id="delete-list" href="#"><img src="images/circled_cross.png" title="Delete this list (the students will still appear in 'All students')"/></a>
+            <a class="delete-button" id="delete-list" href="#"><img src="images/circled_cross.png" title="Verwijder deze lijst (de leerlingen blijven zichtbaar onder 'alle leerlingen')"/></a>
         </span>
-        <h2 class="visited-no-recolor"><a href="/class_profile?student_list=allstudents" title="View the class statistics page for this set of students">Alle leerlingen</a></h2>
-        <span id="nstudents">0 studenten</span>
+        <h2 class="visited-no-recolor"><a href="/class_profile?student_list=allstudents" title="Bekijk de statistiekenpagina voor deze leerlingen">Alle leerlingen</a></h2>
+        <span id="nstudents">0 leerlingen</span>
         <a id="create-child-button" style="display: none"
             href="/createchild"
             class="simple-button ui-corner-all float-right">Maak een leerlingen account aan</a>
@@ -117,7 +117,7 @@
         <span class="float-right close-button">(<a href="#">sluiten</a>)</span>
         Geen leerling gevonden met dat ID. De leerling moet minimaal 1 keer ingelogd zijn. Check ook of het ID van de leerling correct is. Hier zijn een paar voorbeelden van leerlingen IDs:<br>
         <ul>
-            <li>student@gmail.com</li>
+            <li>leerling@gmail.com</li>
             <li>http://facebookid.khanacademy.org/123456789</li>
         </ul>
     </div>
@@ -142,7 +142,7 @@
         {% for identifier in coach_requests %}
         <div class="student-row" data-identifier="{{identifier}}">
             <span class="float-right">
-                <a class="delete-button" href="#" title="Cancel the request to coach this student"><img src="images/circled_cross.png"/></a>
+                <a class="delete-button" href="#" title="Annuleer het verzoek om deze leerling te coachen"><img src="images/circled_cross.png"/></a>
             </span>
             <div><span class="student-name">{{ identifier|escape }}</span></div>
         </div>
@@ -154,7 +154,7 @@
     <div id="tmpl" style="display:none">
         <div class="student-row">
             <span class="float-right">
-                <a class="delete-button" href="#" title="Cancel the request to coach this student"><img src="images/circled_cross.png"/></a>
+                <a class="delete-button" href="#" title="Annuleer het verzoek om deze leerling te coachen"><img src="images/circled_cross.png"/></a>
             </span>
             <div><span class="student-name"></span></div>
         </div>

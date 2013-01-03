@@ -408,7 +408,7 @@ Badges.ShareLinksView = Backbone.View.extend({
                                 FacebookUtil.setPublishStreamPermission(false);
 
                                 // TODO: bundle this into handleErrors?
-                                this.showQTip("Sorry, you must grant access in order to share this on Facebook. Try again.");
+                                this.showQTip("Sorry, je moet toestemming geven om dit op Facebook te delen. Probeer nogmaals.");
                                 KAConsole.log("FB OpenGraph badge share failed - permission denied.");
                             }
                         }
@@ -424,15 +424,15 @@ Badges.ShareLinksView = Backbone.View.extend({
         // permission denied error
         if (code === 200) {
             FacebookUtil.setPublishStreamPermission(false);
-            this.showQTip("Sorry, you must grant access in order to share this on Facebook. Try again.");
+            this.showQTip("Sorry, je moet toestemming geven om dit op Facebook te delen. Probeer nogmaals.");
 
         // duplicate OG post error
         } else if (code === 3501) {
-            this.setShared("This badge has already been posted to your timeline.");
+            this.setShared("Deze badge staat al op je tijdlijn.");
 
         // TODO: find out other error codes
         } else {
-            this.showQTip("Sorry, we weren't able to share this. Please try again.");
+            this.showQTip("Sorry, we konden dit niet delen. Probeer het nogmaals.");
         }
     },
 
@@ -443,7 +443,7 @@ Badges.ShareLinksView = Backbone.View.extend({
 
         // Khan Academy permission error
         if (status === 401) {
-            this.showQTip("Sorry, you can't share a badge you haven't earned.");
+            this.showQTip("Sorry, badges die je nog niet hebt behaald kun je ook niet delen.");
             return;
 
         // Open Graph error
@@ -458,7 +458,7 @@ Badges.ShareLinksView = Backbone.View.extend({
                 return;
             }
         }
-        this.showQTip("Sorry, we weren't able to share this. Please try again.");
+        this.showQTip("Sorry, we konden dit niet delen. Probeer het nogmaals.");
     },
 
     /**
@@ -481,7 +481,7 @@ Badges.ShareLinksView = Backbone.View.extend({
     },
 
     finishShare: function() {
-        this.setShared("This badge will now appear in your timeline!");
+        this.setShared("Deze badge zal nu op je tijdlijn verschijnen!");
         this.trackShare("Share Facebook Open Graph");
         KAConsole.log("OG post succeeded!");
     },
@@ -708,7 +708,7 @@ var MailingList = {
             if (validateEmail(jelEmail.val()))
             {
                 $.post("/mailing-lists/subscribe", {list_id: sIdList, email: jelEmail.val()});
-                jelMailingListContainer.html("<p>Done!</p>");
+                jelMailingListContainer.html("<p>Klaar!</p>");
             }
             e.preventDefault();
             return false;

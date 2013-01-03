@@ -14,7 +14,7 @@ class ExerciseCompletionCountBadge(badges.Badge):
                 self.required_exercises)
 
     def extended_description(self):
-        return "Wordt bekwaam in %d willekeurige vaardigheden" % self.required_exercises
+        return "Word bekwaam in %d willekeurige vaardigheden" % self.required_exercises
 
 
 @badges.active_badge

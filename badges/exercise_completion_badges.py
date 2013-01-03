@@ -80,7 +80,7 @@ class LevelOneArithmeticianBadge(ExerciseCompletionBadge):
         ExerciseCompletionBadge.__init__(self)
         self.exercise_names_required = [
             'addition_1', 'subtraction_1', 'multiplication_1', 'division_1']
-        self.description = "Apprentice Arithmetician"
+        self.description = "Pupil rekenaar"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 100
 
@@ -91,7 +91,7 @@ class LevelTwoArithmeticianBadge(ExerciseCompletionBadge):
         ExerciseCompletionBadge.__init__(self)
         self.exercise_names_required = [
             'addition_4', 'subtraction_4', 'multiplication_4', 'division_4']
-        self.description = "Journeyman Arithmetician"
+        self.description = "Ontwikkelde rekenaar"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 500
 
@@ -103,7 +103,7 @@ class LevelThreeArithmeticianBadge(ExerciseCompletionBadge):
         self.exercise_names_required = [
             'multiplying_decimals', 'dividing_decimals',
             'multiplying_fractions', 'dividing_fractions']
-        self.description = "Artisan Arithmetician"
+        self.description = "Gevorderde rekenaar"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 750
 
@@ -114,7 +114,7 @@ class TopLevelArithmeticianBadge(badges.RetiredBadge,
     def __init__(self):
         ChallengeCompletionBadge.__init__(self)
         self.exercise_names_required = ['arithmetic_challenge']
-        self.description = "Master of Arithmetic"
+        self.description = "Meester rekenaar"
         self.badge_category = badges.BadgeCategory.MASTER
         self.points = 10000
 
@@ -129,7 +129,7 @@ class LevelOneTrigonometricianBadge(ExerciseCompletionBadge):
         ExerciseCompletionBadge.__init__(self)
         self.exercise_names_required = [
             'angles_2', 'distance_formula', 'pythagorean_theorem_1']
-        self.description = "Apprentice Trigonometrician"
+        self.description = "pupil in trigoniometrie"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 100
 
@@ -140,7 +140,7 @@ class LevelTwoTrigonometricianBadge(ExerciseCompletionBadge):
         ExerciseCompletionBadge.__init__(self)
         self.exercise_names_required = [
             'pythagorean_theorem_2', 'trigonometry_1']
-        self.description = "Journeyman Trigonometrician"
+        self.description = "Ontwikkeld in trigoniometrie"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 500
 
@@ -152,7 +152,7 @@ class LevelThreeTrigonometricianBadge(ExerciseCompletionBadge):
         self.exercise_names_required = [
             'trigonometry_2', 'graphs_of_sine_and_cosine',
             'inverse_trig_functions', 'trig_identities_1']
-        self.description = "Artisan Trigonometrician"
+        self.description = "Gevorderd in trigoniometrie"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 750
 
@@ -163,7 +163,7 @@ class TopLevelTrigonometricianBadge(badges.RetiredBadge,
     def __init__(self):
         ChallengeCompletionBadge.__init__(self)
         self.exercise_names_required = ['trigonometry_challenge']
-        self.description = "Master of Trigonometry"
+        self.description = "Meester in trigoniometrie"
         self.badge_category = badges.BadgeCategory.MASTER
         self.points = 10000
 

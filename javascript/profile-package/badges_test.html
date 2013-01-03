@@ -17,7 +17,7 @@ var badgeList = new Badges.BadgeList(),
 var SAMPLE_BADGE_JSON = {
     "badgeCategory": 0,
     "description": "",
-    "iconSrc": "/images/badges/meteorite-small.png",
+    "iconSrc": "/images/badges/Meteorite-small.png",
     "isOwned": true,
     "name": "",
     "points": 100,
@@ -43,9 +43,9 @@ function addBadge( name, desc, type, isUserBadge ) {
         case "moon":
             json[ "badgeCategory" ] = Badges.Category.SILVER;
             break;
-        case "meteorite":
+        case "Meteorite":
         default:
-            type = "meteorite";
+            type = "Meteorite";
             json[ "badgeCategory" ] = Badges.Category.BRONZE;
             break;
     }
@@ -81,7 +81,7 @@ KA_TEST.loadTemplates([
     // Populate the full, master badge list.
     addBadge( "foobadge", "Foo badge", "moon", true );
     addBadge( "barbadge", "Bar badge", "earth", true );
-    addBadge( "bazbadge", "Baz badge", "meteorite", true );
+    addBadge( "bazbadge", "Baz badge", "Meteorite", true );
     addBadge( "kablowbadge", "Kablow badge", "moon", true );
     addBadge( "powbadge", "Pow! badge", "earth", true );
     displayCase.setFullBadgeList( fullBadgeList );
@@ -96,7 +96,7 @@ KA_TEST.loadTemplates([
 <div>
 Name: <input id="name"><br>
 Desc: <input id="desc"><br>
-Type(meteorite|moon|earth): <input id="type" value="moon"><br>
+Type(Meteorite|moon|earth): <input id="type" value="moon"><br>
 <button onclick="addBadge()">Add Badge</button>
 </div>
 </body>

@@ -164,7 +164,7 @@ def linebreaksbr_ellipsis(content, ellipsis_content = "&hellip;"):
     return "<br />".join(rg_s)
 
 def pluralize(i):
-    return "" if i == 1 else "s"
+    return "" if i == 1 else "en"
 
 def bingo_redirect_url(url, conversions):
     return gae_bingo.gae_bingo.create_redirect_url(url, conversions)

@@ -1,18 +1,18 @@
 ({
 	"nl" : {
-		"question1"	: 'Solve for <var>X</var>.',
-		"question2"	: 'Solve for <var>X</var>.',
+		"question1"	: 'Los <var>X</var> op.',
+		"question2"	: 'Los <var>X</var> op.',
 		
-		"problem1"	: '<b>Solve for <var>X</var>.</b>',
+		"problem1"	: '<b>Los <var>X</var> op.</b>',
 		
-		"hint1"		: '<span data-if="Y &lt; 0">Add <var>Y * -1</var> to</span><span data-else>Subtract <var>Y</var> from</span> both sides.',
-		"hint2"		: 'Simplify.',
-		"hint3"		: 'Divide both sides by <var>Y</var>.',
-		"hint4"		: 'Divide both sides by <var>Y</var>.',
-		"hint5"		: 'Simplify.',
-		"hint6"		: 'Multiply both sides by <var>Y</var>.',
-		"hint7"		: 'Simplify.',
-		"hint8"		: 'Multiply both sides by <var>Y</var>.',
-		"hint9"		: 'Simplify.'
+		"hint1"		: '<span data-if="Y &lt; 0">Tel <var>Y * -1</var> op bij</span><span data-else>Trek <var>Y</var> af van</span> beide kanten.',
+		"hint2"		: 'Vereenvoudig.',
+		"hint3"		: 'Deel beide kanten door <var>Y</var>.',
+		"hint4"		: 'Deel beide kanten door <var>Y</var>.',
+		"hint5"		: 'Vereenvoudig.',
+		"hint6"		: 'Vermenigvuldig beide kanten met <var>Y</var>.',
+		"hint7"		: 'Vereenvoudig.',
+		"hint8"		: 'Vermenigvuldig beide kanten met <var>Y</var>.',
+		"hint9"		: 'Vereenvoudig.'
 		}
 })

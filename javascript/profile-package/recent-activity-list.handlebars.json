@@ -13,11 +13,11 @@
         "badgeCategory": 0,
         "description": "Inspired 15 Minutes",
         "hideContext": false,
-        "iconSrc": "/images/badges/Meteorite-small.png",
+        "iconSrc": "/images/badges/meteorite-small.png",
         "icons": {
-            "compact": "/images/badges/Meteorite-60x60.png",
-            "medium": "/images/badges/Meteorite-medium.png",
-            "small": "/images/badges/Meteorite-small.png"
+            "compact": "/images/badges/meteorite-60x60.png",
+            "medium": "/images/badges/meteorite-medium.png",
+            "small": "/images/badges/meteorite-small.png"
         },
         "isOwned": false,
         "name": "powerfifteenminutesbadge",
@@ -47,11 +47,11 @@
         "badgeCategory": 0,
         "description": "De vaart erin",
         "hideContext": false,
-        "iconSrc": "/images/badges/Meteorite-small.png",
+        "iconSrc": "/images/badges/meteorite-small.png",
         "icons": {
-            "compact": "/images/badges/Meteorite-60x60.png",
-            "medium": "/images/badges/Meteorite-medium.png",
-            "small": "/images/badges/Meteorite-small.png"
+            "compact": "/images/badges/meteorite-60x60.png",
+            "medium": "/images/badges/meteorite-medium.png",
+            "small": "/images/badges/meteorite-small.png"
         },
         "isOwned": false,
         "name": "nicetimedproblembadge",

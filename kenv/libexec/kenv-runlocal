@@ -3,6 +3,13 @@
 # Summary: Starts a local server accessible via http://localhost:8080
 
 APPDEV=$_GAE_ROOT/dev_appserver.py
+DB=testutil/test_db.sqlite
+DBCOPY=$DB-copy
 
-python $APPDEV --high_replication --use_sqlite --allow_skipped_files --datastore_path=testutil/test_db.sqlite . 
+if [ ! -e "$DBCOPY" ];then
+  cp $DB $DBCOPY
+fi
+
+
+python $APPDEV --high_replication --use_sqlite --allow_skipped_files --datastore_path=$DBCOPY . 
 

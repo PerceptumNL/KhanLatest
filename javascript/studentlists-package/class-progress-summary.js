@@ -66,7 +66,7 @@ var ProgressSummaryView = function() {
 
         Handlebars.registerHelper("progressColumn", function(block) {
             this.progressSide = block.hash.side;
-            return block(this);
+            return block.fn(this);
         });
 
         Handlebars.registerHelper("progressIter", function(progress, block) {
@@ -75,7 +75,7 @@ var ProgressSummaryView = function() {
 
             $.each(progress, function(index, p) {
                 if (fOnLeft === statusInfo[p.status].fShowOnLeft) {
-                    result += block(p);
+                    result += block.fn(p);
                 }
             });
 

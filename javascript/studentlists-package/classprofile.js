@@ -259,7 +259,15 @@ var ClassProfile = {
         },
 
         onDateChange_: function(date) {
-            this.currDate_ = date;
+            // Convert to US date format
+            var sdate = date.split('/');
+            var curr_date = sdate[0];
+            var curr_month = sdate[1]; 
+            var curr_year = sdate[2];
+            
+            //this.currDate_ = date;
+            this.currDate_ =  curr_month + "/" + curr_date + "/" + curr_year;
+            console.log(this.currDate_);
             this.showGraph(this.currGraph_, this.currStudentList_);
         }
     }),

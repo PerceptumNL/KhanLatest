@@ -16,7 +16,7 @@
 		"problem6"	: '',
 		
 		"hint1"		: 'Voor welke waarden van <code>x</code> heeft <code>f(x)</code> een waarde?',
-		"hint2"		: 'What values can <code>f(x)</code> have?',
+		"hint2"		: 'Welke waarden kan <code>f(x)</code> hebben?',
 		"hint3"		: 'Kijk naar de horizontale as, alsof het een getallenlijn is..',
 		"hint4"		: 'Kijk naar de verticale as, alsof het een getallenlijn is.',
 		"hint5"		: '',

@@ -286,7 +286,7 @@ $.extend(KhanUtil, {
 
             hints = hints.concat(composed.hint(val));
 
-            hints.push("<p>That means <code>" + this.name + "(" + val + ") = " +
+            hints.push("<p>Dat betekent dat <code>" + this.name + "(" + val + ") = " +
                 this.hintEvalOf(val, true) + "</code></p>");
 
             hints.push("<p><code>" + this.name + "(" + val + ") = " +

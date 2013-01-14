@@ -2217,6 +2217,17 @@ def get_students_progress_summary():
     return {'exercises': exercise_data,
             'num_students': len(list_students)}
 
+@route("/api/v1/user/exercises/<exercise_name>/request_video", methods=["GET"])
+@api.auth.decorators.login_required
+@jsonp
+@jsonify
+def user_exercises_request_video(exercise_name):
+    exercise = exercise_models.Exercise.get_by_name(exercise_name)
+    try:
+        exercise.request_video()
+        return {'rc': True}
+    except:
+        return {'rc': False}
 
 @route("/api/v1/user/exercises/<exercise_name>", methods=["GET"])
 @api.auth.decorators.login_required

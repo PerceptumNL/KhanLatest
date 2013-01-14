@@ -745,28 +745,52 @@ var Khan = (function() {
                 jel.empty();
 
                 var template = Templates.get("video.thumbnail");
-                _.each(this.getVideos(), function(video, i) {
-                    var thumbnailDiv = $(template({
-                        href: this.makeHref(video),
-                        video: video
-                    })).find("a.related-video").data("video", video).end();
+                if (this.getVideos().length) {
+                  _.each(this.getVideos(), function(video, i) {
+                      var thumbnailDiv = $(template({
+                          href: this.makeHref(video),
+                          video: video
+                      })).find("a.related-video").data("video", video).end();
 
-                    var inlineLink = this.anchorElement(video)
-                        .addClass("related-video-inline");
+                      var inlineLink = this.anchorElement(video)
+                          .addClass("related-video-inline");
 
-                    var sideBarLi = $("<li>")
-                        .append(inlineLink)
-                        .append(thumbnailDiv);
+                      var sideBarLi = $("<li>")
+                          .append(inlineLink)
+                          .append(thumbnailDiv);
 
-                    if (i > 0) {
-                        thumbnailDiv.hide();
-                    } else {
-                        inlineLink.hide();
+                      if (i > 0) {
+                          thumbnailDiv.hide();
+                      } else {
+                          inlineLink.hide();
+                      }
+                      jel.append(sideBarLi);
+                  }, this);
+                } else { 
+                    function set_video_requested() {
+                      jel.empty();
+                      jel.append("You have already requested a video for this exercise!");
                     }
-                    jel.append(sideBarLi);
-                }, this);
+                    if (!this.exercise.videoRequested) {
+                      jel.append("<input type='button' id='request_video' class='simple-button orange full-width' value='Request a video'></input>");
+                      var self = this;
+                      $("#request_video").click(function() {
+                        $.get("/api/v1/user/exercises/"+self.exercise.name+
+                              "/request_video", function(res) {
+                          if (res.rc) 
+                            set_video_requested();
+                          else
+                            alert("An error ocurred, the video was already requested!");
 
-                container.toggle(this.getVideos().length > 0);
+                        })
+                      });
+                    } else {
+                      set_video_requested();
+                    }
+                }
+
+                //container.toggle(this.getVideos().length > 0);
+                container.toggle();
             },
 
             hookup: function() {

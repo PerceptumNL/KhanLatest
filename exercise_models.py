@@ -67,6 +67,9 @@ class Exercise(backup_model.BackupModel):
 
     summative = db.BooleanProperty(default=False)
 
+    # User's requesting a missing video
+    video_requests = db.ListProperty(db.Key)
+
     # Teachers contribute raw html with embedded CSS and JS
     # and we sanitize it with Caja before displaying it to
     # students.
@@ -79,11 +82,11 @@ class Exercise(backup_model.BackupModel):
 
     # List of parent topics
     topic_string_keys = object_property.TsvProperty(indexed=False)
-    
+
     _serialize_blacklist = [
             "author", "raw_html", "last_modified",
             "coverers", "prerequisites_ex", "assigned",
-            "topic_string_keys", "related_video_keys"
+            "topic_string_keys", "related_video_keys", "video_requests"
             ]
 
     @staticmethod
@@ -153,6 +156,22 @@ class Exercise(backup_model.BackupModel):
 
         return None
 
+    def request_video(self):
+        # TODO(csilvers): get rid of circular dependency here
+        user = user_models.UserData.current()
+        if (self.video_requested):
+            raise Exception("Video for exercise %s already requested by %s" %
+                            (self.name, user.username))
+        self.video_requests.append(user.key())
+        self.put()
+
+
+    @property
+    def video_requested(self):
+        user = user_models.UserData.current()
+        return (user.key() in self.video_requests)
+
+
     def related_videos_query(self):
         # TODO(csilvers): get rid of circular dependency here
         import exercise_video_model
@@ -170,8 +189,8 @@ class Exercise(backup_model.BackupModel):
         return exercise_videos
 
     @staticmethod
-    def add_related_video_readable_ids_prop(exercise_dict, 
-                                            evs=None, 
+    def add_related_video_readable_ids_prop(exercise_dict,
+                                            evs=None,
                                             video_dict=None):
         # TODO(csilvers): get rid of circular dependency here
         import exercise_video_model
@@ -253,7 +272,7 @@ class Exercise(backup_model.BackupModel):
 
     @staticmethod
     @layer_cache.cache_with_key_fxn(
-        lambda * args, **kwargs: "all_exercises_unsafe_%s" % 
+        lambda * args, **kwargs: "all_exercises_unsafe_%s" %
             setting_model.Setting.cached_exercises_date())
     def _get_all_use_cache_unsafe():
         query = Exercise.all_unsafe().order('h_position')
@@ -265,7 +284,7 @@ class Exercise(backup_model.BackupModel):
 
     @staticmethod
     @layer_cache.cache_with_key_fxn(
-        lambda * args, **kwargs: "all_exercises_dict_unsafe_%s" % 
+        lambda * args, **kwargs: "all_exercises_dict_unsafe_%s" %
             setting_model.Setting.cached_exercises_date())
     def _get_dict_use_cache_unsafe():
         exercises = Exercise._get_all_use_cache_unsafe()

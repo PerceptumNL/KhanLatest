@@ -769,10 +769,11 @@ var Khan = (function() {
                 } else { 
                     function set_video_requested() {
                       jel.empty();
-                      jel.append("You have already requested a video for this exercise!");
+                      jel.append("Bedankt voor je reactie!");
                     }
                     if (!this.exercise.videoRequested) {
-                      jel.append("<input type='button' id='request_video' class='simple-button orange full-width' value='Request a video'></input>");
+                      jel.append("<input type='button' id='request_video' class='simple-button orange full-width' value='Geef aan dat je een video mist bij deze" +
+                                 " oefening'></input>");
                       var self = this;
                       $("#request_video").click(function() {
                         $.get("/api/v1/user/exercises/"+self.exercise.name+

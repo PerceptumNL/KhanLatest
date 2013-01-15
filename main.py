@@ -42,6 +42,7 @@ import youtube_sync
 import warmup
 import login
 import homepage
+import helpus
 import rssblog
 
 from third_party import search
@@ -906,6 +907,7 @@ application = webapp2.WSGIApplication([
         webapp2.SimpleRoute('/.*', smarthistory.SmartHistoryProxy)
     ]),
     ('/', homepage.ViewHomePage),
+    ('/missingvideos', helpus.ViewMissingVideos),
     ('/about', util_about.ViewAbout),
     ('/about/blog', blog.ViewBlog),
     RedirectRoute('/about/blog/schools',

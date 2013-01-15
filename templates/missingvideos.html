@@ -23,15 +23,16 @@ Missing viedos
       return '<a href="' + dataContext['ka_url'] + '" target="_blank">' + value + '</a>';
   };
   var columns = [
-    {id: "topics", name: "Topic", field: "topics", width: "400" },
-    {id: "name", name: "Exercise", field: "name", width: "300", formatter: linkFormatter},
-    {id: "video_requests_count", name: "Video Requests", field: "video_requests_count"},
+    {id: "topics", name: "Topic", field: "topics", width: "450" },
+    {id: "display_name", name: "Name", field: "display_name", width: "300"},
+    {id: "name", name: "Filename", field: "name", width: "300", formatter: linkFormatter},
+    {id: "video_requests_count", name: "Video Requests", width: "100", field: "video_requests_count"},
   ];
 
   var options = {
     enableCellNavigation: true,
     enableColumnReorder: false,
-    forceFitColumns: true
+    forceFitColumns: true 
   };
 
   grid = new Slick.Grid("#myGrid", data, columns, options);

@@ -29,7 +29,8 @@ class ExerciseRequestVideoTest(gae_model.GAEModelTestCase):
     def test_request_video(self):
         exs = exercise_models.Exercise.all().fetch(1000)
         user = UserData.current()
-        self.assertFalse(exs[0].is_video_requested())
+        self.assertFalse(exs[0].video_requested)
         exs[0].request_video()
-        self.assertTrue(exs[0].is_video_requested())
+        self.assertTrue(exs[0].video_requested)
+        self.assertEqual(exs[0].video_requests_count, 1)
         #test v1.py

@@ -158,6 +158,14 @@ javascript = {
     "3XOt1fjWKi8": {"allfiles": True},
     "U2ovEuEUxXQ": {"allfiles": True},
 
+    "slickgrid": {
+        "files": [
+            "jquery.event.drag-2.0.min.js",
+            "slick.core.js",
+            "slick.grid.js",
+        ]
+    },
+
     "homepage": {
         "files": [
             "jquery.easing.1.3.js",
@@ -606,5 +614,10 @@ stylesheets = {
         "files": [
             "spotlight.less"
         ]
+    },
+    "slickgrid": {
+        "files": [
+            "slick.grid.css",
+        ],
     }
 }

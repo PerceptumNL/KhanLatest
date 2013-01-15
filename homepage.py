@@ -203,14 +203,13 @@ class ViewHomePage(request_handler.RequestHandler):
                             thumbnail_link_sets[-1], thumbnail_link_sets[i])
 
         content_uninitialized = (
-            App.is_dev_server and
             topic_models.TopicVersion.get_default_version() is None)
 
         if content_uninitialized:
             library_content = ('<h1>Content not initialized. '
                                '<a href="/devadmin/content?autoupdate=1">'
                                'Click here</a> '
-                               'to autoupdate from khanacademy.org.')
+                               'to autoupdate from khanacademy.nl.')
         elif version_number:
             layer_cache.disable()
             library_content = library.library_content_html(

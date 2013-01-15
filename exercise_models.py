@@ -171,6 +171,10 @@ class Exercise(backup_model.BackupModel):
         user = user_models.UserData.current()
         return (user.key() in self.video_requests)
 
+    @property
+    def video_requests_count(self):
+        return len(self.video_requests)
+
 
     def related_videos_query(self):
         # TODO(csilvers): get rid of circular dependency here

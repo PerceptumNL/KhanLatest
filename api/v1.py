@@ -1390,8 +1390,8 @@ def save_video(video_id="", version_id="edit"):
 
         if other_video:
             return api_invalid_param_response(
-                "Video with youtube_id %s already appears with readable_id %s"
-                % (new_data["youtube_id"], video.readable_id))
+                "Video with youtube_id %s already appears with readable_id %s for video %s"
+                % (new_data["youtube_id"], video.readable_id, other_video.title))
 
         # make sure we are not changing the video's readable_id to an
         # updated one in the Version's Content Changes

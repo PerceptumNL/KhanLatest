@@ -494,11 +494,6 @@ stylesheets = {
             "bootstrap-popover.css",
         ],
     },
-    "homepage": {
-        "files": [
-            "homepage.css"
-        ]
-    },
     "mobile": {
         "files": [
             "jquery.mobile-1.0a4.1.css",

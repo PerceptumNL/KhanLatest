@@ -177,7 +177,6 @@
 {% block bottompagescript %}
     {% if not is_mobile %}
         {{ js_css_packages.js_package("homepage") }}
-	{{ js_css_packages.css_package("homepage") }}
     {% endif %}
 
     <script type="text/javascript">

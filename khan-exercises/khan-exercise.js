@@ -791,7 +791,7 @@ var Khan = (function() {
                 }
 
                 //container.toggle(this.getVideos().length > 0);
-                container.toggle();
+                container.toggle(true);
             },
 
             hookup: function() {

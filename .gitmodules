@@ -10,3 +10,6 @@
 [submodule "third_party/flask-src"]
 	path = third_party/flask-src
 	url = https://github.com/Khan/flask.git
+[submodule "werkzeug-debugger-appengine"]
+	path = werkzeug-debugger-appengine
+	url = https://github.com/daaku/werkzeug-debugger-appengine.git

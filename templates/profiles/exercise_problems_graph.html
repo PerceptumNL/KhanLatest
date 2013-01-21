@@ -84,15 +84,15 @@ function exercise_url(point) {
 
                                 if (point.fVideo) {
                                     if (point.desc)
-                                    s += '<br/><strong style="font-size: 13px; font-weight: bold;">Watched ' 
+                                    s += '<br/><strong style="font-size: 13px; font-weight: bold;">Heeft ' 
                                     + point.time_watched + 
-                                    ' of related videos<br><b style="font-size: 13px; font-weight: bold;">before answering:</strong><br/>' + point.desc;
+                                    ' gezien van de gerelateerde videos <br><b style="font-size: 13px; font-weight: bold;">voor het beantwoorden van:</strong><br/>' + point.desc;
                                 }
                                 else if (point.fSummary) {
                                     s += '<span style="font-size: 15px;">' + 
-                                            'Problem ' + point.x + 
+                                            'Probleem ' + point.x + 
                                             '</span><b style="font-size: 15px;"> - ' + (point.correct ? "Correct" : "Incorrect") +
-                                            (point.count_hints ? '<span style="color: red; font-style: italic; font-weight:bold">(Hint Used)' : '') +
+                                            (point.count_hints ? '<span style="color: red; font-style: italic; font-weight:bold">(Hint gebruikt)' : '') +
                                             '</b><br/>' +
                                             point.time_used + ' used<br/><br/>' +
                                             point.timesince +
@@ -189,7 +189,7 @@ function exercise_url(point) {
                             }
                             ]
 				});
-                Profile.router.updateTitleBreadcrumbs(["Problems", "{{ exercise_display_name|escapejs }}"]);
+                Profile.router.updateTitleBreadcrumbs(["Problemen", "{{ exercise_display_name|escapejs }}"]);
 			});
 </script>
 

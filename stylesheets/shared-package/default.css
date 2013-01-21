@@ -28,8 +28,6 @@ body {
     color: #444;
     background: #F3F3F3;
     line-height: 22px;
-    /* extend background to cover #page-container on horizontal scroll */
-    min-width: 1000px;
 }
 
 
@@ -39,11 +37,9 @@ body {
     height: 100%;
     margin: 0 0 -77px;
 }
-#page-container, #page-container-inner {
-}
+
 #page-container {
     background-position: 0 85px;
-    min-width: 1000px;
     max-width: 1200px;
     position: relative;
     margin: 0 auto;
@@ -314,38 +310,30 @@ footer {
         margin: 0 auto;
     }
 
-#page_brand  {
-    position: relative;
-    float: left;
-    white-space: nowrap;
-    width: 100%;
-}
-
-#top-header {
-    height: 85px;
-    position: relative;
-}
-
-#top-header #logo {
-    height: 100px;
-    position: relative;
-    background-position: -10px -261px;
-    width: 317px;
-}
-    #top-header #logo #logo-image {
-        position: absolute;
-        left: 5px;
-        top: 6px;
-        z-index: 1;
-        width: 133px;
-        height: 73px;
-        background-image: url(/images/khan-logo-header.png);
+    #page_brand  {
+        position: relative;
+        float: left;
+        white-space: nowrap;
+        width: 100%;
     }
+
+    #top-header {
+        height: 85px;
+        position: relative;
+    }
+
         .dark #top-header #logo #logo-image {
             background-image: url(/images/non-repeating-sprites.4.png);
             background-position: -320px -465px;
         }
 
+        #cookie-message{
+	    display:none;
+	    text-align:center;
+	    width:100%;
+	    padding:4px;
+	    background:#CCC; 
+	}
 
 #top-header #stats {
     position: relative;
@@ -363,12 +351,6 @@ footer {
         display: none; /* hidden until AJAX call to chartbeat gets the number */
         text-decoration: none;
     }
-#nav-and-search {
-    /* We're positioning this absolutely because of the iframe jumpy nonsense from the facebook button */
-    position: absolute;
-    right: 10px;
-    top: 45px;
-}
 .sitewide-navigation {
     float:right;
     margin: 0;
@@ -579,12 +561,9 @@ footer {
 }
 
 .top-header-links {
-    position: absolute;
     top: 0;
     right: 10px;
     left: 0;
-    margin-left: 290px;
-    min-width: 680px;
 }
     .top-header-links span img {
         vertical-align: middle;

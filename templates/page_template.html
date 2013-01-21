@@ -8,121 +8,134 @@
       <head prefix="og: http://ogp.me/ns#{{ App.facebook_app_namespace }}:
                         http://ogp.me/ns/apps/{{ App.facebook_app_namespace }}#" >
                         
-                        <script>
-        var _errs=["4efc1674aa8bc407591e0ad6"];(function(a,b){a.onerror=function(){_errs.push(arguments)};
-        var d=function(){var a=b.createElement("script"),c=b.getElementsByTagName("script")[0];
-        a.src="//d15qhc0lu1ghnk.cloudfront.net/beacon.js";a.async=!0;
-        c.parentNode.insertBefore(a,c)};a.addEventListener?a.addEventListener("load",d,!1):
-        a.attachEvent("onload",d)})(window,document);
-       
-  		var BugHerdConfig = {
-    		feedback: {
-    			tab_text: "Geef feedback", 
-    			option_title_text: "Kies een optie",
-    			option_pin_text: "Ik wil graag iets op deze pagina aanwijzen.",
-    			option_site_text: "Ik heb feedback over deze pagina in z'n geheel.",
-    			feedback_entry_placeholder: "schrijf hier uw feedback",
-    			feedback_email_placeholder: "uw email adres",
-    			feedback_submit_text: "verstuur feedback"
-    		}
-  		};
+      <script>
+	  var _errs=["4efc1674aa8bc407591e0ad6"];(function(a,b){a.onerror=function(){_errs.push(arguments)};
+	  var d=function(){var a=b.createElement("script"),c=b.getElementsByTagName("script")[0];
+	  a.src="//d15qhc0lu1ghnk.cloudfront.net/beacon.js";a.async=!0;
+	  c.parentNode.insertBefore(a,c)};a.addEventListener?a.addEventListener("load",d,!1):
+	  a.attachEvent("onload",d)})(window,document);
+	
+		  var BugHerdConfig = {
+		  feedback: {
+			  tab_text: "Geef feedback", 
+			  option_title_text: "Kies een optie",
+			  option_pin_text: "Ik wil graag iets op deze pagina aanwijzen.",
+			  option_site_text: "Ik heb feedback over deze pagina in z'n geheel.",
+			  feedback_entry_placeholder: "schrijf hier uw feedback",
+			  feedback_email_placeholder: "uw email adres",
+			  feedback_submit_text: "verstuur feedback"
+		  }
+		  };
 
-  (function (d, t) {
-    var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
-    bh.type = 'text/javascript';
-    bh.src = '//www.bugherd.com/sidebarv2.js?apikey=vcq6yh4qdcky76aqxkveeq';
-    s.parentNode.insertBefore(bh, s);
-   })(document, 'script');
-</script> 
-		
-		
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
-        {% if include_errorception and not hide_analytics -%}
-        
-        {%- endif %}
-        <!--[if lte IE 7]><script src="/javascript/ie-warning.js"></script><script>window.onload=function(){e("/images/ie-warning/")}</script><![endif]-->
-        {{ app.globals(username, is_mobile_capable, logged_in_user_profile, user_data, server_time) }}
+    (function (d, t) {
+      var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      bh.type = 'text/javascript';
+      bh.src = '//www.bugherd.com/sidebarv2.js?apikey=vcq6yh4qdcky76aqxkveeq';
+      s.parentNode.insertBefore(bh, s);
+    })(document, 'script');
+  </script> 		
+	  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+	  {% if include_errorception and not hide_analytics -%}
+	  
+	  {%- endif %}
+	  <!--[if lte IE 7]><script src="/javascript/ie-warning.js"></script><script>window.onload=function(){e("/images/ie-warning/")}</script><![endif]-->
+	  {{ app.globals(username, is_mobile_capable, logged_in_user_profile, user_data, server_time) }}
 
-        <title>{% block meta_page_title %}{% endblock meta_page_title %}Khan Academie NL</title>
-        {% if video -%}
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        {%- endif %}
-        <meta name="description" content="{% block meta_description -%}
-        With a library of over 3,000 videos covering everything from arithmetic to physics, finance, and history and hundreds of skills to practice, we're on a mission to help you learn what you want, when you want, at your own pace.
-        {%- endblock %}" />
-        <meta name="keywords" content="{% block meta_keywords %}khan academy, learn, videos, lectures, practice, exercises, skills{% endblock %}" />
+	  <title>{% block meta_page_title %}{% endblock meta_page_title %}Khan Academie NL</title>
+	  {% if video -%}
+	  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	  {%- endif %}
+	  <meta name="description" content="{% block meta_description -%}
+	  With a library of over 3,000 videos covering everything from arithmetic to physics, finance, and history and hundreds of skills to practice, we're on a mission to help you learn what you want, when you want, at your own pace.
+	  {%- endblock %}" />
+	  <meta name="keywords" content="{% block meta_keywords %}khan academy, learn, videos, lectures, practice, exercises, skills{% endblock %}" />
 
-        <meta property="fb:app_id" content="{{ App.facebook_app_id }}"/>
-        <meta property="fb:admins" content="100004182250626"/> 
-        <meta property="og:site_name" content="Khan Academie"/>
-        {% block meta_facebook_tags %}
-        <meta property="og:url" content="http://www.facebook.com/khanacademie"/>
-        <meta property="og:type" content="page"/>
-        <meta property="og:title" content="Khan Academie"/>
-        <meta property="og:description"
-              content="With a library of over 3,000 videos covering everything from arithmetic to physics, finance, and history and hundreds of skills to practice, we're on a mission to help you learn what you want, when you want, at your own pace."/>
-        <meta property="og:image" content="http://www.khanacademie.nl/images/khan-logo-header.png" />
-        <meta property="fb:page_id" content="123650984422563" />
-        {% endblock meta_facebook_tags %}
+	  <meta property="fb:app_id" content="{{ App.facebook_app_id }}"/>
+	  <meta property="fb:admins" content="100004182250626"/> 
+	  <meta property="og:site_name" content="Khan Academie"/>
+	  {% block meta_facebook_tags %}
+	  <meta property="og:url" content="http://www.facebook.com/khanacademie"/>
+	  <meta property="og:type" content="page"/>
+	  <meta property="og:title" content="Khan Academie"/>
+	  <meta property="og:description"
+		content="With a library of over 3,000 videos covering everything from arithmetic to physics, finance, and history and hundreds of skills to practice, we're on a mission to help you learn what you want, when you want, at your own pace."/>
+	  <meta property="og:image" content="http://www.khanacademie.nl/images/khan-logo-header.png" />
+	  <meta property="fb:page_id" content="123650984422563" />
+	  {% endblock meta_facebook_tags %}
 
-        {# Google+ -#}
-        <meta itemprop="name" content="Khan Academie">
-        <meta itemprop="description" content="Kijk. Oefen. Learn almost anything for free.">
-        <meta itemprop="image" content="/images/khan-logo-vertical-transparent.png">
-        {# End Google+ -#}
+	  {# Google+ -#}
+	  <meta itemprop="name" content="Khan Academie">
+	  <meta itemprop="description" content="Kijk. Oefen. Learn almost anything for free.">
+	  <meta itemprop="image" content="/images/khan-logo-vertical-transparent.png">
+	  {# End Google+ -#}
 
-        <link rel="shortcut icon" href="/favicon.ico?leaf">
-        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+	  <link rel="shortcut icon" href="/favicon.ico?leaf">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+	
+	  {{ js_css_packages.css_package("shared") }}
+	  {% block pagecss %}{% endblock pagecss %}
+	  {{ user.user_video_css(user_data) }}
+	  {{ js_css_packages.js_package("shared") }}
 
-        {% if is_mobile %}
-            {{ js_css_packages.css_package("mobile") }}
-            {{ js_css_packages.js_package("mobile") }}
-        {% else %}
-            {{ js_css_packages.css_package("shared") }}
-            {% block pagecss %}{% endblock pagecss %}
-            {{ user.user_video_css(user_data) }}
-            {{ js_css_packages.js_package("shared") }}
-        {% endif %}
+	  {# Functions that load packages at run-time -#}
+	  <script type="text/javascript">
+	    {{ js_css_packages.js_dynamic_package("maps") }}
+	  </script>
 
-        {# Functions that load packages at run-time -#}
-        <script type="text/javascript">
-          {{ js_css_packages.js_dynamic_package("maps") }}
-        </script>
+	  {% block pagescript %}
+	  {% endblock pagescript %}
 
-        {% block pagescript %}
-        {% endblock pagescript %}
+      <script type="text/javascript">
+	window._gaq = window._gaq || [];
+      {%- if not hide_analytics -%}
+	_gaq.push(['_setAccount', 'UA-28120495-1']);
+	_gaq.push(['_setDomainName', '.khanacademie.nl']);
+	_gaq.push(['_trackPageview']);
+	_gaq.push(['_trackPageLoadTime']);
+	{% for variable in ga_custom_vars %}
+	_gaq.push(['_setCustomVar', {{ loop.index }}, '{{ variable[0] }}', '{{ variable[1] }}', 1 ]);
+	{% endfor %}
+	{% if analytics_bingo %}
+	_gaq.push(['_setCustomVar', 5, '{{ analytics_bingo.name }}', '{{ analytics_bingo.value }}', 1 ]);
+	{% endif %}
 
-    <script type="text/javascript">
-      window._gaq = window._gaq || [];
-    {%- if not hide_analytics -%}
-      _gaq.push(['_setAccount', 'UA-28120495-1']);
-      _gaq.push(['_setDomainName', '.khanacademie.nl']);
-      _gaq.push(['_trackPageview']);
-      _gaq.push(['_trackPageLoadTime']);
-      {% for variable in ga_custom_vars %}
-      _gaq.push(['_setCustomVar', {{ loop.index }}, '{{ variable[0] }}', '{{ variable[1] }}', 1 ]);
-      {% endfor %}
-      {% if analytics_bingo %}
-      _gaq.push(['_setCustomVar', 5, '{{ analytics_bingo.name }}', '{{ analytics_bingo.value }}', 1 ]);
-      {% endif %}
+	{# For OER Analytics #}
+	_gaq.push(['ht._setAccount', 'UA-28120495-1']);
+	_gaq.push(['ht._setDomainName', '.khanacademie.nl']);
+	_gaq.push(['ht._trackPageview']);
 
-      {# For OER Analytics #}
-      _gaq.push(['ht._setAccount', 'UA-28120495-1']);
-      _gaq.push(['ht._setDomainName', '.khanacademie.nl']);
-      _gaq.push(['ht._trackPageview']);
-
-      {# Mixpanel #}
-      window.mpq = [];
-      {% if mixpanel_enabled %}
-      {% if mixpanel_test %}
-      mpq.push(["init","{{ mixpanel_test }}"]);
-      {% else %}
-      mpq.push(["init","5f375bcfa7dc57184da63393e2af841c"]);
-      {% endif %}
-      {% endif %}
-      window._initialPageTime = (new Date()).getTime(); // For page load time tracking
-    {%- endif -%}
-    </script>
+	{# Mixpanel #}
+	window.mpq = [];
+	{% if mixpanel_enabled %}
+	{% if mixpanel_test %}
+	mpq.push(["init","{{ mixpanel_test }}"]);
+	{% else %}
+	mpq.push(["init","5f375bcfa7dc57184da63393e2af841c"]);
+	{% endif %}
+	{% endif %}
+	window._initialPageTime = (new Date()).getTime(); // For page load time tracking
+      {%- endif -%}
+      </script>
+      
+      <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>-->
+      <script src="http://video.khanacademie.nl/js/lib/jquery.cookie.js"></script>
+      <script>
+	  function hideCookieMessage() {
+	    console.log('hiding');
+	    $.cookie("cookieMessage", "read");
+	    $("#cookie-message").hide();
+	  };
+	  $(document).ready(function(){
+	    if($.cookie("cookieMessage") == null) {
+	      $("#cookie-message").show();
+	    }
+	    console.log($("div").length);
+ 	    $("#button-cookie-ok").click(function() {
+ 	      hideCookieMessage();
+ 	    });
+	  });
+      </script>
+    
     </head>
 <!--[if lt IE 7]>  <body class="ie ie6 lte9 lte8 lte7"> <![endif]-->
 <!--[if IE 7]>     <body class="ie ie7 lte9 lte8 lte7"> <![endif]-->
@@ -146,11 +159,22 @@
 
         {# Make script-requiring elements visible. #}
         <script>document.writeln('<style scoped type="text/css">a[href="#"], .requires_script { visibility: visible; }</style>');</script>
-
+	  <div id="cookie-message">
+	    Khanacademie maakt gebruik van cookies. Lees 
+	    <a href="https://docs.google.com/document/pub?id=1qPIp5yEEHGDXMI_1No43p9uaGJnGDtj2BY3NGsyYySc">
+	      hier
+	    </a>
+	    meer over cookies en hoe wij cookies 
+	    <a href="https://docs.google.com/document/pub?id=1mnNKQkW6H0RAQ4nD1qpz0L6zuny7mcTlTZh1dxc61Hs">
+	      gebruiken
+	    </a>
+	    <button type="button" id="button-cookie-ok">
+	      Ok
+	    </button>
+	  </div>
             <div id="goals-nav-container" style="display: none" class="ui-corner-bottom"></div>
-            <header>
-
-                <div id="top-header">
+            
+	    <div id="top-header">
                     <div class="top-header-links">
                         <span class="page_links" id="page_auth">
                             <span id="goals-container"></span>
@@ -165,7 +189,7 @@
                         <div class="clear"></div>
                         <div id="nav-and-search">
                             <div class="sitewide-navigation">
-                                <nav>
+                                <div>
                                     <span class="links nav-subheader">
                                         <span class="dropdown topic-browser-dropdown">
                                             <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/exercisedashboard" data-tag="Header" class="{% if selected_nav_link == 'practice' %}selected{% endif %} practice-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Oefen</a>
@@ -174,8 +198,6 @@
                                             {% else %}
                                             <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/#browse" data-tag="Header" class="{% if selected_nav_link == 'watch' %}selected{% endif %} watch-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Video's</a>
                                             {% endif %}
-                                           
-                                            
                                             {% if not user_data or not user_data.is_child_account() %}
                                             <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/class_profile" data-tag="Header" class="{% if selected_nav_link == 'coach' %}selected{% endif %} coach-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Coach</a>
                                             {% endif %}
@@ -185,11 +207,9 @@
                                             <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/about" data-tag="Header" class="{% if selected_nav_link == 'about' %}selected{% endif %} about-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Over Ons</a>
                                             -->
                                             <a href="/about/start" data-tag="Header" class="{% if selected_nav_link == 'gettingstarted' %}selected{% endif %} about-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Handleiding</a>
-                                            <div style="clear: both"></div>
                                             {{ handlebars_template('shared', 'topic-browser-pulldown', {'topics': templatetags.topic_browser_data()}) }}
                                         </span>
                                     </span>
-                                </nav>
                             </div>
                             <div id="search-box">
                                 <form class="page-search" action="/search">
@@ -200,36 +220,23 @@
                         </div>
                     </div>
                     <div id="logo">
-                        <a id="logo-image" href="/" title="Take me home!" data-tag="Header"></a>
-                        <div id="stats">
-							<div id="cookieMessage" style="display:none;position:absolute;width:100%;padding:4px;bottom:0px;background:rgba(0,0,0,0.1);">
-								Video.Khanacademie maakt gebruik van cookies. Lees <a href="https://docs.google.com/document/pub?id=1qPIp5yEEHGDXMI_1No43p9uaGJnGDtj2BY3NGsyYySc">hier</a> meer over cookies en hoe wij cookies <a href="https://docs.google.com/document/pub?id=1mnNKQkW6H0RAQ4nD1qpz0L6zuny7mcTlTZh1dxc61Hs">gebruiken<a/>. <a onclick="readCookieMessage();">Ok</a>
-							</div>
-							<script src="http://video.khanacademie.nl/js/lib/jquery.cookie.js"></script>
-							<script>
-								var readCookieMessage = function(){
-									$.cookie("cookieMessage", "read");
-									$("#cookieMessage").hide();
-								};
-								if($.cookie("cookieMessage") == null){
-									$("#cookieMessage").show();
-								}
-							</script>
+			<a href="/" title="Take me home!" data-tag="Header">
+				<img src="/images/khan-logo-header.png" />
+			</a>
+                       <div id="stats">
                         </div>
-                    </div>
+                        </div>
                     <div class="clear"></div>
                 </div>
-
-
-                <nav id="page_sub_nav">
+                <div id="page_sub_nav">
                     {% block pagesubmenu %}<b>{% block pagetitle %}{% endblock pagetitle %}</b>
                     {% endblock pagesubmenu %}
-                </nav>
+                </div>
                 {% block pagemessage %}
 
                 {% endblock pagemessage %}
 
-            </header>
+            </div>
             {% block pagecontent %}
             {% endblock pagecontent %}
             <div id="end-of-page-spacer" style="height: 38px;">&nbsp;</div>

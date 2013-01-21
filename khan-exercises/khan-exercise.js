@@ -645,7 +645,7 @@ var Khan = (function() {
 
                     var makeVisible = function() {
                         $("#scratchpad").show();
-                        $("#scratchpad-show").text("Verbreg kladblok");
+                        $("#scratchpad-show").text("Verberg kladblok");
 
                         // If pad has never been created or if it's empty
                         // because it was removed from the DOM, recreate a new

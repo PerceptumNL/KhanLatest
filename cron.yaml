@@ -25,10 +25,10 @@ cron:
   schedule: every sunday 03:00
   timezone: Europe/Amsterdam
 
-- description: youtube video sync
-  url: /admin/youtubesync?start=1
-  schedule: every day 03:00
-  timezone: Europe/Amsterdam
+#- description: youtube video sync
+#  url: /admin/youtubesync?start=1
+#  schedule: every day 03:00
+#  timezone: Europe/Amsterdam
 
 - description: record daily dashboard statistics
   url: /admin/dashboard/record_statistics

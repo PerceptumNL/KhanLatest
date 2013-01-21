@@ -105,11 +105,11 @@ var GoalProfileView = Backbone.View.extend({
         if (!goal) {
             // haven't yet received a reponse from the server after creating the
             // goal. Shouldn't happen too often, so just show a message.
-            alert("Please wait a few seconds and try again. If this is the second time you've seen this message, reload the page");
+            alert("Wacht alstublieft een paar seconden en probeer het dan nog een keer. Als u dit bericht al voor de tweede keer ziet, laad dan de pagina opnieuw.");
             return;
         }
 
-        if (confirm("Abandoning a goal is permanent and cannot be undone. Do you really want to abandon this goal?")) {
+        if (confirm("Het verwijderen van een doelstelling is permanent en kan niet worden teruggedraaid. Weet je zeker dat je dit doel wilt verwijderen?")) {
             // move the model to the abandoned collection
             this.model.remove(goal);
             goal.set({"abandoned": true});
@@ -117,7 +117,7 @@ var GoalProfileView = Backbone.View.extend({
 
             // persist to server
             goal.save().fail(function() {
-                KAConsole.log("Warning: failed to abandon goal", goal);
+                KAConsole.log("Waarschuwing: doeleinde niet verwijderd.", goal);
                 AbandonedGoalBook.remove(goal);
                 this.model.add(goal);
             });

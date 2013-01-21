@@ -746,6 +746,7 @@ var Khan = (function() {
 
                 var template = Templates.get("video.thumbnail");
                 if (this.getVideos().length) {
+		  $(container).find(".watch").show()
                   _.each(this.getVideos(), function(video, i) {
                       var thumbnailDiv = $(template({
                           href: this.makeHref(video),
@@ -772,8 +773,7 @@ var Khan = (function() {
                       jel.append("Bedankt voor je reactie!");
                     }
                     if (!this.exercise.videoRequested) {
-                      jel.append("<input type='button' id='request_video' class='simple-button orange full-width' value='Geef aan dat je een video mist bij deze" +
-                                 " oefening'></input>");
+                      jel.append("<div type='button' id='request_video' class='simple-button orange full-width pagination-center' style='text-align:center'><span>Geef aan dat je een video <br /> mist bij deze oefening</span></div>");
                       var self = this;
                       $("#request_video").click(function() {
                         $.get("/api/v1/user/exercises/"+self.exercise.name+

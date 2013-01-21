@@ -1,5 +1,5 @@
 {% if not problem_list %}
-    <div class="graph-notification">{{student_nickname|escape}} needs to do a few more problems in {{exercise_display_name|escape}} before we can start displaying this graph.</div>
+    <div class="graph-notification">{{student_nickname|escape}} moet meer oefeningen maken bij {{exercise_display_name|escape}} voordat we de grafiek kunnen weergeven.</div>
 {% endif %}
 
 <script>
@@ -63,7 +63,7 @@ function exercise_url(point) {
 					},
 					yAxis: {
 						title: {
-							text: 'Time Used (seconds)'
+							text: 'Tijd (in seconden)'
 						},
                         maxPadding: 0.15,
 						plotLines: [{
@@ -96,7 +96,7 @@ function exercise_url(point) {
                                             '</b><br/>' +
                                             point.time_used + ' used<br/><br/>' +
                                             point.timesince +
-                                            '<br/><br/><em>Click the graph to view this problem</em>.';
+                                            '<br/><br/><em>Klik op de grafiek om dit probleem te zien</em>.';
                                 }
                             }
 
@@ -118,7 +118,7 @@ function exercise_url(point) {
                             color: '#3E586F'
                         },
                         labelFormatter: function() {
-                            return "Last Ten: {{ percent_last_ten_correct|escapejs }}% correct<br/>Progress: {{ progress|escapejs }}<br/>Longest Streak: {{ longest_streak|escapejs }}<br/>";
+                            return "Laatste tien: {{ percent_last_ten_correct|escapejs }}% correct<br/>Vooruitgang: {{ progress|escapejs }}<br/>Langste reeks: {{ longest_streak|escapejs }}<br/>";
                         }
                     },
                     series: [
@@ -175,7 +175,7 @@ function exercise_url(point) {
                                     x: {{ loop.index }} + {{ x_offset }},
                                     {% if problem.count_hints %}
                                         y: {{ problem.time_taken }},
-                                        desc: 'Hint used',
+                                        desc: 'Hint gebruikt',
                                         time_watched: '{{ problem.video_time()|escapejs }}',
                                         marker: { symbol: 'url(/images/hint-small-chart.png)'}
                                     {% else %}

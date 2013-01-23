@@ -24,10 +24,10 @@
                     <var id="B">randRange( -5, 5 )</var>
                     <var id="X" data-ensure="abs( ( -1 / M ) * X ) &lt;= 12">randRange( 2, 8 ) * randRangeNonZero( -1, 1 )</var>
                     <var id="Y" data-ensure="abs( Y - ( -1 / M ) * X ) &lt; 10">randRange( 2, 8 ) * randRangeNonZero( -1, 1 )</var>
-                    <var id="LINE_TYPE">"perpendicular"</var>
+                    <var id="LINE_TYPE">"lijn die loodrecht staat"</var>
                 </div>
                 <div class="question">
-                    <p data-tt="question1" ><b>Wat is de helling en de y-startwaarde van de lijn <code>\color{<var>GREEN</var>}{\text{<var>LINE_TYPE</var>}}</code> die loodrecht staat op <code>\enspace \color{<var>BLUE</var>}{y = <span data-if="abs( M_FRAC ) !== 1"><var>M_FRAC</var></span><span data-else><var>M_SIGN</var></span>x <span data-if="B !== 0">+ <var>B</var></span>}\enspace</code> en door het punt <code>\color{red}{(<var>X</var>, <var>Y</var>)}</code> gaat.</b></p>
+                    <p data-tt="question1" ><b>Wat is de helling en de y-startwaarde van de <code>\color{<var>GREEN</var>}{\text{<var>LINE_TYPE</var>}}</code> op <code>\enspace \color{<var>BLUE</var>}{y = <span data-if="abs( M_FRAC ) !== 1"><var>M_FRAC</var></span><span data-else><var>M_SIGN</var></span>x <span data-if="B !== 0">+ <var>B</var></span>}\enspace</code> en door het punt <code>\color{red}{(<var>X</var>, <var>Y</var>)}</code> gaat.</b></p>
                     <div class="graphie" id="grid">
                             graphInit({
                                 range: [[-10, 10], [-10, 10]],

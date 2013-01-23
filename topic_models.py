@@ -303,12 +303,16 @@ class Topic(search.Searchable, backup_model.BackupModel):
     # this is the slug, or readable_id - the one used to refer to the
     # topic in urls and in the api
     id = db.StringProperty(required=True)
-    
+
     # this is the URI path for this topic, i.e. "math/algebra"
     extended_slug = db.StringProperty(indexed=False)
 
     description = db.TextProperty(indexed=False)
-    
+
+    # icon namn that matches, i.e.
+    # "images/power-mode/badges/[icon_name]-40x40.png"
+    icon_name = db.StringProperty()
+
     # to be able to access the parent without having to resort to a
     # query - parent_keys is used to be able to hold more than one
     # parent if we ever want that
@@ -335,7 +339,7 @@ class Topic(search.Searchable, backup_model.BackupModel):
                             "last_edited_by"]
     # the ids of the topic on the homepage in which we will display their first
     # level child topics
-    _super_topic_ids = ["algebra", "arithmetic", "art-history", "geometry", 
+    _super_topic_ids = ["algebra", "arithmetic", "art-history", "geometry",
                         "brit-cruise", "california-standards-test", "gmat",
                         "linear-algebra"]
 
@@ -656,8 +660,8 @@ class Topic(search.Searchable, backup_model.BackupModel):
         } for v in Topic.get_cached_videos_for_topic(self)]
 
         ancestor_topics = [{
-            "title": topic.title, 
-            "url": (topic.topic_page_url if topic.id in Topic._super_topic_ids 
+            "title": topic.title,
+            "url": (topic.topic_page_url if topic.id in Topic._super_topic_ids
                     or topic.has_content() else None)
             }
             for topic in db.get(self.ancestor_keys)][0:-1]
@@ -850,7 +854,7 @@ class Topic(search.Searchable, backup_model.BackupModel):
         """Update the ancestor_keys by using the parents' ancestor_keys.
 
         Furthermore updates the ancestors of all the descendants.
-        
+
         Returns:
             The list of entities updated. Note that they still need to be put
             into the datastore.
@@ -989,8 +993,8 @@ class Topic(search.Searchable, backup_model.BackupModel):
 
         if child.key() in self.child_keys:
             raise Exception("The child %s already appears in %s" % (
-                getattr(child, "id", getattr(child, "readable_id", 
-                    getattr(child, "name", child.key().id()))), 
+                getattr(child, "id", getattr(child, "readable_id",
+                    getattr(child, "name", child.key().id()))),
                 self.title))
 
         if pos is None:
@@ -1477,7 +1481,7 @@ class Topic(search.Searchable, backup_model.BackupModel):
     @staticmethod
     def get_exercise_topics(version=None):
         """ Get all topics containing live exercises as direct children.
-        
+
         This does *not* currently return topics with exercise-containing
         subtopics.
         """
@@ -1587,7 +1591,7 @@ class Topic(search.Searchable, backup_model.BackupModel):
         topics = Topic.get_content_topics(version)
         num_topics = len(topics)
         for i, topic in enumerate(topics):
-            logging.info("Indexing topic %i/%i: %s (%s)" % 
+            logging.info("Indexing topic %i/%i: %s (%s)" %
                          (i, num_topics, topic.title, topic.key()))
             topic.index()
             topic.indexed_title_changed()
@@ -2019,7 +2023,7 @@ def _change_default_version(version_number, run_code):
     # update the new number of videos on the homepage
     logging.info("Updating the new video count")
     setting_model.Setting.topic_admin_task_message(
-        "Publish: updating video count")  
+        "Publish: updating video count")
 
     vids = video_models.Video.get_all_live()
     urls = url_model.Url.get_all_live()
@@ -2042,42 +2046,42 @@ def rebuild_search_index(new_version, old_version=None):
     # set a message for publishers that we are reindexing topics
     setting_model.Setting.topic_admin_task_message(
         "Publish: reindexing topics")
-    
+
     Topic.reindex(new_version)
     logging.info("done fulltext reindexing topics")
-    
+
     # set a message for publishers that we are reindexing videos
     setting_model.Setting.topic_admin_task_message(
         "Publish: reindexing videos")
-    
+
     if old_version:
         # get all the changed videos
         query = VersionContentChange.all().filter('version =', new_version)
         changes = query.fetch(10000)
-        updated_videos = [c.content for c in changes 
+        updated_videos = [c.content for c in changes
                           if isinstance(c.content, video_models.Video)]
         updated_video_keys = [v.key() for v in updated_videos]
 
-        # get the video keys in the old tree 
+        # get the video keys in the old tree
         old_topics = Topic.get_all_topics(old_version)
         old_video_keys = set()
         for topic in old_topics:
-            old_video_keys.update([k for k in topic.child_keys 
-                                   if k.kind() == "Video" and 
+            old_video_keys.update([k for k in topic.child_keys
+                                   if k.kind() == "Video" and
                                    k not in updated_video_keys])
 
         # get the video keys in the latest tree
         new_topics = Topic.get_all_topics(new_version)
         latest_video_keys = set()
         for topic in new_topics:
-            latest_video_keys.update([k for k in topic.child_keys 
+            latest_video_keys.update([k for k in topic.child_keys
                                       if k.kind() == "Video" and
                                       k not in updated_video_keys])
 
         # add the videos that are in the latest tree but not the old tree
         new_videos = db.get(list(latest_video_keys - old_video_keys))
         updated_videos.extend(new_videos)
-        
+
         video_models.Video.reindex(updated_videos)
     else:
         video_models.Video.reindex()
@@ -2204,7 +2208,7 @@ class VersionContentChange(db.Model):
         content = self.updated_content()
         content.put()
 
-        if (content.key().kind() == "Exercise" and 
+        if (content.key().kind() == "Exercise" and
                 hasattr(content, "related_video_readable_ids")):
             exercise_video_model.ExerciseVideo.update_related_videos(
                     content,
@@ -2257,7 +2261,7 @@ class VersionContentChange(db.Model):
         content = klass(**filtered_props)
         content.put()
 
-        if (type(content) == exercise_models.Exercise 
+        if (type(content) == exercise_models.Exercise
                 and "related_video_readable_ids" in new_props):
 
             if "related_video_keys" in new_props:
@@ -2266,7 +2270,7 @@ class VersionContentChange(db.Model):
             else:
                 related_video_keys = []
                 for readable_id in new_props["related_video_readable_ids"]:
-                    video = video_models.Video.get_for_readable_id(readable_id, 
+                    video = video_models.Video.get_for_readable_id(readable_id,
                                                                    version)
                     logging.info("doing get for readable_id")
                     related_video_keys.append(video.key())
@@ -2310,11 +2314,11 @@ class VersionContentChange(db.Model):
             for prop in changeable_props:
                 if (prop in new_props and
                     new_props[prop] is not None and (
-                        not hasattr(content, prop) or 
+                        not hasattr(content, prop) or
                         new_props[prop] != getattr(content, prop)
                         )
                     ):
-                    
+
                     # add new changes for all props that are different
                     # from what is currently in content
                     change.content_changes[prop] = new_props[prop]

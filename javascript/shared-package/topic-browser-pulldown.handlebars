@@ -7,12 +7,18 @@
         <div class="right-arrow"></div>
         <ul class="dropdown-menu no-submenus">
         {{#each children}}
-          <li class="level{{ level }} {{#if has_children }} is-subheader{{/if}}{{#if has_divider }} has-divider{{/if}}"><a {{#if href }}href="{{ href }}"{{/if}} data-tag="TopicBrowserPulldown" class="menulink">{{ title }}</a></li>
+          <li class="level{{ level }} {{#if has_children }} is-subheader{{/if}}{{#if has_divider }} has-divider{{/if}}">
+            <a {{#if href }}href="{{ href }}"{{/if}} data-tag="TopicBrowserPulldown" class="menulink">{{ title }}
+            </a>
+          </li>
         {{/each}}
         </ul>
       </li>
     {{else}}
-      <li class="level{{ level }}{{#if has_children }} is-subheader{{/if}}{{#if has_divider }} has-divider{{/if}}"><a {{#if href }}href="{{ href }}"{{/if}} data-tag="TopicBrowserPulldown" class="menulink">{{ title }}</a></li>
+      <li class="level{{ level }}{{#if has_children }} is-subheader{{/if}}{{#if has_divider }} has-divider{{/if}}">
+        <a {{#if href }}href="{{ href }}"{{/if}} data-tag="TopicBrowserPulldown" class="menulink">{{ title }}
+        </a>
+      </li>
     {{/if}}
   {{/each}}
   <li class="has-divider"><a href="/#browse" data-tag="TopicBrowserPulldownBrowse" class="menulink">Alle videos</a></li>

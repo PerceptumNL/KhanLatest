@@ -2955,7 +2955,8 @@ div.arrow-left-shadow {
     float: left;
 }
 
-#navbar ul li a {
+.site-wide-navigation > ul > li > a {
+    /* TODO ugly classname */
     font-family: "MuseoSans500", Helvetica, Arial, sans-serif;
 
     font-size: 16px;

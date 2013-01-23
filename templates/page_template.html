@@ -222,7 +222,7 @@
                                         Oefen
                                     </a>
                                 </li>
-                                <li>
+                                <li class="dropdown topic-browser-dropdown">
                                     <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/#browse"
                                        data-tag="Header"
                                             {% if watch_topic_browser_enabled %}
@@ -234,7 +234,7 @@
                                         Video's
                                         <span class="caret"></span>
                                     </a>
-                                    <!-- Note: drop-down behaviour defined in javascript (pageutil.js) -->
+                                    <!-- Note: drop-down behaviour defined in javascript (pageutil.js and the dropdown.js jQuery plugin) -->
                                     {{ handlebars_template('shared', 'topic-browser-pulldown', {'topics': templatetags.topic_browser_data()}) }}
                                 </li>
                                 {% if not user_data or not user_data.is_child_account() %}

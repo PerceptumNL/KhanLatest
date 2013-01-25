@@ -280,13 +280,13 @@ $.extend(KhanUtil, {
 
             var composedFuncWithVal = composed.name + "(" + val + ")";
 
-            hints.push("<p>To solve for the value of <code>" + this.name + "</code>,"
-                + "we need to solve for the value of <code>"
+            hints.push("<p>Om de waarde van <code>" + this.name + "</code>,"
+                + "te bepalen moeten we de waarde van <code> kennen."
                 + composedFuncWithVal + "</code>.</p>");
 
             hints = hints.concat(composed.hint(val));
 
-            hints.push("<p>That means <code>" + this.name + "(" + val + ") = " +
+            hints.push("<p>Dat betekent dat <code>" + this.name + "(" + val + ") = " +
                 this.hintEvalOf(val, true) + "</code></p>");
 
             hints.push("<p><code>" + this.name + "(" + val + ") = " +

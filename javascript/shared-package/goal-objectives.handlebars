@@ -9,22 +9,22 @@
     </a>
     <div class="hover-data" style="display: none">
         <div>
-          {{#if isVideo}}Watch video <b>{{description}}</b>{{/if}}
-          {{#if isAnyVideo}}Watch any video{{/if}}
-          {{#if isExercise}}Complete exercise <b>{{description}}</b>{{/if}}
-          {{#if isAnyExercise}}Complete any exercise{{/if}}
+          {{#if isVideo}}Bekijk een video <b>{{description}}</b>{{/if}}
+          {{#if isAnyVideo}}Bekijk een video naar keuze{{/if}}
+          {{#if isExercise}}Voltooi een oefening <b>{{description}}</b>{{/if}}
+          {{#if isAnyExercise}}Voltooi een oefening naar keuze{{/if}}
         </div>
         <div class="goal-tooltip-status">
           <span>Status:</span>
           <span>
             {{#if complete}}
-              Complete
+              Voltooid
               {{#if isAnyVideo}} (<b>{{description}}</b>){{/if}}
               {{#if isAnyExercise}} (<b>{{description}}</b>){{/if}}
             {{else}}
-              {{#if progress}} In progress ({{progressStr}}%) {{else}} Not started {{/if}}
+              {{#if progress}} Aan de gang ({{progressStr}}%) {{else}} Nog niet begonnen {{/if}}
             {{/if}}
-            {{#if struggling}} <span class="goal-tooltip-struggling">(Struggling)<span> {{/if}}
+            {{#if struggling}} <span class="goal-tooltip-struggling">(Moeite)<span> {{/if}}
           </span>
         </div>
     </div>

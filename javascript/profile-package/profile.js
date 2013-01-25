@@ -932,7 +932,7 @@ var Profile = {
 
                 var badgeInfo = [
                         {
-                            icon: "/images/badges/Meteorite-medium.png",
+                            icon: "/images/badges/meteorite-medium.png",
                             className: "bronze",
                             label: "Meteorite"
                         },

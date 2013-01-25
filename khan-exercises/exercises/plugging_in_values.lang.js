@@ -1,21 +1,21 @@
 ({
 	"nl" : {
-		"question1"	: '<p>Some ordered pairs for a linear function of <span class='hint_orange'><code><var>X_VAR</var></code></span> are given in the table below.</p> <p><b>Which equation was used to generate this table?</b></p>',
-		"question2"	: '<p>The data in the table show the cost of buying bulk vegetables per pound, including the fee for the clerk to package the vegetables in boxes.</p> <p><b>Which equation fits the data?</b></p>',
-		"question3"	: '<p><b>The table below was generated using the following equation:</b><code>\quad f(x) = <var>COEF</var>x + <var>CONST</var></code></p> <p><b>Find the missing values.</b></p>',
+		"question1"	: '<p>Sommige paren voor een lineaire functie van <span class='hint_orange'><code><var>X_VAR</var></code></span> zijn gegeven in onderstaande tabel.</p> <p><b>Welke vergelijking werd gebruikt voor het genereren van deze tabel?</b></p>',
+		"question2"	: '<p>De data in de tabel hieronder geven de kosten van een doos groenten per gram weer, inclusief de kosten van de groenteboer om groenten te verpakken.</p> <p><b>Welke vergelijking past bij de data?</b></p>',
+		"question3"	: '<p><b>De tabel hieronder is ontstaan door de volgende vergelijking te gebruiken:</b><code>\quad f(x) = <var>COEF</var>x + <var>CONST</var></code></p> <p><b>Vind de ontbrekende waarden.</b></p>',
 
 		"var1"		: '"p"',
 		"var2"		: '"c"',
-		"var3"		: '"Pound (p)"',
-		"var4"		: '"Cost (c)"',
+		"var3"		: '"Gram (g)"',
+		"var4"		: '"Kosten (k)"',
 		
-		"hint0"		: 'Take one of the equations and try plugging in the values from the table. If the equality does not hold for at least one set of values, then we can eliminate that answer choice.',
-		"hint1"		: 'For example, consider <code><var>Y_VAR</var> = <var>WRONG_ANSWERS[0].coef</var><var>X_VAR</var> + <var>WRONG_ANSWERS[0].const</var></code>. Substituting in <code>\color{<var>ORANGE</var>}{<var>X_VAR</var> = <var>XVALS[0]</var>}</code> and <code>\color{<var>BLUE</var>}{<var>Y_VAR</var> = <var>XVALS[0] * COEF + CONST</var>}</code> shows that the equality holds for the first row of the table :',
-		"hint2"		: 'However, plugging in <code>\color{<var>ORANGE</var>}{<var>X_VAR</var> = <var>XVALS[1]</var>}</code> and <code>\color{<var>BLUE</var>}{<var>Y_VAR</var> = <var>XVALS[1] * COEF + CONST</var>}</code> from the second row of the table gives us:',
-		"hint3"		: 'So we can eliminate <code><var>Y_VAR</var> = <var>WRONG_ANSWERS[0].coef</var><var>X_VAR</var> + <var>WRONG_ANSWERS[0].const</var></code> from consideration and try a different answer choice.',
-		"hint4"		: 'When we try <code><var>Y_VAR</var> = <var>COEF</var><var>X_VAR</var> + <var>CONST</var></code>, we see that it holds up for each set of values in the table.',
-		"hint5"		: 'The equation that fits this table of values is <code><var>Y_VAR</var> = <var>COEF</var><var>X_VAR</var> + <var>CONST</var></code>.',
-		"hint6"		: 'Plug the corresponding values of <code class="hint_orange">x</code> into the equation to find the missing values of <code class="hint_blue">f(x)</code>.',
-		"hint7"		: 'The missing <span data-if="I === 1">value is</span><span data-else>values are</span>:'
+		"hint0"		: 'Neem 1 van de vergelijkingen en probeer deze aan te sluiten in de waarden uit de tabel. Als de gelijkheid niet voor ten minste één set waarden overeenkomt, kunnen we dat antwoord schrappen.',
+		"hint1"		: 'Bijvoorbeeld, overweeg  <code><var>Y_VAR</var> = <var>WRONG_ANSWERS[0].coef</var><var>X_VAR</var> + <var>WRONG_ANSWERS[0].const</var></code>. Vervanging van <code>\color{<var>ORANGE</var>}{<var>X_VAR</var> = <var>XVALS[0]</var>}</code> en <code>\color{<var>BLUE</var>}{<var>Y_VAR</var> = <var>XVALS[0] * COEF + CONST</var>}</code> blijkt dat de gelijkheid voor de eerste rij van de tabel geldt :',
+		"hint2"		: 'Maar invullen van <code>\color{<var>ORANGE</var>}{<var>X_VAR</var> = <var>XVALS[1]</var>}</code> en <code>\color{<var>BLUE</var>}{<var>Y_VAR</var> = <var>XVALS[1] * COEF + CONST</var>}</code> uit de tweede regel van de tabel geeft:',
+		"hint3"		: 'Dus kunnen we <code><var>Y_VAR</var> = <var>WRONG_ANSWERS[0].coef</var><var>X_VAR</var> + <var>WRONG_ANSWERS[0].const</var></code> uit de oplossingen schrappen en een ander antwoord proberen.',
+		"hint4"		: 'Als we <code><var>Y_VAR</var> = <var>COEF</var><var>X_VAR</var> + <var>CONST</var></code> proberen, dan zien we dat het juist is voor elke set getallen uit de tabel.',
+		"hint5"		: 'De juiste vergelijking voor de waarden uit deze tabel is <code><var>Y_VAR</var> = <var>COEF</var><var>X_VAR</var> + <var>CONST</var></code>.',
+		"hint6"		: 'Zet de waarden van <code class="hint_orange">x</code> in de vergelijking om de ontbrekende waarden van <code class="hint_blue">f(x)</code>.',
+		"hint7"		: '<span data-if="I === 1">Het ontbrekende getal is</span><span data-else>De ontbrekende getallen zijn</span>:'
 		}
 })

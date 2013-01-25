@@ -151,8 +151,10 @@ def css_package(package_name):
         list_css.append("<!--[if (!IE)|(gte IE 8)]><!-->")
 
         # Stylesheets using data-uris
+        base_url = (package.get("base_url") or
+                    "/stylesheets/%s-package" % package_name)
         list_css.append("<link rel='stylesheet' type='text/css' href='%s/%s'>"
-            % (url_util.static_url(base_url),
+            % (base_url,
                non_ie_package["hashed-filename"]))
 
         list_css.append("<!--<![endif]-->")
@@ -160,7 +162,7 @@ def css_package(package_name):
 
         # Without data-uris, for IE <= 7
         list_css.append("<link rel='stylesheet' type='text/css' href='%s/%s'>"
-            % (url_util.static_url(base_url), package["hashed-filename"]))
+            % (base_url, package["hashed-filename"]))
 
         list_css.append("<![endif]-->")
 

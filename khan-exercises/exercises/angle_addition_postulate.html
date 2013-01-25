@@ -2,7 +2,7 @@
 <html data-require="math graphie expressions">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Angle addition postulate</title>
+    <title>Somregel</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -59,13 +59,13 @@
             </div>
 
             <div class="problem">
-                Given<br />
+                Gegeven is<br />
                     <span data-if="PROBLEM===2"><span><code>\qquad \overrightarrow{<var>O</var><var>A</var>}\perp\overrightarrow{<var>O</var><var>C</var>}</code></span>,<br />            </span>
-                    <span id="given0"><code>\qquad m <var>ANGLE_ONE</var> = <var>COEF_1</var>x + <var>CONST_1</var></code></span>, <span data-if="PROBLEM !== 0">and</span><br/>
+                    <span id="given0"><code>\qquad m <var>ANGLE_ONE</var> = <var>COEF_1</var>x + <var>CONST_1</var></code></span>, <span data-if="PROBLEM !== 0">en</span><br/>
                     <span id="given1"><code>\qquad m <var>ANGLE_TWO</var> = <var>COEF_2</var>x + <var>CONST_2</var></code></span><span data-if="PROBLEM !==0">,<br /></span>
-                    <span data-if="PROBLEM === 0">, and<br />
+                    <span data-if="PROBLEM === 0">, en<br />
                     <span id="givenLarge"><code>\qquad m <var>LARGE_ANGLE</var> = <var>largeAngle</var></code></span>,</span>
-                    <p class="question">find <code>m<var>ANSWER[0]</var></code>.</p>
+                    <p class="question">vind <code>m<var>ANSWER[0]</var></code>.</p>
 
                 <div id="angleGraph" class="graphie">
                     init({
@@ -112,7 +112,7 @@
 
             <div class="hints">
                 <div>
-                    <p>From the diagram, we see that together <code>\blue{<var>ANGLE_TOP</var>}</code> and <code>\green{<var>ANGLE_BOT</var>}</code> form <code>\purple{<var>LARGE_ANGLE</var>}</code>, so</p>
+                    <p>Van het plaatje kunnen we aflezen dat <code>\blue{<var>ANGLE_TOP</var>}</code> en <code>\green{<var>ANGLE_BOT</var>}</code> samen <code>\purple{<var>LARGE_ANGLE</var>}</code> is, dus</p>
                     <p><code>\qquad \blue{m<var>ANGLE_TOP</var>} + \green{m<var>ANGLE_BOT</var>} = \purple{m<var>LARGE_ANGLE</var>}</code>.</p>
 
                     <div class="graphie" data-update="angleGraph">
@@ -137,14 +137,14 @@
                 </div>
 
                 <div data-if="PROBLEM===1">
-                    <p>Since <code><var>LARGE_ANGLE</var></code> is a straight angle, we know <code>\purple{m<var>LARGE_ANGLE</var> = 180}</code>.</p>
+                    <p>Omdat <code><var>LARGE_ANGLE</var></code> een rechte hoek is, weten we dat <code>\purple{m<var>LARGE_ANGLE</var> = 180}</code>.</p>
                     <div class="graphie" data-update="angleGraph">
                         style({ stroke: "purple", strokeWidth: 3 });
                         arc( [ 0, 0 ], 1.2, 0, 180 );
                     </div>
                 </div>
                 <div data-if="PROBLEM===2">
-                    <p>Since we are given that <code>\overrightarrow{<var>O</var><var>A</var>}\perp\overrightarrow{<var>O</var><var>C</var>}</code>, we know <code>\purple{m<var>LARGE_ANGLE</var> = 90}</code>.
+                    <p>Gegeven is <code>\overrightarrow{<var>O</var><var>A</var>}\perp\overrightarrow{<var>O</var><var>C</var>}</code>, dus we weten<code>\purple{m<var>LARGE_ANGLE</var> = 90}</code>.
                     <div class="graphie" data-update="angleGraph">
                         style({ stroke: "purple", strokeWidth: 3 });
                         path( [[0, .5], [.5, .5], [.5, 0]] );
@@ -152,41 +152,41 @@
                     </div>
                 </div>
                 <div>
-                    <p>Substitute in the expressions that were given for each measure:</p>
+                    <p>Substitueer de vergelijkingen die zijn gegeven:</p>
                     <p data-if="ANGLE_TOP === ANGLE_ONE"><code>\qquad \blue{<var>COEF_1</var>x + <var>CONST_1</var>} + \green{<var>COEF_2</var>x + <var>CONST_2</var>} = \purple{<var>largeAngle</var>}</code>.</p>
                     <p data-else><code>\qquad \blue{<var>COEF_2</var>x + <var>CONST_2</var>} + \green{<var>COEF_1</var>x + <var>CONST_1</var>} = \purple{<var>largeAngle</var>}</code>.</p>
                 </div>
                 <div>
-                    <p>Combine like terms:</p>
+                    <p>Combineer zoals termen:</p>
                     <p><code>\qquad<var>COEF_1 + COEF_2</var>x + <var>CONST_1 + CONST_2</var> = <var>largeAngle</var></code>.</p>
                 </div>
                 <div>
-                    <p data-if="CONST_1+CONST_2 &gt; 0">Subtract <code><var>CONST_1 + CONST_2</var></code> from both sides:</p>
-                    <p data-else>Add <code><var>-(CONST_1 + CONST_2)</var></code> to both sides:</p>
+                    <p data-if="CONST_1+CONST_2 &gt; 0">Trek <code><var>CONST_1 + CONST_2</var></code> af van beide kanten:</p>
+                    <p data-else>Tel <code><var>-(CONST_1 + CONST_2)</var></code> op bij beide kanten:</p>
                     <p><code>\qquad<var>COEF_1 + COEF_2</var>x  = <var>largeAngle - CONST_1 - CONST_2</var></code>.</p>
                 </div>
                 <div>
-                    <p>Divide both sides by <code><var>COEF_1 + COEF_2</var></code> to find <code>x</code>:</p>
+                    <p>Deel beide kanten door <code><var>COEF_1 + COEF_2</var></code> om <code>x</code> te krijgen:</p>
                     <p><code class="hint_pink">\qquad x  = <var>X</var></code>.</p>
                 </div>
                 <div data-if="ANSWER[0]===ANGLE_BOT">
-                    <p>Substitute <code class="hint_pink"><var>X</var></code> for <code class="hint_pink">x</code> in the expression that was given for <code class="hint_green">m<var>ANSWER[0]</var></code>:
+                    <p>Vul <code class="hint_pink"><var>X</var></code> in voor <code class="hint_pink">x</code> in de vergelijking die was gegeven voor <code class="hint_green">m<var>ANSWER[0]</var></code>:
                     <p ><code class="hint_green">\qquad m<var>ANSWER[0]</var> = <var>ANSWER[1]</var>(\pink{<var>X</var>}) + <var>ANSWER[2]</var></code>.</p>
                 </div>
                 <div data-else>
-                    <p>Substitute <code class="hint_pink"><var>X</var></code> for <code class="hint_pink">x</code> in the expression that was given for <code class="hint_blue">m<var>ANSWER[0]</var></code>:
+                    <p>Vul <code class="hint_pink"><var>X</var></code> in voor <code class="hint_pink">x</code> in de vergelijking die was gegeven voor <code class="hint_blue">m<var>ANSWER[0]</var></code>:
                     <p><code class="hint_blue">\qquad m<var>ANSWER[0]</var> = <var>ANSWER[1]</var>(\pink{<var>X</var>}) + <var>ANSWER[2]</var></code>.</p>
                 </div>
                 <div data-if="ANSWER[0]===ANGLE_BOT">
-                    <p>Simplify:</p>
+                    <p>Vereenvoudig:</p>
                     <p><code>\qquad \green{m<var>ANSWER[0]</var> = <var>ANSWER[1]*X</var> + <var>ANSWER[2]</var>}</code>.</p>
                 </div>
                 <div data-else>
-                    <p>Simplify:</p>
+                    <p>Vereenvoudig:</p>
                     <p><code>\qquad \blue{m<var>ANSWER[0]</var> = <var>ANSWER[1]*X</var> + <var>ANSWER[2]</var>}</code>.</p>
                 </div>
-                <p class="final_answer" data-if="ANSWER[0]===ANGLE_BOT">So <code>\green{m<var>ANSWER[0]</var> = <var>ANSWER[1] * X + ANSWER[2]</var>}</code>.</p>
-                <p class="final_answer" data-else>So <code>\blue{m<var>ANSWER[0]</var> = <var>ANSWER[1] * X + ANSWER[2]</var>}</code>.</p>
+                <p class="final_answer" data-if="ANSWER[0]===ANGLE_BOT">Dus <code>\green{m<var>ANSWER[0]</var> = <var>ANSWER[1] * X + ANSWER[2]</var>}</code>.</p>
+                <p class="final_answer" data-else>Dus <code>\blue{m<var>ANSWER[0]</var> = <var>ANSWER[1] * X + ANSWER[2]</var>}</code>.</p>
             </div>
         </div>
     </div>

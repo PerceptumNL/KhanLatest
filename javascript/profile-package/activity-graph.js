@@ -2,7 +2,7 @@ var ActivityGraph = {
     chart: null,
     videoMinutes: {
         type: "column",
-        name: "Video Minutes",
+        name: "Minuten video gekeken",
         color: "#0080C9",
         data: [],
         defaultPoint: {
@@ -11,7 +11,7 @@ var ActivityGraph = {
     },
     exerciseMinutes: {
         type: "column",
-        name: "Skill Minutes",
+        name: "Minuten aan vaardigheden gewerkt",
         color: "#007EC7",
         data: [],
         defaultPoint: {
@@ -20,7 +20,7 @@ var ActivityGraph = {
     },
     energyPoints: {
         type: "spline",
-        name: "Energy Points",
+        name: "Energiepunten",
         yAxis: 1,
         marker: {enabled: false},
         color: "#C9001B",
@@ -152,7 +152,7 @@ var ActivityGraph = {
             return {};
         }
         return {
-            y: info["minutes"],
+            y: info["minuten"],
             desc: "<strong>" + tag + "</strong> (" + info["timeSpent"] + ")<br/>" +
                 info["htmlSummary"]
         };
@@ -190,7 +190,7 @@ var ActivityGraph = {
             var lastIndex = this.videoMinutes.data.length - 1,
                 y = this.videoMinutes.data[lastIndex].y + this.exerciseMinutes.data[lastIndex].y,
                 symbol = (tag === "Achievements" ?
-                        "url(/images/badges/Meteorite-small-chart.png)" :
+                        "url(/images/badges/meteorite-small-chart.png)" :
                         "url(/images/node-complete-chart.png)"
                         );
             return {

@@ -11,12 +11,12 @@
                 {{else}}
                 <input type="text" name="title" class="goal-title simple-input ui-corner-all blur-on-esc" placeholder="{{title}}" value="{{title}}"></input>
                 {{/if}}
-                {{#if ../isCurrent }}<span class="summary-light">(started {{ created_ago }})</span>{{/if}}
-                {{#if ../isCompleted }}<span class="summary-light">(completed {{ completed_ago }} in {{ completed_time }})</span>{{/if}}
-                {{#if ../isAbandoned }}<span class="summary-light">(abandoned {{ completed_ago }})</span>{{/if}}
+                {{#if ../isCurrent }}<span class="summary-light">( {{ created_ago }} gestart)</span>{{/if}}
+                {{#if ../isCompleted }}<span class="summary-light">( {{ completed_ago }} voltooid in {{ completed_time }})</span>{{/if}}
+                {{#if ../isAbandoned }}<span class="summary-light">( {{ completed_ago }} verlaten)</span>{{/if}}
                 {{#unless ../readonly }}
                 <span class="goal-controls">
-                    <a class="abandon simple-button" href="javascript:void(0)" id="goal-abandon-{{id}}">Abandon</a>
+                    <a class="abandon simple-button" href="javascript:void(0)" id="goal-abandon-{{id}}">Verlaat</a>
                 </span>
                 {{/unless}}
             </p>
@@ -31,7 +31,7 @@
     </div>
 {{else}}
     {{#if readonly }}
-        Nothing to show here!
+        Geen doelen in deze categorie!
     {{else}}
         {{>shared_goal-new}}
     {{/if}}

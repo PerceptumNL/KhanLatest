@@ -26,6 +26,7 @@ body {
     font-size: 12px;
     margin: 0;
     color: #444;
+    background: #F3F3F3;
     line-height: 22px;
     /* extend background to cover #page-container on horizontal scroll */
     min-width: 1000px;
@@ -33,7 +34,6 @@ body {
 
 
 #outer-wrapper {
-    background: url(/images/light-page-bg.png) repeat-x;
     min-height: 100%;
     height: auto !important;
     height: 100%;
@@ -1121,12 +1121,12 @@ span.youTube:hover {
             }
 
         .exercise-color.suggested {
-            background-color: #2C7196;
+            background-color: #73982C;
             color: #eee !important;
         }
 
             .exercise-color.suggested:hover {
-                background-color: #2C7196;
+                background-color: #73982C;
             }
 
         .exercise-color.review {
@@ -2335,6 +2335,9 @@ span.youTube:hover {
     }
 
 /* Homepage styles */
+#homepage {
+    background: #FFFFFF;
+}
 
 #homepage hr {
     margin: 0 0 18px 0;

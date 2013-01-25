@@ -1,12 +1,12 @@
 ({
 	"nl" : {
-		"question1"	: 'Solve for <code>x</code>:',
+		"question1"	: 'Los op voor <code>x</code>:',
 		
-		"hint1"		: 'Subtract <code><var>C</var>x</code> from both sides:',
-		"hint2"		: '<var>B > 0 ? "Subtract" : "Add"</var> <code><var>abs(B)</var></code> <var>B > 0 ? "from" : "to"</var> both sides:',
-		"hint3"		: 'Divide both sides by <code><var>A - C</var></code>. Because <code><var>A - C</var></code> is positive, the inequality sign <code><var>REL</var></code> should not be flipped.',
-		"hint4"		: 'Simplify.',
-		"hint5"		: 'Divide both sides by <code><var>A - C</var></code>. Because <code><var>A - C</var></code> is negative, the inequality sign <code><var>REL</var></code> must be flipped to <code><var>FREL</var></code>.',
-		"hint6"		: 'Simplify.'
+		"hint1"		: 'Haal van beide kanten <code><var>C</var>x</code> af:',
+		"hint2"		: '<var>B > 0 ? "Trek" : "Tel"</var> <code><var>abs(B)</var></code> <var>B > 0 ? "af van" : "op bij"</var> beide kanten:',
+		"hint3"		: 'Deel beide kanten door <code><var>A - C</var></code>. Omdat <code><var>A - C</var></code> positief is, moet je het ongelijkheidsteken <code><var>REL</var></code> niet omgeklapt zijn.',
+		"hint4"		: 'Vereenvoudig.',
+		"hint5"		: 'Deel beide kanten door <code><var>A - C</var></code>. Omdat <code><var>A - C</var></code> negatief is, moet het ongelijkheidsteken <code><var>REL</var></code> omklappen naar <code><var>FREL</var></code>.',
+		"hint6"		: 'Vereenvoudig.'
 		}
 })

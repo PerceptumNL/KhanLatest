@@ -184,7 +184,7 @@
                                             <!--
                                             <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/about" data-tag="Header" class="{% if selected_nav_link == 'about' %}selected{% endif %} about-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Over Ons</a>
                                             -->
-                                            <a href="/about/start" data-tag="Header" class="{% if selected_nav_link == 'gettingstarted' %}selected{% endif %} about-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Aan de slag!</a>
+                                            <a href="/about/start" data-tag="Header" class="{% if selected_nav_link == 'gettingstarted' %}selected{% endif %} about-link{%if user_data.is_demo %} show-demo-dialog{% endif %}">Handleiding</a>
                                             <div style="clear: both"></div>
                                             {{ handlebars_template('shared', 'topic-browser-pulldown', {'topics': templatetags.topic_browser_data()}) }}
                                         </span>

@@ -212,7 +212,7 @@ var StudentLists = {
         var nstudents = 0;
         var title;
         var titleHref;
-        var countstring = "studenten";
+        var countstring = "student";
 
         if (StudentLists.currentList === StudentLists.Id.Requests) {
             $("#actual-students").hide();
@@ -299,7 +299,7 @@ var StudentLists = {
 
         var nstudentsStr = nstudents.toString() + " " +
                                                 countstring +
-                                                (nstudents === 1 ? "" : "s");
+                                                (nstudents === 1 ? "" : "");
         $("#nstudents").text(nstudentsStr);
         $(".students-header h2 a").text(title).attr("href", titleHref);
     }

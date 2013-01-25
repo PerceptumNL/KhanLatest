@@ -32,7 +32,7 @@ var ExerciseGraphOverTime = {
         },
         xAxis: {
             title: {
-                text: "Days working on the site"
+                text: "Dagen werkzaam op de site"
             },
             min: 0,
             plotLines: [{

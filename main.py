@@ -23,7 +23,6 @@ from webapp2_extras.routes import RedirectRoute
 #from google.appengine.ext.webapp import template
 #template.register_template_library('templatetags')
 
-
 # It's important to have this prior to the imports below that require imports
 # to request_handler.py. The structure of the imports are such that this
 # module causes a lot of circular imports to happen, so including it once out
@@ -42,6 +41,7 @@ import youtube_sync
 import warmup
 import login
 import homepage
+import helpus
 import rssblog
 
 from third_party import search
@@ -906,6 +906,7 @@ application = webapp2.WSGIApplication([
         webapp2.SimpleRoute('/.*', smarthistory.SmartHistoryProxy)
     ]),
     ('/', homepage.ViewHomePage),
+    ('/missingvideos', helpus.ViewMissingVideos),
     ('/about', util_about.ViewAbout),
     ('/about/blog', blog.ViewBlog),
     RedirectRoute('/about/blog/schools',

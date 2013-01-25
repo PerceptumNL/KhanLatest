@@ -64,6 +64,15 @@ var KMapEditor = {
         KMapEditor.defaultVersion = exerciseData;
         KMapEditor.defaultMap = defaultMapLayout;
 
+        // Helper method to get topic by name
+        $.each([defaultMapLayout, editMapLayout], function(n, layout) {
+            if (layout)
+                layout.get = function(search) {
+                    var array = this.topics;
+                    return (search in array) ? array[search] : ""
+                };
+        })
+
         // deep copy the default version and apply the edit version's diff to it
         $.extend(true, KMapEditor.editVersion, exerciseData);
         $.each(changeData, function(n, change) {
@@ -178,6 +187,15 @@ var KMapEditor = {
             $("#save-button").removeClass("green");
             $("#save-button").addClass("disabled");
             $("#map-edit-message").text("Saving changes").show();
+            var changedTopics = []
+            $.each(KMapEditor.candidateMap.topics, function(topicid, topic) {
+                if (topic.x != KMapEditor.editMap.get(topicid).x ||
+                    topic.y != KMapEditor.editMap.get(topicid).y)
+                {
+                  changedTopics.push(topic)
+                }
+            });
+
             var changedExercises = [];
             $.each(KMapEditor.candidateVersion, function(n, exercise) {
                 if (KMapEditor.isDirty(exercise)) {
@@ -185,13 +203,17 @@ var KMapEditor = {
                 }
             });
 
-            if (changedExercises.length === 0) {
+            if (changedExercises.length === 0 && changedTopics.length === 0) {
+
                 $("#map-edit-message").text("No changes").delay(1000).fadeOut(400);
                 $(".exercise-properties input").prop("disabled", false);
                 $(".exercise-properties select").prop("disabled", false);
                 $("#save-button").addClass("green");
                 $("#save-button").removeClass("disabled");
-            } else {
+            }
+
+            //Is here to be called after async setting the topics
+            function save_exercises() {
                 var complete = 0;
                 $.each(changedExercises, function(n, exercise) {
                     var change = {
@@ -223,6 +245,33 @@ var KMapEditor = {
                         }
                     });
                 });
+            }
+            if (changedTopics.length) {
+                var topics = {};
+                $.each(KMapEditor.candidateMap.topics, function(n, topic) {
+                    topics[topic.standalone_title] = {
+                        icon_url: topic.icon_url,
+                        id: topic.id,
+                        standalone_title: topic.standalone_title,
+                        x: topic.x,
+                        y: topic.y
+                    };
+                })
+                $.ajax({
+                    url: "/api/v1/maplayout",
+                    type: "PUT",
+                    data: JSON.stringify({ polylines: [], topics: topics}),
+                    contentType: "application/json; charset=utf-8",
+                    success: function(result) {
+                        $("#map-edit-message").text("Saving changes to maplayout");
+                        if (changedExercises.length === 0)
+                            location.reload();
+                        else
+                            save_exercises();
+                    }
+                });
+            } else if (changedExercises.length) {
+                save_exercises();
             }
             return false;
         });
@@ -505,11 +554,13 @@ var KMapEditor = {
         if (this.zoomLevel === this.ZOOM_TOPICS || this.zoomLevel === this.ZOOM_HYBRID) {
             $.each(this.maplayout.topics, function(topicId, topic) {
                 var newDiv = $("<div>").appendTo($("#map"));
+                topic.div = newDiv;
                 newDiv.addClass("exercise");
                 newDiv.css({
                     "left": Math.round((topic.x - KMapEditor.minV) * KMapEditor.X_SPACING) + "px",
                     "top": Math.round((topic.y - KMapEditor.minH) * KMapEditor.Y_SPACING - 20) + "px",
-                    "width": KMapEditor.LABEL_WIDTH + "px"
+                    "width": KMapEditor.LABEL_WIDTH + "px",
+                    "cursor": KMapEditor.readonly ? "pointer" : "move"
                 });
                 $("<img>").attr({
                     src: topic.icon_url + "?4"
@@ -521,6 +572,57 @@ var KMapEditor = {
 
                 if (KMapEditor.zoomLevel === KMapEditor.ZOOM_HYBRID) {
                     newDiv.css({ "width": "80px", "opacity": 0.5 });
+                }
+                if (KMapEditor.selected.indexOf(topicId) !== -1) {
+                    newDiv.find(".exercise-label").addClass("exercise-selected");
+                }
+                newDiv.bind("mousedown", function(event) {
+                    $(".exercise").zIndex(2);
+                    newDiv.zIndex(3);
+                    if (event.shiftKey) {
+                        KMapEditor.updateForm(null);
+                        KMapEditor.selected.push(topicId);
+                        newDiv.find(".exercise-label").addClass("exercise-selected");
+                    } else if (KMapEditor.selected.length <= 1) {
+                        $(".exercise-label").removeClass("exercise-selected");
+                        newDiv.find(".exercise-label").addClass("exercise-selected");
+                        $("img.ex-live").attr({src: KMapEditor.IMG_LIVE});
+                        $("img.ex-dev").attr({src: KMapEditor.IMG_DEV});
+                        KMapEditor.updateForm(topic.standalone_title);
+                    }
+                    $("img").addClass("exercise")
+                });
+                if (!KMapEditor.readonly) {
+                    var hStart, vStart;
+                    newDiv.draggable({
+                        start: function(event, ui) {
+                            hStart = topic.x;
+                            vStart = topic.y;
+                        },
+                        drag: function(event, ui) {
+                            topic.x = (ui.position.top + KMapEditor.ICON_SIZE / 2) / KMapEditor.Y_SPACING + KMapEditor.minH;
+                            topic.y = ui.position.left / KMapEditor.X_SPACING + KMapEditor.minV;
+                        },
+                        stop: function(event, ui) {
+                            topic.y = Math.round(ui.position.top / KMapEditor.Y_SPACING + KMapEditor.minH);
+                            topic.x = Math.round(ui.position.left / KMapEditor.X_SPACING + KMapEditor.minV);
+
+                            var hDelta = topic.x - hStart;
+                            var vDelta = topic.y - vStart;
+                            $.each(KMapEditor.selected, function(n, topicid) {
+                                if (topicid !== topic.standalone_title) {
+                                   KMapEditor.maplayout.get(topicid).x += hDelta;
+                                   KMapEditor.maplayout.get(topicid).y += vDelta;
+                                }
+                            });
+                            $.each(KMapEditor.selected, function(n, topicid) {
+                                KMapEditor.maplayout.get(topicid).div.css({
+                                    "left": ((KMapEditor.maplayout.get(topicid).x - KMapEditor.minV) * KMapEditor.X_SPACING) + "px",
+                                    "top": ((KMapEditor.maplayout.get(topicid).y - KMapEditor.minH) * KMapEditor.Y_SPACING - KMapEditor.ICON_SIZE / 2) + "px"
+                                });
+                            });
+                        }
+                    });
                 }
             });
         }
@@ -652,6 +754,7 @@ var KMapEditor = {
     updateForm: function(exerciseName) {
         if ( exerciseName !== null ) {
             this.selected = [exerciseName];
+            if (this.exercises.get(exerciseName) == null) return;
             $(".exercise-properties").show();
             $("#ex-title").html(this.exercises.get(exerciseName).display_name);
             $("input[name=pretty_display_name]").val(this.exercises.get(exerciseName).pretty_display_name);

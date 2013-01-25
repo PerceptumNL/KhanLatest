@@ -669,7 +669,7 @@ function KnowledgeMap(params) {
 
         var html = [];
         html.push("<a href='", node.url, "' data-id='", node.name, "' class='",
-            node.className, "' rel='popover' data-content='Practice exercises on:<P><strong>",
+            node.className, "' rel='popover' data-content='Maak oefening:<P><strong>",
             node.display_name, "</strong></p>'>");
         if (node.nodeType === "exercise") {
             var classes = KnowledgeMapGlobals.iconClasses.exercise;

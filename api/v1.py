@@ -492,7 +492,7 @@ def put_topic(topic_id, version_id="edit"):
         kwargs = dict((str(key), value)
                       for key, value in topic_json.iteritems()
                       if key in ['id', 'title', 'standalone_title',
-                                 'description', 'tags', 'hide'])
+                                 'description', 'tags', 'hide', 'x', 'y', 'icon_name'])
         kwargs["version"] = version
         topic.update(**kwargs)
         topic.get_extended_slug(bust_cache=True)
@@ -1390,8 +1390,8 @@ def save_video(video_id="", version_id="edit"):
 
         if other_video:
             return api_invalid_param_response(
-                "Video with youtube_id %s already appears with readable_id %s"
-                % (new_data["youtube_id"], video.readable_id))
+                "Video with youtube_id %s already appears with readable_id %s for video %s"
+                % (new_data["youtube_id"], video.readable_id, other_video.title))
 
         # make sure we are not changing the video's readable_id to an
         # updated one in the Version's Content Changes
@@ -2217,6 +2217,17 @@ def get_students_progress_summary():
     return {'exercises': exercise_data,
             'num_students': len(list_students)}
 
+@route("/api/v1/user/exercises/<exercise_name>/request_video", methods=["GET"])
+@api.auth.decorators.login_required
+@jsonp
+@jsonify
+def user_exercises_request_video(exercise_name):
+    exercise = exercise_models.Exercise.get_by_name(exercise_name)
+    try:
+        exercise.request_video()
+        return {'rc': True}
+    except:
+        return {'rc': False}
 
 @route("/api/v1/user/exercises/<exercise_name>", methods=["GET"])
 @api.auth.decorators.login_required

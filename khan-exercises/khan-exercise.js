@@ -2443,7 +2443,7 @@ var Khan = (function() {
                 $(Khan).trigger("hintUsed");
 
                 hintsUsed += 1;
-                var stepsLeft = hints.length + " step" + (hints.length === 1 ? "" : "s") + " left";
+                var stepsLeft = hints.length + " hint" + (hints.length === 1 ? "" : "s") + " over";
                 $(this).val($(this).data("buttonText") || "Geef mij nog een hint (" + stepsLeft + ")");
 
 

@@ -1,56 +1,76 @@
 {% extends "page_template.html" %}
 
 {% block meta_page_title %}
-{{ main_topic.standalone_title|escape }} | {% endblock %}
+    {{ main_topic.standalone_title|escape }} | {% endblock %}
 {% block meta_keywords %}
-  {% for tag in main_topic.tags %}{{ tag }},{% endfor %}
+    {% for tag in main_topic.tags %}{{ tag }},{% endfor %}
 {% endblock %}
 {% block meta_description %}{{ main_topic.description }}{% endblock %}
 
 {% block pagecss %}
 
-{{ js_css_packages.css_package("topic") }}
-{{ js_css_packages.css_package("video") }}
+    {{ js_css_packages.css_package("topic") }}
+    {{ js_css_packages.css_package("video") }}
 
-<style>
-	#page_sub_nav { display: none; }
-	td { vertical-align: top; }
-	.ui-tooltip, .qtip { max-width: 200px; }
-    #library-content .library-content-header h2.root-topic { font-size: 22pt; font-weight: bold; margin-bottom: 18px; }
-    #library-content .library-content-list p.topic-desc { display: block; width: 500px; }
-    #library-content .topic-spacer { display: block; margin-bottom: 30px; }
-</style>
+    <style>
+        #page_sub_nav {
+            display: none;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        .ui-tooltip, .qtip {
+            max-width: 200px;
+        }
+
+        #library-content .library-content-header h2.root-topic {
+            font-size: 22pt;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        #library-content .library-content-list p.topic-desc {
+            display: block;
+            width: 500px;
+        }
+
+        #library-content .topic-spacer {
+            display: block;
+            margin-bottom: 30px;
+        }
+    </style>
 
 {% endblock pagecss %}
 
 {% block pagecontent %}
 
-<article id="topic-page">
+    <article id="topic-page">
 
-<div class="topic-page-content">
-  <div class="container">
-    <div class="nav-pane">
+        <div class="topic-page-content">
+            <div class="container">
+                <div class="nav-pane">
+                    {{ selected_topic.get_topic_page_nav_html() }}
+                    <div style="clear: both"></div>
+                </div>
+                <div class="content-pane indent">
+                    <div class="prerendered" data-id="{{ selected_topic.id }}">
+                        {{ selected_topic.get_topic_page_html() }}
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      {{ selected_topic.get_topic_page_nav_html() }}
-      <div style="clear: both"></div>
-    </div>
-    <div class="content-pane indent">
-      <div class="prerendered" data-id="{{ selected_topic.id }}">
-        {{ selected_topic.get_topic_page_html() }}
-      </div>
-    </div>
-  </div>
-</div>
-
-</article>
+    </article>
 {% endblock %}
 
 {% block bottompagescript %}
     {{ js_css_packages.js_package("topic") }}
     {{ js_css_packages.js_package("video") }}
     <script type="text/javascript">
-      $(function() {
-        TopicPage.init("{{ main_topic.id }}");
-      });
+        $(function () {
+            TopicPage.init("{{ main_topic.id }}");
+        });
     </script>
 {% endblock %}

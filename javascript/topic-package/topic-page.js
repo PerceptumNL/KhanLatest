@@ -86,7 +86,6 @@
         growContent: function() {
             //TODO delete this empty function
         },
-
         SubTopicRouter: Backbone.Router.extend({
             routes: {
                 "*subtopicID": "showSubtopic"

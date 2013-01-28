@@ -108,9 +108,9 @@
             {% for variable in ga_custom_vars %}
                 _gaq.push(['_setCustomVar', {{ loop.index }}, '{{ variable[0] }}', '{{ variable[1] }}', 1 ]);
             {% endfor %}
-        {% if analytics_bingo %}
-             _gaq.push(['_setCustomVar', 5, '{{ analytics_bingo.name }}', '{{ analytics_bingo.value }}', 1 ]);
-        {% endif %}
+            {% if analytics_bingo %}
+                _gaq.push(['_setCustomVar', 5, '{{ analytics_bingo.name }}', '{{ analytics_bingo.value }}', 1 ]);
+            {% endif %}
 
             // For OER Analytics
             _gaq.push(['ht._setAccount', 'UA-28120495-1']);
@@ -196,24 +196,26 @@
 
             <div id="top-header">
                 <div class="top-header-links">
-                        <span class="page_links" id="page_auth">
-                            <span id="goals-container"></span>
+                    <div id="navbar">
+                        <a id="logo" href="/" title="Take me home!" data-tag="Header">
+                            <img src="/images/khan-logo-header.png"/>
+                        </a>
+                    <span class="page_links" id="page_auth">
+                        <span id="goals-container"></span>
                                 <span id="user-info" class="badge-target">
                                 {% if user_data and not user_data.is_pre_phantom %}
                                     {{ user.user_info(username, user_data, login_url, logout_url) }}
                                 {% else %}
                                     <a href="{{ login_url|escape }}">Inloggen</a>
                                 {% endif %}
-                                </span>
                         </span>
+                    </span>
 
-                    <div class="clear"></div>
-                    <div id="stats">
-                    </div>
-                    <div id="navbar">
-                        <a id="logo" href="/" title="Take me home!" data-tag="Header">
-                            <img src="/images/khan-logo-header.png"/>
-                        </a>
+                        <div class="clear">
+                        </div>
+                        <div id="stats">
+                        </div>
+
 
                         <div class="site-wide-navigation">
                             <ul class="links nav-subheader">
@@ -233,7 +235,7 @@
                                             {% else %}
                                        class="{% if selected_nav_link == 'watch' %}selected{% endif %} watch-link{% if user_data.is_demo %} show-demo-dialog{% endif %}"
                                             {% endif %}
-                                        >
+                                            >
 
                                         Video's
                                         <span class="caret"></span>
@@ -290,8 +292,11 @@
                     <div class="clear"></div>
                 </div>
                 <div id="page_sub_nav">
-                <!-- TODO anything going on in here? -->
-                    {% block pagesubmenu %}<b>{% block pagetitle %}{% endblock pagetitle %}</b>
+                    <!-- TODO anything going on in here? ? -->
+                    {% block pagesubmenu %}
+                        <b>
+                            {% block pagetitle %}{% endblock pagetitle %}
+                        </b>
                     {% endblock pagesubmenu %}
                 </div>
                 {% block pagemessage %}

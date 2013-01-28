@@ -73,6 +73,7 @@ table {
 }
 
 #searchbox {
+    /* TODO this is meant to be something different than .search-box?*/
 	text-align:center;
 	margin-bottom:10px;
 	padding:5px;

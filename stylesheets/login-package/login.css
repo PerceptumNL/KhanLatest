@@ -15,6 +15,7 @@ form.auth-form {
     margin: 6em auto;
     padding: 2em 1em;
     width: 740px;
+    max-width: 100%;
     white-space: nowrap;
 }
 

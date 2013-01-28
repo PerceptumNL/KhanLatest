@@ -47,8 +47,6 @@
 }
 
 /*
-American Khan:
-
 .dropdown-menu {
   position: absolute;
   z-index: 1000;
@@ -71,6 +69,7 @@ American Khan:
 */
 
 .dropdown-menu {
+  text-align: left;
   position: absolute;
   z-index: @zindexDropdown;
   float: left;
@@ -95,7 +94,6 @@ American Khan:
 }
 
 // Dropdown menu hover interaction
-
 .dropdown-menu > li {
   color: @menuInactiveTextColor;
   border-top: 1px solid transparent;
@@ -106,10 +104,9 @@ American Khan:
     &:link,
     &:visited {
       &:hover,
-      &:focus { // This ugly section is necessary to override sitewide defaults
-      // for displaying links.
+      &:focus { // override site-wide link behaviour for drop-down submenus
         text-decoration: none;
-        color: @menuInactiveTextColor;
+        color: @menuActiveTextColor;
       }
     }
   }
@@ -120,8 +117,8 @@ American Khan:
 
 // This item has its submenu open:
 .dropdown-menu.child-active > li.hover-active, // No other item has a submenu open, and we hover:
-.dropdown-menu.none-active > li:hover, // The menu does not contain any submenus, and we hover:
-.dropdown-menu.no-submenus > li:hover {
+.dropdown-menu > li:hover // The menu does not contain any submenus, and we hover:
+{
   text-decoration: none;
   background-color: @menuHighlightColor;
   border-top: 1px solid @menuHighlightBorderColor;

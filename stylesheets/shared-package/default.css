@@ -211,52 +211,6 @@ hr.thin {
     display: none;
 }
 
-/*TODO is the fancy scrollbar used anywhere? No?*/
-/* Borrowed from those smart guys @ Fog Creek. Props to Justin & Bobby */
-.fancy-scrollbar::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-}
-
-.fancy-scrollbar::-webkit-scrollbar-button:start:decrement,
-.fancy-scrollbar::-webkit-scrollbar-button:end:increment {
-    background: transparent;
-    display: none;
-}
-
-.fancy-scrollbar::-webkit-scrollbar-track-piece {
-    background: transparent;
-}
-
-.fancy-scrollbar::-webkit-scrollbar-track-piece:vertical:start {
-    -webkit-border-top-left-radius: 4px;
-    -webkit-border-top-right-radius: 4px;
-}
-
-.fancy-scrollbar::-webkit-scrollbar-track-piece:vertical:end {
-    -webkit-border-bottom-left-radius: 4px;
-    -webkit-border-bottom-right-radius: 4px;
-}
-
-.fancy-scrollbar::-webkit-scrollbar-track-piece:horizontal:start {
-    -webkit-border-top-left-radius: 4px;
-    -webkit-border-bottom-left-radius: 4px;
-}
-
-.fancy-scrollbar::-webkit-scrollbar-track-piece:horizontal:end {
-    -webkit-border-top-right-radius: 4px;
-    -webkit-border-bottom-right-radius: 4px;
-}
-
-.fancy-scrollbar::-webkit-scrollbar-thumb:vertical,
-.fancy-scrollbar::-webkit-scrollbar-thumb:horizontal {
-    background: #ccc;
-    border: 1px solid #aaa;
-    -webkit-border-radius: 4px;
-    display: block;
-    height: 50px;
-}
-
 /* Links in the header and footer don't change color when visited. */
 a:link,
 a:visited,
@@ -273,7 +227,7 @@ a:visited {
 }
 
 a:link:hover, a:link:focus, a:visited:hover, a:visited:focus {
-    color: #26008F;
+    /* TODO why was this color defined here?color: #26008F;*/
     text-decoration: underline;
 }
 
@@ -294,62 +248,76 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     -webkit-appearance: none;
 }
 
-header, footer {
+#footer {
     display: block;
     width: 100%;
     font-family: "MuseoSans300", sans-serif;
 }
 
-footer {
+#footer {
     height: 208px;
     clear: both;
     background: url(/images/footer-bg.png) repeat-x 0 0; /*! data-uri(/images/footer-bg.png) */
-    min-width: 970px;
     position: relative;
 }
 
-footer.short, .push {
+#footer.short {
+    background: none;
+    border: none;
+}
+
+#footer.short .inner {
+    margin: 10px auto 15px;
+    font-size: 16px;
+}
+
+#footer #leaves {
+    text-align: center;
+    background-image: none;
+}
+
+#footer.short, .push {
     height: 38px;
 }
 
-footer.short {
+#footer.short {
     color: #555;
     background: url(/images/light-page-bg.png) repeat-x 0 -30px;
     border-top: 1px solid #ADD1CA;
     z-index: 10;
 }
 
-footer #leaves {
+#footer #leaves {
     background-image: url(/images/non-repeating-sprites.4.png);
     background-position: 319px -908px;
     height: 188px;
 }
 
-footer.short #leaves {
+#footer.short #leaves {
     height: 38px;
 }
 
-footer ul.page_links {
+#footer ul.page_links {
     float: left;
     padding: 0 20px;
     margin: 0;
 }
 
-footer ul.page_links li {
+#footer ul.page_links li {
     padding-right: 8px;
     padding-bottom: 8px;
 }
 
-footer.short .sep {
+#footer.short .sep {
     padding: 0 5px;
 }
 
-footer a {
+#footer a {
     color: white;
     text-decoration: none;
 }
 
-footer.short a {
+#footer.short a {
     padding-left: 5px;
     padding-right: 5px;
     color: #555;
@@ -360,13 +328,11 @@ footer.short a {
     text-decoration: underline;
 }
 
-footer #copyright {
-    float: right;
-    text-align: right;
+#footer #copyright {
     padding: 8px 10px 0 0;
 }
 
-footer #creative-commons-link {
+#footer #creative-commons-link {
     background-image: url(/images/non-repeating-sprites.4.png);
     background-position: -143px -67px;
     display: inline-block;
@@ -376,18 +342,18 @@ footer #creative-commons-link {
     width: 64px;
 }
 
-footer #copyright img {
+#footer #copyright img {
     border: 0;
     position: relative;
     top: -1px;
 }
 
-footer.short .footer-links {
+#footer.short .footer-links {
     display: inline-block;
     padding: 0 0 0 10px;
 }
 
-footer.short .small-social-links a {
+#footer.short .small-social-links a {
     margin-right: 0;
     display: inline-block;
     height: 24px;
@@ -401,22 +367,22 @@ footer.short .small-social-links a {
     position: static;
 }
 
-footer.short .small-social-links .youtube {
+#footer.short .small-social-links .youtube {
     background-image: url(/images/non-repeating-sprites.4.png);
     background-position: -10px -67px;
 }
 
-footer.short .small-social-links .twitter {
+#footer.short .small-social-links .twitter {
     background-image: url(/images/non-repeating-sprites.4.png);
     background-position: -10px -111px;
 }
 
-footer.short .small-social-links .facebook {
+#footer.short .small-social-links .facebook {
     background-image: url(/images/non-repeating-sprites.4.png);
     background-position: -10px -155px;
 }
 
-footer.short .inner {
+#footer.short .inner {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -467,25 +433,21 @@ footer.short .inner {
 .site-wide-navigation {
     /* Position this at 30 so the white triangle appears on top of the page_sub_nav breadcrumbs border */
     /* TODO what white triangle?, what is its id/class? */
-    min-height: 84px; /*navbar height*/
     z-index: 30;
+    display: inline-block;
+    margin-left: 170px; /* Make space for logo (#logo) */
 }
 
-/* Override the default site behavior so
- * these link colors never change. */
-#navbar ul a:link,
-#navbar ul a:visited,
-#navbar ul a:link:hover,
-#navbar ul a:link:focus,
-#navbar ul a:visited:hover,
-#navbar ul a:visited:focus {
+.site-wide-navigation > ul > li > a {
     color: #002533;
+    line-height: 40px;
 }
 
 #navbar {
     min-height: 84px; /*navbar height*/
     width: 100%;
     display: inline-block;
+    text-align: right;
 }
 
 #page_sub_nav a.selected {
@@ -535,6 +497,7 @@ footer.short .inner {
 }
 
 /* Visual indicator of selected nav element */
+/* TODO this is too obscure and unmaintainable
 #page_sub_nav .breadcrumbs_nav a.selected:before,
 #navbar ul a.selected:before,
 #page_sub_nav .breadcrumbs_nav.video-nav span.selected:before {
@@ -548,10 +511,10 @@ footer.short .inner {
     left: 27px;
     position: absolute;
     top: 22px;
-}
+}*/
 
 #navbar ul a.selected:before {
-    /* TODO: inside submenu (ul ul) only, not just any ul */
+    /* TODO: inside submenu (ul ul) only, not just any ul? */
     border-bottom-color: #ccc;
     top: 32px;
 }
@@ -615,13 +578,6 @@ a.about-link.selected:before {
     left: 28px;
     position: absolute;
     top: 23px;
-}
-
-#navbar ul a.selected:after {
-    /* TODO Uhm, no content?*/
-    /* TODO inside ul ul (submenu) only?*/
-    border-bottom-color: #fff;
-    top: 33px;
 }
 
 a.watch-link.selected:after {
@@ -784,8 +740,7 @@ a.about-link.selected:after {
     text-decoration: underline;
 }
 
-#page_auth.page_links {
-    float: right;
+#page_auth.page_links {;
     display: block;
     position: relative;
     margin: 6px 8px 0 0;
@@ -819,6 +774,10 @@ span.username_and_notification .user-name {
 
 .username_and_notification_shift {
     left: 12px;
+}
+
+#user-info {
+    float: right;
 }
 
 #user-info img {
@@ -911,9 +870,15 @@ span.username_and_notification .user-name {
 }
 
 #search-box {
-    position: relative;
-    float: right;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#search-box form input {
+    display: inline-block;
+    width: 500px;
     max-width: 100%;
+    /* TODO padding: 5px; */
 }
 
 .page-search {
@@ -923,7 +888,7 @@ span.username_and_notification .user-name {
 
 #search-input {
     /* For jquery-ui autocomplete */
-    z-index: 100;
+    z-index: 10;
     position: relative;
 }
 
@@ -956,10 +921,12 @@ span.username_and_notification .user-name {
 .simple-input.search-input {
     background-image: url(/images/non-repeating-sprites.4.png);
     background-position: -5px -867px;
+    background-clip: padding-box;
+    background-repeat: no-repeat;
     padding-left: 25px;
 }
 
-.page-search .search-submit {
+#search-box form .search-submit {
     display: none;
 }
 
@@ -1073,10 +1040,6 @@ nav {
 
 .lte7 #page_main_nav {
     min-width: 45ex;
-}
-
-#page_main_nav ul.page_links {
-    float: right;
 }
 
 #page_sub_nav {
@@ -1477,11 +1440,9 @@ span.youTube:hover {
 .dashboard-filter .dashboard-filter-clear {
     height: 26px;
     padding-top: 4px;
-
     position: absolute;
     top: 10px;
     right: 13px;
-    z-index: 100;
 }
 
 .dashboard-filter-clear:active {
@@ -1555,8 +1516,7 @@ background: #fafafa;
     height: 16px;
 }
 
-#container .dashboard-header .dashboard-nav {
-    float: right;
+#container .dashboard-header .dashboard-nav {;
     font-weight: bold;
     position: relative;
     top: 3px;
@@ -1971,8 +1931,7 @@ background: #fafafa;
     word-spacing: 3px;
     text-transform: uppercase;
     font-weight: normal;
-    color: #999;
-    float: right;
+    color: #999;;
     width: 180px;
     margin-top: -8px;
     padding-left: 15px;
@@ -1997,8 +1956,7 @@ background: #fafafa;
     -webkit-text-stroke: 1.5px white;
 }
 
-#review-counter-container {
-    float: right;
+#review-counter-container {;
     position: relative;
     width: 61px;
     height: 40px;
@@ -2946,9 +2904,8 @@ div.arrow-left-shadow {
     right: 6px;
 }
 
-#navbar ul {
-    /*    display: inline-block;*/
-    min-height: 84px; /*navbar height*/
+#navbar ul li {
+    float: right;
 }
 
 #navbar ul li {
@@ -2956,18 +2913,20 @@ div.arrow-left-shadow {
 }
 
 .site-wide-navigation > ul > li > a {
-    /* TODO ugly classname */
+    /* TODO remove .site-wide-navigation wrapper and just use #navbar? */
     font-family: "MuseoSans500", Helvetica, Arial, sans-serif;
-
     font-size: 16px;
     letter-spacing: -1px;
     text-transform: uppercase;
     display: block;
-    margin: 0 12px;
+    margin: 0px 12px;
+    padding: 0 12px;
 }
 
 #logo {
-    float: left;
+    position: absolute;
+    left: 0;
+    margin-left: 24px;
 }
 
 #navbar a.watch-link:hover,
@@ -4149,5 +4108,9 @@ div.topic-condensed {
     #navbar #logo {
         /*TODO show small icon*/
         display: none;
+    }
+
+    .site-wide-navigation {
+        margin-left: 0;
     }
 }

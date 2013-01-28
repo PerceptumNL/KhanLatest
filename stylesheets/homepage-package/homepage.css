@@ -26,6 +26,7 @@ a.blog-title:visited {
 
 a.begin-button {
     width: 340px;
+    max-width: 80%;
     height: 100%;
     background-image: linear-gradient(top, #1CAEEC, #1E7EC0);
     background-image: -o-linear-gradient(top, #1CAEEC, #1E7EC0);
@@ -134,5 +135,11 @@ td.social-action.gplus {
     #homepage-left-col {
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .simple-input.search-input {
+        background-position: -5px -858px;
+        padding: 10px;
+        padding-left: 30px;
     }
 }

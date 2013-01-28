@@ -95,8 +95,11 @@
     {% block pagescript %}
     {% endblock pagescript %}
 
+    <!-- TODO clean this up, it's an unreadable mess. Python should not be inserted into javascript I think -->
     <script type="text/javascript">
         window._gaq = window._gaq || [];
+    </script>
+    <script type="text/javascript">
         {%- if not hide_analytics -%}
             _gaq.push(['_setAccount', 'UA-28120495-1']);
             _gaq.push(['_setDomainName', '.khanacademie.nl']);
@@ -105,16 +108,16 @@
             {% for variable in ga_custom_vars %}
                 _gaq.push(['_setCustomVar', {{ loop.index }}, '{{ variable[0] }}', '{{ variable[1] }}', 1 ]);
             {% endfor %}
-            {% if analytics_bingo %}
-                _gaq.push(['_setCustomVar', 5, '{{ analytics_bingo.name }}', '{{ analytics_bingo.value }}', 1 ]);
-            {% endif %}
+        {% if analytics_bingo %}
+             _gaq.push(['_setCustomVar', 5, '{{ analytics_bingo.name }}', '{{ analytics_bingo.value }}', 1 ]);
+        {% endif %}
 
-            {# For OER Analytics #}
+            // For OER Analytics
             _gaq.push(['ht._setAccount', 'UA-28120495-1']);
             _gaq.push(['ht._setDomainName', '.khanacademie.nl']);
             _gaq.push(['ht._trackPageview']);
 
-            {# Mixpanel #}
+            // Mixpanel
             window.mpq = [];
             {% if mixpanel_enabled %}
                 {% if mixpanel_test %}
@@ -169,6 +172,19 @@
             });</script>
         </div>
     {% endif %}
+    <div id="cookie-message">
+        Khanacademie maakt gebruik van cookies. Lees
+        <a href="https://docs.google.com/document/pub?id=1qPIp5yEEHGDXMI_1No43p9uaGJnGDtj2BY3NGsyYySc">
+            hier
+        </a>
+        meer over cookies en hoe wij cookies
+        <a href="https://docs.google.com/document/pub?id=1mnNKQkW6H0RAQ4nD1qpz0L6zuny7mcTlTZh1dxc61Hs">
+            gebruiken
+        </a>
+        <button type="button" id="button-cookie-ok">
+            Ok
+        </button>
+    </div>
     <div id="page-container">
         <div id="page-container-inner">
             {# Facebook connect root #}
@@ -176,19 +192,6 @@
 
             {# Make script-requiring elements visible. #}
             <script>document.writeln('<style scoped type="text/css">a[href="#"], .requires_script { visibility: visible; }</style>');</script>
-            <div id="cookie-message">
-                Khanacademie maakt gebruik van cookies. Lees
-                <a href="https://docs.google.com/document/pub?id=1qPIp5yEEHGDXMI_1No43p9uaGJnGDtj2BY3NGsyYySc">
-                    hier
-                </a>
-                meer over cookies en hoe wij cookies
-                <a href="https://docs.google.com/document/pub?id=1mnNKQkW6H0RAQ4nD1qpz0L6zuny7mcTlTZh1dxc61Hs">
-                    gebruiken
-                </a>
-                <button type="button" id="button-cookie-ok">
-                    Ok
-                </button>
-            </div>
             <div id="goals-nav-container" style="display: none" class="ui-corner-bottom"></div>
 
             <div id="top-header">
@@ -230,7 +233,8 @@
                                             {% else %}
                                        class="{% if selected_nav_link == 'watch' %}selected{% endif %} watch-link{% if user_data.is_demo %} show-demo-dialog{% endif %}"
                                             {% endif %}
-                                            >
+                                        >
+
                                         Video's
                                         <span class="caret"></span>
                                     </a>
@@ -258,6 +262,13 @@
                                         Blog
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="/about/start" data-tag="Header"
+                                       class="{% if selected_nav_link == 'gettingstarted' %}selected{% endif %} about-link{% if user_data.is_demo %} show-demo-dialog{% endif %}"
+                                            >
+                                        Handleiding
+                                    </a>
+                                </li>
                                 <!--
                                 <li>
                                     <a href="{% if user_data.is_demo %}
@@ -268,24 +279,9 @@
                                     </a>
                                 </li>
                                 -->
-                                <li>
-                                    <a href="/about/start" data-tag="Header"
-                                       class="{% if selected_nav_link == 'gettingstarted' %}selected{% endif %} about-link{% if user_data.is_demo %} show-demo-dialog{% endif %}"
-                                            >
-                                        Handleiding
-                                    </a>
-                                </li>
                                 </span>
                             </ul>
-                            <div id="search-box">
-                                <form class="page-search" action="/search">
-                                    <input id="search-input" type="text" placeholder="Zoek op videos en oefeningen"
-                                           name="page_search_query" value='{{ page_search_query|escape }}'
-                                           class="ui-corner-all placeholder simple-input search-input blur-on-esc"/>
-                                    <input
-                                            type="submit" value=" " class="search-submit"/>
-                                </form>
-                            </div>
+                            <!-- TODO what is this .clear class all about? -->
                             <div class="clear">
                             </div>
                         </div>
@@ -294,6 +290,7 @@
                     <div class="clear"></div>
                 </div>
                 <div id="page_sub_nav">
+                <!-- TODO anything going on in here? -->
                     {% block pagesubmenu %}<b>{% block pagetitle %}{% endblock pagetitle %}</b>
                     {% endblock pagesubmenu %}
                 </div>
@@ -301,6 +298,15 @@
 
                 {% endblock pagemessage %}
 
+            </div>
+            <div id="search-box">
+                <form class="page-search" action="/search">
+                    <input id="search-input" type="text" placeholder="Zoek op videos en oefeningen"
+                           name="page_search_query" value='{{ page_search_query|escape }}'
+                           class="ui-corner-all placeholder simple-input search-input blur-on-esc"/>
+                    <input
+                            type="submit" value=" " class="search-submit"/>
+                </form>
             </div>
             {% block pagecontent %}
             {% endblock pagecontent %}

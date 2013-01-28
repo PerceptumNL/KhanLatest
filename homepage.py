@@ -209,7 +209,7 @@ class ViewHomePage(request_handler.RequestHandler):
             library_content = ('<h1>Content not initialized. '
                                '<a href="/devadmin/content?autoupdate=1">'
                                'Click here</a> '
-                               'to autoupdate from khanacademy.nl.')
+                               'to autoupdate from khanacademie.nl.')
         elif version_number:
             layer_cache.disable()
             library_content = library.library_content_html(

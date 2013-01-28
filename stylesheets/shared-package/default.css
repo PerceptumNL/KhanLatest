@@ -25,7 +25,6 @@ html {
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12px;
     margin: 0;
     color: #444;
     background: #F3F3F3;
@@ -62,7 +61,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-    font-size: 25px;
+    font-size: 1.5em;
     margin-bottom: 22px;
 }
 
@@ -83,34 +82,34 @@ h1 {
 }
 
 h1.main-headline {
-    font-size: 32px;
+    font-size: 2em;
     position: relative;
     line-height: 37px;
     z-index: 10;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 1.25em;
     margin-bottom: 22px;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 1.125em;
     margin-bottom: 22px;
 }
 
 h4 {
-    font-size: 15px;
+    font-size: 0.938em;
     margin-bottom: 22px;
 }
 
 h5 {
-    font-size: 15px;
+    font-size: 0.938em;
     margin-bottom: -22px;
 }
 
 p {
-    font-size: 14px;
+    font-size: 0.875em;
     margin: 22px 0;
 }
 
@@ -135,7 +134,7 @@ em {
 }
 
 .tiny {
-    font-size: 10px;
+    font-size: 0.625em;
 }
 
 .right {
@@ -167,7 +166,7 @@ a.simple-link:hover {
 }
 
 h2 .ampersand {
-    font-size: 19px;
+    font-size: 1.18em;
 }
 
 /*  ellipses:
@@ -251,6 +250,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 #footer {
     display: block;
     width: 100%;
+    font-size: 0.75em;
     font-family: "MuseoSans300", sans-serif;
 }
 
@@ -268,7 +268,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 #footer.short .inner {
     margin: 10px auto 15px;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 #footer #leaves {
@@ -410,6 +410,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     width: 100%;
     padding: 4px;
     background: #CCC;
+    font-size: 0.75em;
 }
 
 #top-header #stats {
@@ -423,7 +424,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     position: absolute;
     right: 32px;
     top: 23px;
-    font-size: 13px;
+    font-size: 0.813em;
     font-style: italic;
     font-weight: normal;
     display: none; /* hidden until AJAX call to chartbeat gets the number */
@@ -457,7 +458,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 #page_sub_nav .breadcrumbs_accordion {
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 18px;
     width: auto;
     float: left;
@@ -465,7 +466,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 #page_sub_nav .breadcrumbs_nav {
     font-weight: normal;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 18px;
     width: auto;
     float: right;
@@ -629,7 +630,7 @@ a.about-link.selected:after {
 
 #topic-jump > span {
     float: left;
-    font-size: 15px;
+    font-size: 0.938em;
     color: #555;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
     font-weight: bold;
@@ -641,7 +642,7 @@ a.about-link.selected:after {
 }
 
 #topic-jump nav > ul > li {
-    font-size: 15px;
+    font-size: 0.938em;
     color: #333;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
 }
@@ -672,7 +673,7 @@ a.about-link.selected:after {
 }
 
 #topic-jump nav > ul > li ul {
-    font-size: 12px;
+    font-size: 0.75em;
 }
 
 #social-actions {
@@ -729,6 +730,10 @@ a.about-link.selected:after {
 #navbar span.separator {
     /* TODO not needed; delete*/
     line-height: 0
+}
+
+.page_links {
+    font-size: 0.75em;
 }
 
 .page_links span > a,
@@ -860,7 +865,7 @@ span.username_and_notification .user-name {
     color: #FFF;
 
     line-height: 13px;
-    font-size: 10px;
+    font-size: 0.625em;
     font-weight: bold;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -895,7 +900,7 @@ span.username_and_notification .user-name {
 .simple-input {
     background-color: #fafafa;
     border: 1px solid #ADD1CA;
-    font-size: 10px;
+    font-size: 0.625em;
     padding: 0;
     height: 24px;
     width: 160px;
@@ -947,7 +952,7 @@ span.username_and_notification .user-name {
 ul.ui-autocomplete .ui-menu-item a,
 ul.ui-autocomplete .ui-menu-item .autocomplete-spacer {
     background: #f2f2f2;
-    font-size: 11px;
+    font-size: 0.69em;
     white-space: nowrap;
     padding: 0;
     padding-right: 10px;
@@ -1150,7 +1155,7 @@ span.youTube:hover {
 }
 
 #library-content .library-content-header h2.subtopic-1-heading {
-    font-size: 16px;
+    font-size: 1em;
     margin-top: 20px;
     margin-bottom: 10px;
     line-height: 16px;
@@ -1170,7 +1175,7 @@ span.youTube:hover {
 }
 
 #library-content .library-content-header .subtopic-2-heading {
-    font-size: 14px;
+    font-size: 0.875em;
     margin-top: 6px;
     margin-bottom: 0;
     line-height: 16px;
@@ -1206,7 +1211,7 @@ span.youTube:hover {
 #library-content .library-content-list .topic-desc {
     color: #555;
     margin: 0 0 10px;
-    font-size: 13px;
+    font-size: 0.813em;
 }
 
 #library-content .library-content-list div {
@@ -1276,7 +1281,7 @@ span.youTube:hover {
 }
 
 .exercise-legend {
-    font-size: 12px;
+    font-size: 0.75em;
     color: #fff;
 }
 
@@ -1496,7 +1501,7 @@ background: #fafafa;
     background: #fafafa;
     border-right: 1px solid #bbb;
     color: #444;
-    font-size: 18px;
+    font-size: 1.125em;
     font-family: "MuseoSans500", sans-serif;
     width: 340px;
     margin: -5px;
@@ -1545,7 +1550,7 @@ background: #fafafa;
 }
 
 .exercise-filter-count {
-    font-size: 11px;
+    font-size: 0.69em;
     color: #444;
 }
 
@@ -1606,7 +1611,7 @@ background: #fafafa;
     width: auto;
     top: 5px;
     padding: 2px 0 2px 52px;
-    font-size: 15px;
+    font-size: 0.938em;
     letter-spacing: 2px;
     text-transform: uppercase;
     text-decoration: none;
@@ -1628,7 +1633,7 @@ background: #fafafa;
     position: absolute;
     top: 35px;
     left: 52px;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: bold;
     color: #333;
     z-index: 113;
@@ -1743,12 +1748,12 @@ background: #fafafa;
 }
 
 .achievement-badge .achievement-title .frequency {
-    font-size: 12px;
+    font-size: 0.75em;
     font-style: italic;
 }
 
 .achievement-badge .achievement-count {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
     text-align: center;
     float: left;
@@ -1761,7 +1766,7 @@ background: #fafafa;
 }
 
 .achievement-badge .achievement-desc {
-    font-size: 11px;
+    font-size: 0.69em;
     line-height: 13px;
     margin: 8px 0 0;
     max-height: 39px;
@@ -1850,14 +1855,14 @@ background: #fafafa;
 }
 
 .achievement-badges-container h3 {
-    font-size: 15px;
+    font-size: 0.938em;
     color: #333;
     display: block;
 }
 
 #container h3 {
     display: block;
-    font-size: 14px;
+    font-size: 0.875em;
     color: #333;
     padding-bottom: 5px;
     border-bottom: 1px dotted #bbb;
@@ -1926,7 +1931,7 @@ background: #fafafa;
 }
 
 #review-mode-title h1 {
-    font-size: 18px;
+    font-size: 1.125em;
     letter-spacing: 2px;
     word-spacing: 3px;
     text-transform: uppercase;
@@ -1939,7 +1944,7 @@ background: #fafafa;
 }
 
 #review-mode-title.review-done h1 {
-    font-size: 30px;
+    font-size: 1.875em;
     letter-spacing: 6px;
     word-spacing: 10px;
     font-weight: bold;
@@ -1964,7 +1969,7 @@ background: #fafafa;
     overflow: hidden;
     background: #999;
     text-align: center;
-    font-size: 30px;
+    font-size: 1.875em;
     font-weight: bold;
     font-family: "MuseoSans500", sans-serif;
     color: #333;
@@ -2072,7 +2077,7 @@ background: #fafafa;
 .info-box .info-box-header, .info-box .info-box-subheader {
     color: #777;
     display: block;
-    font-size: 18px;
+    font-size: 1.125em;
     line-height: 100%;
     margin-bottom: 10px;
     font-weight: bold;
@@ -2081,7 +2086,7 @@ background: #fafafa;
 
 .info-box .info-box-subheader {
     line-height: 200%;
-    font-size: 14px;
+    font-size: 0.875em;
     color: #333;
 }
 
@@ -2150,7 +2155,7 @@ background: #fafafa;
 
 #user-info .energy-points-badge {
     float: none;
-    font-size: 11px;
+    font-size: 0.69em;
     cursor: pointer;
 }
 
@@ -2182,7 +2187,7 @@ background: #fafafa;
 /* Teacher Dashboard/Report Styles */
 
 #report-page-content {
-    font-size: 13px;
+    font-size: 0.813em;
     padding: 5px;
 }
 
@@ -2202,14 +2207,14 @@ background: #fafafa;
 }
 
 #reports-nav {
-    font-size: 15px;
+    font-size: 0.938em;
 }
 
 #reports-nav #reports-jump-menu {
     color: #444;
     float: right;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 0.875em;
     position: relative;
     top: -1px;
 }
@@ -2226,7 +2231,7 @@ background: #fafafa;
 }
 
 #targetDatepicker {
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: bold;
     text-align: center;
     width: 245px;
@@ -2334,7 +2339,7 @@ background: #fafafa;
 #module-progress td.student-email {
     color: #555;
     vertical-align: middle;
-    font-size: 11px;
+    font-size: 0.69em;
     font-weight: bold;
     background-color: #CCC;
     border: 1px solid #bbb;
@@ -2414,7 +2419,7 @@ background: #fafafa;
 #coach-resources {
     margin-top: 100px;
     margin-bottom: 5px;
-    font-size: 15px;
+    font-size: 0.938em;
     margin: 9px auto;
     width: 700px;
     text-align: left;
@@ -2424,13 +2429,13 @@ background: #fafafa;
     max-width: 80%;
     margin-left: 10%;
     height: 435px;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 24px;
 }
 
 #coach-resource-text a.call-to-action {
     display: block;
-    font-size: 20px;
+    font-size: 1.25em;
     text-decoration: none;
     text-align: center;
     padding: 10px 0 12px;
@@ -2481,7 +2486,7 @@ background: #fafafa;
 
 #credits dl {
     margin-left: 23px;
-    font-size: 14px;
+    font-size: 0.875em;
 }
 
 #credits dt {
@@ -2564,7 +2569,7 @@ background: #fafafa;
 }
 
 #the-team .team-card .card-info p {
-    font-size: 13px;
+    font-size: 0.813em;
 }
 
 #the-team .team-card .card-info .contact-links a, .general-contact a {
@@ -2625,7 +2630,7 @@ background: #fafafa;
 #about-blog #blog-content #post-content ul li, #contribute ul li {
     line-height: 18px;
     margin-bottom: 9px;
-    font-size: 13px;
+    font-size: 0.813em;
 }
 
 #about-blog #blog-content #page-controls {
@@ -2646,7 +2651,7 @@ background: #fafafa;
 }
 
 #about-blog #blog-sidebar p {
-    font-size: 12px;
+    font-size: 0.75em;
 }
 
 #about-blog #blog-sidebar input.email {
@@ -2671,13 +2676,13 @@ background: #fafafa;
     max-width: 37%;
     margin-left: 63%;
     height: 435px;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 24px;
 }
 
 #homepage-text a.call-to-action {
     display: inline-block;
-    font-size: 20px;
+    font-size: 1.25em;
     text-decoration: none;
     text-align: center;
     padding: 0;
@@ -2729,7 +2734,7 @@ background: #fafafa;
 #back-to-top .arrow {
     padding: 5px 10px;
 
-    font-size: 36px;
+    font-size: 2.25em;
     color: #333;
     background: #eee;
     border: 1px solid #ccc;
@@ -2824,7 +2829,7 @@ background: #fafafa;
     text-overflow: ellipsis;
     white-space: normal;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 0.69em;
 }
 
 #thumbnails td.selected div.thumbnail_label {
@@ -2915,7 +2920,7 @@ div.arrow-left-shadow {
 .site-wide-navigation > ul > li > a {
     /* TODO remove .site-wide-navigation wrapper and just use #navbar? */
     font-family: "MuseoSans500", Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 1em;
     letter-spacing: -1px;
     text-transform: uppercase;
     display: block;
@@ -2943,6 +2948,7 @@ div.arrow-left-shadow {
 
 /* Adjustments and fixed sizes for the Watch menu */
 ul.topic-browser-menu {
+    font-size: 0.75em;
     margin-left: 13px;
 }
 
@@ -3032,7 +3038,7 @@ ul.topic-browser-menu > li > ul > li > a {
 
 #homepage #main-video-placeholder .youtube-placeholder-title {
     padding: 7px 12px;
-    font-size: 18px;
+    font-size: 1.125em;
     color: #FFF;
     /* Fallback for web browsers that doesn't support RGBa */
     background: rgb(0, 0, 0) transparent;
@@ -3080,7 +3086,7 @@ ul.topic-browser-menu > li > ul > li > a {
 #report-problem ol {
     list-style: decimal outside;
     margin: 18px 27px;
-    font-size: 15px;
+    font-size: 0.938em;
 }
 
 /* End Report a problem styles */
@@ -3101,12 +3107,12 @@ ul.topic-browser-menu > li > ul > li > a {
 }
 
 #empty-class > p {
-    font-size: 15px;
+    font-size: 0.938em;
 }
 
 #empty-class ol {
     margin-bottom: 18px;
-    font-size: 80px;
+    font-size: 5em;
 }
 
 #empty-class ol li {
@@ -3115,7 +3121,7 @@ ul.topic-browser-menu > li > ul > li > a {
     position: relative;
     border: 1px solid #ccc;
     margin-bottom: 18px;
-    font-size: 16px;
+    font-size: 1em;
     text-align: center;
 
     -webkit-box-shadow: inset 0 0 3px #ddd;
@@ -3135,7 +3141,7 @@ ul.topic-browser-menu > li > ul > li > a {
 #empty-class ol li div.coach-email {
     position: absolute;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 0.813em;
     width: 195px;
     overflow: hidden;
     text-align: left;
@@ -3245,7 +3251,7 @@ a.nodeLabel:hover {
 .node-text {
     color: white;
     font-family: "Lucida Grande", "Arial", sans-serif;
-    font-size: 12px;
+    font-size: 0.75em;
     width: 80px;
     border: 1px solid transparent;
     /* Fallback for web browsers that doesn't support RGBa */
@@ -3417,7 +3423,7 @@ a.nodeLabel:hover {
 }
 
 .zoom8 .nodeLabel .node-text {
-    font-size: 9px;
+    font-size: 0.563em;
     width: 60px;
 }
 
@@ -3482,7 +3488,7 @@ a.nodeLabel:hover {
 
 .creditLabel {
     color: white;
-    font-size: 10px;
+    font-size: 0.625em;
     margin: 0 2px 2px 0;
     white-space: nowrap;
     opacity: 0.5;
@@ -3563,7 +3569,7 @@ a.control:hover {
     z-index: 200;
     left: 0;
     top: -35px;
-    font-size: 15px;
+    font-size: 0.938em;
 }
 
 .notification-bar {
@@ -3579,7 +3585,7 @@ a.control:hover {
     z-index: 200;
     left: 0;
     top: -35px;
-    font-size: 15px;
+    font-size: 0.938em;
 }
 
 .notification-bar-content {
@@ -3595,7 +3601,7 @@ a.control:hover {
 
 .notification-bar-content .simple-button {
     padding: 2px 10px 4px;
-    font-size: 16px;
+    font-size: 1em;
     top: -1px;
 }
 
@@ -3779,7 +3785,7 @@ a.control:hover {
     line-height: 8px;
     padding: 2px 5px;
     margin: 2px;
-    font-size: 12px;
+    font-size: 0.75em;
 }
 
 div.topic-condensed {
@@ -3841,12 +3847,12 @@ div.topic-condensed {
 }
 
 .search-topics .video-result {
-    font-size: 14px;
+    font-size: 0.875em;
 }
 
 .search-topics .description {
     margin: 2px 0 0 0;
-    font-size: 11px;
+    font-size: 0.69em;
     line-height: 18px;
 }
 
@@ -3856,7 +3862,7 @@ div.topic-condensed {
 }
 
 .search-topics .match_count {
-    font-size: 14px;
+    font-size: 0.875em;
 }
 
 .search-topics .column {
@@ -3906,7 +3912,7 @@ div.topic-condensed {
 .close-button {
     float: right;
     color: black;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: bold;
     line-height: 13.5px;
     text-shadow: 0 1px 0 white;
@@ -3969,7 +3975,7 @@ div.topic-condensed {
 
 .modal .generic-title {
     color: #1054AA;
-    font-size: 21px;
+    font-size: 1.313em;
 }
 
 .ui-tooltip, .qtip {

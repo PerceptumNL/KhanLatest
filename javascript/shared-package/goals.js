@@ -3,7 +3,7 @@ var Goal = Backbone.Model.extend({
         active: false,
         complete: false,
         progress: 0,
-        title: "Unnamed goal",
+        title: "naamloos doel",
         objectives: []
     },
 
@@ -151,24 +151,24 @@ var Goal = Backbone.Model.extend({
     },
 
     defaultVideoProcessGoalAttrs_: {
-        title: "Complete Five Videos",
+        title: "Bekijk vijf video's ",
         objectives: [
-            { description: "Any video", type: "GoalObjectiveAnyVideo" },
-            { description: "Any video", type: "GoalObjectiveAnyVideo" },
-            { description: "Any video", type: "GoalObjectiveAnyVideo" },
-            { description: "Any video", type: "GoalObjectiveAnyVideo" },
-            { description: "Any video", type: "GoalObjectiveAnyVideo" }
+            { description: "Video naar keuze", type: "GoalObjectiveAnyVideo" },
+            { description: "Video naar keuze", type: "GoalObjectiveAnyVideo" },
+            { description: "Video naar keuze", type: "GoalObjectiveAnyVideo" },
+            { description: "Video naar keuze", type: "GoalObjectiveAnyVideo" },
+            { description: "Video naar keuze", type: "GoalObjectiveAnyVideo" }
         ]
     },
 
     defaultExerciseProcessGoalAttrs_: {
-        title: "Complete Five Skills",
+        title: "Behaal vijf vaardigheden",
         objectives: [
-            { description: "Any skill", type: "GoalObjectiveAnyExerciseProficiency" },
-            { description: "Any skill", type: "GoalObjectiveAnyExerciseProficiency" },
-            { description: "Any skill", type: "GoalObjectiveAnyExerciseProficiency" },
-            { description: "Any skill", type: "GoalObjectiveAnyExerciseProficiency" },
-            { description: "Any skill", type: "GoalObjectiveAnyExerciseProficiency" }
+            { description: "Vaardigheid naar keuze", type: "GoalObjectiveAnyExerciseProficiency" },
+            { description: "Vaardigheid naar keuze", type: "GoalObjectiveAnyExerciseProficiency" },
+            { description: "Vaardigheid naar keuze", type: "GoalObjectiveAnyExerciseProficiency" },
+            { description: "Vaardigheid naar keuze", type: "GoalObjectiveAnyExerciseProficiency" },
+            { description: "Vaardigheid naar keuze", type: "GoalObjectiveAnyExerciseProficiency" }
         ]
     },
 
@@ -239,7 +239,7 @@ var GoalCollection = Backbone.Collection.extend({
             }
             else {
                 // todo: remove this, do something better
-                KAConsole.log("Error: brand new goal appeared from somewhere", newGoal);
+                KAConsole.log("Foutmelding: een nieuwe doelstelling is verschenen", newGoal);
             }
         }, this);
     },

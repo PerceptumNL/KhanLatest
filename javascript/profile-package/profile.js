@@ -594,13 +594,13 @@ var Profile = {
     },
 
     renderFakeGraph: function(graphName, timePeriod) {
-        if (graphName === "activity") {
+        if (graphName === "bezigheden") {
             ActivityGraph.render(null, timePeriod);
             Profile.fLoadedGraph = true;
         } else if (graphName === "focus") {
             FocusGraph.render();
             Profile.fLoadedGraph = true;
-        } else if (graphName === "skill-progress") {
+        } else if (graphName === "voortgang van vaardigheden") {
             Profile.loadGraph("/api/v1/exercises");
         } else {
             ExerciseGraphOverTime.render();
@@ -620,29 +620,29 @@ var Profile = {
                 if (Math.random() < 0.9) {
                     totalDone = 1;
                     if (rand < 0.5) {
-                        states["proficient"] = true;
+                        states["behaald"] = true;
                     } else if (rand < 0.7) {
-                        states["reviewing"] = true;
+                        states["herhalen"] = true;
                     }
                 }
             } else if (position < 17) {
                 if (Math.random() < 0.6) {
                     totalDone = 1;
                     if (rand < 0.4) {
-                        states["proficient"] = true;
+                        states["behaald"] = true;
                     } else if (rand < 0.7) {
-                        states["reviewing"] = true;
+                        states["herhalen"] = true;
                     } else if (rand < 0.75) {
-                        states["struggling"] = true;
+                        states["moeite"] = true;
                     }
                 }
             } else {
                 if (Math.random() < 0.1) {
                     totalDone = 1;
                     if (rand < 0.2) {
-                        states["proficient"] = true;
+                        states["behaald"] = true;
                     } else if (rand < 0.5) {
-                        states["struggling"] = true;
+                        states["moeite"] = true;
                     }
                 }
             }
@@ -690,18 +690,18 @@ var Profile = {
             }
 
             if (states["reviewing"]) {
-                stat = "Review";
+                stat = "Herhalen";
                 color = "review light";
             } else if (states["proficient"]) {
                 // TODO: handle implicit proficiency - is that data in the API?
                 // (due to proficiency in a more advanced module)
-                stat = "Proficient";
+                stat = "Behaald";
                 color = "proficient";
             } else if (states["struggling"]) {
-                stat = "Struggling";
+                stat = "Moeite";
                 color = "struggling";
             } else if (totalDone > 0) {
-                stat = "Started";
+                stat = "Gestart";
                 color = "started";
             }
 

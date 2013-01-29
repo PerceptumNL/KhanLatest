@@ -198,7 +198,6 @@
                 <div class="top-header-links">
                     <div id="navbar">
                         <a id="logo" href="/" title="Take me home!" data-tag="Header">
-                            <img src="/images/khan-logo-header.png"/>
                         </a>
                     <span class="page_links" id="page_auth">
                         <span id="goals-container"></span>
@@ -210,9 +209,6 @@
                                 {% endif %}
                         </span>
                     </span>
-
-                        <div class="clear">
-                        </div>
                         <div id="stats">
                         </div>
 
@@ -283,6 +279,15 @@
                                 -->
                                 </span>
                             </ul>
+                            <div id="search-box">
+                                <form class="page-search" action="/search">
+                                    <input id="search-input" type="text" placeholder="Zoek op videos en oefeningen"
+                                           name="page_search_query" value='{{ page_search_query|escape }}'
+                                           class="ui-corner-all placeholder simple-input search-input blur-on-esc"/>
+                                    <input
+                                            type="submit" value=" " class="search-submit"/>
+                                </form>
+                            </div>
                             <!-- TODO what is this .clear class all about? -->
                             <div class="clear">
                             </div>
@@ -292,7 +297,7 @@
                     <div class="clear"></div>
                 </div>
                 <div id="page_sub_nav">
-                    <!-- TODO anything going on in here? ? -->
+                    <!-- Shows breadcrumbs -->
                     {% block pagesubmenu %}
                         <b>
                             {% block pagetitle %}{% endblock pagetitle %}
@@ -303,15 +308,6 @@
 
                 {% endblock pagemessage %}
 
-            </div>
-            <div id="search-box">
-                <form class="page-search" action="/search">
-                    <input id="search-input" type="text" placeholder="Zoek op videos en oefeningen"
-                           name="page_search_query" value='{{ page_search_query|escape }}'
-                           class="ui-corner-all placeholder simple-input search-input blur-on-esc"/>
-                    <input
-                            type="submit" value=" " class="search-submit"/>
-                </form>
             </div>
             {% block pagecontent %}
             {% endblock pagecontent %}

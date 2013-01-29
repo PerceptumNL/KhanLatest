@@ -27,7 +27,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: #444;
-    background: #F3F3F3;
+    background: rgb(226, 231, 252);
     line-height: 22px;
 }
 
@@ -261,11 +261,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     position: relative;
 }
 
-#footer.short {
-    background: none;
-    border: none;
-}
-
 #footer.short .inner {
     margin: 10px auto 15px;
     font-size: 1em;
@@ -282,14 +277,13 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 #footer.short {
     color: #555;
-    background: url(/images/light-page-bg.png) repeat-x 0 -30px;
     border-top: 1px solid #ADD1CA;
     z-index: 10;
 }
 
 #footer #leaves {
-    background-image: url(/images/non-repeating-sprites.4.png);
-    background-position: 319px -908px;
+    /* background-image: url(/images/non-repeating-sprites.4.png);
+    background-position: 319px -908px;*/
     height: 188px;
 }
 
@@ -436,7 +430,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     /* TODO what white triangle?, what is its id/class? */
     z-index: 30;
     display: inline-block;
-    margin-left: 170px; /* Make space for logo (#logo) */
+    margin-left: 0;
 }
 
 .site-wide-navigation > ul > li > a {
@@ -806,7 +800,7 @@ span.username_and_notification .user-name {
     min-width: 120px;
     /* Necessary for Firefox and IE to display menu
      * in the proper location. */
-    left: 0;
+    right: 0;
 
     /* Use box-sizing: border-box so the width
      * of the menu includes the outline border
@@ -880,9 +874,8 @@ span.username_and_notification .user-name {
 
 #search-box form input {
     display: inline-block;
-    width: 500px;
-    max-width: 100%;
-    /* TODO padding: 5px; */
+    width: 300px;
+    max-width: 80%;
 }
 
 .page-search {
@@ -2928,7 +2921,11 @@ div.arrow-left-shadow {
 }
 
 #logo {
-    position: absolute;
+    display: inline-block;
+    float:left;
+    width: 133px;
+    height: 73px;
+    background-image: url("/images/khan-logo-header.png");
     left: 0;
     margin-left: 24px;
 }
@@ -4104,14 +4101,16 @@ div.topic-condensed {
 @media (max-width: 767px) {
     /* Kinda small margins for kinda small displays */
     #navbar #logo {
-        /*TODO*/
+        /*width: 49px;*/
+        /*height: 43px;*/
+        /*background-image: url("/images/leaf.png");*/
     }
 }
 
 @media (max-width: 480px) {
     /* No margins for small displays */
     #navbar #logo {
-        /*TODO show small icon*/
+        /*TODO small icon?*/
         display: none;
     }
 

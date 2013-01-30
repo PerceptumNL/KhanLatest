@@ -2,6 +2,7 @@
     padding: 0;
 }
 
+/* TODO (Maarten:)  I think .main-video-placeholder doesn't exist anywhere*/
 .main-video-placeholder {
     position: relative;
     background: #000;

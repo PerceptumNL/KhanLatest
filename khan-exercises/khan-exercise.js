@@ -669,7 +669,7 @@ var Khan = (function() {
                     }
 
                     $("#scratchpad").hide();
-                    $("#scratchpad-show").text("Show scratchpad");
+                    $("#scratchpad-show").text("Toon kladblok");
                 },
 
                 toggle: function() {

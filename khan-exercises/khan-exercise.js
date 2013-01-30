@@ -327,14 +327,14 @@ var Khan = (function() {
 
     lastFocusedSolutionInput = null,
 
-    issueError = "Communication with GitHub isn't working. Please file " +
-        "the issue manually at <a href=\"" +
+    issueError = "De verbinding met GitHub werkt niet. Geef dit alsjeblieft " +
+        "handmatig door aan <a href=\"" +
         "http://github.com/Khan/khan-exercises/issues/new\">GitHub</a>. " +
-        "Please reference exercise: " + exerciseId + ".",
+        "Vermeld de naam van de oefening aub: " + exerciseId + ".",
     issueSuccess = function(url, title, suggestion) {
         return "Bedankt voor het melden van een probleem!";
     },
-    issueIntro = "Remember to check the hints and double check your math. All provided information will be public. Thanks for your help!",
+    issueIntro = "Denk eraan om de hints te bekijken en je rekenwerk nogmaals te controleren. Alle beschikbare informatie wordt openbaar gemaakt. Bedankt voor je hulp!",
 
     // True once we've sent a request to load all modules
     modulesLoaded = false,
@@ -408,8 +408,8 @@ var Khan = (function() {
         },
 
         warnTimeout: function() {
-            warn("Your internet might be too slow to see an exercise. Refresh the page " +
-                'or <a href="" id="warn-report">report a problem</a>.', false);
+            warn("Je internet verbinding is langzaam waardoor sommige oefeningen niet werken. Vernieuw de pagina " +
+                'of <a href="" id="warn-report">meld een probleem</a>.', false);
             $("#warn-report").click(function(e) {
                 e.preventDefault();
                 $("#report").click();
@@ -417,12 +417,12 @@ var Khan = (function() {
         },
 
         warnFont: function() {
-            var enableFontDownload = "enable font download in your browser";
+            var enableFontDownload = "het downloaden van bepaalde lettertypes toestaan";
             if ($.browser.msie) {
-                enableFontDownload = '<a href="http://missmarcialee.com/2011/08/how-to-enable-font-download-in-internet-explorer-8/"  target="_blank">enable font download</a>';
+                enableFontDownload = '<a href="http://missmarcialee.com/2011/08/how-to-enable-font-download-in-internet-explorer-8/"  target="_blank">Sta het downloaden van lettertypes toe</a>';
             }
 
-            warn("You should " + enableFontDownload + " to improve the appearance of math expressions.", true);
+            warn("Je moet " + enableFontDownload + " zodat wiskundige uitdrukkingen beter zichtbaar wordent.", true);
         },
 
         resetModules: function(modules) {
@@ -669,7 +669,10 @@ var Khan = (function() {
                     }
 
                     $("#scratchpad").hide();
-                    $("#scratchpad-show").text("Toon kladblok");
+
+
+                    $("#scratchpad-show").text("Toon Kladblok");
+
                 },
 
                 toggle: function() {
@@ -781,7 +784,7 @@ var Khan = (function() {
                           if (res.rc) 
                             set_video_requested();
                           else
-                            alert("An error ocurred, the video was already requested!");
+                            alert("Er is een fout opgetreden, de video was al aangevraagd!");
 
                         })
                       });
@@ -1039,7 +1042,7 @@ var Khan = (function() {
         $("#check-answer-button")
             .attr("disabled", "disabled")
             .addClass("buttonDisabled")
-            .val("Please wait...");
+            .val("Even geduld aub...");
     }
 
     function isExerciseLoaded(exerciseId) {
@@ -1513,15 +1516,15 @@ var Khan = (function() {
 
         if (typeof userExercise !== "undefined" && userExercise.readOnly) {
             if (!userExercise.current) {
-                warn("This exercise may have changed since it was completed", true);
+                warn("De oefening kan veranderd zijn nadat deze voltooid wasT", true);
             }
 
             var timelineEvents, timeline;
 
             var timelinecontainer = $("<div id='timelinecontainer'>")
                 .append("<div>\n" +
-                        "<div id='previous-problem' class='simple-button'>Previous Problem</div>\n" +
-                        "<div id='previous-step' class='simple-button'><span>Previous Step</span></div>\n" +
+                        "<div id='previous-problem' class='simple-button'>Vorig Probleem</div>\n" +
+                        "<div id='previous-step' class='simple-button'><span>Volgend Probleem</span></div>\n" +
                         "</div>")
                 .insertBefore("#problem-and-answer");
 
@@ -1582,8 +1585,8 @@ var Khan = (function() {
 
             timelinecontainer
                 .append("<div>\n" +
-                        "<div id='next-problem' class='simple-button'>Next Problem</div>\n" +
-                        "<div id='next-step' class='simple-button'><span>Next Step</span></div>\n" +
+                        "<div id='next-problem' class='simple-button'>Volgend Probleem</div>\n" +
+                        "<div id='next-step' class='simple-button'><span>Volgende stap/span></div>\n" +
                         "</div>");
 
             $("<div class='user-activity correct-activity'>Started</div>")
@@ -2295,10 +2298,10 @@ var Khan = (function() {
 
                 // Warn user about problem, encourage to reload page
                 warn(
-                    "This page is out of date. You need to <a href='" + window.location.href +
-                    "'>refresh</a>, but don't worry, you haven't lost progress. " +
-                    "If you think this is a mistake, " +
-                    "<a href='http://www.khanacademy.org/reportissue?type=Defect&issue_labels='>tell us</a>."
+                    "Deze pagina is verouderde. Je moet <a href='" + window.location.href +
+                    "'>opnieuw laden</a>, maar maak je geen zorgen je vooruitgang is niet verloren. " +
+                    "Als je denk dat dit een fout is, " +
+                    "<a href='http://www.khanacademy.org/reportissue?type=Defect&issue_labels='>laat het ons weten</a>."
                 );
 
             }, "attempt_hint_queue");
@@ -2581,14 +2584,14 @@ var Khan = (function() {
 
             if (!type) {
                 $("#issue-status").addClass("error")
-                    .html("Please specify the issue type.").show();
+                    .html("Geef het type probeel weer aub.").show();
                 return;
             } else {
                 labels.push(type.slice("issue-".length));
 
-                var hintOrVideoMsg = "Please click the hint button above to see our solution, or watch a video for additional help.";
-                var refreshOrBrowserMsg = "Please try a hard refresh (press Ctrl + Shift + R)" +
-                        " or use Khan Academy from a different browser (such as Chrome or Firefox).";
+                var hintOrVideoMsg = "Klik op de hint knop om onze oplossing te zien of bekijk een video";
+                var refreshOrBrowserMsg = "Probeer te de pagina te vernieuwen (druk Ctrl + Shift + R)" +
+                        " of open Khan Academie in een andere browser (Bijvoorbeeld Google Chrome of Firefox).";
                 var suggestion = {
                     "issue-wrong-or-unclear": hintOrVideoMsg,
                     "issue-hard": hintOrVideoMsg,
@@ -2599,7 +2602,7 @@ var Khan = (function() {
 
             if (title === "") {
                 $("#issue-status").addClass("error")
-                    .html("Please provide a valid title for the issue.").show();
+                    .html("Geef een geldige titel voor het probleem.").show();
                 return;
             }
 

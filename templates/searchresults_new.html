@@ -49,12 +49,12 @@
 {% block pagemessage %}
     {% if query_too_short %}
     <div class="error">
-        Search terms must contain at least {{query_too_short}} letters.
+        Zoekopdracht moet minstens uit {{query_too_short}} letters bestaan.
     </div>
     {% endif %}
     {% if server_timout %}
     <div class="error">
-        A problem occurred fetching your search results. Please refresh the page to try again.
+        Een probleem is opgetreden tijdens je zoekopdracht. Vernieuw de pagina.
     </div>
     {% endif %}
 {% endblock pagemessage %}
@@ -62,7 +62,7 @@
 <article class="search_results" id="search_results">
     <form id="page_requery" action="/search">
         <input id="search-page-box" type="text" name="page_search_query" value='{{page_search_query|escape}}'>
-        <button type="submit">New Search</button>
+        <button type="submit">Nieuwe zoekopdracht</button>
     </form>
     {% if topics and matching_topic_count %}
     <section class="topics search-topics">
@@ -91,9 +91,9 @@
 
     <section class="searchresult-counts">
         {% if (video_count == 0 and topic_count == 0) %}
-            No videos were found. Please try a different query.
+            Er zijn geen video&#39;s gevonden. Probeer een andere omschrijving.
         {% else %}
-            Found {{ video_count }} video{{ video_count|pluralize }} in {{ topic_count }} topic{{ topic_count|pluralize }} that match{% if video_count == 1 %}es{% endif %} your query:
+            Gevonden plural({{ video_count }},video,video&#39;) in plural({{ topic_count }},onderwerp,onderwerpen) die plural(overeenkomt, overeenkomen, {{ video_count }}) met jouw zoekopdracht:
         {% endif %}
     </section>
     {% if topics %}
@@ -104,7 +104,7 @@
         {% if topic["match_count"] > 0 %}
             <dt><h2 class="topic"><a href="{{ topic["url"]|fix_url_domain }}">{{ topic["title"]|escape }}</a>
             <span class="match_count">
-                ({{ topic["match_count"] }} matching video{{ topic["match_count"]|pluralize }})
+                plural({{ topic["match_count"] }}, video, video&#39;s) gevonden.
             </span>
             </h2></dt>
 
@@ -123,14 +123,14 @@
                         {% endif %}
                       </div>
                       <div class="column">
-                        <p class="column-heading">Watch</p>
+                        <p class="column-heading">Bekijk</p>
                         <ul>
-                          <li><a href="{{ video["ka_url"]|fix_url_domain }}" data-tag="Search Body" class="vl"><span class="vid-progress v{{ video["key_id"] }}">Watch the video lesson</a></li>
+                          <li><a href="{{ video["ka_url"]|fix_url_domain }}" data-tag="Search Body" class="vl"><span class="vid-progress v{{ video["key_id"] }}">Bekijk de video</a></li>
                         </ul>
                       </div>
                       {% if video["related_exercises"] %}
                       <div class="column">
-                        <p class="column-heading">Practice Exercises</p>
+                        <p class="column-heading">Oefen de opgave</p>
                           <ul>
                             {% for exercise in video["related_exercises"] %}
                               <li><a href="{{ exercise["url"]|fix_url_domain }}" data-tag="Search Body" class="exercise-link">{{ exercise["name"]|escape }}</a></li>
@@ -142,7 +142,7 @@
                     </li>
             {% endfor %}
             <li>
-                <a href="{{ topic["url"]|fix_url_domain }}" data-tag="Search Body">See more videos from this topic</a>
+                <a href="{{ topic["url"]|fix_url_domain }}" data-tag="Search Body">Zie meer video&#39;s over dit onderwerp</a>
             </li>
             </ol>
         {% endif %}

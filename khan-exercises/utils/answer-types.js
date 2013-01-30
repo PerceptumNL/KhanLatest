@@ -122,45 +122,45 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 
             // retrieve the example texts from the different forms
             var exampleForms = {
-                integer: "an integer, like <code>6</code>",
+                integer: "een geheel getal, zoals <code>6</code>",
 
                 proper: (function() {
                         if (options.simplify === "optional") {
-                            return "a <em>proper</em> fraction, like " +
-                                   "<code>1/2</code> or <code>6/10</code>";
+                            return "een <em>echte</em> breuk, zoals " +
+                                   "<code>1/2</code> of <code>6/10</code>";
                         } else {
-                            return "a <em>simplified proper</em> fraction, " +
-                                   "like <code>3/5</code>";
+                            return "een <em>vereenvoudigde</em> breuk, " +
+                                   "zoals <code>3/5</code>";
                         }
                     })(),
 
                 improper: (function() {
                         if (options.simplify === "optional") {
-                            return "an <em>improper</em> fraction, like " +
-                                   "<code>10/7</code> or <code>14/8</code>";
+                            return "an <em>oneigenlijke</em> breuk, zoals " +
+                                   "<code>10/7</code> of <code>14/8</code>";
                         } else {
-                            return "a <em>simplified improper</em> " +
-                                   "fraction, like <code>7/4</code>";
+                            return "een <em>vereenvoudigde oneigenlijke</em> " +
+                                   "breuk, zoals <code>7/4</code>";
                         }
                     })(),
 
-                pi: "a multiple of pi, like <code>12\\ \\text{pi}</code> or " +
+                pi: "een veelvoud van pi, zoals <code>12\\ \\text{pi}</code> of " +
                     "<code>2/3\\ \\text{pi}</code>",
 
-                log: "an expression, like <code>\\log(100)</code>",
+                log: "een uitdrukking , zoals <code>\\log(100)</code>",
 
-                percent: "a percent, like <code>12.34\\%</code>",
+                percent: "een percentage, zoals <code>12.34\\%</code>",
 
-                dollar: "a money amount, like <code>$2.75</code>",
+                dollar: "Een geld eenheid, zoals <code>&#8364;2.75</code>",
 
-                mixed: "a mixed number, like <code>1\\ 3/4</code>",
+                mixed: "Een gemengde breuk, zoals <code>1\\ 3/4</code>",
 
                 decimal: (function() {
                         if (options.inexact === undefined) {
-                            return "an <em>exact</em> decimal, like " +
+                            return "een <em>exact</em> decimaalgetal, zoals " +
                                    "<code>0.75</code>";
                         } else {
-                            return "a decimal, like <code>0.75</code>";
+                            return "een decimaalgetal, zoals <code>0.75</code>";
                         }
                     })()
             };
@@ -477,12 +477,12 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                                 ret = true;
                             } else if (form === "percent") {
                                 // Otherwise, an error was returned
-                                ret = "Your answer is almost correct, but " +
-                                      "it is missing a <code>\\%</code> at " +
-                                      "the end.";
+                                ret = "Je antwoord is bijna juist" +
+                                      "het enige wat ontbreekt is een <code>\\%</code> " +
+                                      "aan het einde.";
                             } else {
-                                ret = "Your answer is almost correct, but " +
-                                      "it needs to be simplified.";
+                                ret = "Je antwoord is bijna juist" +
+                                      "je moet het alleen nog vereenvoudigen.";
                             }
 
                             return false; // break;
@@ -599,9 +599,9 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                 },
                 solution: ans,
                 examples: (options.simplify === "required") ?
-                    ["Een vereenvoudigde wortel, zoals <code>\\sqrt{2}</code> or " +
+                    ["Een vereenvoudigde wortel, zoals <code>\\sqrt{2}</code> of " +
                      "<code>3\\sqrt{5}</code>"] :
-                    ["A wortel, zoals <code>\\sqrt{8}</code> or " +
+                    ["A wortel, zoals <code>\\sqrt{8}</code> of " +
                      "<code>2\\sqrt{2}</code>"],
                 showGuess: function(guess) {
                     inte.val(guess ? guess[0] : "");
@@ -636,8 +636,8 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                     if (simplified || options.simplify === "optional") {
                         return true;
                     } else {
-                        return "Your answer is almost correct, but it needs " +
-                               "to be simplified.";
+                        return "Je antwoord is bijna juist" +
+                               "je moet het alleen nog vereenvoudigen.";
                     }
                 } else {
                     return false;
@@ -1327,9 +1327,9 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                 },
                 solution: $.trim($(solution).text()),
                 examples: [
-                    "a product of prime factors, like " +
+                    "Een product van priemgetallen zoals " +
                         "<code>2 \\times 3</code>",
-                    "a single prime number, like <code>5</code>"
+                    "een enkel priemgetal zoals <code>5</code>"
                 ],
                 showGuess: function(guess) {
                     input.val(guess === undefined ? "" : guess);

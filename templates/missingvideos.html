@@ -10,7 +10,7 @@
 {% endblock pagecss %}
 
 {% block pagetitle %}
-Missing viedos
+Ontbrekende video's
 {% endblock pagetitle %}
 {% block pagecontent %}
 <div id="myGrid" style="width:100%;height:500px;"></div>
@@ -23,10 +23,10 @@ Missing viedos
       return '<a href="' + dataContext['ka_url'] + '" target="_blank">' + value + '</a>';
   };
   var columns = [
-    {id: "topics", name: "Topic", field: "topics", width: "450" },
-    {id: "display_name", name: "Name", field: "display_name", width: "300"},
-    {id: "name", name: "Filename", field: "name", width: "300", formatter: linkFormatter},
-    {id: "video_requests_count", name: "Video Requests", width: "100", field: "video_requests_count"},
+    {id: "topics", name: "Onderwerp", field: "topics", width: "450" },
+    {id: "display_name", name: "Naam", field: "display_name", width: "300"},
+    {id: "name", name: "Naam van de oefening", field: "name", width: "300", formatter: linkFormatter},
+    {id: "video_requests_count", name: "Aantal video aanvragen", width: "100", field: "video_requests_count"},
   ];
 
   var options = {

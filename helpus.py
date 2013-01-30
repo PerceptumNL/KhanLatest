@@ -26,16 +26,21 @@ def get_videoless_exercises():
     exercises = exercise_models.Exercise.all().fetch(1000)
 
     def children_recursive(current, ex_list=None, topics=[]):
-        current['topics'] = topics
+        current['topics'] = topics[1:]
         if current['kind'] == "Topic":
             topics.append(current['title'])
             for node in current['children']:
                 children_recursive(node, ex_list, list(topics))
         elif current['kind'] == "Exercise":
-            exercise = next(i for i in exercises if i.name == current['name'])
-            current['video_requests_count'] = exercise.video_requests_count
-            if len(current['related_video_readable_ids']) == 0:
-                ex_list.append(current)
+            try:
+                exercise = next(i for i in exercises if i.name == current['name'])
+                current['video_requests_count'] = exercise.video_requests_count
+                if len(current['related_video_readable_ids']) == 0:
+                    ex_list.append(current)
+            except StopIteration:
+                logging.info("Exercise from topic tree '%s' couldn't be found" % current['name'])
+                pass
+
         return ex_list
 
     return children_recursive(jsonify.dumps(root), [], [])
@@ -44,22 +49,7 @@ def get_videoless_exercises():
 class ViewMissingVideos(request_handler.RequestHandler):
 
     @user_util.open_access
-    def head(self):
-        # Respond to HEAD requests for our homepage so twitter's tweet
-        # counter will update:
-        # https://dev.twitter.com/docs/tweet-button/faq#count-api-increment
-        pass
-
-    # See https://sites.google.com/a/khanacademy.org/forge/for-team-members/how-to-use-new-and-noteworthy-content
-    # for info on how to update the New & Noteworthy videos
-    @user_util.open_access
-    @ensure_xsrf_cookie    # TODO(csilvers): remove this (test w/ autocomplete)
     def get(self):
-
-        #topics = jsonify.dumps(tree)['children']
-        #for topic in topics:
-        #    template_values = {'tree'}
-        #exs = exercise_models.Exercise().all().fetch(20)
         template_values = {'rows' : get_videoless_exercises() }
         self.render_jinja2_template('missingvideos.html', template_values)
 

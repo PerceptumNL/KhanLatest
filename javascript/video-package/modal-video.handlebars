@@ -12,8 +12,8 @@
         <div class="youtube-video">
             {{>youtube-player}}
             <div class="subtitles-warning">
-                &lArr; Use this menu to view and help create subtitles for this video in many different languages.
-                You'll probably want to hide YouTube's captions if using these subtitles.
+                &lArr; Gebruik dit menu om ondertiteling te zien en hoe je deze moet maken voor verschillende talen.
+                Je wilt waarschijnlijk YouTube's onderschriften verbergen als je hier gebruik van maakt.
             </div>
         </div>
         <span class="video_extra_links">
@@ -21,7 +21,7 @@
             <div class="extra-link-bar">
                 <a href="#" title="Toggle subtitles and translations" style="z-index:101;" class="simple-button with-icon subtitles-link">
                     <img src="/images/subtitles-icon-small.png" />
-                    Subtitles
+                    Ondertiteling
                 </a>
 
                 {{#if downloadUrl}}
@@ -32,7 +32,7 @@
                 {{/if}}
             </div>
             <span style="float:right;" id="points-badge-hover">
-                <div class="video-energy-points" {{#if logged_in}}title="{{points}} Energy Points earned for watching this video"{{else}}title="You're earning points for watching this video. Sign in to keep them"{{/if}} >
+                <div class="video-energy-points" {{#if logged_in}}title="{{points}} Energy Punten verdient voor het bekijken van deze video"{{else}}title="Je verdient punten voor het bekijken van deze video. Log in om deze te behouden"{{/if}} >
                     <span class="video-energy-points-current">{{points}}</span>
                     of {{possible_points}}
                 </div>
@@ -41,6 +41,6 @@
          </span>
     </div>
     <div class="modal-footer">
-        <a href="{{video_url}}" class="simple-button green">Watch on video page</a>
+        <a href="{{video_url}}" class="simple-button green">Bekijk op de video pagina</a>
     </div>
 </div>

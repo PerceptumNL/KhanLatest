@@ -2702,14 +2702,6 @@ background: #fafafa;
     margin: 0 0 18px 0;
 }
 
-#homepage-text {
-    max-width: 37%;
-    margin-left: 63%;
-    height: 435px;
-    font-size: 1em;
-    line-height: 24px;
-}
-
 #homepage-text a.call-to-action {
     display: inline-block;
     font-size: 1.25em;

@@ -39,17 +39,15 @@ a.begin-button {
     vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
-    /*
-    TODO (Maarten:) make shadow more modest: (note: :hover has to change as well)
-*/    box-shadow: 1px 1px 3px grey;
     text-shadow: 0px 1px 1px black;
+    box-shadow: 0px 0px 3px grey;
     color: white;
     padding: 16px;
     margin-top: 16px;
 }
 
 a.begin-button:hover {
-    box-shadow: 0px 0px 3px grey;
+    box-shadow: 0px 0px 0px grey;
     color: white;
     text-shadow: 0px 0px 2px black;
     text-decoration: none;
@@ -85,22 +83,22 @@ a.begin-button:visited {
 }
 
 #homepage-text {
-    margin-left: 0px;
-    max-width: 100%;
+    overflow: auto;
+    margin-left: 6%;
     background: #F3F3F3;;
     -moz-box-shadow: 1px 1px 2px 0px #E2E2E2;
     -webkit-box-shadow: 1px 1px 2px 0px #E2E2E2;
     box-shadow: 1px 1px 2px 0px #E2E2E2;
-    height: auto;
+    height: 100%;
 }
 
-#homepage-text h1{
+#homepage-text h1 {
     text-align: center;
-    margin-top: 0.8em;
+    padding-top: 0.8em;
 }
 
 #homepage-text p {
-    padding: 0 10%;
+    padding: 0 6%;
 }
 
 #social-actions {
@@ -131,7 +129,6 @@ td.social-action.gplus {
 }
 
 #subject-list {
-    text-align: center;
 }
 
 #subject-list .video-item {
@@ -154,6 +151,8 @@ td.social-action.gplus {
     font-size: 1.2em;
     display: inline-block;
     width: 220px;
+    margin-right: 96px;
+    float: left;
 }
 
 #subject-list>li>ul>li {
@@ -208,15 +207,16 @@ td.social-action.gplus {
     top: 0;
     left: 0;
     height: 100%;
-    width: 30%;
+    width: 40%;
 }
 
-#homepage-text {
+#homepage-text-container {
     position: absolute;
+    max-width: 100%;
     top: 0;
     right: 0;
     height: 100%;
-    width: 70%;
+    width: 60%;
 }
 
 /* Responsive stuff */
@@ -230,6 +230,7 @@ td.social-action.gplus {
     #homepage-welcome-container {
         height: auto;
     }
+
     #homepage-video {
         position: relative;
         height: 100px;
@@ -237,10 +238,16 @@ td.social-action.gplus {
         min-height: 315px;
     }
 
-    #homepage-text {
+    #homepage-text-container {
         position: relative;
         height: auto;
         width: 100%;
+    }
+
+    #homepage-text {
+        margin-left: 0;
+        margin-right: 0;
+        padding-bottom: 1.5em;
     }
 }
 

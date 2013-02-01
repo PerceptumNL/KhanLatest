@@ -97,10 +97,11 @@ var Homepage = {
      * sent down by the server.
      *
      * This logic must be kept in sync with library.py and
-     * library_content_template.html, and changes must increment
-     * library._layout_version.
+     * library_content_template.html (NOTE: (Maarten:) or its NL equivalent, which is
+     * library_content_template_drop_down.html or library_content_template_tag_list.html).
+     * Changes must increment library._layout_version.
      */
-    renderLibraryContent:function(topics) {
+    renderLibraryContent:function (topics) {
         var template = Templates.get("homepage.videolist");
         $.each(topics, function (i, topic) {
             var items = topic["children"];

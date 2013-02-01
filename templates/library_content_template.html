@@ -1,4 +1,3 @@
-{% import 'macros/library.html' as library %}
 <div id="subject-list-container">
     <ul id="subject-list">
         <!-- Start dynamic generation here -->
@@ -19,18 +18,18 @@
                                 {% if item.kind()=="Video" %}
                                     <li class="m{{ loop.index0|find_column_index(column_indices) }} vl vid-progress v{{ item.key().id() }}"
                                             {% if loop.index0|in_list(column_indices) %}
-                                       style="margin-top:-{{ loop.index0|column_height(column_indices) * link_height }}px;"
+                                        style="margin-top:-{{ loop.index0|column_height(column_indices) * link_height }}px;"
                                             {% endif %}
-                                       href="{{ topic.get_extended_slug() }}/v/{{ item.readable_id }}"
-                                       data-tag="Homepage Library">{{ item.title|escape }}
+                                        href="{{ topic.get_extended_slug() }}/v/{{ item.readable_id }}"
+                                        data-tag="Homepage Library">{{ item.title|escape }}
                                     </li>
                                 {% elif item.kind()=="Url" %}
                                     <li class="m{{ loop.index0|find_column_index(column_indices) }} vl vid-progress v{{ item.key().id() }}"
                                             {% if loop.index0|in_list(column_indices) %}
-                                       style="margin-top:-{{ loop.index0|column_height(column_indices) * link_height }}px;"
+                                        style="margin-top:-{{ loop.index0|column_height(column_indices) * link_height }}px;"
                                             {% endif %}
-                                       href="{{ item.url }}"
-                                       data-tag="Homepage Library">
+                                        href="{{ item.url }}"
+                                        data-tag="Homepage Library">
                                         {{ item.title|escape }}
                                     </li>
                                 {% endif %}
@@ -50,8 +49,10 @@
         <!-- End dynamic generation here -->
     </ul>
 </div>
+
+<!-- As it was on 30-1-2013, for reference: -->
+{% import 'macros/library.html' as library %}
 <div id="library">
-    <!-- As it was on 30-1-2013, for manual rollback reference: -->
     <div id="library-content">
         <div id="library-content-main">
             {% for topic in topics recursive %}

@@ -98,7 +98,7 @@ var Homepage = {
      *
      * This logic must be kept in sync with library.py and
      * library_content_template.html (NOTE: (Maarten:) or its NL equivalent, which is
-     * library_content_template_drop_down.html or library_content_template_tag_list.html).
+     * library_content_template_drop_down.html or library_content_template_tag_based.html).
      * Changes must increment library._layout_version.
      */
     renderLibraryContent:function (topics) {

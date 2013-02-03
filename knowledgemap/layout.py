@@ -135,8 +135,13 @@ class MapLayout(db.Model):
         #TODO check positions for collitions
         layout_topics = {}
         for topic in subtopics:
+            logging.info(topic)
+            if 'icon_name' in topic and topic['icon_name']:
+                icon_name = topic['icon_name']
+            else:
+                icon_name = "default"
             data = {
-                    "icon_url" : "\\images\\power-mode\\badges\\default-40x40.png",
+                    "icon_url" : "\\images\\power-mode\\badges\\" + icon_name + "-40x40.png",
                     "id" : topic['id'],
                     "x" :  str(topic['h_position']),
                     "y" :  str(topic['v_position']),

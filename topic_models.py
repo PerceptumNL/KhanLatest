@@ -338,6 +338,7 @@ class Topic(search.Searchable, backup_model.BackupModel):
     last_edited_by = db.UserProperty(indexed=False)
     h_position = db.IntegerProperty(default=0)
     v_position = db.IntegerProperty(default=0)
+    icon_name = db.StringProperty(indexed=False)
 
     INDEX_ONLY = ['standalone_title', 'description']
     INDEX_TITLE_FROM_PROP = 'standalone_title'

@@ -11,6 +11,7 @@ import logging
 import object_property
 import topic_models
 import urllib2
+from api import jsonify
 
 NUM_SUGGESTED_TOPICS = 2
 
@@ -125,18 +126,41 @@ class MapLayout(db.Model):
             return "maplayout:1"
 
     @staticmethod
+    def from_editversion():
+        version = topic_models.TopicVersion.get_edit_version()
+        root = topic_models.Topic.get_root(version)
+        tree = jsonify.dumps(root.make_tree(["Topics"]))
+        subtopics = tree['children']
+
+        #TODO check positions for collitions
+        layout_topics = {}
+        for topic in subtopics:
+            data = {
+                    "icon_url" : "\\images\\power-mode\\badges\\default-40x40.png",
+                    "id" : topic['id'],
+                    "x" :  str(topic['h_position']),
+                    "y" :  str(topic['v_position']),
+                    "standalone_title" : topic['standalone_title']
+            }
+            layout_topics[topic['standalone_title']] = data
+
+        layout = {"polylines": [], "topics": layout_topics}
+        return layout
+
+    @staticmethod
     @layer_cache.cache_with_key_fxn(
         lambda version: MapLayout.key_for_version(version),
         layer=layer_cache.Layers.Memcache)
     def get_for_version(version):
-
-        if not version:
+        #occurs when no previous version
+        if version == None:
             return None
 
         key = MapLayout.key_for_version(version)
         map_layout = MapLayout.get_by_key_name(key)
 
         if not map_layout:
+            logging.info("Creating empty Map Layout")
             map_layout = MapLayout(
                     key_name=key,
                     version=version,

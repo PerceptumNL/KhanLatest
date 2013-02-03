@@ -130,6 +130,12 @@ class TopicVersion(backup_model.BackupModel):
         new_version = TopicVersion(last_edited_by=last_edited_by,
                                    number=new_version_number)
         new_version.put()
+
+        if (new_version_number == 1):
+            from topics import create_root
+            create_root(new_version)
+            new_version.put()
+
         return new_version
 
     @staticmethod
@@ -330,6 +336,9 @@ class Topic(search.Searchable, backup_model.BackupModel):
     created_on = db.DateTimeProperty(indexed=False, auto_now_add=True)
     updated_on = db.DateTimeProperty(indexed=False, auto_now=True)
     last_edited_by = db.UserProperty(indexed=False)
+    h_position = db.IntegerProperty(default=0)
+    v_position = db.IntegerProperty(default=0)
+
     INDEX_ONLY = ['standalone_title', 'description']
     INDEX_TITLE_FROM_PROP = 'standalone_title'
     INDEX_USES_MULTI_ENTITIES = False
@@ -1960,24 +1969,8 @@ def _preload_default_version_data(version_number, run_code):
     logging.info("synced topic exercise badges")
 
     map_layout = layout.MapLayout.get_for_version(version)
-    if not map_layout.has_layout:
-        # Copy the previous maplayout to current version's maplayout
-        # if it doesn't already exist.
-        # TODO: this is temporary. Eventually this should be generated
-        # correctly, once the topics admin UI can send maplayout info.
-
-        previous_version = TopicVersion.get_by_id(version.copied_from_number)
-        map_layout_previous = layout.MapLayout.get_for_version(
-            previous_version)
-
-        if not map_layout_previous.has_layout:
-            setting_model.Setting.topic_admin_task_message(
-                "Error - missing map layout and no previous version to "
-                "copy from.")
-            raise deferred.PermanentTaskFailure
-
-        map_layout.layout = map_layout_previous.layout
-        map_layout.put()
+    map_layout.layout = layout.MapLayout.from_editversion()
+    map_layout.put()
 
     _do_set_default_deferred_step(_change_default_version,
                                   version_number,
@@ -1990,6 +1983,7 @@ def _change_default_version(version_number, run_code):
     version = TopicVersion.get_by_id(version_number)
 
     default_version = TopicVersion.get_default_version()
+    logging.info("Setting default version number: %d" % version_number)
 
     def update_txn():
 

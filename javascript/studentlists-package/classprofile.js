@@ -411,7 +411,7 @@ var ClassProfile = {
     finishLoadGraphError: function() {
         this.fLoadingGraph = false;
         this.showGraphThrobber(false);
-        $("#graph-content").html("<div class='graph-notification'>It's our fault. We ran into a problem loading this graph. Try again later, and if this continues to happen please <a href='/reportissue?type=Defect'>let us know</a>.</div>");
+        $("#graph-content").html("<div class='graph-notification'>Er is iets mis gegaan met het laden van de grafiek. Probeer het later nog eens. Als dit blijft gebeuren, <a href='/reportissue?type=Defect'>laat het ons weten</a>.</div>");
     },
 
     showGraphThrobber: function(fVisible) {

@@ -1516,7 +1516,7 @@ var Khan = (function() {
 
         if (typeof userExercise !== "undefined" && userExercise.readOnly) {
             if (!userExercise.current) {
-                warn("De oefening kan veranderd zijn nadat deze voltooid wasT", true);
+                warn("De oefening kan veranderd zijn nadat deze voltooid was", true);
             }
 
             var timelineEvents, timeline;
@@ -1524,7 +1524,7 @@ var Khan = (function() {
             var timelinecontainer = $("<div id='timelinecontainer'>")
                 .append("<div>\n" +
                         "<div id='previous-problem' class='simple-button'>Vorig Probleem</div>\n" +
-                        "<div id='previous-step' class='simple-button'><span>Volgend Probleem</span></div>\n" +
+                        "<div id='previous-step' class='simple-button'><span>Vorige stap</span></div>\n" +
                         "</div>")
                 .insertBefore("#problem-and-answer");
 
@@ -1586,10 +1586,10 @@ var Khan = (function() {
             timelinecontainer
                 .append("<div>\n" +
                         "<div id='next-problem' class='simple-button'>Volgend Probleem</div>\n" +
-                        "<div id='next-step' class='simple-button'><span>Volgende stap/span></div>\n" +
+                        "<div id='next-step' class='simple-button'><span>Volgende stap</span></div>\n" +
                         "</div>");
 
-            $("<div class='user-activity correct-activity'>Started</div>")
+            $("<div class='user-activity correct-activity'>Gestart</div>")
                 .data("hint", false)
                 .appendTo(timelineEvents);
 

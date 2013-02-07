@@ -93,7 +93,7 @@
 
     <section class="searchresult-counts">
         {% if (video_count == 0 and topic_count == 0) %}
-            No videos were found. Please try a different query.
+	    Geen video's gevonden. Probeer andere zoektermen.	
         {% else %}
             Found {{ video_count }} video{{ video_count|pluralize }} in {{ topic_count }} topic{{ topic_count|pluralize }} that match{% if video_count == 1 %}es{% endif %} your query:
         {% endif %}

@@ -993,7 +993,7 @@ li.profile-tab {
     margin-bottom: 0;
 }
 .username-picker {
-    margin: 0 auto;
+    margin: 5px 15px;
 }
 .username-picker .row:first-child {
     margin: 0;
@@ -1003,12 +1003,9 @@ li.profile-tab {
     margin: 20px 0px 0px 0px;
 }
 .username-picker .labels{
-    position: absolute;
-    width: 80px;
-    text-align: right;
 }
+
 .username-picker .inputs {
-    margin-left: 90px;
 }
 .username-picker input,
 .username-picker label{
@@ -1169,7 +1166,7 @@ li.profile-tab {
     border: 1px solid #05759E;
 }
 .user-profile-controls .dropdown-menu {
-    width: 153px;
+    min-width: 195px;
 }
 
 /* Discussions Tabs */

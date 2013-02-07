@@ -8,7 +8,15 @@
                style="margin-top:-{{ loop.index0|column_height(column_indices) * link_height }}px;"
                     {% endif %}
                href="{{ topic.get_extended_slug() }}/v/{{ item.readable_id }}"
-               data-tag="Homepage Library">{{ item.title|escape }}
+               data-tag="Homepage Library">
+                {% if item.title %}
+                    {{ item.title.replace(".wmv", "") }}
+                    {{ item.title.replace(".avi", "") }}
+                    {{ item.title.replace(".mpg", "") }}
+                    {{ item.title.replace(".mpeg", "") }}
+                {% else %}
+                    {{ escape }}
+                {% endif %}
             </a>
         {% elif item.kind()=="Url" %}
             <a class="m{{ loop.index0|find_column_index(column_indices) }} vl vid-progress v{{ item.key().id() }}"
@@ -17,7 +25,11 @@
                     {% endif %}
                href="{{ item.url }}"
                data-tag="Homepage Library">
-                {{ item.title|escape }}
+            {% if item.title %}
+                {{ item.title }}
+            {% else %}
+                {{ escape }}
+            {% endif %}
             </a>
         {% endif %}
     {% endfor %}

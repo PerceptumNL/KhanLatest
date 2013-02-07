@@ -147,7 +147,7 @@ def library_content_html(ajax=False, version_number=None):
         'version_id': version.number
     }
     # NOTE: use any library_content_template*
-    html = shared_jinja.get().render_template("library_content_template_tag_based.html",
+    html = shared_jinja.get().render_template("library_content_template.html",
                                               **template_values)
 
     return html

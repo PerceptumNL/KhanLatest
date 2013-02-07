@@ -1,97 +1,27 @@
-<div id="subject-list-container">
-    <ul id="subject-list">
-        <!-- Start dynamic generation here -->
-        {% for topic in topics recursive %}
-            <li id="{{ topic.id }}-container">
-                {# Show topic title if it exists #}
-                {{ topic.homepage_title | escape }}
-                {% if topic.content %}
-                    {# If this topic has videos, load them #}
-                    {% if ajax %}
-                        <div style="height:{{ topic.height }}px;" data-role="listview" data-inset="true">
-                            {# TODO (Maarten:) Umm... Where is the AJAX request? #}
-                            <span class="topic-loading">Loading videos...</span>
-                        </div>
-                    {% else %}
-                        <ul data-role="listview" data-inset="true">
-                            {% for item in topic.content %}
-                                {% if item.kind()=="Video" %}
-                                    <li class="m{{ loop.index0|find_column_index(column_indices) }} vl vid-progress v{{ item.key().id() }}"
-                                            {% if loop.index0|in_list(column_indices) %}
-                                        style="margin-top:-{{ loop.index0|column_height(column_indices) * link_height }}px;"
-                                            {% endif %}
-                                        href="{{ topic.get_extended_slug() }}/v/{{ item.readable_id }}"
-                                        data-tag="Homepage Library">{{ item.title|escape }}
-                                    </li>
-                                {% elif item.kind()=="Url" %}
-                                    <li class="m{{ loop.index0|find_column_index(column_indices) }} vl vid-progress v{{ item.key().id() }}"
-                                            {% if loop.index0|in_list(column_indices) %}
-                                        style="margin-top:-{{ loop.index0|column_height(column_indices) * link_height }}px;"
-                                            {% endif %}
-                                        href="{{ item.url }}"
-                                        data-tag="Homepage Library">
-                                        {{ item.title|escape }}
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                {% endif %}
-
-                {# Make a list for the subtopics, if any #}
-                {% if topic.subtopics > 0 %}
-                    <ul>
-                        {{ loop(topic.subtopics) }}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endfor %}
-        <!-- End dynamic generation here -->
-    </ul>
-</div>
-
-<!-- As it was on 30-1-2013, for reference: -->
 {% import 'macros/library.html' as library %}
+
 <div id="library">
-    <div id="library-content">
+    <div id="library-content" >
+        {{ library.column_major_order_styles() }}
         <div id="library-content-main">
             {% for topic in topics recursive %}
-                {% if loop.first and topic.depth == 0 %}
-                    <div class="clear desktop-only">
-                        <a name="{{ topic.standalone_title|slugify|escape }}"
-                           id="{{ topic.standalone_title|slugify|escape }}">
-                            <!-- (Maarten:) What is this for? -->
-                            &nbsp;
-                        </a>
-                    </div>
+                {% if loop.first and topic.depth == 0%}
+                    <div class="clear desktop-only"><a name="{{ topic.standalone_title|slugify|escape }}" id="{{ topic.standalone_title|slugify|escape }}">&nbsp;</a></div>
                 {% endif %}
-
                 <div data-role="page" id="{{ topic.id }}-container" data-theme="b">
                     <div data-role="header" class="library-content-header">
-                        <a href="#" data-rel="back" data-icon="arrow-l" class="mobile-only">
-                            Back
-                        </a>
-                        {% if topic.depth > 0 %}
-                            <h2 class='subtopic-{{ topic.depth }}-heading {% if loop.first %}topic-heading-first{% endif %}'>
-                                <a href="{{ topic.topic_page_url }}">{{ topic.homepage_title | escape }}</a></h2>
+                        <a href="#" data-rel="back" data-icon="arrow-l" class="mobile-only">Back</a>
+                        {% if topic.depth %}
+                            <h2 class='subtopic-{{ topic.depth }}-heading {% if loop.first %}topic-heading-first{% endif %}'><a href="{{ topic.topic_page_url }}">{{topic.homepage_title|escape}}</a></h2>
                         {% else %}
-                            <h2 class='topic-heading {% if loop.first %}topic-heading-first{% endif %} {% if root_topic and topic.id == root_topic.id %}root-topic{% endif %}'>
-                                <a href="{{ topic.topic_page_url }}">{{ topic.homepage_title | escape }}
-                                </a>
-                            </h2>
+                            <h2 class='topic-heading {% if loop.first %}topic-heading-first{% endif %} {% if root_topic and topic.id == root_topic.id %}root-topic{% endif %}'><a href="{{ topic.topic_page_url }}">{{topic.homepage_title|escape}}</a></h2>
                         {% endif %}
-                        <a href="/"
-                           data-icon="home"
-                           data-iconpos="notext"
-                           data-direction="reverse"
-                           class="mobile-only">
-                            <!-- (Maarten:) What is this? -->
-                        </a>
+                        <a href="/" data-icon="home" data-iconpos="notext" data-direction="reverse" class="mobile-only"></a>
                     </div>
                     {% if topic.is_super or topic.content %}
                         <div data-role="content" class="library-content-list">
                             {% if topic.description %}
-                                <p class='topic-desc'>{{ topic.description }}</p>
+                                <p class='topic-desc'>{{topic.description}}</p>
                             {% endif %}
 
                             {% if topic.is_super %}
@@ -104,7 +34,7 @@
 
                             {% if topic.content %}
                                 {% if ajax %}
-                                    <div style="height:{{ topic.height }}px;" data-role="listview" data-inset="true">
+                                    <div style="height:{{topic.height}}px;" data-role="listview" data-inset="true">
                                         <span class="topic-loading">Loading videos...</span>
                                     </div>
                                 {% else %}
@@ -121,13 +51,10 @@
                     {% endif %}
                 </div>
 
-                {% if root_topic and topic.id == root_topic.id %}
-                    <!-- (Maarten:) It seems that this conditional is never satisfied -->
-                    <div class="topic-spacer"></div>
-                {% endif %}
+                {% if root_topic and topic.id == root_topic.id %}<div class="topic-spacer"></div>{% endif %}
 
                 {% if topic.subtopics %}
-                    {{ loop(topic.subtopics) }}
+                    {{loop(topic.subtopics)}}
                 {% endif %}
 
             {% endfor %}
@@ -142,4 +69,3 @@
 {% if ajax %}
     <script>var Homepage_cacheToken = {{ version_id }};</script>
 {% endif %}
-

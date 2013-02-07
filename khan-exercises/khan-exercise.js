@@ -2043,7 +2043,7 @@ var Khan = (function() {
         if (answerType === "text" || answerType === "number") {
             var checkAnswerButton = $("#check-answer-button");
             checkAnswerButton.attr("disabled", "disabled").attr(
-                "title", "Type in an answer first.");
+                "title", "Type eerst een antwoord.");
             // Enables the check answer button - added so that people who type
             // in a number and hit enter quickly do not have to wait for the
             // button to be enabled by the key up

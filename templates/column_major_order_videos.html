@@ -10,10 +10,7 @@
                href="{{ topic.get_extended_slug() }}/v/{{ item.readable_id }}"
                data-tag="Homepage Library">
                 {% if item.title %}
-                    {{ item.title.replace(".wmv", "") }}
-                    {{ item.title.replace(".avi", "") }}
-                    {{ item.title.replace(".mpg", "") }}
-                    {{ item.title.replace(".mpeg", "") }}
+                    {{ item.title.replace(".wmv", "").replace(".avi", "").replace(".mpg", "").replace(".mpeg", "") }}
                 {% else %}
                     {{ escape }}
                 {% endif %}
@@ -25,11 +22,11 @@
                     {% endif %}
                href="{{ item.url }}"
                data-tag="Homepage Library">
-            {% if item.title %}
-                {{ item.title }}
-            {% else %}
-                {{ escape }}
-            {% endif %}
+                {% if item.title %}
+                    {{ item.title }}
+                {% else %}
+                    {{ escape }}
+                {% endif %}
             </a>
         {% endif %}
     {% endfor %}

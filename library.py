@@ -105,12 +105,12 @@ def add_next_topic(topics, prev_topic=None, depth=0):
 _layout_version = 2
 
 #NOTE (Maarten, Khan NL:) Turn caching off caching when developing
-@layer_cache.cache_with_key_fxn(
-        lambda ajax=False, version_number=None:
-        "library_content_by_topic_%s_v%s.%s" % (
-        "ajax" if ajax else "inline",
-        version_number if version_number else Setting.topic_tree_version(),
-        _layout_version))
+#@layer_cache.cache_with_key_fxn(
+#        lambda ajax=False, version_number=None:
+#        "library_content_by_topic_%s_v%s.%s" % (
+#        "ajax" if ajax else "inline",
+#        version_number if version_number else Setting.topic_tree_version(),
+#        _layout_version))
 def library_content_html(ajax=False, version_number=None):
     """" Returns the HTML for the structure of the topics as they will be
     populated on the homepage. Does not actually contain the list of video

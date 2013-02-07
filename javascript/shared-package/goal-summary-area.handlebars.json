@@ -2,12 +2,12 @@
     "active": true,
     "complete": false,
     "progress": 0.2,
-    "title": "Complete Five Videos",
+    "title": "Bekijk vijf video's",
     "objectives": [{
         "description": "Multiplication 3: 10,11,12 times tables",
         "internal_id": "",
         "progress": 1,
-        "status": "proficient",
+        "status": "behaald",
         "type": "GoalObjectiveAnyVideo",
         "url": "/video/multiplication-3--10-11-12-times-tables",
         "complete": true,
@@ -19,10 +19,10 @@
         "isExercise": false,
         "isAnyExercise": false
     }, {
-        "description": "Any video",
+        "description": "Willekeurige video",
         "internal_id": "",
         "progress": 0,
-        "status": "not-started",
+        "status": "niet gestart",
         "type": "GoalObjectiveAnyVideo",
         "url": "/#browse",
         "complete": false,
@@ -34,10 +34,10 @@
         "isExercise": false,
         "isAnyExercise": false
     }, {
-        "description": "Any video",
+        "description": "Willekeurige video",
         "internal_id": "",
         "progress": 0,
-        "status": "not-started",
+        "status": "niet gestart",
         "type": "GoalObjectiveAnyVideo",
         "url": "/#browse",
         "complete": false,
@@ -49,10 +49,10 @@
         "isExercise": false,
         "isAnyExercise": false
     }, {
-        "description": "Any video",
+        "description": "Willekeurige video",
         "internal_id": "",
         "progress": 0,
-        "status": "not-started",
+        "status": "niet gestart",
         "type": "GoalObjectiveAnyVideo",
         "url": "/#browse",
         "complete": false,
@@ -64,10 +64,10 @@
         "isExercise": false,
         "isAnyExercise": false
     }, {
-        "description": "Any video",
+        "description": "Willekeurige video",
         "internal_id": "",
         "progress": 0,
-        "status": "not-started",
+        "status": "niet gestart",
         "type": "GoalObjectiveAnyVideo",
         "url": "/#browse",
         "complete": false,

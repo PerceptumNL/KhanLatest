@@ -158,11 +158,11 @@
             <div class="hints">
                 <p style="clear: both" data-tt="hing7">Denk er aan dat de richtingscoëfficiënt overeenkomt met hoe steil de lijn is.</p>
                 <div data-if="M.value < 0">
-                    <p data-tt="hint17">Omdat <code><var>M.display</var></code> is negative, the line should slant downwards as we follow it to the right.</p>
-                    <p data-tt="hint18">The answer is either the <code class="hint_orange">\text{orange}</code> or <code class="hint_pink">\text{pink}</code> graph.</p>
+                    <p data-tt="hint17">Omdat <code><var>M.display</var></code>  moet de lijn schuin naar beneden gaan als we van links naar rechts kijken.</p>
+                    <p data-tt="hint18">Het antwoord is of <code class="hint_orange">\text{oranje}</code> of <code class="hint_pink">\text{roze}</code> grafiek.</p>
                 </div>
                 <div data-else>
-                    <p data-tt="hint8">Because <code><var>M.display</var></code> positief is, moet de lijn schuin naar boven gaan als we van links naar rechts kijken.</p>
+                    <p data-tt="hint8">Omdat <code><var>M.display</var></code> positief is, moet de lijn schuin naar boven gaan als we van links naar rechts kijken.</p>
                     <p data-tt="hint9">Het antwoord is zowel de <code class="hint_blue">\text{blauwe}</code> als de <code class="hint_green">\text{groene}</code> grafiek.</p>
                 </div>
                 <p data-tt="hint10">In welke grafief verandert de y-waarde met <code><var>M.display</var></code> als de x-waarde verandert met <code>1</code>?</p>
@@ -180,13 +180,13 @@
                 <var id="WHICH">randRange( 1, 2 )</var>
                 <var id="M">SLOPES[WHICH]</var>
             </div>
-            <p class="question"><span data-if="WHICH ===1" data-tt="question3">Which graph best depicts a slope of <code><var>M.display</var></code>?</span><span data-else>Which graph best depicts an undefined slope?</span></p>
+            <p class="question"><span data-if="WHICH ===1" data-tt="question3">Welke grafiek toont als beste een richtingscoëfficiënt of hellingshoek van <code><var>M.display</var></code>?</span><span data-else>Welke grafiek geeft het beste een ongedefinieerde hellingshoek weer?</span></p>
             <div class="hints">
-                <p style="clear: both" data-tt="hint12">Remember that the slope corresponds to how steep the line is.</p>
-                <p data-tt="hint13">Imagine walking up a hill represented by a line. A larger slope means a steeper hill.</p>
-                <p data-if="M.value === 0" data-tt="hint14">A slope of <code><var>M.display</var></code> means there is no hill at all, and the graph should be flat.</p>
-                <p data-if="M.value === Number.POSITIVE_INFINITY" data-tt="hint15">An <var>M.display</var> slope corresponds to a vertical line, which is like an impossibly steep hill.</p>
-                <p data-tt="hint16">The <code>\color{<var>COLORS[WHICH].hex</var>}{\text{<var>COLORS[WHICH].name.toLowerCase()</var>}}</code> graph best depicts a<span data-if="WHICH === 2">n undefined</span> slope<span data-if="WHICH === 1"> of <code><var>M.display</var></code></span>.</p>
+                <p style="clear: both" data-tt="hint12">Denk er aan dat de richtingscoëfficiënt overeenkomt met hoe steil de lijn is.</p>
+                <p data-tt="hint13">Stel je voor dat je een heuvel oploopt die weergegeven wordt als een lijn. Een grotere richtingscoëfficiënt betekent een steilere heuvel.</p>
+                <p data-if="M.value === 0" data-tt="hint14">Een helling van <code><var>M.display</var></code> betekent dat er geen helling is en de grafiekzou plat moeten zijn.</p>
+                <p data-if="M.value === Number.POSITIVE_INFINITY" data-tt="hint15">Een helling van <var>M.display</var> komt overeen met een verticale lijn, wat een onmogelijk steile helling.</p>
+                <p data-tt="hint16">De <code>\color{<var>COLORS[WHICH].hex</var>}{\text{<var>COLORS[WHICH].name.toLowerCase()</var>}}</code> geeft het beste een <span data-if="WHICH === 2"> ongedefinieerde</span> helling<span data-if="WHICH === 1"> of <code><var>M.display</var></code></span>weer.</p>
             </div>
         </div>
     </div>

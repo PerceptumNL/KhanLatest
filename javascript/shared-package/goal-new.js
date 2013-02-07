@@ -74,7 +74,7 @@ var GoalCreator = {
                     GoalCreator.onVideoClicked(name, title);
                 }
                 else {
-                    alert("You can't add a video you've already watched to a goal.");
+                    alert("Je kan een video die je al bekeken hebt niet toevoegen aan een doel.");
                 }
             });
 
@@ -382,7 +382,7 @@ var GoalCreator = {
 
         if (GoalCreator.objectives.length < 2)
         {
-            error = "We zouden graag zien dat je minimaal two (2) objecten kiest";
+            error = "We zouden graag zien dat je minimaal twee (2) objecten kiest";
         }
 
         if (error !== "") {

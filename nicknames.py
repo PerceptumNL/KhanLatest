@@ -34,7 +34,7 @@ def get_default_nickname_for(user_data):
         nickname = facebook_util.get_facebook_nickname(user_id)
     elif is_phantom_id(user_id):
         # Users will be prompted to login and save progress all over the place
-        nickname = "Unsaved user"
+        nickname = "Niet ingelogd!"
     else:
         nickname = email.split('@')[0]
     return to_unicode(nickname)

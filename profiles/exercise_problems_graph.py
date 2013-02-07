@@ -104,9 +104,9 @@ def exercise_problems_graph_context(user_data_student, exid):
     # Purposefully not showing any videos dangling after the last problem is done.
     # If video_point_last exists here, doing another problem will place it on the graph.
 
-    x_axis_label = "Problem #"
+    x_axis_label = "Probleem #"
     if x_offset:
-        x_axis_label += " (Last %d problems)" % max_problems_in_graph
+        x_axis_label += " (Laatste %d problemem)" % max_problems_in_graph
 
     return {
         'student_email': user_data_student.email,

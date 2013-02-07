@@ -189,18 +189,18 @@ var ProfileModel = Backbone.Model.extend({
         } else {
             var message = "";
             if (username.length < 3) {
-                message = "Too short.";
+                message = "Te kort.";
             } else if (/^[^a-z]/.test(username)) {
-                message = "Start with a letter.";
+                message = "Begin met een letter.";
             } else {
-                message = "Alphanumeric only.";
+                message = "Alleen alfanumeriek (Letters van het alfabet en cijfers 0-9.";
             }
             this.trigger("validate:username", message, false);
         }
     },
 
     onValidateUsernameResponse_: function(isUsernameAvailable) {
-        var message = isUsernameAvailable ? "Looks good!" : "Not available.";
+        var message = isUsernameAvailable ? "Prima!" : "Niet beschikbaar.";
         this.trigger("validate:username", message, isUsernameAvailable);
     }
 });

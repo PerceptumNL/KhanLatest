@@ -1,7 +1,7 @@
 <nav class="prev_next_nav desktop-only">
     {{#if video.previous_video }}
     <label id="prev_video">
-      <a rel=prev class="previous-video" href="/{{ topic.extended_slug }}/v/{{ video.previous_video.readable_id }}"><b>Previous Video:</b> <span class='vid-progress v{{ video.previous_video.key_id }}'>{{ video.previous_video.title }}</span> </a>
+      <a rel=prev class="previous-video" href="/{{ topic.extended_slug }}/v/{{ video.previous_video.readable_id }}"><b>Vorige Video:</b> <span class='vid-progress v{{ video.previous_video.key_id }}'>{{ video.previous_video.title }}</span> </a>
     </label>
     {{else}}
       {{#if topic.previous_topic_video }}

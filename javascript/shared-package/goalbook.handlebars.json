@@ -20,7 +20,7 @@
             "isExercise": false,
             "isAnyExercise": false
         }, {
-            "description": "Any video",
+            "description": "Willekeurige video",
             "internal_id": "",
             "progress": 0,
             "status": "not-started",
@@ -35,7 +35,7 @@
             "isExercise": false,
             "isAnyExercise": false
         }, {
-            "description": "Any video",
+            "description": "Willekeurige video",
             "internal_id": "",
             "progress": 0,
             "status": "not-started",
@@ -50,7 +50,7 @@
             "isExercise": false,
             "isAnyExercise": false
         }, {
-            "description": "Any video",
+            "description": "Willekeurige video",
             "internal_id": "",
             "progress": 0,
             "status": "not-started",
@@ -65,7 +65,7 @@
             "isExercise": false,
             "isAnyExercise": false
         }, {
-            "description": "Any video",
+            "description": "Willekeurige video",
             "internal_id": "",
             "progress": 0,
             "status": "not-started",
@@ -94,7 +94,7 @@
         "active": false,
         "complete": false,
         "progress": 0.4,
-        "title": "Complete Five Exercises",
+        "title": "Maak vijf oefeningen",
         "objectives": [{
             "description": "Addition 1",
             "internal_id": "",
@@ -126,7 +126,7 @@
             "isExercise": false,
             "isAnyExercise": true
         }, {
-            "description": "Any exercise",
+            "description": "Willekeurige oefening",
             "internal_id": "",
             "progress": 0,
             "status": "not-started",
@@ -141,7 +141,7 @@
             "isExercise": false,
             "isAnyExercise": true
         }, {
-            "description": "Any exercise",
+            "description": "Willekeurige oefening",
             "internal_id": "",
             "progress": 0,
             "status": "not-started",
@@ -156,7 +156,7 @@
             "isExercise": false,
             "isAnyExercise": true
         }, {
-            "description": "Any exercise",
+            "description": "Willekeurige oefening",
             "internal_id": "",
             "progress": 0,
             "status": "not-started",
@@ -185,7 +185,7 @@
         "active": false,
         "complete": false,
         "progress": 0.4287784848110436,
-        "title": "My Cool Goal",
+        "title": "Mijn coolste doel",
         "objectives": [{
             "description": "Addition 1",
             "internal_id": "addition_1",

@@ -93,6 +93,9 @@ class TopicExerciseBadge(Badge):
         self.topic_standalone_title = badge_type.topic_standalone_title
         self.exercise_names_required = badge_type.exercise_names_required
 
+        # Icon file name prefix from Topic
+        self.icon_name = badge_type.icon_name
+
         # Set typical badge properties
         self.name = TopicExerciseBadge.name_for_topic_key_name(
                 badge_type.topic_key_name)
@@ -125,7 +128,7 @@ class TopicExerciseBadge(Badge):
         return True
 
     def extended_description(self):
-        return ("Achieve proficiency in all skills in %s" %
+        return ("Bereik bekwaamheid in alle vaardigheden van %s" %
                 self.topic_standalone_title)
 
     @property
@@ -143,8 +146,8 @@ class TopicExerciseBadge(Badge):
         See /images/power-mode/badges/readme
         """
 
-        if self.topic_standalone_title in TOPICS_WITH_CUSTOM_ICONS:
-            return self.slug
+        if self.icon_name:
+            return self.icon_name
         else:
             return "default"
 
@@ -184,6 +187,7 @@ class TopicExerciseBadgeType(db.Model):
     topic_standalone_title = db.StringProperty(indexed=False)
     exercise_names_required = object_property.TsvProperty(indexed=False)
     retired = db.BooleanProperty(default=False, indexed=False)
+    icon_name = db.StringProperty(default="")
 
     @staticmethod
     def get_key_name(topic):
@@ -203,6 +207,7 @@ class TopicExerciseBadgeType(db.Model):
                     key_name=key_name,
                     topic_key_name=topic.key().name(),
                     topic_standalone_title=topic.standalone_title,
+                    icon_name=topic.icon_name
                     )
 
         return topic_badge_type

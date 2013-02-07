@@ -12,19 +12,19 @@
             <li>
                 <label {% if not subtitles_json %}class="disabled"{% endif %}>
                     <input type="checkbox" class="transcript-enable" {% if not subtitles_json %}disabled{% endif %}>
-                    Interactive transcript
+                    Interactief transcript
                 </label>
             </li>
             <li>
                 <label>
                     <input type="checkbox" class="subtitles-enable">
-                    Translated subtitles
+                    Vertaalde ondertiteling
                 </label>
             </li>
             <li style="display: none">
                 <label>
                     <input type="checkbox" class="socrates-enable" >
-                    Embedded questions
+                    Moeilijke vragen
                 </label>
             </li>
             <li>
@@ -39,7 +39,7 @@
                     class="download-icon download-link
                     {%- if not video_path %} disabled{% endif %}">
                         <i class="icon-download-alt icon-large"></i>
-                        Download this video
+                        Download deze video
                 </a>
             </li>
             <!--
@@ -66,7 +66,7 @@
                 class="facebookShare"
                 onclick="_gaq.push(['_trackEvent', 'Click', 'Video-Page-Share-Facebook']);Social.facebookVideo('{{video.title|escapejs}}','{{video.description|escapejs}}','/video?v={{video.youtube_id}}');">
                 <i class="icon-facebook icon-large"></i>
-                Share
+                Deel
             </a>
             </li>
             <li>

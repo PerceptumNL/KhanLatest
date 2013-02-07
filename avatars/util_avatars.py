@@ -77,7 +77,7 @@ def avatars_by_category():
     categories = [
         AvatarPointsCategory("Beginner", 0),
         AvatarPointsCategory("gevorderd", 10000),
-        AvatarPointsCategory("vergevorder", 50000),
+        AvatarPointsCategory("vergevorderd", 50000),
         AvatarPointsCategory("expert", 100000),
         AvatarPointsCategory("episch", 250000),
     ]

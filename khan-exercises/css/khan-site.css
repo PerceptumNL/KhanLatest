@@ -10700,9 +10700,9 @@ a.big-button:active > div {
 }
 
 .end-of-stack-info .stack-controls .simple-button {
-    padding: 8px 0;
+    padding: 0.4em 0;
     display: inline-block;
-    font-size: 150%;
+    font-size: 1.4em;
     text-align: center;
     width: 48%;
     -webkit-box-sizing: border-box;

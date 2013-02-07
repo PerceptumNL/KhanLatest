@@ -40,7 +40,7 @@ a.begin-button {
     margin-left: auto;
     margin-right: auto;
     text-shadow: 0px 1px 1px black;
-    box-shadow: 0px 0px 3px grey;
+    box-shadow: 0px 1px 1px grey;
     color: white;
     padding: 16px;
     margin-top: 16px;

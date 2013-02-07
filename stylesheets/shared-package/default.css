@@ -82,6 +82,10 @@ body {
     margin: 0 auto;
 }
 
+div#content {
+    background: #fff;
+}
+
 article {
     padding: 0 19px;
     background: #fff;

@@ -31,14 +31,14 @@
                 option_site_text:"Ik heb feedback over deze pagina in z'n geheel.",
                 feedback_entry_placeholder:"schrijf hier uw feedback",
                 feedback_email_placeholder:"uw email adres",
-    			feedback_submit_text: "verstuur feedback",
-    			confirm_success_text: "Uw feedback is verstuurd.",
-    			confirm_loading_text: "Versturen van feedback...",
-    			confirm_close_text: "sluiten",
-   				confirm_error_text: "Versturen van feedback niet gelukt.",
-   				confirm_retry_text: "Probeer opnieuw",
-    			confirm_extension_text: "Wist u dat u een screenshot aan uw feedback kon toevoegen?",
-    			confirm_extension_link_text: "Meer informatie.",
+                feedback_submit_text:"verstuur feedback",
+                confirm_success_text:"Uw feedback is verstuurd.",
+                confirm_loading_text:"Versturen van feedback...",
+                confirm_close_text:"sluiten",
+                confirm_error_text:"Versturen van feedback niet gelukt.",
+                confirm_retry_text:"Probeer opnieuw",
+                confirm_extension_text:"Wist u dat u een screenshot aan uw feedback kon toevoegen?",
+                confirm_extension_link_text:"Meer informatie."
             }
         };
 
@@ -62,10 +62,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     {%- endif %}
     <meta name="description" content="{% block meta_description -%}
-	  With a library of over 3,000 videos covering everything from arithmetic to physics, finance, and history and hundreds of skills to practice, we're on a mission to help you learn what you want, when you want, at your own pace.
+	  Leer wat je wil, wanneer je het wil en in je eigen tempo. En ook nog eens gratis.
 	  {%- endblock %}"/>
     <meta name="keywords"
-          content="{% block meta_keywords %}khan academy, learn, videos, lectures, practice, exercises, skills{% endblock %}"/>
+          content="{% block meta_keywords %}khan academy, leren, videos, taal, rekenen, klokkijken, oefenen, oeningen, vaardigheden{% endblock %}"/>
 
     <meta property="fb:app_id" content="{{ App.facebook_app_id }}"/>
     <meta property="fb:admins" content="100004182250626"/>
@@ -75,14 +75,14 @@
         <meta property="og:type" content="page"/>
         <meta property="og:title" content="Khan Academie"/>
         <meta property="og:description"
-              content="With a library of over 3,000 videos covering everything from arithmetic to physics, finance, and history and hundreds of skills to practice, we're on a mission to help you learn what you want, when you want, at your own pace."/>
+              content="Leer wat je wil, wanneer je het wil en in je eigen tempo. En ook nog eens gratis."/>
         <meta property="og:image" content="http://www.khanacademie.nl/images/khan-logo-header.png"/>
         <meta property="fb:page_id" content="123650984422563"/>
     {% endblock meta_facebook_tags %}
 
     {# Google+ -#}
     <meta itemprop="name" content="Khan Academie">
-    <meta itemprop="description" content="Kijk. Oefen. Learn almost anything for free.">
+    <meta itemprop="description" content="Kijk. Oefen. Leer van alles.">
     <meta itemprop="image" content="/images/khan-logo-vertical-transparent.png">
     {# End Google+ -#}
 
@@ -102,7 +102,7 @@
     {% block pagescript %}
     {% endblock pagescript %}
 
-    <!-- TODO clean this up, it's an unreadable mess. Python should not be inserted into javascript I think -->
+    <!-- TODO clean this up, it's an unreadable mess. It's not a good practice to insert Python into javascript within a HTML template. -->
     <script type="text/javascript">
         window._gaq = window._gaq || [];
     </script>
@@ -145,7 +145,7 @@
             $.cookie("cookieMessage", "read");
             $("#cookie-message").hide();
         }
-        ;
+
         $(document).ready(function () {
             if ($.cookie("cookieMessage") == null) {
                 $("#cookie-message").show();
@@ -216,6 +216,7 @@
                                 {% endif %}
                         </span>
                     </span>
+
                         <div id="stats">
                         </div>
                         <div class="site-wide-navigation">

@@ -304,6 +304,7 @@ var Profile = {
                 var prettyPrint = graph.replace(/-/gi, " ");
                 var prettyPrint = prettyPrint.replace(/skill progress/gi, "voortgang");
                 var prettyPrint = prettyPrint.replace(/over time/gi, "door de tijd");
+                var prettyPrint = prettyPrint.replace(/activity/gi, "activiteit");
                 return prettyPrint;
                 /* Original (Khan US) code:
                  * return graph.replace(/-/gi, " ");

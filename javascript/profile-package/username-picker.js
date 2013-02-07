@@ -138,7 +138,7 @@ UsernamePickerView = Backbone.View.extend({
         }
         this.$(".example-username").text(this.getFormValue_(".username"));
 
-        this.showSidenote_(".username-row", "Checking...");
+        this.showSidenote_(".username-row", "Checken...");
         this.debouncedValidateUsername_();
     },
 

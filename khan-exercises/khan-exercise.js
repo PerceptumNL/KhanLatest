@@ -1516,7 +1516,7 @@ function makeProblem(id, seed) {
 
     if (typeof userExercise !== "undefined" && userExercise.readOnly) {
 	if (!userExercise.current) {
-	    warn("De oefening kan veranderd zijn nadat deze voltooid wasT", true);
+	    warn("De oefening kan veranderd zijn nadat deze voltooid was", true);
 	}
 
 	var timelineEvents, timeline;

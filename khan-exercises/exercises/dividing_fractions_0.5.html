@@ -2,7 +2,7 @@
 <html data-translatable data-require="math math-format">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Dividing fractions 0.5</title>
+    <title>Breuken delen 0.5</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -26,7 +26,7 @@
 
     <div class="problems">
         <div>
-            <div data-tt="question1" class="problem">Reduce to lowest terms:</div>
+            <div data-tt="question1" class="problem">Vereenvoudig tot het kleinste getal en houdt het gehele getal apart:</div>
             <div class="question">
                 <p><code>\displaystyle \frac{<var>N1</var>}{<var>D1</var>} \div \frac{<var>N2</var>}{<var>D2</var>} = {?}</code></p>
             </div>
@@ -36,22 +36,22 @@
 
     <div class="hints">
         <div>
-            <p data-tt="hint1">Turn into a multiplication problem:</p>
+            <p data-tt="hint1">Schrijf het onderstaande als een vermenigvuldiging:</p>
             <p><code>\displaystyle {} = \frac{<var>N1</var>}{<var>D1</var>} \times \frac{<var>D2</var>}{<var>N2</var>}</code></p>
         </div>
 
         <div data-if="GCD1 !== 1 || GCD2 !== 1">
-            <p data-tt="hint2">Reduce terms with common factors:</p>
+            <p data-tt="hint2">Verklein de termen met de gemeenschappelijke factoren:</p>
             <p><code>\displaystyle {} = \frac{<var>SIMP_N1</var>}{<var>SIMP_D1</var>} \times \frac{<var>SIMP_D2</var>}{<var>SIMP_N2</var>}</code></p>
         </div>
 
         <div data-if="SIMP_N1 / SIMP_D1 !== 1 && SIMP_N2 / SIMP_D2 !== 1">
-            <p data-tt="hint3">Combine into one fraction:</p>
+            <p data-tt="hint3">Combineer dit tot 1 breuk:</p>
             <p><code>\displaystyle {} = \frac{<var>SIMP_N1</var> \times <var>SIMP_D2</var>}{<var>SIMP_D1</var> \times <var>SIMP_N2</var>}</code></p>
         </div>
 
         <div>
-            <p data-tt="hint4">Simplify:</p>
+            <p data-tt="hint4">Vereenvoudig:</p>
             <p><code>\displaystyle {} = <var>fractionReduce(N1* D2, D1 * N2)</var></code></p>
         </div>
 

@@ -156,7 +156,7 @@ def MarkupLanguageFromString(xml_string):
   return atom.CreateClassFromXMLString(MarkupLanguage, xml_string)
 
 
-class SitemapMobile(atom.AtomBase):
+class _SitemapMobile(atom.AtomBase):
   _tag = 'sitemap-mobile'
   _namespace = GWEBMASTERTOOLS_NAMESPACE
   _children = atom.AtomBase._children.copy()

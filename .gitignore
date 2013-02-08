@@ -39,3 +39,4 @@ tools/google_appengine/*
 kenv/share/kenv/settings
 testutil/test_db.sqlite
 testutil/test_db.sqlite-copy
+.idea/

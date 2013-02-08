@@ -1,0 +1,43 @@
+<div id="subject-list-container">
+    <!-- Start dynamic generation here -->
+    {% for topic in topics recursive %}
+        <li id="{{ topic.id }}-container">
+            <h2>
+                {# Show topic title if it exists #}
+                {{ topic.homepage_title | escape }}
+            </h2>
+            {% if topic.content %}
+                {# If this topic has videos, show some #}
+                {% if ajax %}
+                    <div style="height:{{ topic.height }}px;" data-role="listview" data-inset="true">
+                        {# TODO (Maarten:) Umm... Where is the AJAX request? #}
+                        <span class="topic-loading">Loading videos...</span>
+                    </div>
+                {% else %}
+                    {% for item in topic.content %}
+                        {% if item.kind()=="Video" %}
+                            <div class="m{{ loop.index0|find_column_index(column_indices) }} vl vid-progress v{{ item.key().id() }}"
+                                 href="{{ topic.get_extended_slug() }}/v/{{ item.readable_id }}"
+                                 data-tag="Homepage Library">{{ item.title|escape }}
+                            </div>
+                        {% elif item.kind()=="Url" %}
+                            <div class="m{{ loop.index0|find_column_index(column_indices) }} vl vid-progress v{{ item.key().id() }}"
+                                 href="{{ item.url }}"
+                                 data-tag="Homepage Library">
+                                {{ item.title|escape }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endif %}
+
+            {# Make a list for the subtopics, if any #}
+            {% if topic.subtopics > 0 %}
+                <ul>
+                    {{ loop(topic.subtopics) }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+    <!-- End dynamic generation here -->
+</div>

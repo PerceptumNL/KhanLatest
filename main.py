@@ -413,20 +413,6 @@ class Sleep(request_handler.RequestHandler):
         self.response.out.write('What a nice nap!  Now I feel all refreshed.')
 
 
-class MobileFullSite(request_handler.RequestHandler):
-    @user_util.open_access
-    def get(self):
-        self.set_mobile_full_site_cookie(True)
-        self.redirect("/")
-
-
-class MobileSite(request_handler.RequestHandler):
-    @user_util.open_access
-    def get(self):
-        self.set_mobile_full_site_cookie(False)
-        self.redirect("/")
-
-
 class ViewContribute(request_handler.RequestHandler):
     @user_util.open_access
     def get(self):
@@ -965,9 +951,6 @@ application = webapp2.WSGIApplication([
     ('/crash', Crash),
 
     ('/image_cache/(.+)', ImageCache),
-
-    ('/mobilefullsite', MobileFullSite),
-    ('/mobilesite', MobileSite),
 
     ('/library_content', GenerateLibraryContent),
     ('/admin/import_smarthistory', topics.ImportSmartHistory),

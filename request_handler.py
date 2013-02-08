@@ -383,11 +383,13 @@ class RequestHandler(webapp2.RequestHandler, RequestInputHandler):
 
     def is_mobile_capable(self):
         user_agent_lower = self.user_agent().lower()
-        return user_agent_lower.find("ipod") > -1 or \
-                user_agent_lower.find("ipad") > -1 or \
-                user_agent_lower.find("iphone") > -1 or \
-                user_agent_lower.find("webos") > -1 or \
-                user_agent_lower.find("android") > -1
+        return False #turn mobile off
+
+#        return user_agent_lower.find("ipod") > -1 or \
+#                user_agent_lower.find("ipad") > -1 or \
+#                user_agent_lower.find("iphone") > -1 or \
+#                user_agent_lower.find("webos") > -1 or \
+#                user_agent_lower.find("android") > -1
 
     def is_older_ie(self):
         user_agent_lower = self.user_agent().lower()

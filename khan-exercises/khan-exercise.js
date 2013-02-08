@@ -494,1200 +494,1200 @@ var Khan = (function() {
                 var seed = randomSeed;
                 seed = ((seed + 0x7ed55d16) + (seed << 12)) & 0xffffffff;
                 seed = ((seed ^ 0xc761c23c) ^ (seed >>> 19)) & 0xffffffff;
-	    seed = ((seed + 0x165667b1) + (seed << 5)) & 0xffffffff;
-	    seed = ((seed + 0xd3a2646c) ^ (seed << 9)) & 0xffffffff;
-	    seed = ((seed + 0xfd7046c5) + (seed << 3)) & 0xffffffff;
-	    seed = ((seed ^ 0xb55a4f09) ^ (seed >>> 16)) & 0xffffffff;
-	    return (randomSeed = (seed & 0xfffffff)) / 0x10000000;
-	},
+                seed = ((seed + 0x165667b1) + (seed << 5)) & 0xffffffff;
+                seed = ((seed + 0xd3a2646c) ^ (seed << 9)) & 0xffffffff;
+                seed = ((seed + 0xfd7046c5) + (seed << 3)) & 0xffffffff;
+                seed = ((seed ^ 0xb55a4f09) ^ (seed >>> 16)) & 0xffffffff;
+                return (randomSeed = (seed & 0xfffffff)) / 0x10000000;
+            },
 
-	crc32: crc32
-    },
+            crc32: crc32
+        },
 
-    // Load in a collection of scripts, execute callback upon completion
-    loadScripts: function(urls, callback) {
-	var loaded = 0,
-	    loading = urls.length,
-	    head = document.getElementsByTagName("head")[0];
+        // Load in a collection of scripts, execute callback upon completion
+        loadScripts: function(urls, callback) {
+            var loaded = 0,
+                loading = urls.length,
+                head = document.getElementsByTagName("head")[0];
 
-	callback || (callback = function() {});
+            callback || (callback = function() {});
 
-	for (var i = 0; i < loading; i++) { (function(mod) {
+            for (var i = 0; i < loading; i++) { (function(mod) {
 
-	    var isMathJax = mod.src.indexOf("/MathJax/") !== -1,
-		onScriptLoad = function() {
-		    // Bump up count of scripts loaded
-		    loaded++;
+                var isMathJax = mod.src.indexOf("/MathJax/") !== -1,
+                    onScriptLoad = function() {
+                        // Bump up count of scripts loaded
+                        loaded++;
 
-		    // Run callback in case we're finished loading all
-		    // modules
-		    runCallback();
-		};
+                        // Run callback in case we're finished loading all
+                        // modules
+                        runCallback();
+                    };
 
-	    if (!testMode && mod.src.indexOf("/khan-exercises/") === 0 && !isMathJax) {
-		// Don't bother loading khan-exercises content in production
-		// mode, this content is already packaged up and available
-		// (*unless* it's MathJax, which is silly still needs to be loaded)
-		loaded++;
-		return;
-	    }
+                if (!testMode && mod.src.indexOf("/khan-exercises/") === 0 && !isMathJax) {
+                    // Don't bother loading khan-exercises content in production
+                    // mode, this content is already packaged up and available
+                    // (*unless* it's MathJax, which is silly still needs to be loaded)
+                    loaded++;
+                    return;
+                }
 
-	    // Adapted from jQuery getScript (ajax/script.js)
-	    var script = document.createElement("script");
-	    script.async = "async";
+                // Adapted from jQuery getScript (ajax/script.js)
+                var script = document.createElement("script");
+                script.async = "async";
 
-	    for (var prop in mod) {
-		script[prop] = mod[prop];
-	    }
+                for (var prop in mod) {
+                    script[prop] = mod[prop];
+                }
 
-	    script.onerror = function() {
-		// No error in IE, but this is mostly for debugging during development so it's probably okay
-		// http://stackoverflow.com/questions/2027849/how-to-trigger-script-onerror-in-internet-explorer
-		Khan.error("Error loading script " + script.src);
-	    };
+                script.onerror = function() {
+                    // No error in IE, but this is mostly for debugging during development so it's probably okay
+                    // http://stackoverflow.com/questions/2027849/how-to-trigger-script-onerror-in-internet-explorer
+                    Khan.error("Error loading script " + script.src);
+                };
 
-	    script.onload = script.onreadystatechange = function() {
-		if (!script.readyState || (/loaded|complete/).test(script.readyState)) {
-		    // Handle memory leak in IE
-		    script.onload = script.onreadystatechange = null;
+                script.onload = script.onreadystatechange = function() {
+                    if (!script.readyState || (/loaded|complete/).test(script.readyState)) {
+                        // Handle memory leak in IE
+                        script.onload = script.onreadystatechange = null;
 
-		    // Remove the script
-		    if (script.parentNode) {
-			script.parentNode.removeChild(script);
-		    }
+                        // Remove the script
+                        if (script.parentNode) {
+                            script.parentNode.removeChild(script);
+                        }
 
-		    // Dereference the script
-		    script = undefined;
+                        // Dereference the script
+                        script = undefined;
 
-		    if (isMathJax) {
-			// If we're loading MathJax, don't bump up the
-			// count of loaded scripts until MathJax is done
-			// loading all of its dependencies.
-			MathJax.Hub.Queue(onScriptLoad);
-		    } else {
-			onScriptLoad();
-		    }
-		}
-	    };
+                        if (isMathJax) {
+                            // If we're loading MathJax, don't bump up the
+                            // count of loaded scripts until MathJax is done
+                            // loading all of its dependencies.
+                            MathJax.Hub.Queue(onScriptLoad);
+                        } else {
+                            onScriptLoad();
+                        }
+                    }
+                };
 
-	    head.appendChild(script);
-	})(urls[i]); }
+                head.appendChild(script);
+            })(urls[i]); }
 
-	runCallback();
+            runCallback();
 
-	function runCallback() {
-	    if (callback && loading === loaded) {
-		callback();
-	    }
-	}
-    },
+            function runCallback() {
+                if (callback && loading === loaded) {
+                    callback();
+                }
+            }
+        },
 
-    // Query String Parser
-    // Original from:
-    // http://stackoverflow.com/questions/901115/get-querystring-values-in-javascript/2880929#2880929
-    queryString: function() {
-	var urlParams = {},
-	    e,
-	    a = /\+/g,  // Regex for replacing addition symbol with a space
-	    r = /([^&=]+)=?([^&]*)/g,
-	    d = function(s) { return decodeURIComponent(s.replace(a, " ")); },
-	    q = window.location.search.substring(1);
+        // Query String Parser
+        // Original from:
+        // http://stackoverflow.com/questions/901115/get-querystring-values-in-javascript/2880929#2880929
+        queryString: function() {
+            var urlParams = {},
+                e,
+                a = /\+/g,  // Regex for replacing addition symbol with a space
+                r = /([^&=]+)=?([^&]*)/g,
+                d = function(s) { return decodeURIComponent(s.replace(a, " ")); },
+                q = window.location.search.substring(1);
 
-	while ((e = r.exec(q))) {
-	    urlParams[d(e[1])] = d(e[2]);
-	}
+            while ((e = r.exec(q))) {
+                urlParams[d(e[1])] = d(e[2]);
+            }
 
-	return urlParams;
-    },
+            return urlParams;
+        },
 
-    // Display error messages
-    error: function() {
-	if (typeof console !== "undefined") {
-	    $.each(arguments, function(ix, arg) {
-		console.error(arg);
-	    });
-	}
-    },
+        // Display error messages
+        error: function() {
+            if (typeof console !== "undefined") {
+                $.each(arguments, function(ix, arg) {
+                    console.error(arg);
+                });
+            }
+        },
 
-    scratchpad: (function() {
-	var disabled = false, wasVisible, pad;
+        scratchpad: (function() {
+            var disabled = false, wasVisible, pad;
 
-	var actions = {
-	    disable: function() {
-		wasVisible = actions.isVisible();
-		actions.hide();
+            var actions = {
+                disable: function() {
+                    wasVisible = actions.isVisible();
+                    actions.hide();
 
-		$("#scratchpad-show").hide();
-		$("#scratchpad-not-available").show();
-		disabled = true;
-	    },
+                    $("#scratchpad-show").hide();
+                    $("#scratchpad-not-available").show();
+                    disabled = true;
+                },
 
-	    enable: function() {
-		if (wasVisible) {
-		    actions.show();
-		    wasVisible = false;
-		}
+                enable: function() {
+                    if (wasVisible) {
+                        actions.show();
+                        wasVisible = false;
+                    }
 
-		$("#scratchpad-show").show();
-		$("#scratchpad-not-available").hide();
-		disabled = false;
-	    },
+                    $("#scratchpad-show").show();
+                    $("#scratchpad-not-available").hide();
+                    disabled = false;
+                },
 
-	    isVisible: function() {
-		return $("#scratchpad").is(":visible");
-	    },
+                isVisible: function() {
+                    return $("#scratchpad").is(":visible");
+                },
 
-	    show: function() {
+                show: function() {
 
-		if (actions.isVisible()) {
-		    return;
-		}
+                    if (actions.isVisible()) {
+                        return;
+                    }
 
-		var makeVisible = function() {
-		    $("#scratchpad").show();
-		    $("#scratchpad-show").text("Verberg kladblok");
+                    var makeVisible = function() {
+                        $("#scratchpad").show();
+                        $("#scratchpad-show").text("Verberg kladblok");
 
-		    // If pad has never been created or if it's empty
-		    // because it was removed from the DOM, recreate a new
-		    // scratchpad.
-		    if (!pad || !$("#scratchpad div").children().length) {
-			pad = new DrawingScratchpad(
-			    $("#scratchpad div")[0]);
-		    }
-		};
+                        // If pad has never been created or if it's empty
+                        // because it was removed from the DOM, recreate a new
+                        // scratchpad.
+                        if (!pad || !$("#scratchpad div").children().length) {
+                            pad = new DrawingScratchpad(
+                                $("#scratchpad div")[0]);
+                        }
+                    };
 
-		if (!pad) {
-		    Khan.loadScripts([{src: urlBase + "utils/scratchpad.js"}], makeVisible);
-		} else {
-		    makeVisible();
-		}
-	    },
+                    if (!pad) {
+                        Khan.loadScripts([{src: urlBase + "utils/scratchpad.js"}], makeVisible);
+                    } else {
+                        makeVisible();
+                    }
+                },
 
-	    hide: function() {
-		if (!actions.isVisible()) {
-		    return;
-		}
+                hide: function() {
+                    if (!actions.isVisible()) {
+                        return;
+                    }
 
-		$("#scratchpad").hide();
+                    $("#scratchpad").hide();
 
 
-		$("#scratchpad-show").text("Toon Kladblok");
+                    $("#scratchpad-show").text("Toon Kladblok");
 
-	    },
+                },
 
-	    toggle: function() {
-		actions.isVisible() ? actions.hide() : actions.show();
-	    },
+                toggle: function() {
+                    actions.isVisible() ? actions.hide() : actions.show();
+                },
 
-	    clear: function() {
-		if (pad) {
-		    pad.clear();
-		}
-	    },
+                clear: function() {
+                    if (pad) {
+                        pad.clear();
+                    }
+                },
 
-	    resize: function() {
-		if (pad) {
-		    pad.resize();
-		}
-	    }
-	};
+                resize: function() {
+                    if (pad) {
+                        pad.resize();
+                    }
+                }
+            };
 
-	return actions;
-    })(),
+            return actions;
+        })(),
 
-    relatedVideos: {
-	exercise: null,
-	cache: {},
+        relatedVideos: {
+            exercise: null,
+            cache: {},
 
-	getVideos: function() {
-	    return this.cache[this.exercise.name] || [];
-	},
+            getVideos: function() {
+                return this.cache[this.exercise.name] || [];
+            },
 
-	setVideos: function(exercise) {
+            setVideos: function(exercise) {
 
-	    if (exercise.relatedVideos) {
-		this.cache[exercise.name] = exercise.relatedVideos;
-	    }
+                if (exercise.relatedVideos) {
+                    this.cache[exercise.name] = exercise.relatedVideos;
+                }
 
-	    this.exercise = exercise;
-	    this.render();
-	},
+                this.exercise = exercise;
+                this.render();
+            },
 
-	showThumbnail: function(index) {
-	    $("#related-video-list .related-video-list li").each(function(i, el) {
-		if (i === index) {
-		    $(el)
-			.find("a.related-video-inline").hide().end()
-			.find(".thumbnail").show();
-		}
-		else {
-		    $(el)
-			.find("a.related-video-inline").show().end()
-			.find(".thumbnail").hide();
-		}
-	    });
-	},
+            showThumbnail: function(index) {
+                $("#related-video-list .related-video-list li").each(function(i, el) {
+                    if (i === index) {
+                        $(el)
+                            .find("a.related-video-inline").hide().end()
+                            .find(".thumbnail").show();
+                    }
+                    else {
+                        $(el)
+                            .find("a.related-video-inline").show().end()
+                            .find(".thumbnail").hide();
+                    }
+                });
+            },
 
-	// make a link to a related video, appending exercise ID.
-	makeHref: function(video) {
-	    return video.relativeUrl + "?exid=" + this.exercise.name;
-	},
+            // make a link to a related video, appending exercise ID.
+            makeHref: function(video) {
+                return video.relativeUrl + "?exid=" + this.exercise.name;
+            },
 
-	anchorElement: function(video, needComma) {
-	    var template = Templates.get("video.related-video-link");
-	    return $(template({
-		href: this.makeHref(video),
-		video: video,
-		separator: needComma
-	    })).data("video", video);
-	},
+            anchorElement: function(video, needComma) {
+                var template = Templates.get("video.related-video-link");
+                return $(template({
+                    href: this.makeHref(video),
+                    video: video,
+                    separator: needComma
+                })).data("video", video);
+            },
 
-	renderInSidebar: function() {
-	    var container = $(".related-video-box");
-	    var jel = container.find(".related-video-list");
-	    jel.empty();
+            renderInSidebar: function() {
+                var container = $(".related-video-box");
+                var jel = container.find(".related-video-list");
+                jel.empty();
 
-	    var template = Templates.get("video.thumbnail");
-	    if (this.getVideos().length) {
-	      $(container).find(".watch").show()
-	      _.each(this.getVideos(), function(video, i) {
-		  var thumbnailDiv = $(template({
-		      href: this.makeHref(video),
-		      video: video
-		  })).find("a.related-video").data("video", video).end();
+                var template = Templates.get("video.thumbnail");
+                if (this.getVideos().length) {
+		  $(container).find(".watch").show()
+                  _.each(this.getVideos(), function(video, i) {
+                      var thumbnailDiv = $(template({
+                          href: this.makeHref(video),
+                          video: video
+                      })).find("a.related-video").data("video", video).end();
 
-		  var inlineLink = this.anchorElement(video)
-		      .addClass("related-video-inline");
+                      var inlineLink = this.anchorElement(video)
+                          .addClass("related-video-inline");
 
-		  var sideBarLi = $("<li>")
-		      .append(inlineLink)
-		      .append(thumbnailDiv);
+                      var sideBarLi = $("<li>")
+                          .append(inlineLink)
+                          .append(thumbnailDiv);
 
-		  if (i > 0) {
-		      thumbnailDiv.hide();
-		  } else {
-		      inlineLink.hide();
-		  }
-		  jel.append(sideBarLi);
-	      }, this);
-	    } else { 
-		function set_video_requested() {
-		  jel.empty();
-		  jel.append("Bedankt voor je reactie!");
-		}
-		if (!this.exercise.videoRequested) {
-		  jel.append("<div type='button' id='request_video' class='simple-button orange full-width pagination-center' style='text-align:center'><span>Geef aan dat je een video <br /> mist bij deze oefening</span></div>");
-		  var self = this;
-		  $("#request_video").click(function() {
-		    $.get("/api/v1/user/exercises/"+self.exercise.name+
-			  "/request_video", function(res) {
-		      if (res.rc) 
-			set_video_requested();
-		      else
-			alert("Er is een fout opgetreden, de video was al aangevraagd!");
+                      if (i > 0) {
+                          thumbnailDiv.hide();
+                      } else {
+                          inlineLink.hide();
+                      }
+                      jel.append(sideBarLi);
+                  }, this);
+                } else { 
+                    function set_video_requested() {
+                      jel.empty();
+                      jel.append("Bedankt voor je reactie!");
+                    }
+                    if (!this.exercise.videoRequested) {
+                      jel.append("<div type='button' id='request_video' class='simple-button orange full-width pagination-center' style='text-align:center'><span>Geef aan dat je een video <br /> mist bij deze oefening</span></div>");
+                      var self = this;
+                      $("#request_video").click(function() {
+                        $.get("/api/v1/user/exercises/"+self.exercise.name+
+                              "/request_video", function(res) {
+                          if (res.rc) 
+                            set_video_requested();
+                          else
+                            alert("Er is een fout opgetreden, de video was al aangevraagd!");
 
-		    })
-		  });
-		} else {
-		  set_video_requested();
-		}
-	    }
+                        })
+                      });
+                    } else {
+                      set_video_requested();
+                    }
+                }
 
-	    //container.toggle(this.getVideos().length > 0);
-	    container.toggle(true);
-	},
+                //container.toggle(this.getVideos().length > 0);
+                container.toggle(true);
+            },
 
-	hookup: function() {
-	    // make caption slide up over the thumbnail on hover
-	    var captionHeight = 45;
-	    var marginTop = 23;
-	    // queue:false to make sure these run simultaneously
-	    var options = {duration: 150, queue: false};
-	    $(".related-video-box")
-		.delegate(".thumbnail", "mouseenter mouseleave", function(e) {
-		    var el = $(e.currentTarget);
-		    if (e.type == "mouseenter") {
-			el.find(".thumbnail_label").animate(
-				{marginTop: marginTop},
-				options)
-			    .end()
-			    .find(".thumbnail_teaser").animate(
-				{height: captionHeight},
-				options)
-			    .end();
-		    } else {
-			el.find(".thumbnail_label").animate(
-				{marginTop: marginTop + captionHeight},
-				options)
-			    .end()
-			    .find(".thumbnail_teaser").animate(
-				{height: 0},
-				options)
-			    .end();
-		    }
-		});
-	},
+            hookup: function() {
+                // make caption slide up over the thumbnail on hover
+                var captionHeight = 45;
+                var marginTop = 23;
+                // queue:false to make sure these run simultaneously
+                var options = {duration: 150, queue: false};
+                $(".related-video-box")
+                    .delegate(".thumbnail", "mouseenter mouseleave", function(e) {
+                        var el = $(e.currentTarget);
+                        if (e.type == "mouseenter") {
+                            el.find(".thumbnail_label").animate(
+                                    {marginTop: marginTop},
+                                    options)
+                                .end()
+                                .find(".thumbnail_teaser").animate(
+                                    {height: captionHeight},
+                                    options)
+                                .end();
+                        } else {
+                            el.find(".thumbnail_label").animate(
+                                    {marginTop: marginTop + captionHeight},
+                                    options)
+                                .end()
+                                .find(".thumbnail_teaser").animate(
+                                    {height: 0},
+                                    options)
+                                .end();
+                        }
+                    });
+            },
 
-	render: function() {
-	    // don't try to render if templates aren't present (dev mode)
-	    if (!window.Templates) return;
+            render: function() {
+                // don't try to render if templates aren't present (dev mode)
+                if (!window.Templates) return;
 
-	    this.renderInSidebar();
-	}
-    },
+                this.renderInSidebar();
+            }
+        },
 
-    showSolutionButtonText: function() {
-	return hintsUsed ? "Laat de volgende stap zien (" + hints.length + " over)" : "Geef mij een hint";
-    }
+        showSolutionButtonText: function() {
+            return hintsUsed ? "Laat de volgende stap zien (" + hints.length + " over)" : "Geef mij een hint";
+        }
 
-};
-// see line 183. this ends the main Khan module
-
-// Load query string params
-Khan.query = Khan.queryString();
-
-if (Khan.query.activity !== undefined) {
-    userExercise = {
-	current: true,
-	exerciseModel: {},
-	readOnly: true,
-	userActivity: JSON.parse(Khan.query.activity)
     };
-}
+    // see line 183. this ends the main Khan module
 
-// Seed the random number generator with the user's hash
-randomSeed = testMode && parseFloat(Khan.query.seed) || userCRC32 || (new Date().getTime() & 0xffffffff);
+    // Load query string params
+    Khan.query = Khan.queryString();
 
-// Load in jQuery
-var scripts = (typeof jQuery !== "undefined") ? [] : [{src: "../jquery.js"}];
+    if (Khan.query.activity !== undefined) {
+        userExercise = {
+            current: true,
+            exerciseModel: {},
+            readOnly: true,
+            userActivity: JSON.parse(Khan.query.activity)
+        };
+    }
 
-// Actually load the scripts. This is getting evaluated when the file is loaded.
-Khan.loadScripts(scripts, function() {
+    // Seed the random number generator with the user's hash
+    randomSeed = testMode && parseFloat(Khan.query.seed) || userCRC32 || (new Date().getTime() & 0xffffffff);
 
-    Khan.resetModules();
+    // Load in jQuery
+    var scripts = (typeof jQuery !== "undefined") ? [] : [{src: "../jquery.js"}];
 
-    // If there are any requests left in the queue when the window unloads
-    // then we will have permanently lost their answers and will need to
-    // clear the session cache, to make sure we don't override what is
-    // passed down from the servers
-    $(window).unload(function() {
-	if(requestQueue["attempt_hint_queue"] &&
-		requestQueue["attempt_hint_queue"].queue().length) {
-	    $(Khan).trigger("attemptError");
-	}
+    // Actually load the scripts. This is getting evaluated when the file is loaded.
+    Khan.loadScripts(scripts, function() {
+
+        Khan.resetModules();
+
+        // If there are any requests left in the queue when the window unloads
+        // then we will have permanently lost their answers and will need to
+        // clear the session cache, to make sure we don't override what is
+        // passed down from the servers
+        $(window).unload(function() {
+            if(requestQueue["attempt_hint_queue"] &&
+                    requestQueue["attempt_hint_queue"].queue().length) {
+                $(Khan).trigger("attemptError");
+            }
+        });
+
+        // Base modules required for every problem
+        Khan.require(["answer-types", "tmpl", "underscore", "jquery.adhesion", "hints", "calculator"]);
+
+        Khan.require(document.documentElement.getAttribute("data-require"));
+
+        // Initialize to an empty jQuery set
+        exercises = jQuery();
+
+        $(function() {
+            // Ensure that all local exercises that don't have a data-name
+            // already get tagged with the current, original data-name.
+            $("div.exercise").not("[data-name]").data("name", exerciseId);
+
+            var remoteExercises = $("div.exercise[data-name]");
+
+            if (remoteExercises.length) {
+
+                remoteExercises.each(loadExercise);
+
+            // Only run loadModules if exercises are in the page
+            } else if ($("div.exercise").length) {
+                loadModules();
+            }
+        });
+
+        $.fn.extend({
+            // Pick a random element from a set of elements
+            getRandom: function() {
+                return this.eq(Math.floor(this.length * KhanUtil.random()));
+            },
+
+            // Run the methods provided by a module against some elements
+            runModules: function(problem, type) {
+                type = type || "";
+
+                var info = {
+                    testMode: testMode
+                };
+
+                return this.each(function(i, elem) {
+                    elem = $(elem);
+
+                    // Run the main method of any modules
+                    $.each(Khan.modules, function(src, mod) {
+                        var name = mod.name;
+                        if ($.fn[name + type]) {
+                            debugLog("running " + name + type);
+                            elem[name + type](problem, info);
+                            debugLog("ran " + name + type);
+                        } else {
+                            debugLog("(" + name + type + " not a fn; src " + mod.src + ")");
+                        }
+                    });
+                });
+            }
+        });
+
+        // See if an element is detached
+        $.expr[":"].attached = function(elem) {
+            return $.contains(elem.ownerDocument.documentElement, elem);
+        };
     });
 
-    // Base modules required for every problem
-    Khan.require(["answer-types", "tmpl", "underscore", "jquery.adhesion", "hints", "calculator"]);
+    // Add up how much total weight is in each exercise so we can adjust for
+    // it later
+    function weighExercises(problems) {
+        if (exercises.length > 1) {
+            $.map(problems, function(elem) {
+                elem = $(elem);
 
-    Khan.require(document.documentElement.getAttribute("data-require"));
+                var exercise = elem.parents("div.exercise").eq(0);
 
-    // Initialize to an empty jQuery set
-    exercises = jQuery();
+                var exerciseTotal = exercise.data("weight-sum");
+                exerciseTotal = exerciseTotal !== undefined ? exerciseTotal : 0;
 
-    $(function() {
-	// Ensure that all local exercises that don't have a data-name
-	// already get tagged with the current, original data-name.
-	$("div.exercise").not("[data-name]").data("name", exerciseId);
+                var weight = elem.data("weight");
+                weight = weight !== undefined ? weight : 1;
 
-	var remoteExercises = $("div.exercise[data-name]");
-
-	if (remoteExercises.length) {
-
-	    remoteExercises.each(loadExercise);
-
-	// Only run loadModules if exercises are in the page
-	} else if ($("div.exercise").length) {
-	    loadModules();
-	}
-    });
-
-    $.fn.extend({
-	// Pick a random element from a set of elements
-	getRandom: function() {
-	    return this.eq(Math.floor(this.length * KhanUtil.random()));
-	},
-
-	// Run the methods provided by a module against some elements
-	runModules: function(problem, type) {
-	    type = type || "";
-
-	    var info = {
-		testMode: testMode
-	    };
-
-	    return this.each(function(i, elem) {
-		elem = $(elem);
-
-		// Run the main method of any modules
-		$.each(Khan.modules, function(src, mod) {
-		    var name = mod.name;
-		    if ($.fn[name + type]) {
-			debugLog("running " + name + type);
-			elem[name + type](problem, info);
-			debugLog("ran " + name + type);
-		    } else {
-			debugLog("(" + name + type + " not a fn; src " + mod.src + ")");
-		    }
-		});
-	    });
-	}
-    });
-
-    // See if an element is detached
-    $.expr[":"].attached = function(elem) {
-	return $.contains(elem.ownerDocument.documentElement, elem);
-    };
-});
-
-// Add up how much total weight is in each exercise so we can adjust for
-// it later
-function weighExercises(problems) {
-    if (exercises.length > 1) {
-	$.map(problems, function(elem) {
-	    elem = $(elem);
-
-	    var exercise = elem.parents("div.exercise").eq(0);
-
-	    var exerciseTotal = exercise.data("weight-sum");
-	    exerciseTotal = exerciseTotal !== undefined ? exerciseTotal : 0;
-
-	    var weight = elem.data("weight");
-	    weight = weight !== undefined ? weight : 1;
-
-	    exercise.data("weight-sum", exerciseTotal + weight);
-	});
-    }
-}
-
-// Create a set of n problems fairly from the weights - not random; it
-// ensures that the proportions come out as fairly as possible with ints
-// (still usually a little bit random).
-// There has got to be a better way to do this.
-function makeProblemBag(problems, n) {
-    var bag = [], totalWeight = 0;
-
-    if (testMode && Khan.query.test != null) {
-	// Just do each problem 10 times
-	$.each(problems, function(i, elem) {
-	    elem = $(elem);
-	    elem.data("id", elem.attr("id") || "" + i);
-
-	    for (var j = 0; j < 10; j++) {
-		bag.push(problems.eq(i));
-	    }
-	});
-
-	problemCount = bag.length;
-
-    } else if (problems.length > 0) {
-	// Collect the weights for the problems and find the total weight
-	var weights = $.map(problems, function(elem, i) {
-	    elem = $(elem);
-
-	    var exercise = elem.parents("div.exercise").eq(0);
-	    var exerciseWeight = exercise.data("weight");
-	    exerciseWeight = exerciseWeight !== undefined ? exerciseWeight : 1;
-	    var exerciseTotal = exercise.data("weight-sum");
-
-	    var weight = elem.data("weight");
-	    weight = weight !== undefined ? weight : 1;
-
-	    if (exerciseTotal !== undefined) {
-		weight = weight * exerciseWeight / exerciseTotal;
-		elem.data("weight", weight);
-	    }
-
-	    // Also write down the index/id for each problem so we can do
-	    // links to problems (?problem=17)
-	    elem.data("id", elem.attr("id") || "" + i);
-
-	    totalWeight += weight;
-	    return weight;
-	});
-
-	while (n) {
-	    bag.push((function() {
-		// Figure out which item we're going to pick
-		var index = totalWeight * KhanUtil.random();
-
-		for (var i = 0; i < problems.length; i++) {
-		    if (index < weights[i] || i === problems.length - 1) {
-			var w = Math.min(weights[i], totalWeight / (n--));
-			weights[i] -= w;
-			totalWeight -= w;
-			return problems.eq(i);
-		    } else {
-			index -= weights[i];
-		    }
-		}
-
-		// This will never happen
-		return Khan.error("makeProblemBag got confused w/ index " + index);
-	    })());
-	}
+                exercise.data("weight-sum", exerciseTotal + weight);
+            });
+        }
     }
 
-    return bag;
-}
+    // Create a set of n problems fairly from the weights - not random; it
+    // ensures that the proportions come out as fairly as possible with ints
+    // (still usually a little bit random).
+    // There has got to be a better way to do this.
+    function makeProblemBag(problems, n) {
+        var bag = [], totalWeight = 0;
 
-function enableCheckAnswer() {
-    $("#check-answer-button")
-	.removeAttr("disabled")
-	.removeClass("buttonDisabled")
-	.val("Check Antwoord");
-}
+        if (testMode && Khan.query.test != null) {
+            // Just do each problem 10 times
+            $.each(problems, function(i, elem) {
+                elem = $(elem);
+                elem.data("id", elem.attr("id") || "" + i);
 
-function disableCheckAnswer() {
-    $("#check-answer-button")
-	.attr("disabled", "disabled")
-	.addClass("buttonDisabled")
-	.val("Even geduld aub...");
-}
+                for (var j = 0; j < 10; j++) {
+                    bag.push(problems.eq(i));
+                }
+            });
 
-function isExerciseLoaded(exerciseId) {
-    return _.any(exercises, function(exercise) {
-	return $.data(exercise, "rootName") === exerciseId;
-    });
-}
+            problemCount = bag.length;
 
-function startLoadingExercise(exerciseId, exerciseName, exerciseFile) {
+        } else if (problems.length > 0) {
+            // Collect the weights for the problems and find the total weight
+            var weights = $.map(problems, function(elem, i) {
+                elem = $(elem);
 
-    if (typeof loadingExercises[exerciseId] !== "undefined") {
-	// Already started loading this exercise.
-	return;
+                var exercise = elem.parents("div.exercise").eq(0);
+                var exerciseWeight = exercise.data("weight");
+                exerciseWeight = exerciseWeight !== undefined ? exerciseWeight : 1;
+                var exerciseTotal = exercise.data("weight-sum");
+
+                var weight = elem.data("weight");
+                weight = weight !== undefined ? weight : 1;
+
+                if (exerciseTotal !== undefined) {
+                    weight = weight * exerciseWeight / exerciseTotal;
+                    elem.data("weight", weight);
+                }
+
+                // Also write down the index/id for each problem so we can do
+                // links to problems (?problem=17)
+                elem.data("id", elem.attr("id") || "" + i);
+
+                totalWeight += weight;
+                return weight;
+            });
+
+            while (n) {
+                bag.push((function() {
+                    // Figure out which item we're going to pick
+                    var index = totalWeight * KhanUtil.random();
+
+                    for (var i = 0; i < problems.length; i++) {
+                        if (index < weights[i] || i === problems.length - 1) {
+                            var w = Math.min(weights[i], totalWeight / (n--));
+                            weights[i] -= w;
+                            totalWeight -= w;
+                            return problems.eq(i);
+                        } else {
+                            index -= weights[i];
+                        }
+                    }
+
+                    // This will never happen
+                    return Khan.error("makeProblemBag got confused w/ index " + index);
+                })());
+            }
+        }
+
+        return bag;
     }
 
-    if (isExerciseLoaded(exerciseId)) {
-	return;
+    function enableCheckAnswer() {
+        $("#check-answer-button")
+            .removeAttr("disabled")
+            .removeClass("buttonDisabled")
+            .val("Check Antwoord");
     }
 
-    var exerciseElem = $("<div>")
-	.data("name", exerciseId)
-	.data("displayName", exerciseName)
-	.data("fileName", exerciseFile)
-	.data("rootName", exerciseId);
-
-    // Queue up an exercise load
-    loadExercise.call(exerciseElem, function() {
-
-
-	// Trigger load completion event for this exercise
-	$(Khan).trigger("exerciseLoaded:" + exerciseId);
-	$(Khan).trigger("contentLoaded");
-
-	delete loadingExercises[exerciseId];
-
-    });
-
-}
-
-function loadAndRenderExercise(nextUserExercise) {
-    debugLog("loadAndRenderExer");
-
-    setUserExercise(nextUserExercise);
-
-    var typeOverride = userExercise.problemType,
-	seedOverride = userExercise.seed;
-
-    exerciseId = userExercise.exerciseModel.name;
-    exerciseName = userExercise.exerciseModel.displayName;
-    exerciseFile = userExercise.exerciseModel.fileName;
-
-    // TODO(eater): remove this once all of the exercises in the datastore have filename properties
-    if (exerciseFile == null || exerciseFile == "") {
-	exerciseFile = exerciseId + ".html";
+    function disableCheckAnswer() {
+        $("#check-answer-button")
+            .attr("disabled", "disabled")
+            .addClass("buttonDisabled")
+            .val("Even geduld aub...");
     }
 
-    function finishRender() {
+    function isExerciseLoaded(exerciseId) {
+        return _.any(exercises, function(exercise) {
+            return $.data(exercise, "rootName") === exerciseId;
+        });
+    }
 
-	// Get all problems of this exercise type...
-	var problems = exercises.filter(function() {
-	    return $.data(this, "rootName") === exerciseId;
-	}).children(".problems").children();
+    function startLoadingExercise(exerciseId, exerciseName, exerciseFile) {
 
-	// ...and create a new problem bag with problems of our new exercise type.
-	problemBag = makeProblemBag(problems, 10);
+        if (typeof loadingExercises[exerciseId] !== "undefined") {
+            // Already started loading this exercise.
+            return;
+        }
 
-	// Update related videos
-	Khan.relatedVideos.setVideos(userExercise.exerciseModel);
+        if (isExerciseLoaded(exerciseId)) {
+            return;
+        }
 
-	// Make scratchpad persistent per-user
-	if (user) {
-	    var lastScratchpad = window.localStorage["scratchpad:" + user];
-	    if (typeof lastScratchpad !== "undefined" && JSON.parse(lastScratchpad)) {
-		Khan.scratchpad.show();
-	    }
-	}
+        var exerciseElem = $("<div>")
+            .data("name", exerciseId)
+            .data("displayName", exerciseName)
+            .data("fileName", exerciseFile)
+            .data("rootName", exerciseId);
 
-	// Generate a new problem
-	makeProblem(typeOverride, seedOverride);
+        // Queue up an exercise load
+        loadExercise.call(exerciseElem, function() {
+
+
+            // Trigger load completion event for this exercise
+            $(Khan).trigger("exerciseLoaded:" + exerciseId);
+            $(Khan).trigger("contentLoaded");
+
+            delete loadingExercises[exerciseId];
+
+        });
 
     }
 
-    if (isExerciseLoaded(exerciseId)) {
-	finishRender();
-    } else {
-	startLoadingExercise(exerciseId, exerciseName, exerciseFile);
+    function loadAndRenderExercise(nextUserExercise) {
+        debugLog("loadAndRenderExer");
 
-	$(Khan)
-	    .unbind("exerciseLoaded:" + exerciseId)
-	    .bind("exerciseLoaded:" + exerciseId, function() {
-		finishRender();
-	    });
+        setUserExercise(nextUserExercise);
+
+        var typeOverride = userExercise.problemType,
+            seedOverride = userExercise.seed;
+
+        exerciseId = userExercise.exerciseModel.name;
+        exerciseName = userExercise.exerciseModel.displayName;
+        exerciseFile = userExercise.exerciseModel.fileName;
+
+        // TODO(eater): remove this once all of the exercises in the datastore have filename properties
+        if (exerciseFile == null || exerciseFile == "") {
+            exerciseFile = exerciseId + ".html";
+        }
+
+        function finishRender() {
+
+            // Get all problems of this exercise type...
+            var problems = exercises.filter(function() {
+                return $.data(this, "rootName") === exerciseId;
+            }).children(".problems").children();
+
+            // ...and create a new problem bag with problems of our new exercise type.
+            problemBag = makeProblemBag(problems, 10);
+
+            // Update related videos
+            Khan.relatedVideos.setVideos(userExercise.exerciseModel);
+
+            // Make scratchpad persistent per-user
+            if (user) {
+                var lastScratchpad = window.localStorage["scratchpad:" + user];
+                if (typeof lastScratchpad !== "undefined" && JSON.parse(lastScratchpad)) {
+                    Khan.scratchpad.show();
+                }
+            }
+
+            // Generate a new problem
+            makeProblem(typeOverride, seedOverride);
+
+        }
+
+        if (isExerciseLoaded(exerciseId)) {
+            finishRender();
+        } else {
+            startLoadingExercise(exerciseId, exerciseName, exerciseFile);
+
+            $(Khan)
+                .unbind("exerciseLoaded:" + exerciseId)
+                .bind("exerciseLoaded:" + exerciseId, function() {
+                    finishRender();
+                });
+        }
+
     }
 
-}
+    /**
+     * Returns whether we should skip the current problem because it's
+     * a duplicate (or too similar) to a recently done problem in the same
+     * exercise.
+     */
+    function shouldSkipProblem() {
+        // We don't need to skip duplicate problems in test mode, which allows
+        // us to use the LocalStore localStorage abstraction from shared-package
+        if (typeof LocalStore === "undefined") {
+            return false;
+        }
 
-/**
- * Returns whether we should skip the current problem because it's
- * a duplicate (or too similar) to a recently done problem in the same
- * exercise.
- */
-function shouldSkipProblem() {
-    // We don't need to skip duplicate problems in test mode, which allows
-    // us to use the LocalStore localStorage abstraction from shared-package
-    if (typeof LocalStore === "undefined") {
-	return false;
+        var cacheKey = "prevProblems:" + user + ":" + exerciseName;
+        var cached = LocalStore.get(cacheKey);
+        var lastProblemNum = (cached && cached["lastProblemNum"]) || 0;
+
+        if (lastProblemNum === problemNum) {
+            // Getting here means the user refreshed the page or returned to
+            // this exercise after being away. So, we don't need to and
+            // shouldn't skip this problem.
+            return false;
+        }
+
+        var pastHashes = (cached && cached["history"]) || [];
+        var varsHash = $.tmpl.getVarsHash();
+
+        // Should skip the current problem if we've already seen it in the past
+        // few problems, but not if we've been fruitlessly skipping for a while.
+        // The latter situation could happen if a problem has very few unique
+        // problems (eg. exterior angles problem type of angles_of_a_polygon).
+        if (_.contains(pastHashes, varsHash) && consecutiveSkips < dupWindowSize) {
+            consecutiveSkips++;
+            return true;
+        } else {
+            consecutiveSkips = 0;
+            pastHashes.push(varsHash);
+            while (pastHashes.length > dupWindowSize) {
+                pastHashes.shift();
+            }
+
+            LocalStore.set(cacheKey, {
+                lastProblemNum: problemNum,
+                history: pastHashes
+            });
+            return false;
+        }
     }
 
-    var cacheKey = "prevProblems:" + user + ":" + exerciseName;
-    var cached = LocalStore.get(cacheKey);
-    var lastProblemNum = (cached && cached["lastProblemNum"]) || 0;
-
-    if (lastProblemNum === problemNum) {
-	// Getting here means the user refreshed the page or returned to
-	// this exercise after being away. So, we don't need to and
-	// shouldn't skip this problem.
-	return false;
-    }
-
-    var pastHashes = (cached && cached["history"]) || [];
-    var varsHash = $.tmpl.getVarsHash();
-
-    // Should skip the current problem if we've already seen it in the past
-    // few problems, but not if we've been fruitlessly skipping for a while.
-    // The latter situation could happen if a problem has very few unique
-    // problems (eg. exterior angles problem type of angles_of_a_polygon).
-    if (_.contains(pastHashes, varsHash) && consecutiveSkips < dupWindowSize) {
-	consecutiveSkips++;
-	return true;
-    } else {
-	consecutiveSkips = 0;
-	pastHashes.push(varsHash);
-	while (pastHashes.length > dupWindowSize) {
-	    pastHashes.shift();
-	}
-
-	LocalStore.set(cacheKey, {
-	    lastProblemNum: problemNum,
-	    history: pastHashes
-	});
-	return false;
-    }
-}
-
-
-function checkIfAnswerEmpty(guess) {
-    return $.trim(guess) === "" ||
-	     (guess instanceof Array && $.trim(guess.join("").replace(/,/g, "")) === "");
- }
-
-function makeProblem(id, seed) {
-    debugLog("start of makeProblem");
-    // Enable scratchpad (unless the exercise explicitly disables it later)
-    Khan.scratchpad.enable();
-
-    // Allow passing in a random seed
-    if (typeof seed !== "undefined") {
-	problemSeed = seed;
-
-    // In either of these testing situations,
-    } else if ((testMode && Khan.query.test != null) || user == null) {
-	problemSeed = Math.abs(randomSeed % bins);
-    }
-
-    // Set randomSeed to what problemSeed is (save problemSeed for recall later)
-    randomSeed = problemSeed;
-
-    // Check to see if we want to test a specific problem
-    if (testMode) {
-	id = typeof id !== "undefined" ? id : Khan.query.problem;
-    }
-
-    if (typeof id !== "undefined") {
-	var problems = exercises.children(".problems").children();
-
-	problem = /^\d+$/.test(id) ?
-	    // Access a problem by number
-	    problems.eq(parseFloat(id)) :
-
-	    // Or by its ID
-	    problems.filter("#" + id);
-
-    // Otherwise we grab a problem at random from the bag of problems
-    // we made earlier to ensure that every problem gets shown the
-    // appropriate number of times
-    } else if (problemBag.length > 0) {
-	problem = problemBag[problemBagIndex];
-	id = problem.data("id");
-
-    // No valid problem was found, bail out
-    } else {
-	return;
-    }
-
-    problemID = id;
-
-    // Find which exercise this problem is from
-    exercise = problem.parents("div.exercise").eq(0);
-
-    debugLog("chose problem type and seed");
-
-    // Work with a clone to avoid modifying the original
-    problem = problem.clone();
-
-    debugLog("cloned problem");
-
-    Translate.compile(exerciseId, problem);
-
-    // problem has to be child of visible #workarea for MathJax metrics to all work right
-    $("#workarea").append(problem);
-
-    // If there's an original problem, add inherited elements
-    var parentType = problem.data("type");
-
-    while (parentType) {
-	// Copy over the parent element to the child
-	var original = exercise.find(".problems #" + parentType).clone();
-	problem.prepend(original.children().data("inherited", true));
-
-	// Keep copying over the parent elements (allowing for deep inheritance)
-	parentType = original.data("type");
-    }
-
-    // Add any global exercise defined elements
-    problem.prepend(exercise.children(":not(.problems)").clone().data("inherited", true));
-
-    debugLog("cloned global elements");
-
-    // Apply templating
-    var children = problem
-	// var blocks append their contents to the parent
-	.find(".vars").tmplApply({attribute: "class", defaultApply: "appendVars"}).end()
-
-	// Individual variables override other variables with the same name
-	.find(".vars [id]").tmplApply().end()
-
-	// We also look at the main blocks within the problem itself to override,
-	// ignoring graphie and spin blocks
-	.children("[class][class!='graphie'][class!='spin']").tmplApply({attribute: "class"});
-
-    debugLog("ran tmplApply to vars and main elements");
-
-    // Finally we do any inheritance to the individual child blocks (such as problem, question, etc.)
-    children.each(function() {
-	// Apply while adding problem.children() to include
-	// template definitions within problem scope
-	$(this).find("[id]").add(children).tmplApply();
-    });
-
-    debugLog("ran tmplApply to [id]");
-
-    // Remove and store hints to delay running modules on it
-    hints = problem.children(".hints").remove();
-
-    // Remove the hint box if there are no hints in the problem
-    if (hints.length === 0) {
-	$(".hint-box").remove();
-    }
-
-    // Only show the calculator if it's specifically allowed for this problem
-    if (problem.data("calculator") == null) {
-	$("#calculator").hide();
-    } else {
-	$("#calculator").show();
-    }
-
-    debugLog("removed hints from DOM");
-
-    // Evaluate any inline script tags in this exercise's source
-    $.each(exercise.data("script") || [], function(i, scriptContents) {
-	$.globalEval(scriptContents);
-    });
-
-    debugLog("evaled inline scripts");
-
-    // ...and inline style tags.
-    if (exercise.data("style")) {
-	var exerciseStyleElem = $("head #exercise-inline-style");
-
-	// Clear old exercise style definitions
-	if (exerciseStyleElem.length && exerciseStyleElem[0].styleSheet) {
-	    // IE refuses to modify the contents of <style> the normal way
-	    exerciseStyleElem[0].styleSheet.cssText = "";
-	} else {
-	    exerciseStyleElem.empty();
-	}
-
-	// Then add rules specific to this exercise.
-	$.each(exercise.data("style"), function(i, styleContents) {
-	    if (exerciseStyleElem.length && exerciseStyleElem[0].styleSheet) {
-		// IE refuses to modify the contents of <style> the normal way
-		exerciseStyleElem[0].styleSheet.cssText = exerciseStyleElem[0].styleSheet.cssText + styleContents;
-	    } else {
-		exerciseStyleElem.append(styleContents);
-	    }
-	});
-    }
-
-    debugLog("added inline styles");
-
-    // Get the filename of the currently shown exercise so we can look up
-    // what modules are required
-    var currentExercise = exercise.data("name") + ".html";
-
-    // Reset modules to only those required by the current exercise
-    Khan.resetModules(Khan.exerciseModulesMap[currentExercise]);
-
-    // Run the main method of any modules
-    problem.runModules(problem, "Load");
-    debugLog("done with runModules Load");
-    problem.runModules(problem);
-    debugLog("done with runModules");
-
-    if (typeof seed === "undefined" && shouldSkipProblem()) {
-	// If this is a duplicate problem we should skip, just generate
-	// another problem of the same problem type but w/ a different seed.
-	debugLog("duplicate problem!");
-	clearExistingProblem();
-	nextSeed(1);
-	return makeProblem();
-    }
-
-    // Store the solution to the problem
-    var solution = problem.find(".solution"),
-
-	// Get the multiple choice problems
-	choices = problem.find(".choices"),
-
-	// Get the area into which solutions will be inserted,
-	// Removing any previous answer
-	solutionarea = $("#solutionarea").empty(),
-
-	// See if we're looking for a specific style of answer
-	answerType = solution.data("type");
-
-    // Make sure that the answer type exists
-    if (answerType) {
-	if (Khan.answerTypes && !Khan.answerTypes[answerType]) {
-	    Khan.error("Unknown answer type specified: " + answerType);
-	    return;
-	}
-    }
-
-    if (!answerType) {
-	// If a multiple choice block exists
-	if (choices.length) {
-	    answerType = "radio";
-
-	// Otherwise we assume the smart number type
-	} else {
-	    answerType = "number";
-	}
-    }
-
-    // Generate a type of problem
-    // (this includes possibly generating the multiple choice problems,
-    // if this fails then we will need to try generating another one.)
-    guessLog = [];
-    userActivityLog = [];
-    debugLog("decided on answer type " + answerType);
-    answerData = Khan.answerTypes[answerType].setup(solutionarea, solution);
-
-    validator = answerData.validator;
-    getAnswer = answerData.answer;
-    debugLog("validator created");
-
-    // A working solution was generated
-    if (validator) {
-	// Focus the first input
-	// Use .select() and on a delay to make IE happy
-	var firstInput = solutionarea.find(":input").first();
-	if ($(".calculator input:visible").length) {
-	    firstInput = $(".calculator input");
-	}
-	setTimeout(function() {
-	    if (!firstInput.is(":disabled")) {
-		firstInput.focus();
-		if (firstInput.is("input:text")) {
-		    firstInput.select();
-		}
-	    }
-	}, 1);
-
-	lastFocusedSolutionInput = firstInput;
-	solutionarea.find(":input").focus(function() {
-	    // Save which input is focused so we can refocus it after the user hits Check Answer
-	    lastFocusedSolutionInput = this;
-	});
-    } else {
-	// Making the problem failed, let's try again
-	debugLog("validator was falsey");
-	problem.remove();
-	makeProblem(id, randomSeed);
-	return;
-    }
-
-    // Remove the solution and choices elements from the display
-    solution.remove();
-    choices.remove();
-
-    // Add the problem into the page
-    Khan.scratchpad.resize();
-
-    // Enable the all answer input elements except the check answer button.
-    $("#answercontent input").not("#check-answer-button")
-	.removeAttr("disabled");
-
-    if (examples !== null && answerData.examples && answerData.examples.length > 0) {
-	$("#examples-show").show();
-	examples.empty();
-
-	$.each(answerData.examples, function(i, example) {
-	    examples.append("<li>" + example + "</li>");
-	});
-
-	examples.children().tmpl();
-    } else {
-	$("#examples-show").hide();
-    }
-    // save a normal JS array of hints so we can shift() through them later
-    hints = hints.tmpl().children().get();
-
-    if (hints.length === 0) {
-	// Disable the get hint button
-	$("#hint").attr("disabled", true);
-    }
-
-    // Hook out for exercise test runner
-    if (testMode && parent !== window && typeof parent.jQuery !== "undefined") {
-	parent.jQuery(parent.document).trigger("problemLoaded", [makeProblem, answerData.solution]);
-    }
-
-    // Save problem info in dump data for testers
-    if (testMode && Khan.query.test != null) {
-	var testerInfo = $("#tester-info");
-
-	// Deep clone the elements to avoid some straaaange bugs
-	var lastProblem = $.extend(true, {}, {
-	    seed: problemSeed,
-	    type: problemID,
-	    VARS: $.tmpl.VARS,
-	    solution: answerData.solution
-	});
-
-	dataDump.problems.push(lastProblem);
-
-	$(testerInfo).find(".problem-no")
-	    .text(dataDump.problems.length + dataDump.issues + " of " + problemCount);
-
-	var answer = $(testerInfo).find(".answer").empty();
-
-	var displayedSolution = answerData.solution;
-	if (!$.isArray(displayedSolution)) {
-	    displayedSolution = [displayedSolution];
-	}
-
-	$.each(displayedSolution, function(i, el) {
-	    if ($.isArray(el)) {
-		// group nested arrays of answers, for sets of multiples or multiples of sets.
-		// no reason answers can't be nested arbitrarily deep, but here we assume no
-		// more than one sub-level.
-		var subAnswer = $("<span>").addClass("group-box").appendTo(answer);
-		$.each(el, function(i, el) {
-		    $("<span>").text(el).addClass("box").appendTo(subAnswer);
-		});
-	    } else {
-		$("<span>").text(el).addClass("box").appendTo(answer);
-	    }
-	});
-    }
-
-    if (typeof userExercise !== "undefined" && userExercise.readOnly) {
-	if (!userExercise.current) {
-	    warn("De oefening kan veranderd zijn nadat deze voltooid was", true);
-	}
-
-	var timelineEvents, timeline;
-
-	var timelinecontainer = $("<div id='timelinecontainer'>")
-	    .append("<div>\n" +
-		    "<div id='previous-problem' class='simple-button'>Vorig Probleem</div>\n" +
-		    "<div id='previous-step' class='simple-button'><span>Volgend Probleem</span></div>\n" +
-		    "</div>")
-	    .insertBefore("#problem-and-answer");
-
-	$.fn.disable = function() {
-	    this.addClass("disabled")
-		.css({
-		    cursor: "default !important"
-		})
-		.data("disabled", true);
-	    return this;
-	}
-
-	$.fn.enable = function() {
-	    this.removeClass("disabled")
-		.css({
-		    cursor: "pointer"
-		})
-		.data("disabled", false);
-	    return this;
-	}
-
-	if (userExercise.totalDone === 0) {
-	    $("#previous-problem").disable();
-	}
-
-	timeline = $("<div id='timeline'>").appendTo(timelinecontainer);
-	timelineEvents = $("<div id='timeline-events'>").appendTo(timeline);
-
-	// Grab both scrubbers packaged up in one jQuery object. This is
-	// wrapped in a function just because the variables held inside are
-	// not used elsewhere
-	var scrubber = (function() {
-	    var scrubberCss = {
-			display: "block",
-			width: "0",
-			height: "0",
-			"border-left": "6px solid transparent",
-			"border-right": "6px solid transparent",
-			position: "absolute",
-		    },
-
-		scrubber1 = $("<div>")
-		    .css($.extend({}, scrubberCss, {
-			"border-top": "6px solid #888",
-			top: "0"
-		    }))
-		    .appendTo(timeline),
-
-		scrubber2 = $("<div>")
-		    .css($.extend({}, scrubberCss, {
-			"border-bottom": "6px solid #888",
-			bottom: "0"
-		    }))
-		    .appendTo(timeline);
-
-	    return scrubber1.add(scrubber2);
-	})();
-
-	timelinecontainer
-	    .append("<div>\n" +
-		    "<div id='next-problem' class='simple-button'>Volgend Probleem</div>\n" +
-		    "<div id='next-step' class='simple-button'><span>Volgende stap</span></div>\n" +
-		    "</div>");
-
-	$("<div class='user-activity correct-activity'>Started</div>")
-	    .data("hint", false)
-	    .appendTo(timelineEvents);
-
-	var hintNumber = 0,
-	    answerNumber = 1;
-
-	/* value[0]: css class
-	 * value[1]: guess
-	 * value[2]: time taken since last guess
-	 */
-	$.each(userExercise.userActivity, function(index, value) {
-	    var guess = value[1] === "Activity Unavailable" ? value[1] : JSON.parse(value[1]),
-		thissolutionarea;
-
-	    timelineEvents
-		.append("<div class='timeline-time'>" + value[2] + "s</div>");
-
-	    thissolutionarea = $("<div>")
-		.addClass("user-activity " + value[0])
-		.appendTo(timelineEvents);
-
-	    if (value[0] === "hint-activity") {
-		thissolutionarea.attr("title", "Hint used");
-		thissolutionarea
-		    .data("hint", hintNumber)
-		    .prepend("Hint #" + (hintNumber + 1));
-		hintNumber += 1;
-	    } else { // This panel is a solution (or the first panel)
-		thissolutionarea.data("hint", false);
-		if (guess === "Activity Unavailable") {
-		    thissolutionarea.text(guess);
-		} else {
-		    // radio and custom are the only answer types that
-		    // can't display its own guesses in the activity bar
-		    if (answerType === "radio") {
-			thissolutionarea.append(
-			    // Add the guess to the activity bar
-			    $("<p class='solution'>" + guess + "</p>").tmpl()
-			);
-
-			if (index === userExercise.userActivity.length - 1) {
-			    thissolutionarea
-				.removeClass("incorrect-activity")
-				.addClass("correct-activity");
-
-			    thissolutionarea.attr("title", "Correct Answer");
-			} else {
-			    thissolutionarea.attr("title", "Incorrect Answer");
-			}
-		    } else if (answerType === "custom") {
-			if (index === userExercise.userActivity.length - 1) {
-			    thissolutionarea
-				.removeClass("incorrect-activity")
-				.addClass("correct-activity");
-
-			    thissolutionarea.attr("title", "Correct Answer");
-			    thissolutionarea.append(
-				$("<p class='solution'>Answer correct</p>")
-			    );
-			} else {
-			    thissolutionarea.attr("title", "Incorrect Answer");
-			    thissolutionarea.append(
-				$("<p class='solution'>Answer incorrect</p>")
-			    );
-			}
-		    } else {
-			var thisAnswerData = Khan.answerTypes[answerType].setup(thissolutionarea, solution);
-
-			thisAnswerData.showGuess(guess);
-
-			if (thisAnswerData.validator(guess) === true) {
-			    // If the user didn't get the problem right on the first try, all
-			    // answers are labelled incorrect by default
-			    thissolutionarea
-				.removeClass("incorrect-activity")
-				.addClass("correct-activity");
-
-			    thissolutionarea.attr("title", "Correct Answer");
-			} else {
-			    thissolutionarea
-				.removeClass("correct-activity")
-				.addClass("incorrect-activity");
-			    thissolutionarea.attr("title", "Incorrect Answer");
-			}
-		    }
-
-		    thissolutionarea
-			.data("guess", guess)
-			    .find("input")
-			    .attr("disabled", true)
-			.end()
-			    .find("select")
-			    .attr("disabled", true);
-		}
-	    }
-	});
-
-	if (timelinecontainer.height() > timeline.height()) {
+
+    function checkIfAnswerEmpty(guess) {
+        return $.trim(guess) === "" ||
+                 (guess instanceof Array && $.trim(guess.join("").replace(/,/g, "")) === "");
+     }
+
+    function makeProblem(id, seed) {
+        debugLog("start of makeProblem");
+        // Enable scratchpad (unless the exercise explicitly disables it later)
+        Khan.scratchpad.enable();
+
+        // Allow passing in a random seed
+        if (typeof seed !== "undefined") {
+            problemSeed = seed;
+
+        // In either of these testing situations,
+        } else if ((testMode && Khan.query.test != null) || user == null) {
+            problemSeed = Math.abs(randomSeed % bins);
+        }
+
+        // Set randomSeed to what problemSeed is (save problemSeed for recall later)
+        randomSeed = problemSeed;
+
+        // Check to see if we want to test a specific problem
+        if (testMode) {
+            id = typeof id !== "undefined" ? id : Khan.query.problem;
+        }
+
+        if (typeof id !== "undefined") {
+            var problems = exercises.children(".problems").children();
+
+            problem = /^\d+$/.test(id) ?
+                // Access a problem by number
+                problems.eq(parseFloat(id)) :
+
+                // Or by its ID
+                problems.filter("#" + id);
+
+        // Otherwise we grab a problem at random from the bag of problems
+        // we made earlier to ensure that every problem gets shown the
+        // appropriate number of times
+        } else if (problemBag.length > 0) {
+            problem = problemBag[problemBagIndex];
+            id = problem.data("id");
+
+        // No valid problem was found, bail out
+        } else {
+            return;
+        }
+
+        problemID = id;
+
+        // Find which exercise this problem is from
+        exercise = problem.parents("div.exercise").eq(0);
+
+        debugLog("chose problem type and seed");
+
+        // Work with a clone to avoid modifying the original
+        problem = problem.clone();
+
+        debugLog("cloned problem");
+
+        Translate.compile(exerciseId, problem);
+
+        // problem has to be child of visible #workarea for MathJax metrics to all work right
+        $("#workarea").append(problem);
+
+        // If there's an original problem, add inherited elements
+        var parentType = problem.data("type");
+
+        while (parentType) {
+            // Copy over the parent element to the child
+            var original = exercise.find(".problems #" + parentType).clone();
+            problem.prepend(original.children().data("inherited", true));
+
+            // Keep copying over the parent elements (allowing for deep inheritance)
+            parentType = original.data("type");
+        }
+
+        // Add any global exercise defined elements
+        problem.prepend(exercise.children(":not(.problems)").clone().data("inherited", true));
+
+        debugLog("cloned global elements");
+
+        // Apply templating
+        var children = problem
+            // var blocks append their contents to the parent
+            .find(".vars").tmplApply({attribute: "class", defaultApply: "appendVars"}).end()
+
+            // Individual variables override other variables with the same name
+            .find(".vars [id]").tmplApply().end()
+
+            // We also look at the main blocks within the problem itself to override,
+            // ignoring graphie and spin blocks
+            .children("[class][class!='graphie'][class!='spin']").tmplApply({attribute: "class"});
+
+        debugLog("ran tmplApply to vars and main elements");
+
+        // Finally we do any inheritance to the individual child blocks (such as problem, question, etc.)
+        children.each(function() {
+            // Apply while adding problem.children() to include
+            // template definitions within problem scope
+            $(this).find("[id]").add(children).tmplApply();
+        });
+
+        debugLog("ran tmplApply to [id]");
+
+        // Remove and store hints to delay running modules on it
+        hints = problem.children(".hints").remove();
+
+        // Remove the hint box if there are no hints in the problem
+        if (hints.length === 0) {
+            $(".hint-box").remove();
+        }
+
+        // Only show the calculator if it's specifically allowed for this problem
+        if (problem.data("calculator") == null) {
+            $("#calculator").hide();
+        } else {
+            $("#calculator").show();
+        }
+
+        debugLog("removed hints from DOM");
+
+        // Evaluate any inline script tags in this exercise's source
+        $.each(exercise.data("script") || [], function(i, scriptContents) {
+            $.globalEval(scriptContents);
+        });
+
+        debugLog("evaled inline scripts");
+
+        // ...and inline style tags.
+        if (exercise.data("style")) {
+            var exerciseStyleElem = $("head #exercise-inline-style");
+
+            // Clear old exercise style definitions
+            if (exerciseStyleElem.length && exerciseStyleElem[0].styleSheet) {
+                // IE refuses to modify the contents of <style> the normal way
+                exerciseStyleElem[0].styleSheet.cssText = "";
+            } else {
+                exerciseStyleElem.empty();
+            }
+
+            // Then add rules specific to this exercise.
+            $.each(exercise.data("style"), function(i, styleContents) {
+                if (exerciseStyleElem.length && exerciseStyleElem[0].styleSheet) {
+                    // IE refuses to modify the contents of <style> the normal way
+                    exerciseStyleElem[0].styleSheet.cssText = exerciseStyleElem[0].styleSheet.cssText + styleContents;
+                } else {
+                    exerciseStyleElem.append(styleContents);
+                }
+            });
+        }
+
+        debugLog("added inline styles");
+
+        // Get the filename of the currently shown exercise so we can look up
+        // what modules are required
+        var currentExercise = exercise.data("name") + ".html";
+
+        // Reset modules to only those required by the current exercise
+        Khan.resetModules(Khan.exerciseModulesMap[currentExercise]);
+
+        // Run the main method of any modules
+        problem.runModules(problem, "Load");
+        debugLog("done with runModules Load");
+        problem.runModules(problem);
+        debugLog("done with runModules");
+
+        if (typeof seed === "undefined" && shouldSkipProblem()) {
+            // If this is a duplicate problem we should skip, just generate
+            // another problem of the same problem type but w/ a different seed.
+            debugLog("duplicate problem!");
+            clearExistingProblem();
+            nextSeed(1);
+            return makeProblem();
+        }
+
+        // Store the solution to the problem
+        var solution = problem.find(".solution"),
+
+            // Get the multiple choice problems
+            choices = problem.find(".choices"),
+
+            // Get the area into which solutions will be inserted,
+            // Removing any previous answer
+            solutionarea = $("#solutionarea").empty(),
+
+            // See if we're looking for a specific style of answer
+            answerType = solution.data("type");
+
+        // Make sure that the answer type exists
+        if (answerType) {
+            if (Khan.answerTypes && !Khan.answerTypes[answerType]) {
+                Khan.error("Unknown answer type specified: " + answerType);
+                return;
+            }
+        }
+
+        if (!answerType) {
+            // If a multiple choice block exists
+            if (choices.length) {
+                answerType = "radio";
+
+            // Otherwise we assume the smart number type
+            } else {
+                answerType = "number";
+            }
+        }
+
+        // Generate a type of problem
+        // (this includes possibly generating the multiple choice problems,
+        // if this fails then we will need to try generating another one.)
+        guessLog = [];
+        userActivityLog = [];
+        debugLog("decided on answer type " + answerType);
+        answerData = Khan.answerTypes[answerType].setup(solutionarea, solution);
+
+        validator = answerData.validator;
+        getAnswer = answerData.answer;
+        debugLog("validator created");
+
+        // A working solution was generated
+        if (validator) {
+            // Focus the first input
+            // Use .select() and on a delay to make IE happy
+            var firstInput = solutionarea.find(":input").first();
+            if ($(".calculator input:visible").length) {
+                firstInput = $(".calculator input");
+            }
+            setTimeout(function() {
+                if (!firstInput.is(":disabled")) {
+                    firstInput.focus();
+                    if (firstInput.is("input:text")) {
+                        firstInput.select();
+                    }
+                }
+            }, 1);
+
+            lastFocusedSolutionInput = firstInput;
+            solutionarea.find(":input").focus(function() {
+                // Save which input is focused so we can refocus it after the user hits Check Answer
+                lastFocusedSolutionInput = this;
+            });
+        } else {
+            // Making the problem failed, let's try again
+            debugLog("validator was falsey");
+            problem.remove();
+            makeProblem(id, randomSeed);
+            return;
+        }
+
+        // Remove the solution and choices elements from the display
+        solution.remove();
+        choices.remove();
+
+        // Add the problem into the page
+        Khan.scratchpad.resize();
+
+        // Enable the all answer input elements except the check answer button.
+        $("#answercontent input").not("#check-answer-button")
+            .removeAttr("disabled");
+
+        if (examples !== null && answerData.examples && answerData.examples.length > 0) {
+            $("#examples-show").show();
+            examples.empty();
+
+            $.each(answerData.examples, function(i, example) {
+                examples.append("<li>" + example + "</li>");
+            });
+
+            examples.children().tmpl();
+        } else {
+            $("#examples-show").hide();
+        }
+        // save a normal JS array of hints so we can shift() through them later
+        hints = hints.tmpl().children().get();
+
+        if (hints.length === 0) {
+            // Disable the get hint button
+            $("#hint").attr("disabled", true);
+        }
+
+        // Hook out for exercise test runner
+        if (testMode && parent !== window && typeof parent.jQuery !== "undefined") {
+            parent.jQuery(parent.document).trigger("problemLoaded", [makeProblem, answerData.solution]);
+        }
+
+        // Save problem info in dump data for testers
+        if (testMode && Khan.query.test != null) {
+            var testerInfo = $("#tester-info");
+
+            // Deep clone the elements to avoid some straaaange bugs
+            var lastProblem = $.extend(true, {}, {
+                seed: problemSeed,
+                type: problemID,
+                VARS: $.tmpl.VARS,
+                solution: answerData.solution
+            });
+
+            dataDump.problems.push(lastProblem);
+
+            $(testerInfo).find(".problem-no")
+                .text(dataDump.problems.length + dataDump.issues + " of " + problemCount);
+
+            var answer = $(testerInfo).find(".answer").empty();
+
+            var displayedSolution = answerData.solution;
+            if (!$.isArray(displayedSolution)) {
+                displayedSolution = [displayedSolution];
+            }
+
+            $.each(displayedSolution, function(i, el) {
+                if ($.isArray(el)) {
+                    // group nested arrays of answers, for sets of multiples or multiples of sets.
+                    // no reason answers can't be nested arbitrarily deep, but here we assume no
+                    // more than one sub-level.
+                    var subAnswer = $("<span>").addClass("group-box").appendTo(answer);
+                    $.each(el, function(i, el) {
+                        $("<span>").text(el).addClass("box").appendTo(subAnswer);
+                    });
+                } else {
+                    $("<span>").text(el).addClass("box").appendTo(answer);
+                }
+            });
+        }
+
+        if (typeof userExercise !== "undefined" && userExercise.readOnly) {
+            if (!userExercise.current) {
+                warn("De oefening kan veranderd zijn nadat deze voltooid was", true);
+            }
+
+            var timelineEvents, timeline;
+
+            var timelinecontainer = $("<div id='timelinecontainer'>")
+                .append("<div>\n" +
+                        "<div id='previous-problem' class='simple-button'>Vorig Probleem</div>\n" +
+                        "<div id='previous-step' class='simple-button'><span>Vorige stap</span></div>\n" +
+                        "</div>")
+                .insertBefore("#problem-and-answer");
+
+            $.fn.disable = function() {
+                this.addClass("disabled")
+                    .css({
+                        cursor: "default !important"
+                    })
+                    .data("disabled", true);
+                return this;
+            }
+
+            $.fn.enable = function() {
+                this.removeClass("disabled")
+                    .css({
+                        cursor: "pointer"
+                    })
+                    .data("disabled", false);
+                return this;
+            }
+
+            if (userExercise.totalDone === 0) {
+                $("#previous-problem").disable();
+            }
+
+            timeline = $("<div id='timeline'>").appendTo(timelinecontainer);
+            timelineEvents = $("<div id='timeline-events'>").appendTo(timeline);
+
+            // Grab both scrubbers packaged up in one jQuery object. This is
+            // wrapped in a function just because the variables held inside are
+            // not used elsewhere
+            var scrubber = (function() {
+                var scrubberCss = {
+                            display: "block",
+                            width: "0",
+                            height: "0",
+                            "border-left": "6px solid transparent",
+                            "border-right": "6px solid transparent",
+                            position: "absolute",
+                        },
+
+                    scrubber1 = $("<div>")
+                        .css($.extend({}, scrubberCss, {
+                            "border-top": "6px solid #888",
+                            top: "0"
+                        }))
+                        .appendTo(timeline),
+
+                    scrubber2 = $("<div>")
+                        .css($.extend({}, scrubberCss, {
+                            "border-bottom": "6px solid #888",
+                            bottom: "0"
+                        }))
+                        .appendTo(timeline);
+
+                return scrubber1.add(scrubber2);
+            })();
+
+            timelinecontainer
+                .append("<div>\n" +
+                        "<div id='next-problem' class='simple-button'>Volgend Probleem</div>\n" +
+                        "<div id='next-step' class='simple-button'><span>Volgende stap</span></div>\n" +
+                        "</div>");
+
+            $("<div class='user-activity correct-activity'>Gestart</div>")
+                .data("hint", false)
+                .appendTo(timelineEvents);
+
+            var hintNumber = 0,
+                answerNumber = 1;
+
+            /* value[0]: css class
+             * value[1]: guess
+             * value[2]: time taken since last guess
+             */
+            $.each(userExercise.userActivity, function(index, value) {
+                var guess = value[1] === "Activity Unavailable" ? value[1] : JSON.parse(value[1]),
+                    thissolutionarea;
+
+                timelineEvents
+                    .append("<div class='timeline-time'>" + value[2] + "s</div>");
+
+                thissolutionarea = $("<div>")
+                    .addClass("user-activity " + value[0])
+                    .appendTo(timelineEvents);
+
+                if (value[0] === "hint-activity") {
+                    thissolutionarea.attr("title", "Hint used");
+                    thissolutionarea
+                        .data("hint", hintNumber)
+                        .prepend("Hint #" + (hintNumber + 1));
+                    hintNumber += 1;
+                } else { // This panel is a solution (or the first panel)
+                    thissolutionarea.data("hint", false);
+                    if (guess === "Activity Unavailable") {
+                        thissolutionarea.text(guess);
+                    } else {
+                        // radio and custom are the only answer types that
+                        // can't display its own guesses in the activity bar
+                        if (answerType === "radio") {
+                            thissolutionarea.append(
+                                // Add the guess to the activity bar
+                                $("<p class='solution'>" + guess + "</p>").tmpl()
+                            );
+
+                            if (index === userExercise.userActivity.length - 1) {
+                                thissolutionarea
+                                    .removeClass("incorrect-activity")
+                                    .addClass("correct-activity");
+
+                                thissolutionarea.attr("title", "Correct Answer");
+                            } else {
+                                thissolutionarea.attr("title", "Incorrect Answer");
+                            }
+                        } else if (answerType === "custom") {
+                            if (index === userExercise.userActivity.length - 1) {
+                                thissolutionarea
+                                    .removeClass("incorrect-activity")
+                                    .addClass("correct-activity");
+
+                                thissolutionarea.attr("title", "Correct Answer");
+                                thissolutionarea.append(
+                                    $("<p class='solution'>Answer correct</p>")
+                                );
+                            } else {
+                                thissolutionarea.attr("title", "Incorrect Answer");
+                                thissolutionarea.append(
+                                    $("<p class='solution'>Answer incorrect</p>")
+                                );
+                            }
+                        } else {
+                            var thisAnswerData = Khan.answerTypes[answerType].setup(thissolutionarea, solution);
+
+                            thisAnswerData.showGuess(guess);
+
+                            if (thisAnswerData.validator(guess) === true) {
+                                // If the user didn't get the problem right on the first try, all
+                                // answers are labelled incorrect by default
+                                thissolutionarea
+                                    .removeClass("incorrect-activity")
+                                    .addClass("correct-activity");
+
+                                thissolutionarea.attr("title", "Correct Answer");
+                            } else {
+                                thissolutionarea
+                                    .removeClass("correct-activity")
+                                    .addClass("incorrect-activity");
+                                thissolutionarea.attr("title", "Incorrect Answer");
+                            }
+                        }
+
+                        thissolutionarea
+                            .data("guess", guess)
+                                .find("input")
+                                .attr("disabled", true)
+                            .end()
+                                .find("select")
+                                .attr("disabled", true);
+                    }
+                }
+            });
+
+            if (timelinecontainer.height() > timeline.height()) {
                 timeline.height(timelinecontainer.height());
             }
 
@@ -2043,7 +2043,7 @@ function makeProblem(id, seed) {
         if (answerType === "text" || answerType === "number") {
             var checkAnswerButton = $("#check-answer-button");
             checkAnswerButton.attr("disabled", "disabled").attr(
-                "title", "Type in an answer first.");
+                "title", "Type eerst een antwoord.");
             // Enables the check answer button - added so that people who type
             // in a number and hit enter quickly do not have to wait for the
             // button to be enabled by the key up

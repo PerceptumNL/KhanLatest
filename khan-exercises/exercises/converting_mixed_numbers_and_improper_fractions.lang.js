@@ -1,7 +1,7 @@
 ({
 	"nl" : {
 		"question1"	: 'Schrijf <code><var>fraction( I_NUM, I_DENOM, false, true )</var></code> als een gemengde breuk.',
-		"question2"	: 'Schrijf <code><var>WHOLE</var>\\ <var>fraction( M_NUM, M_DENOM, false, true )</var></code> als een onechte breuk.',
+		"question2"	: 'Schrijf <code><var>WHOLE</var>\\ <var>fraction( M_NUM, M_DENOM, false, true )</var></code> als een echte breuk.',
 		
 		"hint1"		: 'Deel eerst de teller door de noemer.',
 		"hint2"		: 'De onechte breuk heeft <code class="hint_green"><var>WHOLE</var></code> gehele getallen, hetgeen gelijk is aan <code>\\color{#28AE7B}{<var>WHOLE</var>} \\times \\dfrac{<var>I_DENOM</var>}{<var>I_DENOM</var>} = \\color{#28AE7B}{<var>fraction( I_DENOM * WHOLE, I_DENOM, false, false )</var>}</code>.',

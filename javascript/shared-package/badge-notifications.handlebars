@@ -1,11 +1,14 @@
-<h3>New badge{{plural this.length}} <span style="font-weight:normal; float: right; font-size: 12px;">(<a href="javascript:void(0)" class="hide-badge">close</a>)</span></h3>
+
+<h3>Nieuwe badge{{plural this.length}} <span style="font-weight:normal; float: right; font-size: 12px;">(<a href="javascript:void(0)" class="hide-badge">sluit</a>)</span></h3>
+>>>>>>> nieuwe badge
 {{#each this}}
     <div class="badge-container" style="margin-bottom:5px;">
         <a href="{{relativeUrl}}" class="big-button" target="_blank">
-        	{{> shared_badge}}
+            {{> shared_badge}}
         </a>
+
         <div>
-        {{> shared_share-links}}
+            {{> shared_share-links}}
         </div>
     </div>
 {{/each}}

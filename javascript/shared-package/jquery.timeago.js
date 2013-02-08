@@ -32,9 +32,9 @@
       strings: {
         prefixAgo: null,
         prefixFromNow: null,
-        suffixAgo: "geleden",
-        suffixFromNow: "sinds nu",
-        seconds: "less than a minute",
+        suffixAgo: "",
+        suffixFromNow: "vanaf nu",
+        seconds: "korter dan een minuut",
         minute: "ongeveer een minuut",
         minutes: "%d minuten",
         hour: "ongeveer een uur",

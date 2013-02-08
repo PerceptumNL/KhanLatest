@@ -1,0 +1,51 @@
+<div id="subject-list-container">
+    <ul id="subject-list">
+        <!-- Start dynamic generation here -->
+        {% for topic in topics recursive %}
+            <li id="{{ topic.id }}-container">
+                {# Show topic title if it exists #}
+                {{ topic.homepage_title | escape }}
+                {% if topic.content %}
+                    {# If this topic has videos, load them #}
+                    {% if ajax %}
+                        <div style="height:{{ topic.height }}px;" data-role="listview" data-inset="true">
+                            {# TODO (Maarten:) Umm... Where is the AJAX request? #}
+                            <span class="topic-loading">Loading videos...</span>
+                        </div>
+                    {% else %}
+                        <ul data-role="listview" data-inset="true">
+                            {% for item in topic.content %}
+                                {% if item.kind()=="Video" %}
+                                    <li class="m{{ loop.index0|find_column_index(column_indices) }} vl vid-progress v{{ item.key().id() }}"
+                                            {% if loop.index0|in_list(column_indices) %}
+                                        style="margin-top:-{{ loop.index0|column_height(column_indices) * link_height }}px;"
+                                            {% endif %}
+                                        href="{{ topic.get_extended_slug() }}/v/{{ item.readable_id }}"
+                                        data-tag="Homepage Library">{{ item.title|escape }}
+                                    </li>
+                                {% elif item.kind()=="Url" %}
+                                    <li class="m{{ loop.index0|find_column_index(column_indices) }} vl vid-progress v{{ item.key().id() }}"
+                                            {% if loop.index0|in_list(column_indices) %}
+                                        style="margin-top:-{{ loop.index0|column_height(column_indices) * link_height }}px;"
+                                            {% endif %}
+                                        href="{{ item.url }}"
+                                        data-tag="Homepage Library">
+                                        {{ item.title|escape }}
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endif %}
+
+                {# Make a list for the subtopics, if any #}
+                {% if topic.subtopics > 0 %}
+                    <ul>
+                        {{ loop(topic.subtopics) }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+        <!-- End dynamic generation here -->
+    </ul>
+</div>

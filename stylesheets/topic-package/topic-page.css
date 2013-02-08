@@ -2,6 +2,7 @@
     padding: 0;
 }
 
+/* TODO (Maarten:)  I think .main-video-placeholder doesn't exist anywhere*/
 .main-video-placeholder {
     position: relative;
     background: #000;
@@ -389,4 +390,17 @@ a.main-video-link:hover {
 .content-pane div.videos-list ol > li > a .vid-progress {
     position: relative;
     z-index: 2;
+}
+
+/* Responsive stuff */
+@media (max-width: 767px) {
+    /* Tablets */
+}
+
+@media (max-width: 480px) {
+    /* Phones */
+    .topic-page-content > .container > .nav-pane {
+        width: 100%;
+        //Javascript fokt height op
+    }
 }

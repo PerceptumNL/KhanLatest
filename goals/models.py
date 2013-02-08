@@ -276,15 +276,15 @@ class GoalObjective(object):
         objs = []
         for desc in descriptors:
             if desc['type'] == 'GoalObjectiveExerciseProficiency':
-                objs.append(GoalObjectiveExerciseProficiency(desc['exercise'],
+                objs.append(GoalObjectiveExerciseProficiency(desc['oefening'],
                     user_data))
             elif desc['type'] == 'GoalObjectiveWatchVideo':
                 objs.append(GoalObjectiveWatchVideo(desc['video'], user_data))
             elif desc['type'] == "GoalObjectiveAnyExerciseProficiency":
                 objs.append(GoalObjectiveAnyExerciseProficiency(
-                    description="Any skill"))
+                    description="Vaardigheid naar keuze"))
             elif desc['type'] == "GoalObjectiveAnyVideo":
-                objs.append(GoalObjectiveAnyVideo(description="Any video"))
+                objs.append(GoalObjectiveAnyVideo(description="Video naar keuze"))
         return objs
 
     @classmethod
@@ -352,13 +352,13 @@ class GoalObjectiveExerciseProficiency(GoalObjective):
             return super(GoalObjectiveExerciseProficiency, self).get_status()
 
         graph_dict = user_exercise_graph.graph_dict(self.exercise_name)
-        status = "not-started"
+        status = "niet gestart"
         if graph_dict["proficient"]:
-            status = "proficient"
+            status = "behaald"
         elif graph_dict["struggling"]:
-            status = "struggling"
+            status = "moeite"
         elif graph_dict["total_done"] > 0:
-            status = "started"
+            status = "gestart"
         return status
 
 

@@ -2,58 +2,6 @@
 {% set logged_in = user_data and not user_data.is_phantom %}
 
 <span class="extra-link-bar desktop-only">
-    <span class="options dropdown">
-        <span class="dropdown-toggle">
-            <i class="icon-cog icon-large"></i>
-            Options
-            <i class="icon-caret-down"></i>
-        </span>
-        <ul class="dropdown-menu no-submenus">
-            <li>
-                <label {% if not subtitles_json %}class="disabled"{% endif %}>
-                    <input type="checkbox" class="transcript-enable" {% if not subtitles_json %}disabled{% endif %}>
-                    Interactief transcript
-                </label>
-            </li>
-            <li>
-                <label>
-                    <input type="checkbox" class="subtitles-enable">
-                    Vertaalde ondertiteling
-                </label>
-            </li>
-            <li style="display: none">
-                <label>
-                    <input type="checkbox" class="socrates-enable" >
-                    Moeilijke vragen
-                </label>
-            </li>
-            <li>
-                <a  href="
-                    {%- if video_path -%}
-                        {{ video_path }}
-                    {%- else -%}
-                        javascript:void 0
-                    {%- endif -%}"
-                    title="Download this video
-                    {%- if not video_path %} not available{% endif %}"
-                    class="download-icon download-link
-                    {%- if not video_path %} disabled{% endif %}">
-                        <i class="icon-download-alt icon-large"></i>
-                        Download deze video
-                </a>
-            </li>
-            <!--
-            <li>
-                <a  href="javascript:void 0"
-                    title="Continuous Play is OFF"
-                    class="simple-button continuous-play">
-                        Continuous Play is OFF
-                </a>
-            </li>
-            -->
-        </ul>
-    </span>
-
     <span class="share dropdown">
         <span class="dropdown-toggle">
             <i class="icon-share icon-large"></i>

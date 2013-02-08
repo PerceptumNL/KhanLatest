@@ -49,7 +49,13 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
     text: {
         setup: function(solutionarea, solution) {
             // Add a text box
-            var input = $('<input type="text">');
+            var input;
+            if (window.Modernizr && Modernizr.touch) {
+                // special flag for iOS devices
+                input = $('<input type="text" autocapitalize="off">');
+            } else {
+                input = $('<input type="text">');
+            }
             $(solutionarea).append(input);
 
             // The fallback variable is used in place of the answer, if no
@@ -62,7 +68,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                     // return the value in the text box, or the fallback
                     return input.val().length > 0 ?
                         input.val() :
-                        (fallback ? fallback + "" : "");
+                        (fallback != null ? fallback + "" : "");
                 },
                 solution: $.trim($(solution).text()),
                 examples: [],
@@ -102,15 +108,6 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
      */
     number: {
         setup: function(solutionarea, solution) {
-            var input;
-            // If we are on a tablet, display a number keypad
-            if (typeof userExercise !== "undefined" && userExercise.tablet) {
-                input = $("<input type='number'>");
-            } else {
-                input = $("<input type='text'>");
-            }
-            $(solutionarea).append(input);
-
             // retrieve the options from the solution data
             var options = $.extend({
                 simplify: "required",
@@ -119,6 +116,28 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                 forms: "literal, integer, proper, improper, mixed, decimal"
             }, $(solution).data());
             var acceptableForms = options.forms.split(/\s*,\s*/);
+
+            if (window.Modernizr && Modernizr.touch) {
+                // Use special HTML5 input element for touch devices, so we can
+                // take advantage of special numeric keyboards...
+                var inputMarkup = '<input type="number" step="any">';
+                var numberForms = ["integer", "decimal"];
+                // ...except if the answer can be represented as a fraction,
+                // pi, log, percent, dollar, or anything else that isn't a
+                // "floating point number".
+                $.each(acceptableForms, function (i,form) {
+                    if (numberForms.indexOf(form) < 0) {
+                        inputMarkup = '<input type="text"' +
+                                      ' autocapitalize="off">';
+                    }
+                });
+                var input = $(inputMarkup);
+            } else {
+                // people don't always set their locale right, so use a text
+                // box to allow for alternative radix points
+                var input = $('<input type="text">');
+            }
+            $(solutionarea).append(input);
 
             // retrieve the example texts from the different forms
             var exampleForms = {
@@ -180,7 +199,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                 answer: function() {
                     return input.val().length > 0 ?
                         input.val() :
-                        (fallback ? fallback + "" : "");
+                        (fallback != null ? fallback + "" : "");
                 },
                 solution: $.trim($(solution).text()),
                 examples: examples,
@@ -198,6 +217,15 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                 forms: "literal, integer, proper, improper, mixed, decimal"
             }, $(solution).data());
             var acceptableForms = options.forms.split(/\s*,\s*/);
+
+            // If percent is an acceptable form, make sure it's the last one
+            // in the list so we don't prematurely complain about not having
+            // a percent sign when the user entered the correct answer in a
+            // different form (such as a decimal or fraction)
+            if (_.contains(acceptableForms, "percent")) {
+                acceptableForms = _.without(acceptableForms, "percent");
+                acceptableForms.push("percent");
+            }
 
             // Take text looking like a fraction, and turn it into a number
             var fractionTransformer = function(text) {
@@ -362,6 +390,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                     var transformed = forms.decimal(text);
                     $.each(transformed, function(ix, t) {
                         t.exact = hasPercentSign;
+                        t.value = t.value / 100;
                     });
                     return transformed;
                 },
@@ -511,7 +540,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
 
     rational: {
         setup: function(solutionarea, solution) {
-            solution.data("forms", "decimal, proper, improper, mixed");
+            solution.data("forms", "integer, proper, improper, mixed");
             return Khan.answerTypes.number.setup(solutionarea, solution);
         },
         createValidator: function(solution) {
@@ -543,7 +572,13 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
     // Perform a regex match on the entered string
     regex: {
         setup: function(solutionarea, solution) {
-            var input = $('<input type="text">');
+            var input;
+            if (window.Modernizr && Modernizr.touch) {
+                // special flag for iOS devices
+                input = $('<input type="text" autocapitalize="off">');
+            } else {
+                input = $('<input type="text">');
+            }
             $(solutionarea).append(input);
 
             return {
@@ -576,8 +611,14 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
             }, $(solution).data());
 
             // Add two input boxes
-            var inte = $("<input type='text'>"),
-                rad = $("<input type='text'>");
+            var inte, rad;
+            if (window.Modernizr && Modernizr.touch) {
+                inte = $('<input type="number" step="any">');
+                rad = $('<input type="number" step="any">');
+            } else {
+                inte = $('<input type="text">');
+                rad = $('<input type="text">');
+            }
             // Make them look pretty
             solutionarea.addClass("radical")
                 .append($("<span>").append(inte))
@@ -727,6 +768,20 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                             answerData.showGuess(guess[i]);
                         } else {
                             answerData.showGuess();
+                        }
+                    });
+                },
+                showCustomGuess: function(guess) {
+                    // Iterate through each of the answerDatas, and show the
+                    // cooresponding custom guess for each if it exists
+                    $.each(answerDataArray, function(i, answerData) {
+                        if (!$.isFunction(answerData.showCustomGuess)) {
+                            return;
+                        }
+                        if (guess !== undefined) {
+                            answerData.showCustomGuess(guess[i]);
+                        } else {
+                            answerData.showCustomGuess();
                         }
                     });
                 }
@@ -1312,7 +1367,13 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
     primeFactorization: {
         // Same as the text function, the differences lie in the validator
         setup: function(solutionarea, solution) {
-            var input = $('<input type="text">');
+            var input;
+            if (window.Modernizr && Modernizr.touch) {
+                // special flag for iOS devices
+                input = $('<input type="text" autocapitalize="off">');
+            } else {
+                input = $('<input type="text">');
+            }
             $(solutionarea).append(input);
 
             var fallback = $(solution).data("fallback");
@@ -1323,7 +1384,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                 answer: function() {
                     return input.val().length > 0 ?
                         input.val() :
-                        (fallback ? fallback + "" : "");
+                        (fallback != null ? fallback + "" : "");
                 },
                 solution: $.trim($(solution).text()),
                 examples: [

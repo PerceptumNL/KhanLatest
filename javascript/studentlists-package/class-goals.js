@@ -240,7 +240,7 @@ _.extend(ClassProfile, {
             studentGoalsViewModel.filterDesc += 'leerlingen/doelstellingen gelijk "' + filter_text + '"';
         }
         if (studentGoalsViewModel.filterDesc != '')
-            studentGoalsViewModel.filterDesc = 'Geeft alleen' + studentGoalsViewModel.filterDesc 'weer';
+            studentGoalsViewModel.filterDesc = 'Geeft alleen' + studentGoalsViewModel.filterDesc + 'weer';
         else
             studentGoalsViewModel.filterDesc = 'Geen filters toegepast.';
 

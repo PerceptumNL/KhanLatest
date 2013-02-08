@@ -128,7 +128,7 @@ class TopicExerciseBadge(Badge):
         return True
 
     def extended_description(self):
-        return ("Achieve proficiency in all skills in %s" %
+        return ("Bereik bekwaamheid in alle vaardigheden van %s" %
                 self.topic_standalone_title)
 
     @property

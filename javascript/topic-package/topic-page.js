@@ -84,22 +84,8 @@
             Backbone.history.start({pushState: true, root: rootPath});
         },
         growContent: function() {
-            var containerEl = $(".topic-page-content .content-pane");
-
-            var curHeight = containerEl.children("div").height();
-            maxContentHeight = Math.max(maxContentHeight, curHeight);
-
-            var containerHeight = $(window).height();
-            var yTopPadding = containerEl.offset().top;
-            var yBottomPadding = $("#end-of-page-spacer").outerHeight(true);
-            var minContentHeight = containerHeight - (yTopPadding + yBottomPadding);
-
-            var targetHeight = Math.max(maxContentHeight, minContentHeight);
-
-            containerEl.css("min-height", targetHeight + "px");
-            $(".nav-pane").css("min-height", targetHeight + "px");
+            //TODO delete this empty function
         },
-
         SubTopicRouter: Backbone.Router.extend({
             routes: {
                 "*subtopicID": "showSubtopic"
@@ -135,13 +121,13 @@
                         rootTopicView = rootTopicView || new TopicPage.ContentTopicView({ model: rootPageTopic.child_videos, viewCount: 0 });
                         analyticsParams = {
                             "Topic Title": rootPageTopic.title,
-                            "Topic Type": "Content topic",
+                            "Topic Type": "Content topic"
                         };
                     } else {
                         rootTopicView = rootTopicView || new TopicPage.RootTopicView({ model: rootPageTopic, viewCount: 0 });
                         analyticsParams = {
                             "Topic Title": rootPageTopic.title,
-                            "Topic Type": "Supertopic",
+                            "Topic Type": "Supertopic"
                         };
                     }
                     rootTopicView.show();

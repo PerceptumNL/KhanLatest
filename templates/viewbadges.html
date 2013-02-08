@@ -31,11 +31,11 @@
             </figcaption>
         </figure>
     <div class="badge-hook info-box">
-        <p class="badge-hook">This is just one of <a title="really, more like a billionty">more than a hundred</a> badges you can earn at Khan Academy.
+        <p class="badge-hook">Dit is slechts &#233;&#233;n van de <a title="really, more like a billionty">meer dan honderd </a> badges die je kunt verdienen bij de Khan Academie.
         {% if logged_in %}
-        <p class="badge-hook">Why not <a href="/exercisedashboard">start an exercise</a> or <a href="/#browse">watch a video</a> and earn one too?</p>
+        <p class="badge-hook">Begin <a href="/exercisedashboard">met een opgave</a> of <a href="/#browse">bekijk een video</a> en verdien er zelf ook &#233;&#233;n</p>
         {% else %}
-        <p class="badge-hook"><a href="{{ login_url|escape }}">Login</a> or <a href="{{ templatetags.to_insecure_url('/signup') }}?continue={{continue|urlencode}}">Sign Up</a> right now and get started earning yours today!</p>
+        <p class="badge-hook"><a href="{{ login_url|escape }}">Log in</a> of <a href="{{ templatetags.to_insecure_url('/signup') }}?continue={{continue|urlencode}}">Registreer je</a> nu meteen en verdien vandaag nog je eerste badge!</p>
         {% endif %}
     </div>
     </div>
@@ -49,27 +49,27 @@
         <tr>
             <td style="text-align:center;">
                 <img src="/images/badges/meteorite-small.png" /><br/>
-                <strong>Meteorite</strong> badges are common and easy to earn when just getting started.
+                <strong>Meteoriet</strong> badges komen vaak voor en zijn makkelijk te verdienen wanneer je net begint.
             </td>
             <td style="text-align:center;">
                 <img src="/images/badges/moon-small.png" /><br/>
-                <strong>Moon</strong> badges are uncommon and represent an investment in learning.
+                <strong>Maan</strong> badges zijn niet gebruikelijk en geven aan dat je al veel geleerd hebt.
             </td>
             <td style="text-align:center;">
                 <img src="/images/badges/earth-small.png" /><br/>
-                <strong>Earth</strong> badges are rare. They require a significant amount of learning.
+                <strong>Aarde</strong> badges zijn zeldzaam. Ze vereisen dat je al veel geleerd hebt.
             </td>
             <td style="text-align:center;">
                 <img src="/images/badges/sun-small.png" /><br/>
-                <strong>Sun</strong> badges are epic. Earning them is a true challenge, and they require impressive dedication.
+                <strong>Zon</strong> badges zijn episch. Het verdienen van deze badges is een ware uitdaging en ze vereisen daarom ook een enrome toewijding.
             </td>
             <td style="text-align:center;">
                 <img src="/images/badges/eclipse-small.png" /><br/>
-                <strong>Black Hole</strong> badges are legendary and unknown. They are the most unique Khan Academy awards.
+                <strong>Zwarte Gat</strong> badges zijn legendarisch en onbekend. Dit is de meest prestigieuze badge die je kunt verdienen bij de Khan Academie .
             </td>
             <td style="text-align:center;">
                 <img src="/images/badges/master-challenge-blue-small.png" /><br/>
-                <strong>Challenge Patches</strong> are special awards for completing topic challenges.
+                <strong>Uitdagingen badges</strong> zijn speciale badges die je alleen kunt verdienen als je een uitdaging van een onderwerp hebt voltooid.
             </td>
         </tr>
     </table>
@@ -77,7 +77,7 @@
 
 <article class="achievement-badges-container">
 {% if user_badges_master %}
-    <h3 class="fancy-heading"><span>Your Challenge Patches</span></h3>
+    <h3 class="fancy-heading"><span>Jouw uitdagingen badges</span></h3>
     <div class="clear">&nbsp;</div>
     <div class="centered-badge-container">
     {% for user_badge in user_badges_master %}
@@ -90,7 +90,7 @@
 {% endif %}
 
 {% if user_badges_normal %}
-    <h3 class="fancy-heading"><span>Your Badges</span></h3>
+    <h3 class="fancy-heading"><span>Jouw Badges</span></h3>
     <div class="clear">&nbsp;</div>
     <div class="centered-badge-container">
     {% for user_badge in user_badges_normal %}
@@ -103,7 +103,7 @@
 {% endif %}
 
 
-<h2 class="luxe"><span>All Badges</span></h2>
+<h2 class="luxe"><span>Alle Badges</span></h2>
 {% for badge_collection in badge_collections %}
     <div class="clear">&nbsp;</div>
     <h3 class="fancy-heading"><span>{{ badge_collection[0].type_label()|escape }}</span></h3>

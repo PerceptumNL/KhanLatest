@@ -2,7 +2,7 @@
 <html data-translatable data-require="math">
 <head>
     <meta charset="UTF-8" />
-    <title>Significant figures 1</title>
+    <title>Significante cijfers 1</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -29,28 +29,28 @@
     </div>
     <div class="problems">
         <div>
-            <p data-tt="question1" class="question">How many significant figures does <code><var>TOTAL</var></code> have?</p>
+            <p data-tt="question1" class="question">Hoeveel significante cijfers heeft <code><var>TOTAL</var></code> ?</p>
             <p class="solution" data-forms="integer"><var>SOLUTION</var></p>
         </div>
     </div>
     <div class="hints">
         <div>
-            <p data-tt="hint1" >Identify the non-zero digits and any zeros between them. These are all significant.</p>
+            <p data-tt="hint1" >Bekijk de cijfers die geen nul zijn en alle nullen daartussen. Deze cijfers zijn allemaal significant.</p>
             <p><code><var>PROPER_LEADING</var>\color{blue}{<var>INBETWEEN</var>}<var>TRAILING</var></code></p>
         </div>
         <div data-if="PROPER_LEADING.length > 0">
-            <p data-tt="hint2">Leading zeros are not significant.</p>
+            <p data-tt="hint2">Leidende nullen zijn niet significant.</p>
             <p><code>\color{orange}{<var>PROPER_LEADING</var>}\color{blue}{<var>INBETWEEN</var>}<var>TRAILING</var></code></p>
         </div>
         <div data-if="TRAILING.length > 0 && HAS_DOT">
-            <p data-tt="hint3">Since there is a decimal, trailing zeros are significant.</p>
+            <p data-tt="hint3">Omdat er een decimaal is, zijn de nullen achter de cijfers die geen nul zijn significant.</p>
             <p><code>\color{orange}{<var>PROPER_LEADING</var>}\color{blue}{<var>INBETWEEN</var><var>TRAILING</var>}</code></p>
         </div>
         <div data-if="TRAILING.length > 0 && !HAS_DOT">
-            <p data-tt="hint4">Since there is no decimal, trailing zeros are not significant.</p>
+            <p data-tt="hint4">Omdat er geen decimaal is, zijn de nullen achter de cijfers die geen nul zijn niet significant.</p>
             <p><code>\color{orange}{<var>PROPER_LEADING</var>}\color{blue}{<var>INBETWEEN</var>}\color{orange}{<var>TRAILING</var>}</code></p>
         </div>
-        <p data-tt="hint5">Counting all the significant digits gives us <var>SOLUTION</var>.</p>
+        <p data-tt="hint5">Het tellen van alle significante cijfers geeft een totaal van <var>SOLUTION</var>.</p>
     </div>
 </div>
 </body>

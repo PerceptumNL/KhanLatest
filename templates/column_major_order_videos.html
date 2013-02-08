@@ -1,10 +1,34 @@
 {% import 'macros/library.html' as library %}
 
-<div style="height:{{list_height}}px;" data-role="listview" data-inset="true">
+<div style="height:{{ list_height }}px;" data-role="listview" data-inset="true">
     {% for item in content %}
-    {% if item.kind()=="Video" %}<a class="m{{loop.index0|find_column_index(column_indices)}} vl vid-progress v{{ item.key().id() }}"{% if loop.index0|in_list(column_indices) %} style="margin-top:-{{loop.index0|column_height(column_indices) * link_height}}px;"{%endif%} href="{{ topic.get_extended_slug() }}/v/{{item.readable_id}}" data-tag="Homepage Library">{{item.title|escape}}</a>
-    {% elif item.kind()=="Url" %}<a class="m{{loop.index0|find_column_index(column_indices)}} vl vid-progress v{{ item.key().id() }}"{% if loop.index0|in_list(column_indices) %} style="margin-top:-{{loop.index0|column_height(column_indices) * link_height}}px;"{%endif%} href="{{item.url}}" data-tag="Homepage Library">{{item.title|escape}}</a>
-    {% endif %}
+        {% if item.kind()=="Video" %}
+            <a class="m{{ loop.index0|find_column_index(column_indices) }} vl vid-progress v{{ item.key().id() }}"
+                    {% if loop.index0|in_list(column_indices) %}
+               style="margin-top:-{{ loop.index0|column_height(column_indices) * link_height }}px;"
+                    {% endif %}
+               href="{{ topic.get_extended_slug() }}/v/{{ item.readable_id }}"
+               data-tag="Homepage Library">
+                {% if item.title %}
+                    {{ item.title.replace(".wmv", "").replace(".avi", "").replace(".mpg", "").replace(".mpeg", "") }}
+                {% else %}
+                    {{ escape }}
+                {% endif %}
+            </a>
+        {% elif item.kind()=="Url" %}
+            <a class="m{{ loop.index0|find_column_index(column_indices) }} vl vid-progress v{{ item.key().id() }}"
+                    {% if loop.index0|in_list(column_indices) %}
+               style="margin-top:-{{ loop.index0|column_height(column_indices) * link_height }}px;"
+                    {% endif %}
+               href="{{ item.url }}"
+               data-tag="Homepage Library">
+                {% if item.title %}
+                    {{ item.title }}
+                {% else %}
+                    {{ escape }}
+                {% endif %}
+            </a>
+        {% endif %}
     {% endfor %}
 </div>
 

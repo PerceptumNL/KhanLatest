@@ -8,14 +8,14 @@
   <div class="achievement-title">{{badge.description}}</div>
   <div class="achievement-desc">
       {{#if badge.isRetired}}
-        This badge has been <span class="badge-context-retired">retired</span>!
-        You get to keep it forever, but nobody else can earn it.
+        Deze badge is <span class="badge-context-retired">buiten dienst</span>!
+        Jij mag hem voor altijd houden, maar niemand anders kan hem nog verdienen.
       {{else}}
-        Last achieved <abbr class="timeago" title="{{lastEarnedDate}}">{{lastEarnedDate}}</abbr>
+        Voor het laatst behaald: <abbr class="timeago" title="{{lastEarnedDate}}">{{lastEarnedDate}}</abbr>
         {{#if visibleContextName}}
           in <strong>{{visibleContextName}}</strong>
           {{#if hasMultiple}}
-            <span class="badge-context-hidden-link"><a href="#" onclick="Badges.showMoreContext(this);return false;">and also in<span class="ellipsis">...</span></a></span>
+            <span class="badge-context-hidden-link"><a href="#" onclick="Badges.showMoreContext(this);return false;">en ook in<span class="ellipsis">...</span></a></span>
             <span class="badge-context-hidden" style="display:none;">
             {{#each listContextNamesHidden}}
                <strong>{{name}}{{#unless isLast}}, {{/unless}}</strong>

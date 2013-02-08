@@ -23,7 +23,7 @@ class TenThousandaireBadge(PointBadge):
     def __init__(self):
         PointBadge.__init__(self)
         self.required_points = 10000
-        self.description = "Tien tot de macht Vier"
+        self.description = "Tien tot de macht vier"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 

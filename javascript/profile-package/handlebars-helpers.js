@@ -30,26 +30,26 @@ Handlebars.registerHelper("secondsToTime", function(seconds) {
     seconds -= minutes * 60;
 
     if (years) {
-        return years + " year" + (years > 1 ? "s" : "");
+        return years + " jaar" + (years > 1 ? "/jaren" : "");
     } else if (months) {
-        return months + " month" + (months > 1 ? "s" : "");
+        return months + " maand" + (months > 1 ? "/maanden" : "");
     } else if (weeks) {
-        return weeks + " week" + (weeks > 1 ? "s" : "");
+        return weeks + " week" + (weeks > 1 ? "/weken" : "");
     } else if (days) {
-        var result = days + " day" + (days > 1 ? "s" : "");
+        var result = days + " dag" + (days > 1 ? "/dagen" : "");
         if (hours) {
-            result += " " + hours + " hour" + (hours > 1 ? "s" : "");
+            result += " " + hours + " uur" + (hours > 1 ? "/uren" : "");
         }
         return result;
     } else if (hours) {
-        var result = hours + " hour" + (hours > 1 ? "s" : "");
+        var result = hours + " uur" + (hours > 1 ? "/uren" : "");
         if (minutes) {
-            result += minutes + " minute" + (minutes > 1 ? "s" : "");
+            result += minutes + " minuut" + (minutes > 1 ? "/minuten" : "");
         }
     } else if (!minutes && seconds) {
-        return seconds + " second" + (seconds > 1 ? "s" : "");
+        return seconds + " seconde" + (seconds > 1 ? "n" : "");
     } else {
-        return minutes + " minute" + (minutes > 1 ? "s" : "");
+        return minutes + " minuut" + (minutes > 1 ? "/minuten" : "");
     }
 });
 Handlebars.registerHelper("questions_string", function(number) {

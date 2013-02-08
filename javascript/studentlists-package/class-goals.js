@@ -211,7 +211,7 @@ _.extend(ClassProfile, {
     },
 
     updateStudentGoalsFilterText: function(studentGoalsViewModel) {
-        var text = 'Sorted by ' + studentGoalsViewModel.sortDesc + '. ' + studentGoalsViewModel.filterDesc + '.';
+        var text = 'Gesorteerd op ' + studentGoalsViewModel.sortDesc + '. ' + studentGoalsViewModel.filterDesc + '.';
         $('#class-goal-filter-desc').html(text);
     },
 
@@ -225,24 +225,24 @@ _.extend(ClassProfile, {
 
         studentGoalsViewModel.filterDesc = '';
         if (filters['most-recent']) {
-            studentGoalsViewModel.filterDesc += 'most recently worked on goals';
+            studentGoalsViewModel.filterDesc += 'doelstellingen waar het laatst aan is gewerkt';
         }
         if (filters['in-progress']) {
             if (studentGoalsViewModel.filterDesc != '') studentGoalsViewModel.filterDesc += ', ';
-            studentGoalsViewModel.filterDesc += 'goals in progress';
+            studentGoalsViewModel.filterDesc += 'doelstellingen waar aan wordt gewerkt';
         }
         if (filters['struggling']) {
             if (studentGoalsViewModel.filterDesc != '') studentGoalsViewModel.filterDesc += ', ';
-            studentGoalsViewModel.filterDesc += 'students who are struggling';
+            studentGoalsViewModel.filterDesc += 'leerlingen die moeite hebben';
         }
         if (filter_text != '') {
             if (studentGoalsViewModel.filterDesc != '') studentGoalsViewModel.filterDesc += ', ';
-            studentGoalsViewModel.filterDesc += 'students/goals matching "' + filter_text + '"';
+            studentGoalsViewModel.filterDesc += 'leerlingen/doelstellingen gelijk "' + filter_text + '"';
         }
         if (studentGoalsViewModel.filterDesc != '')
-            studentGoalsViewModel.filterDesc = 'Showing only ' + studentGoalsViewModel.filterDesc;
+            studentGoalsViewModel.filterDesc = 'Geeft alleen' + studentGoalsViewModel.filterDesc 'weer';
         else
-            studentGoalsViewModel.filterDesc = 'No filters applied';
+            studentGoalsViewModel.filterDesc = 'Geen filters toegepast.';
 
         var container = $('#class-student-goal').detach();
 

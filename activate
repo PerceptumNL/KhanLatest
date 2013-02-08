@@ -33,3 +33,5 @@ if [[ ! "$PS1" == *kenv* ]]; then
 	PS1="${COLOR_PURPLE}(kenv)${COLOR_NC}$PS1"
 fi
 
+kenv
+

@@ -139,30 +139,30 @@ class TopicVersion(backup_model.BackupModel):
         return new_version
 
     @staticmethod
-    @layer_cache.cache_with_key_fxn(
-        lambda *args, **kwargs: "topic_models_default_version_%s" %
-            setting_model.Setting.topic_tree_version())
+    #@layer_cache.cache_with_key_fxn(
+    #    lambda *args, **kwargs: "topic_models_default_version_%s" %
+    #        setting_model.Setting.topic_tree_version())
     def get_default_version():
         return TopicVersion.all().filter("default = ", True).get()
 
     @staticmethod
-    @layer_cache.cache_with_key_fxn(
-        lambda *args, **kwargs: "topic_models_edit_version_%s" %
-            setting_model.Setting.topic_tree_version())
+    #@layer_cache.cache_with_key_fxn(
+    #    lambda *args, **kwargs: "topic_models_edit_version_%s" %
+    #        setting_model.Setting.topic_tree_version())
     def get_edit_version():
         return TopicVersion.all().filter("edit = ", True).get()
 
     @staticmethod
-    @decorators.synchronized_with_memcache(
-        timeout=300)  # takes 70secs on dev 03/2012
+    #@decorators.synchronized_with_memcache(
+    #    timeout=300)  # takes 70secs on dev 03/2012
     def create_edit_version():
-        version = TopicVersion.all().filter("edit = ", True).get()
-        if version is None:
+        edit_version = TopicVersion.get_edit_version()
+        if edit_version is None:
             default = TopicVersion.get_default_version()
-            version = default.copy_version()
-            version.edit = True
-            version.put()
-            return version
+            edit_version = default.copy_version()
+            edit_version.edit = True
+            edit_version.put()
+            return edit_version
         else:
             logging.warning("Edit version already exists")
             return False
@@ -315,9 +315,6 @@ class Topic(search.Searchable, backup_model.BackupModel):
 
     description = db.TextProperty(indexed=False)
 
-    # icon namn that matches, i.e.
-    # "images/power-mode/badges/[icon_name]-40x40.png"
-    icon_name = db.StringProperty()
 
     # to be able to access the parent without having to resort to a
     # query - parent_keys is used to be able to hold more than one
@@ -338,6 +335,8 @@ class Topic(search.Searchable, backup_model.BackupModel):
     last_edited_by = db.UserProperty(indexed=False)
     h_position = db.IntegerProperty(default=0)
     v_position = db.IntegerProperty(default=0)
+    # icon namn that matches, i.e.
+    # "images/power-mode/badges/[icon_name]-40x40.png"
     icon_name = db.StringProperty(indexed=False)
 
     INDEX_ONLY = ['standalone_title', 'description']
@@ -1957,7 +1956,6 @@ def _preload_default_version_data(version_number, run_code):
 
     # Preload topic browsers
     preload_topic_browsers(version)
-
     # Preload autocomplete cache
     autocomplete.video_title_dicts(version.number)
     logging.info("preloaded video autocomplete")
@@ -1969,10 +1967,6 @@ def _preload_default_version_data(version_number, run_code):
     badges.topic_exercise_badges.sync_with_topic_version(version)
     logging.info("synced topic exercise badges")
 
-    map_layout = layout.MapLayout.get_for_version(version)
-    map_layout.layout = layout.MapLayout.from_editversion()
-    map_layout.put()
-
     _do_set_default_deferred_step(_change_default_version,
                                   version_number,
                                   run_code)
@@ -1980,33 +1974,34 @@ def _preload_default_version_data(version_number, run_code):
 
 def _change_default_version(version_number, run_code):
     setting_model.Setting.topic_admin_task_message(
-        "Publish: changing default version")
+        "Publish: changing default version to %s" % version_number)
     version = TopicVersion.get_by_id(version_number)
 
     default_version = TopicVersion.get_default_version()
-    logging.info("Setting default version number: %d" % version_number)
 
-    def update_txn():
+    # def update_txn():
 
-        if default_version:
-            default_version.default = False
-            default_version.put()
+    if default_version:
+        logging.info("Current default version number: %d" % default_version.number)
+        default_version.default = False
+        default_version.put()
 
-        version.default = True
-        version.made_default_on = datetime.datetime.now()
-        version.edit = False
+    logging.info("Setting default version number: %d" % version.number)
+    version.edit = False
+    version.put()
+    version.default = True
+    version.made_default_on = datetime.datetime.now()
+    version.put()
 
-        setting_model.Setting.topic_tree_version(version.number)
-        setting_model.Setting.cached_content_add_date(datetime.datetime.now())
+    setting_model.Setting.topic_tree_version(version.number)
+    setting_model.Setting.cached_content_add_date(datetime.datetime.now())
 
-        version.put()
-
-    transaction_util.ensure_in_transaction(update_txn, xg_on=True)
+    # transaction_util.ensure_in_transaction(update_txn, xg_on=True)
 
     # setting the topic tree version in the transaction won't update
     # memcache as the new values for the setting are not complete till the
     # transaction finishes ... so updating again outside the txn
-    setting_model.Setting.topic_tree_version(version.number)
+    #setting_model.Setting.topic_tree_version(version.number)
 
     logging.info("done setting new default version")
 
@@ -2029,8 +2024,15 @@ def _change_default_version(version_number, run_code):
         "Publish: creating new edit version")
 
     logging.info("creating a new edit version")
-    TopicVersion.create_edit_version()
+    edit_version = TopicVersion.create_edit_version()
     logging.info("done creating new edit version")
+
+    logging.info("creating maplayout from current version")
+    map_layout = layout.MapLayout.get_for_version(edit_version)
+    map_layout.layout = layout.MapLayout.from_editversion()
+    map_layout.put()
+    logging.info("done creating maplayout")
+
 
     _do_set_default_deferred_step(_rebuild_content_caches,
                                   version_number,

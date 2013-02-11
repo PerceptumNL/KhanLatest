@@ -541,6 +541,7 @@ def get_topic_page_data(topic_id, version_id="default"):
 @jsonify
 def get_maplayout(version_id=None):
     version = topic_models.TopicVersion.get_by_id(version_id)
+    logging.info("get maplayout:" + str(version.number))
     if version is None:
         return api_invalid_param_response("Could not find version_id %s"
                                           % version_id)
@@ -559,6 +560,20 @@ def put_maplayout(version_id="edit"):
                                           % version_id)
 
     map_layout = MapLayout.get_for_version(version)
+
+    topics = topic_models.Topic.get_all_topics(version, True)
+    updated_topics = []
+    for request_topic in request.json['topics'].values():
+        logging.info(request_topic)
+        #TODO: update by id instead of display_name to avoid possible conflicts
+        #needs to hold the id of the topic in the Map Layout layout version.
+        topic = next(i for i in topics if i.standalone_title == request_topic['standalone_title'])
+        topic.h_position = int(request_topic['x'])
+        topic.v_position = int(request_topic['y'])
+        updated_topics.append(topic)
+
+    db.put(updated_topics)
+
     map_layout.layout = request.json
     map_layout.put()
 

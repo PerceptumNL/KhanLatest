@@ -82,5 +82,5 @@
 {%- endmacro %}
 
 {% macro possible_points_badge(points, possible_points, logged_in=True) -%}
-<div class="video-energy-points"{% if logged_in %} title="{{ points }} Energiepunten verdient voor het bekijken van deze video"{% else %} title="Je verdient energiepunten voor het bekijken van deze video. Log in om ze te bewaren."{% endif %}><span class="video-energy-points-current">{{ points }}</span> of {{ possible_points }}</div>
+<div class="video-energy-points"{% if logged_in %} title="{{ points }} Energiepunten verdient voor het bekijken van deze video"{% else %} title="Je verdient energiepunten voor het bekijken van deze video. Log in om ze te bewaren."{% endif %}><span class="video-energy-points-current">{{ points }}</span> van {{ possible_points }}</div>
 {%- endmacro %}

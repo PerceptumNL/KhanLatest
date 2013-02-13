@@ -1142,7 +1142,7 @@ class Topic(search.Searchable, backup_model.BackupModel):
 
         version.update()
         return transaction_util.ensure_in_transaction(Topic._insert_txn,
-                                                      new_topic)
+                                                      new_topic, xg_on=True)
 
     def update(self, **kwargs):
         if self.version.default:

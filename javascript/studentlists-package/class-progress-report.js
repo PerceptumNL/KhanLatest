@@ -253,7 +253,7 @@ var ProgressReport = {
     },
 
     showBrowserRequirements: function() {
-        $("#module-progress").replaceWith("<div class='graph-notification'>This chart requires a newer browser such as Google Chrome, Safari, Firefox, or Internet Explorer 8+.</div>");
+        $("#module-progress").replaceWith("<div class='graph-notification'>Voor deze grafiek heb je een andere browser nodig zoals Google Chrome, Safari, Firefox, of Internet Explorer 8+.</div>");
     },
 
     hoverDiv: function() {

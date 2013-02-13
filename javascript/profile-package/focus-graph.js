@@ -8,7 +8,7 @@ var FocusGraph = {
             // Exercise legend in the upper left
             var exerciseLegend = {
                 type: "pie",
-                name: "Skills",
+                name: "Vaardigheden",
                 cursor: "",
                 size: "20%",
                 innerSize: "13%",
@@ -20,7 +20,7 @@ var FocusGraph = {
                 },
                 data: [
                         {
-                            name: "Skills",
+                            name: "Vaardigheden",
                             fLegend: true,
                             y: 100,
                             color: "silver"
@@ -33,7 +33,7 @@ var FocusGraph = {
             // Exercise graph in the center
             var exerciseFocus = {
                 type: "pie",
-                name: "Skill Focus",
+                name: "Focus op vaardigheden",
                 innerSize: "55%",
                 size: "85%"
             };
@@ -49,7 +49,7 @@ var FocusGraph = {
                 };
             }
             exerciseFocus.data = _.map(this.segmentData.dictExerciseSeconds, function(segment, key) {
-                var proficientText = segment["proficient"] ? (", <b>" + this.star + "Proficient</b>") : "",
+                var proficientText = segment["proficient"] ? (", <b>" + this.star + "Gehaald</b>") : "",
                     tooltip = "<b>" + segment["exerciseTitle"] + "</b> (skill" + proficientText + ")";
 
                 return {
@@ -156,7 +156,7 @@ var FocusGraph = {
                 if (this.point.fLegend) {
                     return false;
                 }
-                return this.point.tooltip_title + "<br/> - " + this.point.time_spent + " total<br><br>" + this.point.tooltip_more;
+                return this.point.tooltip_title + "<br/> - " + this.point.time_spent + " in totaal<br><br>" + this.point.tooltip_more;
             }
         }
     },

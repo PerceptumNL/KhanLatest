@@ -26,7 +26,7 @@ class FirstUpVoteBadge(badges.Badge):
 
     def __init__(self):
         badges.Badge.__init__(self)
-        self.description = "Duimen op"
+        self.description = "Duim omhoog"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 

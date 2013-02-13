@@ -50,7 +50,7 @@ var FocusGraph = {
             }
             exerciseFocus.data = _.map(this.segmentData.dictExerciseSeconds, function(segment, key) {
                 var proficientText = segment["proficient"] ? (", <b>" + this.star + "Gehaald</b>") : "",
-                    tooltip = "<b>" + segment["exerciseTitle"] + "</b> (skill" + proficientText + ")";
+                    tooltip = "<b>" + segment["exerciseTitle"] + "</b> (vaardigheid" + proficientText + ")";
 
                 return {
                     name: "<b>" + segment["exerciseTitle"] + (segment["proficient"] ? " " + this.star : "") + "</b>",

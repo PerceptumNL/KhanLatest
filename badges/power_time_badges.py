@@ -55,7 +55,7 @@ class PowerTimeBadge(badges.Badge):
         return True
 
     def extended_description(self):
-        return "Beantwoord %s problemen correct en bekijk %s van de video van de %s" % (
+        return "Beantwoord %s problemen correct en bekijk %s van een video (bestaande uit %s)" % (
             self.problems_required,
             templatefilters.seconds_to_time_string(
                 self.video_seconds_required),

@@ -3340,8 +3340,8 @@ def update_video_recommendation_matrix():
 @jsonify
 def get_lrs():
     #user_data = request.request_student_user_data()
-    email = "test@example.com"
-    username = "test"
+    email = "jaime@example.com"
+    username = "jaime"
     user_data = user_models.UserData.all().filter("user_email = ", email).fetch(1)[0]
     problem_log_query = exercise_models.ProblemLog.all()
     problem_log_query.filter("user =", user_data.user)
@@ -3378,23 +3378,24 @@ def get_lrs():
                                 "en-US": "started"
                             }
                         },
-                       #     "verb": {
-                       #                 "id": "http://adlnet.gov/xapi/verbs/passed(to_go_beyond)",
-                       #                         "display": {
-                       #                                         "en-US": "passed"
-                       #                                                 }
-                       #                             },
-                       #         "result": {
-                       #                     "score": {
-                       #                                     "raw": 726,
-                       #                                                 "min": 0
-                       #                                                         },
-                       #                             "extensions": {
-                       #                                             "time": "4",
-                       #                                                         "lines": "0",
-                       #                                                                     "apm": "1680"
-                       #                                                                             }
-                       #                                 },
+                        "verb": {
+                        	"id": "http://adlnet.gov/xapi/verbs/passed"
+							"number_attemps" : problem.count_hints,
+                            "display": {
+                                "en-US": "passed"
+                             }
+                        },
+                        "result": {
+                        	"score": {
+                            	"raw": 726,
+                                 "min": 0
+                                 },
+                                 "extensions": {
+                                 "time": "4",
+                                 "lines": "0",
+                                 "apm": "1680"
+                                 }
+                            },
                        #---- oto verbo
 
                       # "verb": {

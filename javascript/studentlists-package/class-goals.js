@@ -145,7 +145,7 @@ _.extend(ClassProfile, {
                 return a.goal_idx-b.goal_idx;
             });
 
-            studentGoalsViewModel.sortDesc = 'student name';
+            studentGoalsViewModel.sortDesc = 'naam';
             show_updated = false; // started
 
         } else if (sort == 'progress') {
@@ -153,7 +153,7 @@ _.extend(ClassProfile, {
                 return b.progress_count - a.progress_count;
             });
 
-            studentGoalsViewModel.sortDesc = 'goal progress';
+            studentGoalsViewModel.sortDesc = 'voortgang doelstellingen';
             show_updated = true; // updated
 
         } else if (sort == 'created') {
@@ -171,7 +171,7 @@ _.extend(ClassProfile, {
                 return 0;
             });
 
-            studentGoalsViewModel.sortDesc = 'goal creation time';
+            studentGoalsViewModel.sortDesc = 'beginpunt gekozen doelstelling';
             show_updated = false; // started
 
         } else if (sort == 'updated') {
@@ -189,7 +189,7 @@ _.extend(ClassProfile, {
                 return 0;
             });
 
-            studentGoalsViewModel.sortDesc = 'last work logged time';
+            studentGoalsViewModel.sortDesc = 'laatst opgeslagen werk';
             show_updated = true; // updated
         }
 

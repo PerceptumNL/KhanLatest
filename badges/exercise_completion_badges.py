@@ -129,7 +129,7 @@ class LevelOneTrigonometricianBadge(ExerciseCompletionBadge):
         ExerciseCompletionBadge.__init__(self)
         self.exercise_names_required = [
             'angles_2', 'distance_formula', 'pythagorean_theorem_1']
-        self.description = "pupil in trigoniometrie"
+        self.description = "Pupil in trigoniometrie"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 100
 

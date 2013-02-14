@@ -141,17 +141,17 @@ class BadgeCategory(object):
     @staticmethod
     def get_type_label(category):
         if category == BadgeCategory.BRONZE:
-            return "meteorite"
+            return "Meteoriet"
         elif category == BadgeCategory.SILVER:
-            return "Moon"
+            return "Maan"
         elif category == BadgeCategory.GOLD:
-            return "Earth"
+            return "Aarde"
         elif category == BadgeCategory.PLATINUM:
-            return "Sun"
+            return "Zon"
         elif category == BadgeCategory.DIAMOND:
-            return "Black Hole"
+            return "Zwart gat"
         elif category == BadgeCategory.MASTER:
-            return "Challenge Patches"
+            return "Uitdagingen badges"
         return "Common"
 
 

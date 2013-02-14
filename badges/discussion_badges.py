@@ -15,7 +15,7 @@ class FirstFlagBadge(badges.Badge):
         self.points = 0
 
     def extended_description(self):
-        return ("Markeer je eerste vraag of plaats een opmerkinge onder een video")
+        return ("Markeer je eerste vraag of plaats een opmerking onder een video")
 
     def is_manually_awarded(self):
         return True
@@ -26,7 +26,7 @@ class FirstUpVoteBadge(badges.Badge):
 
     def __init__(self):
         badges.Badge.__init__(self)
-        self.description = "Duimen op"
+        self.description = "Duim omhoog"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -43,12 +43,12 @@ class FirstDownVoteBadge(badges.Badge):
 
     def __init__(self):
         badges.Badge.__init__(self)
-        self.description = "Duimen omlaag"
+        self.description = "Duim omlaag"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
     def extended_description(self):
-        return ("Breng je eerste negatieve stem uit voor nutteloze vraag, "
+        return ("Breng je eerste negatieve stem uit voor een nutteloze vraag, "
                 "antwoord, of opmerking onder een video")
 
     def is_manually_awarded(self):
@@ -106,7 +106,7 @@ class AnswerTimestampReferenceBadge(FeedbackTimestampReferenceBadge):
         self.description = "Onderzoeker"
 
     def extended_description(self):
-        return "Verwijs naar de datum wanneer je een vraag beantwoord bij een video"
+        return "Verwijs naar de datum wanneer je een vraag beantwoordt bij een video"
 
     def required_feedback_type(self):
         return discussion.discussion_models.FeedbackType.Answer

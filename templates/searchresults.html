@@ -49,7 +49,7 @@
 {% block pagemessage %}
     {% if query_too_short %}
     <div class="error">
-        Search terms must contain at least {{query_too_short}} letters.
+        Een zoekterm moet uit minstens {{query_too_short}} letters bestaan.
     </div>
     {% endif %}
 {% endblock pagemessage %}
@@ -62,7 +62,7 @@
     {% endif %}
     <form id="page_requery" action="/search">
         <input id="search-page-box" type="text" name="page_search_query" value='{{page_search_query|escape}}'>
-        <button type="submit">New Search</button>
+        <button type="submit">Zoeken</button>
     </form>
     {% if topics and matching_topic_count %}
     <section class="topics search-topics">
@@ -92,10 +92,10 @@
     {% endif %}
 
     <section class="searchresult-counts">
-        {% if (video_count == 0 and topic_count == 0) %}
-            No videos were found. Please try a different query.
+        {% if (_count == 0 and topic_count == 0) %}
+	    Geen video's gevonden. Probeer andere zoektermen.	
         {% else %}
-            Found {{ video_count }} video{{ video_count|pluralize }} in {{ topic_count }} topic{{ topic_count|pluralize }} that match{% if video_count == 1 %}es{% endif %} your query:
+            Vind {{ video_count }} video{{ video_count|pluralize }} in {{ topic_count }} topic{{ topic_count|pluralize }} that match{% if video_count == 1 %}es{% endif %} your query:
         {% endif %}
     </section>
     {% if topics %}
@@ -105,7 +105,7 @@
         {% if topic.match_count > 0 %}
             <dt><h2 class="topic">{{ topic.standalone_title|escape }}
             <span class="match_count">
-                ({{ topic.match_count }} matching video{{ topic.match_count|pluralize }})
+                ({{ topic.match_count }} video's gevonden)
             </span>
             </h2></dt>
 

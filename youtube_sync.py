@@ -31,7 +31,7 @@ def youtube_get_video_data(video):
 def youtube_get_video_data_dict(youtube_id):
     yt_service = third_party.gdata.youtube.service.YouTubeService()
 
-    # Now that we run these queries from the App Engine servers, we need to 
+    # Now that we run these queries from the App Engine servers, we need to
     # explicitly specify our developer_key to avoid being lumped together w/ rest of GAE and
     # throttled by YouTube's "Too many request" quota
     yt_service.developer_key = "AI39si5NKByjOThtM6t1gnmg4N9HkzGPHHkVvRUybKuPG53277wY0Bs4zcvi-G4JiFioRs0738gaE01k1rX-_6-mIHp9jg1twQ"
@@ -56,7 +56,7 @@ def youtube_get_video_data_dict(youtube_id):
 
         potential_id = re.sub('[^a-z0-9]', '-', video_data["title"].lower());
         potential_id = re.sub('-+$', '', potential_id)  # remove any trailing dashes (see issue 1140)
-        potential_id = re.sub('^-+', '', potential_id)  # remove any leading dashes (see issue 1526)                        
+        potential_id = re.sub('^-+', '', potential_id)  # remove any leading dashes (see issue 1526)
 
         number_to_add = 0
         current_id = potential_id
@@ -68,7 +68,7 @@ def youtube_get_video_data_dict(youtube_id):
                 break
             else: # id is not unique so will have to go through loop again
                 number_to_add+=1
-                current_id = potential_id+'-'+number_to_add                       
+                current_id = potential_id+'-'+number_to_add
 
         return video_data
 
@@ -93,6 +93,10 @@ class YouTubeSync(request_handler.RequestHandler):
 
     @user_util.manual_access_checking  # superuser-only via app.yaml (/admin)
     def get(self):
+        disabled_message = "Youtube sync has been deactivated in the code to avoid to override the current video names"
+        logging.info(disabled_message)
+        self.response.out.write(disabled_message)
+        return
 
         if self.request_bool("start", default = False):
             self.task_step(0)
@@ -146,7 +150,7 @@ class YouTubeSync(request_handler.RequestHandler):
 
         yt_service = third_party.gdata.youtube.service.YouTubeService()
 
-        # Now that we run these queries from the App Engine servers, we need to 
+        # Now that we run these queries from the App Engine servers, we need to
         # explicitly specify our developer_key to avoid being lumped together w/ rest of GAE and
         # throttled by YouTube's "Too many request" quota
         yt_service.developer_key = "AI39si6ctKTnSR_Vx7o7GpkpeSZAKa6xjbZz6WySzTvKVYRDAO7NHBVwofphk82oP-OSUwIZd0pOJyNuWK8bbOlqzJc9OFozrQ"
@@ -183,7 +187,7 @@ class YouTubeSync(request_handler.RequestHandler):
                         playlist_data.tags.append(category.term)
 
                 playlist_data.put()
-                
+
                 for i in range(0, 10):
                     start_index = i * 50 + 1
                     video_feed = yt_service.GetYouTubePlaylistVideoFeed(uri=playlist_uri + '?start-index=' + str(start_index) + '&max-results=50')
@@ -202,7 +206,7 @@ class YouTubeSync(request_handler.RequestHandler):
                         video_data = None
                         if video_youtube_id_dict.has_key(video_id):
                             video_data = video_youtube_id_dict[video_id]
-                        
+
                         if not video_data:
                             video_data = Video(youtube_id=video_id)
                             self.response.out.write('<p><strong>Creating Video: ' + video.media.title.text.decode('utf-8') + '</strong>')
@@ -233,7 +237,7 @@ class YouTubeSync(request_handler.RequestHandler):
                     db.put(video_data_list)
 
                     playlist_videos = []
-                    for video_data in video_data_list:                
+                    for video_data in video_data_list:
                         playlist_video = None
                         if video_playlist_key_dict.has_key(playlist_data.key()):
                             if video_playlist_key_dict[playlist_data.key()].has_key(video_data.key()):
@@ -261,7 +265,7 @@ class YouTubeSync(request_handler.RequestHandler):
         for video in all_videos:
             potential_id = re.sub('[^a-z0-9]', '-', video.title.lower());
             potential_id = re.sub('-+$', '', potential_id)  # remove any trailing dashes (see issue 1140)
-            potential_id = re.sub('^-+', '', potential_id)  # remove any leading dashes (see issue 1526)                        
+            potential_id = re.sub('^-+', '', potential_id)  # remove any leading dashes (see issue 1526)
             if video.readable_id == potential_id: # id is unchanged
                 continue
             number_to_add = 0
@@ -275,7 +279,7 @@ class YouTubeSync(request_handler.RequestHandler):
                     break
                 else: # id is not unique so will have to go through loop again
                     number_to_add+=1
-                    current_id = potential_id+'-'+number_to_add                       
+                    current_id = potential_id+'-'+number_to_add
 
     def commitLiveAssociations(self):
         association_generation = int(Setting.last_youtube_sync_generation_start())

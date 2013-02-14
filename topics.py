@@ -36,28 +36,20 @@ class EditContent(request_handler.RequestHandler):
 
         edit_version = TopicVersion.get_by_id(version_name)
         if edit_version is None:
-            default_version = TopicVersion.get_default_version()
-            if default_version is None:
-                # Create empty default version
-                default_version = TopicVersion.create_new_version()
-                root = create_root(default_version)
-                default_version.default = True
-                default_version.edit = False
-                default_version.put()
-                map_layout = layout.MapLayout.get_for_version(default_version)
-                if not map_layout.has_layout:
-                    # TODO(KNL): Load map layout from location
-                    map_layout.layout = json.loads('{"polylines":[],"topics":{"Getallen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"getallen","standalone_title":"Getallen","x":0,"y":4},"Verhoudingen":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verhoudingen","standalone_title":"Verhoudingen","x":0,"y":7},"Meten en Meetkunde":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"meetkunde","standalone_title":"Meten en Meetkunde","x":3,"y":4},"Verbanden":{"icon_url":"\x2Fimages\x2Fpower-mode\x2Fbadges\x2Fdefault-40x40.png","id":"verbanden","standalone_title":"Verbanden","x":3,"y":7}}}');
-                    map_layout.put()
-                # Create empty edit version
-                old_tree = root.make_tree(types=["Topics"], include_hidden=True)
-                edit_version = TopicVersion.create_new_version()
-                edit_version.copied_from = default_version
-                edit_version.edit = True
-                TopicVersion.copy_tree(root, edit_version)
-                edit_version.put()
-            else:
-                raise Exception("Wait for setting default version to finish making an edit version.")
+            #invi: should only run when topic tree is empty
+            edit_version = TopicVersion.create_new_version()
+            edit_version.edit = True
+            edit_version.put()
+            create_root(edit_version)
+            edit_version.put()
+            edit_version.edit = False
+            edit_version.default = True
+            edit_version.put()
+            edit_version = TopicVersion.create_new_version()
+            edit_version.edit = True
+            edit_version.put()
+            create_root(edit_version)
+            edit_version.put()
 
         if self.request.get('autoupdate', False):
             self.render_jinja2_template('autoupdate_in_progress.html', {"edit_version": edit_version})
@@ -77,7 +69,7 @@ class EditContent(request_handler.RequestHandler):
             'edit_version': jsonify(edit_version),
             'tree_nodes': jsonify(tree_nodes)
             }
- 
+
         self.render_jinja2_template('topics-admin.html', template_values)
         return
 
@@ -99,7 +91,7 @@ class EditContent(request_handler.RequestHandler):
 
         except urlfetch.Error, e:
             logging.exception("Failed to fetch content from khanacademy.org")
-  
+
     def fix_duplicates(self):
         dry_run = self.request.get('dry_run', False)
         video_list = [v for v in video_models.Video.all()]
@@ -108,7 +100,7 @@ class EditContent(request_handler.RequestHandler):
         version = topic_models.TopicVersion.get_by_id("edit")
 
         videos_to_update = []
-        
+
         for video in video_list:
             if not video.readable_id in video_dict:
                 video_dict[video.readable_id] = []
@@ -126,7 +118,7 @@ class EditContent(request_handler.RequestHandler):
                         canonical_key_id = video.key().id()
                     if not canonical_readable_id or len(video.readable_id) < len(canonical_readable_id):
                         canonical_readable_id = video.readable_id
-                
+
                 def print_video(video, is_canonical, dup_idx):
                     canon_str = "CANONICAL" if is_canonical else "DUPLICATE"
                     topic_strings = "|".join([topic.id for topic in topic_models.Topic.all().filter("version = ", version).filter("child_keys =", video.key()).run()])
@@ -210,7 +202,7 @@ class RefreshCaches(request_handler.RequestHandler):
             "refresh_options": refresh_options,
             "started_list": started_list,
             }
- 
+
         self.render_jinja2_template('topics-refresh.html', template_values)
 
 
@@ -225,7 +217,7 @@ def create_root(version):
 def getSmartHistoryContent():
     try:
         response = urlfetch.fetch(url="hxxp://khan.smarthistory.org/"
-                                  "youtube-urls-for-khan-academy.html", 
+                                  "youtube-urls-for-khan-academy.html",
                                   deadline=25)
         smart_history = json.loads(response.content)
     except urlfetch.Error, e:
@@ -240,12 +232,12 @@ class ImportSmartHistory(request_handler.RequestHandler):
         """update the default and edit versions of the topic tree with smarthistory (creates a new default version if there are changes)"""
         default = topic_models.TopicVersion.get_default_version()
         edit = topic_models.TopicVersion.get_edit_version()
-        
+
         logging.info("importing into edit version")
         # if there are any changes to the edit version
         if ImportSmartHistory.importIntoVersion(edit):
 
-            # make a copy of the default version, 
+            # make a copy of the default version,
             # update the copy and then mark it default
             logging.info("creating new default version")
             new_version = default.copy_version()
@@ -254,14 +246,14 @@ class ImportSmartHistory(request_handler.RequestHandler):
 
             logging.info("importing into new version")
             ImportSmartHistory.importIntoVersion(new_version)
-                
+
             logging.info("setting version default")
             new_version.set_default_version()
             logging.info("done setting version default")
 
         logging.info("done importing smart history")
 
-                        
+
     @staticmethod
     def importIntoVersion(version):
         logging.info("comparing to version number %i" % version.number)
@@ -276,10 +268,10 @@ class ImportSmartHistory(request_handler.RequestHandler):
                                  id="art-history",
                                  standalone_title="Art History",
                                  description="Spontaneous conversations about works of art where the speakers are not afraid to disagree with each other or art history orthodoxy. Videos are made by Dr. Beth Harris and Dr. Steven Zucker along with other contributors.")
-        
+
         urls = topic.get_urls(include_descendants=True)
         href_to_key_dict = dict((url.url, url.key()) for url in urls)
-        
+
         videos = topic.get_videos(include_descendants=True)
         video_dict = dict((v.youtube_id, v) for v in videos)
 
@@ -290,7 +282,7 @@ class ImportSmartHistory(request_handler.RequestHandler):
         subtopics = topic.get_child_topics()
         subtopic_dict = dict((t.title, t) for t in subtopics)
         subtopic_child_keys = {}
-        
+
         new_subtopic_keys = []
 
         i = 0
@@ -305,33 +297,33 @@ class ImportSmartHistory(request_handler.RequestHandler):
             if parent_title not in subtopic_dict:
                 subtopic = Topic.insert(title=parent_title,
                                  parent=topic,
-                                 standalone_title="Art History: %s" 
+                                 standalone_title="Art History: %s"
                                                   % parent_title,
                                  description="")
 
                 subtopic_dict[parent_title] = subtopic
             else:
                 subtopic = subtopic_dict[parent_title]
-           
+
             if subtopic.key() not in new_subtopic_keys:
                 new_subtopic_keys.append(subtopic.key())
 
             if parent_title not in subtopic_child_keys:
                 subtopic_child_keys[parent_title] = []
-            
+
             if youtube_id:
                 if youtube_id not in video_dict:
-                    # make sure it didn't get imported before, but never put 
+                    # make sure it didn't get imported before, but never put
                     # into a topic
                     query = video_models.Video.all()
                     video = query.filter("youtube_id =", youtube_id).get()
 
                     if video is None:
-                        logging.info("adding youtube video %i %s %s %s to %s" % 
+                        logging.info("adding youtube video %i %s %s %s to %s" %
                                      (i, youtube_id, href, title, parent_title))
-                        
+
                         video_data = youtube_get_video_data_dict(youtube_id)
-                        # use the title from the webpage not from the youtube 
+                        # use the title from the webpage not from the youtube
                         # page
                         video = None
                         if video_data:
@@ -344,30 +336,30 @@ class ImportSmartHistory(request_handler.RequestHandler):
                         else:
                             logging.error(("Could not import youtube_id %s " +
                                           "for %s %s") % (youtube_id, href, title))
-                            
+
                             raise Exception(("Could not import youtube_id %s " +
-                                            " for %s %s") % (youtube_id, href, 
+                                            " for %s %s") % (youtube_id, href,
                                             title))
 
                 else:
-                    video = video_dict[youtube_id] 
+                    video = video_dict[youtube_id]
                     if video.extra_properties != extra_properties:
                         logging.info(("changing extra properties of %i %s %s " +
-                                     "from %s to %s") % (i, href, title, 
+                                     "from %s to %s") % (i, href, title,
                                      video.extra_properties, extra_properties))
-                        
+
                         video.extra_properties = extra_properties
                         video.put()
-                                    
+
                 if video:
                     subtopic_child_keys[parent_title].append(video.key())
 
             elif href not in href_to_key_dict:
-                logging.info("adding %i %s %s to %s" % 
+                logging.info("adding %i %s %s to %s" %
                              (i, href, title, parent_title))
-                
+
                 topic_models.VersionContentChange.add_new_content(
-                    Url, 
+                    Url,
                     version,
                     {"title": title,
                      "url": href
@@ -393,11 +385,11 @@ class ImportSmartHistory(request_handler.RequestHandler):
             if subtopic.child_keys != subtopic_child_keys[parent_title]:
                 change = True
                 subtopic.update(child_keys=subtopic_child_keys[parent_title])
-        
-        if topic.child_keys != new_subtopic_keys:    
+
+        if topic.child_keys != new_subtopic_keys:
             change = True
             topic.update(child_keys=new_subtopic_keys)
-        
+
         if change:
             logging.info("finished updating version number %i" % version.number)
         else:

@@ -3290,3 +3290,149 @@ def update_video_recommendation_matrix():
     # TODO(benkomalo): actually store in DB once model is fleshed out
     logging.error(matrix_data)
 
+
+#{
+#            "timestamp": "2013-02-12 13:34:24+00:00",
+#                "object": {
+#                            "definition": {
+#                                            "type": "media",
+#                                                        "name": {
+#                                                                            "en-US": "Js Tetris - Tin Can Prototype"
+#                                                                                        },
+#                                                                    "description": {
+#                                                                                        "en-US": "A game of tetris."
+#                                                                                                    }
+#                                                                            },
+#                                    "id": "adlnet.gov/JsTetris_TCAPI",
+#                                            "objectType": "Activity"
+#                                                },
+#                    "actor": {
+#                                "mbox": "mailto:sergio@perceptum.nl",
+#                                        "name": "sergio",
+#                                                "objectType": "Agent"
+#                                                    },
+#                        "voided": false,
+#                            "stored": "2013-02-12 13:34:24+00:00",
+#                                "verb": {
+#                                            "id": "http://adlnet.gov/xapi/verbs/attempted",
+#                                                    "display": {
+#                                                                    "en-US": "started"
+#                                                                            }
+#                                                        },
+#                                    "authority": {
+#                                                "mbox": "sergio@perceptum.nl",
+#                                                        "name": "sergio",
+#                                                                "objectType": "Agent"
+#                                                                    },
+#                                        "context": {
+#                                                    "contextActivities": {
+#                                                                    "grouping": {
+#                                                                                        "id": "adlnet.gov/JsTetris_TCAPI"
+#                                                                                                    }
+#                                                                            },
+#                                                            "registration": "1200c45f-feb5-4724-bf21-49b71cfcb330"
+#                                                                },
+#                                            "id": "a1a7511c-927b-409c-906b-c4c2ecf122f3"
+#                                            }
+@route("/api/v1/lrs", methods=["GET"])
+@api.auth.decorators.open_access
+@jsonp
+@jsonify
+def get_lrs():
+    #user_data = request.request_student_user_data()
+    email = "test@example.com"
+    username = "test"
+    user_data = user_models.UserData.all().filter("user_email = ", email).fetch(1)[0]
+    problem_log_query = exercise_models.ProblemLog.all()
+    problem_log_query.filter("user =", user_data.user)
+    problems = problem_log_query.fetch(99999)
+    activity = []
+    for problem in problems:
+        time_done = datetime.datetime.strptime("2013-02-14T12:52:51Z", "%Y-%m-%dT%H:%M:%SZ")
+        start_time = time_done - datetime.timedelta(0, problem.time_taken)
+
+        entry = {
+                    "timestamp" : start_time,
+                    "object" : {
+                        "definition": {
+                            "type": "media",
+                            "name": {
+                                "en-US": "Khan Academie",
+                                "description": {
+                                   "en-US": problem.exercise
+                                }
+                            },
+                            "id": "adlnet.gov/KhanAcademie_TCAPI",
+                            "objectType": "Activity"
+                        },
+                        "actor": {
+                            "mbox": "mailto:%s" % email,
+                            "name": username,
+                            "objectType": "Agent"
+                        },
+                        "voided": False,
+                        "stored": start_time,
+                        "verb": {
+                            "id": "http://adlnet.gov/xapi/verbs/attempted",
+                            "display": {
+                                "en-US": "started"
+                            }
+                        },
+                       #     "verb": {
+                       #                 "id": "http://adlnet.gov/xapi/verbs/passed(to_go_beyond)",
+                       #                         "display": {
+                       #                                         "en-US": "passed"
+                       #                                                 }
+                       #                             },
+                       #         "result": {
+                       #                     "score": {
+                       #                                     "raw": 726,
+                       #                                                 "min": 0
+                       #                                                         },
+                       #                             "extensions": {
+                       #                                             "time": "4",
+                       #                                                         "lines": "0",
+                       #                                                                     "apm": "1680"
+                       #                                                                             }
+                       #                                 },
+                       #---- oto verbo
+
+                      # "verb": {
+                      #             "id": "http://adlnet.gov/xapi/verbs/completed",
+                      #                     "display": {
+                      #                                     "en-US": "finished"
+                      #                                             }
+                      #                         },
+                      #     "result": {
+                      #                     "score": {
+                      #                                     "raw": 740,
+                      #                                                 "min": 0
+                      #                                                         },
+                      #                             "extensions": {
+                      #                                             "level": "2",
+                      #                                                         "time": "4",
+                      #                                                                     "lines": "0",
+                      #                                                                                 "apm": "1680"
+                      #                                                                                         }
+                      #                                 },
+
+                        "authority": {
+                            "mbox": email,
+                            "name": username,
+                            "objectType": "Agent"
+                        },
+                        "context": {
+                            "contextActivities": {
+                                "grouping": {
+                                    "id": "adlnet.gov/KhanAcademie_TCAPI"
+                                }
+                            },
+                            "registration": "1200c45f-feb5-4724-bf21-49b71cfcb330"
+                        },
+                        "id": "a1a7511c-927b-409c-906b-c4c2ecf122f3"
+                    }
+                }
+        activity.append(entry)
+    return activity
+
+

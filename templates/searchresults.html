@@ -95,7 +95,7 @@
         {% if (_count == 0 and topic_count == 0) %}
 	    Geen video's gevonden. Probeer andere zoektermen.	
         {% else %}
-            Vind {{ video_count }} video{{ video_count|pluralize }} in {{ topic_count }} topic{{ topic_count|pluralize }} that match{% if video_count == 1 %}es{% endif %} your query:
+            {{ video_count }} video{{ video_count|pluralize }} gevonden in {{ topic_count }} onderwerp{{ topic_count|pluralize }} die voldoen{% if video_count == 1 %}es{% endif %} aan jouw zoektocht:
         {% endif %}
     </section>
     {% if topics %}

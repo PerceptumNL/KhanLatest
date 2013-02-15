@@ -45,6 +45,7 @@ def topics_layout(user_data, user_exercise_graph):
     version = topic_models.TopicVersion.get_default_version()
     topics = topic_models.Topic.get_visible_topics(version)
     layout = MapLayout.get_for_version(version).layout
+    logging.info("Loading topics layout for version %d" % version.number)
 
     if not layout:
         raise Exception("Missing map layout for default topic version")
@@ -126,8 +127,10 @@ class MapLayout(db.Model):
             return "maplayout:1"
 
     @staticmethod
-    def from_editversion():
-        version = topic_models.TopicVersion.get_edit_version()
+    def from_version(version=None):
+        if version == None:
+            version = topic_models.TopicVersion.get_edit_version()
+
         root = topic_models.Topic.get_root(version)
         tree = jsonify.dumps(root.make_tree(["Topics"]))
         #XXX invi: hardcoded math topic for NL version
@@ -137,12 +140,8 @@ class MapLayout(db.Model):
         #TODO check positions for collitions
         layout_topics = {}
         for topic in subtopics:
-            if 'icon_name' in topic and topic['icon_name']:
-                icon_name = topic['icon_name']
-            else:
-                icon_name = "default"
             data = {
-                    "icon_url" : "/images/power-mode/badges/" + icon_name + "-40x40.png",
+                    "icon_url" : topic['icon_url'],
                     "id" : topic['id'],
                     "x" :  str(topic['h_position']),
                     "y" :  str(topic['v_position']),

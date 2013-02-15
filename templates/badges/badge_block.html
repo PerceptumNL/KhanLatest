@@ -21,7 +21,7 @@
                         {% endfor %}
                         {% for context_name in badges.hidden_context_names(user_badge) %}
                             {% if loop.first %}
-                            <span class="badge-context-hidden-link"><a href="#" onclick="Badges.showMoreContext(this);return false;">and also in<span class="ellipsis">...</span></a></span>
+                            <span class="badge-context-hidden-link"><a href="#" onclick="Badges.showMoreContext(this);return false;">en ook in<span class="ellipsis">...</span></a></span>
                             <span class="badge-context-hidden" style="display:none;">
                             {% endif %}
                                 <strong>{{ context_name|escape }}</strong>{% if not loop.last %},{% endif %}

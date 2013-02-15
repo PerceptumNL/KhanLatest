@@ -323,6 +323,10 @@ var Profile = {
             }
         },
 
+        showExerciseProblems: function(exercise) {
+            this.showVitalStatistics("problems", exercise);
+        },
+
         showVitalStatisticsForTimePeriod:function (graph, timePeriod) {
             this.showVitalStatistics(graph, null, timePeriod);
             $(".vital-statistics-description ." + graph + " ." + timePeriod).addClass("selected")

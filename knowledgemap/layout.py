@@ -140,12 +140,8 @@ class MapLayout(db.Model):
         #TODO check positions for collitions
         layout_topics = {}
         for topic in subtopics:
-            if 'icon_name' in topic and topic['icon_name']:
-                icon_name = topic['icon_name']
-            else:
-                icon_name = "default"
             data = {
-                    "icon_url" : topic.icon_url,
+                    "icon_url" : topic['icon_url'],
                     "id" : topic['id'],
                     "x" :  str(topic['h_position']),
                     "y" :  str(topic['v_position']),

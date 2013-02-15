@@ -367,7 +367,11 @@ class Topic(search.Searchable, backup_model.BackupModel):
 
     @property
     def icon_url(self):
-        return "/images/power-mode/badges/%s-40x40.png" % self.icon_name
+        if self.icon_name:
+            icon_name = self.icon_name
+        else:
+            icon_name = 'default'
+        return "/images/power-mode/badges/%s-40x40.png" % icon_name
 
     @property
     def ka_url(self):

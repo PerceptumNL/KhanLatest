@@ -3281,16 +3281,16 @@ def get_version_id():
     return {'version_id': version_id}
 
 
-@route("/api/v1/dev/videorec_matrix", methods=["POST"])
-@api.auth.decorators.developer_required
-@jsonp
-@jsonify
-def update_video_recommendation_matrix():
-    matrix_data = json.loads(request.request_string('data'))
+#@route("/api/v1/dev/videorec_matrix", methods=["POST"])
+#@api.auth.decorators.developer_required
+#@jsonp
+#@jsonify
+#def update_video_recommendation_matrix():
+#    matrix_data = json.loads(request.request_string('data'))
     # TODO(benkomalo): actually store in DB once model is fleshed out
-    logging.error(matrix_data)
-
-
+#    logging.error(matrix_data)
+#
+#
 #{
 #            "timestamp": "2013-02-12 13:34:24+00:00",
 #                "object": {
@@ -3334,12 +3334,11 @@ def update_video_recommendation_matrix():
 #                                                                },
 #                                            "id": "a1a7511c-927b-409c-906b-c4c2ecf122f3"
 #                                            }
-@route("/api/v1/lrs", methods=["GET"])
+@route("/api/v1/lrs_exercise", methods=["GET"])
 @api.auth.decorators.open_access
 @jsonp
 @jsonify
-def get_lrs():
-    #user_data = request.request_student_user_data()
+def get_lsr_exercise():
     email = "jaime@example.com"
     username = "jaime"
     user_data = user_models.UserData.all().filter("user_email = ", email).fetch(1)[0]
@@ -3350,90 +3349,61 @@ def get_lrs():
     for problem in problems:
         time_done = datetime.datetime.strptime("2013-02-14T12:52:51Z", "%Y-%m-%dT%H:%M:%SZ")
         start_time = time_done - datetime.timedelta(0, problem.time_taken)
-
+        
+        
+        
         entry = {
-                    "timestamp" : start_time,
-                    "object" : {
-                        "definition": {
-                            "type": "media",
-                            "name": {
-                                "en-US": "Khan Academie",
-                                "description": {
-                                   "en-US": problem.exercise
-                                }
-                            },
-                            "id": "adlnet.gov/KhanAcademie_TCAPI",
-                            "objectType": "Activity"
-                        },
-                        "actor": {
-                            "mbox": "mailto:%s" % email,
-                            "name": username,
-                            "objectType": "Agent"
-                        },
-                        "voided": False,
-                        "stored": start_time,
-                        "verb": {
-                            "id": "http://adlnet.gov/xapi/verbs/attempted",
-                            "display": {
-                                "en-US": "started"
-                            }
-                        },
-                        "verb": {
-                        	"id": "http://adlnet.gov/xapi/verbs/passed"
-							"number_attemps" : problem.count_hints,
-                            "display": {
-                                "en-US": "passed"
-                             }
-                        },
-                        "result": {
-                        	"score": {
-                            	"raw": 726,
-                                 "min": 0
-                                 },
-                                 "extensions": {
-                                 "time": "4",
-                                 "lines": "0",
-                                 "apm": "1680"
-                                 }
-                            },
-                       #---- oto verbo
-
-                      # "verb": {
-                      #             "id": "http://adlnet.gov/xapi/verbs/completed",
-                      #                     "display": {
-                      #                                     "en-US": "finished"
-                      #                                             }
-                      #                         },
-                      #     "result": {
-                      #                     "score": {
-                      #                                     "raw": 740,
-                      #                                                 "min": 0
-                      #                                                         },
-                      #                             "extensions": {
-                      #                                             "level": "2",
-                      #                                                         "time": "4",
-                      #                                                                     "lines": "0",
-                      #                                                                                 "apm": "1680"
-                      #                                                                                         }
-                      #                                 },
-
-                        "authority": {
-                            "mbox": email,
-                            "name": username,
-                            "objectType": "Agent"
-                        },
-                        "context": {
-                            "contextActivities": {
-                                "grouping": {
-                                    "id": "adlnet.gov/KhanAcademie_TCAPI"
-                                }
-                            },
-                            "registration": "1200c45f-feb5-4724-bf21-49b71cfcb330"
-                        },
-                        "id": "a1a7511c-927b-409c-906b-c4c2ecf122f3"
-                    }
+            "timestamp" : start_time,
+            "actor": {
+                "mbox": "mailto:%s" % email,
+                "name": "username",
+                },
+            "verb": {
+                "id": "http://adlnet.gov/xapi/verbs/%s" %verb,
+                "display": {
+                    "en-US": verb
                 }
-        activity.append(entry)
-    return activity
+                },
+            "object" : {
+                "definition": {
+                    "type": "media",
+                    "name": {
+                        "en-US": "Khan Academie",
+                        "description": {
+                            "en-US": "problem.exercise"
+                    }
+                    },
+                    "id": "adlnet.gov/KhanAcademie_TCAPI",
+                    "objectType": "Activity"
+                        }
+                }
+            }
+        
+        
+        
+        entry =         activity.append(entry)
+
+    
+
+
+
+
+
+@route("/api/v1/lrs_video", methods=["GET"])
+@api.auth.decorators.open_access
+@jsonp
+@jsonify
+def get_lsr_video():
+
+
+@route("/api/v1/lrs_assignment", methods=["GET"])
+@api.auth.decorators.open_access
+@jsonp
+@jsonify
+def get_lsr_assignment():
+
+
+
+
 
 

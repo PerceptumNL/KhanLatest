@@ -146,20 +146,24 @@ class TopicVersion(backup_model.BackupModel):
         return TopicVersion.all().filter("default = ", True).get()
 
     @staticmethod
-    #@layer_cache.cache_with_key_fxn(
-    #    lambda *args, **kwargs: "topic_models_edit_version_%s" %
-    #        setting_model.Setting.topic_tree_version())
+    @layer_cache.cache_with_key_fxn(
+        lambda *args, **kwargs: "topic_models_edit_version_%s" %
+            setting_model.Setting.topic_tree_version())
     def get_edit_version():
         return TopicVersion.all().filter("edit = ", True).get()
 
     @staticmethod
-    #@decorators.synchronized_with_memcache(
-    #    timeout=300)  # takes 70secs on dev 03/2012
-    def create_edit_version():
+    @decorators.synchronized_with_memcache(
+        timeout=300)  # takes 70secs on dev 03/2012
+    def create_edit_version(from_version=None):
         edit_version = TopicVersion.get_edit_version()
         if edit_version is None:
-            default = TopicVersion.get_default_version()
+            if from_version:
+                default = from_version
+            else:
+                default = TopicVersion.get_default_version()
             edit_version = default.copy_version()
+
             edit_version.edit = True
             edit_version.put()
             return edit_version
@@ -172,6 +176,7 @@ class TopicVersion(backup_model.BackupModel):
 
         old_root = Topic.get_root(self)
         old_tree = old_root.make_tree(types=["Topics"], include_hidden=True)
+        logging.info("Copy version %d to %d" % (self.number, version.number))
         TopicVersion.copy_tree(old_tree, version)
 
         version.copied_from = self
@@ -359,6 +364,14 @@ class Topic(search.Searchable, backup_model.BackupModel):
     @property
     def topic_page_url(self):
         return '/%s' % self.get_extended_slug()
+
+    @property
+    def icon_url(self):
+        if self.icon_name:
+            icon_name = self.icon_name
+        else:
+            icon_name = 'default'
+        return "/images/power-mode/badges/%s-40x40.png" % icon_name
 
     @property
     def ka_url(self):
@@ -1142,7 +1155,7 @@ class Topic(search.Searchable, backup_model.BackupModel):
 
         version.update()
         return transaction_util.ensure_in_transaction(Topic._insert_txn,
-                                                      new_topic)
+                                                      new_topic, xg_on=True)
 
     def update(self, **kwargs):
         if self.version.default:
@@ -2024,14 +2037,17 @@ def _change_default_version(version_number, run_code):
         "Publish: creating new edit version")
 
     logging.info("creating a new edit version")
-    edit_version = TopicVersion.create_edit_version()
+    edit_version = TopicVersion.create_edit_version(version)
     logging.info("done creating new edit version")
 
     logging.info("creating maplayout from current version")
     map_layout = layout.MapLayout.get_for_version(edit_version)
-    map_layout.layout = layout.MapLayout.from_editversion()
+    map_layout.layout = layout.MapLayout.from_version(version)
     map_layout.put()
     logging.info("done creating maplayout")
+
+    logging.info("resettings default topic version number")
+    setting_model.Setting.topic_tree_version(version.number)
 
 
     _do_set_default_deferred_step(_rebuild_content_caches,

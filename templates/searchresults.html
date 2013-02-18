@@ -92,10 +92,11 @@
     {% endif %}
 
     <section class="searchresult-counts">
-        {% if (video_count == 0 and topic_count == 0) %}
+        {% if (_count == 0 and topic_count == 0) %}
 	    Geen video's gevonden. Probeer andere zoektermen.	
         {% else %}
-            Found {{ video_count }} video{{ video_count|pluralize }} in {{ topic_count }} topic{{ topic_count|pluralize }} that match{% if video_count == 1 %}es{% endif %} your query:
+        {# XXX would be proper to pluralize with gettext #}
+        {{ video_count }} {% if video_count == 1 %}video{% else %}video's{% endif %} gevonden in {{ topic_count }} onderwerp{{ topic_count|pluralize }} die {% if video_count == 1 %}voldoet{% else %}voldoen{% endif %} aan jouw zoektocht:
         {% endif %}
     </section>
     {% if topics %}

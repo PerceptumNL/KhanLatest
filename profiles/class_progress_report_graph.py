@@ -54,17 +54,16 @@ def class_progress_report_graph_context(user_data, list_students):
             if graph_dict["proficient"]:
 
                 if graph_dict["reviewing"]:
-                    status = "Review"
+                    status = "Herzien"
                 else:
-                    status = "Proficient"
+                    status = "Gehaald"
                     if not graph_dict["explicitly_proficient"]:
-                        status = ("Proficient (due to proficiency in a more "
-                                  "advanced module)")
+                        status = ("Gehaald")
 
             elif graph_dict["struggling"]:
-                status = "Struggling"
+                status = "Moeite"
             elif graph_dict["total_done"] > 0:
-                status = "Started"
+                status = "Gestart"
 
             if student_email not in exercise_data:
                 exercise_data[student_email] = {

@@ -1,4 +1,4 @@
-application: khan-netherlands
+application: khan-testing
 version: testing 
 runtime: python27
 api_version: 1
@@ -12,7 +12,7 @@ libraries:
   version: "2.6"
 # This also brings in webapp2_extras:
 - name: webapp2
-  version: "2.3"
+  version: "2.5.1"
 
 skip_files:
 - ^(.*/)?app\.yaml

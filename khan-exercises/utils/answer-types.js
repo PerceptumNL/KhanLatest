@@ -1204,7 +1204,7 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
             return function(guess) {
                 if (guess == null) {
                     return "";
-                } else if (guess === "None of the above." &&
+                } else if (guess === "Geen van de bovenstaande." &&
                         $("#solutionarea").find("ul").data("real-answer") !=
                         null) {
                     // Hacky stuff to make the correct solution appear when

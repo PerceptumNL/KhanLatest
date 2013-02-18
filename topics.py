@@ -36,6 +36,15 @@ class EditContent(request_handler.RequestHandler):
 
         edit_version = TopicVersion.get_by_id(version_name)
         if edit_version is None:
+            #invi: should only run when topic tree is empty
+            edit_version = TopicVersion.create_new_version()
+            edit_version.edit = True
+            edit_version.put()
+            create_root(edit_version)
+            edit_version.put()
+            edit_version.edit = False
+            edit_version.default = True
+            edit_version.put()
             edit_version = TopicVersion.create_new_version()
             edit_version.edit = True
             edit_version.put()

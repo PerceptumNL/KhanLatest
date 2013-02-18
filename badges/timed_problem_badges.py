@@ -1,3 +1,4 @@
+import logging
 import badges
 from exercise_badges import ExerciseBadge
 
@@ -5,6 +6,7 @@ from exercise_badges import ExerciseBadge
 # All badges awarded for completing a certain number of correct problems
 # within a specific amount of time inherit from TimedProblemBadge
 class TimedProblemBadge(ExerciseBadge):
+
 
     def is_satisfied_by(self, *args, **kwargs):
         user_exercise = kwargs.get("user_exercise", None)
@@ -14,23 +16,40 @@ class TimedProblemBadge(ExerciseBadge):
             return False
 
         c_logs = len(action_cache.problem_logs)
+        logging.info("Number of problem_logs: %d" % c_logs)
+
         if c_logs >= self.problems_required:
 
-            time_taken = 0
-            time_allotted = (self.problems_required *
-                             user_exercise.seconds_per_fast_problem)
+            def _check_earned(_offset=0):
+                time_taken = 0
+                time_allotted = (self.problems_required *
+                                 user_exercise.seconds_per_fast_problem)
+                for i in range(self.problems_required):
+                    problem = action_cache.get_problem_log(c_logs - i - 1 - _offset)
+                    time_taken += problem.time_taken
 
-            for i in range(self.problems_required):
+                    if (time_taken > time_allotted or
+                            not problem.correct or
+                            problem.exercise != user_exercise.exercise):
+                        return False
+                    else:
+                        return True
 
-                problem = action_cache.get_problem_log(c_logs - i - 1)
-                time_taken += problem.time_taken
+            if _check_earned():
+                # check if it has been already earned in same stack for i in range(c_logs - 1, c_logs - self.problems_required, -1):
+                already_earned = False
+                for i in range(1, self.problems_required):
+                    logging.info("Attempt i:%d" % i)
+                    if i + self.problems_required < c_logs and _check_earned(i):
+                        logging.info("Check_earned: %d" % int(_check_earned(i)))
+                        already_earned = True
 
-                if (time_taken > time_allotted or
-                        not problem.correct or
-                        problem.exercise != user_exercise.exercise):
-                    return False
+                if not already_earned:
+                    logging.info("Just earned earned nicetimebadge")
+                else:
+                    logging.info("Recently earned nicetimebadge")
 
-            return time_taken <= time_allotted
+                return not already_earned
 
         return False
 

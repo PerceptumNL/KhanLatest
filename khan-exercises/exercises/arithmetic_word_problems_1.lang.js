@@ -24,7 +24,7 @@
 		"hint21"		: 'Hoeveel bomen staan er op de <var>side(2)</var>oever van de rivier?',
 		"hint22"		: 'Het aantal bomen op de <var>side(2)</var>oever van de rivier is het verschil tussen het totale aantal bomen op beide oevers van de rivier en het aantal bomen op de <var>side(1)</var>oever.',
 		"hint23"		: 'Dat verschil is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural("boom")</var>.',
-		"hint24"		: 'Een aantal auto\'s stond geparkeerd op het parkeerterrein van de <var>store(1)</var>. '+
+		"hint24"		: 'Een aantal auto\'s stonden geparkeerd op het parkeerterrein van de <var>store(1)</var>. '+
 					'Nog eens <var>NUM2</var> <var>plural("auto")</var> <var>plural("parkeerden", "parkeerde", NUM2)</var> later ook bij de <var>store(1)</var>, '+
 					'en nu staan er <var>plural(TOTAL, "auto")</var> op het parkeerterrein.',
 		"hint25"		: 'Hoeveel auto\'s stonden er geparkeerd bij de <var>store(1)</var>?',

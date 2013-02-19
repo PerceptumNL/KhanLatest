@@ -1,10 +1,43 @@
 var Homepage = {
 
     init:function () {
+        Homepage.initHoverButtons();
         VideoControls.initThumbnails();
         Homepage.initWaypoints();
         Homepage.loadData();
         Homepage.prepareList();
+    },
+
+    initHoverButtons: function() {
+        //rollover swap images with rel 
+        var img_src = "";
+        var new_src = "";
+        
+        $(".rollover").hover(function(){
+            //mouseover
+            $(this).find("img").each(function() {
+                    img_src = $(this).attr('src'); //grab original image
+                    new_src = $(this).attr('rel'); //grab rollover image
+                    $(this).attr('src', new_src); //swap images
+                    $(this).attr('rel', img_src); //swap images
+            });
+        }, function() {
+            //mouse out
+            $(this).find("img").each(function() {
+                    img_src = $(this).attr('src'); //grab original image
+                    new_src = $(this).attr('rel'); //grab rollover image
+                    $(this).attr('src', new_src); //swap images
+                    $(this).attr('rel', img_src); //swap images
+            });
+        });
+        //preload images
+        var cache = new Array();
+        //cycle through all rollover elements and add rollover img src to cache array
+        $(".rollover").find("img").each(function(){
+            var cacheImage = document.createElement('img');
+            cacheImage.src = $(this).attr('rel');
+            cache.push(cacheImage);
+        }); 
     },
 
     prepareList:function () {

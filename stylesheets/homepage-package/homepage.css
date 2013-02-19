@@ -24,48 +24,17 @@ a.blog-title:visited {
     color: #1688b0;
 }
 
-
-	
-a.begin-button {
-    width: 150px;
-    max-width: 80%;
-    background-image: url("/images/oefeningen-button-blauw.png");
-    background-repeat:no-repeat;
-    border-radius: 8px;
-    font-size: 16px;
-    display: inline;
-    text-align: center;
-    vertical-align: middle; 
+.begin-link {
     margin-left: 30px;
-    margin-right: auto;
-    text-shadow: 0px 1px 1px black;
-    box-shadow: 0px 1px 1px grey;
-    color: white;
-    padding-top: 22px;
-	padding-bottom: 0px;
-	padding-left: 30px;
-	padding-right: 30px;
-    margin-top: 40px;
 }
 
+.begin-link span#exercisehomelink { 
+	margin-left: 20px;
+    font-size: 20px;
+    top: -10px;
+    position: relative;
+}
 	
-a#exercisehomelink {
-	margin-left: 30px;
-	}
-	
-
-a.begin-button:hover {
-    box-shadow: 0px 0px 0px grey;
-    color: white;
-    text-shadow: 0px 0px 2px black;
-    text-decoration: none;
-}
-
-a.begin-button:visited {
-    color: white;
-    text-decoration: none;
-}
-
 .blog-date {
     font-color: gray;
 }
@@ -285,3 +254,4 @@ td.social-action.gplus {
         padding-left: 30px;
     }
 }
+

@@ -66,56 +66,13 @@
 						aangeboden in de vorm van video’s en oefeningen. 
                     </p>
 
-                    <!-- TODO delete non-relevant text
-                    <p>
-                        Achter de schermen wordt er hard gewerkt om de site te optimaliseren. Wij hebben ons ten doel
-                        gesteld
-                        alle oefeningen die op dit moment op de website staan rond nieuwjaar vertaald te hebben naar het
-                        Nederlands en bij elke video een oefening te plaatsen.
-                        Vanaf 2013 gaan er nieuwe oefeningen toegevoegd worden en worden de oefeningen ingedeeld volgens
-                        de
-                        referentieniveaus van Meijerink. Ook komt er een mogelijkheid om de bestaande video's te
-                        vervangen
-                        door
-                        eigen gemaakte video's. Wij geloven namelijk in de kracht van onderwijzers en willen samen een
-                        krachtig
-                        platform maken.
-                    </p>
-                    -->
-                    <!--
-                <div>
-                    <a href="/#browse" data-tag="Homepage C2A" class="call-to-action simple-button green watch-a-video">Bekijk een video</a>
-                    <a href="/exercisedashboard" data-tag="Homepage C2A" class="call-to-action simple-button blue">Ga de uitdaging aan</a>
-                </div>
-                -->
-                  <a class="begin-button" href="/exercisedashboard"></a> <a id="exercisehomelink" href="/exercisedashboard">Begin met oefenen!</a>
-                
+                <a href="/exercisedashboard" class="rollover begin-link">
+                        <img src="/images/oefeningen-button-blauw.png" rel="/images/oefeningen-button-grijs.png" class="begin-button rollover"/><span id="exercisehomelink"><em>Begin met oefenen!</em></span>
+                </a>
                 </div>
             </div>
         </div>
 
-        <!--
-        <div id="homepage-left-col">
-        </div>
-    <div id="homepage-right-col">
-        <h3>Laatste Nieuws</h3>
-        {% for entry in rssblog %}
-        <div class="blog-entry">
-        <span class="blog-date">{{ entry.pub_date|formatdate }}</span>
-        <a href="{{ entry.link }}" class="blog-title" target="_blank">{{ entry.title }}</a>
-        <div class="blog-body">{{ entry.description|striptags|truncate }}</div>
-        </div>
-        {% endfor %}
-    </div>
-    -->
-        <!--
-        <h2>
-            Nieuw <span class="ampersand">&amp;</span> Opmerkelijk
-        </h2>
-        <h3>
-            <a href="http://blog.khanacademie.nl/">Bekijk ook ons Blog!</a>
-        </h3>
-        -->
         {% if thumbnail_link_sets %}
             <div id="thumbnails_container">
                 <table width="100%">

@@ -4,6 +4,7 @@ from setting_model import Setting
 import shared_jinja
 import math
 import user_util
+from api import jsonify
 
 # helpful function to see topic structure from the console.  In the console:
 # import library
@@ -125,23 +126,25 @@ def library_content_html(ajax=False, version_number=None):
         return ""
     tree = root.make_tree(types=["Topics", "Video", "Url"])
     topics = flatten_tree(tree)
-
     topics.sort(key=lambda topic: topic.standalone_title)
 
     # special case the duplicate topics for now, eventually we need to
     # either make use of multiple parent functionality (with a hack
     # for a different title), or just wait until we rework homepage
-    topics = [topic for topic in topics
-              if not topic.id == "new-and-noteworthy" and not
-              (topic.standalone_title == "California Standards Test: Geometry"
-              and not topic.id == "geometry-2")]
+    #topics = [topic for topic in topics
+    #          if not topic.id == "new-and-noteworthy" and not
+    #          (topic.standalone_title == "California Standards Test: Geometry"
+    #          and not topic.id == "geometry-2")]
 
     # print_topics(topics)
 
     add_next_topic(topics)
 
+    jtree = jsonify.dumps(tree)
     template_values = {
         'topics': topics,
+        'tree': jtree,
+        'subtopics': jtree,
         'ajax': False,
         'version_date': str(version.made_default_on),
         'version_id': version.number

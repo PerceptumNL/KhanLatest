@@ -42,7 +42,7 @@ class ThirtyDayConsecutiveActivityBadge(ConsecutiveActivityBadge):
     def __init__(self):
         ConsecutiveActivityBadge.__init__(self)
         self.days_required = 30
-        self.description = "Atomic Clockwork"
+        self.description = "Buitengewone Tijdsbesteding"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0
 
@@ -52,6 +52,6 @@ class HundredDayConsecutiveActivityBadge(ConsecutiveActivityBadge):
     def __init__(self):
         ConsecutiveActivityBadge.__init__(self)
         self.days_required = 100
-        self.description = "10,000 Year Clock"
+        self.description = "100 Dagen Uitdaging "
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 0

@@ -50,7 +50,7 @@ var Moderation = {
         return Moderation.actionWithoutConfirmation(this,
                 "/discussion/flagentity",
                 {flag: flag},
-                "flagged!");
+                "Gerapporteerd!");
     },
 
     deleteEntity: function() {
@@ -69,7 +69,7 @@ var Moderation = {
         var url = "/api/v1/feedback/" + key + "?casing=camel";
 
         var deleteByAuthor = (isAuthor &&
-                    confirm("Are you sure you want to delete this?")),
+                    confirm("Weet je zeker dat je dit wil verwijderen?")),
             deleteByModerator = (!isAuthor && isModerator),
             shouldDelete = deleteByAuthor || deleteByModerator;
 
@@ -84,7 +84,7 @@ var Moderation = {
                         // template to ensure the class "deleted" is added to
                         // div.question
 
-                        data["message"] = "deleted!";
+                        data["message"] = "Verwijderd!";
 
                         var template;
                         if (mod_queue) {
@@ -149,7 +149,7 @@ var Moderation = {
             data: JSON.stringify(data),
             dataType: "json",
             success: _.bind(Moderation.finishedAction, Moderation, jel,
-                    "changed!")
+                    "Veranderd!")
         });
 
     },
@@ -200,9 +200,9 @@ var Moderation = {
                 }
 
                 if (onlyUndelete) {
-                    data["message"] = "undeleted!";
+                    data["message"] = "Ongedaan gemaakt!";
                 } else {
-                    data["message"] = "cleared flags and undeleted item";
+                    data["message"] = "Rapportages en ongedaan makingen verwijderd";
                 }
 
                 jel.closest(".mod_tools").replaceWith(template(data));

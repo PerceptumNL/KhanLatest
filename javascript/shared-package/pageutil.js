@@ -69,17 +69,17 @@ function initAutocomplete(selector, fTopics, fxnSelect, fIgnoreSubmitOnEnter, op
 
                     if (fTopics) {
                         for (var ix = 0; ix < data.topics.length; ix++) {
-                            addAutocompleteMatchToList(matches, data.topics[ix], "topic", reMatch, ix == 0);
+                            addAutocompleteMatchToList(matches, data.topics[ix], "Onderwerp", reMatch, ix == 0);
                         }
                     }
                     if (options.includeVideos) {
                         for (var ix = 0; ix < data.videos.length; ix++) {
-                            addAutocompleteMatchToList(matches, data.videos[ix], "video", reMatch, ix == 0);
+                            addAutocompleteMatchToList(matches, data.videos[ix], "Video", reMatch, ix == 0);
                         }
                     }
                     if (options.includeExercises) {
                         for (var ix = 0; ix < data.exercises.length; ix++) {
-                            addAutocompleteMatchToList(matches, data.exercises[ix], "exercise", reMatch, ix == 0);
+                            addAutocompleteMatchToList(matches, data.exercises[ix], "Oefening", reMatch, ix == 0);
                         }
                     }
                 }

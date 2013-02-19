@@ -24,6 +24,8 @@ a.blog-title:visited {
     color: #1688b0;
 }
 
+
+	
 a.begin-button {
     width: 150px;
     max-width: 80%;
@@ -45,6 +47,12 @@ a.begin-button {
 	padding-right: 30px;
     margin-top: 40px;
 }
+
+	
+a#exercisehomelink {
+	margin-left: 30px;
+	}
+	
 
 a.begin-button:hover {
     box-shadow: 0px 0px 0px grey;

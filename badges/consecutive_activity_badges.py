@@ -14,7 +14,7 @@ class ConsecutiveActivityBadge(badges.Badge):
                 self.days_required)
 
     def extended_description(self):
-        return ("Bekijk elke dag (een gedeelte van) een video of maak een oefening gedurende 5 opeenvolgende dagen") % self.days_required
+        return ("Bekijk elke dag (een gedeelte van) een video of maak een oefening gedurende %d opeenvolgende dagen") % self.days_required
 
 
 @badges.active_badge

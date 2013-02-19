@@ -5,11 +5,11 @@
             {{#if messageOnly}}
                 <div class="hover-card-message">
                     {{#if isPrivate}}
-                        This person does not have a public profile,
-                        but you can view their
-                        <a href="{{profileRoot}}discussion">discussion history</a>.
+                        Deze persoon heeft geen openbaar profiel,
+                        maar je kan wel hun
+                        <a href="{{profileRoot}}discussion">discussie geschiedenis</a> bekijken.
                     {{else}}
-                        Finding profile information...
+                        Zoeken naar profiel informatie...
                     {{/if}}
                 </div>
             {{else}}
@@ -33,8 +33,8 @@
                     </div>
                 </div>
                 <div class="user-stats">
-                    <div class="points"><span style="font-size: 150%">{{commafy points}}</span> <span style="color: #999">points</span></div>
-                    <div class="join-date">Joined <abbr class="timeago" title="{{dateJoined}}">{{dateJoined}}</abbr></div>
+                    <div class="points"><span style="font-size: 150%">{{commafy points}}</span> <span style="color: #999">punten</span></div>
+                    <div class="join-date">Lid sinds <abbr class="timeago" title="{{dateJoined}}">{{dateJoined}}</abbr></div>
                 </div>
             {{/if}}
         </div>

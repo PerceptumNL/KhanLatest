@@ -18,7 +18,7 @@
 <span class="breadcrumbs_nav">
     <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/coach/resources" id="teacher-resources" {%if user_data.is_demo %}class="show-demo-dialog"{% endif %}>Middelen voor de leraar/lerares<span style="font-size:8px;color:orange;font-weight:bold"> Nieuw</span></a>
     <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/students" id="manage-students" {%if user_data.is_demo %}class="show-demo-dialog"{% endif %}>Beheer leerlingen</a>
-    <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/class_profile" id="class-stats" class="selected{%if user_data.is_demo %} show-demo-dialog{% endif %}">Klassen overzicht voor</a>
+    <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/class_profile" id="class-stats" class="selected{%if user_data.is_demo %} show-demo-dialog{% endif %}">Klassenoverzicht voor</a>
     <span id="studentlists_dropdown" style="display:none;">
         <a>{{ student_list.name|escape }}</a>
         <div id="studentlists_menu">

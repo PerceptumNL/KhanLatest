@@ -78,17 +78,17 @@ class BadgeCategory(object):
         name = "half-moon"
 
         if category == BadgeCategory.BRONZE:
-            name = "meteoriet"
+            name = "meteorite"
         elif category == BadgeCategory.SILVER:
-            name = "maan"
+            name = "moon"
         elif category == BadgeCategory.GOLD:
-            name = "aarde"
+            name = "earth"
         elif category == BadgeCategory.PLATINUM:
-            name = "zon"
+            name = "sun"
         elif category == BadgeCategory.DIAMOND:
-            name = "zwarte gat"
+            name = "eclipse"
         elif category == BadgeCategory.MASTER:
-            name = "Uitdagingen Badges"
+            name = "master-challenge-blue"
 
         return name
 

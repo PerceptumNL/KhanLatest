@@ -3349,20 +3349,24 @@ def get_lrs():
     for problem in problems:
         time_done = datetime.datetime.strptime("2013-02-14T12:52:51Z", "%Y-%m-%dT%H:%M:%SZ")
         start_time = time_done - datetime.timedelta(0, problem.time_taken)
+        verb = ''
+        if start_time == problem.backup_timestamp:
+            verb = 'started'
         entry = {
         "timestamp" : start_time,
             "actor": {
                 "mbox" : "mailto:%s" % email,
-                "name" : username
+                "name" : problem.user
                 },
             "verb" : {
-                "id" : "http://adlnet.gov/xapi/verbs/started",
+                "id" : "http://adlnet.gov/xapi/verbs/" + verb,
                 "display" : {
-                    "en-US" : "started"
+                    "en-US" : verb
                     }
                     },
             "object" : {
                 "definition" : {
+                    "name": problem.exercise,
                     "type": problem.problem_type,
                     "seed" : problem.seed
                     },

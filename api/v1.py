@@ -3281,16 +3281,16 @@ def get_version_id():
     return {'version_id': version_id}
 
 
-#@route("/api/v1/dev/videorec_matrix", methods=["POST"])
-#@api.auth.decorators.developer_required
-#@jsonp
-#@jsonify
-#def update_video_recommendation_matrix():
-#    matrix_data = json.loads(request.request_string('data'))
+@route("/api/v1/dev/videorec_matrix", methods=["POST"])
+@api.auth.decorators.developer_required
+@jsonp
+@jsonify
+def update_video_recommendation_matrix():
+    matrix_data = json.loads(request.request_string('data'))
     # TODO(benkomalo): actually store in DB once model is fleshed out
-#    logging.error(matrix_data)
-#
-#
+    logging.error(matrix_data)
+
+
 #{
 #            "timestamp": "2013-02-12 13:34:24+00:00",
 #                "object": {
@@ -3334,11 +3334,11 @@ def get_version_id():
 #                                                                },
 #                                            "id": "a1a7511c-927b-409c-906b-c4c2ecf122f3"
 #                                            }
-@route("/api/v1/lrs_exercise", methods=["GET"])
+@route("/api/v1/lrs", methods=["GET"])
 @api.auth.decorators.open_access
 @jsonp
 @jsonify
-def get_lsr_exercise():
+def get_lrs():
     email = "jaime@example.com"
     username = "jaime"
     user_data = user_models.UserData.all().filter("user_email = ", email).fetch(1)[0]
@@ -3352,55 +3352,11 @@ def get_lsr_exercise():
         
         
         
-        entry = {
-            "timestamp" : start_time,
-            "actor": {
-                "mbox": "mailto:%s" % email,
-                "name": "username",
-                },
-            "verb": {
-                "id": "http://adlnet.gov/xapi/verbs/%s" %verb,
-                "display": {
-                    "en-US": verb
-                }
-                },
-            "object" : {
-                "definition": {
-                    "type": "media",
-                    "name": {
-                        "en-US": "Khan Academie",
-                        "description": {
-                            "en-US": "problem.exercise"
-                    }
-                    },
-                    "id": "adlnet.gov/KhanAcademie_TCAPI",
-                    "objectType": "Activity"
-                        }
-                }
-            }
+               
         
-        
-        
-        entry =         activity.append(entry)
 
     
 
-
-
-
-
-@route("/api/v1/lrs_video", methods=["GET"])
-@api.auth.decorators.open_access
-@jsonp
-@jsonify
-def get_lsr_video():
-
-
-@route("/api/v1/lrs_assignment", methods=["GET"])
-@api.auth.decorators.open_access
-@jsonp
-@jsonify
-def get_lsr_assignment():
 
 
 

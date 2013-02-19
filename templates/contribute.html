@@ -4,6 +4,13 @@
 
 {% block meta_page_title %}Contribute | {% endblock meta_page_title %}
 {% block pagecss %}
+<style>
+#accordion h3 {
+  padding: 10px;
+  padding-left: 30px;
+  margin: 5px;
+}
+</style>
     {{ js_css_packages.css_package("bootstrap-grids") }}
     {{ js_css_packages.css_package("contribute") }}
 {% endblock pagecss %}
@@ -21,9 +28,6 @@
                 die we krijgen. Met elk stukje feedback help je ons al. <br><br>Meer uitleg hoe je ons kunt helpen vind
                 je hieronder: <br></p>
 
-            <style> #accordion h3 {
-                padding-left: 20px
-            } </style>
             <div id="accordion">
 
                 <h3><b>Geef feedback</b></h3>
@@ -198,6 +202,7 @@
                 </p>
             </div>
         </div>
+        <div class="clear"></div>
     </article>
 {% endblock pagecontent %}
 {% block bottompagescript %}

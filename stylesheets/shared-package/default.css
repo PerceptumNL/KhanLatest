@@ -108,7 +108,7 @@ h1 {
 }
 
 .main-headline, .section-headline {
-    padding-top: 80px;
+    padding-top: 30px;
 }
 
 .main-headline a, .section-headline a {
@@ -261,7 +261,6 @@ footer a:visited,
 a.visited-no-recolor:visited {
     color:rgb(0, 9, 112);
     text-decoration: none;
-    font-size: 14px;
 }
 
 a:visited {
@@ -372,10 +371,10 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     background-image: url(/images/non-repeating-sprites.4.png);
     background-position: -143px -67px;
     display: inline-block;
-    height: 15px;
+    height: 16px;
     position: relative;
     top: 4px;
-    width: 64px;
+    width: 71px;
 }
 
 #footer #copyright img {
@@ -1190,6 +1189,7 @@ span.youTube:hover {
     margin-top: 38px;
     margin-bottom: 5px;
     font-size: 18px
+    font-weight: bold;
 }
 
 #library-content .library-content-header h2.subtopic-1-heading {
@@ -1259,12 +1259,13 @@ span.youTube:hover {
 
 #library-content .library-content-list a.vl {
     display: block;
-    line-height: 14px;
+    line-height: 18px;
     overflow: hidden;
     padding-left: 14px;
     text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-size: 14px;
 }
 
 #library-content .library-content-list a.vl:hover {

@@ -47,6 +47,7 @@ jQuery.extend( KhanUtil, {
 	//		- return "word"
 	plural: (function() {
 		var oneOffs = {
+			'verliet':'verlieten',
 			'quiz': 'quizzes',
 			'plank': 'planken',
 			'rij': 'rijen',

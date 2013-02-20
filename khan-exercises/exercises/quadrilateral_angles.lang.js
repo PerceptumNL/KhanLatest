@@ -1,24 +1,24 @@
 ({
 	"nl" : {
-		"problem1"	: 'What is the value of the angle marked with "x" ? ',
+		"problem1"	: 'Hoe groot is de met "x" aangegeven hoek? ',
 		
-		"hint1"		: 'This figure is a trapezoid.',
-		"hint2"		: 'The angles of a trapezoid side are supplementary.',
-		"hint3"		: 'This figure is an isosceles trapezoid.',
-		"hint4"		: 'The angles of bases of an isosceles trapezoid are equal.',
-		"hint5"		: 'Therefore, the angle x is also <code><var>ANGLES[ SHOWN_POS ]</var></code>',
-		"hint6"		: 'This quadrilateral is a parallelogram.',
-		"hint7"		: 'Opposite angles of a parallelogram are equal.',
-		"hint8"		: 'Therefore, the angle x is also <code><var>ANGLES[ SHOWN_POS ]</var></code>',
-		"hint9"		: 'This quadrilateral is a parallelogram.',
-		"hint10"	: 'Adjacent angles of a parallelogram are supplementary.',
-		"hint11"	: 'This quadrilateral is a rhombus, because it has all sides equal.',
-		"hint12"	: 'Opposite angles of a rhombus are equal.',
-		"hint13"	: 'Therefore, the angle x is also <code><var>ANGLES[ SHOWN_POS ]</var></code>',
-		"hint14"	: 'This quadrilateral is a rhombus, because it has all sides equal.',
-		"hint15"	: 'Adjacent angles of a rhombus are supplementary.',
-		"hint16"	: 'This quadrilateral is a kite, because it has two pairs of adjacent sides equal.',
-		"hint17"	: 'Angles between the non-equal sides of a kite are equal.',
-		"hint18"	: 'Therefore, the angle x is also <code><var>ANGLES[ SHOWN_POS ]</var></code>'
+		"hint1"		: 'Dit figuur is een trapezium.',
+		"hint2"		: 'De hoeken van de schuine zijden van een trapezium zijn elkaars supplement.',
+		"hint3"		: 'Dit figuur is een gelijkbenig trapezium.',
+		"hint4"		: 'De basishoeken van een gelijkbenig trapezium zijn gelijk.',
+		"hint5"		: 'Daarom is de hoek x ook <code><var>ANGLES[ SHOWN_POS ]</var></code>',
+		"hint6"		: 'Deze vierhoek is een paralellogram.',
+		"hint7"		: 'Overstaande hoeken van een paralellogram zijn gelijk.',
+		"hint8"		: 'Daarom is de hoek x ook <code><var>ANGLES[ SHOWN_POS ]</var></code>',
+		"hint9"		: 'Deze vierhoek is een paralellogram.',
+		"hint10"	: 'Aangrenzende hoeken van een paralellogram zijn elkaars supplement.',
+		"hint11"	: 'Deze vierhoek is een ruit, omdat alle zijden gelijk zijn.',
+		"hint12"	: 'Overstaande hoeken van een ruit zijn gelijk.',
+		"hint13"	: 'Daarom is hoek x ook <code><var>ANGLES[ SHOWN_POS ]</var></code>',
+		"hint14"	: 'Deze vierhoek is een ruit, omdat alle zijden gelijk zijn.',
+		"hint15"	: 'Aangrenzende hoeken van een paralellogram zijn elkaars supplement.',
+		"hint16"	: 'Deze vierhoek is een vlieger omdat het twee paar gelijke aangrenzende zijden heeft.',
+		"hint17"	: 'De hoeken tussen de ongelijke zijden van een vlieger zijn gelijk.',
+		"hint18"	: 'Daarom is de hoek x ook <code><var>ANGLES[ SHOWN_POS ]</var></code>'
 		}
 })

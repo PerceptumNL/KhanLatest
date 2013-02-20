@@ -72,7 +72,7 @@ class ResurrectionBadge(RecoveryProblemBadge):
         RecoveryProblemBadge.__init__(self)
         self.problems_wrong = 10
         self.problems_wrong_out_of = 20
-        self.description = "Sticktoitiveness"
+        self.description = "Taaie oefenaar"
         self.s_problems_description = "veel problemen"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0

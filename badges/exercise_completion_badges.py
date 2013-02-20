@@ -179,7 +179,7 @@ class LevelOnePrealgebraistBadge(ExerciseCompletionBadge):
         self.exercise_names_required = [
             'exponents_1', 'adding_and_subtracting_negative_numbers',
             'adding_and_subtracting_fractions']
-        self.description = "Apprentice Pre-algebraist"
+        self.description = "Pupil in Pre-algebra"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 100
 
@@ -191,7 +191,7 @@ class LevelTwoPrealgebraistBadge(ExerciseCompletionBadge):
         self.exercise_names_required = [
             'exponents_2', 'multiplying_and_dividing_negative_numbers',
             'multiplying_fractions', 'dividing_fractions']
-        self.description = "Journeyman Pre-algebraist"
+        self.description = "Ontwikkeld in Pre-algebra"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 500
 
@@ -203,7 +203,7 @@ class LevelThreePrealgebraistBadge(ExerciseCompletionBadge):
         self.exercise_names_required = [
             'exponents_3', 'order_of_operations', 'ordering_numbers',
             'scientific_notation', 'units', 'simplifying_radicals']
-        self.description = "Artisan Pre-algebraist"
+        self.description = "Gevorderd in Pre-algebra"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 750
 
@@ -214,7 +214,7 @@ class TopLevelPrealgebraistBadge(badges.RetiredBadge,
     def __init__(self):
         ChallengeCompletionBadge.__init__(self)
         self.exercise_names_required = ['pre-algebra_challenge']
-        self.description = "Master of Pre-algebra"
+        self.description = "Meester in Pre-algebra"
         self.badge_category = badges.BadgeCategory.MASTER
         self.points = 10000
 
@@ -230,7 +230,7 @@ class LevelOneAlgebraistBadge(ExerciseCompletionBadge):
         self.exercise_names_required = [
             'exponents_3', 'exponent_rules', 'logarithms_1',
             'linear_equations_1', 'percentage_word_problems_1', 'functions_1']
-        self.description = "Apprentice Algebraist"
+        self.description = "Pupil in Algebra"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 100
 
@@ -243,7 +243,7 @@ class LevelTwoAlgebraistBadge(ExerciseCompletionBadge):
             'linear_equations_2', 'percentage_word_problems_2',
             'functions_2', 'domain_of_a_function', 'even_and_odd_functions',
             'shifting_and_reflecting_functions']
-        self.description = "Journeyman Algebraist"
+        self.description = "Ontwikkeld in Algebra"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 500
 
@@ -257,7 +257,7 @@ class LevelThreeAlgebraistBadge(ExerciseCompletionBadge):
             'multiplying_expressions_1', 'even_and_odd_functions',
             'inverses_of_functions', 'slope_of_a_line', 'midpoint_formula',
             'line_relationships', 'functions_3']
-        self.description = "Artisan I Algebraist"
+        self.description = "Gevorderd in Algebra"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 750
 
@@ -271,7 +271,7 @@ class LevelFourAlgebraistBadge(ExerciseCompletionBadge):
             'average_word_problems', 'equation_of_a_line',
             'solving_quadratics_by_factoring', 'quadratic_equation',
             'solving_for_a_variable', 'expressions_with_unknown_variables']
-        self.description = "Artisan II Algebraist"
+        self.description = "Geavanceerd in Algebra"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 1000
 
@@ -285,7 +285,7 @@ class LevelFiveAlgebraistBadge(ExerciseCompletionBadge):
             'expressions_with_unknown_variables_2',
             'absolute_value_equations', 'radical_equations',
             'rate_problems_1']
-        self.description = "Artisan III Algebraist"
+        self.description = "Vergevorderd in Algebra"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 1000
 
@@ -295,7 +295,7 @@ class TopLevelAlgebraistBadge(badges.RetiredBadge, ChallengeCompletionBadge):
     def __init__(self):
         ChallengeCompletionBadge.__init__(self)
         self.exercise_names_required = ['algebra_challenge']
-        self.description = "Master of Algebra"
+        self.description = "Meester of Algebra"
         self.badge_category = badges.BadgeCategory.MASTER
         self.points = 10000
 

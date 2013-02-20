@@ -1,6 +1,6 @@
-var msg1 = "Did you know that your Internet Explorer is out of date?";
-var msg2 = "To use Khan Academy you need to upgrade to a newer version or another web browser.";
-var msg3 = "Just click one of the icons below to start upgrading.";
+var msg1 = "Wist je dat je web browser verouderd is?";
+var msg2 = "Om Khan Academie te kunnen gebruiken moet je je een nieuwere versie van je web browser downloaden.";
+var msg3 = "Klik hier op een van de iconen hier onder om een upgrade te vinden.";
 var br1 = "Chrome";
 var br2 = "Firefox";
 var br3 = "Safari";
@@ -25,9 +25,9 @@ if (navigator.userAgent &&
 
     // If this file is executing (IE7) and Trident is in the useragent (IE8/9),
     // we're in compatibility mode.
-    msg1 = "Your Internet Explorer is running in compatibility mode.";
-    msg2 = "To use Khan Academy you need to disable compatibility mode by <a href='https://sites.google.com/a/khanacademy.org/forge/technical/how-to-disable-internet-explorer-compatibility-view'>following these instructions</a>.";
-    msg3 = "Or, you can upgrade to a newer version or another web browser.";
+    msg1 = "Uw Internet Explorer staat in de compatibiliteitsmodus.";
+    msg2 = "Om Khan Academie te kunnen gebruiken moet je de compatibiliteitsmodus uitzetten door <a href='https://sites.google.com/a/khanacademy.org/forge/technical/how-to-disable-internet-explorer-compatibility-view'> deze instructies te volgen</a>.";
+    msg3 = "Of je kan een nieuwe versie of web browser downloaden.";
 
 }
 

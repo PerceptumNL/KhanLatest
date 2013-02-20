@@ -70,7 +70,7 @@ class VoteEntity(request_handler.RequestHandler):
             return
 
         if user_data.is_child_account():
-            self.render_json({"error": "You cannot vote yet."})
+            self.render_json({"error": "Je kan nog niet stemmen."})
             return
 
         vote_type = self.request_int(
@@ -96,7 +96,7 @@ class VoteEntity(request_handler.RequestHandler):
             entity = db.get(entity_key)
             if entity and entity.authored_by(user_data):
                 self.render_json({
-                    "error": "You cannot vote for your own posts."
+                    "error": "Je kan niet op je eigen opmerking stemmen."
                 })
                 return
 

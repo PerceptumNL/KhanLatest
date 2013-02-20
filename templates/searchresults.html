@@ -125,14 +125,14 @@
                         {% endif %}
                       </div>
                       <div class="column">
-                        <p class="column-heading">Watch</p>
+                        <p class="column-heading">Bekijk</p>
                         <ul>
-                          <li><a href="{% if video.relative_url %}{{video.relative_url}}{% else %}{{video.url}}{% endif %}" data-tag="Search Body" class="vl"><span class="vid-progress v{{ video.key().id() }}">Watch the video lesson</a></li>
+                          <li><a href="{% if video.relative_url %}{{video.relative_url}}{% else %}{{video.url}}{% endif %}" data-tag="Search Body" class="vl"><span class="vid-progress v{{ video.key().id() }}">Bekijk de video</a></li>
                         </ul>
                       </div>
                       {% if video_exercises[video.key().__str__()] %}
                       <div class="column">
-                        <p class="column-heading">Practice Exercises</p>
+                        <p class="column-heading">Oefen</p>
                           <ul>
                             {% for exercise in video_exercises[video.key().__str__()] %}
                               <li><a href="{{ exercise.relative_url }}" data-tag="Search Body" class="exercise-link">{{ exercise.display_name|escape }}</a></li>

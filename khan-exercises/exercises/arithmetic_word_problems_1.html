@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <div id="take-away-start">
+	      <div id="take-away-start">
                 <p class="problem" data-tt="hint6">
                     Er zitten <var>plural('zit', NUM1)</var> <var>plural(NUM1, 'persoon')</var> in de tram.
                     Bij de vorige stop zijn er <var>plural(NUM2, 'persoon')</var> uitgestapt.
@@ -63,7 +63,7 @@
                 </div>
             </div>
 
-            <div id="take-away-change">
+           <div id="take-away-change">
                 <p class="problem" data-tt="hint11">
                     Er zaten <var>plural('zat', TOTAL)</var> <var>plural(TOTAL, 'persoon')</var> in de tram voordat de tram stopte bij een halte. Hier stapte een aantal mensen uit.
                     Nu zitten er <var>plural('zit', NUM2)</var> <var>plural(NUM2, 'persoon')</var> personen in de tram.
@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <div id="put-together">
+      <div id="put-together">
                 <p class="problem" data-tt="hint16">
                     Er staan <var>plural('staat', NUM1)</var> <var>plural(NUM1, 'boom')</var> op de rechteroever van de rivier <var>plural(NUM2, 'boom')</var> op de linkeroever.
                 </p>
@@ -110,7 +110,7 @@
                 </div>
             </div>
 
-            <div id="take-apart">
+          <div id="take-apart">
                 <p class="problem" data-tt="hint20">
                     Op beide oevers van de rivier staan <var>plural('staat', TOTAL)</var> <var>plural(TOTAL, 'boom')</var>. Op de <var>side(1)</var> oever <var>NUM2</var> bomen.
                 </p>
@@ -133,32 +133,32 @@
                 </div>
             </div>
 
-            <div id="add-start">
+         <div id="add-start">
                 <p class="problem" data-tt="hint24">
-                    Some cars were parked in the <var>store(1)</var> store parking lot.
-                    <var>NUM2</var> more <var>plural('car')</var> <var>plural('parks', 'park', NUM2)</var> at the <var>store(1)</var> store,
-                    and now there <var>plural('is', TOTAL)</var> <var>plural(TOTAL, 'car')</var> in the parking lot.
+                   Een aantal auto's staan geparkeerd op de parkeerplaats van <var>store(1)</var>.
+                    <var>NUM2</var> <var>plural('auto')</var> meer <var>plural('parkeert', 'parkeren', NUM2)</var> bij <var>store(1)</var>,
+                   en nu <var>plural('is', TOTAL)</var> er <var>plural(TOTAL, 'auto')</var> op de parkeerplaats.
                 </p>
                 <p class="question" data-tt="hint25">
-                    How many cars were parked at the <var>store(1)</var> store at the beginning?
+                    Hoeveel auto's stonden er eerst geparkeerd bij <var>store(1)</var>?
                 </p>
                 <p class="solution" data-forms="integer">
                     <var>NUM1</var>
                 </p>
                 <div class="hints">
                     <p data-tt="hint26">
-                    The number of cars parked at the store at the beginning is the difference of the number parked now and the number that came and parked earlier.
+                    De hoeveelheid auto's die eerst bij <var>store(1)</var> geparkeerd stonden is het verschil tussen de hoeveelheid auto's die er nu geparkeerd staan en de hoeveelheid auto's die er bijgekomen zijn.
                     </p>
                     <p data-tt="hint27">
-                    The difference is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural('car')</var>.
+                    Het verschil is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural('auto')</var>.
                     </p>
                     <p data-tt="hint53">
-                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> <var>plural('car', NUM1)</var>.
+                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> <var>plural('auto', NUM1)</var>.
                     </p>
                 </div>
             </div>
 
-            <div id="add-change">
+          <!--              <div id="add-change">
                 <p class="problem" data-tt="hint28">
                     Er stonden <var>plural( 'stond', NUM2 )</var> <var>plural( NUM2, 'auto' )</var> geparkeerd op het parkeerterrein van de <var>store(1)</var>.
                     Na <var>randRange( 2, 3 )</var> uur staan er meer auto's geparkeerd bij de <var>store(1)</var>. Er staan nu <var>plural('staat', TOTAL)</var> <var>plural(TOTAL, 'auto')</var> op de parkeerplaats. Er zijn geen auto's weggegaan van het parkeerterrein in die tijd.
@@ -296,7 +296,7 @@
                 </p>
             </div>
 
-        </div>
+        </div>-->
     </div>
 </body>
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie graphie-helpers">
+    <head>
+        <title>Welke breuk is groter? </title>
+        <script src="../khan-exercise.js"></script>
+    </head>
+    <body>
+        <div class="exercise">
+            <div class="vars" >
+                  <var id="FACTOR">randRange( 2, 10 )</var>
+                
+               <div data-ensure="DEN2 != DEN1 && DEN1<NUM1 && DEN2<NUM2 && FRAC1 != FRAC2">
+ 		<var id="NUM1">randRange(1,10)</var>
+                <var id="DEN1">randRange( 2, 10 )</var>
+                <var id="NUM2">randRange(1,10)</var>
+                <var id="DEN2">randRange(2,10)</var></div>
+                
+
+                <var id = "FRAC1">NUM1/DEN1</var>
+                <var id = "FRAC2">NUM2/DEN2</var>
+                <var id="WHOLE1">floorTo( 0, FRAC1 )</var>
+                <var id = "WHOLE2">floorTo(0,FRAC2)</var>
+                <var id = "REST1">NUM1%DEN1</var>
+                <var id ="REST2">NUM2%DEN2</var>
+                <var id = "BIGGER" data-if="FRAC1>FRAC2">a</var>
+                <var id = "BIGGER" data-else>b</var>
+		<var id = "RESTNUM1">toFraction(FRAC1-WHOLE1)[0]</var>
+		<var id="RESTDEN1">toFraction(FRAC1-WHOLE1)[1]</var>
+ 		<var id="RESTNUM2">toFraction(FRAC2-WHOLE2)[0]</var>
+		<var id="RESTDEN2">toFraction(FRAC2-WHOLE2)[1]</var>s
+
+            </div>
+
+        <div class="problems">
+            <div id="pie-chart">
+                <div class="question">
+                      <p data-tt="exercise1">Welke breuk is groter, a:<code><var>fraction(NUM1,DEN1)</var></code> of b:<code><var>fraction(NUM2,DEN2)</var></code>? <code><var>fraction(toFraction(BIGGER)[0], toFraction(BIGGER)[1])</p>
+                      
+                </div>
+                <div class="solution" data-type="rational" data-simplify="optional"><var>BIGGER</var></div>
+
+                    <div class="hints">
+                      <p data-tt="hint1"> Kijk eerst hoe vaak je de teller door de noemer kunt delen.</p>
+                      <p data-tt="hint2"> Dus voor <code><var>fraction(NUM1,DEN1)</var></code> is dat <var>WHOLE1</var> keer.</p>
+                      <p data-tt="hint3"> En voor <code><var>fraction(NUM2,DEN2)</var></code> is dat <var>WHOLE2</var> keer.</p>
+                      <p data-tt="hint4"> Je hebt dus voor de eerste breuk <var>WHOLE1</var> hele taarten en voor de tweede breuk <var>WHOLE2</var> hele taarten.</p>
+                      <p data-if="WHOLE1 == WHOLE2" data-tt="hint5">Nu moet je nog naar de rest kijken:<code><var>fraction(RESTNUM1,RESTDEN1)</var></code> en <code><var>fraction(RESTNUM2, RESTDEN2)</var></code></p>
+                      <p data-if="WHOLE1==WHOLE2" data-tt = "hint6"> <code><var>fraction(RESTNUM1,RESTDEN1)</var></code><div data-if="WHOLE1==WHOLE2" class="graphie">
+                            init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
+                            piechart( [RESTNUM1, RESTDEN1 - RESTNUM1], ["#e00", "#999"], 2 );
+                        </div>
+                       <p data-if="WHOLE1==WHOLE2" data-tt = "hint7"><code><var>fraction(RESTNUM2,RESTDEN2)</var></code> <div data-if="WHOLE1==WHOLE2" class="graphie">
+                            init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
+                            piechart( [RESTNUM2, RESTDEN2 - RESTNUM2], ["#e00", "#999"], 2 );
+                        </div>
+                       <p data-if="FRAC1>FRAC2" data-tt="hint8">Nu is het duidelijker dat <code><var>fraction(NUM1,DEN1)</var></code> groter is! <p>
+			<p data-else data-tt="hint9">Nu is het duidelijker dat <code><var>fraction(NUM2,DEN2)</var></code> groter is! </p>
+                    </div>          
+    </body>
+</html>

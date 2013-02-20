@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html data-require="math math-format">
+<head>
+    <meta charset="UTF-8" />
+    <title>Vermenigvuldigen gemengde breuken</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-require="DEN2 &gt; NUM && DEN &gt; NUM2">
+	<var id="NUM">randRange(2,4)</var>
+	<var id="NUM2">randRange(2,4)</var>
+	<var id="WHOLE">randRange(1,10)</var>
+	<var id="WHOLE2">randRange(1,10)</var>
+	<var  id="DEN">randRange(2,10)*NUM2</var>
+	<var  id="DEN2">randRange(2,10)*NUM</var>
+	<var id="REDUCE">reduce((ONECHT/LCM)*(ONECHT2/LCM2),(DEN/LCM2)*(DEN2/LCM))</var>
+	<var id="ONECHT">DEN*WHOLE+NUM</var>
+	<var id="ONECHT2">DEN2*WHOLE2+NUM2</var>
+	<var id="LCM">getGCD(ONECHT,DEN2)</var>
+	<var id="LCM2">getGCD(ONECHT2,DEN)</var>
+	<var id="TELLER">(ONECHT/LCM)*(ONECHT2/LCM2)</var>
+	<var id="NOEMER">(DEN/LCM2)*(DEN2/LCM)</var>
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+                <p>Los op: <code><var>WHOLE</var><var>fraction(NUM,DEN)</var> * <var>WHOLE2</var><var>fraction(NUM2,DEN2)</var></code>.</p>
+            </div>
+            <div class="solution" data-type="rational"><var>TELLER/NOEMER</var></div>
+        </div>
+    </div>
+
+    <div class="hints">
+	<p data-tt="hint0">Eerst schrijven we de gemengde breuken als onechte breuken.</p>
+	<p data-tt="hint0a"><code>\color{#FFA500}{<var>WHOLE</var>}</code> kun je schrijven als <code>\color{#6495ED}{<var>fraction(WHOLE,1)</var>} * \color{#6495ED}{<var>fraction(DEN,DEN)</var>} = \displaystyle {} \color{#6495ED}{\frac{<var>WHOLE</var> \times <var>DEN</var>}{1 \times <var>DEN</var>}} = \color{#6495ED}{<var>fraction(DEN*WHOLE,DEN)</var>}</code></p>
+	<p data-tt="hint0b"><code>\color{#FFA500}{<var>WHOLE2</var>}</code> kun je schrijven als <code>\color{#6495ED}{<var>fraction(WHOLE2,1)</var>} * \color{#6495ED}{<var>fraction(DEN2,DEN2)</var>} = \displaystyle {} \color{#6495ED}{\frac{<var>WHOLE2</var> \times <var>DEN2</var>}{1 \times <var>DEN2</var>}} = \color{#6495ED}{<var>fraction(DEN2*WHOLE2,DEN2)</var>}</code></p>
+	<p data-tt="hint0c">Dit tellen we op bij de gewone breuken:</p>
+	<p data-tt="hint0d"><code>\color{#6495ED}{<var>fraction(DEN*WHOLE,DEN)</var>} + \color{#6495ED}{<var>fraction(NUM,DEN)</var>} = \color{#6495ED}{<var>fraction(DEN*WHOLE+NUM, DEN)</var>}</code></p>
+	<p data-tt="hint0e"><code>\color{#6495ED}{<var>fraction(DEN2*WHOLE2,DEN2)</var>} + \color{#6495ED}{<var>fraction(NUM2,DEN2)</var>} = \color{#6495ED}{<var>fraction(DEN2*WHOLE2+NUM2, DEN2)</var>}</code></p>
+	
+	<p data-tt="hint1">We kunnen <code>\color{#6495ED}{<var>ONECHT2</var>}</code> en <code>\color{#6495ED}{<var>DEN</var>}</code> allebei door <code>\color{#FFA500}{<var>LCM2</var>}</code> delen.</p>
+
+	<p data-tt="hint1a">Dan krijgen we dus <code>\displaystyle {} \frac{\color{#6495ED}{<var>ONECHT</var>}}{\cancel{<var>DEN</var>} = \color{#6495ED}{<var>DEN/NUM2</var>}} * \frac{\cancel{<var>ONECHT2</var>} = \color{#6495ED}{<var>ONECHT2/LCM2</var>}}{\color{#6495ED}{<var>DEN2</var>}} = \color{#6495ED}{<var>fraction(ONECHT,DEN/LCM2)</var>} * \color{#6495ED}{<var>fraction(ONECHT2/LCM2,DEN2)</var>}</code></p>
+<p data-tt="hint1b">We kunnen <code>\color{#6495ED}{<var>ONECHT</var>}</code> en <code>\color{#6495ED}{<var>DEN2</var>}</code> allebei door <code>\color{#FFA500}{<var>LCM</var>}</code> delen.</p>
+
+	<p data-tt="hint1c">Dan krijgen we dus <code>\displaystyle {} \frac{\cancel{<var>ONECHT</var>}=\color{#6495ED}{<var>ONECHT/LCM</var>}}{\cancel{<var>DEN</var>} = \color{#6495ED}{<var>DEN/LCM2</var>}} * \frac{\cancel{<var>ONECHT2</var>} = \color{#6495ED}{<var>ONECHT2/LCM2</var>}}{\cancel{<var>DEN2</var>}=\color{#6495ED}{<var>DEN2/LCM</var>}} = \color{#6495ED}{<var>fraction(ONECHT/LCM,DEN/LCM2)</var>} * \color{#6495ED}{<var>fraction(ONECHT2/LCM2,DEN2/LCM)</var>}</code></p>
+
+	<p data-tt="hint1d">Nu hoeven we alleen <code> \displaystyle {} \frac{teller * teller}{noemer * noemer} </code> te doen.</p>
+
+	<p data-tt="hint1e">Dat wordt dus <code> \displaystyle {} \frac{\color{#6495ED}{<var>ONECHT/LCM</var>} \times \color{#6495ED}{<var>ONECHT2/LCM2</var>}}{\color{#6495ED}{<var>DEN/LCM2</var>} \times \color{#6495ED}{<var>DEN2/LCM</var>}} = \color{#6495ED}{<var>fraction((ONECHT/LCM)*(ONECHT2/LCM2),(DEN/LCM2)*(DEN2/LCM))</var>}</code></p>
+	<p data-tt="hint2" data-if="reduces((ONECHT/LCM)*(ONECHT2/LCM2),(DEN/LCM2)*(DEN2/LCM))">Nu nog vereenvoudigen:<code> \color{#6495ED}{<var>fraction(NUM,(DEN/NUM2)*DEN2)</var>} = <var>fraction(REDUCE[0], REDUCE[1])</var></code> </p>
+	<p data-tt="hint3" data-if="TELLER-NOEMER &gt; 0">De teller is groter dan de noemer. We kunnen de breuk dus nog verder vereenvoudigen.</p>
+	<p data-tt="hint3a" data-if="TELLER-NOEMER &gt; 0">We kunnen een heel getal <code>\color{#FFA500}{<var>floorTo(0, TELLER/NOEMER)</var>}</code> keer uit de breuk halen. </p>
+	<p data-tt="hint3b" data-if="TELLER-NOEMER &gt; 0">Dan krijgen we dus <code>\color{#6495ED}{<var>fraction(TELLER,NOEMER)</var>} - (\color{#FFA500}{<var>floorTo(0,TELLER/NOEMER)</var>}* \color{#6495ED}{<var>fraction(NOEMER,NOEMER)</var>})</code>
+	<p data-tt="hint3c" data-if="TELLER-NOEMER &gt; 0"> De breuk wordt dus <code>\color{#FFA500}{<var>floorTo(0,TELLER/NOEMER)</var>} \color{#6495ED}{<var>fraction(TELLER- (floorTo(0,TELLER/NOEMER))*NOEMER,NOEMER)</var>}</code></p>
+       
+    </div>
+    </div>
+</body>
+</html>

@@ -21,7 +21,7 @@
                             + fractionReduce( ( D - B ) * ( D - B), ( A - C ) * ( A - C) )
                             + "&lt;/code&gt;";
                     } else {
-                        return "No solution";
+                        return "Geen oplossing";
                     }
                 })()</var>
             <var id="CHOICES">
@@ -64,40 +64,40 @@
         <div class="hints">
             <div data-if="A > C" data-unwrap>
                 <div>
-                    <p data-tt="hint1" >Haal van beide kanten <code><var>C</var>\sqrt{x}</code> af:</p>
+                    <p data-tt="hint1" >Trek <code><var>C</var>\sqrt{x}</code> van beide zijden af:</p>
                     <p><code>(<var>A</var>\sqrt{x} + <var>B</var>) - <var>C</var>\sqrt{x} = (<var>C</var>\sqrt{x} + <var>D</var>) - <var>C</var>\sqrt{x}</code></p>
                     <p><code><var>A - C</var>\sqrt{x} + <var>B</var> = <var>D</var></code></p>
                 </div>
                 <div>
-                    <p data-tt="hint2" ><var>B > 0 ? "Haal van beide kanten" : "Add"</var> <code><var>abs(B)</var></code> <var>B > 0 ? : "to"</var> af:</p>
+                    <p data-tt="hint2" ><var>B > 0 ? "Trek af:" : "Tel op:"</var> <code><var>abs(B)</var></code> <var>B > 0 ? "van" : "bij"</var> beide zijden.</p>
                     <p><code>(<var>A - C</var>\sqrt{x} + <var>B</var>) + <var>-B</var> = <var>D</var> + <var>-B</var></code></p>
                     <p><code><var>A - C</var>\sqrt{x} = <var>D - B</var></code></p>
                 </div>
                 <div>
-                    <p data-tt="hint3" >Deel beide kanten door <code><var>A - C</var></code>.</p>
+                    <p data-tt="hint3" >Deel beide zijden door <code><var>A - C</var></code>.</p>
                     <p><code>\frac{<var>A - C</var>\sqrt{x}}{<var>A - C</var>} = \frac{<var>D - B</var>}{<var>A - C</var>}</code></p>
                 </div>
                 <div>
-                    <p data-tt="hint4" >Vereenvoudig.</p>
+                    <p data-tt="hint4" >Vereenvoudig:</p>
                     <p><code>\sqrt{x} = <var>SIMPLIFIED</var></code></p>
                 </div>
                 <div data-if="( D - B ) / ( A - C ) > 0">
-                    <p data-tt="hint5" >Kwadrateer beide kanten.</p>
+                    <p data-tt="hint5" >Kwadrateer beide zijden:</p>
                     <p><code>\sqrt{x} \cdot \sqrt{x} = <var>SIMPLIFIED</var> \cdot <var>SIMPLIFIED</var></code></p>
                     <p><var>SOLUTION</var></p>
                 </div>
                 <p  data-tt="hint6" data-else>
-                    De uitkomst van een wortel kan niet negatief zijn. Dus er zijn geen oplossingen.
+                    De principi&euml;le wortel van een getal kan niet negatief zijn. Dus, er is geen oplossing.
                 </p>
             </div>
             <div data-else data-unwrap>
                 <div>
-                    <p data-tt="hint7" >Haal van beide kanten <code><var>A</var>\sqrt{x}</code> af:</p>
+                    <p data-tt="hint7" >Trek <code><var>A</var>\sqrt{x}</code> van beide kanten af:</p>
                     <p><code>(<var>A</var>\sqrt{x} + <var>B</var>) - <var>A</var>\sqrt{x} = (<var>C</var>\sqrt{x} + <var>D</var>) - <var>A</var>\sqrt{x}</code></p>
                     <p><code><var>B</var> = <var>C - A</var>\sqrt{x} + <var>D</var></code></p>
                 </div>
                 <div>
-                    <p data-tt="hint8" ><var>D > 0 ? "Haal van beide kanten" : "Add"</var> <code><var>abs(D)</var></code> <var>D > 0 ? : "to"</var> af:</p>
+                    <p data-tt="hint8" ><var>D > 0 ? "Trek af:" : "Tel op:"</var> <code><var>abs(D)</var></code> <var>D > 0 ? "van" : "bij"</var> beide zijden:</p>
                     <p><code><var>B</var> + <var>-D</var> = (<var>C - A</var>\sqrt{x} + <var>D</var>) + <var>-D</var></code></p>
                     <p><code><var>B - D</var> = <var>C - A</var>\sqrt{x}</code></p>
                 </div>
@@ -115,7 +115,7 @@
                     <p><var>SOLUTION</var></p>
                 </div>
                 <p  data-tt="hint12" data-else>
-                    De uitkomst van een wortel kan niet negatief zijn. Dus er zijn geen oplossingen.
+                    De principi&euml;le wortel van een getal kan niet negatief zijn. Dus, er is geen oplossing.
                 </p>
             </div>
         </div>

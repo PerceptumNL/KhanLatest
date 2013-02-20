@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html data-require="math math-format">
+<head>
+    <meta charset="UTF-8" />
+    <title>Vermenigvuldigen gemengde breuk en geheel getal</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-require="NUM &lt; DEN">
+	<var id="NUM">randRange(1,9)</var>
+	
+	<var id="WHOLE">randRange(1,9)</var>
+	<var id="WHOLE2">randRange(1,9)</var>
+	<var  id="DEN">randRange(2,10)</var>
+	<var id="TIMES">floorTo(0, (NUM*WHOLE2)/DEN)</var>
+	
+	
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+                <p>Los op: <code><var>WHOLE2</var> * <var>WHOLE</var><var>fraction(NUM,DEN)</var> </code>.</p>
+            </div>
+            <div class="solution" data-type="rational"><var>WHOLE2*(WHOLE+(NUM/DEN))</var></div>
+        </div>
+    </div>
+
+    <div class="hints">
+	<p data-tt="hint1">We moeten het <span class = "hint_orange">gehele getal</span> <code>\color{#FFA500}{<var>WHOLE2</var>}</code> zowel met <code>\color{#FFA500}{<var>WHOLE</var>}</code> als met <code>\color{#6495ED}{<var>fraction(NUM,DEN)</var>}</code> vermenigvuldigen.</p>
+	<p data-tt="hint1a">Dus we doen eerst <code><var>\color{#FFA500}{<var>WHOLE2</var>} * \color{#FFA500}{<var>WHOLE</var>} = \color{#FFA500}{<var>WHOLE*WHOLE2</var>}</code>.</p>
+	<p data-tt="hint1b">Vervolgens doen we <code><var>\color{#FFA500}{<var>WHOLE2</var>} * \color{#6495ED}{<var>fraction(NUM,DEN)</var>} =<var>\color{#FFA500}{<var>fraction(WHOLE2,1)</var>} * \color{#6495ED}{<var>fraction(NUM,DEN)</var>}  = \displaystyle {} \color{#6495ED}{\frac{<var>WHOLE2</var> \times <var>NUM</var>}{1 \times <var>DEN</var>}} = \color{#6495ED}{<var>fraction(NUM*WHOLE2,DEN)</var>}</code></p>
+	<p data-tt="hint2" data-if="NUM*WHOLE2 &gt; DEN">De teller is nu groter dan de noemer.</p>
+	<p data-tt="hint2a" data-if="NUM*WHOLE2 &gt; DEN">De noemer past <code>\color{#FFA500}{<var>TIMES</var>}</code> keer in de teller, met een rest van <code>\color{#6495ED}{<var>NUM*WHOLE2-(TIMES*DEN)</var>}</code>. </p>
+	<p data-tt="hint2b" data-if="NUM*WHOLE2 &gt; DEN">We tellen nu alle <span class ="hint_orange">gehele getallen </span> bij elkaar op:</p>
+	<p data-tt="hint2c" data-if="NUM*WHOLE2 &gt;DEN"><code>\color{#FFA500}{<var>WHOLE*WHOLE2</var>} + \color{#FFA500}{<var>TIMES</var>} = \color{#FFA500}{<var>WHOLE*WHOLE2+TIMES</var>}</code></p>
+	
+	<p data-tt="hint3">Nu tellen we de <span class="hint_orange">gehele getallen</span> en de <span data-if="NUM*WHOLE2 &gt; DEN">rest van de </span> <span class ="hint_blue">breuk</span> bij elkaar op:</p>
+	<p data-tt="hint3a"><code>\color{#FFA500}{<var>WHOLE*WHOLE2+TIMES</var>}+\color{#6495ED}{<var>fraction(NUM*WHOLE2-(TIMES*DEN),DEN)</var>} = \color{#FFA500}{<var>WHOLE*WHOLE2+TIMES</var>} <span data-if="(NUM*WHOLE2-(TIMES*DEN)) &gt; 0">\color{#6495ED}{<var>fraction(NUM*WHOLE2-(TIMES*DEN),DEN)</var>}</code></span></p>
+	<p data-tt="hint4" data-if="reduces(NUM*WHOLE2-(TIMES*DEN),DEN) && (NUM*WHOLE2-(TIMES*DEN)) &gt; 0">Nu moeten we alleen de breuk nog vereenvoudigen:</p>
+	<p data-tt="hint4a" data-if="reduces(NUM*WHOLE2-(TIMES*DEN),DEN) && (NUM*WHOLE2-(TIMES*DEN)) &gt; 0"><code>\color{#6495ED}{<var>fraction(NUM*WHOLE2-(TIMES*DEN),DEN)</var>} = \color{#6495ED}{<var>fraction(reduce(NUM*WHOLE2-(TIMES*DEN),DEN)[0],reduce(NUM*WHOLE2-(TIMES*DEN),DEN)[1])</var>}</code></p>
+	<p data-tt="hint4b" data-if="reduces(NUM*WHOLE2-(TIMES*DEN),DEN) && (NUM*WHOLE2-(TIMES*DEN)) &gt; 0">Het antwoord is dus <code>  \color{#FFA500}{<var>WHOLE*WHOLE2+TIMES</var>}\color{#6495ED}{<var>fraction(reduce(NUM*WHOLE2-(TIMES*DEN),DEN)[0],reduce(NUM*WHOLE2-(TIMES*DEN),DEN)[1])</var>}</code>
+    </div>
+    </div>
+</body>
+</html>

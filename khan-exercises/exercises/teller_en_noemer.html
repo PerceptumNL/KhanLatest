@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math graphie graphie-helpers word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Teller en noemer</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <!--
+        Compares fractions that have the same numerator or have the same denominator.
+        TODO: would like to draw overlapping circles or rectangle slices for hints.
+    -->
+    <div class="exercise">
+        <div class="vars">
+            <var id="NUM_1">randRange(1,6)</var>
+            <var id="DEN_1">randRange( NUM_1 + 1, 10 )</var>
+        </div>
+        <div class="problems">
+            <div id="pie-chart">
+                <div class="question">
+                      <p data-tt="exercise1">Hoe groot is de teller van de taart? Hoe groot is de noemer?</p>
+                        <div class="graphie">
+                            init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
+                            piechart( [NUM_1, DEN_1 - NUM_1], ["#e00", "#999"], 2 );
+                        </div>
+                </div>
+                <div class="solution" data-type="multiple">
+   
+    <p>teller = <span class="sol" data-type="decimal" ><var>NUM_1</var></span></p>
+    <p>noemer = <span class="sol" data-type="decimal"><var>DEN_1</var></span></p>
+
+</div>
+                <div class="hints">
+                    <p data-tt="hint1">Tel de rode stukken voor de teller.</p>
+                    <p data-tt="hint2">Er <var>plural( "is", NUM_1 )</var> <var>plural( NUM_1, "stuk")</var> rood.</p>
+                    <p data-tt="hint3">Tel het totaal aantal stukken (<code>\color{#e00}{\text{Rode Stukken}}</code> + <code>\color{#999}{\text{Grijze Stukken}}</code>) voor de noemer.</p>
+                    <p data-tt="hint4">Er zijn in totaal <var>DEN_1</var> stukken.</p>
+                    <p data-tt="hint5">Dus je antwoord zou moeten zijn teller: <var>NUM_1</var>, noemer: <var>DEN_1</var></p>
+                </div>
+            </div>
+
+</body>
+</html>

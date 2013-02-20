@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie graphie-helpers">
+    <head>
+        <title>Gemengde breuken van elkaar aftrekken</title>
+        <script src="../khan-exercise.js"></script>
+	<style>.graphie{float:left} p{float:none} </style>
+    </head>
+    <body>
+        <div class="exercise">
+            <div class="vars" data-ensure="M_DENOM &gt; M_NUM && WHOLE &gt; WHOLE2 && M_NUM &lt; M_NUM2 && M_NUM2 &lt; M_DENOM">
+                <var id="WHOLE">randRange( 2, 10 )</var>   
+		<var id="WHOLE2">randRange(2,10)</var>             
+                <var id="M_NUM">randRange( 1, 10 )</var>
+		<var id="M_NUM2">randRange(1,10)</var>
+                <var id="M_DENOM">randRange( 2, 10 )</var>
+		<var id="MIN">M_DENOM-M_NUM</var>
+
+            </div>
+
+            <div class="problems">
+            
+                
+                <div id="mixed-to-improper">
+                    <p  data-tt="question2" class="question">Los op: <code><var>WHOLE</var> <var>fraction( M_NUM, M_DENOM, false, false )</var> - <var>WHOLE2</var> <var>fraction(M_NUM2, M_DENOM, false, false)</var></code>.</p>
+
+                    <p class="solution" data-type="rational" data-simplify="optional"><var>(WHOLE-WHOLE2-1)+(M_NUM+M_DENOM-M_NUM2)/M_DENOM</var></p>
+
+                    <div class="hints">
+			
+			<p data-tt="hint1">Eerst trekken we de <span class = "hint_orange">gehele getallen</span> van elkaar af:</p><p><code>\color{#FFA500}{<var>WHOLE</var>} - \color{#FFA500}{<var>WHOLE2</var>} = <var>WHOLE-WHOLE2</var></code></p>			
+			<p data-tt="hint2">Nu hebben we <code>\color{#FFA500}{<var>WHOLE-WHOLE2</var>} \color{#04B404}{<var>fraction(M_NUM,M_DENOM)</var>}</code> pizza's.</p>
+			<p data-tt="hint3"> Dit kunnen we opschrijven als een stapel pizza's plus een pizza in <var>M_DENOM</var> stukjes plus <var>M_NUM</var> losse stukjes pizza:</p><p> <code>\color{#FFA500}{<var>WHOLE-WHOLE2-1</var>} + \color{#6495ED}{<var>fraction(M_DENOM, M_DENOM)</var>} + \color{#04B404}{<var>fraction(M_NUM,M_DENOM)</var>}</code> pizza's <code>= \color{#FFA500}{<var>WHOLE-WHOLE2-1</var>} \color{#6495ED}{<var>fraction(M_DENOM+M_NUM,M_DENOM)</var>}</code>.</p>
+                          <p><span class="graphie">
+                            init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
+                            piechart( [M_NUM, M_DENOM-M_NUM], ["#e00", "#e00"], 2 );
+                        </span><span class="graphie">
+                            init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
+                            piechart( [M_NUM, M_DENOM-M_NUM], ["#e00", "#999"], 2 );
+                        </span></p>
+ 			<br><br><br>
+			<p  data-tt="hint4">Nu hebben we <code>\color{#6495ED}{<var>M_DENOM+M_NUM</var>}</code> losse stukken pizza. Daar willen we <code>\color{#6495ED}{<var>fraction(M_NUM2,M_DENOM)</var>}</code> van aftrekken. <br><br><br>We willen dus <code>\color{#6495ED}{<var>M_NUM2</var>}</code> stukjes weghalen. Dan krijgen we:
+ 			</p>
+			 <p><span class="graphie">
+                            init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
+                            piechart( [M_NUM-M_NUM2, M_DENOM-(M_NUM-M_NUM2)], ["#e00", "#999"], 2 );
+                        </span><span class="graphie">
+                            init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
+                            piechart( [M_NUM, M_DENOM-M_NUM], ["#999", "#999"], 2 );
+                        </span></p>
+<br><br><br>
+			<p data-tt="hint4">Oftewel, we pakken van de <code>\color{#6495ED}{<var>M_DENOM+M_NUM</var>}</code> stukjes er <code>\color{#6495ED}{<var>M_NUM2</var>}</code> weg: <code>\color{#04B404}{<var>fraction(M_DENOM+M_NUM,M_DENOM)</var>} - \color{#6495ED}{<var>fraction(M_NUM2,M_DENOM)</var>}= \color{#6495ED}{<var>fraction(M_DENOM+M_NUM-M_NUM2,M_DENOM)</var>}</code></p>
+			<br><br><br>
+			<p data-tt="hint5">Het antwoord is dus <code>\color{#FFA500}{<var>WHOLE-WHOLE2-1</var>}+ \color{#6495ED}{<var>fraction(M_DENOM+M_NUM-M_NUM2, M_DENOM)</var>}= <var>WHOLE-WHOLE2-1</var><var>fraction(M_DENOM+M_NUM-M_NUM2,M_DENOM)</var></code></p>
+                </div>
+            </div>
+
+    </body>
+</html>

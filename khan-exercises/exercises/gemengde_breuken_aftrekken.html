@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie graphie-helpers">
+    <head>
+        <title>Gemengde breuken met gelijke noemers aftrekken</title>
+        <script src="../khan-exercise.js"></script>
+    </head>
+    <body>
+        <div class="exercise">
+            <div class="vars" data-ensure="M_NUM + M_NUM2 &lt; M_DENOM && M_NUM &gt; M_NUM2 && WHOLE &gt; WHOLE2">
+                <var id="WHOLE">randRange( 1, 10 )</var>
+ 		<var id="WHOLE2">randRange(1,10)</var>
+                
+                <var id="M_NUM">randRange( 1, 10 )</var>
+                <var id="M_DENOM">randRange( 2, 10 )</var>
+		<var id="M_NUM2">randRange(1,10)</var>
+
+            </div>
+
+            <div class="problems">
+            
+                
+                <div id="mixed-to-improper">
+                    <p  data-tt="question2" class="question">Los op: <code><var>WHOLE</var>\ <var>fraction( M_NUM, M_DENOM, false, false )</var> - </code>  <code><var>WHOLE2</var>\ <var>fraction( M_NUM2, M_DENOM, false, false )</var></code>.</p>
+
+                    <p class="solution" data-type="rational" data-simplify="optional"><var>WHOLE-WHOLE2+(M_NUM-M_NUM2)/M_DENOM</var></p>
+
+                    <div class="hints">
+                        <p><code>\color{#FFA500}{<var>WHOLE</var>}\ \color{#6495ED}{<var>fraction( M_NUM, M_DENOM, false, true )</var>}</code> en <code>\color{#FFA500}{<var>WHOLE2</var>}\ \color{#6495ED}{<var>fraction( M_NUM2, M_DENOM, false, false )</var>}</code></p>
+                        <p data-tt="hint1" >De gemengde breuken zijn equivalent aan <code>\color{#FFA500}{<var>WHOLE</var>} + \color{#6495ED}{<var>fraction( M_NUM, M_DENOM, false, false )</var>}</code> en <code>\color{#FFA500}{<var>WHOLE2</var>} + \color{#6495ED}{<var>fraction( M_NUM2, M_DENOM, false, false )</var>}</code>.</p>
+                        <div>
+                            <p data-tt="hint2" >Eerst trekken we de <span class="hint_orange">gehele nummers</span> van elkaar af. <p><code>\color{#FFA500}{<var>WHOLE</var>}- \color{#FFA500}{<var>WHOLE2</var>} = \color{#6495ED}{<var>WHOLE-WHOLE2</var>}</code>.</p>
+                            
+                            <p data-tt="hint3" >Nu trekken we de <span class ="hint_blue">breuken</span> van elkaar af: </p>
+                            <p><code> \color{#6495ED}{<var>fraction( M_NUM, M_DENOM, false, false )</var>} - \color{#6495ED}{<var>fraction( M_NUM2, M_DENOM, false, false )</var>} = \color{#FFA500}{<var>fraction(M_NUM -M_NUM2, M_DENOM,false,false)</var>}</code></p>
+                            <p data-tt="hint4" >Nu de breuk vereenvoudigen en bij het hele getal optellen:</p>
+                        </div>
+                        <p><code>\color{#FFA500}{<var>WHOLE-WHOLE2</var>} + \color{#6495ED}{<var>fraction(M_NUM-M_NUM2,M_DENOM,false,true)</var>} = <var>WHOLE-WHOLE2+ fraction(toFraction((M_NUM-M_NUM2)/M_DENOM)[0], toFraction((M_NUM-M_NUM2)/M_DENOM)[1]) </var></code></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

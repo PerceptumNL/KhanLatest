@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format">
+<head>
+    <meta charset="UTF-8" />
+    <title>Twee breuken met verschillende noemers aftrekken</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-ensure="DEN1 != DEN2 && NUM &lt; DEN1 && NUM2 &lt; DEN2 && (NUM/DEN1) &gt; (NUM2/DEN2)">
+	<var id="NUM">randRange(1,10)</var>
+	<var id="NUM2">randRange(1,10)</var>
+	<var id="DEN1">randRange(2,10)</var>
+	<var id="DEN2">randRange(2,10)</var>
+	<var id ="LCM">getLCM(DEN1,DEN2)</var>
+	<var id ="TIMES">LCM/DEN1</var>
+	<var id="TIMES2">LCM/DEN2</var>
+	<var id="TELLERFINAL">(NUM*(LCM/DEN1))-(NUM2*(LCM/DEN2))</var>
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+               <p>Los op: <code><var>fraction(NUM,DEN1)</var> - <var>fraction(NUM2,DEN2)</var></code>.</p>
+            </div>
+  <p class="solution" data-type="rational" data-simplify="optional"><var>((TIMES*NUM)/LCM)-((TIMES2*NUM2)/LCM)</var></p>
+        </div>
+    </div>
+
+    <div class="hints">
+        <p data-tt="hint1">Om deze twee breuken van elkaar af te kunnen trekken maken we de noemers gelijk. Hiervoor zoeken we het laagste gemeenschappelijke meervoud.</p>
+        <p data-tt="hint1a">Dat is <code>\color{#6495ED}{<var>LCM</var>}</code> (want: <code>\color{#04B404}{<var>LCM/DEN1</var>}* \color{#6495ED}{<var>DEN1</var>} = \color{#6495ED}{<var>LCM</var>}</code> en <code>\color{#04B404}{<var>LCM/DEN2</var>}* \color{#6495ED}{<var>DEN2</var>} = \color{#6495ED}{<var>LCM</var>}</code>)</p>
+	<p data-tt="hint2">De noemers kun je alleen vermenigvuldigen als je de tellers met hetzelfde getal vermenigvuldigt.</p>
+	<p data-tt="hint2a">Dat wordt dus <code>\color{#04B404}{<var>LCM/DEN1</var>} * \color{#6495ED}{<var>NUM</var>} = \color{#6495ED}{<var>NUM*(LCM/DEN1)</var>}</code> en <code> \color{#04B404}{<var>LCM/DEN2</var>} * \color{#6495ED}{<var>NUM2</var>} = \color{#6495ED}{<var>NUM2*(LCM/DEN2)</var>}</code></p>
+	<p data-tt="hint3">De breuken worden dus <code>\color{#6495ED}{<var>fraction(NUM*(LCM/DEN1),LCM)</var>}</code> en <code>\color{#6495ED}{<var>fraction(NUM2*(LCM/DEN2), LCM)</var>}</code>.</p>
+	<p data-tt="hint4">Nu trekken we de breuken van elkaar af:<code>\color{#6495ED}{<var>fraction(NUM*(LCM/DEN1),LCM)</var>} - \color{#6495ED}{<var>fraction(NUM2*(LCM/DEN2), LCM)</var>} = \color{#6495ED}{<var>fraction((NUM*(LCM/DEN1))-(NUM2*(LCM/DEN2)), LCM)</var>}</code></p>
+	<p data-tt="hint5" data-if="reduces((NUM*(LCM/DEN1))-(NUM2*(LCM/DEN2)),LCM)">Nu vereenvoudigen we de breuk naar <code>
+\color{#6495ED}{<var>fraction(reduce((TIMES*NUM)-(TIMES2*NUM2),LCM)[0],reduce((TIMES*NUM)-(TIMES2*NUM2),LCM)[1])</var>}</code>.</p>
+	<p data-tt="hint5" data-if="(NUM*(LCM/DEN1))-(NUM2*(LCM/DEN2)) &gt; LCM">Nu maken we van de onechte breuk een gemengde breuk: <code>1<var>fraction(reduce(TELLERFINAL-LCM, LCM)[0], reduce(TELLERFINAL-LCM,LCM)[1])</var></code></p>
+ 
+        
+    </div>
+    </div>
+</body>
+</html>

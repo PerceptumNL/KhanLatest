@@ -4,6 +4,7 @@ import urllib
 import urlparse
 
 from app import App
+from google.appengine.api.app_identity import get_default_version_hostname
 
 
 def create_login_url(dest_url):
@@ -80,7 +81,7 @@ def secure_url(url):
         # Vanity domains can't handle https - but all the ones we own
         # are simple CNAMEs to the default app engine instance.
         # http://code.google.com/p/googleappengine/issues/detail?id=792
-        netloc = "khan-netherlands.appspot.com"
+        netloc = "%s.appspot.com" % get_default_version_hostname()
 
     return urlparse.urlunsplit(("https", netloc, path, query, fragment))
 
@@ -103,7 +104,7 @@ def insecure_url(url):
 
     _, netloc, path, query, fragment = _get_url_parts(url)
 
-    if netloc.lower() == "khan-netherlands.appspot.com":
+    if netloc.lower() == "%s" % get_default_version_hostname():
         # https://khan-academy.appspot.com is the HTTPS equivalent of the
         # default appengine instance
         netloc = "www.khanacademie.nl"
@@ -150,10 +151,10 @@ def static_url(relative_url):
         match = re.match(r"([\w-]+)\.wild\.khanacademie\.nl", host)
         if match:
             version = match.group(1)
-            return ("http://%s.khan-netherlands.appspot.com%s" %
-                    (version, relative_url))
+            return ("http://%s.%s%s" %
+                    (version, get_default_version_hostname(), relative_url))
         else:
-            return "http://khan-netherlands.appspot.com%s" % relative_url
+            return "http://%s.%s" % (get_default_version_hostname(), relative_url)
 
 
 def iri_to_uri(iri):
@@ -192,8 +193,8 @@ def is_khanacademy_url(url):
     # Check all absolute URLs
     if (netloc and
             not netloc.endswith(".khanacademie.nl") and
-            not netloc.endswith(".khan-netherlands.appspot.com") and
-            not netloc == "khan-netherlands.appspot.com"):
+            not netloc.endswith(".%s" % get_default_version_hostname()) and
+            not netloc == "%s" % get_default_version_hostname()):
         return False
 
     # Relative URL's are considered to be a Khan Academy URL.

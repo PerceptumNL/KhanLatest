@@ -502,10 +502,10 @@ var ClassProfile = {
                 }
 
                 exercise.status_css = 'transparent';
-                if (exercise.status == 'Review') exercise.status_css = 'review light';
-                else if (exercise.status.indexOf('Proficient') == 0) exercise.status_css = 'proficient';
-                else if (exercise.status == 'Struggling') exercise.status_css = 'struggling';
-                else if (exercise.status == 'Started') exercise.status_css = 'started';
+                if (exercise.status == 'Herzien') exercise.status_css = 'review light';
+                else if (exercise.status.indexOf('Gehaald') == 0) exercise.status_css = 'proficient';
+                else if (exercise.status == 'Moeite') exercise.status_css = 'struggling';
+                else if (exercise.status == 'Gestart') exercise.status_css = 'started';
                 exercise.notTransparent = (exercise.status_css != 'transparent');
 
                 exercise.idx = idx2;

@@ -12,7 +12,7 @@
     -->
     <div class="exercise">
         <div class="vars">
-            <var id="NUM_1">randRange(2,8)</var>
+            <var id="NUM_1">randRange(1,8)</var>
             <var id="DEN_1">randRange( NUM_1 + 1, 10 )</var>
         </div>
         <div class="problems">
@@ -27,12 +27,14 @@
                 <p class="solution" data-simplify="optional"><code><var>NUM_1 / DEN_1</var></code></p>
                 <div class="hints">
                     <p data-tt="hint1">Tel de rode stukken voor de teller.</p>
-                    <p data-tt="hint2"><code>{\color{#e00}{\text{Er <var>plural( "is", NUM_1 )</var> <var>NUM_1</var> rode stukken.}}}</code></p>
-                    <p data-tt="hint3">Tel het totaal aantal stukken (rode stukken + grijze stukken) voor de noemer.</p>
-                    <p data-tt="hint4"><code>{\color{#00e}{\text{Er zijn in totaal <var>DEN_1</var> stukken.}}}</code></p>
-                    <p data-tt="hint5">Dus je antwoord zou moeten zijn <code>\dfrac{\color{#e00}{<var>NUM_1</var>}}{\color{#00e}{\text{<var>DEN_1</var>}}}</code>.</p>
+                    <p data-tt="hint2">Er <var>plural( "is", NUM_1 )</var> <var>plural( NUM_1, "rood")</var> <var>plural( NUM_1, "stuk")</var>.</p>
+                    <p data-tt="hint3">Tel het totaal aantal stukken (<code>\color{#e00}{\text{Rode Stukken}}</code> + <code>\color{#999}{\text{Grijze Stukken}}</code>) voor de noemer.</p>
+                    <p data-tt="hint4">Er zijn in totaal <var>DEN_1</var> stukken.</p>
+                    <p data-tt="hint5">Dus je antwoord zou moeten zijn <code>\dfrac{\color{#e00}{<var>NUM_1</var>}}{\color{#666}{\text{<var>DEN_1</var>}}}</code>.</p>
                 </div>
             </div>
+        </div>
+    </div>
 
 </body>
 </html>

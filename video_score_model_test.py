@@ -44,7 +44,7 @@ class VideoScoreTest(gae_model.GAEModelTestCase):
                 indices.get_index_from_key(str(x))) == str(x)
             for x in vid_keys))
 
-        # Save the dictionaries so we can test later consistency
+        # Save the dictionaries so we can test later consistency.
         saved_index_to_key = indices.index_to_key
         saved_key_to_index = indices.key_to_index
 

@@ -5,7 +5,7 @@
     <script src="../khan-exercise.js"></script>
     <style type="text/css">
         #answer_area input[type=text] {
-            width: 30px;
+            width: 35px;
         }
     </style>
 </head>
@@ -24,17 +24,17 @@
                 </div>
 
                 <p class="question">The value of <code>\sqrt{<var>Q</var>}</code> lies between which two <a href="#" class="show-definition" data-definition="consecutive-integers">consecutive integers</a>?</p>
-                
+
                 <div class="definition" id="consecutive-integers">
                     Integers that appear in order when counting, for example 2 and 3.
                 </div>
 
                 <p class="solution"><var>N</var></p>
                 <div class="solution" data-type="multiple">
-                    <p><span class="sol short"><var>N</var></span> <code>&lt; \sqrt{<var>Q</var>} &lt;</code> <span class="sol short"><var>N + 1</var></span></p>
+                    <p><span class="sol short" data-forms="integer"><var>N</var></span> <code>&lt; \sqrt{<var>Q</var>} &lt;</code> <span class="sol short" data-forms="integer"><var>N + 1</var></span></p>
                     <span class="example">two integers, like <code>6</code></span>
                 </div>
-                
+
                 <div class="hints">
                     <div>
                         <p>Consider the perfect squares near <code><var>Q</var></code>.
@@ -55,7 +55,7 @@
                     <p><code><var>(N + 1) * (N + 1)</var></code> is the nearest perfect square more than <code><var>Q</var></code>.</p>
                     <p>So, we know <code><var>N * N</var> &lt; <var>Q</var> &lt; <var>(N + 1) * (N + 1)</var></code>.</p>
                     <p>So, <code>\sqrt{<var>N * N</var>} &lt; \sqrt{<var>Q</var>} &lt; \sqrt{<var>(N + 1)*(N + 1)</var>}</code>.</p>
-                    <p class="final_answer">So the square root of <code><var>Q</var></code> is between <code><var>N</var></code> and <code><var>N + 1</var></code>.</p>
+                    <p class="final_answer">So <code>\sqrt{<var>Q</var>}</code> is between <code><var>N</var></code> and <code><var>N + 1</var></code>.</p>
                 </div>
 
             </div>

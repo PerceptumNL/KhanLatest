@@ -66,9 +66,8 @@ a.blog-title:visited {
 }
 
 #homepage-text h1 {
-    text-align: center;
     padding-top: 0.8em;
-    margin-left: -165px;
+    padding: 0 6%;
 }
 
 #homepage-text p {
@@ -78,7 +77,7 @@ a.blog-title:visited {
 #social-actions {
     margin-bottom: 26px;
     margin-top: 15px;
-	margin-left: 875px;
+    float: right;
 }
 
 #social-actions table {

@@ -19,7 +19,7 @@
 
             <div class="problems">
                 <div id="improper-to-mixed">
-                    <p data-tt="question1" class="question">Maak de noemer van <code><var>fraction( M_NUM, M_DENOM )</var></code> <var>WHOLE</var> maal groter. </p>
+                    <p data-tt="question1" class="question">Maak de noemer van de breuk <code><var>fraction( M_NUM, M_DENOM )</var></code> gelijk aan <var>M_DENOM*WHOLE</var> zonder dat je de waarde van de breuk daardoor verandert. </p>
 
                            <div class="solution" data-type="multiple">
    
@@ -29,13 +29,18 @@
 </div>
 
                     <div class="hints">
+					   <div>
+                            <p data-tt="hint1" >Je wilt de noemer dus <var>WHOLE</var> keer groter maken want <var>M_DENOM*WHOLE</var> :  <var>M_DENOM</var> = <var>WHOLE</var>.</p>
+                            
+                        </div>
                         <div>
-                            <p data-tt="hint1" >Vermenigvuldig de teller en de noemer beide met <var>WHOLE<var>.</p>
+                            <p data-tt="hint2" >Vermenigvuldig de teller en de noemer beide met <var>WHOLE</var>; de waarde van de breuk verandert daardoor niet.</p>
                             <p><code><var>M_NUM</var> * <var>WHOLE</var> = \color{#28AE7B}{<var>FACNUM</var>}</code></p>
                                <p><code><var>M_DENOM</var> * <var>WHOLE</var> = \color{#28AE7B}{<var>FACDEM</var>}</code></p>
                         </div>
                         <div>
-                            <p data-tt="hint2" >De breuk wordt dan <code><var>fraction(FACNUM,FACDEM)</var></code></p>
+                            <p data-tt="hint3" >De breuk wordt dan <code><var>fraction(FACNUM,FACDEM)</var></code>, dus geldt:</p>				
+							<p><code><var>fraction( M_NUM, M_DENOM )</var></code> = <code><var>fraction(FACNUM,FACDEM)</var></p>
                             </div>
                          
     </body>

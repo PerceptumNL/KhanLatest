@@ -7,25 +7,31 @@
 	<style>.graphie{float:left} p{float:none} canvas{z-index:100; background-color:"red"}</style>
 </head>
 <body>
-
+<!--
+Zo te zien werkt de class makeCircle niet goed. 
+Uiteindelijk wordt alleen de externe fie 'piechart' gebruikt. 
+Het veranderen van de line color is hier niet gebeurd.
+-->
     <div class="exercise">
         <div class="vars" data-ensure="NUM &lt; DEN">
         	<var id="NUM">randRange(1,10)</var>
 		<var id="DEN">randRange(2,10)</var>
-		<var id="WHOLE">randRange(1,5)</var>		
+		<var id="WHOLE">randRange(1,5)</var>
+        <var id = "ROOD_STUK_STRING">NUM ==1 ? "los rood stukje" : "losse rode stukjes"</var>		
         </div>
         <div class="problems">
             <div id="pie-chart">
                 <div class="question">
-                        <p data-tt="exercise1">Geef de hoeveelheid stukken als een gemengde breuk:</p>
+                        <p data-tt="exercise1">Geef de totale hoeveelheid rode pizza's en rode pizzapartjes weer als één gemengde breuk:</p>
 			<div class ="graphie">
 			function makeCircle(color,size,x,y){
 			      ctx.beginPath();
       				ctx.arc(x,y,size,0,2*Math.PI, true);
 			      ctx.fillStyle =color;
+				  ctx.lineStyle = color;
 			      ctx.fill();
 			      };
-			makeCircle("red", 20,80,30);	</div>
+			makeCircle("blue", 20,80,30);	</div>
 		
                         <span data-if="WHOLE &gt;0" class="graphie">
                             init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
@@ -50,11 +56,11 @@
                 </div>
                 <p class="solution" data-simplify="optional"><code><var>WHOLE+NUM/DEN</var></code></p>
                 <div class="hints">	
-                	<p data-tt="hint1">Tel eerst de hoeveelheid <span class ="hint_orange">gehele pizza's</span>.</p>
+                	<p data-tt="hint1">Tel eerst de hoeveelheid <span class ="hint_orange">hele pizza's</span>.</p>
                		<p data-tt="hint2">Dat zijn er <code>\color{#FFA500}{<var>WHOLE</var>}</code>.</p>
 			<p data-tt="hint3">Vervolgens tel je de hoeveelheid stukjes waarin de laatste pizza is opgedeeld.</p>
-			<p data-tt="hint4">Dat zijn er <code>\color{#6495ED}{<var>DEN</var>}</code>, waarvan er <code>\color{#6495ED}{<var>DEN-NUM</var>}</code> missen. Er zijn dus in totaal <code>\color{#6495ED}{<var>NUM</var>}</code> losse stukjes pizza.
-			<p data-tt="hint5">Nu hoef je alleen de hele pizza's en de losse stukjes op te tellen:<p><code>\color{#FFA500}{<var>WHOLE</var>} + \color{#6495ED}{<var>fraction(NUM,DEN)</var>} = \color{#FFA500}{<var>WHOLE</var>} \color{#6495ED}{<var>fraction(NUM,DEN)</var>}</code></p></p>
+			<p data-tt="hint4">Dat zijn in totaal <code>\color{#6495ED}{<var>DEN</var>}</code> partjes waarvan er <code>\color{#6495ED}{<var>DEN-NUM</var>}</code> grijs <var>plural( "is", DEN-NUM )</var>. Er <var>plural( "is", NUM )</var> dus in totaal <code>\color{#6495ED}{<var>NUM</var>}</code> <var>ROOD_STUK_STRING</var> pizza.
+			<p data-tt="hint5">Nu hoef je alleen de hele pizza's en de losse rode stukjes op te tellen:<p><code>\color{#FFA500}{<var>WHOLE</var>} + \color{#6495ED}{<var>fraction(NUM,DEN)</var>} = \color{#FFA500}{<var>WHOLE</var>} \color{#6495ED}{<var>fraction(NUM,DEN)</var>}</code></p></p>
             </div>
 
         

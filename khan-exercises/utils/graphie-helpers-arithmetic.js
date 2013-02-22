@@ -652,7 +652,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
         this.addDecimal();
         this.show();
         graph.label([digitsDividend.length, 1],
-                "\\text{Schrijf een komma en een nul en ga door met delen.}", "rechts");
+                "\\text{Schrijf een komma en een nul en ga door met delen.}", "right");
     };
 
     this.getNumHints = function() {
@@ -681,7 +681,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
 
         if (deciDivisor !== 0) {
             graph.label([digitsDividend.length + 1 + (deciDiff > 0 ? deciDiff : 0), 1],
-                "\\text{Verplaats het kommagetal " + deciDivisor + " naar rechts.}", "rechts");
+                "\\text{Verplaats het kommagetal " + deciDivisor + " naar rechts.}", "right");
             graph.style({
                 fill: "#000"
             }, function() {
@@ -689,9 +689,9 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
             });
         } else {
             graph.label([digitsDividend.length + 0.5, 1.2],
-                "\\text{Breng het decimale getal}", "rechts");
+                "\\text{Breng het decimale getal}", "right");
             graph.label([digitsDividend.length + 0.5, 0.8],
-                "\\text{in het antwoord (de quotiënt).}", "rechts");
+                "\\text{in het antwoord (de quotiënt).}", "right");
         }
 
         this.addDecimal();

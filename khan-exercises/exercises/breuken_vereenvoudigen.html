@@ -33,7 +33,7 @@
 
         <div class="problems">
             <div>
-                <p class="problem" data-tt="question1">Vereenvoudig naar de laagste termen.</p>
+                <p class="problem" data-tt="question1">Schrijf de breuk zo eenvoudig mogelijk</p>
                 <p class="question"><code>\dfrac{<var>NUM</var>}{<var>DENOM</var>}</code></p>
                 <p class="solution" data-type="rational"><var>NUM / DENOM</var></p>
             </div>
@@ -44,7 +44,8 @@
 
             <p data-tt="hint2">Wat is de grootste gemene deler (GGD) van <var>NUM</var> en <var>DENOM</var>?</p>
 
-            <p><code><var>NUM</var>   = <var>getPrimeFactorization( NUM   ).join( "\\cdot" )</var></code><br />
+            <p>Hieronder betekent een puntje hetzelfde al x (keer-teken).<br />
+			   <code><var>NUM</var>   = <var>getPrimeFactorization( NUM   ).join( "\\cdot" )</var></code><br />
                <code><var>DENOM</var> = <var>getPrimeFactorization( DENOM ).join( "\\cdot" )</var></code></p>
 
             <p data-tt="hint3"><code>\mbox{GGD}(<var>NUM</var>, <var>DENOM</var>) = <var>GCD_FACTORS.join( "\\cdot" )</var> = <var>GCD</var></code></p>
@@ -68,7 +69,7 @@
                 = \dfrac{<var>NUM / GCD</var>}{<var>DENOM / GCD</var>}</code>
             </p>
             <div data-if="GCD_FACTORS.length !== 1" data-unwrap>
-                <p data-tt="hint4">Je kan dit probleem ook oplossen door de noemer en deler stap voor stap te delen.</p>
+                <p data-tt="hint4">Je kan dit probleem ook oplossen door de teller en noemer stap voor stap door een zelfde getal te delen.</p>
                 <div>
                     <p data-tt="hint5">Bijvoorbeeld:</p>
                     <p><code><var>HINT</var></code></p>

@@ -7,34 +7,51 @@
     <body>
         <div class="exercise">
             <div class="vars" data-ensure="M_NUM + M_NUM2 &lt; M_DENOM">
-                <var id="WHOLE">randRange( 1, 10 )</var>
- 		<var id="WHOLE2">randRange(1,10)</var>
-                
-                <var id="M_NUM">randRange( 1, 10 )</var>
+                 testen:
+				<var id="WHOLE">randRange( 1, 10 )</var>
+				<var id="WHOLE2">randRange(1,10)</var>
                 <var id="M_DENOM">randRange( 2, 10 )</var>
-		<var id="M_NUM2">randRange(1,10)</var>
-
+                <var id="M_NUM">randRange( 1, 10 )</var>             
+				<var id="M_NUM2">randRange(1,10)</var>
+				
+				<!--  
+				<var id="WHOLE">randRange( 2, 2 )</var>
+				<var id="WHOLE2">randRange(4,4)</var>
+                <var id="M_DENOM">randRange( 6, 6 )</var>
+                <var id="M_NUM">randRange( 2, 2 )</var>             
+				<var id="M_NUM2">randRange(2,2)</var>
+				-->
+				<var id="ANSWER_GCD">getGCD( M_NUM2+M_NUM, M_DENOM)</var>
+				
+				<var id = "PRE_SIMPLIFY_S"><code>\ \ = \ \  \color{#FFA500}{<var>WHOLE+WHOLE2</var>}\color{#6495ED}{<var>fraction(M_NUM2+M_NUM, M_DENOM,false,true)</var>}</code>  </var>;
+				<var id = "SIMPLIFY_S"> ANSWER_GCD==1 ? "" : PRE_SIMPLIFY_S </var>				
+				
             </div>
 
             <div class="problems">
             
                 
                 <div id="mixed-to-improper">
-                    <p  data-tt="question2" class="question">Tel <code><var>WHOLE</var>\ <var>fraction( M_NUM, M_DENOM, false, false )</var></code> en <code><var>WHOLE2</var>\ <var>fraction( M_NUM2, M_DENOM, false, false )</var></code> bij elkaar op.</p>
+                    <p  data-tt="question2" class="question">Tel <code><var>WHOLE</var><var>fraction( M_NUM, M_DENOM, false, false )</var></code> en <code><var>WHOLE2</var><var>fraction( M_NUM2, M_DENOM, false, false )</var></code> bij elkaar op.</p>
 
-                    <p class="solution" data-type="rational" data-simplify="optional"><var>WHOLE+WHOLE2+(M_NUM+M_NUM2)/M_DENOM</var></p>
+                    <!-- <p class="solution" data-type="rational" data-simplify="optional"><var>WHOLE+WHOLE2+(M_NUM+M_NUM2)/M_DENOM</var></p> -->
+					<p class="solution" data-type="rational" ><var>WHOLE+WHOLE2+(M_NUM+M_NUM2)/M_DENOM</var></p>
 
                     <div class="hints">
-                        <p><code>\color{#FFA500}{<var>WHOLE</var>}\ \color{#6495ED}{<var>fraction( M_NUM, M_DENOM, false, true )</var>}</code> en <code>\color{#FFA500}{<var>WHOLE2</var>}\ \color{#6495ED}{<var>fraction( M_NUM2, M_DENOM, false, false )</var>}</code></p>
-                        <p data-tt="hint1" >De gemengde breuken zijn equivalent aan <code>\color{#FFA500}{<var>WHOLE</var>} + \color{#6495ED}{<var>fraction( M_NUM, M_DENOM, false, false )</var>}</code> en <code>\color{#FFA500}{<var>WHOLE2</var>} + \color{#6495ED}{<var>fraction( M_NUM2, M_DENOM, false, false )</var>}</code>.</p>
+					    <!-- ======================================================================   hint 1 -->
+                        <p data-tt="hint1" >
+						 <code>\color{#FFA500}{<var>WHOLE</var>}\color{#6495ED}{<var>fraction( M_NUM, M_DENOM, false, false )</var>} </code> &nbsp &nbsp &nbsp en &nbsp &nbsp &nbsp <code> \color{#FFA500}{<var>WHOLE2</var>}\color{#6495ED}{<var>fraction( M_NUM2, M_DENOM, false, false )</var>}</code> &nbsp &nbsp &nbsp betekent <br /><br />
+                         <code>\color{#FFA500}{<var>WHOLE</var>} + \color{#6495ED}{<var>fraction( M_NUM, M_DENOM, false, false )</var>} </code> &nbsp &nbsp &nbsp en &nbsp &nbsp &nbsp <code> \color{#FFA500}{<var>WHOLE2</var>} + \color{#6495ED}{<var>fraction( M_NUM2, M_DENOM, false, false )</var>}</code></p>
                         <div>
-                            <p data-tt="hint2" >Eerst tellen we de <span class="hint_orange">gehele nummers</span> bij elkaar op. <p><code>\color{#FFA500}{<var>WHOLE</var>}+ \color{#FFA500}{<var>WHOLE2</var>} = \color{#6495ED}{<var>WHOLE+WHOLE2</var>}</code>.</p>
-                            
-                            <p data-tt="hint3" >Nu tellen we de <span class ="hint_blue">breuken</span> bij elkaar op: </p>
-                            <p><code> \color{#6495ED}{<var>fraction( M_NUM, M_DENOM, false, false )</var>} + \color{#6495ED}{<var>fraction( M_NUM2, M_DENOM, false, false )</var>} = \color{#FFA500}{<var>fraction(M_NUM2+M_NUM, M_DENOM,false,false)</var>}</code></p>
-                            <p data-tt="hint4" >Nu de breuk vereenvoudigen en bij het hele getal optellen:</p>
+						    <!-- ======================================================================   hint 2 -->
+                            <p data-tt="hint2" >Je kunt de <span class="hint_orange">hele getallen</span> bij elkaar optellen en de <span class="hint_blue">breuken</span> bij elkaar optellen en daarna zo nodig het antwoord vereenvoudigen.</p>
+							<!-- ======================================================================   hint 3 -->
+							<code>\color{#FFA500}{<var>WHOLE</var>}\color{#6495ED}{<var>fraction( M_NUM, M_DENOM, false, false )</var>}</code> + <code>\color{#FFA500}{<var>WHOLE2</var>}\color{#6495ED}{<var>fraction( M_NUM2, M_DENOM, false, false )</var>}\ \  =  \ \ </code>
+							<code>\color{#FFA500}{<var>WHOLE+WHOLE2</var>}\color{#6495ED}{<var>fraction(M_NUM2+M_NUM, M_DENOM,false,false)</var>}</code><var>SIMPLIFY_S</var></p>
+							
+							
                         </div>
-                        <p><code>\color{#FFA500}{<var>WHOLE+WHOLE2</var>} + \color{#6495ED}{<var>fraction(M_NUM+M_NUM2,M_DENOM,false,true)</var>} = <var>WHOLE+WHOLE2+ fraction(toFraction((M_NUM+M_NUM2)/M_DENOM)[0], toFraction((M_NUM+M_NUM2)/M_DENOM)[1]) </var></code></p>
+                        
                     </div>
                 </div>
             </div>

@@ -139,9 +139,9 @@ jQuery.extend( KhanUtil, {
 			'lange afstand renner': 'lange afstand renners',
 			'keer':'keer',
 			'neushoorn' : 'neushoorns',
-			'slang' : 'slangen'
+			'slang' : 'slangen',
 			'pinguin':'pinguins',
-			'leeuw' : 'leeuwen',
+			'leeuw' : 'leeuwen'
 		};
 
 		var pluralizeWord = function(word) {

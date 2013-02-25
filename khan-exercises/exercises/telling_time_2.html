@@ -220,8 +220,7 @@
                             }
                             else if ((minuteAngle === correctMinuteAngle) &amp;&amp; (hourAngle !== correctHourAngle)
                                     &amp;&amp; (hourAngle === roundToNearest(hourSnapDegrees, timeToDegrees(5 * HOUR)))) {
-                                return "Remember the hour hand needs to move over the course of the hour";
-                            }
+                                return "De kleine wijzer staat iets voorbij het hele uur.";
                             return false;
                         }
                         return true;

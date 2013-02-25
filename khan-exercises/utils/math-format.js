@@ -231,6 +231,7 @@ $.extend(KhanUtil, {
     squareRootCanSimplify: function(n) {
         return KhanUtil.formattedSquareRootOf(n) !== ("\\sqrt{" + n + "}");
     },
+	
 
     // Ported from https://github.com/clojure/clojure/blob/master/src/clj/clojure/pprint/cl_format.clj#L285
     cardinal: function(n) {
@@ -244,7 +245,7 @@ $.extend(KhanUtil, {
             var str = "";
 
             if (hundredDigit) {
-                str += cardinalUnits[hundredDigit] + " honderdtal";
+                str += cardinalUnits[hundredDigit] + " honderd";
             }
 
             if (hundredDigit && rest) {
@@ -258,16 +259,17 @@ $.extend(KhanUtil, {
                     var tenDigit = Math.floor(rest / 10);
                     var unitDigit = rest % 10;
 
-                    if (tenDigit) {
-                        str += cardinalTens[tenDigit];
+                      if (unitDigit) {
+                        str += cardinalUnits[unitDigit];
                     }
 
                     if (tenDigit && unitDigit) {
-                        str += "-";
+                        str += "-en-";
                     }
 
-                    if (unitDigit) {
-                        str += cardinalUnits[unitDigit];
+                  
+			if (tenDigit) {
+                        str += cardinalTens[tenDigit];
                     }
                 }
             }

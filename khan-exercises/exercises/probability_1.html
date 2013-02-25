@@ -18,7 +18,7 @@
                 <var id="TOTAL">RED + GREEN + BLUE</var>
 
                 <var id="NOT">rand(2) == 0</var>
-                <var id="CHOSEN_COLOR, CHOSEN_NUMBER">randFromArray([["rood", RED], ["groen", GREEN], ["blauw", BLUE]])</var>
+                <var id="CHOSEN_COLOR, CHOSEN_NUMBER">randFromArray([["paars", RED], ["groen", GREEN], ["blauw", BLUE]])</var>
                 <var id="NUMBER">NOT ? TOTAL - CHOSEN_NUMBER : CHOSEN_NUMBER</var>
             </div>
 
@@ -33,7 +33,7 @@
             <div class="solution"><var>NUMBER / TOTAL</var></div>
             <div class="hints">
                 <p data-tt="hint1">Er zijn <code><var>RED</var> + <var>GREEN</var> + <var>BLUE</var> = <var>TOTAL</var></code> <var>MARBLE</var>s in de <var>CONTAINER</var>.</p>
-                <p data-tt="hint2">Er zijn <code><var>CHOSEN_NUMBER</var></code> <var>CHOSEN_COLOR</var> <var>MARBLE</var>s.
+                <p data-tt="hint2">Er zijn <code><var>CHOSEN_NUMBER</var></code> <var>CHOSEN_COLOR</var>e <var>MARBLE</var>s.
                 <span data-if="NOT" data-tt="hint3">Dat betekent dat <code><var>TOTAL</var> - <var>CHOSEN_NUMBER</var> = <var>NUMBER</var></code> zijn <em>niet</em> <var>CHOSEN_COLOR</var>.</span></p>
                 <p data-tt="hint3"> De kans is <code>\displaystyle <var>fractionSimplification(NUMBER, TOTAL)</var></code>.</p>
             </div>

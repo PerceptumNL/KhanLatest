@@ -137,7 +137,11 @@ jQuery.extend( KhanUtil, {
 			'nijlpaard':'nijlpaarden',
 			'euro': 'euro', 
 			'lange afstand renner': 'lange afstand renners',
-			'keer':'keer'
+			'keer':'keer',
+			'neushoorn' : 'neushoorns',
+			'slang' : 'slangen'
+			'pinguin':'pinguins',
+			'leeuw' : 'leeuwen',
 		};
 
 		var pluralizeWord = function(word) {
@@ -420,8 +424,13 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		"nijlpaard",
 		"stekelvarken",
 		"aap",
-		"hond",
 		"olifant",
+		"krokodil",
+		"neushoorn",
+		"slang",
+		"zebra",
+		"pinguin",
+		"leeuw",
 	]); 
 
 	var clothes = KhanUtil.shuffle([

@@ -16,7 +16,7 @@ var ProgressReport = {
                 }
 
                 if (this.model.hiddenCount) {
-                    $(this.el).find('.hidden-students').html('(' + this.model.hiddenCount + ' hidden)');
+                    $(this.el).find('.hidden-students').html('(' + this.model.hiddenCount + ' verborgen)');
                 }
 
                 $(this.el).show();

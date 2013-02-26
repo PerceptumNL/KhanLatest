@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html data-require="math math-format">
+<head>
+    <meta charset="UTF-8" />
+    <title>Getal delen door breuk</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars">
+
+	
+	<var id="WHOLE">randRange(1,10)</var>
+	<var id="NUM">randRange(1,10)</var>
+	<var  id="DEN">NUM+randRange(1,10)</var>
+	<var id="REDUCE">reduce(NUM,DEN)</var>
+	<var id="TIMES">floorTo(0, (WHOLE*REDUCE[1])/REDUCE[0])</var>
+
+
+	
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+                <p>Los op: <code>\displaystyle {} <var>WHOLE</var> \div <var>fraction(REDUCE[0],REDUCE[1])</var></code>.</p>
+            </div>
+            <div class="solution" data-type="rational"><var>WHOLE/(REDUCE[0]/REDUCE[1])</var></div>
+        </div>
+    </div>
+
+    <div class="hints">
+	<p data-tt="hint1">Delen door een breuk is hetzelfde als vermenigvuldigen met het omgekeerde.</p>
+	<p data-tt="hint2">We schrijven dus eerst <code>\color{#FFA500}{<var>WHOLE</var>}</code> als een <span class="hint_blue">breuk</span>:</p>
+	<p data-tt="hint2a"><code>\color{#FFA500}{<var>WHOLE</var>} = \color{#6495ED}{<var>fraction(WHOLE,1)</var>}</code></p>
+	<p data-tt="hint3">Nu kunnen we de twee breuken met elkaar delen:</p>
+	<p data-tt="hint3a"><code>\displaystyle {} \color{#6495ED}{<var>fraction(WHOLE,1)</var>} \div \color{#6495ED}{<var>fraction(REDUCE[0],REDUCE[1])</var>}</code></p>
+	<p data-tt="hint3b"><code> \displaystyle {} = \color{#6495ED}{<var>fraction(WHOLE,1)</var>} * \color{#6495ED}{<var>fraction(REDUCE[1],REDUCE[0])</var>}</code></p>
+	<p data-tt="hint3c"><code> \displaystyle {} = \color{#6495ED}{\frac{<var>WHOLE</var> \times <var> REDUCE[1]</var>}{1 \times <var>REDUCE[0]</var>}} = \color{#6495ED}{<var>fraction(WHOLE*REDUCE[1], REDUCE[0])</var>}</code></p>
+	<p data-tt="hint4" data-if="WHOLE*REDUCE[1] &gt; REDUCE[0]">De teller is groter dan de noemer. We kunnen <code>\color{#FFA500}{<var>TIMES</var>}</code> keer een <span class="hint_orange">geheel getal</span> uit de breuk halen, met een rest van <code>\color{#6495ED}{<var>WHOLE*REDUCE[1]-TIMES*REDUCE[0]</var>}</code>.</p>
+	<p data-tt="hint4b" data-if="WHOLE*REDUCE[1] &gt; REDUCE[0]">Dan krijgen we dus <code>\color{#6495ED}{<var>fraction(WHOLE*REDUCE[1],REDUCE[0])</var>} - (\color{#FFA500}{<var>TIMES</var>} * \color{#6495ED}{<var>fraction(REDUCE[0],REDUCE[0])</var>}) = \color{#6495ED}{<var>fraction(WHOLE*REDUCE[1]-TIMES*REDUCE[0],REDUCE[0])</var>}</code></p>
+	<p data-tt="hint4b" data-if="WHOLE*REDUCE[1] &gt; REDUCE[0]">Het antwoord wordt dus <code>\color{#FFA500}{<var>TIMES</var>} <span data-if="WHOLE*REDUCE[1]-TIMES*REDUCE[0] &gt;0">\color{#6495ED}{<var>fraction((WHOLE*REDUCE[1])-TIMES*REDUCE[0], REDUCE[0])</var>}</span></code></p>
+	
+    </div>
+    </div>
+</body>
+</html>

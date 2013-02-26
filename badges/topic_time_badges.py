@@ -33,7 +33,7 @@ class NiceTopicTimeBadge(TopicTimeBadge):
     def __init__(self):
         TopicTimeBadge.__init__(self)
         self.seconds_required = 60 * 15
-        self.description = "Mooie luisteraar"
+        self.description = "Mooie Luisteraar"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -43,7 +43,7 @@ class GreatTopicTimeBadge(TopicTimeBadge):
     def __init__(self):
         TopicTimeBadge.__init__(self)
         self.seconds_required = 60 * 30
-        self.description = "Goede luisteraar"
+        self.description = "Goede Luisteraar"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0
 
@@ -53,7 +53,7 @@ class AwesomeTopicTimeBadge(TopicTimeBadge):
     def __init__(self):
         TopicTimeBadge.__init__(self)
         self.seconds_required = 60 * 60
-        self.description = "Geweldige Listener"
+        self.description = "Geweldige Luisteraar"
         self.badge_category = badges.BadgeCategory.SILVER
         self.points = 0
 
@@ -63,7 +63,7 @@ class RidiculousTopicTimeBadge(TopicTimeBadge):
     def __init__(self):
         TopicTimeBadge.__init__(self)
         self.seconds_required = 60 * 60 * 4
-        self.description = "Zeer goede luisteraar"
+        self.description = "Zeer Goede Luisteraar"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 0
 
@@ -73,6 +73,6 @@ class LudicrousTopicTimeBadge(TopicTimeBadge):
     def __init__(self):
         TopicTimeBadge.__init__(self)
         self.seconds_required = 60 * 60 * 10
-        self.description = "Super goede luisteraar"
+        self.description = "Super Goede Luisteraar"
         self.badge_category = badges.BadgeCategory.PLATINUM
         self.points = 0

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie graphie-helpers word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Gemengde breuken herkennen</title>
+    <script src="../khan-exercise.js"></script>
+	<style>.graphie{float:left} p{float:none} canvas{z-index:100; background-color:"red"}</style>
+</head>
+<body>
+
+    <div class="exercise">
+        <div class="vars" data-ensure="NUM &lt; DEN">
+        	<var id="NUM">randRange(1,10)</var>
+		<var id="DEN">randRange(2,10)</var>
+		<var id="WHOLE">randRange(2,10)</var>	
+		<var id ="TIMES">floorTo(0,(NUM*WHOLE)/DEN)</var>	
+		<var id="REDUCE">reduce((NUM*WHOLE)-(TIMES*DEN),DEN)</var>
+        </div>
+        <div class="problems">
+            
+                <div class="question">
+                        <p data-tt="exercise1">Vermenigvuldig <code><var>WHOLE</var></code> met <code><var>fraction(NUM,DEN)</var></code>.</p>
+			
+                <p class="solution"><code><var>WHOLE*(NUM/DEN)</var></code></p>
+
+             <div class="hints">	
+                	<p data-tt="hint1">Een <span class ="hint_orange">geheel getal</span> kun je opschrijven als een <span class ="hint_blue">breuk</span> door te bedenken dat het een breuk is met noemer 1.</p>
+               		<p data-tt="hint2"><code>\color{#FFA500}{<var>WHOLE</var>}</code> wordt dus <code>\color{#6495ED}{<var>fraction(WHOLE,1)</var>}</code>.</p>
+			<p data-tt="hint3">Nu kunnen we gewoon deze twee breuken met elkaar vermenigvuldigen.</p>
+			<p data-tt="hint4"><code>\color{#6495ED}{<var>fraction(WHOLE,1)</var>} * \color{#6495ED}{<var>fraction(NUM,DEN)</var>}</code></p>
+			<p data-tt="hint4a"><code>\displaystyle {} = \frac{<var>WHOLE</var> \times <var>NUM</var>}{<var>1</var> \times <var>DEN</var>} </code></p>
+			<p data-tt="hint4b"><code>= \color{#6495ED}{<var>fraction(WHOLE*NUM,DEN)</var>}</code></p>
+			<p data-tt="hint5"  data-if="floorTo(0,(NUM*WHOLE)/DEN) &gt;0">Nu moeten we de breuk nog vereenvoudigen.</p>
+			<p data-tt="hint5a" data-if="floorTo(0,(NUM*WHOLE)/DEN) &gt;0"><code>\color{#6495ED}{<var>DEN</var>}</code> past <code>\color{#04B404}{<var>TIMES</var>}</code> keer in <code>\color{#6495ED}{<var>NUM*WHOLE</var>}</code></p>
+
+			<p data-tt="hint5b" data-if="floorTo(0,(NUM*WHOLE)/DEN) &gt;0"><code>\displaystyle {} = \frac{\color{#FFA500}{<var>TIMES</var>} \times \color{#6495ED}{<var> DEN</var>}}{\color{#FFA500}{<var>1</var>} \times \color{#6495ED}{<var>DEN</var>}}</code> <span data-if="(NUM*WHOLE)-(TIMES*DEN) &gt; 0"><code> + \color{#6495ED}{<var>fraction((NUM*WHOLE)-(TIMES*DEN),DEN)</var>}</code></span> <code>\displaystyle {} = \frac{\color{#FFA500}{<var>TIMES</var>} \times \cancel{\color{#6495ED}{<var> DEN</var>}}}{\color{#FFA500}{<var>1</var>} \times \cancel{\color{#6495ED}{<var>DEN</var>}}}</code><code>= \color{#FFA500}{<var>fraction(TIMES,1)</var>}</code> <span data-if="(NUM*WHOLE)-(TIMES*DEN) &gt;0"><code> + \color{#6495ED}{<var>fraction((NUM*WHOLE)-(TIMES*DEN),DEN)</var>}</code></span><code>= \color{#FFA500}{<var>TIMES</var>}</code> <span data-if="(NUM*WHOLE)-(TIMES*DEN) &gt;0"><code> + \color{#6495ED}{<var>fraction((NUM*WHOLE)-(TIMES*DEN),DEN)</var>}</code></span></p>
+
+			<p data-tt="hint5c" data-if="floorTo(0,(NUM*WHOLE)/DEN) &gt;0">Dus wordt het antwoord <code>\color{#FFA500}{<var>TIMES</var>}</code><span data-if="(NUM*WHOLE)-(TIMES*DEN) &gt; 0"><code> \color{#6495ED}{<var>fraction((NUM*WHOLE)-(TIMES*DEN),DEN)</var>}</code></span></p>
+			<p data-tt="hint6" data-if="reduces((NUM*WHOLE)-(TIMES*DEN),DEN) && (NUM*WHOLE)-(TIMES*DEN) &gt;0">Nog vereenvoudigen: <code>\color{#FFA500}{<var>TIMES</var>}\color{#6495ED}{<var>fraction(REDUCE[0],REDUCE[1])</var>}</code></p>
+			
+            </div>
+
+        
+        </div>
+    </div>
+</body>
+</html>

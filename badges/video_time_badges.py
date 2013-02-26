@@ -24,6 +24,6 @@ class ActOneSceneOneBadge(VideoTimeBadge):
     def __init__(self):
         VideoTimeBadge.__init__(self)
         self.seconds_required = 60 * 20
-        self.description = "Act I Scene I"
+        self.description = "Plezierige Luisteraar"
         self.badge_category = badges.BadgeCategory.BRONZE
         self.points = 0

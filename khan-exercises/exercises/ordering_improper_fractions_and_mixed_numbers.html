@@ -10,6 +10,10 @@
             font-size: 1.7em;
             text-align: center
         }
+        .sort-key {
+            visibility:hidden;
+            position: absolute;
+        }
     </style>
 </head>
 <body>
@@ -77,33 +81,33 @@
                 }
                 return array;
             })()</var>
-            <var id="DENOMS">jQuery.map( NUMS, function( el ) {
+            <var id="DENOMS">$.map( NUMS, function( el ) {
                 return el[ 2 ];
             })</var>
-            <var id="DENOMS_TEX_COLOR">jQuery.map( NUMS, function( el ) {
+            <var id="DENOMS_TEX_COLOR">$.map( NUMS, function( el ) {
                 return "\\color{" + el[4] + "}{" + el[2] + "}";
             }).join( "," )</var>
             <var id="LCD">getLCM.apply( KhanUtil, DENOMS )</var>
-            <var id="NUMS_LCD_COLOR">jQuery.map( NUMS, function( el, idx ) {
+            <var id="NUMS_LCD_COLOR">$.map( NUMS, function( el, idx ) {
                 var n = el[ 1 ],
                     d = el[ 2 ],
                     scalar = (LCD/d);
                 return "\\color{" + el[ 4 ] + "}{" + fraction( n * scalar, LCD ) + "}";
             })</var>
             <var id="NUMS_LCD_TEX_COLOR">NUMS_LCD_COLOR.join( "," )</var>
-            <var id="NUMS_TEX_COLOR">jQuery.map( NUMS, function( el ) {
+            <var id="NUMS_TEX_COLOR">$.map( NUMS, function( el ) {
                 return "\\color{" + el[ 4 ] + "}{" + el[ 3 ] + "}";
             } ).join( "," )</var>
-            <var id="NUMS_SORT">jQuery.extend( true, [], NUMS ).sort( function( a, b) {
+            <var id="NUMS_SORT">$.extend( true, [], NUMS ).sort( function( a, b) {
                 return a[0] - b[0];
             })</var>
-            <var id="NUMS_SORT_TEX">jQuery.map( NUMS_SORT, function( el ) {
+            <var id="NUMS_SORT_TEX">$.map( NUMS_SORT, function( el ) {
                 return el[ 5 ];
             }).join( "," )</var>
-            <var id="MIXED_NUMS_SORT_TEX_COLOR">jQuery.map( NUMS_SORT, function( el ) {
+            <var id="MIXED_NUMS_SORT_TEX_COLOR">$.map( NUMS_SORT, function( el ) {
                 return "\\color{" + el[ 4 ] + "}{" + el[ 5 ] + "}";
             }).join( "," )</var>
-            <var id="NUMS_LCD_SORT_COLOR">jQuery.map( NUMS_SORT, function( el, idx ) {
+            <var id="NUMS_LCD_SORT_COLOR">$.map( NUMS_SORT, function( el, idx ) {
                 var n = el[ 1 ],
                     d = el[ 2 ],
                     scalar = ( LCD / d );
@@ -119,6 +123,7 @@
                     <p data-tt="question1">Order the following fractions from least to greatest. </p>
                     <ul id="sortable">
                         <li data-each="NUMS as NUM">
+                            <span class="sort-key"><var>NUM[ 5 ]</var></span>
                             <code><var>NUM[ 5 ]</var></code>
                         </li>
                     </ul>

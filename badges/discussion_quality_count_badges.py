@@ -53,7 +53,7 @@ class LevelOneAnswerQualityCountBadge(AnswersQualityCountBadge):
         AnswersQualityCountBadge.__init__(self)
         self.required_sum_votes = 2
         self.required_count = 10
-        self.description = "Guru"
+        self.description = "Goeroe"
         self.badge_category = badges.BadgeCategory.GOLD
         self.points = 0
 
@@ -64,7 +64,7 @@ class LevelTwoAnswerQualityCountBadge(AnswersQualityCountBadge):
         AnswersQualityCountBadge.__init__(self)
         self.required_sum_votes = 2
         self.required_count = 100
-        self.description = "Oracle"
+        self.description = "Orakel"
         self.badge_category = badges.BadgeCategory.PLATINUM
         self.points = 0
 

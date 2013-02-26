@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie graphie-helpers">
+    <head>
+        <title>Welke breuk is groter? </title>
+        <script src="../khan-exercise.js"></script>
+    </head>
+    <body>
+        <div class="exercise">
+            <div class="vars" data-ensure="DEN2 != DEN1 && DEN1>NUM1 && DEN2>NUM2">
+                <var id="FACTOR">randRange( 2, 10 )</var>
+                
+                <var id="NUM1">1</var>
+                <var id="DEN1">randRange( 1, 10 )</var>
+                <var id="NUM2">1</var>
+                <var id="DEN2">randRange(1,10)</var>
+                
+
+                <var id = "FRAC1">NUM1/DEN1</var>
+                <var id = "FRAC2">NUM2/DEN2</var>
+                <var id="WHOLE1">floorTo( 2, FRAC1 )</var>
+				
+				<!--      niet goed; denkt dan steeds dat FRAC2 de grootste is
+                <var id = "BIGGER" data-if="FRAC1>FRAC2">FRAC1</var>
+                <var id = "BIGGER" data-else>FRAC2</var>
+				-->
+				<var id = "BIGGER">FRAC1>FRAC2 ? FRAC1 : FRAC2 </var>
+				
+            </div>
+
+        <div class="problems">
+            <div id="pie-chart">
+                <div class="question">
+                      <p data-tt="exercise1">Welke breuk is groter, <code><var>fraction(NUM1,DEN1)</var></code> of <code><var>fraction(NUM2,DEN2)</var></code>? </p>
+                      
+                </div>
+                <div class="solution" data-type="rational"><var>BIGGER</var></div>
+
+                    <div class="hints">
+                        <!-- ======================================================================   hint 1 -->
+						<p data-tt = "hint1"> Om het duidelijker te maken tekenen we twee taarten:</p>						
+                        <!-- ======================================================================   hint 2 -->
+						<code><var>fraction(NUM1,DEN1)</var></code>						
+						<!-- ======================================================================   hint 3 -->
+                        <div class="graphie">
+                            init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
+                            piechart( [NUM1, DEN1 - NUM1], ["#e00", "#999"], 2 );
+                        </div>
+						<!--
+                        <div class="graphie">
+							init({ range: [ [0, 1], [0, 1] ], scale: [180, 25] });
+							rectchart( [A, B - A], ["#e00", "#999"] );
+						</div>
+						-->
+						<!-- ======================================================================   hint 4 -->
+                        <code><var>fraction(NUM2,DEN2)</var></code>
+						<!-- ======================================================================   hint 5 -->
+                        <div class="graphie">
+                            init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
+                            piechart( [NUM2, DEN2 - NUM2], ["#e00", "#999"], 2 );
+                        </div>
+                        <!-- ======================================================================   hint 6 -->					   
+                        <p data-tt ="hint2">Nu is het duidelijker dat 
+						<span data-if="FRAC1>FRAC2"><code><var>fraction(NUM1,DEN1)</var></code> groter is dan <code><var>fraction(NUM2,DEN2)</var></code>.</span>
+						<span data-else><code><var>fraction(NUM2,DEN2)</var></code> groter is dan <code><var>fraction(NUM1,DEN1)</var></code>.</span></p>
+                         
+    </body>
+</html>

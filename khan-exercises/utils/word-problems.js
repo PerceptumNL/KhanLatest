@@ -47,6 +47,7 @@ jQuery.extend( KhanUtil, {
 	//		- return "word"
 	plural: (function() {
 		var oneOffs = {
+			'verliet':'verlieten',
 			'quiz': 'quizzes',
 			'plank': 'planken',
 			'rij': 'rijen',
@@ -136,7 +137,11 @@ jQuery.extend( KhanUtil, {
 			'nijlpaard':'nijlpaarden',
 			'euro': 'euro', 
 			'lange afstand renner': 'lange afstand renners',
-			'keer':'keer'
+			'keer':'keer',
+			'neushoorn' : 'neushoorns',
+			'slang' : 'slangen',
+			'pinguin':'pinguins',
+			'leeuw' : 'leeuwen'
 		};
 
 		var pluralizeWord = function(word) {
@@ -230,18 +235,18 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		["Arco", "m"],
 		["Philipp", "m"],
 		["Ronald", "m"],
-		["Britta", "f"],
+		["Priscilla", "f"],
 		["Pauline", "f"],
 		["Josh", "m"],
 		["Jessica", "f"],
 		["Tjalle", "m"],
 		["Diederik", "m"],
 		["Julius", "m"],
-		["Frum", "f"],
+		["Rachel", "f"],
 		["Dennis", "m"],
 		["Els", "f"],
 		["Maud", "f"],
-		["Bambi", "f"],
+		["Jasmine", "f"],
 		["Hanneke", "f"],
 		["Levi", "m"]
 	]);
@@ -419,8 +424,13 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		"nijlpaard",
 		"stekelvarken",
 		"aap",
-		"hond",
 		"olifant",
+		"krokodil",
+		"neushoorn",
+		"slang",
+		"zebra",
+		"pinguin",
+		"leeuw",
 	]); 
 
 	var clothes = KhanUtil.shuffle([

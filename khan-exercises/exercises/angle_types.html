@@ -47,11 +47,11 @@
                 </div>
             </div>
 
-            <div class="solution" data-tt="solution1">Acute</div>
+            <div class="solution" data-tt="solution1">Scherp</div>
             <ul class="choices" data-category="true">
-                <li data-tt="list1">Acute</li>
-                <li data-tt="list2">Right</li>
-                <li data-tt="list3">Obtuse</li>
+                <li data-tt="list1">Scherp</li>
+                <li data-tt="list2">Recht</li>
+                <li data-tt="list3">Stomp</li>
             </ul>
 
             <div class="hints">
@@ -61,12 +61,12 @@
                     label( [ 9 * cos( toRadians( ANGLE_ONE + DIFF ) ), 9 * sin( toRadians( ANGLE_ONE + DIFF ) ) ], "\\color{" + PINK + "}{" + DIFF + "^{\\circ}}" );
                 </div>
                 <div>
-                    <p data-tt="hint1">The shown angle measures less than <code>90^\circ</code>.</p>
+                    <p data-tt="hint1">De getoonde hoek is minder dan <code>90^\circ</code>.</p>
                     <div class="graphie" data-update="angle">
                         label( [ 9 * cos( toRadians( ANGLE_ONE + DIFF ) ), 9 * sin( toRadians( ANGLE_ONE + DIFF ) ) ], "\\color{" + PINK + "}{" + DIFF + "^{\\circ}}" );
                     </div>
                 </div>
-                <p data-tt="hint2">Therefore, it is an acute angle.</p>
+                <p data-tt="hint2">Daarom is het een scherpe hoek.</p>
             </div>
         </div>
 
@@ -76,19 +76,23 @@
             </div>
 
             <div class="solution" data-tt="solution2">Recht</div>
-
+ 	<ul class="choices" data-category="true">
+                <li data-tt="list1">Acute</li>
+                <li data-tt="list2">Right</li>
+                <li data-tt="list3">Obtuse</li>
+            </ul>
             <div class="hints">
                 <div class="graphie" data-update="angle">
                     graph.protractor.moveTo( 0, 0 );
                     graph.protractor.rotateTo( 360 - ANGLE_ONE );
                 </div>
                 <div>
-                    <p data-tt="hint3">The shown angle measures <code>90^\circ</code>.</p>
+                    <p data-tt="hint3">De getoonde hoek is <code>90^\circ</code>.</p>
                     <div class="graphie" data-update="angle">
                         label( [ 9 * cos( toRadians( ANGLE_ONE + DIFF ) ), 9 * sin( toRadians( ANGLE_ONE + DIFF ) ) ], "\\color{" + PINK + "}{" + DIFF + "^{\\circ}}" );
                     </div>
                 </div>
-                <p data-tt="hint4">Therefore, it is a right angle.</p>
+                <p data-tt="hint4">Daarom is het een rechte hoek.</p>
             </div>
         </div>
 
@@ -97,20 +101,24 @@
                 <var id="DIFF">randRange(110, 160)</var>
             </div>
 
-            <div class="solution" data-tt="solution3">Obtuse</div>
-
+            <div class="solution" data-tt="solution3">Stomp</div>
+	          <ul class="choices" data-category="true">
+                <li data-tt="list1">Acute</li>
+                <li data-tt="list2">Right</li>
+                <li data-tt="list3">Obtuse</li>
+            </ul>
             <div class="hints">
                 <div class="graphie" data-update="angle">
                     graph.protractor.moveTo( 0, 0 );
                     graph.protractor.rotateTo( 360 - ANGLE_ONE );
                 </div>
                 <div>
-                    <p data-tt="hint5">The shown angle measures more than <code>90^\circ</code>.</p>
+                    <p data-tt="hint5">De getoonde hoek is meer dan <code>90^\circ</code>.</p>
                     <div class="graphie" data-update="angle">
                         label( [ 9 * cos( toRadians( ANGLE_ONE + DIFF ) ), 9 * sin( toRadians( ANGLE_ONE + DIFF ) ) ], "\\color{" + PINK + "}{" + DIFF + "^{\\circ}}" );
                     </div>
                 </div>
-                <p data-tt="hint6">Therefore, it is an obtuse angle.</p>
+                <p data-tt="hint6">Daarom is het een stompe hoek.</p>
             </div>
         </div>
     </div>

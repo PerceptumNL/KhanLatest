@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html data-require="math math-format interactive">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Sorting numbers</title>
+    <script src="../khan-exercise.js"></script>
+
+    <style type="text/css">
+        .number-list {
+            font-size: 1.7em;
+            text-align: center
+        }
+
+        .sol input {
+            width: 40px !important;
+        }
+        .sort-key {
+            visibility: hidden;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars" data-ensure="LCD &lt; 200">
+            <var id="COLORS">KhanUtil.shuffle([ "blue", "green", "red", "purple", "orange", "brown" ])</var>
+            <var id="NUMS">(function() {
+                var array = [];
+           
+
+                var used = {};
+
+                var arrLength = randRange( 4, 6 );
+                while ( array.length &lt; arrLength ) {
+                    var d = randRange( 1, 10);
+                    var n = randRange( 1, 10);
+                   
+                    if ( !used[ n ] ) {
+
+                        array.push([ n/d,(n/d), (d/d),(n/d)]);                      
+                        used[ n ] = true;
+                    }
+                }
+                return array;
+            })()</var>
+
+           
+           <var id="LCD">randRange(1,10)</var>
+           
+           
+            <var id="NUMS_TEX">$.map( NUMS, function( el ) {
+                return el[0];
+            } ).join( "," )</var>
+           
+
+            <var id="NUMS_SORT">$.extend( true, [], NUMS ).sort( function(a, b) {
+                return a[0] - b[0];
+            } )</var>
+            <var id="NUMS_SORT_TEX">$.map( NUMS_SORT, function( el ) {
+                return el[0];
+            } ).join( "," )</var>
+           
+          
+            <var id="SORTER">createSorter()</var>
+        </div>
+
+        <div class="problems">
+            <div>
+                <div class="question">
+                    <p>Zet de volgende breuken op volgorde van klein naar groot:</p>
+                    <ul id="sortable">
+                        <li data-each="NUMS as NUM">
+                            <span class="sort-key"><var>NUM[0]</var></span>
+                            <code><var>NUM[0]</var></code>
+                        </li>
+                    </ul>
+                    <p><var>SORTER.init( "sortable" )</var></p>
+
+                </div>
+
+                <div class="solution" data-type="custom">
+                    <div class="instruction">
+                        Sleep de breuken naar links of rechts zodat zij gesorteerd staan van klein naar groot.
+                    </div>
+                    <div class="guess">SORTER.getContent()</div>
+                    <div class="validator-function">
+                        return guess.join( "," ) === NUMS_SORT_TEX;
+                    </div>
+                    <div class="show-guess">
+                        SORTER.setContent( guess );
+                    </div>
+                </div>
+
+               
+</body>
+</html>

@@ -984,21 +984,21 @@ function outputBadProof() {
         if (eqIn(finalRelation, finishedEqualities)) {
             proofText += "<div class=\"" + divName(finalRelation.toString()) + "\">";
             proofText += prettifyEquality(finalRelation);
-            proofText += " because " + finishedEqualities[finalRelation] + "</div>" + "<br>";
+            proofText += " omdat " + finishedEqualities[finalRelation] + "</div>" + "<br>";
         }
         else {
             proofText += "<div class=\"" + divName(finalRelation.toString()) + "\">";
             proofText += prettifyEquality(finalRelation);
             if (finalRelation[0] instanceof Triang) {
-                proofText += " because " + KhanUtil.randFromArray(["SSS", "ASA", "SAS", "AAS"]) + "</div>" + "<br>";
+                proofText += " omdat " + KhanUtil.randFromArray(["SSS", "ASA", "SAS", "AAS"]) + "</div>" + "<br>";
             }
             else if (finalRelation[0] instanceof Ang) {
-                proofText += " because "
-                + KhanUtil.randFromArray(["vertical angles are equal", "alternate angles are equal", "corresponding parts of congruent triangles are congruent"])
+                proofText += " omdat "
+                + KhanUtil.randFromArray(["de verticale hoeken gelijk zijn", "de overliggende hoeken zijn gelijk", "de overeenkomstige delen van de congruente driehoeken zijn congruent"])
                 + "</div>" + "<br>";
             }
             else {
-                proofText += " because " + "corresponding parts of congruent triangles are congruent" + "</div>" + "<br>";
+                proofText += " omdat " + "de overeenkomstige delen van de congruente driehoeken zijn congruent" + "</div>" + "<br>";
             }
         }
     }

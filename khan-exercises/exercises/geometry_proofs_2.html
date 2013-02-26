@@ -2,7 +2,7 @@
 <html data-require="math graphie graphie-helpers graphie-geometry math-format interactive proofs congruency">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Geometry Proofs 2</title>
+    <title>Meetkundig bewijs 2</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -459,12 +459,12 @@
                     <var id="RIGHT_STATEMENT">PROOF_STUFF[2]</var>
                     <var id="WRONG_BEFORE_RIGHT">KhanUtil.random() &lt; 0.5</var>
 
-                    <var id="ANSWER">IS_WRONG ? WRONG_STATEMENT : "There's no wrong statement: this proof is fine."</var>
+                    <var id="ANSWER">IS_WRONG ? WRONG_STATEMENT : "Er is geen foute opmerking: dit bewijs is goed."</var>
                 </div>
 
                 <div class="problem">
-                    <p class="question">What's the first wrong statement in the proof below that <var>FINISHED</var><code> \; ?</code></br></br>
-                    <code> \overline{BC} </code> is parallel to <code> \overline{DF} </code>. This diagram is not drawn to scale.</p>
+                    <p class="question">Wat is de eerste foute opmerking in het bewijs hier onder dat <var>FINISHED</var><code> \; ?</code></br></br>
+                    <code> \overline{BC} </code> is parallel aan <code> \overline{DF} </code>. Deze tekening is niet op schaal getekend.</p>
                     <div class="graphie">
                         init({
                             range: [[-5, 5], [-5, 5]],
@@ -708,7 +708,7 @@
                     <ul class="choices" data-category="true">
                         <li><var>WRONG_STATEMENT</var></li>
                         <li><var>RIGHT_STATEMENT</var></li>
-                        <li>There's no wrong statement: this proof is fine.</li>
+                        <li>Er is geen foute opmerking: dit bewijs is goed.</li>
                     </ul>
                 </div>
 
@@ -716,13 +716,13 @@
                     <ul class="choices" data-category="true">
                         <li><var>RIGHT_STATEMENT</var></li>
                         <li><var>WRONG_STATEMENT</var></li>
-                        <li>There's no wrong statement: this proof is fine.</li>
+                        <li>Er is geen foute opmerking: dit bewijs is goed.</li>
                     </ul>
                 </div>
                 <div class="hints">
-                    <p>Try going through the proof yourself: write down the givens, and then see if they justify the next step <em>for the reason given.</em> Then do the same thing for the next step, and the next, until you run into something that you can't justify, or you finish the proof.</p>
-                    <p data-if="IS_WRONG"><var>WRONG_STATEMENT</var> is the first wrong statement.</p>
-                    <p data-else>There is no wrong statement in this proof.</p>
+                    <p>Probeer zelf door het bewijs heen te gaan: schrijf gegevens op en bekijk of ze de volgende stap rechtvaardigen voor de <em>gegeven reden.</em> Doe dit voor de volgende stap en ga hier mee door totdat je bij een stap komt die je niet kan rechtvaardigen of het bewijs klaar is.</p>
+                    <p data-if="IS_WRONG"><var>WRONG_STATEMENT</var> is de eerste foute opmerking.</p>
+                    <p data-else>Er is geen foute opmerking in dit bewijs.</p>
                 </div>
             </div>
         </div>

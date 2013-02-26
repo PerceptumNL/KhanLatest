@@ -1093,12 +1093,7 @@ $.extend(KhanUtil, {
         sorter.setContent = function(content) {
             var tiles = [];
             $.each(content, function(n, sortKey) {
-                var tile = list.find("li .sort-key").filter(function() {
-                    // sort-key must match exactly
-                    return $(this).text() === sortKey;
-                }).closest("li").get(0);
-                $(tile).detach();  // remove matched tile so you can have duplicates
-                tiles.push(tile);
+                tiles.push(list.find("li .sort-key:contains('" + sortKey + "')").closest("li").get(0)); 
             });
             list.append(tiles);
         };

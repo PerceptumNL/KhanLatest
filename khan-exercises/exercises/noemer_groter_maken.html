@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie graphie-helpers">
+    <head>
+        <title>Noemer groter maken </title>
+        <script src="../khan-exercise.js"></script>
+    </head>
+    <body>
+        <div class="exercise">
+            <div class="vars" data-ensure="M_NUM &lt; M_DENOM">
+                <var id="WHOLE">randRange( 2, 10 )</var>
+                
+                <var id="M_NUM">randRange( 1, 10 )</var>
+                <var id="M_DENOM">randRange( 1, 10 )</var>
+
+
+                <var id = "FACNUM">M_NUM *WHOLE</var>
+                <var id = "FACDEM">M_DENOM*WHOLE</var>
+            </div>
+
+            <div class="problems">
+                <div id="improper-to-mixed">
+                    <p data-tt="question1" class="question">Maak de noemer van de breuk <code><var>fraction( M_NUM, M_DENOM )</var></code> gelijk aan <var>M_DENOM*WHOLE</var> zonder dat je de waarde van de breuk daardoor verandert. </p>
+
+                           <div class="solution" data-type="multiple">
+   
+    <p>teller = <span class="sol" data-type="decimal" ><var>FACNUM</var></span></p>
+    <p>noemer = <span class="sol" data-type="decimal"><var>FACDEM</var></span></p>
+
+</div>
+
+                    <div class="hints">
+					   <div>
+                            <p data-tt="hint1" >Je wilt de noemer dus <var>WHOLE</var> keer groter maken want <var>M_DENOM*WHOLE</var> :  <var>M_DENOM</var> = <var>WHOLE</var>.</p>
+                            
+                        </div>
+                        <div>
+                            <p data-tt="hint2" >Vermenigvuldig de teller en de noemer beide met <var>WHOLE</var>; de waarde van de breuk verandert daardoor niet.</p>
+                            <p><code><var>M_NUM</var> * <var>WHOLE</var> = \color{#28AE7B}{<var>FACNUM</var>}</code></p>
+                               <p><code><var>M_DENOM</var> * <var>WHOLE</var> = \color{#28AE7B}{<var>FACDEM</var>}</code></p>
+                        </div>
+                        <div>
+                            <p data-tt="hint3" >De breuk wordt dan <code><var>fraction(FACNUM,FACDEM)</var></code>, dus geldt:</p>				
+							<p><code><var>fraction( M_NUM, M_DENOM )</var></code> = <code><var>fraction(FACNUM,FACDEM)</var></p>
+                            </div>
+                         
+    </body>
+</html>

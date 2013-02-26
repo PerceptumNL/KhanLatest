@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format">
+<head>
+    <meta charset="UTF-8" />
+    <title>Twee breuken met verschillende noemers aftrekken</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-ensure="DEN1 != DEN2 && DEN1 &lt; DEN2">
+	<var id="NUM">1</var>
+	<var id="DEN1">randRange(2,10)</var>
+	<var id="DEN2">randRange(2,10)</var>
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+               <p>Los op:<code><var>fraction(NUM,DEN1)</var> - <var>fraction(NUM,DEN2)</var></code>.</p>
+            </div>
+  <p class="solution" data-type="rational" data-simplify="optional"><var>(DEN2-DEN1)/(DEN1*DEN2)</var></p>
+        </div>
+    </div>
+
+    <div class="hints">
+        <p data-tt="hint1">Om deze twee breuken van elkaar af te kunnen trekken maken we de noemers gelijk.</p>
+        <p data-tt="hint1a">Dat wordt <code>\color{#6495ED}{<var>DEN1</var>} * \color{#6495ED}{<var>DEN2</var>} = \color{#6495ED}{<var>DEN1*DEN2</var>}</code> </p>
+	<p data-tt="hint2">De noemers kun je alleen vermenigvuldigen als je de tellers met hetzelfde getal vermenigvuldigt.</p>
+	<p data-tt="hint2a">Dat wordt dus <code>\color{#6495ED}{<var>NUM</var>} * \color{#6495ED}{<var>DEN2</var>} = \color{#6495ED}{<var>DEN2*NUM</var>}</code> en <code>\color{#6495ED}{<var>NUM</var>} * \color{#6495ED}{<var>DEN1</var>} = \color{#6495ED}{<var>DEN1*NUM</var>}</code></p>
+	<p data-tt="hint3">De breuken worden dus <code>\color{#6495ED}{<var>fraction(NUM*DEN2,DEN1*DEN2)</var>}</code> en <code>\color{#6495ED}{<var>fraction(NUM*DEN1, DEN2*DEN1)</var>}</code>.</p>
+	<p data-tt="hint4">Nu trekken we de breuken van elkaar af:<code>\color{#6495ED}{<var>fraction(NUM*DEN2,DEN1*DEN2)</var>} - \color{#6495ED}{<var>fraction(NUM*DEN1, DEN2*DEN1)</var>} = \color{#6495ED}{<var>fraction(DEN2-DEN1,DEN1*DEN2)</var>}</code></p>
+	<p data-tt="hint5" data-if="reduces(DEN2-DEN1,DEN1*DEN2)">Nu vereenvoudigen we de breuk naar <code>\color{#6495ED}{<var>fraction(reduce(DEN2-DEN1,DEN1*DEN2)[0],reduce(DEN2-DEN1,DEN1*DEN2)[1])</var>}</code>.</p>
+ 
+        
+    </div>
+    </div>
+</body>
+</html>

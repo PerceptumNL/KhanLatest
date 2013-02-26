@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie graphie-helpers">
+    <head>
+        <title>Welke breuk is groter? </title>
+        <script src="../khan-exercise.js"></script>
+    </head>
+    <body>
+	 <!--
+        Het vergelijken van twee breuken waarbij je eerst de noemers gelijk moet maken.
+    -->
+        <div class="exercise">
+		    			
+				<div class="vars" data-ensure="(NUM1 != NUM2 && DEN1 != DEN2 && NUM1<DEN1 && NUM2<DEN2) ">
+					<var id="FACTOR">randRange( 2, 10 )</var>					
+					
+					<var id="NUM1">randRange( 1, 10 )</var>
+					<var id="DEN1">randRange( 2, 10 )</var>
+					<var id="NUM2">randRange(1,10)</var>
+					<var id="DEN2">randRange(2,10)</var>
+
+
+					<var id = "FRAC1">NUM1/DEN1</var>
+					<var id = "FRAC2">NUM2/DEN2</var>
+					
+					<var id="LCM">getLCM( DEN1, DEN2 )</var>
+					<var id="F1">LCM / DEN1</var>
+					<var data-tt="id1" id="BECOMES_1">F1 === 1 ? "blijft" : "wordt"</var>
+                    <var id="F2">LCM / DEN2</var>
+                    <var data-tt="id2" id="BECOMES_2">F2 === 1 ? "blijft" : "wordt"</var>
+					
+					<var id = "kleinsteNoemer">DEN1>DEN2 ? DEN2 : DEN1 </var>
+					<var id = "grootsteNoemer">DEN1>DEN2 ? DEN1 : DEN2 </var>
+					<!--
+					<var id = "kleinsteNoemer">DEN1<DEN2 ? DEN1 : DEN2 </var>
+					-->
+					<var id="SOLUTION">(function() {
+                        var f1 = NUM1 / DEN1;
+                        var f2 = NUM2 / DEN2;
+                        if ( f1 < f2 ) {
+                            return "&lt;";
+                        } else if ( f1 > f2 ) {
+                            return "&gt;";
+                        } else {
+                            return "=";
+                        }
+                    })()</var>				
+					
+				</div>
+			
+				<div class="problems">
+					<div class="question">
+						<p data-tt="question1">Welk symbool moet op de plaats van de puntjes worden ingevuld?<br />
+						> betekent 'groter dan' <br />
+						< betekent 'kleiner dan'</p>
+						<p>
+							<code><var>fraction(NUM1,DEN1)</var></code>
+							&nbsp &nbsp ... &nbsp &nbsp
+							<code><var>fraction(NUM2,DEN2)</var></code>
+						</p>
+					</div>
+				</div>
+				
+				<p class="solution"><code><var>SOLUTION</var></code></p>
+                <ul class="choices" data-category="true">
+                    <li><code>&lt;</code></li>
+                    <li><code>&gt;</code></li>
+					<li><code>=</code></li>
+                </ul>
+				<div class="hints">
+                    <!-- ======================================================================   hint 1 -->
+                    <p data-tt="hint1">Je kunt de breuken beter met elkaar vergelijken als je ze eerst dezelfde noemer geeft.</p>
+					<!-- ======================================================================   hint 2 -->                        
+					<p>Je kiest voor de nieuwe noemer een zo klein mogelijk veelvoud van <code><var>grootsteNoemer</var></code>.<br />
+					   Dat getal moet deelbaar zijn door de kleinste noemer.<br />
+					   Als je dat te moeilijk vindt, kun je ook altijd kiezen: <code><var>kleinsteNoemer</var></code> x <code><var>grootsteNoemer</var></code>.
+					</p>	
+					<!-- ======================================================================   hint 2 -->                        
+					<p>Je kiest voor de nieuwe noemer het getal <code><var>LCM</var></code>.</p>
+					<!-- ======================================================================   hint 3 -->                        
+					<div>
+                        <p data-tt="hint3" >De eerste breuk <code><var>fraction(NUM1,DEN1)</var></code> <var>BECOMES_1</var> <code>\dfrac{<var>NUM1 * F1</var>}{<var>LCM</var>}</code>.</p>
+                        <p data-tt="hint4" >De tweede breuk <code><var>fraction(NUM2,DEN2)</var></code><var>BECOMES_2</var> <code>\dfrac{<var>NUM2 * F2</var>}{<var>LCM</var>}</code>.</p>
+                    </div>
+                    <!-- ======================================================================   hint 3 -->    
+                    <p data-tt ="hint5">Je ziet dat 
+						<span data-if="FRAC1>FRAC2"><code><var>fraction(NUM1,DEN1)</var></code> groter is dan <code><var>fraction(NUM2,DEN2)</var></code>.</span>
+						<span data-else><code><var>fraction(NUM2,DEN2)</var></code> groter is dan <code><var>fraction(NUM1,DEN1)</var></code>.</span>
+					</p>                   					
+                </div>
+            </div>
+		</div>
+	</body>
+</html>
+
+
+		<!--      
+					Nog een probleem dat misschien voor alle voorgaande exercises ook geldt. Als bijvoorbeeld het antwoord gelijk moet zijn aan de breuk 3/1 wordt dit niet goedgekeurd. Alleen 3 wordt geaccepteerd.
+					Om dit probleem snel op te lossen heb ik uitgesloten dat een van de noemers 1 is.
+					-->	
+		<!--      niet goed; denkt dan steeds dat FRAC2 de grootste is
+					<var id = "BIGGER" data-if="FRAC1>FRAC2">FRAC1</var>
+					<var id = "BIGGER" data-else>FRAC2</var>
+					-->
+			
+		<!--
+        <div class="problems">
+            <div id="pie-chart">
+                <div class="question">
+                      <p data-tt="exercise1">Welke breuk is groter, <code><var>fraction(NUM1,DEN1)</var></code> of <code><var>fraction(NUM2,DEN2)</var></code>? </p>
+                      
+                </div>
+                <div class="solution" data-type="rational"><var>BIGGER</var></div>
+
+                    <div class="hints">
+					
+					    ======================================================================   hint 1 
+                        <p data-tt = "hint1">Bekijk de breuken als deelsommen.</p>
+						======================================================================   hint 2 
+                        <p>Je ziet dan meteen dat de ene breuk groter is dan 1 en de andere kleiner dan 1.</p>
+						======================================================================   hint 3
+						<p data-tt ="hint2">Nu is het duidelijker dat 
+						<span data-if="FRAC1>FRAC2"><code><var>fraction(NUM1,DEN1)</var></code> groter is dan <code><var>fraction(NUM2,DEN2)</var></code>.</span>
+						<span data-else><code><var>fraction(NUM2,DEN2)</var></code> groter is dan <code><var>fraction(NUM1,DEN1)</var></code>.</span></p>
+						
+						-->
+						
+						
+						<!--
+                        <code><var>fraction(NUM1,DEN1)</var></code>
+                         <div class="graphie">
+                            init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
+                            piechart( [NUM1, DEN1 - NUM1], ["#e00", "#999"], 2 );
+                        </div>
+                         <p><code><var>fraction(NUM2,DEN2)</var></code></p>
+
+                         <div class="graphie">
+                            init({ range: [ [-3, 3], [-3, 3] ], scale: 25 });
+                            piechart( [NUM2, DEN2 - NUM2], ["#e00", "#999"], 2 );
+                        </div>
+                       
+                        <p data-tt ="hint2">Nu is het duidelijker dat 
+						<span data-if="FRAC1>FRAC2"><code><var>fraction(NUM1,DEN1)</var></code> groter is dan <code><var>fraction(NUM2,DEN2)</var></code>.</span>
+						<span data-else><code><var>fraction(NUM2,DEN2)</var></code> groter is dan <code><var>fraction(NUM1,DEN1)</var></code>.</span></p>
+                         -->
+    

@@ -2713,16 +2713,7 @@ body {
     min-width: 1000px;
 }
 
-#outer-wrapper {
-    background: url(http://www.khanacademy.org//images/light-page-bg.png) repeat-x; /*! data-uri(/images/light-page-bg.png) */
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 0 -77px;
-}
-
 #page-container, #page-container-inner {
-    background: transparent url(http://www.khanacademy.org//images/content-border.1.png) no-repeat right 85px; /*! data-uri(/images/content-border.1.png) */
 }
 
 #page-container {

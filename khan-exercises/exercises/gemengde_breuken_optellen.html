@@ -7,26 +7,29 @@
     <body>
         <div class="exercise">
             <div class="vars" data-ensure="M_NUM + M_NUM2 &lt; M_DENOM">
-                 testen:
+                <!-- testen:
 				<var id="WHOLE">randRange( 1, 10 )</var>
 				<var id="WHOLE2">randRange(1,10)</var>
                 <var id="M_DENOM">randRange( 2, 10 )</var>
                 <var id="M_NUM">randRange( 1, 10 )</var>             
 				<var id="M_NUM2">randRange(1,10)</var>
-				
-				<!--  
+				-->
+				  
 				<var id="WHOLE">randRange( 9, 9 )</var>
 				<var id="WHOLE2">randRange(8,8)</var>
                 <var id="M_DENOM">randRange( 10, 10 )</var>
                 <var id="M_NUM">randRange( 7, 7 )</var>             
 				<var id="M_NUM2">randRange(1,1)</var>
-				-->
+				
 				<var id="ANSWER_GCD">getGCD( M_NUM2+M_NUM, M_DENOM)</var>
 				
 				<var id = "PRE_SIMPLIFY_S"><code>\ \ = \ \  \color{#FFA500}{<var>WHOLE+WHOLE2</var>}\color{#6495ED}{<var>fraction(M_NUM2+M_NUM, M_DENOM,false,true)</var>}</code>  </var>
 				<var id = "REDUCED_NUM"> (M_NUM2+M_NUM)/ANSWER_GCD </var>
 				<var id = "REDUCED_DENOM"> M_DENOM/ANSWER_GCD</var>
 				<var id = "SIMPLIFY_S"> ANSWER_GCD==1 ? "" : ACTUAL </var>				
+				
+				
+				
 				
             </div>
 
@@ -49,7 +52,7 @@
                             <p data-tt="hint2" >Je kunt de <span class="hint_orange">hele getallen</span> bij elkaar optellen en de <span class="hint_blue">breuken</span> bij elkaar optellen en daarna zo nodig het antwoord vereenvoudigen.</p>
 							<!-- ======================================================================   hint 3 -->
 							<code>\color{#FFA500}{<var>WHOLE</var>}\color{#6495ED}{<var>fraction( M_NUM, M_DENOM, false, false )</var>}</code> + <code>\color{#FFA500}{<var>WHOLE2</var>}\color{#6495ED}{<var>fraction( M_NUM2, M_DENOM, false, false )</var>}\ \  =  \ \ </code>
-							<code>\color{#FFA500}{<var>WHOLE+WHOLE2</var>}\color{#6495ED}{<var>fraction(M_NUM2+M_NUM, M_DENOM,false,false)</var>} <span data-if="ANSWER_GCD!=1">= <var>WHOLE+WHOLE2</var><var>fraction(REDUCED_NUM,REDUCED_DENOM,false,true)</var></span></code></p>
+							<code>\color{#FFA500}{<var>WHOLE+WHOLE2</var>}\color{#6495ED}{<var>fraction(M_NUM2+M_NUM, M_DENOM,false,false)</var>} <span data-if="ANSWER_GCD!=1">\ \  =  \ \</code><code><var>WHOLE+WHOLE2</var><var>fraction(REDUCED_NUM,REDUCED_DENOM,false,true)</var></span></code></p>
 							
 							
                         </div>

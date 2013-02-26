@@ -68,7 +68,7 @@ class BadgeCategory(object):
             return ("Zwarte gat badges zijn legendarisch en onbekend. Dit zijn "
                     "de meest unieke badges die te verdienen zijn bij de Khan Academie.")
         elif category == BadgeCategory.MASTER:
-            return ("Uitdagings buttons zijn speciale beloningen die je kunt verdienen als je een  "
+            return ("Uitdagings badges zijn speciale beloningen die je kunt verdienen als je een  "
                     "onderwerp hebt voltooid.")
         return ""
 

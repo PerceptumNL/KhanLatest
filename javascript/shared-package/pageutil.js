@@ -131,7 +131,19 @@ function initAutocomplete(selector, fTopics, fxnSelect, fIgnoreSubmitOnEnter, op
             var prefixSpan = $("<span class='autocomplete-type'>&nbsp;</span>").prependTo(jLink);
             // Apply a label only to the first appearance of a given type and add some space to separate types
             if (item.firstOfItsKind) {
-                prefixSpan.html(item.kind);
+                var kind_nl = null;
+                switch(item.kind) {
+                        case 'topic':
+                                kind_nl = "Onderwerp";
+                                break;
+                        case 'exercise':
+                                kind_nl = "Oefening";
+                                break;
+                        default:
+                                kind_nl = item.kind;
+                }
+
+                prefixSpan.html(kind_nl);
                 jLink = jLink.addClass("autocomplete-first-" + item.kind).before(spacerNode);
             }
         }

@@ -275,7 +275,7 @@ class RequestHandler(webapp2.RequestHandler, RequestInputHandler):
 
             title = "Sorry, hetgene waarnaar je zoekt kunnen we niet vinden."
             message_html = "Deze pagina lijkt niet te bestaan. <a href='/'>Ga naar de homepage</a>."
-            sub_message_html = "Als dit probleem zich voor blijft doen, neem dan contact met ons opIf this problem continues and you think something is wrong, please <a href='/reportissue?type=Defect'>let us know by sending a report</a>."
+            sub_message_html = "Als dit probleem zich voor blijft doen,e <a href='/reportissue?type=Defect'>neem dan contact met ons op</a>."
 
         elif type(e) is ClosedBetaException:
 

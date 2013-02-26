@@ -219,6 +219,16 @@
 
                         <div id="stats">
                         </div>
+                        <div id="search-box">
+                                <form class="page-search" action="/search">
+                                    <input id="search-input"
+				    type="text" placeholder="Zoek op video's en oefeningen"
+                                           name="page_search_query" value='{{ page_search_query|escape }}'
+                                           class="ui-corner-all placeholder simple-input search-input blur-on-esc"/>
+                                    <input
+                                            type="submit" value=" " class="search-submit"/>
+                                </form>
+                            </div>
                         <div class="site-wide-navigation">
                             <ul class="links nav-subheader">
                                 <li>
@@ -285,16 +295,7 @@
                                 -->
                                 </span>
                             </ul>
-                            <div id="search-box">
-                                <form class="page-search" action="/search">
-                                    <input id="search-input"
-				    type="text" placeholder="Zoek op video's en oefeningen"
-                                           name="page_search_query" value='{{ page_search_query|escape }}'
-                                           class="ui-corner-all placeholder simple-input search-input blur-on-esc"/>
-                                    <input
-                                            type="submit" value=" " class="search-submit"/>
-                                </form>
-                            </div>
+                            
                             <!-- TODO what is this .clear class all about? -->
                             <div class="clear">
                             </div>

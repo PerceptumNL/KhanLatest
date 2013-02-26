@@ -1,14 +1,14 @@
 <span class="mod_tools" data-is-author="{{showAuthorControls}}">
-    mod tools:
-    <a href="javascript:void(0)" class="control mod_edit" data-key="{{key}}">edit</a>
+    Opties:
+    <a href="javascript:void(0)" class="control mod_edit" data-key="{{key}}">aAnpassen</a>
     {{#if appearsAsDeleted}}
-        | <a href="javascript:void(0)" class="control mod_undelete" data-key="{{key}}">undelete</a>
+        | <a href="javascript:void(0)" class="control mod_undelete" data-key="{{key}}">Ongedaan maken</a>
     {{else}}
-        | <a href="javascript:void(0)" class="control mod_delete" data-key="{{key}}">delete</a>
+        | <a href="javascript:void(0)" class="control mod_delete" data-key="{{key}}">Verwijder</a>
     {{/if}}
-    | <a href="javascript:void(0)" class="control mod_change" data-target-type="comment" data-key="{{key}}">change to comment</a>
+    | <a href="javascript:void(0)" class="control mod_change" data-target-type="comment" data-key="{{key}}">Verander naar opmerking</a>
     {{#if flags.length}}
-    | <a href="javascript:void(0)" class="control mod_clear_flags" data-key="{{key}}">clear {{pluralize flags.length "flag"}}</a>
+    | <a href="javascript:void(0)" class="control mod_clear_flags" data-key="{{key}}">leeg {{pluralize flags.length "flag"}}</a>
     {{/if}}
     <span class="message">{{message}}</span>
 </span>

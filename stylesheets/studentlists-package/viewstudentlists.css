@@ -108,14 +108,14 @@
 .lists-css-menu > ul > li.css-menu-js-hover:after {
     visibility: visible;
 }
-.student-row:hover .css-menu > ul > li:after {
+.student-row .css-menu > ul > li:after {
     visibility: visible;
 }
-.student-row:hover .lists-css-menu > ul > li {
+.student-row .lists-css-menu > ul > li {
     color: #000000;
 }
 .student-row .student-controls {
-    visibility: hidden;
+    visibility: visible;
 }
 .student-row:hover .student-controls {
     visibility: visible;

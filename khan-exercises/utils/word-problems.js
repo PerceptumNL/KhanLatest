@@ -98,6 +98,7 @@ jQuery.extend( KhanUtil, {
 			'hoed': 'hoeden',
 			'hele getal':'hele getallen',
 			'tiental':'tientallen',
+            'eenheid':'eenheden',
 			'leeuw': 'leeuwen',
 			'honderdtal':'honderdtallen',
 			'duizendtal':'duizendtallen',

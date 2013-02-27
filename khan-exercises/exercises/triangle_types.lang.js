@@ -1,9 +1,9 @@
 ({
 	"nl" : {
 		"question1"	: 'Is deze driehoek gelijkzijdig, gelijkbenig of ongelijkzijdig?',
-			"vars1"	: '<var id="TYPES">[ "Gelijkzijdig", "Gelijkbenig", "Ongelijkzijdig" ]</var>'+
-			'<var id="TYPE">randFromArray( TYPES )</var>'+
-			'<var id="TRIANGLE">function(){'+
+		"vars1"	: '<var id="TYPES">[ "Gelijkzijdig", "Gelijkbenig", "Ongelijkzijdig" ]</var>'+
+		'<var id="TYPE">randFromArray( TYPES )</var>'+
+		'<var id="TRIANGLE">function(){'+
 								'if ( TYPE === "Gelijkzijdig" ){'+
 									'return eqTriangle();'+
 								'}'+

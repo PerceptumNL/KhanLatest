@@ -44,7 +44,9 @@ def sync_with_topic_version(version):
             badge_type.exercise_names_required = exercise_names_required
             badge_type.topic_standalone_title = topic.standalone_title
             badge_type.icon_name = topic.icon_name
+            badge_type.retired = False
             entities_to_put.append(badge_type)
+
     for badge_type in TopicExerciseBadgeType.all():
 
         # Make sure each TopicExerciseBadgeType has a corresponding topic...

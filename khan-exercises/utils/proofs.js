@@ -542,15 +542,15 @@ function outputFillBlanksProof() {
                 if (KhanUtil.random() < 0.2) {
                     proofText += "<div class=\"" + divName(finishedKeys[i]) + "\">";
                     proofText += prettifyEquality(finishedKeys[i]);
-                    proofText += " because <select class=\"missing missingReason\" id=\"" + finishedKeys[i] + "\">"
+                    proofText += " omdat <select class=\"missing missingReason\" id=\"" + finishedKeys[i] + "\">"
                     + "<option></option>"
-                    + "<option value=\"SSS\">side-side-side congruence</option>"
-                    + "<option value=\"ASA\">angle-side-angle congruence</option>"
-                    + "<option value=\"SAS\">side-angle-side congruence</option>"
-                    + "<option value=\"AAS\">angle-angle-side congruence</option>"
+                    + "<option value=\"SSS\">zijkant-zijkant-zijkant congruentie </option>"
+                    + "<option value=\"ASA\">hoek-zijkant-hoek congruentie </option>"
+                    + "<option value=\"SAS\">zijkant-hoek-zijkant congruentie </option>"
+                    + "<option value=\"AAS\">hoek-hoek-zijkant congruentie </option>"
                     + "<option>overeenkomende delen van congruente driehoeken congruent zijn</option>"
-                    + "<option>vertical angles are equal</option>"
-                    + "<option>alternate interior angles are equal</option>"
+                    + "<option>de verticale hoeken zijn gelijk</option>"
+                    + "<option>de alternatieve binnenhoeken zijn gelijk</option>"
                     + "</select> </div>" + "<br>";
                     blanks++;
                 }

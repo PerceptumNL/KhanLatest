@@ -506,11 +506,11 @@ Khan.answerTypes = $.extend(Khan.answerTypes, {
                                 ret = true;
                             } else if (form === "percent") {
                                 // Otherwise, an error was returned
-                                ret = "Je antwoord is bijna juist, " +
+                                ret = "Je antwoord is bijna juist " +
                                       "het enige wat ontbreekt is een <code>\\%</code> " +
                                       "aan het einde.";
                             } else {
-                                ret = "Je antwoord is bijna juist, " +
+                                ret = "Je antwoord is bijna juist " +
                                       "je moet het alleen nog vereenvoudigen.";
                             }
 

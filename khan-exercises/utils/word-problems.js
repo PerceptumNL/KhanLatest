@@ -142,7 +142,7 @@ jQuery.extend( KhanUtil, {
 			'neushoorn' : 'neushoorns',
 			'slang' : 'slangen',
 			'pinguin':'pinguins',
-			'leeuw' : 'leeuwen'
+			'leeuw' : 'leeuwen',
 		};
 
 		var pluralizeWord = function(word) {

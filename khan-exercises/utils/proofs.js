@@ -403,7 +403,7 @@ function nextStatementHint() {
 // return the entire finished proof generated, formatted to look all pretty and etc.
 // used in "find the wrong statement" exercise, so also picks two statements for that exercise
 function outputFinishedProof() {
-    var proofText = "<h3>Givens</h3>";
+    var proofText = "<h3>Gegevens</h3>";
 
     var unsortedKeyList = _.clone(finishedEqualitiesList);
     var finishedKeysList = sortEqualityList(unsortedKeyList.reverse(), finishedEqualities);
@@ -430,7 +430,7 @@ function outputFinishedProof() {
                     proofText += "<code>, \\  </code>and<code>\\  </code></div>";
                 }
                 else {
-                    proofText += "</div><br><br><h3 style=\"clear:both\">Proof</h3>";
+                    proofText += "</div><br><br><h3 style=\"clear:both\">Bewijs</h3>";
                 }
 
                 possibleValids.push(prettifyEquality(finishedKeys[i]));

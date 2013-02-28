@@ -2,7 +2,7 @@
 <html data-require="math math-format probability word-problems graphie">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Independent probability</title>
+    <title>Onafhankelijke kansen</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -38,27 +38,27 @@
             </div>
 
             <p class="question">
-                If you flip a coin and roll a 6-sided die, what is the probability that you will flip a <var>HT</var> and roll <var>RESULT_DESC</var>?
+                Als je een munt opgooit en een dobbelsteen met 6 kanten, wat is dan de kans dat je <var>HT</var> gooit en <var>RESULT_DESC</var> gooit?
             </p>
 
             <div class="solution" data-forms="proper, decimal, percent"><var>0.5 * RESULT_POSSIBLE.length / 6</var></div>
 
             <div class="hints">
                 <p>
-                    Flipping a <var>HT</var> and rolling <var>RESULT_DESC</var> are independent events: they don't affect each other. So, to get the 
-                    probability of both happening, we just need to multiply the probability of one by the probability of the other.
+                    Een <var>HT</var> gooien en <var>RESULT_DESC</var> gooien zijn onafhankelijke gebeurtenissen: ze hebben geen effect op elkaar. Dus, om de  
+                    kans te berekenen dat beide gebeurtenissen zullen plaats vinden, hoeven we alleen maar de kans van de ene gebeurtenis te vermenigvuldigen met de kans van de andere gebeurtenis.
                 </p>
                 <p>
-                    The probability of flipping a <var>HT</var> is <code>\dfrac{1}{2}</code>.
+                    De kans om <var>HT</var> te gooien is <code>\dfrac{1}{2}</code>.
                 </p>
                 <p>
-                    The probability of rolling <var>RESULT_DESC</var> is <code>\dfrac{<var>RESULT_POSSIBLE.length</var>}{6}</code>, since there 
+                    De kans om <var>RESULT_DESC</var> te gooien is <code>\dfrac{<var>RESULT_POSSIBLE.length</var>}{6}</code>, omdat er 
                     <var>plural("is",RESULT_POSSIBLE.length)</var> <var>RESULT_POSSIBLE.length</var> <var>plural("outcome",RESULT_POSSIBLE.length)</var> 
-                    which <var>RESULT_POSSIBLE.length > 1 ? "satisfy" : "satisfies"</var> our condition
-                    (namely, <var>toSentence(RESULT_POSSIBLE)</var>), and 6 total possible outcomes.
+                    welke <var>RESULT_POSSIBLE.length > 1 ? "voldoen" : "voldoet"</var> aan onze voorwaarde.
+                    (namelijk, <var>toSentence(RESULT_POSSIBLE)</var>), en in totaal 6 mogelijke uitkomsten.
                 </p>
                 <p>
-                    So, the probability of both these events happening is <code>\dfrac{1}{2} \cdot \dfrac{<var>RESULT_POSSIBLE.length</var>}{6}
+                    Dus, de kans dat beide gebeurtenissen plaats vinden is <code>\dfrac{1}{2} \cdot \dfrac{<var>RESULT_POSSIBLE.length</var>}{6}
                     = \dfrac{<var>PRETTY_N</var>}{<var>PRETTY_D</var>}</code>
                 </p>
             </div>
@@ -117,14 +117,14 @@
             </div>
 
             <p>
-                <var>PLAYER</var> is shooting free throws. Making or missing free throws doesn't change the probability that he
-                will make his next one, and he makes his free throws <code><var>(PR*100).toFixed(0)</var>\%</code>
-                of the time.
+                <var>PLAYER</var> schiet vrije worpen. Of hij de vrije worpen scoort of mist verandert niets aan de kans of hij de volgende worp zal scoren.
+                , en hij scoort zin vrije worpen <code><var>(PR*100).toFixed(0)</var>\%</code>
+                van de keren. 
             </p>
 
             <p class="question">
-                What is the probability of <var>PLAYER</var> making <var>ALL ? "ALL" : "NONE"</var> of his next
-                <var>STREAK</var> free throw attempts?
+                Wat is de kans dat <var>PLAYER</var> alles ? "alles" : "geen" <var>scoort</var> of zijn volgende
+                <var>STREAK</var> vrije worp pogingen?
             </p>
 
             <div class="solution"><code><var>ANS</var></code></div>
@@ -139,8 +139,7 @@
             <div class="hints">
             <div data-unwrap data-if="ALL">
                 <div>
-                    <p>We know that <code>\blue{<var>SINGLE_PCT</var> \%}</code> of the time, he'll make
-                    his first shot.</p>
+                    <p>We weten dat <code>\blue{<var>SINGLE_PCT</var> \%}</code> van de keren het eerste schot raak is.</p>
                     <div class="graphie">
                         init({
                             range: [[-1, 11], [-1, 1]]
@@ -155,10 +154,10 @@
                         line([0,0], [PROB*10,0]);
                         line([PROB*10,-0.2], [PROB*10,0.2]);
                     </div>
-                    <p>Then <code><var>SINGLE_PCT</var> \%</code> of
-                    the time he makes his first shot, he will also make his second shot, and 
-                    <code><var>((1-PROB)*100).toFixed(0)</var> \%</code> of the time he makes his
-                    first shot, he will miss his second shot.</p>
+                    <p>Dan <code><var>SINGLE_PCT</var> \%</code> van 
+                   de keren dat zijn eerste schot raak is, scoort hij ook de tweede keer en 
+                    <code><var>((1-PROB)*100).toFixed(0)</var> \%</code> van de keren dat zijn eerste worp raak is,
+                    mist hij zijn tweede worp</p>
                     <div class="graphie">
                         init({
                             range: [[-1, 11], [-1, 1]]
@@ -186,12 +185,12 @@
                     that he made the first shot, which happens <code><var>SINGLE_PCT</var>\%</code> of the time in general.
                 </p>
                 <p>
-                    This is <code><var>SINGLE_PCT</var>\% \cdot <var>SINGLE_PCT</var>\%</code>, or
+                    Dit is <code><var>SINGLE_PCT</var>\% \cdot <var>SINGLE_PCT</var>\%</code>, of
                     <code><var>PROB</var> \cdot <var>PROB</var> = <var>(PROB*PROB).toFixed(3)</var></code>.
                 </p>
                 <div>
-                    <p>We can repeat this process again to get the probability of making <b>three</b> free throws in a row. We simply take
-                    <code><var>SINGLE_PCT</var>\%</code> of probability that he makes two in a row, which we know from the previous step is
+                    <p>We kunnen dit proces nog een keer herhalen om de kans te berekenen dat hij <b>drie</b> vrije worpen achter elkaar scoort. We nemen heel simpel
+                    <code><var>SINGLE_PCT</var>\%</code> de kans dat hij twee keer achter elkaar scoort, wat we uit de vorige stap weten
                     <code><var>(PROB*PROB).toFixed(3)</var> \approx \orange{<var>TWO_PCT</var>\%}</code>.</p>
                     <div class="graphie">
                         init({

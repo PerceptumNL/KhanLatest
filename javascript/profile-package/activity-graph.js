@@ -41,7 +41,7 @@ var ActivityGraph = {
     },
     proficientExercises: {
         type: "scatter",
-        name: "Proficient Skills",
+        name: "Behaalde vaardigheden",
         showInLegend: false,
         data: [],
         defaultPoint: {
@@ -227,16 +227,16 @@ var ActivityGraph = {
         extra = this.generateBar_(this.bucketData.dictTopicBuckets[bucket], "Videos");
         this.videoMinutes.data.push(_.extend({}, this.videoMinutes.defaultPoint, x, extra));
 
-        extra = this.generateBar_(this.bucketData.dictExerciseBuckets[bucket], "Skills");
+        extra = this.generateBar_(this.bucketData.dictExerciseBuckets[bucket], "Vaardigheden");
         this.exerciseMinutes.data.push(_.extend({}, this.exerciseMinutes.defaultPoint, x, extra));
 
         extra = this.generateSpline_(this.bucketData.dictPointsBuckets[bucket]);
         this.energyPoints.data.push(_.extend({}, this.energyPoints.defaultPoint, x, extra));
 
-        extra = this.generateScatter_(this.bucketData.dictBadgeBuckets[bucket], "Achievements");
+        extra = this.generateScatter_(this.bucketData.dictBadgeBuckets[bucket], "Prestaties");
         this.badges.data.push(_.extend({}, this.badges.defaultPoint, x, extra));
 
-        extra = this.generateScatter_(this.bucketData.dictProficiencyBuckets[bucket], "Proficiencies");
+        extra = this.generateScatter_(this.bucketData.dictProficiencyBuckets[bucket], "Behaald");
         this.proficientExercises.data.push(_.extend({}, this.proficientExercises.defaultPoint, x, extra));
     },
 

@@ -1,7 +1,7 @@
 <div class="notification-bar" style="display:none;">
 {% if login_notification %}
 	<span class="notification-bar-content">{{ login_notification|phantom_login_link(continue) }}</span>
-	<span class="notification-bar-close">(<a href="#">close</a>)</span>
+	<span class="notification-bar-close">(<a href="#">sluit</a>)</span>
 <script>$(function(){ Notifications.show(); });</script>
 {% endif %}
 </div>

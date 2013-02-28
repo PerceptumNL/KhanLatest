@@ -106,7 +106,7 @@ def exercise_problems_graph_context(user_data_student, exid):
 
     x_axis_label = "Probleem #"
     if x_offset:
-        x_axis_label += " (Laatste %d problemem)" % max_problems_in_graph
+        x_axis_label += " (Laatste %d problemen)" % max_problems_in_graph
 
     return {
         'student_email': user_data_student.email,

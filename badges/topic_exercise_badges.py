@@ -4,7 +4,7 @@ import object_property
 import topic_models
 import url_util
 from badges import Badge, BadgeCategory
-
+import logging
 
 def sync_with_topic_version(version):
     """ Syncs state of all TopicExerciseBadges with the specified
@@ -21,6 +21,7 @@ def sync_with_topic_version(version):
     # Make sure there is a TopicExerciseBadgeType for every topic
     # that contains exercises
     for topic in topics:
+        logging.info("sync topic %s" % topic.title)
 
         badge_type = TopicExerciseBadgeType.get_or_insert_for_topic(topic)
 
@@ -36,11 +37,14 @@ def sync_with_topic_version(version):
         # If the badge needs its required exercises updated or
         # was previously retired, update it.
         if (badge_type.retired or
-                set(exercise_names_required) !=
-                set(badge_type.exercise_names_required)):
+                set(exercise_names_required) != set(badge_type.exercise_names_required) or
+                badge_type.topic_standalone_title != topic.standalone_title or
+                badge_type.icon_name != topic.icon_name):
 
-            badge_type.retired = False
             badge_type.exercise_names_required = exercise_names_required
+            badge_type.topic_standalone_title = topic.standalone_title
+            badge_type.icon_name = topic.icon_name
+            badge_type.retired = False
             entities_to_put.append(badge_type)
 
     for badge_type in TopicExerciseBadgeType.all():

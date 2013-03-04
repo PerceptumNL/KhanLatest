@@ -24,7 +24,6 @@
     <div class="vars">
         <var id="DATA">randRangeUnique( 1, 8, 5 )</var>
         <var id="BADGE">randFromArray([ "Meteorite", "moon", "earth" ])</var>
-        <var id="BADGES">randFromArray([ "Meteorite", "moon", "earth" ])</var>
         <var id="FULL_IMAGE">"&lt;img src='/khan-exercises/images/" + BADGE + "-small.png'&gt;"</var>
         <var id="VALUE_PER_IMG">1</var>
     </div>
@@ -32,14 +31,14 @@
     <div class="problem">
         <p data-tt="question1">Gebruik de infographic om onderstaande vraag te beantwoorden:</p>
         <div class="fake_header" data-tt="question2">
-            <span><span style="text-transform:capitalize"><var>BADGES</var></span> badges verdiend per student</span>
+            <span><span style="text-transform:capitalize"><var>BADGE</var></span> badges verdiend per student</span>
         </div>
         <div class="fake_row" data-each="5 times as n">
             <span><var>person( n + 1 )</var></span><span data-each="DATA[n] times"><var>FULL_IMAGE</var>
             </span><span data-each="(8 - DATA[n]) times">&nbsp;</span>
         </div>
         <span style="height: 50px; vertical-align: top; line-height: 50px;">
-            <var>FULL_IMAGE</var> = <var>VALUE_PER_IMG</var> <var>BADGES</var>
+            <var>FULL_IMAGE</var> = <var>VALUE_PER_IMG</var> <var>BADGE</var>
             <var>plural( "badge", VALUE_PER_IMG )</var>
         </span>
     </div>
@@ -50,7 +49,7 @@
             <div class="vars">
                 <var id="MOST">_.indexOf( DATA, Math.max.apply( Math, DATA ) )</var>
             </div>
-            <p class="question" data-tt="question3">Wie heeft de meeste <var>BADGES</var> badges verdiend?</p>
+            <p class="question" data-tt="question3">Wie heeft de meeste <var>BADGE</var> badges verdiend?</p>
             <div class="solution"><var>person( MOST + 1 )</var></div>
             <ul class="choices" data-category="true">
                 <li><var>person( 1 )</var></li>
@@ -61,17 +60,16 @@
             </ul>
 
             <div class="hints">
-                <p data-tt="hint1">Wie heeft de meeste <var>BADGES</var> afbeeldingen naast <var>his( MOST + 1 )</var> naam staan?</p>
+                <p data-tt="hint1">Wie heeft de meeste <var>BADGE</var> afbeeldingen naast <var>his( MOST + 1 )</var> naam staan?</p>
                 <p data-tt="hint2"><var>person( MOST + 1 )</var> heeft de meeste afbeeldingen naast <var>his( MOST + 1)</var> naam staan.</p>
-                <p data-tt="hint3"><var>person( MOST + 1 )</var> heeft de meeste <var>BADGES</var> badges verdiend.</p>
+                <p data-tt="hint3"><var>person( MOST + 1 )</var> heeft de meeste <var>BADGE</var> badges verdiend.</p>
             </div>
         </div>
-
         <div id="least" data-weight="1">
             <div class="vars">
                 <var id="LEAST">_.indexOf( DATA, Math.min.apply( Math, DATA ) )</var>
             </div>
-            <p class="question" data-tt="question4">Wie heeft de minste <var>BADGES</var> badges verdiend?</p>
+            <p class="question" data-tt="question4">Wie heeft de minste <var>BADGE</var> badges verdiend?</p>
             <div class="solution"><var>person( LEAST + 1 )</var></div>
             <ul class="choices" data-category="true">
                 <li><var>person( 1 )</var></li>
@@ -82,19 +80,18 @@
             </ul>
 
             <div class="hints">
-                <p data-tt="hint4">Wie heeft de minste <var>BADGES</var> afbeeldingen naast <var>his( LEAST + 1 )</var> naam staan?</p>
+                <p data-tt="hint4">Wie heeft de minste <var>BADGE</var> afbeeldingen naast <var>his( LEAST + 1 )</var> naam staan?</p>
                 <p data-tt="hint5"><var>person( LEAST + 1 )</var> heeft de minste afbeeldingen naast <var>his( LEAST + 1)</var> naam staan.</p>
-                <p data-tt="hint6"><var>person( LEAST + 1 )</var> heeft de minste <var>BADGES</var> badges verdiend.</p>
+                <p data-tt="hint6"><var>person( LEAST + 1 )</var> heeft de minste <var>BADGE</var> badges verdiend.</p>
             </div>
         </div>
-
         <div id="read-chart" data-weight="3">
             <div class="vars">
                 <var id="PERSON">rand( 5 )</var>
                 <var id="ANSWER">DATA[ PERSON ] * VALUE_PER_IMG</var>
             </div>
 
-            <p class="question" data-tt="question5">Hoeveel <var>BADGES</var> badges heeft <var>person( PERSON + 1 )</var> verdiend?</p>
+            <p class="question" data-tt="question5">Hoeveel <var>BADGE</var> badges heeft <var>person( PERSON + 1 )</var> verdiend?</p>
 
             <div class="solution" data-forms="integer"><var>ANSWER</var></div>
 
@@ -119,7 +116,7 @@
                         <var>plural( "badge", DATA[ PERSON ] * VALUE_PER_IMG )</var>.
                     </div>
                 </div>
-                <p data-tt="hint11"><var>person( PERSON + 1 )</var> heeft <code><var>ANSWER</var></code> <var>BADGES</var> <var>plural( "badge", ANSWER )</var> verdiend.</p>
+                <p data-tt="hint11"><var>person( PERSON + 1 )</var> heeft <code><var>ANSWER</var></code> <var>BADGE</var> <var>plural( "badge", ANSWER )</var> verdiend.</p>
             </div>
         </div>
 

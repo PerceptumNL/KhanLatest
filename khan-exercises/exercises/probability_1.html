@@ -73,7 +73,7 @@
             <div class="solution"><var>RESULT_COUNT / 6</var></div>
 
             <div class="hints">
-                <p data-tt="hint4">Wanneer je een dobbelsteen gooit zijn er <code>6</code> mogelijkheden: 1, 2, 3, 4, 5, and 6.</p>
+                <p data-tt="hint4">Wanneer je een dobbelsteen gooit zijn er <code>6</code> mogelijkheden: 1, 2, 3, 4, 5, en 6.</p>
                 <p data-if="RESULT_COUNT == 1" data-tt="hint5">In dit geval is er <code>1</code> gunstige uitkomst: het getal <var>RESULT_POSSIBLE[0]</var>.</p>
                 <p data-else data-tt="hint6">In dit geval zijn er <code><var>RESULT_COUNT</var></code> gunstige uitkomsten: <var>toSentence(RESULT_POSSIBLE)</var>.</p>
                 <p data-tt="hint7">De kans is <code>\displaystyle <var>fractionSimplification(RESULT_COUNT, 6)</var></code>.</p>
@@ -161,7 +161,7 @@
                     ["een priemgetal is", KhanUtil.isPrime],
                     ["deelbaar is door 2 en 3", function(n) { return n % 6 &lt;= 0.5; }],
                     ["deelbaar is door of 3 of 5", function(n) { return n % 3 &lt;= 0.5 || n % 5 &lt;= 0.5; }],
-                    ["deelbaar is door of 4 or 7", function(n) { return n % 4 &lt;= 0.5 || n % 7 &lt;= 0.5; }]
+                    ["deelbaar is door of 4 of 7", function(n) { return n % 4 &lt;= 0.5 || n % 7 &lt;= 0.5; }]
                 ])</var>
 
                 <var id="WANTED_LIST">jQuery.grep(POSSIBLE, COND_FN)</var>

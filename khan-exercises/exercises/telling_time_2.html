@@ -216,11 +216,11 @@
                         }
                         if ((minuteAngle !== correctMinuteAngle) || (hourAngle !== correctHourAngle)) {
                             if ((minuteAngle === correctHourAngle) &amp;&amp; (hourAngle === correctMinuteAngle)) {
-                                return "Remember the hour hand is the short hand and the minute hand is the long hand";
+                                return "Onthoud goed dat de urenwijzer kort is en de minutenwijzer lang";
                             }
                             else if ((minuteAngle === correctMinuteAngle) &amp;&amp; (hourAngle !== correctHourAngle)
                                     &amp;&amp; (hourAngle === roundToNearest(hourSnapDegrees, timeToDegrees(5 * HOUR)))) {
-                                return "Remember the hour hand needs to move over the course of the hour";
+                                return "De kleine wijzer staat iets voorbij het hele uur";
                             }
                             return false;
                         }

@@ -1,5 +1,5 @@
 export PATH=$PWD/kenv/libexec:$PATH
-alias grep='GREP_COLOR="1;37;41" LANG=C grep --color=always'
+alias grep='GREP_COLOR="1;37;41" LANG=C grep --color=always --exclude="hash*.js" --exclude="combined*.js" --exclude="*handlebars.js" --exclude="compressed.js"'
 eval "$(kenv/bin/kenv init -)"
 
 export CLICOLOR=1

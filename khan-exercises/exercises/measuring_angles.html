@@ -41,15 +41,15 @@
 
             <div class="hints">
                 <p data-tt="hint1">
-                    First, align the origin of the protractor with the vertex of the angle.
-                    <button onClick="javascript: KhanUtil.currentGraph.graph.protractor.moveTo( 0, 0 ); ">Show me</button>
+                     Lijn eerst met de geodriehoek het hoekpunt van de hoek uit.
+                    <button onClick="javascript: KhanUtil.currentGraph.graph.protractor.moveTo( 0, 0 ); ">Laat zien</button>
                 </p>
                 <p data-tt="hint2">
-                    Next, rotate the protractor so that the <code>0^{\circ}</code> mark lines up with one side of the angle.
+                    Draai de geodriehoek vervolgens zo dat het <code>0^{\circ}</code> teken in lijn staat met een zijde van de hoek.
                     <button onClick="javascript:
                         KhanUtil.currentGraph.graph.protractor.moveTo( 0, 0 );
                         KhanUtil.currentGraph.graph.protractor.rotateTo( 360 - KhanUtil.tmpl.getVAR('ANGLE_ONE') );
-                    ">Show me</button>
+                    ">Laat zien</button>
                 </p>
                 <div>
                     <div class="graphie" data-update="angle">
@@ -57,7 +57,7 @@
                         graph.protractor.rotateTo( 360 - ANGLE_ONE );
                         label( [ 9 * cos( toRadians( ANGLE_ONE + DIFF ) ), 9 * sin( toRadians( ANGLE_ONE + DIFF ) ) ], "\\color{" + PINK + "}{" + DIFF + "^{\\circ}}" );
                     </div>
-                    <p data-tt="hint3">>The angle is <code><var>DIFF</var></code> degrees.</p>
+                    <p data-tt="hint3">>De hoek is <code><var>DIFF</var></code> graden.</p>
                 </div>
             </div>
         </div>

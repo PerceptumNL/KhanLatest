@@ -98,6 +98,7 @@ jQuery.extend( KhanUtil, {
 			'hoed': 'hoeden',
 			'hele getal':'hele getallen',
 			'tiental':'tientallen',
+            'eenheid':'eenheden',
 			'leeuw': 'leeuwen',
 			'honderdtal':'honderdtallen',
 			'duizendtal':'duizendtallen',
@@ -139,7 +140,7 @@ jQuery.extend( KhanUtil, {
 			'lange afstand renner': 'lange afstand renners',
 			'keer':'keer',
 			'neushoorn' : 'neushoorns',
-			'slang' : 'slangen'
+			'slang' : 'slangen',
 			'pinguin':'pinguins',
 			'leeuw' : 'leeuwen',
 		};
@@ -235,18 +236,18 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		["Arco", "m"],
 		["Philipp", "m"],
 		["Ronald", "m"],
-		["Britta", "f"],
+		["Priscilla", "f"],
 		["Pauline", "f"],
 		["Josh", "m"],
 		["Jessica", "f"],
 		["Tjalle", "m"],
 		["Diederik", "m"],
 		["Julius", "m"],
-		["Frum", "f"],
+		["Rachel", "f"],
 		["Dennis", "m"],
 		["Els", "f"],
 		["Maud", "f"],
-		["Bambi", "f"],
+		["Jasmine", "f"],
 		["Hanneke", "f"],
 		["Levi", "m"]
 	]);

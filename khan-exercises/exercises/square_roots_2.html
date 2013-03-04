@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-require="math subhints">
 <head>
-    <title>Square roots 2</title>
+    <title>Vierkantswortel inschatten</title>
     <script src="../khan-exercise.js"></script>
     <style type="text/css">
         #answer_area input[type=text] {
@@ -10,10 +10,10 @@
     </style>
 </head>
 <body>
-    <div class="summary">Estimating square roots as between two roots
+    <div class="summary">Het schatten van vierkantswortels tussen twee wortels
         Common Core State Standard: approximately 8.NS
         Video coverage: http://www.khanacademy.org/test-prep/cahsee/v/cahsee-practice--problems-1-3 question 2
-        Prerequisite: Square roots
+        Prerequisite: Vierkantswortels
     </div>
     <div class="exercise">
         <div class="problems">
@@ -23,39 +23,39 @@
                     <var id="Q">randRange( N * N + 1, (N + 1) * (N + 1) - 1 )</var>
                 </div>
 
-                <p class="question">The value of <code>\sqrt{<var>Q</var>}</code> lies between which two <a href="#" class="show-definition" data-definition="consecutive-integers">consecutive integers</a>?</p>
+                <p class="question">De waarde van <code>\sqrt{<var>Q</var>}</code> ligt tussen welke twee <a href="#" class="show-definition" data-definition="consecutive-integers">opeenvolgende gehele getallen</a>?</p>
 
                 <div class="definition" id="consecutive-integers">
-                    Integers that appear in order when counting, for example 2 and 3.
+                    Gehele getallen die voorkomen in volgorde bij het tellen, bijvoorbeeld 2 en 3.
                 </div>
 
                 <p class="solution"><var>N</var></p>
                 <div class="solution" data-type="multiple">
                     <p><span class="sol short" data-forms="integer"><var>N</var></span> <code>&lt; \sqrt{<var>Q</var>} &lt;</code> <span class="sol short" data-forms="integer"><var>N + 1</var></span></p>
-                    <span class="example">two integers, like <code>6</code></span>
+                    <span class="example">twee gehele getallen, zoals <code>6</code></span>
                 </div>
 
                 <div class="hints">
                     <div>
-                        <p>Consider the perfect squares near <code><var>Q</var></code>.
+                        <p>Denk aan de perfecte vierkanten in de buurt van<code><var>Q</var></code>.
                             [<a href="#" class="show-subhint"
-                            data-subhint="explain-perfect-square">What are perfect squares?</a>]
+                            data-subhint="explain-perfect-square">Wat zijn perfecte vierkanten?</a>]
                         </p>
                         <div class="subhint" id="explain-perfect-square">
                             <p>
-                                Perfect squares are integers which can be obtained by squaring an integer.
+                                Perfecte vierkanten zijn gehele getallen die worden verkregen door kwadratuur van een geheel getal.
                             </p>
                             <p>
-                                The first 13 perfect squares are:
+                                De eerste 13 perfecte vierkanten zijn:
                             </p>
                             <code>\qquad 1,4,9,16,25,36,49,64,81,100,121,144,169</code>
                         </div>
                     </div>
-                    <p><code><var>N * N</var></code> is the nearest perfect square less than <code><var>Q</var></code>.</p>
-                    <p><code><var>(N + 1) * (N + 1)</var></code> is the nearest perfect square more than <code><var>Q</var></code>.</p>
-                    <p>So, we know <code><var>N * N</var> &lt; <var>Q</var> &lt; <var>(N + 1) * (N + 1)</var></code>.</p>
+                    <p><code><var>N * N</var></code> is het dichtstbijzijnde perfect vierkant minder dan <code><var>Q</var></code>.</p>
+                    <p><code><var>(N + 1) * (N + 1)</var></code> is het dichtstbijzijnde perfecte vierkant meer dan<code><var>Q</var></code>.</p>
+                    <p>Dus, we weten dat <code><var>N * N</var> &lt; <var>Q</var> &lt; <var>(N + 1) * (N + 1)</var></code>.</p>
                     <p>So, <code>\sqrt{<var>N * N</var>} &lt; \sqrt{<var>Q</var>} &lt; \sqrt{<var>(N + 1)*(N + 1)</var>}</code>.</p>
-                    <p class="final_answer">So <code>\sqrt{<var>Q</var>}</code> is between <code><var>N</var></code> and <code><var>N + 1</var></code>.</p>
+                    <p class="final_answer">Dus <code>\sqrt{<var>Q</var>}</code> is tussen <code><var>N</var></code> en <code><var>N + 1</var></code>.</p>
                 </div>
 
             </div>

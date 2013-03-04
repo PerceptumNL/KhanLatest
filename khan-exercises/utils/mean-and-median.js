@@ -14,7 +14,7 @@ $.extend(KhanUtil, {
         );
 
         graph.graph.meanLabel.remove();
-        graph.graph.meanLabel = graph.label([mean, 1.3], "\\text{gemiddelde}", "boven", { color: KhanUtil.BLUE });
+        graph.graph.meanLabel = graph.label([mean, 1.3], "\\text{gemiddelde}", "above", { color: KhanUtil.BLUE });
 
         graph.graph.mean = mean;
     },
@@ -27,12 +27,12 @@ $.extend(KhanUtil, {
         graph.graph.medianValueLabel.remove();
         graph.graph.medianValueLabel = graph.label([median, -1.2],
             (median + "").replace(/-(\d)/g, "\\llap{-}$1"),
-            "onder",
+            "below",
             { color: KhanUtil.GREEN }
         );
 
         graph.graph.medianLabel.remove();
-        graph.graph.medianLabel = graph.label([median, -1.7], "\\text{mediaan}", "onder", { color: KhanUtil.GREEN });
+        graph.graph.medianLabel = graph.label([median, -1.7], "\\text{mediaan}", "below", { color: KhanUtil.GREEN });
 
         graph.graph.median = median;
     },

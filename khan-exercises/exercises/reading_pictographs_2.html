@@ -26,7 +26,7 @@
         <var id="BADGE">randFromArray([ "meteorite", "moon", "earth" ])</var>
         <var id="BADGES">randFromArray([ "meteorite", "moon", "earth" ])</var>
         <var id="FULL_IMAGE">"&lt;img src='/khan-exercises/images/" + BADGE + "-small.png'&gt;"</var>
-        <var id="HALF_IMAGE">"&lt;div style=\"background-image:url('khan-exercises/images/" + BADGE + "-small.png'); width:20px; height:40px;\"&gt;&nbsp;&lt;/div&gt;"</var>
+        <var id="HALF_IMAGE">"&lt;div style=\"background-image:url('/khan-exercises/images/" + BADGE + "-small.png'); width:20px; height:40px;\"&gt;&nbsp;&lt;/div&gt;"</var>
         <var id="VALUE_PER_IMG">randFromArray([ 2, 4 ])</var>
         <var id="HALF">VALUE_PER_IMG === 1 ? [ 0, 0, 0, 0, 0 ] : [ rand(2), rand(2), rand(2), rand(2), rand(2) ]</var>
     </div>
@@ -37,9 +37,9 @@
             <span data-tt="span1" ><span style="text-transform:capitalize"><var>BADGES</var></span> badges verdiend per student</span>
         </div>
         <div class="fake_row" data-each="5 times as n">
-            <span><var>person( n + 1)</var></span><span data-each="DATA[n] times"><var>FULL_IMAGE</var>
-            </span><span data-if="HALF[n]"><var>HALF_IMAGE</var>
-            </span><span data-else></span><span data-each="(7 - DATA[n]) times">&nbsp;</span>
+            <span><var>person( n + 1)</var></span><span data-each="DATA[n] times"><var>FULL_IMAGE</var></span>
+            <span data-if="HALF[n]"><var>HALF_IMAGE</var></span>
+            <span data-else></span><span data-each="(7 - DATA[n]) times">&nbsp;</span>
         </div>
         <span style="height: 50px; vertical-align: top; line-height: 50px;"><var>FULL_IMAGE</var> = <var>VALUE_PER_IMG</var> <var>BADGES</var> <var>plural( "badge", VALUE_PER_IMG )</var></span>
     </div>
@@ -87,7 +87,6 @@
                 <p data-tt="hint5"><var>person( PERSON + 1 )</var> heeft <code><var>ANSWER</var></code> <var>BADGES</var> <var>plural( "badge", ANSWER )</var> verdiend.</p>
             </div>
         </div>
-
         <div id="reverse">
             <div class="vars">
                 <var id="PERSON">rand( 5 )</var>
@@ -205,7 +204,6 @@
                 <p data-tt="hint19" >Alles bij elkaar zijn er <code><var>TOTAL</var></code> <var>BADGES</var> <var>plural( "badge", TOTAL )</var> verdiend.</p>
             </div>
         </div>
-
     </div>
 </div>
 </body>

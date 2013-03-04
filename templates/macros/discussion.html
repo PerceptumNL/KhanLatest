@@ -35,7 +35,7 @@
                 <textarea name="comment_text" class="comment_text" rows="3" cols="40">
                 </textarea>
                 <br/>
-                {{ feedback_controls_comment("Comment") }}
+                {{ feedback_controls_comment("Plaats opmerking") }}
             </form>
         </div>
 
@@ -139,11 +139,11 @@
 {% macro vote_tools(target) -%}
     <div class="vote_tools">
         <div class="control vote_tools_show" >
-            <a href="#" class="control vote_for {% if target.up_voted %}voted{% endif %}" title="Vote up, this is encouraging or helpful (click again to undo)" data-key="{{ target.key()|escape }}" data-vote-type="1"><img src="{{ "/images/vote-up-gray.png"|static_url }}" class="vote_up_gray"/><img src="{{ "/images/vote-up.png"|static_url }}" class="vote_up"/></a>
+            <a href="#" class="control vote_for {% if target.up_voted %}voted{% endif %}" title="Positieve stem, dit is aanmoedigend of behulpzaam (klik nog een keer om ongedaan te maken)" data-key="{{ target.key()|escape }}" data-vote-type="1"><img src="{{ "/images/vote-up-gray.png"|static_url }}" class="vote_up_gray"/><img src="{{ "/images/vote-up.png"|static_url }}" class="vote_up"/></a>
             {% if not target.is_type("comment") %}
                 {{ vote_sum(target) }}
             {% endif %}
-            <a href="#" class="control vote_for {% if target.down_voted %}voted{% endif %}" title="Vote down, this is not encouraging or helpful (click again to undo)" data-key="{{ target.key()|escape }}" data-vote-type="-1"><img src="{{ "/images/vote-down-gray.png"|static_url }}" class="vote_down_gray"/><img src="{{ "/images/vote-down.png"|static_url }}" class="vote_down"></a>
+            <a href="#" class="control vote_for {% if target.down_voted %}voted{% endif %}" title="Negatieve stem, dit is niet aanmoedigend of behulpzaam (klik nog een keer om ongedaan te maken)" data-key="{{ target.key()|escape }}" data-vote-type="-1"><img src="{{ "/images/vote-down-gray.png"|static_url }}" class="vote_down_gray"/><img src="{{ "/images/vote-down.png"|static_url }}" class="vote_down"></a>
         </div>
     </div>
 {%- endmacro %}
@@ -160,10 +160,10 @@
 {% macro flag_tools(target) -%}
     <span class="flag_tools">
         <span class="control flag_tools_show">
-            <a href="#" class="control flag_show" title="Flag for moderator attention"><img class="feedback_flag_gray" src="{{ "/images/flag_gray.png"|static_url }}" /><img class="feedback_flag" src="{{ "/images/flag.png"|static_url }}" /></a>
+            <a href="#" class="control flag_show" title="Rapporteer"><img class="feedback_flag_gray" src="{{ "/images/flag_gray.png"|static_url }}" /><img class="feedback_flag" src="{{ "/images/flag.png"|static_url }}" /></a>
         </span>
         <span class="flag_tools_hidden message" style="display:none;">
-            Flag as:
+            Rapporteer als:
             <a href="#" class="control flag_as" title="Flag as inappropriate content" data-flag="inappropriate" data-key="{{ target.key() }}">Ongepast</a>
             | <a href="#" class="control flag_as" title="Flag as low quality content" data-flag="lowquality" data-key="{{ target.key() }}">Slechte kwaliteit</a>
             | <a href="#" class="control flag_as" title="Flag as content that does not belong here" data-flag="doesnotbelong" data-key="{{ target.key() }}">Hoort hier niet</a>
@@ -174,7 +174,7 @@
 
 {% macro mod_tools(target) -%}
     <span class="mod_tools">
-        mod tools:
+        Opties:
         <a href="javascript:void(0)" class="control mod_delete" data-key="{{ target.key() }}">Verwijder</a>
         | <a href="javascript:void(0)" class="control mod_change" data-target-type="question" data-key="{{ target.key() }}">Verander naar vraag</a>
         | <a href="Javascript:void(0)" class="control mod_clear_flags" data-key="{{target.key()}}">Verwijder markeeringspunten</a>

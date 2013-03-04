@@ -24,7 +24,7 @@ def get_topic_focus_data(daily_activity_logs, dt_start_utc, dt_end_utc):
             for video_key in hourly_activity_summary.dict_videos.keys():
                 hourly_activity_summary_video_item = hourly_activity_summary.dict_videos[video_key]
 
-                playlist_title = "Other"
+                playlist_title = "Overig"
                 if hourly_activity_summary_video_item.playlist_titles:
                     playlist_title = hourly_activity_summary_video_item.playlist_titles[0] # Only count against the first topic for now
 

@@ -29,12 +29,12 @@
                         ( ( TYPE !== 'SSA' ) || ( (TRIANGLE.niceSideLengths[0] + 1) < TRIANGLE.niceSideLengths[1] && abs(ANGLES[0] - 90) > 10 ) )">
                     <var id="TYPE">randFromArray([ "SSS", "SAS", "SAA", "ASA", "SSA", "SSA", "AAA" ])</var>
                     <var id="NAME">{
-                            "SSS": "Zijde-Zijde-Zijde",
-                            "SAS": "Zijde-Hoek-Zijde",
-                            "SAA": "Zijde-Hoek-Hoek",
-                            "ASA": "Hoek-Zijde-Hoek",
-                            "SSA": "Zijde-Zijde-Hoek",
-                            "AAA": "Hoek-Hoek-Hoek"
+                            "SSS": "Side-Side-Side",
+                            "SAS": "Side-Angle-Side",
+                            "SAA": "Side-Angle-Angle",
+                            "ASA": "Angle-Side-Angle",
+                            "SSA": "Side-Side-Angle",
+                            "AAA": "Angle-Angle-Angle"
                         }[ TYPE ]
                     </var>
                     <var id="ANGLES">randomTriangleAngles.triangle()</var>

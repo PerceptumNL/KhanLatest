@@ -28,16 +28,6 @@ import os
 import shutil
 import sys
 
-# Now set up sys.path so the appengine and KA imports below can work.
-try:
-    sys.path.append('tools')
-    import runtests
-    runtests.fix_sys_path()
-except ImportError, why:
-    sys.exit(('Import error: %s.  ' % why) +
-             'You must run make_test_db from the root of the website tree.')
-
-
 from google.appengine.ext import db
 from google.appengine.ext import deferred
 from google.appengine.ext.remote_api import remote_api_stub

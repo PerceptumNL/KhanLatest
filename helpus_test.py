@@ -36,4 +36,4 @@ class HelpUsTest(gae_model.GAEModelTestCase):
     def test_videoless_exercises(self):
         vl_exs = helpus.get_videoless_exercises()
         self.assertEqual(len(vl_exs), 2)
-        self.assertEqual(vl_exs[0]['topics'][0], "The Root of All Knowledge [late]")
+        self.assertEqual(vl_exs[0]['topics'][0], "Mathematics [late]")

@@ -19,9 +19,6 @@ This file can also be used as a library for tests that want to create
 a db for testing.
 """
 
-# Before importing *anything* else, let's replace datetime with our fake
-import fake_datetime
-fake_datetime.fake_datetime()
 
 import datetime
 import os

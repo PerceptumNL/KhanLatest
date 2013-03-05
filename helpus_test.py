@@ -1,6 +1,4 @@
 from __future__ import with_statement
-from testutil import fake_datetime
-fake_datetime.fake_datetime()
 
 import mock
 import datetime

@@ -4,6 +4,11 @@
 	<meta charset="UTF-8" />
 	<title>Delen van complexe getallen</title>
 	<script src="../khan-exercise.js"></script>
+    <style type="text/css">
+        #solutionarea input[type="text"] {
+            width: 50px
+        }
+    </style>
 </head>
 <body>
 	<div class="exercise">
@@ -42,8 +47,15 @@
 			<p>
 				<code>\qquad \dfrac{<var>A_REP_COLORED</var>}{<var>B_REP_COLORED</var>}</code>
 			</p>
-			<div class="solution" data-type="complexNumberSeparate">
-				[ <var>ANSWER_REAL_UNROUNDED</var>, <var>ANSWER_IMAG_UNROUNDED</var> ]
+			<div class="solution" data-type="multiple">
+                <span class="sol" data-fallback="0">
+                    <var>ANSWER_REAL</var>
+                </span>
+                <code>+</code>
+                <span class="sol" data-fallback="0">
+                    <var>ANSWER_IMAG</var>
+                </span>
+                <code>i</code>
 			</div>
 			<div class="hints">
 				<p>

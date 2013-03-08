@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html data-require="math graphie graphie-geometry word-problems interactive subhints">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Area 1</title>
+    <meta  charset="UTF-8" />
+    <title>Oppervlakte 1</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
 <div class="exercise">
     <div class="vars">
         <var id="UNIT,UNIT_TEXT">randFromArray([
-            ["in", "inch"],
-            ["ft", "foot"],
+            ["dm", "decimeter"],
             ["m", "meter"],
             ["cm", "centimeter"],
-            ["", "unit"]
+            ["", "eenheid"]
         ])</var>
     </div>
     <div class="problems">
@@ -23,10 +22,10 @@
             </div>
 
             <p class="question">
-                What is the area of the square?
+                Wat is de oppervlakte van het vierkant?
             </p>
             <div class="problem">
-                <div class="graphie" id="area">
+                <div class="graphie" id="oppervlakte">
                     init({ range: [[-2, S + 1], [-1, S + 1]], scale: 30 });
                     path([[0, 0], [0, S], [S, S], [S, 0], true],
                         {stroke: BLUE, fill: "#eee"});
@@ -42,7 +41,7 @@
 
             <div class="hints">
                 <p>
-                    The area is the length times the width.
+                    De oppervlakte is de lengte maal de breedte.
                 </p>
                 <div>
                     <div class="graphie" data-update="area">
@@ -58,20 +57,20 @@
                         });
                     </div>
                     <p>
-                        The length is <var>plural(S, UNIT_TEXT)</var> and
-                        the width is <var>plural(S, UNIT_TEXT)</var>, so the
-                        area is <code><var>S</var>\times<var>S</var></code>
-                        square <var>plural(UNIT_TEXT)</var>.
+                        De lengte is <var>plural(S, UNIT_TEXT)</var> en
+                        de breedte is <var>plural(S, UNIT_TEXT)</var>, dus de
+                        oppervlakte is <code><var>S</var>\times<var>S</var></code>
+                        vierkante <var>plural(UNIT_TEXT)</var>.
                     </p>
                 </div>
                 <div>
                     <p><code>
-                        \qquad\text{area} = <var>S</var> \times <var>S</var>
+                        \qquad\text{Oppervlakte} = <var>S</var> \times <var>S</var>
                         = <var>S*S</var>
                     </code></p>
                     <p>
-                        We can also count <var>S * S</var>
-                        square <var>plural(UNIT_TEXT)</var>.
+                        We kunnen ook tellen  <var>S * S</var>
+                        vierkante <var>plural(UNIT_TEXT)</var>.
                     </p>
                     <div class="graphie" data-update="area">
                         _(S * S).times(function(n) {
@@ -91,7 +90,7 @@
             </div>
 
             <p class="question">
-                What is the area of the rectangle?
+                Wat is de oppervlakte van de rechthoek?
             </p>
 
             <div class="problem">
@@ -111,7 +110,7 @@
 
             <div class="hints">
                 <p>
-                    The area is the length times the width.
+                    De oppervlakte is de lengte maal de breedte.
                 </p>
                 <div>
                     <div class="graphie" data-update="area">
@@ -129,20 +128,20 @@
                         });
                     </div>
                     <p>
-                        The length is <var>plural(L, UNIT_TEXT)</var> and
-                        the width is <var>plural(W, UNIT_TEXT)</var>, so the
-                        area is <code><var>L</var>\times<var>W</var></code>
-                        square <var>plural(UNIT_TEXT)</var>.
+                        De lengte is <var>plural(L, UNIT_TEXT)</var> en
+                        de breedte is <var>plural(W, UNIT_TEXT)</var>, dus de
+                        oppervlakte is <code><var>L</var>\times<var>W</var></code>
+                        vierkante <var>plural(UNIT_TEXT)</var>.
                     </p>
                 </div>
                 <div>
                     <p><code>
-                        \qquad\text{area} = <var>L</var> \times <var>W</var>
+                        \qquad\text{oppervlakte} = <var>L</var> \times <var>W</var>
                         = <var>L * W</var>
                     </code></p>
                     <p>
-                        We can also count <var>L * W</var>
-                        square <var>plural(UNIT_TEXT)</var>.
+                        We kunnen ook tellen  <var>L * W</var>
+                        vierkante <var>plural(UNIT_TEXT)</var>.
                     </p>
                     <div class="graphie" data-update="area">
                         _(L * W).times(function(n) {
@@ -169,8 +168,8 @@
             </div>
 
             <p class="question">
-                What is the area of the shape? Each square in the grid is a
-                <code>1 \times 1</code> <var>UNIT_TEXT</var> square.
+                Wat is de oppervlakte van de vorm? Elk vierkant in het rooster is een
+                <code>1 \times 1</code> <var>UNIT_TEXT</var> vierkant.
             </p>
 
             <div class="problem">
@@ -200,17 +199,17 @@
 
             <div class="hints">
                 <p>
-                    The area is the number of <code>1 \times 1</code> squares
-                    the shape covers.
+                    Het gebied is het aantal van <code>1 \times 1</code> vierkanten
+                    vorm omvat.
                 </p>
                 <div>
                     <div class="graphie" data-update="area">
                         SHAPE.labelSquares();
                     </div>
-                    <p>Count the number of squares covered.</p>
+                    <p>Tel het aantal overdekte vierkanten.</p>
                 </div>
                 <p>
-                    The area is <code><var>SHAPE.area</var></code> square
+                    De oppervlakte is <code><var>SHAPE.area</var></code> vierkante
                     <var>plural(UNIT_TEXT)</var>.
                 </p>
             </div>

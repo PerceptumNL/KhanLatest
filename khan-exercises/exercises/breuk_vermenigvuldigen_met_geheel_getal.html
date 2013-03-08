@@ -2,7 +2,7 @@
 <html data-translatable data-require="math math-format graphie graphie-helpers word-problems">
 <head>
     <meta charset="UTF-8" />
-    <title>Gemengde breuken herkennen</title>
+    <title>Vermenigvuldigen van een breuk en een heel getal</title>
     <script src="../khan-exercise.js"></script>
 	<style>.graphie{float:left} p{float:none} canvas{z-index:100; background-color:"red"}</style>
 </head>
@@ -10,34 +10,160 @@
 
     <div class="exercise">
         <div class="vars" data-ensure="NUM &lt; DEN">
-        	<var id="NUM">randRange(1,10)</var>
+        <var id="NUM">randRange(1,10)</var>
 		<var id="DEN">randRange(2,10)</var>
-		<var id="WHOLE">randRange(2,10)</var>	
+		<var id="WHOLE">randRange(2,10)</var>					
+		
+		<!--
+        <var id="WHOLE">4</var> <!-- answer  12/4 = 3                  --><!--
+        <var id="NUM">3</var>
+		<var id="DEN">4</var>
+		
+		
+		<var id="WHOLE">3</var> <!-- answer   9/4 = 2 1/4              --><!--
+        <var id="NUM">3</var>
+		<var id="DEN">4</var>
+		
+		
+		<var id="WHOLE">12</var> <!-- answer 24/9 = 2 6/9 = 2 2/3       --><!--
+        <var id="NUM">2</var>
+		<var id="DEN">9</var>
+		
+		
+		<var id="WHOLE">2</var> <!-- answer 6/12 = 1/2                  --><!--
+        <var id="NUM">3</var>
+		<var id="DEN">12</var>
+		
+		-->		
+		
 		<var id ="TIMES">floorTo(0,(NUM*WHOLE)/DEN)</var>	
 		<var id="REDUCE">reduce((NUM*WHOLE)-(TIMES*DEN),DEN)</var>
+		
+		<var id="ANSWERWHOLE">floorTo(0,(NUM*WHOLE)/DEN)</var>
+		<var id="ANSWERNUM">WHOLE*NUM-ANSWERWHOLE*DEN</var>
+		
         </div>
         <div class="problems">
             
                 <div class="question">
-                        <p data-tt="exercise1">Vermenigvuldig <code><var>WHOLE</var></code> met <code><var>fraction(NUM,DEN)</var></code>.</p>
+                        <p data-tt="exercise1">
+						Bereken: &nbsp; &nbsp; <code><var>WHOLE</var></code> x <code><var>fraction(NUM,DEN)</var></code></p>
 			
                 <p class="solution"><code><var>WHOLE*(NUM/DEN)</var></code></p>
 
              <div class="hints">	
-                	<p data-tt="hint1">Een <span class ="hint_orange">geheel getal</span> kun je opschrijven als een <span class ="hint_blue">breuk</span> door te bedenken dat het een breuk is met noemer 1.</p>
-               		<p data-tt="hint2"><code>\color{#FFA500}{<var>WHOLE</var>}</code> wordt dus <code>\color{#6495ED}{<var>fraction(WHOLE,1)</var>}</code>.</p>
-			<p data-tt="hint3">Nu kunnen we gewoon deze twee breuken met elkaar vermenigvuldigen.</p>
-			<p data-tt="hint4"><code>\color{#6495ED}{<var>fraction(WHOLE,1)</var>} * \color{#6495ED}{<var>fraction(NUM,DEN)</var>}</code></p>
-			<p data-tt="hint4a"><code>\displaystyle {} = \frac{<var>WHOLE</var> \times <var>NUM</var>}{<var>1</var> \times <var>DEN</var>} </code></p>
-			<p data-tt="hint4b"><code>= \color{#6495ED}{<var>fraction(WHOLE*NUM,DEN)</var>}</code></p>
-			<p data-tt="hint5"  data-if="floorTo(0,(NUM*WHOLE)/DEN) &gt;0">Nu moeten we de breuk nog vereenvoudigen.</p>
-			<p data-tt="hint5a" data-if="floorTo(0,(NUM*WHOLE)/DEN) &gt;0"><code>\color{#6495ED}{<var>DEN</var>}</code> past <code>\color{#04B404}{<var>TIMES</var>}</code> keer in <code>\color{#6495ED}{<var>NUM*WHOLE</var>}</code></p>
-
+                	<p data-tt="hint1">
+					ANSWERNUM = <code><var>ANSWERNUM</var></code> <br />
+					<span class ="hint_red">Een geheel getal kun je opschrijven als een breuk</span> door te bedenken dat het een breuk is met noemer 1 (je deelt het hele getal in feite door 1).</p>
+               		
+					<p data-tt="hint2">
+					<code>
+					\color{#f00}{<var>WHOLE</var>}</code> x <code><var>fraction(NUM,DEN)</var> = 
+					\color{#f00}{<var>fraction(WHOLE,1)</var>}</code> x <code><var>fraction(NUM,DEN)</var>
+					</code>
+					</p>
+					
+					<p data-tt="hint3">Nu kunnen we de tellers vermenigvuldigen en de noemers vermenigvuldigen.<br /><br />
+					
+			
+			        <p data-tt="hint4a">
+					<code>\displaystyle {} = \frac{<var>WHOLE</var> \times <var>NUM</var>}{<var>1</var> \times <var>DEN</var>}
+					      = \color{#00e}{<var>fraction(WHOLE*NUM,DEN)</var>}
+					</code>
+					</p>
+					<!-- =================================== vereenvoudigen =======================  			
+					<!-- =================================== deelsom zonder rest =======================  hint 6 -->
+	                <p data-tt="hint5" data-if="ANSWERWHOLE &gt; 0 && ANSWERNUM &lt; 1">
+					Het antwoord kan worden vereenvoudigd (bekijk de breuk als een deelsom). <br /><br />
+					<code> = 
+					 \color{#00e}{<var>ANSWERWHOLE</var>}
+					</code> 			
+					<!-- =================================== deelsom met rest =======================  hint 6 -->
+	                <p data-tt="hint5" data-if="ANSWERWHOLE &gt; 0 && ANSWERNUM &gt; 0">
+					Het antwoord kan worden vereenvoudigd (bekijk de breuk als een deelsom met rest). <br /><br />
+					<code> = 
+					\color{#00e}{<var>ANSWERWHOLE</var>
+					<span data-if="ANSWERNUM &gt; 0">
+					    <var>fraction(ANSWERNUM,DEN,false,false)</var>}
+						
+						<span data-if="reduces(ANSWERNUM,DEN)">
+						    = <var>ANSWERWHOLE</var><var>fraction(reduce(ANSWERNUM,DEN)[0],reduce(ANSWERNUM,DEN)[1])</var>
+						</span>
+					</code>
+					<!-- =================================== delen door factor ===================   hint 7 -->
+					<p data-tt="hint5" data-if="ANSWERWHOLE &lt; 1">
+					   <span data-if="reduces(ANSWERNUM,DEN)">
+					     Het antwoord kan worden vereenvoudigd.<br /><br /> 
+					     <code>
+						    = \color{#00e}{<var>fraction(reduce(ANSWERNUM,DEN)[0],reduce(ANSWERNUM,DEN)[1])</var>}
+						 </code>
+						</span>
+					</p>
+					
+					<!-- =========================== berekening in één simpele regel ===================   hint 8 -->
+					<p data-tt="hint6">
+					Je kunt de berekening ook heel kort en duidelijk opschrijven.<br />
+					Bedenk daarbij dat een heel getal in feite gewoon in de teller staat.<br /><br />
+					
+					<code>
+					   <var>WHOLE</var></code> x <code><var>fraction(NUM,DEN)</var>  = 
+					   <var>fraction(WHOLE*NUM,DEN)</var>
+					   
+					   <!-- =============== deelsom zonder rest ===== -->
+					   <span data-if="ANSWERWHOLE &gt; 0 && ANSWERNUM &lt; 1">
+					    = <var>ANSWERWHOLE</var>									
+					   </span>
+					   <!-- =============== deelsom met rest ===== -->
+					   <span data-if="ANSWERWHOLE &gt; 0 && ANSWERNUM &gt; 0">
+					        = <var>ANSWERWHOLE</var><var>fraction(ANSWERNUM,DEN,false,false)</var>
+						
+							<span data-if="reduces(ANSWERNUM,DEN) && ANSWERNUM &gt; 0 ">
+								=  <var>ANSWERWHOLE</var><var>fraction(reduce(ANSWERNUM,DEN)[0],reduce(ANSWERNUM,DEN)[1])</var>
+							</span>
+						</span>						
+						<!-- =============== delen door factor ===== -->
+						<span data-if="ANSWERWHOLE &lt; 1">
+						   <span data-if="reduces(ANSWERNUM,DEN)">
+						      <code>
+						        = <var>fraction(reduce(ANSWERNUM,DEN)[0],reduce(ANSWERNUM,DEN)[1])</var>
+							  </code>
+						   </span>
+						</span>
+					    <!--
+						<span data-if="reduces(ANSWERNUM,DEN)">
+					     Het antwoord kan worden vereenvoudigd. 
+					     <code>
+						    = \color{#00e}{<var>fraction(reduce(ANSWERNUM,DEN)[0],reduce(ANSWERNUM,DEN)[1])</var>}
+						 </code>
+						</span>
+						-->
+					   
+					</code>
+					
+					</p>
+					
+					
+					
+	                <!-- 
+					<p data-tt="hint5" data-if="reduces(WHOLE*NUM,DEN)">
+					<code><var>fraction(reduce(WHOLE*NUM,DEN)[0],reduce(WHOLE*NUM,DEN)[1])</var></code>
+					</p>
+					-->
+					
+					<!--
+			        <p data-tt="hint5"  data-if="floorTo(0,(NUM*WHOLE)/DEN) &gt;0">
+					Nu moeten we de breuk nog vereenvoudigen.<br /><br />
+					<code>
+					-->
+					
+					
+			
+            <!--
 			<p data-tt="hint5b" data-if="floorTo(0,(NUM*WHOLE)/DEN) &gt;0"><code>\displaystyle {} = \frac{\color{#FFA500}{<var>TIMES</var>} \times \color{#6495ED}{<var> DEN</var>}}{\color{#FFA500}{<var>1</var>} \times \color{#6495ED}{<var>DEN</var>}}</code> <span data-if="(NUM*WHOLE)-(TIMES*DEN) &gt; 0"><code> + \color{#6495ED}{<var>fraction((NUM*WHOLE)-(TIMES*DEN),DEN)</var>}</code></span> <code>\displaystyle {} = \frac{\color{#FFA500}{<var>TIMES</var>} \times \cancel{\color{#6495ED}{<var> DEN</var>}}}{\color{#FFA500}{<var>1</var>} \times \cancel{\color{#6495ED}{<var>DEN</var>}}}</code><code>= \color{#FFA500}{<var>fraction(TIMES,1)</var>}</code> <span data-if="(NUM*WHOLE)-(TIMES*DEN) &gt;0"><code> + \color{#6495ED}{<var>fraction((NUM*WHOLE)-(TIMES*DEN),DEN)</var>}</code></span><code>= \color{#FFA500}{<var>TIMES</var>}</code> <span data-if="(NUM*WHOLE)-(TIMES*DEN) &gt;0"><code> + \color{#6495ED}{<var>fraction((NUM*WHOLE)-(TIMES*DEN),DEN)</var>}</code></span></p>
 
 			<p data-tt="hint5c" data-if="floorTo(0,(NUM*WHOLE)/DEN) &gt;0">Dus wordt het antwoord <code>\color{#FFA500}{<var>TIMES</var>}</code><span data-if="(NUM*WHOLE)-(TIMES*DEN) &gt; 0"><code> \color{#6495ED}{<var>fraction((NUM*WHOLE)-(TIMES*DEN),DEN)</var>}</code></span></p>
 			<p data-tt="hint6" data-if="reduces((NUM*WHOLE)-(TIMES*DEN),DEN) && (NUM*WHOLE)-(TIMES*DEN) &gt;0">Nog vereenvoudigen: <code>\color{#FFA500}{<var>TIMES</var>}\color{#6495ED}{<var>fraction(REDUCE[0],REDUCE[1])</var>}</code></p>
-			
+			-->
             </div>
 
         

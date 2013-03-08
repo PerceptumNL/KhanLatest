@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie">
+<head>
+    <meta charset="UTF-8" />
+    <title>Formules korter</title>
+    <script src="../khan-exercise.js"></script>
+    <script type="text/javascript">
+    function showTerm(x, letter, first) {
+        term = "";
+        if(first && x < 0)
+            term += "-"
+
+        if(!first) 
+            term += x < 0 ? "- " : "+ "
+
+        if(x != 1 && x != -1)
+            term += Math.abs(x).toString();
+
+        term += letter;
+        return term;
+    }
+    </script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars" data-ensure="a + b != 0 && a + b + c != 0">
+            <var id="letters">KhanUtil.shuffle("abcdefghijklmnpqrstuvwxyz")</var>
+            <var id="a" data-ensure="a != 0">randRange(-5, 5)</var>
+            <var id="b" data-ensure="b != 0">randRange(-5, 5)</var>
+            <var id="c" data-ensure="c != 0">randRange(-5, 5)</var>
+            <var id="terms">[a, b, c]</var>
+        </div>
+        <div class="problems">
+            <div>
+                <div class="question"><p>Schrijf de formule zo kort mogelijk</p>
+                    <code>
+                        <var data-each="terms.length times as i">showTerm(terms[i], letters[0], i == 0)</var>
+                        = <var>letters[1]</var>
+                    </code>
+                </div>
+
+                <p class="solution" data-type="text">9a = b</p>
+            </div>
+        </div>
+
+        <div class="hints">
+            <div>Isn't it obvious?</div>
+        </div>
+    </div>
+</body>
+</html>
+

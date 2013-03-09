@@ -23,23 +23,46 @@
 </head>
 <body>
     <div class="exercise">
-        <div class="vars" data-ensure="a + b != 0 && a + b + c != 0">
+
+        <div class="vars">
+            <var id="a">randRangeNonZero(-5, 5)</var>
+            <var id="b">randRangeNonZero(-5, 5)</var>
+            <var id="c">randRangeNonZero(-5, 5)</var>
+            <var id="d">randRangeNonZero(-5, 5)</var>
             <var id="letters">KhanUtil.shuffle("abcdefghijklmnpqrstuvwxyz")</var>
-            <var id="a" data-ensure="a != 0">randRange(-5, 5)</var>
-            <var id="b" data-ensure="b != 0">randRange(-5, 5)</var>
-            <var id="c" data-ensure="c != 0">randRange(-5, 5)</var>
-            <var id="terms">[a, b, c]</var>
         </div>
+        
+        <div class="question"><p>Schrijf de formule zo kort mogelijk</p>
+            <code>
+                <var data-each="terms.length times as i">
+                    showTerm(terms[i], letters[0], i == 0)
+                </var>
+                = <var>letters[1]</var>
+            </code>
+        </div>
+
+        <p class="solution" data-type="text">9a = b</p>
+        
         <div class="problems">
             <div>
-                <div class="question"><p>Schrijf de formule zo kort mogelijk</p>
-                    <code>
-                        <var data-each="terms.length times as i">showTerm(terms[i], letters[0], i == 0)</var>
-                        = <var>letters[1]</var>
-                    </code>
+                <div class="vars" data-ensure="total != 0">
+                    <var id="terms">[a, b]</var>
+                    <var id="total">a + b</var>
                 </div>
-
-                <p class="solution" data-type="text">9a = b</p>
+            </div>
+            
+            <div>
+                <div class="vars" data-ensure="total != 0">
+                    <var id="terms">[a, b, c]</var>
+                    <var id="total">a + b + c</var>
+                </div>
+            </div>
+            
+            <div>
+                <div class="vars" data-ensure="total != 0">
+                    <var id="terms">[a, b, c, d]</var>
+                    <var id="total">a + b + c + d</var>
+                </div>
             </div>
         </div>
 

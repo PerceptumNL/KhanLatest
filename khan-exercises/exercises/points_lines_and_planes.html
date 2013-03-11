@@ -189,18 +189,18 @@
         <div id="collinear-3">
             <div class="vars">
                 <var id="POINTS,SOLUTION">randFromArray([
-                    [[A, B, C], "Yes"],
-                    [[A, B, D], "No"],
-                    [[A, C, B], "Yes"],
-                    [[A, C, E], "No"],
-                    [[B, A, C], "Yes"],
-                    [[B, C, A], "Yes"],
-                    [[B, E, C], "No"],
-                    [[C, A, B], "Yes"],
-                    [[C, A, D], "No"],
-                    [[C, B, A], "Yes"],
-                    [[C, B, E], "No"],
-                    [[E, C, A], "No"]
+                    [[A, B, C], "Ja"],
+                    [[A, B, D], "Nee"],
+                    [[A, C, B], "Ja"],
+                    [[A, C, E], "Nee"],
+                    [[B, A, C], "Ja"],
+                    [[B, C, A], "Ja"],
+                    [[B, E, C], "Nee"],
+                    [[C, A, B], "Ja"],
+                    [[C, A, D], "Nee"],
+                    [[C, B, A], "Ja"],
+                    [[C, B, E], "Nee"],
+                    [[E, C, A], "Nee"]
                 ])</var>
             </div>
 
@@ -208,14 +208,14 @@
 
             <div class="solution"><var>SOLUTION</var></div>
             <ul class="choices" data-category="true">
-                <li>Yes</li>
-                <li>No</li>
+                <li>Ja</li>
+                <li>Nee</li>
             </ul>
 
             <div class="hints">
                 <p>Collineaire betekent dat ze op dezelfde lijn liggen.</p>
                 <p>Kun je een rechte lijn trekken door de punten <var>toSentence(POINTS)</var>?</p>
-                <p data-if="SOLUTION === 'Yes'">Yes, points <var>toSentence(POINTS)</var> are collinear.</p>
+                <p data-if="SOLUTION === 'Ja'">Yes, points <var>toSentence(POINTS)</var> are collinear.</p>
                 <p data-else>Nee, de punten <var>toSentence(POINTS)</var> zijn niet collineaire.</p>
             </div>
         </div>
@@ -228,10 +228,10 @@
 
             <p class="question">Zijn de punten <var>toSentence(POINTS)</var> collineaire?</p>
 
-            <div class="solution">Yes</div>
+            <div class="solution">Ja</div>
             <ul class="choices" data-category="true">
-                <li>Yes</li>
-                <li>No</li>
+                <li>Ja</li>
+                <li>Nee</li>
             </ul>
 
             <div class="hints">
@@ -247,17 +247,17 @@
         <div id="coplanar">
             <div class="vars">
                 <var id="POINTS,SOLUTION,COPLANAR">randFromArray([
-                    [[A, B, C, E], "Yes", []],
-                    [[A, B, D, E], "No",  [A, B, E]],
-                    [[A, C, D],    "Yes", []],
-                    [[A, C, D, E], "No",  [A, C, E]],
-                    [[B, A, C],    "Yes", []],
-                    [[B, C, A, E], "Yes", []],
-                    [[E, C, D, A], "No",  [E, C, A]],
-                    [[B, E, D, C], "No",  [B, E, C]],
-                    [[C, B, D, E], "No",  [C, B, E]],
-                    [[C, D, A],    "Yes", []],
-                    [[E, D, A],    "Yes", []]
+                    [[A, B, C, E], "Ja", []],
+                    [[A, B, D, E], "Nee",  [A, B, E]],
+                    [[A, C, D],    "Ja", []],
+                    [[A, C, D, E], "Nee",  [A, C, E]],
+                    [[B, A, C],    "Ja", []],
+                    [[B, C, A, E], "Ja", []],
+                    [[E, C, D, A], "Nee",  [E, C, A]],
+                    [[B, E, D, C], "Nee",  [B, E, C]],
+                    [[C, B, D, E], "Nee",  [C, B, E]],
+                    [[C, D, A],    "Ja", []],
+                    [[E, D, A],    "Ja", []]
                 ])</var>
             </div>
 
@@ -273,7 +273,7 @@
             <div class="hints">
                 <p>Coplanaire punten zijn punten die allemaal in hetzelfde vak liggen.</p>
                 <p>Kan een plat oppervlak alle punten passeren zonder te buigen?</p>
-                <p data-if="SOLUTION === 'No'">
+                <p data-if="SOLUTION === 'Nee'">
                     Nee, elk vlak oppervlak dat drie van de punten omvat niet de vierde.
                     Bijvoorbeeld, punten <var>toSentence(COPLANAR)</var> zijn in vak
                     <code>\mathcal{<var>R</var>}</code>, maar punt <var>D</var> niet.

@@ -24,7 +24,7 @@
 <body>
     <div class="exercise">
 
-        <div class="vars">
+        <div class="vars" data-ensure="total != 0">
             <var id="a">randRangeNonZero(-5, 5)</var>
             <var id="b">randRangeNonZero(-5, 5)</var>
             <var id="c">randRangeNonZero(-5, 5)</var>
@@ -41,25 +41,25 @@
             </code>
         </div>
 
-        <p class="solution" data-type="text">9a = b</p>
+        <p class="solution" data-type="text"><var>total</var><var>letters[0]</var> = <var>letters[1]</var></p>
         
         <div class="problems">
             <div>
-                <div class="vars" data-ensure="total != 0">
+                <div class="vars">
                     <var id="terms">[a, b]</var>
                     <var id="total">a + b</var>
                 </div>
             </div>
             
             <div>
-                <div class="vars" data-ensure="total != 0">
+                <div class="vars">
                     <var id="terms">[a, b, c]</var>
                     <var id="total">a + b + c</var>
                 </div>
             </div>
             
             <div>
-                <div class="vars" data-ensure="total != 0">
+                <div class="vars">
                     <var id="terms">[a, b, c, d]</var>
                     <var id="total">a + b + c + d</var>
                 </div>
@@ -67,7 +67,7 @@
         </div>
 
         <div class="hints">
-            <div>Isn't it obvious?</div>
+            <div>In de formule</div>
         </div>
     </div>
 </body>

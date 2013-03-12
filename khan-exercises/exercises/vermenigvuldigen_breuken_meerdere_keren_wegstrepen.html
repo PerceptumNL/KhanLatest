@@ -12,24 +12,43 @@
 	<var id="NUM2">randRange(2,10)</var>
 	<var id="DEN">randRange(2,10)*NUM2</var>
 	<var id="DEN2">randRange(2,10)*NUM</var>
+	
+	<!--
+	<var id="NUM">3</var>           
+    <var id="NUM2">7</var>
+    <var id="DEN">8*NUM2</var>
+	<var id="DEN2">10*NUM</var>
+	-->
+	
+	
 	<var id="REDUCE">reduce((NUM/NUM)*(NUM2/NUM2),(DEN/NUM2)*(DEN2/NUM))</var>
     </div>
 
     <div class="problems">
         <div>
             <div class="question">
-                <p>Los op: <code><var>fraction(NUM,DEN)</var> * <var>fraction(NUM2,DEN2)</var></code>.</p>
+                <p>Bereken: &nbsp; &nbsp;<code><var>fraction(NUM,DEN)</var> \times <var>fraction(NUM2,DEN2)</var></code>.</p>
             </div>
             <div class="solution" data-type="rational"><var>REDUCE[0]/REDUCE[1]</var></div>
         </div>
     </div>
 
     <div class="hints">
-	<p data-tt="hint1">We kunnen <code>\color{#6495ED}{<var>NUM2</var>}</code> en <code>\color{#6495ED}{<var>DEN</var>}</code> allebei door <code>\color{#FFA500}{<var>NUM2</var>}</code> delen.</p>
-	<p data-tt="hint1a">Dan krijgen we dus <code>\displaystyle {} \frac{\color{#6495ED}{<var>NUM</var>}}{\cancel{<var>DEN</var>} = \color{#6495ED}{<var>DEN/NUM2</var>}} * \frac{\cancel{<var>NUM2</var>} = \color{#6495ED}{<var>NUM2/NUM2</var>}}{\color{#6495ED}{<var>DEN2</var>}} = \color{#6495ED}{<var>fraction(NUM,DEN/NUM2)</var>} * \color{#6495ED}{<var>fraction(NUM2/NUM2,DEN2)</var>}</code></p>
-<p data-tt="hint1b">We kunnen <code>\color{#6495ED}{<var>NUM</var>}</code> en <code>\color{#6495ED}{<var>DEN2</var>}</code> allebei door <code>\color{#FFA500}{<var>NUM</var>}</code> delen.</p>
-	<p data-tt="hint1c">Dan krijgen we dus <code>\displaystyle {} \frac{\cancel{<var>NUM</var>}=\color{#6495ED}{<var>NUM/NUM</var>}}{\cancel{<var>DEN</var>} = \color{#6495ED}{<var>DEN/NUM2</var>}} * \frac{\cancel{<var>NUM2</var>} = \color{#6495ED}{<var>NUM2/NUM2</var>}}{\cancel{<var>DEN2</var>}=\color{#6495ED}{<var>DEN2/NUM</var>}} = \color{#6495ED}{<var>fraction(NUM/NUM,DEN/NUM2)</var>} * \color{#6495ED}{<var>fraction(NUM2/NUM2,DEN2/NUM)</var>}</code></p>
-	<p data-tt="hint1d">Nu hoeven we alleen <code> \displaystyle {} \frac{teller * teller}{noemer * noemer} </code> te doen.</p>
+	<p data-tt="hint1">We kunnen <code>\color{#f00}{<var>NUM2</var>}</code> en <code>\color{#f00}{<var>DEN</var>}</code> allebei door <code>\color{#FFA500}{<var>NUM2</var>}</code> delen.</p>
+	
+	<!--<p data-tt="hint1a">Dan krijgen we dus <code>\displaystyle {} \frac{\color{#6495ED}{<var>NUM</var>}}{\cancel{<var>DEN</var>} = \color{#6495ED}{<var>DEN/NUM2</var>}} * \frac{\cancel{<var>NUM2</var>} = \color{#6495ED}{<var>NUM2/NUM2</var>}}{\color{#6495ED}{<var>DEN2</var>}} = \color{#6495ED}{<var>fraction(NUM,DEN/NUM2)</var>} * \color{#6495ED}{<var>fraction(NUM2/NUM2,DEN2)</var>}</code></p>-->
+
+	<p data-tt="hint1b">We kunnen <code>\color{#7EC922}{<var>NUM</var>}</code> en <code>\color{#7EC922}{<var>DEN2</var>}</code> allebei door <code>\color{#FFA500}{<var>NUM</var>}</code> delen.</p>
+	
+	<p data-tt="hint1c">Dan krijgen we dus <code>\displaystyle {} 
+	   \frac{\cancel{\color{#7EC922}{<var>NUM</var>}} \color{#6495ED}{<var>NUM/NUM</var>}}{\cancel{\color{#f00}{<var>DEN</var>}} \color{#6495ED}{<var>DEN/NUM2</var>}} 
+	   \times \frac{\cancel{\color{#f00}{<var>NUM2</var>}}  \color{#6495ED}{<var>NUM2/NUM2</var>}}{\cancel{\color{#7EC922}{<var>DEN2</var>}} \color{#6495ED}{<var>DEN2/NUM</var>}} 
+	   = \color{#6495ED}{<var>fraction(NUM/NUM,DEN/NUM2)</var>} 
+	   \times \color{#6495ED}{<var>fraction(NUM2/NUM2,DEN2/NUM)</var>}</code></p>
+	
+	
+	
+	<p data-tt="hint1d">Nu hoeven we alleen <code> \displaystyle {} \frac{teller \times teller}{noemer  \times noemer} </code> te doen.</p>
 
 	<p data-tt="hint1e">Dat wordt dus <code> \displaystyle {} \frac{\color{#6495ED}{<var>NUM/NUM</var>} \times \color{#6495ED}{<var>NUM2/NUM2</var>}}{\color{#6495ED}{<var>DEN/NUM2</var>} \times \color{#6495ED}{<var>DEN2/NUM</var>}} = \color{#6495ED}{<var>fraction((NUM/NUM)*(NUM2/NUM2),(DEN/NUM2)*(DEN2/NUM))</var>}</code></p>
 	<p data-tt="hint2" data-if="reduces((NUM/NUM)*(NUM2/NUM2),(DEN/NUM2)*(DEN2/NUM))">Nu nog vereenvoudigen:<code> \color{#6495ED}{<var>fraction(NUM,(DEN/NUM2)*DEN2)</var>} = <var>fraction(REDUCE[0], REDUCE[1])</var></code> </p>

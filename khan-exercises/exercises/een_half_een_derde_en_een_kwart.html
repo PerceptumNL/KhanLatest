@@ -14,6 +14,7 @@
         <div class="vars">
             <var id="NUM_1">1</var>
             <var id="DEN_1">randRange( NUM_1 + 1, 10 )</var>
+			<var id = "ROOD_STUK_STRING">NUM_1 ==1 ? "rood stuk" : "rode stukken"</var>
         </div>
         <div class="problems">
             <div id="pie-chart">
@@ -27,7 +28,7 @@
                 <p class="solution" data-simplify="optional"><code><var>NUM_1 / DEN_1</var></code></p>
                 <div class="hints">
                     <p data-tt="hint1">Tel de rode stukken voor het getal boven de deelstreep.</p>
-                    <p data-tt="hint2"><code>{\color{#e00}{\text{Er <var>plural( "is", NUM_1 )</var> <var>plural( NUM_1, "rood stuk")</var>.}}}</code></p>
+                    <p data-tt="hint2"><code>{\color{#e00}{\text{Er <var>plural( "is", NUM_1 )</var> in totaal <var>NUM_1</var> <var>ROOD_STUK_STRING</var>.}}}</code></p>
                     <p data-tt="hint3">Tel het totaal aantal stukken (rode stukken + grijze stukken) voor het getal onder de deelstreep.</p>
                     <p data-tt="hint4"><code>{\color{#00e}{\text{Er zijn in totaal <var>DEN_1</var> stukken.}}}</code></p>
                     <p data-tt="hint5">Dus je antwoord zou moeten zijn <code>\dfrac{\color{#e00}{<var>NUM_1</var>}}{\color{#00e}{\text{<var>DEN_1</var>}}}</code>.</p>

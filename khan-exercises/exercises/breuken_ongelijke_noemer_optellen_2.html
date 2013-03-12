@@ -2,6 +2,118 @@
 <html data-translatable data-require="math math-format">
 <head>
     <meta charset="UTF-8" />
+    <title>Breuken met ongelijke noemer optellen</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+
+	<div class="vars" data-ensure="DEN1 != DEN2 && NUM1 &lt; DEN1 && NUM2 &lt; DEN2 && NUM1 ">
+	
+	<var id="NUM1">randRange(1,10)</var>
+	<var id="NUM2">randRange(1,10)</var>
+	
+	<var id="DEN1">randRange(2,10)</var>
+	<var id="DEN2">randRange(2,10)</var>
+	
+	<!--
+	<var id="NUM1">6</var>
+	<var id="DEN1">7</var>
+	<var id="NUM2">6</var>
+	<var id="DEN2">10</var>
+	
+	
+	 -->
+	
+	<!--<var id="DEN1">randRange(6,6)</var><var id="DEN2">randRange(8,8)</var>-->
+	<!--<var id="DEN1">randRange(4,4)</var><var id="DEN2">randRange(12,12)</var> -->
+	
+	<var id="LCM">getLCM( DEN1, DEN2)</var>
+	<var id="CM">DEN1*DEN2</var>
+	<var id="FAC1">LCM/DEN1</var>
+	<var id="FAC2">LCM/DEN2</var>
+	
+	<var id="TELLERFINAL">(NUM1*(LCM/DEN1))+(NUM2*(LCM/DEN2))</var>
+	
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+               <p>Tel <code><var>fraction(NUM1,DEN1)</var></code> en <code><var>fraction(NUM2,DEN2)</var></code> bij elkaar op.</p>
+            </div>
+		    <!-- <p class="solution" data-type="rational"><var>(DEN1+DEN2)/(DEN1*DEN2)</var></p> -->
+		    <p class="solution" data-type="rational"><var>(NUM1/DEN1)+(NUM2/DEN2)</var></p>
+        </div>
+    </div>
+
+    <div class="hints">
+	    <!-- ======================================================================   hint 1 -->
+        <p data-tt="hint1">Om deze twee breuken bij elkaar op te kunnen tellen, maken we de noemers eerst gelijk.</p>
+		<!-- ======================================================================   hint 2 -->
+        <p data-tt="hint1a">
+		   Je kiest voor de nieuwe noemer een zo klein mogelijk getal. Dat getal moet deelbaar zijn door de beide oude noemers.<br />
+		   We zoeken dus het kleinste gemeenschappelijke veelvoud van <var>DEN1</var> en <var>DEN2</var>.<br />
+		   Dit is het getal <var>LCM</var>, ofwel <code>\color{#3DBA5B}{\text{het kgv van de noemers is <var>LCM</var>}}</code>.<br />
+		   <br />
+		   <code><span data-if="DEN1*DEN2!=LCM">
+		      \text{Je kunt ook altijd de twee noemers met elkaar vermenigvuldigen.}
+	       </span></code>
+		   <code><span data-if="DEN1*DEN2!=LCM">
+		      \text{Je krijgt dan } \color{#3DBA5B}{<var>DEN1</var>} * \color{#3DBA5B}{<var>DEN2</var>} = \color{#3DBA5B}{<var>DEN1*DEN2</var>}
+		      \text{ voor de nieuwe noemer.} </span></code>
+		   <code><span data-if="DEN1*DEN2!=LCM">
+		      \text{Als je dit getal kiest, krijg je wel iets meer rekenwerk.}
+			</span></code>		
+	    <!-- ======================================================================   hint 3 -->
+	    <p data-tt="hint2">
+		De waarde van een breuk verandert niet als je de teller en de noemer van die breuk met hetzelfde getal vermenigvuldigt.<br />
+		We gaan beide breuken zodanig opschrijven dat ze allebei de noemer <code><var>LCM</var></code> krijgen.
+		<span data-if="FAC1!=1"><code>\color{#f00}{\text {Vermenigvuldig de teller en de noemer van de eerste breuk met <var>FAC1</var>.}}</code></span>
+		<span data-if="FAC2!=1"><code>\color{#553ED6}{\text {Vermenigvuldig de teller en de noemer van de tweede breuk met <var>FAC2</var>.}}</code></span>
+		<br />   
+		
+		<code>\color{#f00}{<var>fraction(NUM1,DEN1)</var>} + \color{#553ED6}{<var>fraction(NUM2,DEN2)</var>} \ \ \ =  \ \ \ \ </code>
+		<code>\color{#f00}{<var>fraction(NUM1*FAC1 , LCM)</var>} + \color{#553ED6}{<var>fraction(NUM2*FAC2 , LCM)</var>} </code> 
+		
+		</p>
+		<!-- ======================================================================   hint 5 -->
+	    <p data-tt="hint3">De noemers zijn nu gelijk, dan kun je de tellers bij elkaar optellen.<br /><br />
+		<code>\color{#f00}{<var>fraction(NUM1,DEN1)</var>} + \color{#553ED6}{<var>fraction(NUM2,DEN2)</var>} \ \ \ =  \ \ \ \ </code>
+		<code>\color{#f00}{<var>fraction(NUM1*FAC1 , LCM)</var>} + \color{#553ED6}{<var>fraction(NUM2*FAC2 , LCM)</var>} \ \ \ =  \ \ \ \  </code> 
+		<code><var>fraction(NUM1*FAC1 + NUM2*FAC2 , LCM)</var></code>		
+		</p>
+	    
+		<!-- ======================================================================   hint 7 -->
+	    <p data-tt="hint5" data-if="reduces(NUM1*FAC1 + NUM2*FAC2 , LCM)">
+		Je kunt het antwoord nog vereenvoudigen.<br /><br />
+		
+		<code>\color{#f00}{<var>fraction(NUM1,DEN1)</var>} + \color{#553ED6}{<var>fraction(NUM1,DEN2)</var>} \ \ \ =  \ \ \ \ </code>
+		<code>\color{#f00}{<var>fraction(NUM1*FAC1 , LCM)</var>} + \color{#553ED6}{<var>fraction(NUM2*FAC2 , LCM)</var>} \ \ \ =  \ \ \ \  </code> 
+		<code><var>fraction(NUM1*FAC1 + NUM2*FAC2 , LCM)</var> \ \ \ =  \ \ \ \  </code>	
+		
+		<!-- <code><var>fraction(reduce(DEN1+DEN2,DEN1*DEN2)[0],reduce(DEN1+DEN2,DEN1*DEN2)[1])</var></code> -->
+		<code><var>fraction(reduce(NUM1*FAC1 + NUM2*FAC2 , LCM)[0],reduce(NUM1*FAC1 + NUM2*FAC2 , LCM)[1])</var></code>
+		</p>
+		
+        <!-- =================================================================   hint 8 remove integers from fractio -->
+ 
+        <p data-tt="hint6" data-if="(NUM1*(LCM/DEN1))+(NUM2*(LCM/DEN2)) &gt; LCM">Nu maken we van de onechte breuk een gemengde breuk: <code>1<var>fraction(reduce(TELLERFINAL-LCM, LCM)[0], reduce(TELLERFINAL-LCM,LCM)[1])</var></code></p>
+        
+    </div>
+    </div>
+</body>
+</html>
+
+<!--
+<p data-tt="hint2a">Dat wordt dus <code>\color{#6495ED}{<var>NUM</var>} * \color{#6495ED}{<var>DEN1</var>} = \color{#6495ED}{<var>DEN1*NUM</var>}</code> en <code>\color{#6495ED}{<var>NUM</var>} * \color{#6495ED}{<var>DEN2</var>} = \color{#6495ED}{<var>DEN2*NUM</var>}</code></p>
+-->
+
+<!--
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format">
+<head>
+    <meta charset="UTF-8" />
     <title>Twee breuken met verschillende noemers optellen</title>
     <script src="../khan-exercise.js"></script>
 </head>
@@ -43,3 +155,5 @@
     </div>
 </body>
 </html>
+
+-->

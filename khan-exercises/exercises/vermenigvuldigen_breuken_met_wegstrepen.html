@@ -12,28 +12,63 @@
 	<var id="NUM2">randRange(2,10)</var>
 	<var id="DEN">randRange(2,10)*NUM2</var>
 	<var id="DEN2">randRange(2,10)</var>
+	
+	<!--
+	<var id="NUM">9</var>           
+    <var id="NUM2">10</var>
+    <var id="DEN">3*NUM2</var>
+	<var id="DEN2">3</var>
+	
+	
+	<var id="NUM">9</var>           
+    <var id="NUM2">5</var>
+    <var id="DEN">3*NUM2</var>
+	<var id="DEN2">2</var>
+	-->
+	
 	<var id="REDUCE">reduce(NUM,(DEN/NUM2)*DEN2)</var>
     </div>
 
     <div class="problems">
         <div>
             <div class="question">
-                <p>Los op: <code><var>fraction(NUM,DEN)</var> * <var>fraction(NUM2,DEN2)</var></code>.</p>
+                <p>Los op: <code><var>fraction(NUM,DEN)</var></code> x <code><var>fraction(NUM2,DEN2)</var></code>.</p>
             </div>
             <div class="solution" data-type="rational"><var>REDUCE[0]/REDUCE[1]</var></div>
         </div>
     </div>
 
     <div class="hints">
-	<p data-tt="hint1">We kunnen <code>\color{#6495ED}{<var>NUM2</var>}</code> en <code>\color{#6495ED}{<var>DEN</var>}</code> allebei door <code>\color{#FFA500}{<var>NUM2</var>}</code> delen.</p>
-	<p data-tt="hint1a">Dan krijgen we dus <code>\displaystyle {} \frac{\color{#6495ED}{<var>NUM</var>}}{\cancel{<var>DEN</var>} = \color{#6495ED}{<var>DEN/NUM2</var>}} * \frac{\cancel{<var>NUM2</var>} = \color{#6495ED}{<var>NUM2/NUM2</var>}}{\color{#6495ED}{<var>DEN2</var>}} = \color{#6495ED}{<var>fraction(NUM,DEN/NUM2)</var>} * \color{#6495ED}{<var>fraction(NUM2/NUM2,DEN2)</var>}</code></p>
+	
+	<p data-tt="hint1">We kunnen <code>\color{#f00}{<var>NUM2</var>}</code> en <code>\color{#f00}{<var>DEN</var>}</code> allebei door <code>\color{#000}{<var>NUM2</var>}</code> delen.</p>
+	
+	<p data-tt="hint1a">Dan krijgen we dus <code>\displaystyle {} 
+	  \frac{\color{#000}{<var>NUM</var>}}{\cancel{\color{#f00}{<var>DEN</var>}}  
+	  \color{#00f}{<var>DEN/NUM2</var>}} 
+	  \times \frac{\cancel{\color{#f00}{<var>NUM2</var>}}  \color{#00f}{<var>NUM2/NUM2</var>}}{\color{#000}{<var>DEN2</var>}} 
+	  = \color{#000}{<var>fraction(NUM,DEN/NUM2)</var>} 
+	  \times \color{#000}{<var>fraction(NUM2/NUM2,DEN2)</var>}</code></p>
+
+	
 	<p data-tt="hint1b">Nu hoeven we alleen <code> \displaystyle {} \frac{teller * teller}{noemer * noemer} </code> te doen.</p>
-	<p data-tt="hint1c">Dat wordt dus <code> \displaystyle {} \frac{\color{#6495ED}{<var>NUM</var>} \times \color{#6495ED}{<var>NUM2/NUM2</var>}}{\color{#6495ED}{<var>DEN/NUM2</var>} \times \color{#6495ED}{<var>DEN2</var>}} = \color{#6495ED}{<var>fraction(NUM,(DEN/NUM2)*DEN2)</var>}</code></p>
-	<p data-tt="hint2" data-if="reduces(NUM,(DEN/NUM2)*DEN2)">Nu nog vereenvoudigen:<code> \color{#6495ED}{<var>fraction(NUM,(DEN/NUM2)*DEN2)</var>} = <var>fraction(REDUCE[0], REDUCE[1])</var></code> </p>
-	<p data-tt="hint3" data-if="REDUCE[0]-REDUCE[1] &gt; 0">De teller is groter dan de noemer. We kunnen de breuk dus nog verder vereenvoudigen.</p>
-	<p data-tt="hint3a" data-if="REDUCE[0]-REDUCE[1] &gt; 0">We kunnen een heel getal <code>\color{#FFA500}{<var>floorTo(0, REDUCE[0]/REDUCE[1])</var>}</code> keer uit de breuk halen. </p>
-	<p data-tt="hint3b" data-if="REDUCE[0]-REDUCE[1] &gt; 0">Dan krijgen we dus <code>\color{#6495ED}{<var>fraction(REDUCE[0],REDUCE[1])</var>} - (\color{#FFA500}{<var>floorTo(0,REDUCE[0]/REDUCE[1])</var>}* \color{#6495ED}{<var>fraction(REDUCE[1],REDUCE[1])</var>})</code>
-	<p data-tt="hint3c" data-if="REDUCE[0]-REDUCE[1] &gt; 0"> De breuk wordt dus <code>\color{#FFA500}{<var>floorTo(0,REDUCE[0]/REDUCE[1])</var>} \color{#6495ED}{<var>fraction(REDUCE[0]- (floorTo(0,REDUCE[0]/REDUCE[1]))*REDUCE[1],REDUCE[1])</var>}</code></p>
+	
+	<p data-tt="hint1c">Dat wordt dus: &nbsp; &nbsp; <code> \displaystyle {} 
+	  \frac{\color{#000}{<var>NUM</var>} \times \color{#000}{<var>NUM2/NUM2</var>}}{\color{#000}{<var>DEN/NUM2</var>} \times \color{#000}{<var>DEN2</var>}}
+	  = \color{#000}{<var>fraction(NUM,(DEN/NUM2)*DEN2)</var>}</code></p>
+	
+	<p data-tt="hint2" data-if="reduces(NUM,(DEN/NUM2)*DEN2)">
+	  Nu nog vereenvoudigen:&nbsp; &nbsp;<code> \color{#000}{<var>fraction(NUM,(DEN/NUM2)*DEN2)</var>} = <var>fraction(REDUCE[0], REDUCE[1])</var></code> </p>
+	
+	<p data-tt="hint3" data-if="REDUCE[0]%REDUCE[1] &lt; 1">
+	  Bekijk de breuk als deelsom.<br /><br />
+	  <code><var>fraction(REDUCE[0], REDUCE[1])</var> = <var>REDUCE[0]/REDUCE[1]</var></code>
+	  </p>
+	
+	<p data-tt="hint3" data-if="REDUCE[0]-REDUCE[1] &gt; 0">
+	  De teller is groter dan de noemer. We kunnen de breuk dus nog verder vereenvoudigen.</p>	
+	
+	<p data-tt="hint3c" data-if="REDUCE[0]-REDUCE[1] &gt; 0"> 
+	 Het antwoord wordt dus:&nbsp; &nbsp; <code>\color{#000}{<var>floorTo(0,REDUCE[0]/REDUCE[1])</var>} \color{#000}{<var>fraction(REDUCE[0]- (floorTo(0,REDUCE[0]/REDUCE[1]))*REDUCE[1],REDUCE[1])</var>}</code></p>
        
     </div>
     </div>

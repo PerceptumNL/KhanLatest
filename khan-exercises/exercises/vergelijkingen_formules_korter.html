@@ -1,70 +1,55 @@
 <!DOCTYPE html>
-<html data-translatable data-require="math math-format graphie">
+<html data-translatable data-require="math math-format graphie simplify math-model">
 <head>
     <meta charset="UTF-8" />
     <title>Formules korter</title>
     <script src="../khan-exercise.js"></script>
-    <script type="text/javascript">
-    function showTerm(x, letter, first) {
-        term = "";
-        if(first && x < 0)
-            term += "-"
-
-        if(!first) 
-            term += x < 0 ? "- " : "+ "
-
-        if(x != 1 && x != -1)
-            term += Math.abs(x).toString();
-
-        term += letter;
-        return term;
-    }
-    </script>
+    <script>
+    </script
 </head>
 <body>
     <div class="exercise">
 
-        <div class="vars" data-ensure="total != 0">
-            <var id="a">randRangeNonZero(-5, 5)</var>
-            <var id="b">randRangeNonZero(-5, 5)</var>
-            <var id="c">randRangeNonZero(-5, 5)</var>
-            <var id="d">randRangeNonZero(-5, 5)</var>
-            <var id="letters">KhanUtil.shuffle("abcdefghijklmnpqrstuvwxyz")</var>
+        <div class="vars">
+            
         </div>
         
-        <div class="question"><p>Schrijf de formule zo kort mogelijk</p>
-            <code>
-                <var data-each="terms.length times as i">
-                    showTerm(terms[i], letters[0], i == 0)
-                </var>
-                = <var>letters[1]</var>
-            </code>
-        </div>
 
-        <p class="solution" data-type="text"><var>total</var><var>letters[0]</var> = <var>letters[1]</var></p>
         
         <div class="problems">
             <div>
-                <div class="vars">
-                    <var id="terms">[a, b]</var>
-                    <var id="total">a + b</var>
-                </div>
-            </div>
             
-            <div>
                 <div class="vars">
-                    <var id="terms">[a, b, c]</var>
-                    <var id="total">a + b + c</var>
+                    <var id="letters">shuffle("abcdefghijklmnpqrstuvwxyz")</var>
+                    <var id="expression">
+                    {op: "=", args: [
+                        {op: "+", args: shuffle([
+                            randRangeNonZero(-8, 8), 
+                            {op: "*", opsStyles: [{symbol: "times", align: [0, 0]}], args: [randRangeNonZero(-8, 8), {op: "var", args: letters[0]}]}
+                        ])},
+                        {op: "var", args: [letters[1]]}
+                    ]}</var>
                 </div>
-            </div>
-            
-            <div>
-                <div class="vars">
-                    <var id="terms">[a, b, c, d]</var>
-                    <var id="total">a + b + c + d</var>
+                <div class="question"><p>Schrijf deze formule over zonder vermenigvuldigingsteken.</p>
+                    <code><var>format(expression)</var></code>
                 </div>
             </div>
         </div>
+
+        <div class="solution" data-type="custom">
+               <div class="instruction">
+                   <input name="response" type="text">
+               </div>
+               <div class="guess">$( "div.instruction input" ).val()</div>
+               <div class="validator-function">
+                   return isEqual(simplify(parse(guess), simplifyOptions.checkInput), simplify(parse("5+6"), simplifyOptions.checkInput));
+               </div>
+               <div class="show-guess"></div>
+               <div class="show-guess-solutionarea">
+                   $( "div.instruction input" ).val( guess );
+               </div>
+               <div class="example">Een formule zoals <b>9 - 6k = m</b></div>
+           </div>
 
         <div class="hints">
             <div>In de formule</div>

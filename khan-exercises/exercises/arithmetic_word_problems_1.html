@@ -17,8 +17,8 @@
 
             <div id="take-away-result">
                 <p class="problem" data-tt="hint1">
-                    Er zitten <var>plural('zit', TOTAL)</var> <var>plural(TOTAL, 'persoon')</var> in de tram.
-                    Er stappen <var>plural(NUM2, 'persoon')</var> uit bij de halte.
+                    Er zitten <var>plural(TOTAL, "persoon")</var> in de tram.
+                    Er stappen <var>plural(NUM2, "persoon")</var> uit bij de halte.
                 </p>
                 <p class="question" data-tt="hint2">
                     Hoeveel mensen blijven er over in de tram?
@@ -31,18 +31,18 @@
                     Het aantal personen die in de tram blijven zitten is het verschil tussen het aantal dat in de tram zat voor de halte en het aantal dat bij de halte uitstapt.
                     </p>
                     <p data-tt="hint4">
-                    Dus het verschil is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural('persoon')</var> on the train.
+                    Dus het verschil is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural("persoon")</var>.
                     </p>
                     <p data-tt="hint5">
-                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> <var>plural('persoon', NUM1)</var> <var>plural('blijft', NUM1)</var> personen blijven over in de tram.
+                    <var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var> <var>plural("persoon", NUM1)</var> <var>plural("blijft","blijven", NUM1)</var> over in de tram.
                     </p>
                 </div>
             </div>
 
 	      <div id="take-away-start">
                 <p class="problem" data-tt="hint6">
-                    Er zitten <var>plural('zit', NUM1)</var> <var>plural(NUM1, 'persoon')</var> in de tram.
-                    Bij de vorige stop zijn er <var>plural(NUM2, 'persoon')</var> uitgestapt.
+                    Er zitten <var>plural(NUM1, "persoon")</var> in de tram.
+                    Bij de vorige stop zijn er <var>plural(NUM2, "persoon")</var> uitgestapt.
                 </p>
                 <p class="question" data-tt="hint7">
                     Hoeveel personen zaten er in de tram voor de stop?
@@ -55,18 +55,18 @@
                     Het aantal personen in de tram voor de stop is de som van het aantal wat er nu nog in de tram zit en het aantal wat er uit de tram is gestapt bij de stop.
                     </p>
                     <p data-tt="hint9">
-                    Dus de som is <code><var>NUM1</var> + <var>NUM2</var></code> <var>plural('persoon')</var> personen.
+                    Dus de som is <code><var>NUM1</var> + <var>NUM2</var></code>.
                     </p>
                     <p data-tt="hint10">
-                    <code><var>NUM1</var> + <var>NUM2</var> = <var>TOTAL</var></code> <var>plural('person')</var> <var>plural('zit', TOTAL)</var> personen zitten nog in de tram.
+                    <var>NUM1</var> + <var>NUM2</var> = <var>TOTAL</var> <var>plural("persoon",TOTAL)</var> <var>plural("zit","zitten", TOTAL)</var> nog in de tram.
                     </p>
                 </div>
             </div>
 
            <div id="take-away-change">
                 <p class="problem" data-tt="hint11">
-                    Er zaten <var>plural('zat', TOTAL)</var> <var>plural(TOTAL, 'persoon')</var> in de tram voordat de tram stopte bij een halte. Hier stapte een aantal mensen uit.
-                    Nu zitten er <var>plural('zit', NUM2)</var> <var>plural(NUM2, 'persoon')</var> personen in de tram.
+                    Er <var>plural("zat","zaten", TOTAL)</var> <var>plural(TOTAL,"persoon")</var> in de tram voordat de tram stopte bij een halte. Hier stapte een aantal mensen uit.
+                    Nu <var>plural("zit","zitten", NUM2)</var> er  <var>plural(NUM2, "persoon")</var> in de tram.
                 </p>
                 <p class="question" data-tt="hint12">
                     Hoeveel mensen stapten er uit bij de halte?
@@ -79,17 +79,17 @@
                     Het aantal mensen die zijn uitgestapt is het verschil tussen het aantal die voor de halte in de tram zaten en het aantal wat nu nog in de tram zit.
                     </p>
                     <p data-tt="hint14">
-                    Het verschil is dus <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural('persoon')</var>.
+                    Het verschil is dus <code><var>TOTAL</var> - <var>NUM2</var></code>.
                     </p>
                     <p data-tt="hint15">
-                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> <var>plural('persoon', NUM1)</var> zijn uitgestapt.
+                    <var>TOTAL</var> - <var>NUM2</var> = <var>plural(NUM1,"persoon")</var> zijn uitgestapt.
                     </p>
                 </div>
             </div>
 
       <div id="put-together">
                 <p class="problem" data-tt="hint16">
-                    Er staan <var>plural('staat', NUM1)</var> <var>plural(NUM1, 'boom')</var> op de rechteroever van de rivier <var>plural(NUM2, 'boom')</var> op de linkeroever.
+                    Er <var>plural("staat","staan",NUM1)</var> <var>plural(NUM1, "boom")</var> op de rechteroever van de rivier en <var>plural(NUM2, "boom")</var> op de linkeroever.
                 </p>
                 <p class="question" data-tt="hint17">
                     Hoe veel bomen staan er in totaal op beide oevers?
@@ -102,58 +102,58 @@
                     Het totale aantal bomen op beide oevers van de rivier is het totaal van bomen op de linkeroever plus het aantal bomen op de rechteroever.
                     </p>
                     <p data-tt="hint19">
-                    Dus het totaal is <code><var>NUM1</var> + <var>NUM2</var></code> <var>plural('boom')</var>.
+                    Dus het totaal is <code><var>NUM1</var> + <var>NUM2</var></code>.
                     </p>
                     <p data-tt="hint55">
-                    <code><var>NUM1</var> + <var>NUM2</var> = <var>TOTAL</var></code> <var>plural('boom')</var>.
+                    <var>NUM1</var> + <var>NUM2</var> = <var>TOTAL</var> <var>plural("boom")</var>.
                     </p>
                 </div>
             </div>
 
           <div id="take-apart">
                 <p class="problem" data-tt="hint20">
-                    Op beide oevers van de rivier staan <var>plural('staat', TOTAL)</var> <var>plural(TOTAL, 'boom')</var>. Op de <var>side(1)</var> oever <var>NUM2</var> bomen.
+                    Op beide oevers van de rivier <var>plural("staat", "staan", TOTAL)</var> in totaal <var>plural(TOTAL, "boom")</var>. Op de <var>side(1)</var>oever <var>plural("staat","staan", NUM2)</var> <var>plural(NUM2,"boom")</var>.
                 </p>
                 <p class="question" data-tt="hint21">
-                    Hoeveel bomen staan op de <var>side(2)</var> oever van de rivier?
+                    Hoeveel bomen staan op de <var>side(2)</var>oever van de rivier?
                 </p>
                 <p class="solution" data-forms="integer">
                     <var>NUM1</var>
                 </p>
                 <div class="hints">
                     <p data-tt="hint22">
-                    Het aantal bomen op de <var>side(2)</var> oever van de rivier is het verschil tussen het aantal bomen op beide oevers en het aantal bomen op de <var>side(1)</var> oever.
+                    Het aantal bomen op de <var>side(2)</var>oever van de rivier is het verschil tussen het aantal bomen op beide oevers en het aantal bomen op de <var>side(1)</var>oever.
                     </p>
                     <p data-tt="hint23">
-                    Het verschil is dus <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural('boom')</var>.
+                    Het verschil is dus <code><var>TOTAL</var> - <var>NUM2</var></code>.
                     </p>
                     <p data-tt="hint56">
-                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> <var>plural('boom', NUM1)</var>.
+                    <var>TOTAL</var> - <var>NUM2</var> = <var>plural(NUM1, "boom")</var>.
                     </p>
                 </div>
             </div>
 
          <div id="add-start">
                 <p class="problem" data-tt="hint24">
-                   Een aantal auto's staan geparkeerd op de parkeerplaats van <var>store(1)</var>.
-                    <var>NUM2</var> <var>plural('auto')</var> meer <var>plural('parkeert', 'parkeren', NUM2)</var> bij <var>store(1)</var>,
-                   en nu <var>plural('is', TOTAL)</var> er <var>plural(TOTAL, 'auto')</var> op de parkeerplaats.
+                   Een aantal auto's staan geparkeerd op de parkeerplaats van de <var>store(1)</var>.
+                   In de loop van de dag <var>plural("parkeert", "parkeren",NUM2)</var> <var>plural(NUM2,"persoon")</var> ook <var>plural("zijn","hun",NUM2)</var> auto op deze parkeerplaats.
+                   In totaal <var>plural("staat","staan", TOTAL)</var> er nu <var>plural(TOTAL, "auto")</var> op de parkeerplaats.
                 </p>
                 <p class="question" data-tt="hint25">
-                    Hoeveel auto's stonden er eerst geparkeerd bij <var>store(1)</var>?
+                    Hoeveel auto's stonden er eerst geparkeerd bij de <var>store(1)</var>?
                 </p>
                 <p class="solution" data-forms="integer">
                     <var>NUM1</var>
                 </p>
                 <div class="hints">
                     <p data-tt="hint26">
-                    De hoeveelheid auto's die eerst bij <var>store(1)</var> geparkeerd stonden is het verschil tussen de hoeveelheid auto's die er nu geparkeerd staan en de hoeveelheid auto's die er bijgekomen zijn.
+                    De hoeveelheid auto's die eerst bij de <var>store(1)</var> geparkeerd stonden is het verschil tussen de hoeveelheid auto's die er nu geparkeerd staan en de hoeveelheid auto's die er bijgekomen zijn.
                     </p>
                     <p data-tt="hint27">
-                    Het verschil is <code><var>TOTAL</var> - <var>NUM2</var></code> <var>plural('auto')</var>.
+                    Het verschil is <code><var>TOTAL</var> - <var>NUM2</var></code>.
                     </p>
                     <p data-tt="hint53">
-                    <code><var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var></code> <var>plural('auto', NUM1)</var>.
+                    <var>TOTAL</var> - <var>NUM2</var> = <var>NUM1</var> <var>plural("auto", NUM1)</var>.
                     </p>
                 </div>
             </div>

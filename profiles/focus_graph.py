@@ -105,10 +105,10 @@ def get_exercise_focus_data(user_data, daily_activity_logs, dt_start_utc, dt_end
             dict_exercise_seconds[key_exercise]["time_spent"] = seconds_to_time_string(dict_exercise_seconds[key_exercise]["seconds"], False)
 
             correct = dict_exercise_seconds[key_exercise]["correct"]
-            dict_exercise_seconds[key_exercise]["s_correct_problems"] = "%d correct problem%s without a hint" % (correct, pluralize(correct))
+            dict_exercise_seconds[key_exercise]["s_correct_problems"] = "%d correct probleem%s zonder een hint" % (correct, pluralize(correct))
 
             problems = dict_exercise_seconds[key_exercise]["problems"]
-            dict_exercise_seconds[key_exercise]["s_problems"] = "%d total problem%s" % (problems, pluralize(problems))
+            dict_exercise_seconds[key_exercise]["s_problems"] = "%d problem%s totaal" % (problems, pluralize(problems))
 
             dict_exercise_seconds[key_exercise]["proficient"] = user_data.is_proficient_at(key_exercise)
 

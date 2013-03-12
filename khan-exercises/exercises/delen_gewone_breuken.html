@@ -2,7 +2,7 @@
 <html data-require="math math-format">
 <head>
     <meta charset="UTF-8" />
-    <title>Delen met gemengde breuken</title>
+    <title>Delen met gewone breuken</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -10,8 +10,7 @@
     <div class="vars" data-require="DEN2 &gt; NUM && DEN &gt; NUM2">
 	<var id="NUM">randRange(2,3)</var>
 	<var id="NUM2">randRange(2,3)</var>
-	<var id="WHOLE">randRange(1,3)</var>
-	<var id="WHOLE2">randRange(1,3)</var>
+	
 	<var  id="DEN">randRange(2,5)</var>
 	<var  id="DEN2">randRange(2,5)</var>
 	
@@ -20,48 +19,15 @@
 	
 	<var id="NUM">3</var>
 	<var id="NUM2">2</var>
-	<var id="WHOLE">1</var>
-	<var id="WHOLE2">1</var>
 	<var  id="DEN">5</var>
 	<var  id="DEN2">6</var> 
 	
-	<var id="NUM">1</var>
-	<var id="NUM2">2</var>
-	<var id="WHOLE">1</var>
-	<var id="WHOLE2">1</var>
-	<var  id="DEN">4</var>
-	<var  id="DEN2">3</var> 
 	
-	<var id="NUM">2</var>
-	<var id="NUM2">4</var>
-	<var id="WHOLE">3</var>
-	<var id="WHOLE2">1</var>
-	<var  id="DEN">12</var>
-	<var  id="DEN2">6</var> 
-	
-	<var id="NUM">2</var>
-	<var id="NUM2">4</var>
-	<var id="WHOLE">7</var>
-	<var id="WHOLE2">1</var>
-	<var  id="DEN">24</var>
-	<var  id="DEN2">6</var> 
-	
-	<var id="NUM">22</var>
-	<var id="NUM2">44</var>
-	<var id="WHOLE">1</var>
-	<var id="WHOLE2">1</var>
-	<var  id="DEN">2</var>
-	<var  id="DEN2">2</var> 
 	-->
 	
-	<var id="ONECHT">DEN*WHOLE+NUM</var>
-	<var id="ONECHT2">DEN2*WHOLE2+NUM2</var>
-	<!-- niet nodig
-	<var id="LCM">getGCD(ONECHT,DEN2)</var>
-	<var id="LCM2">getGCD(ONECHT2,DEN)</var>
-	<var id="TELLER">(ONECHT/LCM)*(DEN2/LCM2)</var>
-	<var id="NOEMER">(DEN/LCM2)*(ONECHT2/LCM)</var>
-	-->	
+	<var id="ONECHT">NUM</var>
+	<var id="ONECHT2">NUM2</var>
+	
     <var id="PRESIMPLIFYNUM">ONECHT*DEN2</var>           
  	<var id="PRESIMPLIFYDEN">DEN*ONECHT2</var>	
 	
@@ -75,45 +41,20 @@
     <div class="problems">
         <div>
             <div class="question">
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>\color{#f00}{<var>WHOLE</var><var>fraction(NUM,DEN)</var>} \div \color{#00f}{<var>WHOLE2</var><var>fraction(NUM2,DEN2)</var>} = </code>.</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>\color{#000}{<var>fraction(NUM,DEN)</var>} \color{#f00}{\div <var>fraction(NUM2,DEN2)</var>} = </code>.</p>
             </div>
             <div class="solution" data-type="rational"><var>PRESIMPLIFYNUM/PRESIMPLIFYDEN</var></div>
         </div>
     </div>
-
+    
+	
     <div class="hints">
-	<p data-tt="hint0">Eerst schrijven we de gemengde breuken als onechte breuken.</p>
 	
-	<p data-tt="hint1">
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  <code>
-	     \color{#f00}{<var>WHOLE</var><var>fraction(NUM,DEN)</var>
-		  \  =  \  \displaystyle {} \frac{<var>WHOLE</var> \times <var>DEN</var> \ \ + \ \  <var>NUM</var>}{<var>DEN</var>}}
-		 \color{#f00}{ = <var>fraction(DEN*WHOLE+NUM, DEN)</var>}
-		 </code><br /><br />
-		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		 <code>		  
-		 \color{#00f}{<var>WHOLE2</var><var>fraction(NUM2,DEN2)</var>
-		   \  =  \  \displaystyle {} \frac{<var>WHOLE2</var> \times <var>DEN2</var> \ \ + \ \   <var>NUM2</var>}{<var>DEN2</var>}}
-		 \color{#00f}{ = <var>fraction(DEN2*WHOLE2+NUM2, DEN2)</var>}
-	  </code>
-	</p>
-	
-	<p data-tt="hint2">
-	  We krijgen dan voor de deling: <br /><br />
-	  <code>
-	     \color{#f00}{<var>fraction(ONECHT, DEN)</var>}
-	     \div
-	     \color{#00f}{<var>fraction(ONECHT2, DEN2)</var>}	  
-	  </code>
-	</p>
-	
-	<p data-tt="hint2">Delen is vermenigvuldigen met het omgekeerde.<br />
-	   We krijgen dan voor de vermenigvuldiging: <br /><br />
+	<p data-tt="hint2">Delen is vermenigvuldigen met het omgekeerde.<br /><br />	   
 	   <code>
-	     \color{#000}{<var>fraction(ONECHT, DEN)</var>}	
-	     \times
-	    \color{#00f}{<var>fraction(DEN2,ONECHT2)</var>}  
+	      = \color{#000}{<var>fraction(ONECHT, DEN)</var>}	
+	     \color{#f00}{\times
+	    <var>fraction(DEN2,ONECHT2)</var>}  
 	  </code>
 	</p>
 		
@@ -122,7 +63,7 @@
 
 	<p data-tt="hint1e">
 	<code> 
-	\displaystyle {} 
+	 = \displaystyle {} 
 	\frac{<var>ONECHT</var> \times <var>DEN2</var>}{<var>DEN</var> \times <var>ONECHT2</var>} 
 	  = <var>fraction(PRESIMPLIFYNUM,PRESIMPLIFYDEN)</var></code></p>
 	

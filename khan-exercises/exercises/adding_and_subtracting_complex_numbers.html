@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
 	<title>Optellen en aftrekken van complexe getallen</title>
 	<script src="../khan-exercise.js"></script>
+    <style type="text/css">
+        #solutionarea input[type="text"],
+        #solutionarea input[type="number"] {
+            width: 50px
+        }
+    </style>
 </head>
 <body>
 	<div class="exercise">
@@ -54,8 +60,15 @@
 					(<var>A_REP_COLORED</var>) <var>OPERATOR</var> (<var>B_REP_COLORED</var>)
 				</code>
 			</p>
-			<div class="solution" data-type="complexNumberSeparate">
-				[ <var>ANSWER_REAL</var>, <var>ANSWER_IMAG</var> ]
+			<div class="solution" data-type="multiple">
+              <span class="sol" data-forms="integer, decimal" data-fallback="0" data-inexact data-max-error="0.01">
+                    <var>ANSWER_REAL</var>
+                </span>
+                <code>+</code>
+                <span class="sol" data-forms="integer, decimal" data-fallback="1" data-inexact data-max-error="0.01">
+                    <var>ANSWER_IMAG</var>
+                </span>
+                <code>i</code>
 			</div>
 			<div class="hints">
 				<p>

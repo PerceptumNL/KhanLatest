@@ -1,18 +1,123 @@
 <!DOCTYPE html>
 <html data-translatable data-require="math math-format graphie graphie-helpers">
+
     <head>
+	    <style>
+		.setXY{
+		  left:100;
+		 }
+		</style>
+		  
         <title>Gemengde breuken van elkaar aftrekken</title>
         <script src="../khan-exercise.js"></script>
+		
+		<script>
+		function cirkel(radius,colors,x,y) { 
+		    <!-- cirkel( [1, 1], ["#e00", "#999"], 1 ); -->
+			var graph = KhanUtil.currentGraph;
+			var set = graph.raphael.set();			
+			set.push(graph.circle([x,y], radius, {
+				stroke: colors[1],
+				fill: colors[0]
+			}));
+ 			
+			return set;
+		}
+
+		function rechthoekjesBreuken(divisions, colors, y) {
+			var graph = KhanUtil.currentGraph;
+			var set = graph.raphael.set();
+
+			y = y || 0;
+
+			var sum = 0;
+			$.each(divisions, function(i, slice) {
+				sum += slice;
+			});
+
+			var partial = 0;
+			$.each(divisions, function(i, slice) {
+				var x = partial / sum, w = slice / sum;
+				set.push(graph.path([[x, y], [x + w, y], [x + w, y + 1], [x, y + 1]], {
+					stroke: KhanUtil.BACKGROUND,
+					fill: colors[i]
+				}));
+				partial += slice;
+			});
+
+			for (var i = 0; i <= sum; i++) {
+				var x = i / sum;
+				set.push(graph.line([x, y + 0], [x, y + 1], { stroke: KhanUtil.BACKGROUND }));
+			}
+
+			return set;
+		}
+		function cirkelboogjes(divisions, colors, radius, dx) {
+			var graph = KhanUtil.currentGraph;
+			var set = graph.raphael.set();
+
+			var sum = 0;
+			$.each(divisions, function(i, slice) {
+				sum += slice;
+			});
+
+			var partial = 0;
+			$.each(divisions, function(i, slice) {
+				set.push(graph.arc([0, 0], radius, partial * 360 / sum, (partial + slice) * 360 / sum, true, {
+					stroke: colors[0] || "none",
+					fill: colors[i]
+				}));
+				partial += slice;
+			});
+
+			for (var i = 0; i < sum; i++) {
+				set.push(graph.line([i*dx, 0], graph.polar(radius, i * 360 / sum), { stroke: colors[0] || "#fff" }));
+			}
+
+			return set;
+		}
+		function heleCirkels(aantal, kleurS, radius, dx) {
+            for ( var x = 0; y <aantal; x++ ) {
+				//rectchart( [3, 0], ["#FFA500", "#999"], y );
+				cirkelboogjes( [1,1], [kleurS, kleurS], radius, dx);
+			}		
+			
+		}
+		</script>
+		
     </head>
     <body>
         <div class="exercise">
             <div class="vars" data-ensure="M_DENOM &gt; M_NUM && WHOLE &gt; WHOLE2 && M_NUM &lt; M_NUM2 && M_NUM2 &lt; M_DENOM">
-                <var id="WHOLE">randRange( 2, 10 )</var>   
-		<var id="WHOLE2">randRange(2,10)</var>             
+               
+			    <var id="WHOLE">randRange( 2, 6 )</var>   
+				<var id="WHOLE2">randRange(2,5)</var>             
                 <var id="M_NUM">randRange( 1, 10 )</var>
-		<var id="M_NUM2">randRange(1,10)</var>
+				<var id="M_NUM2">randRange(1,10)</var>
                 <var id="M_DENOM">randRange( 2, 10 )</var>
-		<var id="MIN">M_DENOM-M_NUM</var>
+				
+				<!-- testen voor vereenvoudigd antwoord en heel getal nul over 
+				<var id="WHOLE">randRange( 5, 5 )</var>   
+				<var id="WHOLE2">randRange(2,2)</var>             
+                <var id="M_NUM">randRange( 2, 2 )</var>
+				<var id="M_NUM2">randRange(4,4)</var>
+                <var id="M_DENOM">randRange( 10, 10 )</var>
+				
+				<var id="WHOLE">randRange( 5, 5 )</var>   
+				<var id="WHOLE2">randRange(4,4)</var>             
+                <var id="M_NUM">randRange( 2, 2 )</var>
+				<var id="M_NUM2">randRange(4,4)</var>
+                <var id="M_DENOM">randRange( 10, 10 )</var>
+				-->
+				<var id="MIN">M_DENOM-M_NUM</var>
+				
+				<var id="ANSWER_GCD">getGCD( M_NUM-M_NUM2, M_DENOM)</var>
+				
+				
+				<!-- <var id = "REDUCED_NUM"> (M_NUM-M_NUM2)/ANSWER_GCD </var>-->
+				<var id = "REDUCED_NUM"> (M_NUM+M_DENOM-M_NUM2)/ANSWER_GCD </var>
+				<var id = "REDUCED_DENOM"> M_DENOM/ANSWER_GCD</var>	
+				
 
             </div>
 
@@ -20,11 +125,115 @@
             
                 
                 <div id="mixed-to-improper">
-                    <p  data-tt="question2" class="question">Los op: <code><var>WHOLE</var> <var>fraction( M_NUM, M_DENOM, false, false )</var> - <var>WHOLE2</var> <var>fraction(M_NUM2, M_DENOM, false, false)</var></code>.</p>
+                    <p  data-tt="question2" class="question">Bereken: &nbsp; &nbsp; <code><var>WHOLE</var> <var>fraction( M_NUM, M_DENOM, false, false )</var> - <var>WHOLE2</var> <var>fraction(M_NUM2, M_DENOM, false, false)</var></code></p>
 
                     <p class="solution" data-type="rational" data-simplify="optional"><var>(WHOLE-WHOLE2-1)+(M_NUM+M_DENOM-M_NUM2)/M_DENOM</var></p>
 
                     <div class="hints">
+					<!-- ======================================================================   hint 1 -->					
+					<p data-tt="hint1">
+					
+					De noemers van de twee breuken zijn gelijk.<br />
+					Je zou dus gewoon de hele getallen van elkaar af willen trekken en de breuken van elkaar af willen trekken, net zoals in de vorige oefening.<br />
+					Maar je hebt nu een nieuw probleem.<br />
+					De teller van de eerste breuk is kleiner dan de teller van de tweede breuk:<br /><br />
+					<code><var>WHOLE</var> \color{#FF0000}{<var>fraction( M_NUM, M_DENOM, false, false )</var>} - <var>WHOLE2</var> \color{#FF0000}{<var>fraction(M_NUM2, M_DENOM, false, false)</var>}</code><br /><br />
+					Je kunt de twee breuken daarom niet zo maar van elkaar aftrekken.<br />
+					Hoe zou je dit probleem kunnen oplossen?					
+					</p>
+					<!-- ======================================================================   hint 2 -->					
+					<p data-tt="hint2">
+					We kunnen de eerste gemengde breuk anders opschrijven.<br /><br />
+					We gaan de gemengde breuk <code>\color{#00f}{<var>WHOLE</var> <var>fraction( M_NUM, M_DENOM, false, false )</var>}</code> daarom eerst tekenen.
+					</p>
+					<!-- ======================================================================   hint 3 -->
+					
+					<div id="pie-chart">
+						<div class="graphie">
+						   
+						   var tN = 2;
+						   var rangeY = 1;
+						   for ( var i = 0; i <= WHOLE+1; i++ ) {
+						        var rangeXi = i*tN;
+								var t = WHOLE;
+								if(i!=WHOLE+1){
+									init({ range: [ [-rangeXi, rangeY], [-rangeY, rangeY] ], scale: 25 });
+									cirkel( .8,["#00e", "#999"],-.5*tN,rangeY-1);    
+								}
+								else{
+								   init({ range: [ [-rangeXi, rangeY], [-rangeY, rangeY] ], scale: 25 });
+								   piechart( [M_NUM,MIN], ["#00e", "#999"], .8 );
+								}
+								
+							}							
+						</div>
+					</div>
+					
+					
+					
+					<!-- ======================================================================   hint 4 -->					
+					<p data-tt="hint4">
+					We schrijven dit getal nu anders op door het laatste hele getal (het laatste hele cirkeltje) ook in gelijke partjes te snijden.
+					</p>
+					
+					
+					<!-- ======================================================================   hint 5 -->
+					
+					<div id="pie-chart2">
+						<div class="graphie">
+						   
+						   var tN = 2;
+						   var rangeY = 1;
+						   for ( var i = 0; i <= WHOLE+1; i++ ) {
+						        var rangeXi = i*tN;
+								var t = WHOLE;
+								if(i!=WHOLE+1 && i!=WHOLE){
+									init({ range: [ [-rangeXi, rangeY], [-rangeY, rangeY] ], scale: 25 });
+									cirkel( .8,["#00e", "#999"],-.5*tN,rangeY-1);    
+								}
+								else if(i!=WHOLE){
+								   init({ range: [ [-rangeXi, rangeY], [-rangeY, rangeY] ], scale: 25 });
+								   piechart( [M_NUM,MIN], ["#00e", "#999"], .8 );
+								   
+								  
+								}
+								else{ <!-- this is the whole number divided in parts , MIN = M_DENOM-M_NUM  -->
+								   init({ range: [ [-rangeXi, rangeY], [-rangeY, rangeY] ], scale: 25 });
+								   piechart( [M_NUM,MIN], ["#00e", "#00e"], .8 );
+								}
+								
+							}							
+							
+						</div>
+					</div>
+					
+					<!-- ======================================================================   hint 6 -->					
+					<p data-tt="hint6">
+					Je kunt de eerste breuk dus anders opschrijven door &eacute;&eacute;n heel getal ook in partjes te verdelen.<br /><br />
+					<code>\color{#00f}{<var>WHOLE</var> <var>fraction( M_NUM, M_DENOM, false, false )</var> = <var>WHOLE-1</var> <var>fraction( M_NUM+M_DENOM, M_DENOM, false, false )</var>}</code><br /><br />					
+					</p>
+					
+					<!-- ======================================================================   hint 7 -->					
+					<p data-tt="hint7">
+					Nu je dit snapt, kunnen we de complete berekening in &eacute;&eacute;n regel opschrijven:<br /><br />
+					
+					<code><var>WHOLE</var> <var>fraction( M_NUM, M_DENOM, false, false )</var> - <var>WHOLE2</var> <var>fraction(M_NUM2, M_DENOM, false, false)</var>
+					 \ \ \ =  \ \ \ \ <var>WHOLE-1</var> <var>fraction( M_NUM+M_DENOM, M_DENOM, false, false )</var> - <var>WHOLE2</var> <var>fraction(M_NUM2, M_DENOM, false, false)</var>
+					 \ \ \  =  \ \ \ \ <span data-if="WHOLE-1-WHOLE2!=0"><var>WHOLE-1-WHOLE2</var></span><var>fraction(M_NUM+M_DENOM - M_NUM2, M_DENOM,false,false)</var> 
+					 <span data-if="ANSWER_GCD!=1">\ \ \  =  \ \ \ \ <span data-if="WHOLE-1-WHOLE2!=0"><var>WHOLE-1-WHOLE2</var></span><var>fraction(REDUCED_NUM,REDUCED_DENOM,false,true)</var></span></code>
+					</code>
+					</p>
+			<!--
+			
+			<div class="graphie">
+						init({ range: [ [0, 1], [0, 1] ], scale: [250, 25] });
+
+						for ( var y = 0; y < WHOLE; y++ ) {
+							rechthoekjesBreuken( [M_DENOM, 0], ["#FFA500", "#999"], y);
+						}
+					</div>
+			
+			
 			
 			<p data-tt="hint1">Eerst trekken we de <span class = "hint_orange">gehele getallen</span> van elkaar af:</p><p><code>\color{#FFA500}{<var>WHOLE</var>} - \color{#FFA500}{<var>WHOLE2</var>} = <var>WHOLE-WHOLE2</var></code></p>			
 			<p data-tt="hint2">Nu hebben we <code>\color{#FFA500}{<var>WHOLE-WHOLE2</var>} \color{#04B404}{<var>fraction(M_NUM,M_DENOM)</var>}</code> pizza's.</p>
@@ -54,6 +263,6 @@
 			<p data-tt="hint5">Het antwoord is dus <code>\color{#FFA500}{<var>WHOLE-WHOLE2-1</var>}+ \color{#6495ED}{<var>fraction(M_DENOM+M_NUM-M_NUM2, M_DENOM)</var>}= <var>WHOLE-WHOLE2-1</var><var>fraction(M_DENOM+M_NUM-M_NUM2,M_DENOM)</var></code></p>
                 </div>
             </div>
-
+            -->
     </body>
 </html>

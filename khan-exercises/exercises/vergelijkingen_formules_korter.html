@@ -24,15 +24,20 @@
 
         <div class="vars">
             <var id="letters">shuffle("abcdefghijklmnpqrstuvwxyz")</var>
-            <var id="multCoefficient1">
-                {op: "*", args: [randRangeExclude(-4, 10, [0, 1, -1]), {op: "var", args: letters[0]}]}
-            </var>
+            <var id="a">randRangeExclude(-9, 15, [-1, 0, 1])</var>
+            <var id="b">randRangeExclude(-9, 15, [-1, 0, 1])</var>
+            <var id="constant">randRangeNonZero(-10, 20)</var>
+            <var id="multCoefficient1">{op: "*", args: [a, {op: "var", args: letters[0]}]}</var>
+            <var id="multCoefficient2">{op: "*", args: [b, {op: "var", args: letters[0]}]}</var>
         </div>
         
 
         
         <div class="problems">
-            <!-- Simplify an equation like "2 + 3 \times a = b" to "2 + 3a = b" -->
+            <!--
+                Simplify an equation by ommitting the \times symbol
+                "2 + 3 \times a = b" should be  "2 + 3a = b"
+            -->
             <div>
                 <div class="vars">
                     <var id="expression">
@@ -40,10 +45,10 @@
                     // Where the coefficients are in random order
                     {op: "=", args: [
                         {op: "+", args: shuffle([
-                            randRangeNonZero(-2, 10),       // The '9' part
-                            multCoefficient1           // The '-6 \times k' part, generated previously
+                            randRangeNonZero(-5, 15),   // The '9' part
+                            multCoefficient1            // The '-6 \times k' part, generated previously
                         ])},
-                        {op: "var", args: [letters[1]]}     // The 'm' part
+                        {op: "var", args: [letters[1]]} // The 'm' part
                     ]}</var>
                     </var>
                     
@@ -53,10 +58,44 @@
                     <code><var>format(exprTimesStyle(expression))</var></code>
                 </div>
                 <div class="hints">
-                    <p>Formules kun je nog korter schrijven door het vermenigvuldigingsteken weg te laten</p>
-                    <p><code><var>format(multCoefficient1)</var></code> betekent hetzelfde als <code><var>format(exprTimesStyle(multCoefficient1))</var></code></p>
-                    <p>In plaats van <code><var>format(exprTimesStyle(expression))</var></code> kun je ook schrijven <code><var>format(expression)</var></code></p>
+                    <p>Formules kun je korter schrijven door het vermenigvuldigingsteken weg te laten</p>
+                    <p><code>\color{blue}{<var>format(multCoefficient1)</var>}</code> betekent hetzelfde als <code>\color{blue}{<var>format(exprTimesStyle(multCoefficient1))</var>}</code></p>
+                    <p>In plaats van <code>\color{green}{<var>format(exprTimesStyle(expression))</var>}</code> kun je ook schrijven <code>\color{green}{<var>format(expression)</var>}</code></p>
                 </div>
+            </div>
+            
+            <!--
+                Simplify an equation by combining terms
+                "4a + 7a + 5= b" should be combined to "11a + 5 = b"
+            -->
+            <div data-weight="2">
+                <div class="vars" data-ensure="a + b != 0">
+                    <var id="expression">
+                    {op: "=", args: [
+                        {op: "+", args: [
+                            multCoefficient1,
+                            multCoefficient2,
+                            constant
+                        ]},
+                        {op: "var", args: [letters[1]]} // The 'm' part
+                    ]}</var>
+                    <var id="combinedCoefficient">{op: "*", args: [a + b, {op: "var", args: [letters[0]]}]}</var>
+                    <var id="solution">simplify({op: "=", args: [
+                        {op: "+", args: [combinedCoefficient, constant]},
+                        {op: "var", args: [letters[1]]}
+                    ]})</var>
+                </div>
+                <div class="question"><p>Schrijf de formule korter</p>
+                    <code><var>format(expression)</var></code>
+                </div>
+                <div class="hints">
+                    <p>In de formule <code>\color{green}{<var>format(expression)</var>}</code> heten <code>\color{blue}{<var>format(multCoefficient1)</var>}</code> en <code>\color{blue}{<var>format(multCoefficient2)</var>}</code> <emph>gelijksoortige termen</emph></p>
+                    <p>Gelijksoortige termen kun je samen nemen</p>
+                    <p><code>\color{blue}{<var>format({op: "+", args: [multCoefficient1, multCoefficient2]})</var>}</code> wordt dan <code>\color{red}{<var>format(combinedCoefficient)</var>}</code></p>
+                    <p data-if="a + b == 1 || a + b == -1">Meestal laat je de <var>a + b</var> voor de <var>letters[0]</var> weg en schrijf je alleen <code>\color{red}{<var>format(simplify(combinedCoefficient))</var>}</code>
+                    <p>De formule wordt dan <code>\color{green}{<var>format(solution)</var>}</code></p>
+                </div>
+                
             </div>
         </div>
 

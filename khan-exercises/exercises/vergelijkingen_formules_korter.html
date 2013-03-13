@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html data-translatable data-require="math math-format graphie simplify math-model">
+<html data-translatable data-require="math math-format simplify">
 <head>
     <meta charset="UTF-8" />
     <title>Formules korter</title>
     <script src="../khan-exercise.js"></script>
     <script type="text/javascript">
+    /**
+     * Returns a copy of the expression
+     * with all multiplications in the expression changed to use the 'times' symbol (a big X)
+     */
     function exprTimesStyle(expr) {
         expr = KhanUtil.exprClone(expr);
         if(expr.op == "*")
@@ -30,9 +34,8 @@
             <var id="multCoefficient1">{op: "*", args: [a, {op: "var", args: letters[0]}]}</var>
             <var id="multCoefficient2">{op: "*", args: [b, {op: "var", args: letters[0]}]}</var>
         </div>
-        
 
-        
+
         <div class="problems">
             <!--
                 Simplify an equation by ommitting the \times symbol
@@ -58,9 +61,9 @@
                     <code><var>format(exprTimesStyle(expression))</var></code>
                 </div>
                 <div class="hints">
-                    <p>Formules kun je korter schrijven door het vermenigvuldigingsteken weg te laten</p>
+                    <p>Een formule kan je korter schrijven door het vermenigvuldigingsteken weg te laten</p>
                     <p><code>\color{blue}{<var>format(multCoefficient1)</var>}</code> betekent hetzelfde als <code>\color{blue}{<var>format(exprTimesStyle(multCoefficient1))</var>}</code></p>
-                    <p>In plaats van <code>\color{green}{<var>format(exprTimesStyle(expression))</var>}</code> kun je ook schrijven <code>\color{green}{<var>format(expression)</var>}</code></p>
+                    <p>In plaats van <code>\color{green}{<var>format(exprTimesStyle(expression))</var>}</code> kan je ook <code>\color{green}{<var>format(expression)</var>}</code> schrijven</p>
                 </div>
             </div>
             
@@ -89,8 +92,8 @@
                     <code><var>format(expression)</var></code>
                 </div>
                 <div class="hints">
-                    <p>In de formule <code>\color{green}{<var>format(expression)</var>}</code> heten <code>\color{blue}{<var>format(multCoefficient1)</var>}</code> en <code>\color{blue}{<var>format(multCoefficient2)</var>}</code> <emph>gelijksoortige termen</emph></p>
-                    <p>Gelijksoortige termen kun je samen nemen</p>
+                    <p>In de formule <code>\color{green}{<var>format(expression)</var>}</code> heten <code>\color{blue}{<var>format(multCoefficient1)</var>}</code> en <code>\color{blue}{<var>format(multCoefficient2)</var>}</code> gelijksoortige termen</p>
+                    <p>Gelijksoortige termen kan je samen nemen</p>
                     <p><code>\color{blue}{<var>format({op: "+", args: [multCoefficient1, multCoefficient2]})</var>}</code> wordt dan <code>\color{red}{<var>format(combinedCoefficient)</var>}</code></p>
                     <p data-if="a + b == 1 || a + b == -1">Meestal laat je de <var>a + b</var> voor de <var>letters[0]</var> weg en schrijf je alleen <code>\color{red}{<var>format(simplify(combinedCoefficient))</var>}</code>
                     <p>De formule wordt dan <code>\color{green}{<var>format(solution)</var>}</code></p>
@@ -99,6 +102,9 @@
             </div>
         </div>
 
+        <!--
+            Custom solution checker that looks if the equation the user gives has the same structure as the solution
+        -->
         <div class="solution" data-type="custom">
                <div class="instruction">
                    <input name="response" type="text">

@@ -4,34 +4,58 @@
     <meta charset="UTF-8" />
     <title>Formules korter</title>
     <script src="../khan-exercise.js"></script>
-    <script>
+    <script type="text/javascript">
+    function exprTimesStyle(expr) {
+        expr = KhanUtil.exprClone(expr);
+        if(expr.op == "*")
+            expr.opsStyles = [{symbol: 'times'}];
+
+        if(expr.args) {
+            for(var i = 0; i < expr.args.length; i++) {
+                expr.args[i] = exprTimesStyle(expr.args[i]);
+            }
+        }
+        return expr;
+    }
     </script
 </head>
 <body>
     <div class="exercise">
 
         <div class="vars">
-            
+            <var id="letters">shuffle("abcdefghijklmnpqrstuvwxyz")</var>
+            <var id="multCoefficient1">
+                {op: "*", args: [randRangeExclude(-4, 10, [0, 1, -1]), {op: "var", args: letters[0]}]}
+            </var>
         </div>
         
 
         
         <div class="problems">
+            <!-- Simplify an equation like "2 + 3 \times a = b" to "2 + 3a = b" -->
             <div>
-            
                 <div class="vars">
-                    <var id="letters">shuffle("abcdefghijklmnpqrstuvwxyz")</var>
                     <var id="expression">
+                    // Generate a random equation like 9 - 6 \times k = m
+                    // Where the coefficients are in random order
                     {op: "=", args: [
                         {op: "+", args: shuffle([
-                            randRangeNonZero(-8, 8), 
-                            {op: "*", opsStyles: [{symbol: "times", align: [0, 0]}], args: [randRangeNonZero(-8, 8), {op: "var", args: letters[0]}]}
+                            randRangeNonZero(-2, 10),       // The '9' part
+                            multCoefficient1           // The '-6 \times k' part, generated previously
                         ])},
-                        {op: "var", args: [letters[1]]}
+                        {op: "var", args: [letters[1]]}     // The 'm' part
                     ]}</var>
+                    </var>
+                    
+                    <var id="solution">expression</var>
                 </div>
                 <div class="question"><p>Schrijf deze formule over zonder vermenigvuldigingsteken.</p>
-                    <code><var>format(expression)</var></code>
+                    <code><var>format(exprTimesStyle(expression))</var></code>
+                </div>
+                <div class="hints">
+                    <p>Formules kun je nog korter schrijven door het vermenigvuldigingsteken weg te laten</p>
+                    <p><code><var>format(multCoefficient1)</var></code> betekent hetzelfde als <code><var>format(exprTimesStyle(multCoefficient1))</var></code></p>
+                    <p>In plaats van <code><var>format(exprTimesStyle(expression))</var></code> kun je ook schrijven <code><var>format(expression)</var></code></p>
                 </div>
             </div>
         </div>
@@ -42,7 +66,7 @@
                </div>
                <div class="guess">$( "div.instruction input" ).val()</div>
                <div class="validator-function">
-                   return isEqual(simplify(parse(guess), simplifyOptions.checkInput), simplify(parse("5+6"), simplifyOptions.checkInput));
+                   return isEqual(simplify(parse(guess), simplifyOptions.checkInput), simplify(solution, simplifyOptions.checkInput));
                </div>
                <div class="show-guess"></div>
                <div class="show-guess-solutionarea">
@@ -51,9 +75,7 @@
                <div class="example">Een formule zoals <b>9 - 6k = m</b></div>
            </div>
 
-        <div class="hints">
-            <div>In de formule</div>
-        </div>
+
     </div>
 </body>
 </html>

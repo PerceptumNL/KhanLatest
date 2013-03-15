@@ -37,7 +37,7 @@ from gae_bingo.middleware import GAEBingoWSGIMiddleware
 import autocomplete
 import coaches
 import knowledgemap.handlers
-import youtube_sync
+#import youtube_sync
 import warmup
 import login
 import homepage
@@ -964,12 +964,13 @@ application = webapp2.WSGIApplication([
     ('/admin/startnewvotemapreduce', voting.StartNewVoteMapReduce),
     ('/admin/dailyactivitylog',
      activity_summary.StartNewDailyActivityLogMapReduce),
-    ('/admin/youtubesync.*', youtube_sync.YouTubeSync),
+ #   ('/admin/youtubesync.*', youtube_sync.YouTubeSync),
     ('/admin/unisubs', unisubs.handlers.ReportHandler),
     ('/admin/unisubs/import', unisubs.handlers.ImportHandler),
 
     ('/devadmin', devpanel.handlers.Panel),
     ('/devadmin/maplayout', kmap_editor.MapLayoutEditor),
+    ('/devadmin/coaches_list', devpanel.handlers.CoachesList),
     ('/devadmin/emailchange', devpanel.handlers.MergeUsers),
     ('/devadmin/deleteaccount', devpanel.handlers.DeleteAccount),
     ('/devadmin/managedevs', devpanel.handlers.Manage),

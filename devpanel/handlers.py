@@ -23,7 +23,7 @@ class CoachesList(request_handler.RequestHandler):
     def get(self):
         import coaches_utils
         template_values = {
-            "rows": coaches_utils.get_coaches_list()
+            "rows": coaches_utils.get_coaches_students_count()
         }
 
         self.render_jinja2_template("devpanel/coaches_list.html",

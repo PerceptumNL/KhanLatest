@@ -16,10 +16,10 @@
 <script>
   var data = {{ json.dumps(rows) }};
   var columns = [
-    {id: "joined", name: "Joined", width: "300", field: "joined"},
-    {id: "last_activity", name: "Last activity", field: "last_activity", width: "300" },
-    {id: "coach_email", name: "Coach Email", field: "coach_email", width: "500"},
-    {id: "number_of_students", name: "No. Students", field: "number_of_students", width: "300"},
+    {id: "joined", name: "Joined", width: "300", field: "joined", sortable: true},
+    {id: "last_activity", name: "Last activity", field: "last_activity", width: "300", sortable: true },
+    {id: "coach_email", name: "Coach Email", field: "coach_email", width: "500", sortable: true},
+    {id: "number_of_students", name: "No. Students", field: "number_of_students", width: "300", sortable: true},
   ];
 
   var options = {

@@ -30,7 +30,7 @@ class CoachesUtilsTest(gae_model.GAEModelTestCase):
                 [jacob, edward]]
         coaches.update_coaches(bella, coaches_json)
         self.assertEqual(2, len(bella.coaches))
-        coaches_list = coaches_utils.get_coaches_list()
+        coaches_list = coaches_utils.get_coaches_students_count()
         self.assertEqual(1, coaches_list[0]['number_of_students'])
 
     #def test_add_a_coach(self):

@@ -17,8 +17,8 @@
 
             <div id="take-away-result">
                 <p class="problem" data-tt="hint1">
-                    Er zitten <var>plural(TOTAL, "persoon")</var> in de tram.
-                    Er stappen <var>plural(NUM2, "persoon")</var> uit bij de halte.
+                    Er <var>plural("zit","zitten", TOTAL)</var> <var>plural(TOTAL, "persoon")</var> in de tram.
+                    Er <var>plural("stapt","stappen", NUM2)</var> <var>plural(NUM2, "persoon")</var> uit bij de halte.
                 </p>
                 <p class="question" data-tt="hint2">
                     Hoeveel mensen blijven er over in de tram?
@@ -41,7 +41,7 @@
 
 	      <div id="take-away-start">
                 <p class="problem" data-tt="hint6">
-                    Er zitten <var>plural(NUM1, "persoon")</var> in de tram.
+                    Er <var>plural("zit","zitten", TOTAL)</var> <var>plural(NUM1, "persoon")</var> in de tram.
                     Bij de vorige stop zijn er <var>plural(NUM2, "persoon")</var> uitgestapt.
                 </p>
                 <p class="question" data-tt="hint7">
@@ -89,6 +89,7 @@
 
       <div id="put-together">
                 <p class="problem" data-tt="hint16">
+
                     Er <var>plural("staat","staan",NUM1)</var> <var>plural(NUM1, "boom")</var> op de rechteroever van de rivier en <var>plural(NUM2, "boom")</var> op de linkeroever.
                 </p>
                 <p class="question" data-tt="hint17">
@@ -115,7 +116,7 @@
                     Op beide oevers van de rivier <var>plural("staat", "staan", TOTAL)</var> in totaal <var>plural(TOTAL, "boom")</var>. Op de <var>side(1)</var>oever <var>plural("staat","staan", NUM2)</var> <var>plural(NUM2,"boom")</var>.
                 </p>
                 <p class="question" data-tt="hint21">
-                    Hoeveel bomen staan op de <var>side(2)</var>oever van de rivier?
+                    Hoeveel bomen staan er op de <var>side(2)</var>oever van de rivier?
                 </p>
                 <p class="solution" data-forms="integer">
                     <var>NUM1</var>
@@ -135,7 +136,7 @@
 
          <div id="add-start">
                 <p class="problem" data-tt="hint24">
-                   Een aantal auto's staan geparkeerd op de parkeerplaats van de <var>store(1)</var>.
+                   Een aantal auto's staat geparkeerd op de parkeerplaats van de <var>store(1)</var>.
                    In de loop van de dag <var>plural("parkeert", "parkeren",NUM2)</var> <var>plural(NUM2,"persoon")</var> ook <var>plural("zijn","hun",NUM2)</var> auto op deze parkeerplaats.
                    In totaal <var>plural("staat","staan", TOTAL)</var> er nu <var>plural(TOTAL, "auto")</var> op de parkeerplaats.
                 </p>
@@ -237,7 +238,7 @@
             <div id="compare-bigger-more">
                 <p class="problem" data-tt="hint41">
                     <var>person(1)</var> heeft <var>NUM1</var> meer <var>plural(exercise(1), NUM1)</var> dan <var>person(2)</var> <var>timeofday(1)</var> gedaan.
-                    <var>person(2)</var> heeft <var>plural(NUM2, exercise(1))</var>.
+                    <var>person(2)</var> heeft <var>plural(NUM2, exercise(1))</var> gedaan.
                 </p>
                 <p class="question" data-tt="hint42">
                     Hoe veel <var>plural(exercise(1))</var> heeft <var>person(1)</var> gedaan?
@@ -253,7 +254,7 @@
                     De som is <code><var>NUM2</var> + <var>NUM1</var></code> <var>plural(exercise(1))</var>.
                     </p>
                     <p data-tt="hint45">
-                    <var>He(1)</var> heeft <code><var>NUM2</var> + <var>NUM1</var> = <var>TOTAL</var></code> <var>plural(exercise(1))</var>.
+                    <var>He(1)</var> heeft <code><var>NUM2</var> + <var>NUM1</var> = <var>TOTAL</var></code> <var>plural(exercise(1))</var> gedaan.
                     </p>
                 </div>
             </div>
@@ -261,14 +262,14 @@
             <div id="compare-bigger-less" data-type="compare-bigger-more">
                 <p class="problem" data-tt="hint46">
                     <var>person(2)</var> heeft <var>NUM1</var> minder <var>plural(exercise(1), NUM1)</var> gedaan dan <var>person(1)</var> <var>timeofday(1)</var>.
-                    <var>person(2)</var> heeft <var>plural(NUM2, exercise(1))</var>.
+                    <var>person(2)</var> heeft <var>plural(NUM2, exercise(1))</var> gedaan.
                 </p>
             </div>
 
             <div id="compare-smaller-more">
                 <p class="problem"  data-tt="hint52">
                     <var>person(1)</var> heeft <var>NUM1</var> meer <var>plural(exercise(1), NUM1)</var> gedaan dan <var>person(2)</var> <var>timeofday(1)</var>.
-                    <var>person(1)</var> heeft <var>plural(TOTAL, exercise(1))</var>.
+                    <var>person(1)</var> heeft <var>plural(TOTAL, exercise(1))</var> gedaan.
                 </p>
                 <p class="question"  data-tt="hint47">
                     Hoe veel <var>plural(exercise(1))</var> heeft <var>person(2)</var> gedaan?
@@ -278,13 +279,13 @@
                 </p>
                 <div class="hints">
                     <p data-tt="hint48">
-                    <var>person(1)</var> heeft <var>plural(TOTAL, exercise(1))</var> en <var>person(2)</var> heeft <var>NUM1</var> minder dan dat, dus vind het verschil.
+                    <var>person(1)</var> heeft <var>plural(TOTAL, exercise(1))</var> gedaan en <var>person(2)</var> heeft er <var>NUM1</var> minder dan dat gedaan, dus vind het verschil.
                     </p>
                     <p data-tt="hint49">
                     Het verschil is <code><var>TOTAL</var> - <var>NUM1</var></code> <var>plural(exercise(1))</var>.
                     </p>
                     <p data-tt="hint50">
-                    <var>He(2)</var> heeft <code><var>TOTAL</var> - <var>NUM1</var> = <var>NUM2</var></code> <var>plural(exercise(1), NUM2)</var>.
+                    <var>He(2)</var> heeft <code><var>TOTAL</var> - <var>NUM1</var> = <var>NUM2</var></code> <var>plural(exercise(1), NUM2)</var> gedaan.
                     </p>
                 </div>
             </div>
@@ -292,7 +293,7 @@
             <div id="compare-smaller-fewer" data-type="compare-smaller-more">
                 <p class="problem" data-tt="hint51">
                     <var>person(2)</var> heeft <var>NUM1</var> minder <var>plural(exercise(1), NUM1)</var> gedaan dan <var>person(1)</var> <var>timeofday(1)</var>.
-                    <var>person(1)</var> heeft <var>plural(TOTAL, exercise(1))</var>.
+                    <var>person(1)</var> heeft <var>plural(TOTAL, exercise(1))</var> gedaan.
                 </p>
             </div>
 

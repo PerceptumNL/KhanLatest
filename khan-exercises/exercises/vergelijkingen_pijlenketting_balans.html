@@ -2,7 +2,7 @@
 <html data-translatable data-require="math math-format simplify graphie">
 <head>
     <meta charset="UTF-8" />
-    <title>Formules korter</title>
+    <title>Pijlenketting en de Balans</title>
     <script src="../khan-exercise.js"></script>
     <script type="text/javascript">
 
@@ -20,13 +20,13 @@
                 range: [[-0.2, 2.2], [-0.2, 0.2]],
                 scale: [120, 120]
             });
-            
+
             this.setLabel1 = function(text) {
                 if(label1)
                     label1.remove();
                 label1 = label([0, 0], text);
             }
-            
+
             this.setLabel2 = function(text) {
                 if(label2)
                     label2.remove();
@@ -36,10 +36,10 @@
             this.setLabel1("\\ldots");
             this.setLabel2("\\ldots");
             label([ 2, 0], "\\color{red}{" + outputLabel + "}");
-    
+
             label([0.5, 0.1], "\\color{green}{" + firstOperation + "}");
             label([1.5, 0.1], "\\color{blue}{" + secondOperation + "}");
-    
+
             style({
                 arrows: "-&gt;"
             }, function() {
@@ -53,21 +53,24 @@
                     line([1 + arrowSpacing, 0], [2 - arrowSpacing, 0]);
                 }
             });
-            
-            
         }
     }
-    
+
+    /**
+     * Formats an operation like {op: "*", args[4]} as "\times 4".
+     * Used for display in the Pijlenketting
+     */
     function formatOperation(operation) {
         var op = KhanUtil.exprClone(operation);
-        
+
         // Prepend invisible something so that the operation is formatted '\times 4' instead of just '4'
         op.args.unshift({op: "empty", args: []}); 
         return KhanUtil.format(op);
     }
-    
+
     /**
-     * 
+     * Returns an inversed operation for multiplication and addition operations
+     * (respectively subtraction and division)
      */
     function inverseOperation(operation) {
         var inverseOp = KhanUtil.exprClone(operation);
@@ -78,7 +81,11 @@
         }
         return inverseOp;
     }
-    
+
+    /**
+     * Takes an argument (a number or operation) and an operation and combines them
+     * For example the operations 4 and *5 will be combined into 5*4 (or 4*5 if argumentInFront)
+     */
     function combineOperation(argument, operation, argumentInFront) {
         combined = KhanUtil.exprClone(operation);
         if(argumentInFront)
@@ -88,7 +95,10 @@
 
         return KhanUtil.simplify(combined);
     }
-    
+
+    /**
+     * Returns a copy of the expression but formatted in the given color
+     */
     function colorExpression(expression, color) {
         if (typeof(expression) == "number")
             expr = {op: "+", args: [expression]}
@@ -98,7 +108,6 @@
         expr.style = {color: color};
         return expr;
     }
-
     </script
 </head>
 <body>
@@ -163,7 +172,7 @@
             <div id="balans" data-type="multiplication-first">
                 <div class="vars" data-ensure="A + C > 1">
                     <var id="firstArgInFront">false</var>
-                    <var id="C">randRangeNonZero(-5, 15)</var>
+                    <var id="C">randRange(1, 15)</var>
                 </div>
                 
                 <div class="question">

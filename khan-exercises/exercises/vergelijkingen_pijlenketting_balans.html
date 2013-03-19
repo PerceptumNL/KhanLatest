@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format simplify graphie">
+<head>
+    <meta charset="UTF-8" />
+    <title>Formules korter</title>
+    <script src="../khan-exercise.js"></script>
+    <script type="text/javascript">
+    
+    /**
+     * Show a graphic like:
+     *      +4       x3
+     * ... ---) ... ---) 18
+     * Where +4 is the first operation, x3 the second operation, 18 the label and the direction of the arrows 'reverse'.
+     */
+    function PijlenKetting(firstOperation, secondOperation, outputLabel, reverse) {
+        with(KhanUtil.currentGraph) {
+            init({
+                range: [[-0.2, 2.2], [-0.2, 0.2]],
+                scale: [120, 120]
+            });
+
+            label([ 0, 0], "\\ldots");
+            label([ 1, 0], "\\ldots");
+            label([ 2, 0], outputLabel);
+    
+            label([0.5, 0.1], firstOperation);
+            label([1.5, 0.1], secondOperation);
+    
+            style({
+                arrows: "-&gt;"
+            }, function() {
+                // Arrows
+                var arrowSpacing = 0.15;
+                if(reverse) {
+                    line([1 - arrowSpacing, 0], [arrowSpacing, 0]);
+                    line([2 - arrowSpacing, 0], [1 + arrowSpacing, 0]);
+                } else {
+                    line([0 + arrowSpacing, 0], [1 - arrowSpacing, 0]);
+                    line([1 + arrowSpacing, 0], [2 - arrowSpacing, 0]);
+                }
+            });
+        }
+    }
+    
+    function formatOperation(operation) {
+        var op = KhanUtil.exprClone(operation);
+        
+        // Prepend invisible something so that the operation is formatted '\times 4' instead of just '4'
+        op.args.unshift({op: "var", args: [""]}); 
+        return KhanUtil.format(op);
+    }
+    
+    /**
+     * 
+     */
+    function inverseOperation(operation) {
+        var inverseOp = KhanUtil.exprClone(operation);
+        if (inverseOp.op == "+") {
+            inverseOp.args[0] = -inverseOp.args[0];
+        } else if(inverseOp.op == "*") {
+            inverseOp.op = "div";
+        }
+        return inverseOp;
+    }
+    
+    function combineOperation(firstArg, operation1, operation2) {
+        combined = KhanUtil.exprClone(operation2);
+        firstOperation = KhanUtil.exprClone(operation1);
+        firstOperation.args.unshift(firstArg);
+        combined.args.unshift(firstOperation);
+        return combined;
+    }
+    
+    </script
+</head>
+<body>
+    <div class="exercise">
+
+        <div class="vars">
+            <var id="letter">shuffle("abcdefghijklmnpqrstuvwxyz")[0]</var>
+            <var id="operation1">{op: "+", args: [4]}</var>
+            <var id="operation2">{op: "*", args: [3]}</var>
+            <var id="constant">18</var>
+            <var id="x">2</var>
+        </div>
+
+        <div class="question">
+            <p>Los de vergelijking op met de pijlenketting</p>
+            <p><code><var>format(combineOperation({op: "var", args: "x"}, operation1, operation2))</var> = <var>constant</var></code></p>
+            
+            <p>Maak bij de vergelijking een pijlenketting</p>
+            <div class="graphie">PijlenKetting(formatOperation(operation1), formatOperation(operation2), "18")</div>
+            <p>Maak de omgekeerde pijlenketting</p>
+            <div class="graphie">PijlenKetting(formatOperation(inverseOperation(operation1)), formatOperation(inverseOperation(operation2)), "18", true)</div>
+            <p>Bereken de oplossing <code><var>format(combineOperation(constant, inverseOperation(operation2), inverseOperation(operation1)))</var> = <var>x</var></code></p>
+        </div>
+        <div class="hints">
+            
+        </div>
+
+
+        <div class="problems"><div id="problem1"></div></div>
+
+        <div class="solution" data-forms="integer">2</div>
+
+    </div>
+</body>
+</html>
+

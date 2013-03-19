@@ -159,6 +159,25 @@
                     <var id="intermediate">constant / B</var>
                 </div>
             </div>
+            
+            <div id="balans" data-type="multiplication-first">
+                <div class="vars" data-ensure="A + C > 1">
+                    <var id="firstArgInFront">false</var>
+                    <var id="C">randRangeNonZero(-5, 15)</var>
+                </div>
+                
+                <div class="question">
+                    <p>Los de vergelijking op met de balans en de omgekeerde pijlenketting</p>
+                    <p><code><var>(A + C) + letter</var> + <var>B</var> = <var>C + letter</var> + <var>constant</var></code></p>
+                </div>
+                
+                <div class="hints" data-apply="prependContents">
+                    <p>Neem aan beide kanten van de balans <var>C</var> zakjes weg</p>
+                    <p>Bij de nieuwe balans past dan de vergelijking 
+                        <code><var>A + letter</var> + <var>B</var> = <var>constant</var></code>
+                    </p>
+                </div>
+            </div>
         </div>
 
         <div class="solution" data-forms="integer"><var>x</var></div>

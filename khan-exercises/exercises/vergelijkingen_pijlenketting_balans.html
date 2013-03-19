@@ -12,15 +12,29 @@
      * ... ---) ... ---) 18
      * Where +4 is the first operation, x3 the second operation, 18 the label and the direction of the arrows 'reverse'.
      */
-    function PijlenKetting(firstOperation, secondOperation, outputLabel, reverse) {
+    var PijlenKetting = function(firstOperation, secondOperation, outputLabel, reverse) {
+        var label1;
+        var label2;
         with(KhanUtil.currentGraph) {
             init({
                 range: [[-0.2, 2.2], [-0.2, 0.2]],
                 scale: [120, 120]
             });
+            
+            this.setLabel1 = function(text) {
+                if(label1)
+                    label1.remove();
+                label1 = label([0, 0], text);
+            }
+            
+            this.setLabel2 = function(text) {
+                if(label2)
+                    label2.remove();
+                label2 = label([1, 0], text);
+            }
 
-            label([ 0, 0], "\\ldots");
-            label([ 1, 0], "\\ldots");
+            this.setLabel1("\\ldots");
+            this.setLabel2("\\ldots");
             label([ 2, 0], "\\color{red}{" + outputLabel + "}");
     
             label([0.5, 0.1], "\\color{green}{" + firstOperation + "}");
@@ -39,6 +53,8 @@
                     line([1 + arrowSpacing, 0], [2 - arrowSpacing, 0]);
                 }
             });
+            
+            
         }
     }
     
@@ -106,12 +122,20 @@
             <div class="graphie">PijlenKetting(formatOperation(operation1), formatOperation(operation2), constant)</div>
 
             <p>Maak de omgekeerde pijlenketting</p>
-            <div class="graphie">PijlenKetting(formatOperation(inverseOperation(operation1)), formatOperation(inverseOperation(operation2)), constant, true)</div>
+            <div class="graphie" id="reverse">pk = new PijlenKetting(formatOperation(inverseOperation(operation1)), formatOperation(inverseOperation(operation2)), constant, true)</div>
 
             <div>
-                <p>Bereken de oplossing:</p>
                 <p><code><var>format(combineOperation(colorExpression(constant, "red"), colorExpression(inverseOperation(operation2), "blue"), true))</var> = \color{gray}{<var>intermediate</var>}</code></p>
+                <div class="graphie" data-update="reverse">
+                    pk.setLabel2("\\color{gray}{" + intermediate + "}");
+                </div>
+            </div>
+            
+            <div>
                 <p><code><var>format(combineOperation(colorExpression(intermediate, "gray"), colorExpression(inverseOperation(operation1), "green"), true)) + " = " + x</var></code></p>
+                <div class="graphie" data-update="reverse">
+                    pk.setLabel1(x);
+                </div>
             </div>
             
             <p>De oplossing is <code><var>letter</var> = <var>x</var></code></p>    

@@ -72,6 +72,16 @@
 
         return KhanUtil.simplify(combined);
     }
+    
+    function colorExpression(expression, color) {
+        if (typeof(expression) == "number")
+            expr = {op: "+", args: [expression]}
+        else
+            expr = KhanUtil.exprClone(expression);
+
+        expr.style = {color: color};
+        return expr;
+    }
 
     </script
 </head>
@@ -89,7 +99,9 @@
         <div class="question">
             <p>Los de vergelijking op met de pijlenketting</p>
             <p><code><var>format(combineOperation(combineOperation({op: "var", args: letter}, operation1, firstArgInFront), operation2, true))</var> = <var>constant</var></code></p>
-
+        </div>
+        
+        <div class="hints">
             <p>Maak bij de vergelijking een pijlenketting</p>
             <div class="graphie">PijlenKetting(formatOperation(operation1), formatOperation(operation2), constant)</div>
 
@@ -98,14 +110,11 @@
 
             <div>
                 <p>Bereken de oplossing:</p>
-                <p><code><var>format(combineOperation(constant, inverseOperation(operation2), true)) + " = " + intermediate</var></code></p>
-                <p><code><var>format(combineOperation(intermediate, inverseOperation(operation1), true)) + " = " + x</var></code></p>
+                <p><code><var>format(combineOperation(colorExpression(constant, "red"), colorExpression(inverseOperation(operation2), "blue"), true))</var> = \color{gray}{<var>intermediate</var>}</code></p>
+                <p><code><var>format(combineOperation(colorExpression(intermediate, "gray"), colorExpression(inverseOperation(operation1), "green"), true)) + " = " + x</var></code></p>
             </div>
             
-            <p>De oplossing is <var>letter</var> = <var>x</var></p>
-        </div>
-        <div class="hints">
-            
+            <p>De oplossing is <code><var>letter</var> = <var>x</var></code></p>    
         </div>
 
 

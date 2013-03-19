@@ -21,10 +21,10 @@
 
             label([ 0, 0], "\\ldots");
             label([ 1, 0], "\\ldots");
-            label([ 2, 0], outputLabel);
+            label([ 2, 0], "\\color{red}{" + outputLabel + "}");
     
-            label([0.5, 0.1], firstOperation);
-            label([1.5, 0.1], secondOperation);
+            label([0.5, 0.1], "\\color{green}{" + firstOperation + "}");
+            label([1.5, 0.1], "\\color{blue}{" + secondOperation + "}");
     
             style({
                 arrows: "-&gt;"
@@ -63,27 +63,23 @@
         return inverseOp;
     }
     
-    function combineOperation(firstArg, operation1, operation2, firstArgInFront, secondArgInFront) {
-        combined = KhanUtil.exprClone(operation2);
-        firstOperation = KhanUtil.exprClone(operation1);
-        if(firstArgInFront) {
-            firstOperation.args.unshift(firstArg);
-        } else {
-            firstOperation.args.push(firstArg);
-        }
-        firstOperation = {op: "()", args: [firstOperation]};
-        
-        combined.args.unshift(firstOperation);
+    function combineOperation(argument, operation, argumentInFront) {
+        combined = KhanUtil.exprClone(operation);
+        if(argumentInFront)
+            combined.args.unshift(argument);
+        else
+            combined.args.push(argument);
+
         return KhanUtil.simplify(combined);
     }
-    
+
     </script
 </head>
 <body>
     <div class="exercise">
 
         <div class="vars">
-            <var id="letter">shuffle("abcdefghijklmnpqrstuvwxyz")[0]</var>
+            <var id="letter">shuffle("abcdefghijkmnpqrstuvwxyz")[0]</var>
             <var id="A">randRangeExclude(-5, 10, [-1, 0, 1])</var>
             <var id="B">randRangeExclude(-5, 10, [-1, 0, 1])</var>
             <var id="x">randRange(1, 10)</var>
@@ -92,7 +88,7 @@
 
         <div class="question">
             <p>Los de vergelijking op met de pijlenketting</p>
-            <p><code><var>format(combineOperation({op: "var", args: letter}, operation1, operation2, firstArgInFront))</var> = <var>constant</var></code></p>
+            <p><code><var>format(combineOperation(combineOperation({op: "var", args: letter}, operation1, firstArgInFront), operation2, true))</var> = <var>constant</var></code></p>
 
             <p>Maak bij de vergelijking een pijlenketting</p>
             <div class="graphie">PijlenKetting(formatOperation(operation1), formatOperation(operation2), constant)</div>
@@ -100,7 +96,13 @@
             <p>Maak de omgekeerde pijlenketting</p>
             <div class="graphie">PijlenKetting(formatOperation(inverseOperation(operation1)), formatOperation(inverseOperation(operation2)), constant, true)</div>
 
-            <p>Bereken de oplossing <code><var>format(combineOperation(constant, inverseOperation(operation2), inverseOperation(operation1), true))</var> = <var>x</var></code></p>
+            <div>
+                <p>Bereken de oplossing:</p>
+                <p><code><var>format(combineOperation(constant, inverseOperation(operation2), true)) + " = " + intermediate</var></code></p>
+                <p><code><var>format(combineOperation(intermediate, inverseOperation(operation1), true)) + " = " + x</var></code></p>
+            </div>
+            
+            <p>De oplossing is <var>letter</var> = <var>x</var></p>
         </div>
         <div class="hints">
             
@@ -113,13 +115,15 @@
                     <var id="operation1">{op: "*", args: [A]}</var>
                     <var id="operation2">{op: "+", args: [B]}</var>
                     <var id="constant">A*x + B</var>
+                    <var id="intermediate">constant - B</var>
                 </div>
             </div>
             <div id="addition-first">
-                <div class="vars">
+                <div class="vars" data-ensure="A + x !== 0">
                     <var id="operation1">{op: "+", args: [A]}</var>
                     <var id="operation2">{op: "*", args: [B]}</var>
                     <var id="constant">(A+x) * B</var>
+                    <var id="intermediate">constant / B</var>
                 </div>
             </div>
         </div>

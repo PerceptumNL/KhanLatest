@@ -141,7 +141,6 @@
     <script src="http://video.khanacademie.nl/js/lib/jquery.cookie.js"></script>
     <script>
         function hideCookieMessage() {
-            console.log('hiding');
             $.cookie("cookieMessage", "read");
             $("#cookie-message").hide();
         }
@@ -150,7 +149,6 @@
             if ($.cookie("cookieMessage") == null) {
                 $("#cookie-message").show();
             }
-            console.log($("div").length);
             $("#button-cookie-ok").click(function () {
                 hideCookieMessage();
             });

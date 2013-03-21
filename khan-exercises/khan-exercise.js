@@ -79,8 +79,6 @@ var Translate = new function(){
 
 	this.getTranslation = function(url, name){
         try {
-            console.log("URL:" + url);
-            console.log("NAME:" + name);
             if (name in this.table)
 		        return this.table[name];
             var self = this;

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html data-require="math graphie graphie-helpers-arithmetic word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Getallen herkennen</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars">
+        <var id="A">randRange(1,10)</var>
+
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+		<p>Hoeveel cirkels zie je hieronder?</p>
+                <div class="graphie">
+                    init({
+                        range: [ [0, 12], [-1, 1] ]
+                    });
+ drawCircles( A, "#6495ED" );
+                  
+                </div>
+    	              </div>
+            <div class="solution" data-forms="integer"><var>A</var></div>
+            <div class="hints">
+        
+                <p style="clear: left;">Tel de cirkels; hoeveel zijn het er?</p>
+		<p>Het <var>plural("is", A)</var> er <var>A</var>!</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

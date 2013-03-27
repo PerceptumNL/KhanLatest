@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-translatable data-require="math math-format graphie time">
+<html  data-require="math math-format graphie time">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Telling time</title>
@@ -42,6 +42,10 @@
                 </div>
                 <div class="set-sol" data-type="multiple">
                     <span class="sol"><var>HOUR2</var></span>
+                    <span class="sol"><var>NICE_MINUTE</var></span>
+                </div>
+                <div data-if="HOUR==12" class="set-sol" data-type="multiple">
+                    <span class="sol">0</span>
                     <span class="sol"><var>NICE_MINUTE</var></span>
                 </div>
 

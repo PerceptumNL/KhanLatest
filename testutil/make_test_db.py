@@ -19,24 +19,11 @@ This file can also be used as a library for tests that want to create
 a db for testing.
 """
 
-# Before importing *anything* else, let's replace datetime with our fake
-import fake_datetime
-fake_datetime.fake_datetime()
 
 import datetime
 import os
 import shutil
 import sys
-
-# Now set up sys.path so the appengine and KA imports below can work.
-try:
-    sys.path.append('tools')
-    import runtests
-    runtests.fix_sys_path()
-except ImportError, why:
-    sys.exit(('Import error: %s.  ' % why) +
-             'You must run make_test_db from the root of the website tree.')
-
 
 from google.appengine.ext import db
 from google.appengine.ext import deferred

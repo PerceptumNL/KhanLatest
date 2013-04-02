@@ -1,0 +1,43 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "description": null,
+                    "extended_slug": "category1/topic-1",
+                    "hide": false,
+                    "id": "topic-1",
+                    "ka_url": "http://www.khanacademy.org/#topic-1",
+                    "kind": "Topic",
+                    "relative_url": "/#topic-1",
+                    "standalone_title": "Topic 1",
+                    "tags": [],
+                    "title": "Topic 1",
+                    "topic_page_url": "/category1/topic-1"
+                }
+            ],
+            "description": null,
+            "extended_slug": "category1",
+            "hide": false,
+            "id": "category1",
+            "ka_url": "http://www.khanacademy.org/#category1",
+            "kind": "Topic",
+            "relative_url": "/#category1",
+            "standalone_title": "Category 1",
+            "tags": [],
+            "title": "Category 1",
+            "topic_page_url": "/category1"
+    }
+    ],
+    "description": "All concepts fit into the root of all knowledge",
+    "extended_slug": "root",
+    "hide": true,
+    "id": "root",
+    "ka_url": "http://www.khanacademy.org/#root",
+    "kind": "Topic",
+    "relative_url": "/#root",
+    "standalone_title": "The Root of All Knowledge",
+    "tags": [],
+    "title": "The Root of All Knowledge",
+    "topic_page_url": "/root"
+}

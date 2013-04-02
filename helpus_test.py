@@ -1,6 +1,4 @@
 from __future__ import with_statement
-from testutil import fake_datetime
-fake_datetime.fake_datetime()
 
 import mock
 import datetime
@@ -38,4 +36,4 @@ class HelpUsTest(gae_model.GAEModelTestCase):
     def test_videoless_exercises(self):
         vl_exs = helpus.get_videoless_exercises()
         self.assertEqual(len(vl_exs), 2)
-        self.assertEqual(vl_exs[0]['topics'][0], "The Root of All Knowledge [late]")
+        self.assertEqual(vl_exs[0]['topics'][0], "Mathematics [late]")

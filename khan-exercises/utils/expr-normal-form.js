@@ -10,7 +10,7 @@
         $.each(expr.args, function(iArg, arg) {
             nArgs.push(normalForm(expr.args[iArg], steps));
         });
-        if ((expr.op === "+") || (expr.op === "times") || (expr.op === "*") || (expr.op === "cdot")) {
+        if ((expr.op === "+") || (expr.op === "times") || (expr.op === "*") || (expr.op === "cdot") || (expr.op === "=")) {
             expr = moveSameOpsUp({op: expr.op, args: nArgs});
             expr.args = expr.args.sort(compareNormalForms);
             return expr;
@@ -147,7 +147,8 @@
                 "*": 12,
                 "+": 13,
                 "-": 14,
-                "deriv": 15
+                "deriv": 15,
+                "=": 16
             };
             return opsOrder[expr1.op] - opsOrder[expr2.op];
         } else if ((expr1.op === "var") || (expr1.op === "cst")) {

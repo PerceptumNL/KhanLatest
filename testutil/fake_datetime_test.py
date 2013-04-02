@@ -60,7 +60,7 @@ class FakeDateTimeTest(unittest.TestCase):
         self.assertEqual(dt.year, 2011)
         self.assertEqual(dt.month, 11)
         self.assertEqual(dt.day, 11)
-        self.assertEqual(dt.hour, 7 if is_utc else 0)
+        self.assertEqual(dt.hour, 8 if is_utc else 0)
         # The clock ticks for every call to now(), so we don't know
         # exactly what the minutes or seconds will be, so don't test
         # those.

@@ -143,7 +143,7 @@ def absolute_url(relative_url, host=None):
 
 def static_url(relative_url):
     host = os.environ['HTTP_HOST'].lower()
-    if App.is_dev_server or not host.endswith(".khanacademie.nl"):
+    if not get_default_version_hostname() or not host.endswith(".khanacademie.nl"):
         return relative_url
     else:
         # when using a wildcard url to serve a nondefault version, ensure

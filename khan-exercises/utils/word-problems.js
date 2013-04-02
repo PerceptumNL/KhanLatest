@@ -143,6 +143,7 @@ jQuery.extend( KhanUtil, {
 			'slang' : 'slangen',
 			'pinguin':'pinguins',
 			'leeuw' : 'leeuwen',
+			'zit' : 'zitten' ,
 		};
 
 		var pluralizeWord = function(word) {

@@ -320,21 +320,12 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 #footer.short {
     color: #555;
     z-index: 10;
-    max-width:1200px;
-    margin:0 auto;
-}
-
-.footerlogo {
-	float:left;
-	margin-top:5px;
 }
 
 #footer #leaves {
     /* background-image: url(/images/non-repeating-sprites.4.png);
     background-position: 319px -908px;*/
     height: 188px;
-    width:600px;
-    margin: 0 auto;
 }
 
 #footer.short #leaves {

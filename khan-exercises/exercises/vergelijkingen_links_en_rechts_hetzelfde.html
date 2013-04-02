@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format">
+<head>
+    <meta charset="UTF-8" />
+    <title>Links en rechts hetzelfde</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <!-- equation is Ax + B = Cx + D -->
+        <div class="vars" data-ensure="D !== 0 && D !== B">
+            <var id="x">randRangeNonZero(-5, 15)</var>
+            <var id="letters">shuffle("abcdefghijkmnpqrstuvwxyz")</var>
+            <var id="letter">letters[0]</var>
+            <var id="A">randRangeNonZero( 2, 10 )</var>
+            <var id="B">randRangeNonZero( -10, 10 )</var>
+            <var id="C" data-ensure="abs( A - C ) > 1">randRangeNonZero( 2, 10 )</var>
+            <var id="D">A*x + B - C*x</var>
+        </div>
+
+        <p class="solution" data-forms="integer"><var>x</var></p>
+
+        <div class="problems">
+            <div id="simpel" data-weight="4">
+                <div class="question">
+                    <p>Los de volgende vergelijkingen op. Doe links en rechts hetzelfde.</p>
+                    <code><var>A + letter</var> + <var>B</var> = <var>C + letter</var> + <var>D</var></code>
+                </div>
+            </div>
+
+            <div id="omslagpunt">
+                <div class="question">
+                    <p>Zoek bij welke <code><var>letter</var></code> het omslagpunt ligt</p>
+                    <p>Formule 1: <code><var>letters[1]</var> = <var>A + letter</var> + <var>B</var></code></p>
+                    <p>Formule 2: <code><var>letters[1]</var> = <var>C + letter</var> + <var>D</var></code></p>
+                </div>
+                <div class="hints" data-apply="prependContents">
+                    <p>Maak een vergelijking van de formules</p>
+                    <code><var>A + letter</var> + <var>B</var> = <var>C + letter</var> + <var>D</var></code>
+                </div>
+            </div>
+        </div>
+
+        <div class="hints">
+            <div>
+                <hr />
+                <code>
+                    \begin{alignat*}{4}
+                    <var>A + letter</var>&{} + <var>B</var> = &{<var>C + letter</var>}&{} + <var>D</var> \\
+                     \color{brown}{+<var>-C + letter</var>}&
+                    &\color{brown}{+<var>-C + letter</var>}&
+                    \end{alignat*}
+                </code>
+                <p data-if="C > 0">Trek links en rechts van het =-teken <code>\color{brown}{<var>C + letter</var>}</code> eraf</p>
+                <p data-if="C < 0">Tel links en rechts van het =-teken <code>\color{brown}{<var>-C + letter</var>}</code> erbij</p>
+            </div>
+
+            <div>
+                <code>
+                \begin{alignat*}{4}
+                <var>(A - C) + letter</var> + <var>B</var>&{} = &<var>D</var> \\
+                \color{purple}{+<var>-B</var>}&{} &{}\color{purple}{+<var>-B</var>}
+                \end{alignat*}
+                </code>
+                <p data-if="B > 0">Trek links en rechts van het -= teken <code>\color{purple}{<var>B</var>}</code> eraf</p>
+                <p data-if="B < 0">Tel links en rechts van het -= teken <code>\color{purple}{<var>-B</var>}</code> erbij</p>
+            </div>
+
+            <div>
+                <code>
+                \begin{alignat*}{4}
+                    <var>(A - C) + letter</var>&{} = &{}<var>D - B</var> \\
+                    \color{green}{: <var>A - C</var>}&{} &{}\color{green}{: <var>A - C</var>}
+                \end{alignat*}
+                </code>
+                <p>Deel links en rechts door <code>\color{green}{<var>A - C</var>}</code></p>
+            </div>
+
+            <div><code><var>letter</var> = <var>x</var></code></div>
+
+        </div>
+    </div>
+</body>
+</html>
+

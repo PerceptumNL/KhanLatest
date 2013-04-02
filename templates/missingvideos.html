@@ -37,14 +37,4 @@ Ontbrekende video's
 
   grid = new Slick.Grid("#myGrid", data, columns, options);
 </script>
-<ul>  
-
-        {#
-    {% for exercise in exercises %}
-    <li>
-    {{ templatetags.topics_nav(exercise.topics) }}
-    <a href="{{ exercise.ka_url }}">{{ exercise.name }}</a></li>
-    {% endfor %}
-    #}
-</ul>
 {% endblock pagecontent %}

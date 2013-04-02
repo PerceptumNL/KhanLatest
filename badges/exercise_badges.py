@@ -14,8 +14,7 @@ class ExerciseBadge(Badge):
         if user_exercise is None:
             return False
 
-        exercise_display_name = exercise_models.Exercise.to_display_name(
-            user_exercise.exercise)
+        exercise_display_name = user_exercise.exercise.replace('_', ' ').capitalize()
 
         return (self.name_with_target_context(exercise_display_name)
                 in user_data.badges)

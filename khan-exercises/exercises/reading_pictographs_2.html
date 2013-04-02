@@ -23,10 +23,12 @@
 <div class="exercise">
     <div class="vars">
         <var id="DATA">randRangeUnique( 1, 8, 5 )</var>
-        <var id="BADGE">randFromArray([ "meteorite", "moon", "earth" ])</var>
-        <var id="BADGE">randFromArray([ "meteorite", "moon", "earth" ])</var>
-        <var id="FULL_IMAGE">"&lt;img src='/khan-exercises/images/" + BADGE + "-small.png'&gt;"</var>
-        <var id="HALF_IMAGE">"&lt;div style=\"background-image:url('/khan-exercises/images/" + BADGE + "-small.png'); width:20px; height:40px;\"&gt;&nbsp;&lt;/div&gt;"</var>
+        <var id="B">randFromArray([ "meteorite", "moon", "earth" ])</var>
+        <var id="MAP">{"meteorite" : "meteoriet", "moon": "maan", "earth": "aarde"}</var>
+        <var id="BADGE">MAP[B]</var>
+        <var id="BADGES">BADGE</var>
+        <var id="FULL_IMAGE">"&lt;img src='/khan-exercises/images/" + B + "-small.png'&gt;"</var>
+        <var id="HALF_IMAGE">"&lt;div style=\"background-image:url('/khan-exercises/images/" + B + "-small.png'); width:20px; height:40px;\"&gt;&nbsp;&lt;/div&gt;"</var>
         <var id="VALUE_PER_IMG">randFromArray([ 2, 4 ])</var>
         <var id="HALF">VALUE_PER_IMG === 1 ? [ 0, 0, 0, 0, 0 ] : [ rand(2), rand(2), rand(2), rand(2), rand(2) ]</var>
     </div>

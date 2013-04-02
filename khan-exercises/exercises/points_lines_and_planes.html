@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html data-require="math graphie word-problems subhints">
+<head>
+    <meta charset="UTF-8">
+    <title>Points, lines, and planes</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+<div class="exercise">
+
+    <div class="vars">
+        <var id="TILT">randRange(-100, 100) / 150</var>
+        <var id="TILT2">randRange(-100, 100) / 500</var>
+        <var id="A">randFromArray(["A", "F", "K", "U"])</var>
+        <var id="B">randFromArray(["B", "G", "L", "V"])</var>
+        <var id="C">randFromArray(["C", "H", "M", "W"])</var>
+        <var id="D">randFromArray(["D", "I", "N", "X"])</var>
+        <var id="E">randFromArray(["E", "J", "O", "Y"])</var>
+        <var id="R">randFromArray(["R", "S", "T", "P"])</var>
+    </div>
+
+    <p class="question"></p>
+
+    <div class="problem">
+        <div class="graphie">
+            init({
+                range: [ [-1, 15], [-5, 8] ],
+                scale: [ 30, 30 ]
+            });
+            // plane
+            path([
+                [6 + (0 - 6) * cos(TILT) - (0 - 2) * sin(TILT), 2 + (0 - 6) * sin(TILT) + (0 - 2) * cos(TILT)],
+                [6 + (10 - 6) * cos(TILT) - (0 - 2) * sin(TILT), 2 + (10 - 6) * sin(TILT) + (0 - 2) * cos(TILT)],
+                [6 + (12 - 6) * cos(TILT) - (4 - 2) * sin(TILT), 2 + (12 - 6) * sin(TILT) + (4 - 2) * cos(TILT)],
+                [6 + (2 - 6) * cos(TILT) - (4 - 2) * sin(TILT), 2 + (2 - 6) * sin(TILT) + (4 - 2) * cos(TILT)],
+                true
+            ]);
+
+            style({ arrows: "-&gt;" }, function() {
+
+                // line in the plane
+                line([6 + (3 - 6)* cos(TILT+TILT2) - (3 - 2)* sin(TILT+TILT2), 2 + ( 3 - 6 ) * sin(TILT+TILT2) + ( 3 - 2 ) * cos(TILT+TILT2)],
+                     [6 + (9 - 6)* cos(TILT+TILT2) - (1 - 2)* sin(TILT+TILT2), 2 + ( 9 - 6 ) * sin(TILT+TILT2) + ( 1 - 2 ) * cos(TILT+TILT2)]);
+
+                // line in the plane (opposite direction hack to get double-headed arrow)
+                line([6 + (9 - 6)* cos(TILT+TILT2) - (1 - 2)* sin(TILT+TILT2), 2 + ( 9 - 6 ) * sin(TILT+TILT2) + ( 1 - 2 ) * cos(TILT+TILT2)],
+                     [6 + (3 - 6)* cos(TILT+TILT2) - (3 - 2)* sin(TILT+TILT2), 2 + ( 3 - 6 ) * sin(TILT+TILT2) + ( 3 - 2 ) * cos(TILT+TILT2)]);
+
+                // perpendicular line (top)
+                line([6 + (6 - 6)* cos(TILT) - (2 - 2)* sin(TILT), 2 + ( 6 - 6 ) * sin(TILT) + ( 2 - 2 ) * cos(TILT)],
+                     [6 + (6 - 6)* cos(TILT) - (6 - 2)* sin(TILT), 2 + ( 6 - 6 ) * sin(TILT) + ( 6 - 2 ) * cos(TILT)]);
+
+                // Perpendicular line (bottom)
+                line([6 + (6 - 6)* cos(TILT) - (0 - 2)* sin(TILT), 2 + ( 6 - 6 ) * sin(TILT) + ( 0 - 2 ) * cos(TILT)],
+                     [6 + (6 - 6)* cos(TILT) - (-3 - 2)* sin(TILT), 2 + ( 6 - 6 ) * sin(TILT) + ( -3 - 2 ) * cos(TILT)]);
+            });
+
+            // dashed line behind the plane
+            style({ strokeDasharray: "- " }, function() {
+                line([6 + (6 - 6)* cos(TILT) - (2 - 2)* sin(TILT), 2 + ( 6 - 6 ) * sin(TILT) + ( 2 - 2 ) * cos(TILT)],
+                     [6 + (6 - 6)* cos(TILT) - (0 - 2)* sin(TILT), 2 + ( 6 - 6 ) * sin(TILT) + ( 0 - 2 ) * cos(TILT)]);
+            });
+
+            var r = randRange(0, 100) / 150;
+            var theta = randRange(-314, 314) / 100;
+
+            // points
+            style({ r: 0.15, stroke: "none" }, function() {
+                circle([6 + (4 - 6)* cos(TILT+TILT2) - (8/3 - 2)* sin(TILT+TILT2), 2 + ( 4 - 6 ) * sin(TILT+TILT2) + ( 8/3 - 2 ) * cos(TILT+TILT2)], { fill: PINK });
+                circle([6, 2], { fill: BLUE });
+                circle([6 + (8 - 6)* cos(TILT+TILT2) - (4/3 - 2)* sin(TILT+TILT2), 2 + ( 8 - 6 ) * sin(TILT+TILT2) + ( 4/3 - 2 ) * cos(TILT+TILT2)], { fill: GREEN });
+                circle([6 + (6 - 6)* cos(TILT) - (-2 - 2)* sin(TILT), 2 + ( 6 - 6 ) * sin(TILT) + ( -2 - 2 ) * cos(TILT)], { fill: ORANGE });
+                circle([6 + (17/6 + r*cos(theta) - 6)* cos(TILT) - (1.4 + r*sin(theta) - 2)* sin(TILT), 2 + ( 17/6 + r*cos(theta) - 6 ) * sin(TILT) + ( 1.4 + r*sin(theta) - 2 ) * cos(TILT)], { fill: "purple" });
+            });
+
+            label([6 + (4 - 6)* cos(TILT+TILT2) - (8/3 - 2)* sin(TILT+TILT2), 2 + ( 4 - 6 ) * sin(TILT+TILT2) + ( 8/3 - 2 ) * cos(TILT+TILT2)], A, "above right" );
+            label([6.1, 2], B, "above right");
+            label([6 + (8 - 6)* cos(TILT+TILT2) - (4/3 - 2)* sin(TILT+TILT2), 2 + ( 8 - 6 ) * sin(TILT+TILT2) + ( 4/3 - 2 ) * cos(TILT+TILT2)], C, "above right" );
+            label([6 + (6 - 6)* cos(TILT) - (-2 - 2)* sin(TILT), 2 + ( 6 - 6 ) * sin(TILT) + ( -2 - 2 ) * cos(TILT)], D, "right" );
+            label([6 + (17/6 + r*cos(theta) - 6)* cos(TILT) - (1.4 + r*sin(theta) - 2)* sin(TILT), 2 + ( 17/6 + r*cos(theta) - 6 ) * sin(TILT) + ( 1.4 + r*sin(theta) - 2 ) * cos(TILT)], E, "below" );
+
+            label([6 + (9.2 - 6)* cos(TILT+TILT2) - (1 - 2)* sin(TILT+TILT2), 2 + ( 9.2 - 6 ) * sin(TILT+TILT2) + ( 1 - 2 ) * cos(TILT+TILT2)], "\\ell", "right");
+            label([6 + (12.1 - 6)* cos(TILT) - (4 - 2)* sin(TILT), 2 + ( 12.1 - 6 ) * sin(TILT) + ( 4 - 2 ) * cos(TILT)], "\\mathcal{" + R + "}", "right");
+        </div>
+    </div>
+
+    <div class="problems">
+        <div id="name-plane">
+            <p class="question">
+                Wat is een andere manier om vlak  <code>\mathcal{<var>R</var>}</code> te benoemen?
+            </p>
+
+            <div class="solution" data-type="set">
+                <div class="set-sol" data-type="text"><var>A + B + E</var></div>
+                <div class="set-sol" data-type="text"><var>A + C + E</var></div>
+                <div class="set-sol" data-type="text"><var>A + E + B</var></div>
+                <div class="set-sol" data-type="text"><var>A + E + C</var></div>
+                <div class="set-sol" data-type="text"><var>B + A + E</var></div>
+                <div class="set-sol" data-type="text"><var>B + C + E</var></div>
+                <div class="set-sol" data-type="text"><var>B + E + A</var></div>
+                <div class="set-sol" data-type="text"><var>B + E + C</var></div>
+                <div class="set-sol" data-type="text"><var>C + A + E</var></div>
+                <div class="set-sol" data-type="text"><var>C + B + E</var></div>
+                <div class="set-sol" data-type="text"><var>C + E + A</var></div>
+                <div class="set-sol" data-type="text"><var>C + E + B</var></div>
+                <div class="set-sol" data-type="text"><var>E + A + B</var></div>
+                <div class="set-sol" data-type="text"><var>E + A + C</var></div>
+                <div class="set-sol" data-type="text"><var>E + B + A</var></div>
+                <div class="set-sol" data-type="text"><var>E + B + C</var></div>
+                <div class="set-sol" data-type="text"><var>E + C + A</var></div>
+                <div class="set-sol" data-type="text"><var>E + C + B</var></div>
+
+                <div class="input-format">
+                    <p>Plane <span class="entry"></span></p>
+                </div>
+            </div>
+            <div class="hints">
+                <div>
+                    <p>Vlakken kunnen worden benoemd met drie <a href="#" class="show-definition" data-definition="noncollinear">noncollineaire</a> punten.</p>
+                    <div class="definition" id="noncollinear">
+                        Noncollineaire punten zijn punten die niet op dezelfde lijn liggen.
+                    </div>
+                </div>
+                <p>
+                    Zoek drie willekeurige punten in het vlak<code>\mathcal{<var>R</var>}</code> die
+                    niet op dezelfde lijn liggen en zet ze in willekeurige volgorde.
+                </p>
+                <p>
+                    Bijvoorbeeld, kunnen we <code>\mathcal{<var>R</var>}</code> schrijven als vlak
+                    <code><var>A + B + E</var></code>, vlak <code><var>A + C + E</var></code>,
+                    of vlak <code><var>B + E + C</var></code>.
+                </p>
+            </div>
+        </div>
+
+        <div id="line-name">
+            <div class="vars">
+                <var id="SOLUTION">randFromArray([
+                    "\\overleftrightarrow{" + A + B + "}",
+                    "\\overleftrightarrow{" + A + C + "}",
+                    "\\overleftrightarrow{" + B + A + "}",
+                    "\\overleftrightarrow{" + B + C + "}",
+                    "\\overleftrightarrow{" + C + A + "}",
+                    "\\overleftrightarrow{" + C + B + "}"
+                ])</var>
+                <var id="INCORRECT_1">randFromArray([
+                    "\\overleftrightarrow{" + A + "}",
+                    "\\overleftrightarrow{" + B + "}",
+                    "\\overleftrightarrow{" + C + "}"
+                ])</var>
+                <var id="INCORRECT_2">randFromArray([
+                    "\\overline{" + A + B + "}",
+                    "\\overline{" + B + A + "}",
+                    "\\overline{" + C + B + "}",
+                    "\\overline{" + B + C + "}",
+                    "\\overline{" + C + A + "}",
+                    "\\overline{" + A + C + "}"
+                ])</var>
+                <var id="INCORRECT_3">randFromArray([
+                    "\\overleftrightarrow{" + E + C + "}",
+                    "\\overleftrightarrow{" + C + E + "}",
+                    "\\overleftrightarrow{" + D + A + "}",
+                    "\\overleftrightarrow{" + D + B + "}",
+                    "\\overleftrightarrow{" + D + C + "}",
+                    "\\overleftrightarrow{" + A + D + "}"
+                ])</var>
+            </div>
+
+            <p class="question">Wat is een andere manier om lijn <code>\ell</code>te benoemen?</p>
+
+            <div class="solution"><code><var>SOLUTION</var></code></div>
+
+            <ul class="choices">
+                <li><code><var>INCORRECT_1</var></code></li>
+                <li><code><var>INCORRECT_2</var></code></li>
+                <li><code><var>INCORRECT_3</var></code></li>
+                <li><code>\overleftrightarrow{<var>A + B + C</var>}</code></li>
+            </ul>
+
+            <div class="hints">
+                <p>Lijnen zijn benoemd met twee willekeurige punten op de lijn. De volgorde doet er niet toe.</p>
+                <p>De punten moeten het <code>\leftrightarrow</code> hebben want we zijn een lijn
+                aan het benoemen, niet een straal of een segment.</p>
+                <p>Een andere manier om een lijn te benoemen <code>\ell</code> is <code><var>SOLUTION</var></code>.</p>
+            </div>
+        </div>
+
+
+        <div id="collinear-3">
+            <div class="vars">
+                <var id="POINTS,SOLUTION">randFromArray([
+                    [[A, B, C], "Ja"],
+                    [[A, B, D], "Nee"],
+                    [[A, C, B], "Ja"],
+                    [[A, C, E], "Nee"],
+                    [[B, A, C], "Ja"],
+                    [[B, C, A], "Ja"],
+                    [[B, E, C], "Nee"],
+                    [[C, A, B], "Ja"],
+                    [[C, A, D], "Nee"],
+                    [[C, B, A], "Ja"],
+                    [[C, B, E], "Nee"],
+                    [[E, C, A], "Nee"]
+                ])</var>
+            </div>
+
+            <p class="question">Zijn de punten <var>toSentence(POINTS)</var> collineaire?</p>
+
+            <div class="solution"><var>SOLUTION</var></div>
+            <ul class="choices" data-category="true">
+                <li>Ja</li>
+                <li>Nee</li>
+            </ul>
+
+            <div class="hints">
+                <p>Collineaire betekent dat ze op dezelfde lijn liggen.</p>
+                <p>Kun je een rechte lijn trekken door de punten <var>toSentence(POINTS)</var>?</p>
+                <p data-if="SOLUTION === 'Ja'">Yes, points <var>toSentence(POINTS)</var> are collinear.</p>
+                <p data-else>Nee, de punten <var>toSentence(POINTS)</var> zijn niet collineaire.</p>
+            </div>
+        </div>
+
+
+        <div id="collinear-2">
+            <div class="vars">
+                <var id="POINTS">shuffle([A, B, C, D, E], 2)</var>
+            </div>
+
+            <p class="question">Zijn de punten <var>toSentence(POINTS)</var> collineaire?</p>
+
+            <div class="solution">Ja</div>
+            <ul class="choices" data-category="true">
+                <li>Ja</li>
+                <li>Nee</li>
+            </ul>
+
+            <div class="hints">
+                <p>Door twee willekeurige punten, is er precies een lijn.</p>
+                <p>Punten kunnen collineaire zijn zelfs als de lijn niet in het figuur getekend is.</p>
+                <p>Kun je een rechte lijn tekenen door de punten <var>toSentence(POINTS)</var>?
+                Kun je eigenlijk ook een rechte lijn trekken door twee willekeurige punten?</p>
+                <p>Ja, punten <var>toSentence(POINTS)</var> zijn collineaire.</p>
+            </div>
+        </div>
+
+
+        <div id="coplanar">
+            <div class="vars">
+                <var id="POINTS,SOLUTION,COPLANAR">randFromArray([
+                    [[A, B, C, E], "Ja", []],
+                    [[A, B, D, E], "Nee",  [A, B, E]],
+                    [[A, C, D],    "Ja", []],
+                    [[A, C, D, E], "Nee",  [A, C, E]],
+                    [[B, A, C],    "Ja", []],
+                    [[B, C, A, E], "Ja", []],
+                    [[E, C, D, A], "Nee",  [E, C, A]],
+                    [[B, E, D, C], "Nee",  [B, E, C]],
+                    [[C, B, D, E], "Nee",  [C, B, E]],
+                    [[C, D, A],    "Ja", []],
+                    [[E, D, A],    "Ja", []]
+                ])</var>
+            </div>
+
+            <p class="question">Zijn de punten <var>toSentence(POINTS)</var> coplanaire?</p>
+
+            <p class="solution"><var>SOLUTION</var></p>
+
+            <ul class="choices" data-category="true">
+                <li>Ja</li>
+                <li>Nee</li>
+            </ul>
+
+            <div class="hints">
+                <p>Coplanaire punten zijn punten die allemaal in hetzelfde vak liggen.</p>
+                <p>Kan een plat oppervlak alle punten passeren zonder te buigen?</p>
+                <p data-if="SOLUTION === 'Nee'">
+                    Nee, elk vlak oppervlak dat drie van de punten omvat niet de vierde.
+                    Bijvoorbeeld, punten <var>toSentence(COPLANAR)</var> zijn in vak
+                    <code>\mathcal{<var>R</var>}</code>, maar punt <var>D</var> niet.
+                </p>
+                <p data-else-if="POINTS.length === 4">
+                    Ja, points <var>toSentence(POINTS)</var> all lie within a single
+                    flat surface. In this case, plane <code>\mathcal{<var>R</var>}</code>.
+                </p>
+                <p data-else>
+                    Ja, Er is tenminste altijd een vlak oppervlak dat door elke drie punten gaat.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

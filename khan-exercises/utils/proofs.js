@@ -370,7 +370,7 @@ function nextStatementHint() {
 
             var useToProve = checkSegForHint(seg1, seg2, knownEqualities);
             if (useToProve.length > 0) {
-                return ["You know that " + prettifyEquality(useToProve[0] + "," + useToProve[1]) + ". What segments can you prove equal from this?",
+                return ["Je weet dat " + prettifyEquality(useToProve[0] + "," + useToProve[1]) + ". Van welke segmenten kun je bewijzen dat ze gelijk zijn?",
                 "A useful thing to prove here is " + prettifyEquality(seg1 + "," + seg2)];
             }
         }
@@ -386,11 +386,11 @@ function nextStatementHint() {
 
             var useToProve = checkAngForHint(ang1, ang2, knownEqualities);
             if (useToProve.length > 0 && useToProve[0] instanceof Triang) {
-                return ["You know that " + prettifyEquality(useToProve[0] + "," + useToProve[1]) + ". What angles can you prove equal from this?",
+                return ["Je weet dat " + prettifyEquality(useToProve[0] + "," + useToProve[1]) + ". Van welke hoeken kun je bewijzen dat ze gelijk zijn?",
                 "A useful thing to prove here is " + prettifyEquality(ang1 + "," + ang2)];
             }
             else if (useToProve.length > 0) {
-                return ["Try using " + useToProve + " to prove some useful pair of angles equal.",
+                return ["Probeer gebruik te maken van " + useToProve + " om een aantal nuttige paar hoeken gelijk te bewijzen.",
                  "A useful thing to prove here is " + prettifyEquality(ang1 + "," + ang2)];
             }
         }
@@ -403,7 +403,7 @@ function nextStatementHint() {
 // return the entire finished proof generated, formatted to look all pretty and etc.
 // used in "find the wrong statement" exercise, so also picks two statements for that exercise
 function outputFinishedProof() {
-    var proofText = "<h3>Givens</h3>";
+    var proofText = "<h3>Gegevens</h3>";
 
     var unsortedKeyList = _.clone(finishedEqualitiesList);
     var finishedKeysList = sortEqualityList(unsortedKeyList.reverse(), finishedEqualities);
@@ -430,7 +430,7 @@ function outputFinishedProof() {
                     proofText += "<code>, \\  </code>and<code>\\  </code></div>";
                 }
                 else {
-                    proofText += "</div><br><br><h3 style=\"clear:both\">Proof</h3>";
+                    proofText += "</div><br><br><h3 style=\"clear:both\">Bewijs</h3>";
                 }
 
                 possibleValids.push(prettifyEquality(finishedKeys[i]));
@@ -497,7 +497,7 @@ function outputKnownProof() {
 // returns a proof with a few blanks, blank statement fields will be wrapped by a div with id formatted according to divName
 function outputFillBlanksProof() {
     var reasonCodes = {"SSS" : 0, "ASA" : 1, "SAS" : 2, "AAS" : 3, "overeenkomende delen van congruente driehoeken congruent zijn" : 4,
-     "vertical angles are equal" : 5, "alternate interior angles are equal" : 6};
+     "vertical angles are equal" : 5, "Plaatsvervangende driehoeken zijn gelijk" : 6};
     var proofText = "<h3>Givens</h3>";
     var blanks = 0;
     var blankStatements = 0;
@@ -759,10 +759,10 @@ function getFillBlanksHint(giveAway) {
 
                 var useToProve = checkAngForHint(angle1, angle2, beforeEqualities);
                 if (useToProve.length > 0 && useToProve[0] instanceof Triang) {
-                    return "You know that " + prettifyEquality(useToProve[0] + "," + useToProve[1]) + ". What angles can you prove equal from this?";
+                    return "Je weet dat " + prettifyEquality(useToProve[0] + "," + useToProve[1]) + ". Van welke hoeken kun je bewijzen dat ze gelijk zijn?";
                 }
                 else if (useToProve.length > 0) {
-                    return "Try using " + useToProve + " to prove some useful pair of angles equal.";
+                    return "Probeer gebruik te maken van " + useToProve + " om een aantal nuttige paar hoeken gelijk te bewijzen.";
                 }
             }
             else {
@@ -771,19 +771,19 @@ function getFillBlanksHint(giveAway) {
 
                 var useToProve = checkSegForHint(seg1, seg2, beforeEqualities);
                 if (useToProve.length > 0) {
-                    return "You know that " + prettifyEquality(useToProve[0] + "," + useToProve[1]) + ". What segments can you prove equal from this?";
+                    return "Je weet dat " + prettifyEquality(useToProve[0] + "," + useToProve[1]) + ". Van welke segmenten kun je bewijzen dat ze gelijk zijn?";
                 }
             }
         }
         // if the next open spot is a justification
         else{
             if(firstMissing[0].id[0] === "t"){
-                return "You know that triangles are congruent because segments or angles in them are congruent. What segments or angles do you know "
-                + "are equal? Which can you use?";
+                return "Je weet dat driehoeken congruent zijn, omdat segmenten of hoeken in hen congruent zijn. Van welke segmenten en hoeken weet je dat ze"
+                + "gelijk zijn? Welke je kan gebruiken?";
             }
             else{
-                return "Is this segment/angle pair part of a pair of congruent triangles? If not, there are only two other reasons they could be equal "
-                + "(in this exercise).";
+                return "Is dit segment/driehoek paar van een paar congruente driehoeken? Zo niet, zijn er slechts twee redenen dat ze gelijk zijn"
+                + "(in deze oefening).";
             }
         }
     }
@@ -800,7 +800,7 @@ function getFillBlanksHint(giveAway) {
             }
             else {
                 firstMissing.removeClass("missing");
-                return "The next equality with a missing reason is true by " + finishedEqualities[firstMissing[0].id];
+                return "De volgende gelijkheid met een ontbrekende reden is waar door." + finishedEqualities[firstMissing[0].id];
             }
         }
     }
@@ -857,7 +857,7 @@ function outputBadProof() {
             var ang2 = KhanUtil.randFromArray(ANGLES);
 
             var reasons = KhanUtil.shuffle(["overeenkomende delen van congruente driehoeken congruent zijn",
-                 "vertical angles are equal", "alternate interior angles are equal"]);
+                 "vertical angles are equal", "Plaatsvervangende driehoeken zijn gelijk"]);
             for (var i = 0; i < reasons.length; i++) {
                 if (!checkAngEqual(ang1, ang2, reasons[i])) {
                     invalid = [ang1, ang2];
@@ -1369,8 +1369,8 @@ function traceBack(statementKey, depth) {
                     alternateAngs[0] = alternateAngs[1];
                 }
 
-                finishedEqualities[[triangle1.angs[alternateAngs[0]], triangle2.angs[alternateAngs[0]]]] = "alternate interior angles are equal";
-                finishedEqualities[[triangle2.angs[alternateAngs[0]], triangle1.angs[alternateAngs[0]]]] = "alternate interior angles are equal";
+                finishedEqualities[[triangle1.angs[alternateAngs[0]], triangle2.angs[alternateAngs[0]]]] = "Plaatsvervangende driehoeken zijn gelijk";
+                finishedEqualities[[triangle2.angs[alternateAngs[0]], triangle1.angs[alternateAngs[0]]]] = "Plaatsvervangende driehoeken zijn gelijk";
                 finishedEqualitiesList.push([triangle1.angs[alternateAngs[0]], triangle2.angs[alternateAngs[0]]]);
                 finishedEqualitiesList.push([triangle2.angs[alternateAngs[0]], triangle1.angs[alternateAngs[0]]]);
 
@@ -1920,9 +1920,9 @@ function checkAngEqual(ang1, ang2, reason) {
 
     if (eqIn([ang1, ang2], altInteriorAngs) || eqIn([ang2, ang1], altInteriorAngs)) {
 
-        if (reason === "alternate angles" || reason === "alternate interior angles are equal") {
-            knownEqualities[[ang1, ang2]] = "alternate interior angles are equal";
-            knownEqualities[[ang2, ang1]] = "alternate interior angles are equal";
+        if (reason === "alternate angles" || reason === "Plaatsvervangende driehoeken zijn gelijk") {
+            knownEqualities[[ang1, ang2]] = "Plaatsvervangende driehoeken zijn gelijk";
+            knownEqualities[[ang2, ang1]] = "Plaatsvervangende driehoeken zijn gelijk";
             knownEqualitiesList.push([ang1, ang2]);
             return true;
         }
@@ -2208,7 +2208,7 @@ function sortEqualityList(equalityList, equalityObject) {
     if(equalityObject === finishedEqualities) {
         var sortedEqualityList = _.clone(newEqualityList);
         for (var i = 0; i < newEqualityList.length; i++) {
-            if (equalityObject[newEqualityList[i]] === "vertical angles are equal" || equalityObject[newEqualityList[i]] === "alternate interior angles are equal") {
+            if (equalityObject[newEqualityList[i]] === "vertical angles are equal" || equalityObject[newEqualityList[i]] === "Plaatsvervangende driehoeken zijn gelijk") {
                 sortedEqualityList[i - 1] = newEqualityList[i];
                 sortedEqualityList[i] = newEqualityList[i - 1];
             }
@@ -2233,7 +2233,7 @@ function sortEqualityStringList(equalityList, equalityObject) {
     }
     var sortedEqualityList = _.clone(newEqualityList);
     for (var i = 0; i < newEqualityList.length; i++) {
-        if (equalityObject[newEqualityList[i]] === "vertical angles are equal" || equalityObject[newEqualityList[i]] === "alternate interior angles are equal") {
+        if (equalityObject[newEqualityList[i]] === "vertical angles are equal" || equalityObject[newEqualityList[i]] === "Plaatsvervangende driehoeken zijn gelijk") {
             sortedEqualityList[i - 2] = newEqualityList[i];
             sortedEqualityList[i] = newEqualityList[i - 2];
         }

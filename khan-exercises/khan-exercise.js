@@ -79,8 +79,6 @@ var Translate = new function(){
 
 	this.getTranslation = function(url, name){
         try {
-            console.log("URL:" + url);
-            console.log("NAME:" + name);
             if (name in this.table)
 		        return this.table[name];
             var self = this;
@@ -2298,7 +2296,7 @@ var Khan = (function() {
 
                 // Warn user about problem, encourage to reload page
                 warn(
-                    "Deze pagina is verouderde. Je moet <a href='" + window.location.href +
+                    "Deze pagina is verouderd. Je moet <a href='" + window.location.href +
                     "'>opnieuw laden</a>, maar maak je geen zorgen je vooruitgang is niet verloren. " +
                     "Als je denk dat dit een fout is, " +
                     "<a href='http://www.khanacademy.org/reportissue?type=Defect&issue_labels='>laat het ons weten</a>."

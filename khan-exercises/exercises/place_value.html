@@ -40,7 +40,7 @@
                         (function() {
                             var places = placesLeftOfDecimal.slice( 0, 4 );
                             return jQuery.map( places, function( place, i ) {
-                                return place + "len";
+                                return plural(place);
                             });
                         })()
                     </var>

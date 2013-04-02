@@ -24,7 +24,7 @@ def get_topic_focus_data(daily_activity_logs, dt_start_utc, dt_end_utc):
             for video_key in hourly_activity_summary.dict_videos.keys():
                 hourly_activity_summary_video_item = hourly_activity_summary.dict_videos[video_key]
 
-                playlist_title = "Other"
+                playlist_title = "Overig"
                 if hourly_activity_summary_video_item.playlist_titles:
                     playlist_title = hourly_activity_summary_video_item.playlist_titles[0] # Only count against the first topic for now
 
@@ -105,10 +105,10 @@ def get_exercise_focus_data(user_data, daily_activity_logs, dt_start_utc, dt_end
             dict_exercise_seconds[key_exercise]["time_spent"] = seconds_to_time_string(dict_exercise_seconds[key_exercise]["seconds"], False)
 
             correct = dict_exercise_seconds[key_exercise]["correct"]
-            dict_exercise_seconds[key_exercise]["s_correct_problems"] = "%d correct problem%s without a hint" % (correct, pluralize(correct))
+            dict_exercise_seconds[key_exercise]["s_correct_problems"] = "%d correct probleem%s zonder een hint" % (correct, pluralize(correct))
 
             problems = dict_exercise_seconds[key_exercise]["problems"]
-            dict_exercise_seconds[key_exercise]["s_problems"] = "%d total problem%s" % (problems, pluralize(problems))
+            dict_exercise_seconds[key_exercise]["s_problems"] = "%d problem%s totaal" % (problems, pluralize(problems))
 
             dict_exercise_seconds[key_exercise]["proficient"] = user_data.is_proficient_at(key_exercise)
 

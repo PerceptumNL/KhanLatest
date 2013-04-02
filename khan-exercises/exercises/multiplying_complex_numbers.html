@@ -4,6 +4,12 @@
 	<meta charset="UTF-8" />
 	<title>Complexe getallen vermenigvuldigen</title>
 	<script src="../khan-exercise.js"></script>
+    <style type="text/css">
+        #solutionarea input[type="text"],
+        #solutionarea input[type="number"] {
+            width: 50 px
+        }
+    </style>
 </head>
 <body>
 	<div class="exercise">
@@ -34,8 +40,16 @@
 		<div id="multiply-cplx">
 			<p class="question">Vermenigvuldig de volgende complexe getallen:</p>
 			<p><code>(<var>A_REP</var>) \cdot (<var>B_REP</var>)</code></p>
-			<div class="solution" data-type="complexNumberSeparate">
-				[ <var>ANSWER_REAL</var>, <var>ANSWER_IMAG</var> ]
+			<div class="solution" data-type="multiple">
+                <span class="sol" data-forms="integer,decimal" data-fallback="0" data-inexact data-max-error="0.01">
+                    <var>ANSWER_REAL</var>
+                </span>
+                <code>+</code>
+                <span class="sol" data-forms="integer,decimal" data-fallback="0" data-inexact data-max-error="0.01">
+                    <var>ANSWER_IMAG</var>
+                </span>
+                <code>i</code>
+                
 			</div>
 			<div class="hints">
 				<p>
@@ -45,8 +59,9 @@
 					<p>
 						Gebruik eerst de distributieve eigenschap:
 					</p>
-					<code>\qquad (<var>A_REP</var>) \cdot (<var>B_REP</var>) = 
-						(<var>A_REAL_COLORED</var> \cdot <var>B_REAL_COLORED</var>) + (<var>A_REAL_COLORED</var> \cdot <var>B_IMAG_COLORED</var>i) + 
+					<code>\qquad (<var>A_REP</var>) \cdot (<var>B_REP</var>) = </code><br>
+                    <code>
+						\qquad \qquad (<var>A_REAL_COLORED</var> \cdot <var>B_REAL_COLORED</var>) + (<var>A_REAL_COLORED</var> \cdot <var>B_IMAG_COLORED</var>i) + 
 						(<var>A_IMAG_COLORED</var>i \cdot <var>B_REAL_COLORED</var>) + (<var>A_IMAG_COLORED</var>i \cdot <var>B_IMAG_COLORED</var>i)
 					</code>
 				</div>

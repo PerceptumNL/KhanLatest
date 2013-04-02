@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html data-require="math math-format">
+<head>
+    <meta charset="UTF-8" />
+    <title>Delen met gewone breuken</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-require="DEN2 &gt; NUM && DEN &gt; NUM2">
+	<var id="NUM">randRange(2,3)</var>
+	<var id="NUM2">randRange(2,3)</var>
+	
+	<var  id="DEN">randRange(2,5)</var>
+	<var  id="DEN2">randRange(2,5)</var>
+	
+	
+	<!-- testen
+	
+	<var id="NUM">3</var>
+	<var id="NUM2">2</var>
+	<var  id="DEN">5</var>
+	<var  id="DEN2">6</var> 
+	
+	
+	-->
+	
+	<var id="ONECHT">NUM</var>
+	<var id="ONECHT2">NUM2</var>
+	
+    <var id="PRESIMPLIFYNUM">ONECHT*DEN2</var>           
+ 	<var id="PRESIMPLIFYDEN">DEN*ONECHT2</var>	
+	
+	<var id="REDUCE">reduce(PRESIMPLIFYNUM,PRESIMPLIFYDEN)</var>
+	<var id="ANSWERWHOLE">floorTo(0,PRESIMPLIFYNUM/PRESIMPLIFYDEN)</var>
+	<var id="PREANSWERNUM">PRESIMPLIFYNUM - ANSWERWHOLE*PRESIMPLIFYDEN</var>
+	<var id="PREANSWERDEN">PRESIMPLIFYDEN</var>
+	
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>\color{#000}{<var>fraction(NUM,DEN)</var>} \color{#f00}{\div <var>fraction(NUM2,DEN2)</var>} = </code>.</p>
+            </div>
+            <div class="solution" data-type="rational"><var>PRESIMPLIFYNUM/PRESIMPLIFYDEN</var></div>
+        </div>
+    </div>
+    
+	
+    <div class="hints">
+	
+	<p data-tt="hint2">Delen is vermenigvuldigen met het omgekeerde.<br /><br />	   
+	   <code>
+	      = \color{#000}{<var>fraction(ONECHT, DEN)</var>}	
+	     \color{#f00}{\times
+	    <var>fraction(DEN2,ONECHT2)</var>}  
+	  </code>
+	</p>
+		
+	<p data-tt="hint1d">Nu hoeven we alleen <code> \displaystyle {} \frac{teller \times teller}{noemer  \times noemer} </code> te doen.</br>
+	<br />Kijk zelf of je liever eerst iets wilt wegstrepen.</p>
+
+	<p data-tt="hint1e">
+	<code> 
+	 = \displaystyle {} 
+	\frac{<var>ONECHT</var> \times <var>DEN2</var>}{<var>DEN</var> \times <var>ONECHT2</var>} 
+	  = <var>fraction(PRESIMPLIFYNUM,PRESIMPLIFYDEN)</var></code></p>
+	
+	<!-- simplify the answer -->
+    <!--  testen:
+	<p>REDUCE[0] = <code><var>REDUCE[0]</var></code> <br />
+	REDUCE[1] = <code><var>REDUCE[1]</var></code> <br />
+	ANSWERWHOLE = <code><var>ANSWERWHOLE</var></code> <br />
+	PREANSWERNUM = <code><var>PREANSWERNUM</var></code> <br />
+	PREANSWERDEN = <code><var>PREANSWERDEN</var></code> <br />
+	</p>
+	-->
+	<!--------------------------------------------------------------- -->
+	<!-- =================================== vereenvoudigen =======================  			
+	<!-- =================================== deelsom zonder rest =======================  hint 6 -->
+	<p data-tt="hint5" data-if="ANSWERWHOLE &gt; 0 && PREANSWERNUM &lt; 1">
+	Het antwoord kan worden vereenvoudigd (bekijk de breuk als een deelsom). <br /><br />
+	<code> = 
+	 \color{#00e}{<var>ANSWERWHOLE</var>}
+	</code> 			
+	<!-- =================================== deelsom met rest =======================  hint 6 -->
+	<p data-tt="hint6" data-if="ANSWERWHOLE &gt; 0 && PREANSWERNUM &gt; 0">
+	De teller is groter dan de noemer.<br />
+	Het antwoord kan dus als een gemengde breuk worden geschreven.
+	Bekijk de breuk als een deelsom met rest.<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<code>\color{#00e}{<var>PRESIMPLIFYNUM</var> : <var>PREANSWERDEN</var> = <var>ANSWERWHOLE</var>}</code> &nbsp;&nbsp; rest &nbsp;&nbsp; <code>\color{#00e}{<var>PREANSWERNUM</var>}</code>
+	<br /><br />
+	
+	<code> 
+	\color{#00e}{<var>fraction(PRESIMPLIFYNUM,PRESIMPLIFYDEN,false,false)</var> = 
+	<var>ANSWERWHOLE</var>
+	
+		<var>fraction(PREANSWERNUM,PREANSWERDEN,false,false)</var>}
+		
+		<span data-if="reduces(PREANSWERNUM,PREANSWERDEN)">
+			= <var>ANSWERWHOLE</var><var>fraction(reduce(PREANSWERNUM,PREANSWERDEN)[0],reduce(PREANSWERNUM,PREANSWERDEN)[1])</var>
+		</span>
+	</code>
+	<!-- =================================== delen door factor ===================   hint 7 -->
+	<p data-tt="hint7" data-if="ANSWERWHOLE &lt; 1">
+		
+	   <span data-if="reduces(PREANSWERNUM,PREANSWERDEN)">
+		 Het antwoord kan worden vereenvoudigd.<br /><br /> 
+		 <code>
+			= \color{#00e}{<var>fraction(reduce(PREANSWERNUM,PREANSWERDEN)[0],reduce(PREANSWERNUM,PREANSWERDEN)[1])</var>}
+		 </code>
+		</span>
+	</p>
+	
+    </div>
+    </div>
+</body>
+</html>
+
+
+
+<!--
+
+<!DOCTYPE html>
+<html data-require="math math-format">
+<head>
+    <meta charset="UTF-8" />
+    <title>Delen met gemengde breuken</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars">
+
+	
+	<var id="WHOLE">randRange(1,10)</var>
+	<var id="WHOLE2">randRange(1,10)</var>
+	<var id="NUM">randRange(1,10)</var>
+	<var id="DEN">NUM+randRange(1,10)</var>
+	<var id="NUM2">randRange(1,10)</var>
+	<var id="DEN2">NUM2+randRange(1,10)</var>
+	<var id="REDUCE">reduce(NUM,DEN)</var>
+	<var id="REDUCED">reduce(NUM2,DEN2)</var>
+	<var id="TIMES">floorTo(0, (WHOLE*REDUCE[1])/REDUCE[0])</var>
+	<var id="REDUCE2">reduce((WHOLE*REDUCE[1]+REDUCE[0])*REDUCED[1], REDUCE[1]*(REDUCED[0]+REDUCED[1]*WHOLE2))</var>
+	<var id="TIMES2">floorTo(0, REDUCE2[0]/REDUCE2[1])</var> 
+
+
+	
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+                <p><code>\displaystyle {} <var>WHOLE</var> <var>fraction(REDUCE[0],REDUCE[1])</var> \div <var>WHOLE2</var><var>fraction(REDUCED[0],REDUCED[1])</var></code>.</p>
+            </div>
+            <div class="solution" data-type="rational"><var>(WHOLE+REDUCE[0]/REDUCE[1])/(WHOLE2+REDUCED[0]/REDUCED[1])</var></div>
+        </div>
+    </div>
+
+    <div class="hints">
+	<p data-tt="hint1">Delen door een breuk is hetzelfde als vermenigvuldigen met het omgekeerde.</p>
+	<p data-tt="hint2">We schrijven dus eerst <code>\color{#FFA500}{<var>WHOLE</var>}</code> en <code>\color{#FFA500}{<var>WHOLE2</var>}</code> als <span class="hint_blue">breuken</span>:</p>
+	<p data-tt="hint2a"><code>\color{#FFA500}{<var>WHOLE</var>} = \color{#6495ED}{<var>fraction(WHOLE,1)</var>} = \color{#6495ED}{<var>fraction(WHOLE*REDUCE[1],REDUCE[1])</var>}</code></p>
+	<p data-tt="hint2b"><code>\color{#FFA500}{<var>WHOLE2</var>} = \color{#6495ED}{<var>fraction(WHOLE2,1)</var>} = \color{#6495ED}{<var>fraction(WHOLE2*REDUCED[1],REDUCED[1])</var>}</code></p>
+	<p data-tt="hint2c">Nu tellen we <code>\color{#FFA500}{<var>WHOLE</var>}</code> en <code>\color{#6495ED}{<var>fraction(REDUCE[0],REDUCE[1])</var>}</code> bij elkaar op:<p>
+	<p data-tt="hint2d"><code>\color{#6495ED}{<var>fraction(WHOLE*REDUCE[1],REDUCE[1])</var>} + \color{#6495ED}{<var>fraction(REDUCE[0],REDUCE[1])</var>} = \color{#6495ED}{<var>fraction(WHOLE*REDUCE[1]+REDUCE[0],REDUCE[1])</var>}</code></p>
+	<p data-tt="hint2e">Nu tellen we <code>\color{#FFA500}{<var>WHOLE2</var>}</code> en <code>\color{#6495ED}{<var>fraction(REDUCED[0],REDUCED[1])</var>}</code> bij elkaar op:<p>
+	<p data-tt="hint2f"><code>\color{#6495ED}{<var>fraction(WHOLE2*REDUCED[1],REDUCED[1])</var>} + \color{#6495ED}{<var>fraction(REDUCED[0],REDUCED[1])</var>} = \color{#6495ED}{<var>fraction(WHOLE2*REDUCED[1]+REDUCED[0],REDUCED[1])</var>}</code></p>
+
+	<p data-tt="hint3">Nu kunnen we de twee breuken door elkaar delen:</p>
+	<p data-tt="hint3a"><code>\displaystyle {} \color{#6495ED}{<var>fraction(WHOLE*REDUCE[1]+REDUCE[0],REDUCE[1])</var>} \div \color{#6495ED}{<var>fraction(REDUCED[1]*WHOLE2+REDUCED[0],REDUCED[1])</var>}</code></p>
+	<p data-tt="hint3b"><code> \displaystyle {} = \color{#6495ED}{<var>fraction(WHOLE*REDUCE[1]+REDUCE[0],REDUCE[1])</var>} * \color{#6495ED}{<var>fraction(REDUCED[1],REDUCED[0]+REDUCED[1]*WHOLE2)</var>}</code></p>
+
+	<p data-tt="hint3c"><code> \displaystyle {} = \color{#6495ED}{\frac{<var>WHOLE*REDUCE[1]+REDUCE[0]</var> \times <var> REDUCED[1]</var>}{<var>REDUCE[1]</var> \times <var>REDUCED[0]+REDUCED[1]*WHOLE2</var>}} = \color{#6495ED}{<var>fraction((WHOLE*REDUCE[1]+REDUCE[0])*REDUCED[1], REDUCE[1]*(REDUCED[0]+REDUCED[1]*WHOLE2))</var>}</code></p>
+
+	<p data-tt="hint3d" data-if="reduces((WHOLE*REDUCE[1]+REDUCE[0])*REDUCED[1], REDUCE[1]*(REDUCED[0]+REDUCED[1]*WHOLE2))"> Nu moeten we de breuk nog vereenvoudigen:</p>
+	<p data-tt="hint3e" data-if="reduces((WHOLE*REDUCE[1]+REDUCE[0])*REDUCED[1], REDUCE[1]*(REDUCED[0]+REDUCED[1]*WHOLE2))"><code> \color{#6495ED}{<var>fraction(WHOLE*REDUCE[1]*REDUCE[1], REDUCE[1]*(REDUCE[0]+REDUCE[1]*WHOLE2))</var>} = \color{#6495ED}{<var>fraction(REDUCE2[0],REDUCE2[1])</var>}</code>
+	<p data-tt="hint4" data-if="REDUCE2[0] &gt; REDUCE2[1]">De teller is groter dan de noemer. We kunnen <code>\color{#FFA500}{<var>TIMES2</var>}</code> keer een <span class="hint_orange">geheel getal</span> uit de breuk halen, met een rest van <code>\color{#6495ED}{<var>REDUCE2[0]-REDUCE2[1]*TIMES2</var>}</code>.</p>
+
+	<p data-tt="hint4b" data-if="REDUCE2[0] &gt; REDUCE2[1]">Dan krijgen we dus <code>\color{#6495ED}{<var>fraction(REDUCE2[0],REDUCE2[1])</var>} - (\color{#FFA500}{<var>TIMES2</var>} * \color{#6495ED}{<var>fraction(REDUCE2[1],REDUCE2[1])</var>}) = \color{#6495ED}{<var>fraction(REDUCE2[0]-(TIMES2*REDUCE2[1]),REDUCE2[1])</var>}</code></p>
+	<p data-tt="hint4b" data-if="REDUCE2[0] &gt; REDUCE2[1]">Het antwoord wordt dus <code>\color{#FFA500}{<var>TIMES2</var>}</code> <span data-if="REDUCE2[0]-(REDUCE2[1]*TIMES2) &gt; 0"><code>\color{#6495ED}{<var>fraction(REDUCE2[0]-(TIMES2*REDUCE2[1]),REDUCE2[1])</var>}</span></code></p>
+	
+    </div>
+    </div>
+</body>
+</html>
+-->

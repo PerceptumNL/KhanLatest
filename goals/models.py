@@ -276,7 +276,7 @@ class GoalObjective(object):
         objs = []
         for desc in descriptors:
             if desc['type'] == 'GoalObjectiveExerciseProficiency':
-                objs.append(GoalObjectiveExerciseProficiency(desc['oefening'],
+                objs.append(GoalObjectiveExerciseProficiency(desc['exercise'],
                     user_data))
             elif desc['type'] == 'GoalObjectiveWatchVideo':
                 objs.append(GoalObjectiveWatchVideo(desc['video'], user_data))

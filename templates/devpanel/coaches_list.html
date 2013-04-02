@@ -1,0 +1,35 @@
+{% extends "devpanel/panel_template.html" %}
+
+{% block pagecss %}
+<style>
+    #devpanel {
+        width: 100%;
+    }
+</style>
+{% endblock pagecss %}
+
+{% block panelcontent %}
+
+<div id="myGrid" style="width:980px;height:500px;margin:auto"></div>
+{{ js_css_packages.js_package("slickgrid") }}
+{{ js_css_packages.css_package("slickgrid") }}
+<script>
+  var data = {{ json.dumps(rows) }};
+  var columns = [
+    {id: "joined", name: "Joined", width: "300", field: "joined", sortable: true},
+    {id: "last_activity", name: "Last activity", field: "last_activity", width: "300", sortable: true },
+    {id: "coach_email", name: "Coach Email", field: "coach_email", width: "500", sortable: true},
+    {id: "number_of_students", name: "No. Students", field: "number_of_students", width: "300", sortable: true},
+  ];
+
+  var options = {
+    enableCellNavigation: true,
+    enableColumnReorder: false,
+    forceFitColumns: true 
+  };
+
+  var grid = new Slick.Grid("#myGrid", data, columns, options);
+</script>
+</div>
+
+{% endblock panelcontent %}

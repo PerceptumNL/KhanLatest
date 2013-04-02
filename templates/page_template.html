@@ -141,7 +141,6 @@
     <script src="http://video.khanacademie.nl/js/lib/jquery.cookie.js"></script>
     <script>
         function hideCookieMessage() {
-            console.log('hiding');
             $.cookie("cookieMessage", "read");
             $("#cookie-message").hide();
         }
@@ -150,7 +149,6 @@
             if ($.cookie("cookieMessage") == null) {
                 $("#cookie-message").show();
             }
-            console.log($("div").length);
             $("#button-cookie-ok").click(function () {
                 hideCookieMessage();
             });
@@ -204,7 +202,7 @@
             <div id="top-header">
                 <div class="top-header-links">
                     <div id="navbar">
-                        <a id="logo" href="/" title="Take me home!" data-tag="Header">
+                        <a id="logo" href="/" title="Naar de homepage!" data-tag="Header">
                         </a>
                     <span class="page_links" id="page_auth">
                         <span id="goals-container"></span>
@@ -219,6 +217,16 @@
 
                         <div id="stats">
                         </div>
+                        <div id="search-box">
+                                <form class="page-search" action="/search">
+                                    <input id="search-input"
+				    type="text" placeholder="Zoek op video's en oefeningen"
+                                           name="page_search_query" value='{{ page_search_query|escape }}'
+                                           class="ui-corner-all placeholder simple-input search-input blur-on-esc"/>
+                                    <input
+                                            type="submit" value=" " class="search-submit"/>
+                                </form>
+                            </div>
                         <div class="site-wide-navigation">
                             <ul class="links nav-subheader">
                                 <li>
@@ -285,16 +293,7 @@
                                 -->
                                 </span>
                             </ul>
-                            <div id="search-box">
-                                <form class="page-search" action="/search">
-                                    <input id="search-input"
-				    type="text" placeholder="Zoek op video's en oefeningen"
-                                           name="page_search_query" value='{{ page_search_query|escape }}'
-                                           class="ui-corner-all placeholder simple-input search-input blur-on-esc"/>
-                                    <input
-                                            type="submit" value=" " class="search-submit"/>
-                                </form>
-                            </div>
+                            
                             <!-- TODO what is this .clear class all about? -->
                             <div class="clear">
                             </div>

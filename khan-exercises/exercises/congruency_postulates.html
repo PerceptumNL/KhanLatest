@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html  data-translatable data-require="math graphie graphie-helpers graphie-geometry math-format interactive congruence">
+<html data-translatable data-require="math graphie graphie-helpers graphie-geometry math-format interactive triangle-congruence">
 <head>
-    <meta charset="UTF-8" />
-    <title>Congruentie voorwaarden</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Congruency Postulates</title>
     <script src="../khan-exercise.js"></script>
+    <style>
+        div#triangles {
+            outline-color: #999;
+            outline-style: dashed;
+            outline-width: 1px;
+        }
+    </style>
 </head>
 <body>
     <div class="exercise">
@@ -22,36 +29,37 @@
                         ( ( TYPE !== 'SSA' ) || ( (TRIANGLE.niceSideLengths[0] + 1) < TRIANGLE.niceSideLengths[1] && abs(ANGLES[0] - 90) > 10 ) )">
                     <var id="TYPE">randFromArray([ "SSS", "SAS", "SAA", "ASA", "SSA", "SSA", "AAA" ])</var>
                     <var id="NAME">{
-                            "SSS": "Zijde-Zijde-Zijde",
-                            "SAS": "Zijde-Hoek-Zijde",
-                            "SAA": "Zijde-Hoek-Hoek",
-                            "ASA": "Hoek-Zijde-Hoek",
-                            "SSA": "Zijde-Zijde-Hoek",
-                            "AAA": "Hoek-Hoek-Hoek"
+                            "SSS": "Side-Side-Side",
+                            "SAS": "Side-Angle-Side",
+                            "SAA": "Side-Angle-Angle",
+                            "ASA": "Angle-Side-Angle",
+                            "SSA": "Side-Side-Angle",
+                            "AAA": "Angle-Angle-Angle"
                         }[ TYPE ]
                     </var>
                     <var id="ANGLES">randomTriangleAngles.triangle()</var>
                     <var id="SCALE">5 + random() * 2</var>
                     <var id="REFLECTED">randRange( 0, 1 ) === 1 ? true : false</var>
-                    <var id="ANSWER">{ "SSS": "Ja", "SAS": "Ja", "SAA": "Ja", "ASA": "Ja", "SSA": "Nee", "AAA": "Nee" }[ TYPE ]</var>
+                    <var id="ANSWER">{ "SSS": "Yes", "SAS": "Yes", "SAA": "Yes", "ASA": "Yes", "SSA": "No", "AAA": "No" }[ TYPE ]</var>
                     <var id="TRIANGLE">new Triangle( [ 0, 0 ], ANGLES, SCALE, {} )</var>
+                    <var id="ROTATION">randRange( 0, 360 )</var>
                 </div>
-                <p  data-tt="problem1" class="problem">
-                    <strong>Is <em><var>NAME</var></em> een congruentie voorwaarde?</strong><br />
-                    Beantwoord de vraag door de punten hieronder te slepen om te zien hoeveel verschillende driehoeken je kunt maken.<br />
-                    Als je denkt dat <var>NAME</var> niet een congruentie voorwaarde is, bewijs dit door het maken van niet congruente driehoeken.
-                    Maak anders congruente driehoeken.
+                <p class="problem">
+                    <strong>Is <em><var>NAME</var></em> een congruentie-voorwaarde?</strong><br />
+                    Beantwoord de vraag door de punten hieronder te slepen om te zien hoeveel verschillende driehoeken je kunt maken.
+Als je denkt dat <var>NAME</var> niet een congruentie voorwaarde is, bewijs dit door het maken van niet congruente driehoeken. Maak anders congruente driehoeken.<br />
+                    
                 </p>
-                <div  class="question">
-                    <em data-tt="question1"> Je driehoek kan overal staan. Het is niet nodig de 2 driehoeken over elkaar te leggen.</em>
+                <div class="question">
+                    <em>Je driehoek mag overal staan. Ze hoeven niet naast elkaar te staan.</em>
                     <div class="graphie" id="triangles">
                         init({
-                            range: [ [ -7, 7 ], [ -7, 7 ] ]
+                            range: [ [ -6.2, 6.2 ], [ -5.9, 6.5 ] ]
                         });
                         addMouseLayer();
                         initCongruence({ triangle: TRIANGLE, type: TYPE, reflected: REFLECTED });
 
-                        TRIANGLE.rotate( randRange( 0, 360 ) );
+                        TRIANGLE.rotate( ROTATION );
                         style({ stroke: "#b1c9f5", "stroke-width": 5 });
                         TRIANGLE.translate([
                             -5 - Math.min(TRIANGLE.points[0][0], TRIANGLE.points[1][0], TRIANGLE.points[2][0]),
@@ -63,12 +71,144 @@
                     </div>
                 </div>
 
-                <div class="solution" data-type="congruence">
-                    <ul>
-                        <li data-tt="list1" ><input type="radio" name="solution" id="r1" value="Ja" /><label for="r1"><span class="value">Ja &mdash; En ik heb een congruente driehoek gemaakt.</span></label></li>
-                        <li data-tt="list2" ><input type="radio" name="solution" id="r2" value="Nee" /><label for="r2"><span class="value">Nee &mdash; En ik heb dit bewezen door een niet-congruente driehoek te maken.</span></label></li>
-                    </ul>
-                    <div class="answer"><var>ANSWER</var></div>
+                <div class="solution" data-type="custom">
+                    <div class="instruction">
+                        <ul>
+                            <li><label><input type="radio" name="solution" value="Yes"><span class="value">
+                                Ja — En ik heb een congruente driehoek gemaakt.
+                            </span></label></li>
+                            <li><label><input type="radio" name="solution" value="No"><span class="value">
+                                Nee — En ik heb dit bewezen door een niet-congruente driehoek te maken
+                            </span></label></li>
+                        </ul>
+                    </div>
+                    <div class="guess">[
+                        $( "#solutionarea" ).find( "input:checked" ).val(),
+                        interactiveTriangle.points[0].coord,
+                        interactiveTriangle.points[1].coord,
+                        interactiveTriangle.points[2].coord,
+                        interactiveTriangle.points[3].coord
+                    ]</div>
+                    <div class="validator-function">
+                        var saved = $.map( new Array( 4 ), function( el, n ) {
+                            return [ interactiveTriangle.points[ n ].coord ];
+                        });
+                        $.map( guess.slice( 1 ), function( el, n ) {
+                            interactiveTriangle.points[ n ].setCoord( el );
+                        });
+                        interactiveTriangle.update();
+                        var isTriangle = interactiveTriangle.isTriangle;
+                        var isCongruent = abs( getDistance( guess[1], guess[2] ) - TRIANGLE.sideLengths[ 0 ] ) &lt; 0.001
+                            &amp;&amp; abs( getDistance( guess[2], guess[3] ) - TRIANGLE.sideLengths[ 1 ] ) &lt; 0.001
+                            &amp;&amp; abs( getDistance( guess[3], guess[4] ) - TRIANGLE.sideLengths[ 2 ] ) &lt; 0.001;
+                        $.map( saved, function( el, n ) {
+                            interactiveTriangle.points[ n ].setCoord( el );
+                        });
+                        interactiveTriangle.update();
+                        if ( guess[0] == null ) {
+                            return "";
+                        } else if ( guess[0] !== ANSWER ) {
+                            return false;
+                        } else if ( !isTriangle ) {
+                            return "Je antwoord is bijna goed, maar je hebt geen driehoek gemaakt!.";
+                        } else if ( ANSWER === "No" &amp;&amp; isCongruent ) {
+                            return "Je antwoord is bijna goed, maar de twee driehoeken zijn congruent. Bewijs je antwoord door een incongruente driehoek te maken.";
+                        } else {
+                            return true;
+                        }
+                    </div>
+                    <div class="show-guess">
+                        $.map( guess.slice( 1 ), function( el, n ) {
+                            interactiveTriangle.points[ n ].setCoord( el );
+                        });
+                        interactiveTriangle.update();
+                    </div>
+                    <div class="show-guess-solutionarea">
+                        $( "#solutionarea" ).find( "input:checked" ).prop( 'checked', false );
+                        if ( guess[0] != null ) {
+                            $( "#solutionarea" ).find( "input[value=" + guess[0] + "]" ).prop( 'checked', true );
+                        }
+                    </div>
+                </div>
+
+                <div class="hints">
+                    <p>
+                        Om een congruentie-voorwaarde te zijn mag er maar &eacute;&eacute;n <em>en slechts &eacute;&eacute;n </em> manier zijn om een driehoek te maken die hetzelfde is als de originele driehoek&mdash;behalve het verplaatsen, reflecteren of draaien ervan.
+                    </p>
+                    <p data-if="ANSWER === 'Yes'">
+                        Met de limieten van <var>NAME</var> is er precies &eacute;&eacute;n manier om een driehoek te maken.
+                    </p>
+                    <p data-if="ANSWER === 'Yes'">
+                        <strong><var>NAME</var> is een congruentie-voorwaarde.</strong> Maak de congruente driehoek en bedenk waarom je de driehoek maar op &eacute;&eacute;n manier kunt maken.
+                    </p>
+
+                    <p data-if="TYPE === 'SSA'">
+                        Met de limieten van <var>NAME</var>, is er meer dan &eacute;&eacute;n manier om een driehoek te maken. Probeer of je beide manieren kan vinden.
+                    </p>
+                    <div data-if="TYPE === 'SSA'">
+                        <p>Beide driehoeken hebben dezelfde aangrenzende Zijde, Zijde en Hoek, maar ze zijn niet congruent:
+                        <div class="graphie">
+                            var triangle = new Triangle( [ 0, 0 ], ANGLES, SCALE, {} );
+                            triangle.rotate( -ANGLES[1] );
+                            init({ range: triangle.boundingRange( 0.4 ) });
+                            addMouseLayer();
+                            style({ stroke: "#b1c9f5", "stroke-width": 5 });
+                            path( [ lineMidpoint( triangle.sides[ 2 ] ), triangle.points[2], triangle.points[1], triangle.points[0], lineMidpoint( triangle.sides[ 2 ] ) ] );
+                            addTriangleDecorations( triangle, TYPE );
+                            KhanUtil.currentGraph = $( "div#triangles" ).data().graphie
+                        </div>
+                        <div class="graphie">
+                            var points = [
+                                [
+                                    TRIANGLE.sideLengths[ 1 ] - cos( ( 180 - ( 180 - ANGLES[ 0 ] ) - ANGLES[ 2 ] ) * PI / 180 ) * TRIANGLE.sideLengths[ 0 ],
+                                    -sin( ( 180 - ( 180 - ANGLES[ 0 ] ) - ANGLES[ 2 ] ) * PI / 180 ) * TRIANGLE.sideLengths[ 0 ]
+                                ],
+                                [ TRIANGLE.sideLengths[ 1 ], 0 ],
+                                [ 0, 0 ]
+                            ];
+                            var triangle = new Triangle( [], [], 0, {}, points );
+                            init({ range: triangle.boundingRange( 0.4 ) });
+                            addMouseLayer();
+                            style({ stroke: "#b1c9f5", "stroke-width": 5 });
+                            path( [ lineMidpoint( triangle.sides[ 2 ] ), triangle.points[2], triangle.points[1], triangle.points[0], lineMidpoint( triangle.sides[ 2 ] ) ] );
+                            addTriangleDecorations( triangle, TYPE );
+                            KhanUtil.currentGraph = $( "div#triangles" ).data().graphie
+                        </div>
+                    </div>
+                    <p data-if="TYPE === 'SSA'">
+			Omdat we twee driehoeken kunnen maken die niet congruent zijn kunnen we met een tegenvoorbeeld laten zien dat <strong>Zijde-Zijde-Hoek geen congruentie-voorwaarde is.</strong> Maak de incongruente driehoek hierboven om dit te bewijzen.
+                    </p>
+
+                    <p data-if="TYPE === 'AAA'">
+                       Met de limieten van <var>NAME</var> is er meer dan &eacute;&eacute;n manier om een driehoek te maken. Probeer een paar verschillende manieren te vinden.
+                    </p>
+                    <div data-if="TYPE === 'AAA'">
+                        <p>Deze twee driehoeken hebben dezelfde drie hoeken, maar ze zijn niet congruent (alleen gelijksoortig).
+                        <div class="graphie" style="float: left">
+                            style({ stroke: "#b1c9f5", "stroke-width": 5 });
+                            init({ range: TRIANGLE.boundingRange( 0.4 ) });
+                            addMouseLayer();
+                            style({ stroke: "#b1c9f5", "stroke-width": 5 });
+                            path( [ lineMidpoint( TRIANGLE.sides[ 2 ] ), TRIANGLE.points[2], TRIANGLE.points[1], TRIANGLE.points[0], lineMidpoint( TRIANGLE.sides[ 2 ] ) ] );
+                            addTriangleDecorations( TRIANGLE, TYPE );
+                            KhanUtil.currentGraph = $( "div#triangles" ).data().graphie
+                        </div>
+                        <div class="graphie" style="float: left">
+                            var triangle = new Triangle( [ 0, 0 ], ANGLES, SCALE - 4, {} );
+                            triangle.rotate( ROTATION );
+                            style({ stroke: "#b1c9f5", "stroke-width": 5 });
+                            init({ range: triangle.boundingRange( 0.4 ) });
+                            addMouseLayer();
+                            style({ stroke: "#b1c9f5", "stroke-width": 5 });
+                            path( [ lineMidpoint( triangle.sides[ 2 ] ), triangle.points[2], triangle.points[1], triangle.points[0], lineMidpoint( triangle.sides[ 2 ] ) ] );
+                            addTriangleDecorations( triangle, TYPE );
+                            KhanUtil.currentGraph = $( "div#triangles" ).data().graphie
+                        </div>
+                    </div>
+                    <p data-if="TYPE === 'AAA'" style="clear: left">
+                        Omdat we driehoeken kunnen maken die niet congruent zijn kunnen we met een tegenvoorbeeld laten zien dat <strong>Hoek-Hoek-Hoek geen congruentie-voorwaarde is.</strong> Zorg dat je hierboven een incongruente driehoek maakt om dit te bewijzen.
+                    </p>
+
                 </div>
             </div>
 
@@ -76,3 +216,5 @@
     </div>
 </body>
 </html>
+
+

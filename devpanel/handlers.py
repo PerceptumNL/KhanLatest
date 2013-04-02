@@ -17,6 +17,18 @@ class Panel(request_handler.RequestHandler):
         self.render_jinja2_template('devpanel/panel.html',
                                     {"selected_id": "panel"})
 
+class CoachesList(request_handler.RequestHandler):
+
+    @user_util.developer_required
+    def get(self):
+        import coaches_utils
+        template_values = {
+            "rows": coaches_utils.get_coaches_students_count()
+        }
+
+        self.render_jinja2_template("devpanel/coaches_list.html",
+                                    template_values)
+
 
 class MergeUsers(request_handler.RequestHandler):
 

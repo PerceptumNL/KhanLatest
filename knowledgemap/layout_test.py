@@ -36,7 +36,7 @@ class LayoutTest(gae_model.GAEModelTestCase):
         self.testbed.activate()
         self.testbed.init_taskqueue_stub()
         self.taskqueue_stub = self.testbed.get_stub(testbed.TASKQUEUE_SERVICE_NAME)
-        json_data=open('testutil/topictree-es.json')
+        json_data=open('testutil/topictree.json')
         data = json.load(json_data)
         version = topic_models.TopicVersion.create_new_version()
         version.default = True
@@ -50,7 +50,7 @@ class LayoutTest(gae_model.GAEModelTestCase):
     def test_layout_from_editversion(self):
         version = topic_models.TopicVersion.get_edit_version()
         root = topic_models.Topic.get_root(version)
-        layout = MapLayout.from_editversion()
+        layout = MapLayout.from_version()
         self.assertEqual(len(layout['topics']), 1)
 
 

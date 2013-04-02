@@ -92,10 +92,11 @@
     {% endif %}
 
     <section class="searchresult-counts">
-        {% if (_count == 0 and topic_count == 0) %}
+        {% if (video_count == 0 and topic_count == 0) %}
 	    Geen video's gevonden. Probeer andere zoektermen.	
         {% else %}
-            {{ video_count }} video{{ video_count|pluralize }} gevonden in {{ topic_count }} onderwerp{{ topic_count|pluralize }} die voldoen{% if video_count == 1 %}es{% endif %} aan jouw zoektocht:
+        {# XXX would be proper to pluralize with gettext #}
+        {{ video_count }} {% if video_count == 1 %}video{% else %}video's{% endif %} gevonden in {{ topic_count }} onderwerp{{ topic_count|pluralize }} die {% if video_count == 1 %}voldoet{% else %}voldoen{% endif %} aan jouw zoektocht:
         {% endif %}
     </section>
     {% if topics %}
@@ -124,14 +125,14 @@
                         {% endif %}
                       </div>
                       <div class="column">
-                        <p class="column-heading">Watch</p>
+                        <p class="column-heading">Bekijk</p>
                         <ul>
-                          <li><a href="{% if video.relative_url %}{{video.relative_url}}{% else %}{{video.url}}{% endif %}" data-tag="Search Body" class="vl"><span class="vid-progress v{{ video.key().id() }}">Watch the video lesson</a></li>
+                          <li><a href="{% if video.relative_url %}{{video.relative_url}}{% else %}{{video.url}}{% endif %}" data-tag="Search Body" class="vl"><span class="vid-progress v{{ video.key().id() }}">Bekijk de video</a></li>
                         </ul>
                       </div>
                       {% if video_exercises[video.key().__str__()] %}
                       <div class="column">
-                        <p class="column-heading">Practice Exercises</p>
+                        <p class="column-heading">Oefen</p>
                           <ul>
                             {% for exercise in video_exercises[video.key().__str__()] %}
                               <li><a href="{{ exercise.relative_url }}" data-tag="Search Body" class="exercise-link">{{ exercise.display_name|escape }}</a></li>
@@ -144,7 +145,7 @@
                 {% endif %}
             {% endfor %}
             <li>
-                <a href="{{ topic.relative_url }}" data-tag="Search Body">See all videos from topic {{ topic.standalone_title|escape }}</a>
+                <a href="{{ topic.relative_url }}" data-tag="Search Body">Bekijk alle video's van het onderwerp {{ topic.standalone_title|escape }}</a>
             </li>
             </ol>
         {% endif %}

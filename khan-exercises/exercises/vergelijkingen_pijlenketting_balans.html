@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format simplify graphie">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pijlenketting en de Balans</title>
+    <script src="../khan-exercise.js"></script>
+    <script type="text/javascript">
+
+    /**
+     * Show a graphic like:
+     *      +4       x3
+     * ... ---) ... ---) 18
+     * Where +4 is the first operation, x3 the second operation, 18 the label and the direction of the arrows 'reverse'.
+     */
+    var PijlenKetting = function(firstOperation, secondOperation, outputLabel, reverse) {
+        var label1;
+        var label2;
+        with(KhanUtil.currentGraph) {
+            init({
+                range: [[-0.2, 2.2], [-0.2, 0.2]],
+                scale: [120, 120]
+            });
+
+            this.setLabel1 = function(text) {
+                if(label1)
+                    label1.remove();
+                label1 = label([0, 0], text);
+            }
+
+            this.setLabel2 = function(text) {
+                if(label2)
+                    label2.remove();
+                label2 = label([1, 0], text);
+            }
+
+            this.setLabel1("\\ldots");
+            this.setLabel2("\\ldots");
+            label([ 2, 0], "\\color{red}{" + outputLabel + "}");
+
+            label([0.5, 0.1], "\\color{green}{" + firstOperation + "}");
+            label([1.5, 0.1], "\\color{blue}{" + secondOperation + "}");
+
+            style({
+                arrows: "-&gt;"
+            }, function() {
+                // Arrows
+                var arrowSpacing = 0.15;
+                if(reverse) {
+                    line([1 - arrowSpacing, 0], [arrowSpacing, 0]);
+                    line([2 - arrowSpacing, 0], [1 + arrowSpacing, 0]);
+                } else {
+                    line([0 + arrowSpacing, 0], [1 - arrowSpacing, 0]);
+                    line([1 + arrowSpacing, 0], [2 - arrowSpacing, 0]);
+                }
+            });
+        }
+    }
+
+    /**
+     * Formats an operation like {op: "*", args[4]} as "\times 4".
+     * Used for display in the Pijlenketting
+     */
+    function formatOperation(operation) {
+        var op = KhanUtil.exprClone(operation);
+
+        // Prepend invisible something so that the operation is formatted '\times 4' instead of just '4'
+        op.args.unshift({op: "empty", args: []}); 
+        return KhanUtil.format(op);
+    }
+
+    /**
+     * Returns an inversed operation for multiplication and addition operations
+     * (respectively subtraction and division)
+     */
+    function inverseOperation(operation) {
+        var inverseOp = KhanUtil.exprClone(operation);
+        if (inverseOp.op == "+") {
+            inverseOp.args[0] = -inverseOp.args[0];
+        } else if(inverseOp.op == "*") {
+            inverseOp.op = "div";
+        }
+        return inverseOp;
+    }
+
+    /**
+     * Takes an argument (a number or operation) and an operation and combines them
+     * For example the operations 4 and *5 will be combined into 5*4 (or 4*5 if argumentInFront)
+     */
+    function combineOperation(argument, operation, argumentInFront) {
+        combined = KhanUtil.exprClone(operation);
+        if(argumentInFront)
+            combined.args.unshift(argument);
+        else
+            combined.args.push(argument);
+
+        return KhanUtil.simplify(combined);
+    }
+
+    /**
+     * Returns a copy of the expression but formatted in the given color
+     */
+    function colorExpression(expression, color) {
+        if (typeof(expression) == "number")
+            expr = {op: "+", args: [expression]}
+        else
+            expr = KhanUtil.exprClone(expression);
+
+        expr.style = {color: color};
+        return expr;
+    }
+    </script
+</head>
+<body>
+    <div class="exercise">
+
+        <div class="vars">
+            <var id="letter">shuffle("abcdefghijkmnpqrstuvwxyz")[0]</var>
+            <var id="A">randRangeExclude(-5, 10, [-1, 0, 1])</var>
+            <var id="B">randRangeExclude(-5, 10, [-1, 0, 1])</var>
+            <var id="x">randRange(1, 10)</var>
+            <var id="firstArgInFront">randRange(0, 1) == 0</var>
+        </div>
+
+        <div class="question">
+            <p>Los de vergelijking op met de pijlenketting</p>
+            <p><code><var>format(combineOperation(combineOperation({op: "var", args: letter}, operation1, firstArgInFront), operation2, true))</var> = <var>constant</var></code></p>
+        </div>
+        
+        <div class="hints">
+            <p>Maak bij de vergelijking een pijlenketting</p>
+            <div class="graphie">PijlenKetting(formatOperation(operation1), formatOperation(operation2), constant)</div>
+
+            <p>Maak de omgekeerde pijlenketting</p>
+            <div class="graphie" id="reverse">pk = new PijlenKetting(formatOperation(inverseOperation(operation1)), formatOperation(inverseOperation(operation2)), constant, true)</div>
+
+            <div>
+                <p><code><var>format(combineOperation(colorExpression(constant, "red"), colorExpression(inverseOperation(operation2), "blue"), true))</var> = \color{gray}{<var>intermediate</var>}</code></p>
+                <div class="graphie" data-update="reverse">
+                    pk.setLabel2("\\color{gray}{" + intermediate + "}");
+                </div>
+            </div>
+            
+            <div>
+                <p><code><var>format(combineOperation(colorExpression(intermediate, "gray"), colorExpression(inverseOperation(operation1), "green"), true)) + " = " + x</var></code></p>
+                <div class="graphie" data-update="reverse">
+                    pk.setLabel1(x);
+                </div>
+            </div>
+            
+            <p>De oplossing is <code><var>letter</var> = <var>x</var></code></p>    
+        </div>
+
+
+        <div class="problems">
+            <div id="multiplication-first">
+                <div class="vars">
+                    <var id="operation1">{op: "*", args: [A]}</var>
+                    <var id="operation2">{op: "+", args: [B]}</var>
+                    <var id="constant">A*x + B</var>
+                    <var id="intermediate">constant - B</var>
+                </div>
+            </div>
+            <div id="addition-first">
+                <div class="vars" data-ensure="A + x !== 0">
+                    <var id="operation1">{op: "+", args: [A]}</var>
+                    <var id="operation2">{op: "*", args: [B]}</var>
+                    <var id="constant">(A+x) * B</var>
+                    <var id="intermediate">constant / B</var>
+                </div>
+            </div>
+            
+            <div id="balans" data-type="multiplication-first">
+                <div class="vars" data-ensure="A + C > 1">
+                    <var id="firstArgInFront">false</var>
+                    <var id="C">randRange(2, 15)</var>
+                </div>
+                
+                <div class="question">
+                    <p>Los de vergelijking op met de balans en de omgekeerde pijlenketting</p>
+                    <p><code><var>(A + C) + letter</var> + <var>B</var> = <var>C + letter</var> + <var>constant</var></code></p>
+                </div>
+                
+                <div class="hints" data-apply="prependContents">
+                    <p>Neem aan beide kanten van de balans <var>C</var> zakjes weg</p>
+                    <p>Bij de nieuwe balans past dan de vergelijking 
+                        <code><var>A + letter</var> + <var>B</var> = <var>constant</var></code>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="solution" data-forms="integer"><var>x</var></div>
+
+    </div>
+</body>
+</html>
+

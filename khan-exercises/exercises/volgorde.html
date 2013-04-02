@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html data-require="math graphie graphie-helpers-arithmetic word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Getallenlijn</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-ensure ="(C<A && A<B)||(C>A && A>B)">
+        <var id="LOWER_BOUND">0</var>
+        <var id="UPPER_BOUND">10</var>
+        <var id="A">randRangeNonZero( LOWER_BOUND, UPPER_BOUND )</var>
+	<var id ="B" data-ensure="B!=A">randRange(1,10)</var>
+	<var id ="C" data-ensure="B!=C && C!=A">randRange(1,10)</var>
+	
+    </div>
+    <div class="problems">
+        <div>
+            <div class="question">
+                <p>Welk getal is kleiner dan <code>\color{#FFA500}{<var>A</var>}</code>? Je kunt kiezen uit <code>\color{#6698FF}{<var>B</var>}</code> en <code>\color{#6698FF}{<var>C</var>}</code>.</p>
+               
+            </div>
+            <div class="solution">
+                <div data-if="B<A && C>A" class="sol" data-type="decimal"><var>B</var></div>
+		<div data-if="B>A && C<A" class="sol" data-type="decimal"><var>C</var></div>
+           	 </div>
+		
+            <div class="hints">
+		<p>Laten we eerst kijken naar hoeveel <code>\color{#FFA500}{<var>A</var>}</code> is:</p>
+		    <div class="graphie">
+                    init({
+                        range: [ [0, 12], [-1, 1] ]
+                    });
+			 drawCircles( A, "#FFA500" );
+                  
+                </div>
+		<p> En nu hoeveel <code>\color{#6698FF}{<var>B</var>}</code> en <code>\color{#6698FF}{<var>C</var>}</code> zijn:</p>
+	 	<div class="graphie">
+                    init({
+                        range: [ [0, 12], [-1, 1] ]
+                    });
+			 drawCircles( B, "#6698FF" );
+
+                  
+                </div>
+		<div class="graphie">
+                    init({
+                        range: [ [0, 12], [-1, 1] ]
+                    });
+			 drawCircles( C, "#6698FF" );
+
+                  
+                </div>
+		Nu kun je eigenlijk al zien welk getal groter is. 
+		<p>Voor de duidelijkheid zetten we de getallen op een getallenlijn:</p>
+		 <div class="graphie" id="number-line">
+                    init({
+                        range: [ [LOWER_BOUND - 1, UPPER_BOUND + 1], [-1, 1] ]
+                    });
+
+                    line( [ LOWER_BOUND, 0 ], [ UPPER_BOUND, 0 ] );
+                    for ( var x = LOWER_BOUND; x &lt;= UPPER_BOUND; x++ ) {
+                        line( [ x, -0.2 ], [ x, 0.2 ] );
+                    }
+                    style({ stroke: "#000000", strokeWidth: 3.5 });
+                    line( [ 0, -0.2], [0, 0.2]);
+                    label( [ 0, -0.53 ],  "0", "center", { color: "#000000" });
+                    
+                    style({ stroke: "#FFA500", fill: "#FFA500" });
+                    graph.orangeDot = circle( [ A, 0 ], 0.10 );
+			style({ stroke: "#6698FF", fill: "#6698FF" });
+			graph.yellowDot = circle([B,0],0.10);
+			style({stroke: "#6698FF", fill: "#6698FF"});
+			graph.blueDot = circle([C,0],0.10);
+		label([A,-0.53], <var>A</var>, "center", {color: "#FFA500"});
+		label([B,-0.53], <var>B</var>, "center", {color: "#6698FF"});
+		label([C,-0.53], <var>C</var>, "center", {color: "#6698FF"});
+                </div>
+                <div data-if="B<A && C>A" >Nu is duidelijk te zien dat <code>\color{#6698FF}{<var>B</var>}</code> kleiner is dan <code>\color{#FFA500}{<var>A</var>}</code>, en <code>\color{#6698FF}{<var>C</var>}</code> niet.</div>
+		<div data-if="B>A && C<A" >Nu is duidelijk te zien dat <code>\color{#6698FF}{<var>C</var>}</code> kleiner is dan <code>\color{#FFA500}{<var>A</var>}</code>, en <code>\color{#6698FF}{<var>B</var>}</code> niet.</div>
+                   
+        </div>
+    </div>
+</body>
+</html>

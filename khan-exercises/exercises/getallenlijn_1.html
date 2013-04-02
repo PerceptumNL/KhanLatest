@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math graphie word-problems interactive">
+<head>
+    <meta charset="UTF-8" />
+    <title>Getallenlijn 1</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars">
+        <var id="LOWER_BOUND">0</var>
+        <var id="UPPER_BOUND">10</var>
+        <var id="NUMBER">randRangeNonZero( LOWER_BOUND, UPPER_BOUND )</var>
+    </div>
+    <div class="problems">
+        <div>
+            <div class="question">
+                <p data-tt="exercise">Sleep de oranje stip naar <strong><var>NUMBER</var></strong>. De afstand tussen de streepjes is 1.</p>
+                <div class="graphie" id="number-line">
+                    init({
+                        range: [ [LOWER_BOUND - 1, UPPER_BOUND + 1], [-1, 1] ]
+                    });
+
+                    line( [ LOWER_BOUND, 0 ], [ UPPER_BOUND, 0 ] );
+                    for ( var x = LOWER_BOUND; x &lt;= UPPER_BOUND; x++ ) {
+                        line( [ x, -0.2 ], [ x, 0.2 ] );
+                    }
+                    style({ stroke: "#6495ED", strokeWidth: 3.5 });
+                    line( [ 0, -0.2], [0, 0.2]);
+                    label( [ 0, -0.53 ],  "0", "center", { color: "#6495ED" });
+
+                    addMouseLayer();
+                    this.movablePoint = addMovablePoint({ constraints: { constrainY: true }, snapX: 0.25 });
+                    movablePoint.onMove = function( x, y ) {
+                        if (x &lt; LOWER_BOUND || UPPER_BOUND &lt; x) {
+                            return false; // don't allow the point to move past the bounds
+                        }
+                        jQuery("#solutionarea input").val( x );
+                    };
+                </div>
+            </div>
+                <div class="solution" data-type="multiple">
+                <span data-tt="exercise1">Beweeg de oranje stip om je antwoord te selecteren.</span>
+                <div class="sol" data-type="decimal" style="visibility:hidden"><var>NUMBER</var></div>
+            </div>
+
+            <div class="hints">
+                <p data-tt="hint1">We weten waar 0 staat op de getallenlijn omdat 0 gelabeld is.</p>
+                <p data-tt="hint2">Nummers links op de lijn zijn kleiner dan nummers rechts.</p>
+
+                <div>
+                    <div class="graphie" data-update="number-line">
+                        style({ stroke: "#6495ED", fill: "#6495ED", strokeWidth: 3.5, arrows: "-&gt;" });
+                        line( [ 0, 0 ], [ NUMBER, 0 ] );
+                        movablePoint.visibleShape.toFront();
+                    </div>
+                    <p data-tt="hint4">De oranje stip moet <var>plural( abs( NUMBER ), "positie")</var> rechts van 0 staan.</p>
+                </div>
+                <div>
+                    <div class="graphie" data-update="number-line">
+                        label( [ NUMBER, -0.53 ],  NUMBER, "center", { color: "#FFA500" });
+                        movablePoint.moveTo( NUMBER, 0 );
+                    </div>
+                    <p data-tt="hint5">Het oranje getal laat zien waar <var>NUMBER</var> op de getallenlijn staat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

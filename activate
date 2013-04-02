@@ -27,7 +27,8 @@ ENV_PATH=$PWD/deploy/env/
 GAE_PATH=$PWD/tools/google_appengine
 export PATH=$GAE_PATH:$PATH
 
-export PYTHONPATH=$GAE_PATH:$GAE_PATH/lib/jinja2:$GAE_PATH/lib/webapp2:$GAE_PATH/lib/yaml/lib:$GAE_PATH/lib/django_1_3/:$GAE_PATH/lib/webob_0_9/:$PYTHONPATH
+export PYTHONPATH=$GAE_PATH:$GAE_PATH/lib/jinja2:$GAE_PATH/lib/webapp2:$GAE_PATH/lib/yaml/lib:$GAE_PATH/lib/django_1_3/:$GAE_PATH/lib/webob_0_9/:$PYTHONPATH:$PWD
+export SERVER_SOFTWARE="Development"
 
 if [[ ! "$PS1" == *kenv* ]]; then
 	PS1="${COLOR_PURPLE}(kenv)${COLOR_NC}$PS1"

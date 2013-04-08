@@ -59,7 +59,7 @@ $.extend(KhanUtil, {
     },
 
     placesLeftOfDecimal: ["eenheid", "tiental", "honderdtal", "duizendtal"],
-    placesRightOfDecimal: ["eenheid", "tiental", "hondertal", "duizendtal"],
+    placesRightOfDecimal: ["eenheid", "tiende", "honderdste", "duizendste"],
 
     powerToPlace: function(power) {
         if (power < 0) {

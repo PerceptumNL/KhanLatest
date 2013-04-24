@@ -19,7 +19,7 @@
         "hint2":'Welk getal moet op de lege plaats in de tabel?',
         "hint3":'In de tabel ontbreekt <var>HINT1</var>.',
         "hint4":'In de tabel staan <span class="hint_orange"><var>ENROLLMENTS[ ROW_INDEX ].slice( 0, COL_INDEX ).join( "+" )</var></span> <var>UNIT</var>.',
-        "hint5":'<var>HINT2</var> is gewoon de optelsom daarvan, oftewel <span class="hint_pink"><var>ANSWER</var></span>.',
+        "hint5":'<var>HINT2</var> Het totaal is gewoon de optelsom daarvan, oftewel <span class="hint_pink"><var>ANSWER</var></span>.',
         "hint6":'In de tabel staan al <span class="hint_orange"><var>ENROLLMENTS[ ROW_INDEX ].slice( 0, COL_INDEX ).concat( ENROLLMENTS[ ROW_INDEX ].slice( COL_INDEX + 1, COLUMNS.length - 1 ) ).join( "+" )</var> = ' +
             '<var>ENROLLMENTS[ ROW_INDEX ][ COLUMNS.length - 1 ] - ANSWER</var></span> <var>UNIT</var>.',
         "hint7":'Het ontbrekende getal is het verschil tussen <var>HINT2.slice( 0, 1 ).toLowerCase() + HINT2.slice( 1 )</var>, <span class="hint_blue"><var>ENROLLMENTS[ ROW_INDEX ][ COLUMNS.length - 1 ]</var></span>, en de waarden die al in de tabel staan, <span class="hint_orange"><var>ENROLLMENTS[ ROW_INDEX ][ COLUMNS.length - 1 ] - ANSWER</var></span>.'

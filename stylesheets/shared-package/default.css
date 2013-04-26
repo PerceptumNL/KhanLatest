@@ -2974,12 +2974,14 @@ div.arrow-left-shadow {
 #logo {
     display: inline-block;
     float:left;
-    width: 220px;
-	height: 136px;
+    /*width: 220px;*/
+	/*height: 136px;*/
+    width: 200px;
+    height: 120px;
     /*background-image: url("/images/logo-kahn.png");*/
     background-image: url("/images/logos/khanw2_crop_Jwhitened_scaled.png");
     left: 0;
-    margin-left: 24px;
+    /*margin-left: 24px;*/
 }
 
 #navbar a.watch-link:hover,

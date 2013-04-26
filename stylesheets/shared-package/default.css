@@ -64,7 +64,8 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     color: #444;
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
+    background: orange;
     line-height: 22px;
 }
 
@@ -2975,7 +2976,8 @@ div.arrow-left-shadow {
     float:left;
     width: 220px;
 	height: 136px;
-    background-image: url("/images/logo-kahn.png");
+    /*background-image: url("/images/logo-kahn.png");*/
+    background-image: url("/images/logos/khanw2_crop_Jwhitened_scaled.png");
     left: 0;
     margin-left: 24px;
 }
@@ -4167,4 +4169,36 @@ div.topic-condensed {
     .site-wide-navigation {
         margin-left: 0;
     }
+}
+
+.watch-learn-earn {
+    /*margin: 0 auto;
+    max-width: 99.99%;*/
+    height: 20px;
+
+}
+
+#watch {
+    float: left;
+    height: 20px;
+    width: 33.33%;
+    display: inline-block;
+    background-color: red;
+}
+
+#learn {
+    float: left;
+    height: 20px;
+    width: 33.33%;
+    display: inline-block;
+    background-color: white;
+
+}
+
+#earn {
+    float: left;
+    height: 20px;
+    width: 33.33%;
+    display: inline-block;
+    background-color: blue;
 }

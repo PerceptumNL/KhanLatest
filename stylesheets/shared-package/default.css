@@ -934,7 +934,7 @@ span.username_and_notification .user-name {
 .page-search {
     display: block;
     padding: 0;
-    margin-top: 52px;
+    /*margin-top: 52px;*/ /*REMOVED MARGIN-TOP*/
     margin-right:-16px;
 }
 

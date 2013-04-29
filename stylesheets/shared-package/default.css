@@ -1182,7 +1182,9 @@ span.youTube:hover {
 }
 
 #library-content {
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background-color: orange;
+
     border-top: 0;
 }
 
@@ -2716,7 +2718,8 @@ background: #fafafa;
 /* Homepage styles */
 /* TODO (Maarten:) homepage styles should be in homepage.css... Or else why would it exist? */
 #homepage {
-    background: #FFFFFF;
+    /*background: #FFFFFF;*/
+    background: orange;
 }
 
 #homepage hr {
@@ -2974,12 +2977,12 @@ div.arrow-left-shadow {
 #logo {
     display: inline-block;
     float:left;
-    /*width: 220px;*/
-	/*height: 136px;*/
-    width: 200px;
-    height: 120px;
-    /*background-image: url("/images/logo-kahn.png");*/
-    background-image: url("/images/logos/khanw2_crop_Jwhitened_scaled.png");
+    width: 220px;
+	height: 136px;
+    /*width: 200px;*/
+    /*height: 120px;*/
+    background-image: url("/images/logo-kahn.png");
+    /*background-image: url("/images/logos/khanw2_crop_Jwhitened_scaled.png");*/
     left: 0;
     /*margin-left: 24px;*/
 }

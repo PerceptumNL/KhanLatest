@@ -83,7 +83,7 @@ a.blog-title:visited {
 #social-actions table {
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
+    /*width: 300px;*/ /*FIX SOCIAL MEDIA*/
 }
 
 td.social-action {

@@ -198,7 +198,11 @@
             {# Make script-requiring elements visible. #}
             <script>document.writeln('<style scoped type="text/css">a[href="#"], .requires_script { visibility: visible; }</style>');</script>
             <div id="goals-nav-container" style="display: none" class="ui-corner-bottom"></div>
-
+            <div class="container watch-learn-earn">
+              <div id='watch'></div>
+              <div id='learn'></div>
+              <div id='earn'></div>
+            </div>
             <div id="top-header">
                 <div class="top-header-links">
                     <div id="navbar">
@@ -319,6 +323,12 @@
 
                 {% endblock pagemessage %}
 
+            </div>
+            {# DUTCH FLAG COLORS #}
+            <div class="container watch-learn-earn">
+              <div id='watch'></div>
+              <div id='learn'></div>
+              <div id='earn'></div>
             </div>
             {% block pagecontent %}
             {% endblock pagecontent %}

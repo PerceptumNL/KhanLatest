@@ -16,7 +16,8 @@ Also, virtualenv needs to be installed. Use the following command:
 
 Then, is needed to download some dependencies, (it is done automatically):
 
-  KhanLatest$ source kenv/activate 
+  KhanLatest$ source activate 
+  
   KhanLatest$ kenv firstrun
 
 Finally, set your user name and password for deployment:
@@ -25,7 +26,7 @@ Finally, set your user name and password for deployment:
 
 **Always**
 
-//kenv// needs to be loaded. Inside the khan-multilingual/ path, run:
+//kenv// needs to be loaded. Inside the KhanLatest/ path, run:
 
   KhanLatest$ source activate 
 

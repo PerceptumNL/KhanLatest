@@ -41,6 +41,7 @@ import knowledgemap.handlers
 import warmup
 import login
 import homepage
+import browsepage # want a page for library_content
 import helpus
 import rssblog
 
@@ -893,6 +894,7 @@ application = webapp2.WSGIApplication([
         webapp2.SimpleRoute('/.*', smarthistory.SmartHistoryProxy)
     ]),
     ('/', homepage.ViewHomePage),
+    ('/browsepage', browsepage.ViewBrowsePage), # added line
     ('/missingvideos', helpus.ViewMissingVideos),
     ('/about', util_about.ViewAbout),
     ('/about/blog', blog.ViewBlog),

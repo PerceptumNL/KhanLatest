@@ -41,6 +41,6 @@ class ViewBrowsePage(request_handler.RequestHandler):
         template_values = {
             'library_content': library_content,
         }
-        self.render_jinja2_template('homepage.html', template_values)
+        self.render_jinja2_template('browsepage.html', template_values)
 
         layer_cache.enable()

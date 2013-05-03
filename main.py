@@ -42,6 +42,7 @@ import warmup
 import login
 import homepage
 import browsepage # want a page for library_content
+import new_page # example from "how-to"
 import helpus
 import rssblog
 
@@ -894,6 +895,7 @@ application = webapp2.WSGIApplication([
     ]),
     ('/', homepage.ViewHomePage),
     ('/browsepage', browsepage.ViewBrowsePage), # added line
+    ('new_page', new_page.ViewNewPage),         # added line 
     ('/missingvideos', helpus.ViewMissingVideos),
     ('/about', util_about.ViewAbout),
     ('/about/blog', blog.ViewBlog),

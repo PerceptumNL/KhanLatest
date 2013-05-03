@@ -896,7 +896,7 @@ application = webapp2.WSGIApplication([
     ]),
     ('/', homepage.ViewHomePage),
     ('/browsepage', browsepage.ViewBrowsePage), # added line
-    ('new_page', new_page.ViewNewPage),         # added line 
+    ('/newpage', new_page.ViewNewPage),         # added line 
     ('/missingvideos', helpus.ViewMissingVideos),
     ('/about', util_about.ViewAbout),
     ('/about/blog', blog.ViewBlog),

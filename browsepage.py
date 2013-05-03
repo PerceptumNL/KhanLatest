@@ -21,9 +21,15 @@ class ViewBrowsePage(request_handler.RequestHandler):
     @user_util.open_access
     @ensure_xsrf_cookie    # TODO(csilvers): remove this (test w/ autocomplete)
     def get(self):
+        version_number = None
+
+        if (user_models.UserData.current() and
+            user_models.UserData.current().developer):
+            version_number = self.request_string('version', default=None)
+
         content_uninitialized = (
             topic_models.TopicVersion.get_default_version() is None)
-
+#        '''
         if content_uninitialized:
             library_content = ('<h1>Content not initialized. '
                                '<a href="/devadmin/content?autoupdate=1">'
@@ -38,6 +44,10 @@ class ViewBrowsePage(request_handler.RequestHandler):
             library_content = library.library_content_html(ajax=False)
         else:
             library_content = library.library_content_html(ajax=True)
+ #       '''
+
+#        library_content = library.library_content_html(ajax=True)
+
         template_values = {
             'library_content': library_content,
         }

@@ -896,7 +896,7 @@ application = webapp2.WSGIApplication([
         webapp2.SimpleRoute('/.*', smarthistory.SmartHistoryProxy)
     ]),
     ('/', homepage.ViewHomePage),
-    ('/browse', homepage.ViewHomePage),
+    ('/browse', old_homepage.ViewHomePage),
     ('/new_home_page', new_homepage.ViewHomePage), #added line
     ('/browsepage', browsepage.ViewBrowsePage), # added line
     ('/newpage', new_page.ViewNewPage),         # added line 

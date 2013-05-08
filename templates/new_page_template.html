@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{%- import 'macros/user.html' as user -%}
+{%- import 'macros/app.html' as app -%}
+<html class="{% block html_class %}{{html_class}}{% endblock %}" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {% block title %}
+        {% if title %}
+          {{title}} |
+        {% endif %}
+      {% endblock title %}
+      {# {{config.CONFIG_DB.brand_name}} #}
+    </title>
+    <link rel="icon" type="image/png" href="/p/favicon.ico">
+    {# <link href="/favicon.ico?leaf" rel="shortcut icon"> #}
+    {# {% include 'bit/style.html' %} #}
+    {% block head %}
+    {% endblock %}
+    {# # include 'bit/analytics.html' #}
+    <style type="text/css">
+      .constrained {
+        margin: 0 auto;
+        max-width: 950px;
+        padding: 0 25px;        
+      }
+    </style>
+  </head>
+
+    <body>
+    {# # include 'bit/top_bar.html' #}
+    <header>
+      <div class="conatrained">
+        <h1></h1>
+        <nav>
+          <ul>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div id="content" class="container main-container">
+      <div class="constrained">
+      {# # include 'bit/notifications.html' #}
+      {% block pagecontent %}
+      <h1>Hi there!</h1>
+      {% endblock pagecontent %}
+      </div>
+    </div>
+    {# # include 'bit/footer.html' #}
+    {# # include 'bit/script.html' #}
+    {# # block scripts #}
+    {# # endblock #}
+    <footer>
+      <div class="constrained">
+      </div>
+    </footer>
+    <div id="cookie-message">
+        Khanacademie maakt gebruik van cookies. Lees
+        <a href="https://docs.google.com/document/pub?id=1qPIp5yEEHGDXMI_1No43p9uaGJnGDtj2BY3NGsyYySc">
+            hier
+        </a>
+        meer over cookies en hoe wij cookies
+        <a href="https://docs.google.com/document/pub?id=1mnNKQkW6H0RAQ4nD1qpz0L6zuny7mcTlTZh1dxc61Hs">
+            gebruiken
+        </a>
+        <button type="button" id="button-cookie-ok">
+            Ok
+        </button>
+    </div>
+  </body>
+</html>

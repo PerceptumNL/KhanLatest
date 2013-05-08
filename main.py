@@ -43,6 +43,7 @@ import login
 import homepage
 import browsepage # want a page for library_content
 import new_page # example from "how-to"
+import new_homepage
 import helpus
 import rssblog
 
@@ -895,6 +896,7 @@ application = webapp2.WSGIApplication([
         webapp2.SimpleRoute('/.*', smarthistory.SmartHistoryProxy)
     ]),
     ('/', homepage.ViewHomePage),
+    ('/new_home_page', new_homepage.ViewHomePage), #added line
     ('/browsepage', browsepage.ViewBrowsePage), # added line
     ('/newpage', new_page.ViewNewPage),         # added line 
     ('/missingvideos', helpus.ViewMissingVideos),

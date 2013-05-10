@@ -11,13 +11,13 @@
 {% block pagecontent %}
     <article id="homepage">
 
-        <div id="social-actions">
-            <table>
+        <div  id="social-actions">
+            <table class="display-none">
                 <tr>
                     {#
                     <td class="social-action">
                         <span id="fb-like-badge">
-                            <di id="fb-root"></div><fb:like href="http://www.khanacademie.nl" send="true" layout="button_count" width="100" show_faces="false" font=""></fb:like>
+                            <div id="fb-root"></div><fb:like href="http://www.khanacademie.nl" send="true" layout="button_count" width="100" show_faces="false" font=""></fb:like>
                         </span>
                     </td>
                     #}
@@ -75,7 +75,7 @@
         </div>
 
         {% if thumbnail_link_sets %}
-            <div id="thumbnails_container">
+            <div style="display:none" id="thumbnails_container">
                 <table width="100%">
                     <tr>
                         <td width="3%">

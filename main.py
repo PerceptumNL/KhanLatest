@@ -41,6 +41,7 @@ import knowledgemap.handlers
 import warmup
 import login
 import homepage
+import old_homepage
 import browsepage # want a page for library_content
 import new_page # example from "how-to"
 import new_homepage

@@ -239,6 +239,6 @@ class ViewHomePage(request_handler.RequestHandler):
             'donate_redirect_url': donate_redirect_url
             }
 
-        self.render_jinja2_template('homepage.html', template_values)
+        self.render_jinja2_template('old_homepage.html', template_values)
 
         layer_cache.enable()

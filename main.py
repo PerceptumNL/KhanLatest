@@ -104,6 +104,7 @@ from importer.handlers import ImportHandler
 import wsgi_compat
 import os
 import library
+import analytics
 
 
 class VideoDataTest(request_handler.RequestHandler):
@@ -1156,6 +1157,9 @@ application = webapp2.WSGIApplication([
     # Topic paths can be anything, so we match everything.
     # The TopicPage handler will throw a 404 if no page is found.
     # (For more information see TopicPage handler above)
+    ('/analytics', analytics.ViewAnalytics),
+    ('/analytics/problemlog_history', analytics.ProblemLogHistory),
+    #('/analytics/problemlog_per_user_hour_history', analytics.ProblemLogPerUseerHourHistory),
     ('/(.*)', TopicPage),
 
     ], debug=True)

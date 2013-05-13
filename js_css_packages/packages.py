@@ -475,6 +475,16 @@ javascript = {
         "files": [
             "utils/raphael.js",
         ]
+    },
+
+    "analytics": {
+        "files": [
+            "jquery-1.9.1.min.js",
+            "bootstrap.js",
+            "problemlog.js",
+            "raphael-min.js",
+            "popup.js",
+        ]
     }
 }
 
@@ -624,5 +634,10 @@ stylesheets = {
         "files": [
             "slick.grid.css",
         ],
+    },
+    "analytics": {
+        "files": [
+            "bootstrap.css"
+        ]
     }
 }

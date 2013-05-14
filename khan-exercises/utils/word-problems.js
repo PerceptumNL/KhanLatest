@@ -450,6 +450,15 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		"jurk",
 		"jas"
 	]);
+	var voltdeel = KhanUtil.shuffle([
+		["zeilen","gezeild", "zeil"],
+		["missen","gemist","mis"],
+		["stappen", "gestapt","stap"],
+		["leggen","gelegd", "leg"],
+		["roeren", "geroerd", "roer"],
+		["duwen", "geduwd", "duw"],
+		["pakken", "gepakt", "pak"]
+	]);
 
 	var sides = KhanUtil.shuffle([
 		"linker",
@@ -722,6 +731,11 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 			return animals[i - 1][1];
 		},
 
+		deelwoord: function( i ) {
+			return voltdeel[i][0];
+		},
+		deelwoord2: function(i){return voltdeel[i][1];},
+		deelwoord3: function(i){return voltdeel[i][2];},
 		animalStddevLifespan: function( i ) {
 			return animals[i - 1][2];
 		}

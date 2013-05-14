@@ -896,9 +896,9 @@ application = webapp2.WSGIApplication([
     DomainRoute('smarthistory.khanacademy.org', [
         webapp2.SimpleRoute('/.*', smarthistory.SmartHistoryProxy)
     ]),
-    ('/', homepage.ViewHomePage),
+    ('/', new_homepage.ViewHomePage),
     ('/browse', old_homepage.ViewHomePage),
-    ('/new_home_page', new_homepage.ViewHomePage), #added line
+    ('/homepage', homepage.ViewHomePage), #added line
     ('/browsepage', browsepage.ViewBrowsePage), # added line
     ('/newpage', new_page.ViewNewPage),         # added line 
     ('/missingvideos', helpus.ViewMissingVideos),

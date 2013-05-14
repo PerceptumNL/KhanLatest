@@ -1,4 +1,4 @@
-{% extends "page_template.html" %}
+{% extends "new_page_template.html" %}
 
 {% import 'macros/youtube.html' as youtube %}
 {% import 'macros/analytics.html' as analytics %}
@@ -7,173 +7,58 @@
 {% import 'macros/mailing_lists.html' as mailing_lists %}
 #}
 
+{% block pagescript %}
+<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+{% endblock pagescript %}
 {% block pagetitle %}{% endblock pagetitle %}
 {% block pagecontent %}
-    <article id="homepage">
-
-        <div  id="social-actions">
-            <table class="display-none">
-                <tr>
-                    {#
-                    <td class="social-action">
-                        <span id="fb-like-badge">
-                            <div id="fb-root"></div><fb:like href="http://www.khanacademie.nl" send="true" layout="button_count" width="100" show_faces="false" font=""></fb:like>
-                        </span>
-                    </td>
-                    #}
-                    <td class="social-action">
-                        <a href="http://twitter.com/share" class="twitter-share-button"
-                           data-counturl="http://www.khanacademie.nl" data-url="http://www.khanacademie.nl"
-                           data-text="Kijk. Oefen. Leer bijna alles online, en gratis." data-count="horizontal"
-                           data-via="khanacademie">Tweet</a>
-                    </td>
-                    <td class="social-action gplus">
-                        <g:plusone size="medium" href="http://www.khanacademie.nl"></g:plusone>
-                    </td>
-                    <td class="social-action">
-                        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fkhanacademie&amp;send=false&amp;layout=button_count&amp;width=110&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21"
-                                scrolling="no" frameborder="0"
-                                style="border:none; overflow:hidden; width:110px; margin-left:5px; height:21px;"
-                                allowTransparency="true"></iframe>
-                    </td>
-                </tr>
-                <tr>
-                    {#
-                    <td colspan=3 class="homepage-mailing">
-                        <span>{{ mailing_lists.signup_form(3, "Ontvang updates", "Registeer hier je email in de mailinglist") }}</span>
-                    </td>
-                    #}
-                </tr>
-            </table>
-        </div>
-        <div class="clear"></div>
-        <div id="homepage-welcome-container">
-            <iframe id="homepage-video" src="http://www.youtube.com/embed/tC80BNOKJtk"
-                    frameborder="0"
-                    allowfullscreen></iframe>
-            <div id="homepage-text-container" class="visited-no-recolor">
-                <div id="homepage-text">
-                    <div id="main-video">
-
-                    </div>
-                    <h1>
-                        Welkom bij Khan Academie
-                    </h1>
-
-                    <p>
-                        Wij zijn op een missie om jou te helpen alles te leren, over onderwerpen 
-            die jou interesseren, wanneer jij het wilt en in je eigen tempo. De 
-            uiteenlopende onderwerpen worden met een groeiend aantal
-            aangeboden in de vorm van video’s en oefeningen. 
-                    </p>
-
-                <a href="/exercisedashboard" class="rollover begin-link">
-                        <img src="/images/oefeningen-button-blauw.png" rel="/images/oefeningen-button-grijs.png" class="begin-button rollover"/><span id="exercisehomelink"><em>Begin met oefenen!</em></span>
-                </a>
-                </div>
+    <article id="homepage" class="overflow">
+    <div id="homepage-content" class="container">
+        <div class="focus-box">
+            <div id="kijk">
+            {# <img src="images/icons/iconmonstr-video-icon.png" width='128px' height='128px'> #}
+            <img src="images/icons/Oefen.png" width='230px' height='192px'>
+            <h3>Oefen</h3>
+            <p>Bekijk uitleg video's</p>
             </div>
         </div>
-
-        {% if thumbnail_link_sets %}
-            <div style="display:none" id="thumbnails_container">
-                <table width="100%">
-                    <tr>
-                        <td width="3%">
-                            <div class="thumbnails_arrow action-gradient" id="arrow-left">
-                                <div class="arrow-left"></div>
-                            </div>
-                        </td>
-                        <td width="94%">
-                            <div id="thumbnails" class="visited-no-recolor">
-                                {% for thumbnail_link_set in thumbnail_link_sets %}
-                                    {% set outerloop = loop %}
-                                    <div {% if not loop.first %}style="display:none;"{% endif %}>
-                                        <table style="width:100%">
-                                            <tr>
-                                                {% for thumbnail_link in thumbnail_link_set %}
-                                                    <td style="width:25%"
-                                                        class="thumbnail_td {{ thumbnail_link["type"] }} {% if thumbnail_link["selected"] %}selected{% endif %}"
-                                                        data-key="{{ thumbnail_link["key"]|escape }}"
-                                                        data-youtube-id="{{ thumbnail_link["youtube_id"]|escape }}">
-
-                                                        <a href="{{ thumbnail_link["href"]|escape }}"
-                                                           data-tag="Homepage Featured" class="thumbnail_link">
-                                                            <div
-                                                                    {% if outerloop.first %}
-                                                                        class="thumb"
-                                                                        style="background-image:url('{{ thumbnail_link["thumb_urls"]["hq"]|escape }}')"
-                                                                    {% else %}
-                                                                        class="thumb pending"
-                                                                        data-src="{{ thumbnail_link["thumb_urls"]["hq"]|escape }}"
-                                                                    {% endif %}
-                                                                    ></div>
-                                                        </a>
-
-                                                        <a href="{{ thumbnail_link["href"]|escape }}"
-                                                           data-tag="Homepage Featured" class="thumbnail_link">
-                                                            <div class="thumbnail_label">
-                                                                <div class="thumbnail_desc">{{ thumbnail_link["desc_html"] }}</div>
-                                                                <div class="thumbnail_teaser">{{ thumbnail_link["teaser_html"] }}</div>
-                                                            </div>
-                                                        </a>
-                                                    </td>
-                                                {% endfor %}
-                                            </tr>
-                                        </table>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        </td>
-                        <td width="3%">
-                            <div class="thumbnails_arrow action-gradient" id="arrow-right">
-                                <div class="arrow-right"></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        {% endif %}
-
-        <div class="clear"></div>
-
-        <div data-role="page" data-theme="b" {% if is_mobile %}id="browse"{% endif %}>
-            <div data-role="content">
-                <div id="mobile-homepage" class="mobile-only">
-                    <img data-src="{{ "/images/logo-horizontal-large.png"|static_url }}" id="mobile-logo"/>
-            <span id="page_visitors">
-                    <span id="page_num_visitors">
-                        <!-- Content will get populated by javacript at end of page -->
-                    </span>&nbsp;geleverde lessen:
-            </span>
-                </div>
-                <h2 class="main-headline">Blader door video's:</h2>
-                {% if DVD_list %}
-                    <ul class="menu" id="menu">
-                        {% for topic in DVD_list %}
-                            <li><a href="#{{ topic }}" class="menulink">{{ topic }}</a></li>
-                        {% endfor %}
-                    </ul>
-                {% else %}
-                    <div id="browse-control-anchor"></div>
-                    {{ templatetags.topic_browser("browse", version_number) }}
-                    {{ templatetags.topic_browser("browse-fixed", version_number) }}
-
-                {% endif %}
-                <a href="/mobilefullsite" class="mobile-only" data-role="button" data-ajax="false">zie standaard
-                    site</a>
+        <div class="focus-box">
+            <div id="leer">
+            {# <img src="images/icons/iconmonstr-livejournal-icon.png" width='128px' height='128px'> #}
+            <img src="images/icons/Herhaal.png" width='230px' height='192px'>
+            <h3>Herhaal</h3>
+            <p>Maak oefeningen</p>
             </div>
         </div>
-        <div class="clear"></div>
-
-        {{ library_content }}
-
-        <br/>
+        <div class="focus-box">
+            <div id="groei">
+            {# <img src="images/icons/iconmonstr-star-5-icon.png" width='128px' height='128px'> #}
+            <img src="images/icons/Groei.png" width='230px' height='192px'>
+            <h3>Groei</h3>
+            <p>Zie je voortgang en verdien punte</p>
+            </div>
+        </div>
+        <div class='homepage-sell overflow'>Het digitale oefenboek, speciaal geschreven voor jou.</div>
+    </div>
+    <div>
+        <div class="mini-footer">
+            <div class="mini-footer-link">
+                Help Mee
+            </div>
+            <div class="mini-footer-link">
+                Handleiding
+            </div>
+            <div class="mini-footer-link">
+                Blog
+            </div>
+            <div class="mini-footer-link">
+                Wiki
+            </div>
+        </div>
+    </div>    
     </article>
 
-    <div id="back-to-top">
-        <a class="arrow" href="#">▲</a>
-        <a class="text" href="#">terug naar top</a>
-    </div>
+
 {% endblock pagecontent %}
 
 {% block bottompagescript %}

@@ -73,6 +73,9 @@ body {
     height: auto !important;
     height: 100%;
     margin: 0 0 -77px;
+    background-color: #fff;
+    /*background-color: #E6E7E8;*/
+    /*background-color: #182D39;*/
 }
 
 #page-container {
@@ -87,10 +90,11 @@ div#content {
 }
 
 article {
-    padding: 0 19px;
+    /*padding: 0 19px;*/
+    padding: 0 20px;
     background: #fff;
     position: relative;
-    margin: 0 1px;
+    /*margin: 0 1px;*/
     border: 1px solid rgb(231, 231, 231);
 }
 
@@ -259,7 +263,7 @@ header a:visited,
 footer a:visited,
 .visited-no-recolor a:visited,
 a.visited-no-recolor:visited {
-    color:rgb(0, 9, 112);
+    /*color:rgb(0, 9, 112);*/
     text-decoration: none;
 }
 
@@ -439,7 +443,12 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 #top-header {
-    min-height: 84px; /*navbar height*/
+    /*min-height: 84px; */
+    /*navbar height*/
+    background-color: #d3e8f2;
+    /*background-color: #E6E7E8;*/
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .dark #top-header #logo #logo-image {
@@ -480,20 +489,26 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     /* TODO what white triangle?, what is its id/class? */
     z-index: 30;
     display: inline-block;
-    margin-left: 0;
+    margin-left: 200px;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-bottom: 40px: 
 }
 
 .site-wide-navigation > ul > li > a {
-    color: #002533;
+    /*color: #002533;*/
+    color: #ff8500;
     line-height: 40px;
 }
 
 #navbar {
-    min-height: 84px; /*navbar height*/
+    /*min-height: 84px; */
+    /*navbar height*/
+    background-color: #fff;
     width: 100%;
-    margin: 8px 0 8px 0;
+    /*margin: 8px 0 8px 0;*/
     display: inline-block;
-    text-align: right;
+    /*text-align: right;*/
 }
 
 #page_sub_nav a.selected {
@@ -727,6 +742,10 @@ a.about-link.selected:after {
     margin-top: 25px;
 }
 
+.display-none {
+    display: none;
+}
+
 #social-actions #fb-like-badge {
     display: inline-block;
     width: 165px;
@@ -753,6 +772,7 @@ a.about-link.selected:after {
     top: 0;
     right: 10px;
     left: 0;
+    /*height: 100px;*/
 }
 
 .top-header-links span img {
@@ -793,9 +813,12 @@ a.about-link.selected:after {
 }
 
 #page_auth.page_links {;
-    width: 100%;
-    margin: 6px 8px 0 0;
+    /*width: 100%;*/
+    float: right;
+    /*margin: 6px 8px 0 0;*/
+    margin: 40px 10px;
     z-index: 101;
+    /*line-height: 40px;*/
 }
 
 #page_auth.page_links #login-menu {
@@ -920,22 +943,92 @@ span.username_and_notification .user-name {
 #page_social_links {
     white-space: nowrap; /* For IE7 */
 }
-
+.page-ribbon {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #EEEEEE;
+    border-color: #CCCCCC #CCCCCC #AAAAAA;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    bottom: auto;
+    box-shadow: 0 1px 2px #CCCCCC;
+    height: 50px;
+    /*left: -7px;*/
+    overflow: visible;
+    padding: 10px 0;
+    /*position: absolute;*/
+    /*right: -7px;*/
+    /*top: 22px;*/
+    width: auto;
+}
+.main-search-buttons {
+    margin:0 auto;
+}
+#search-box .button {
+    box-shadow: 0 1px 2px #CCCCCC;
+    display: inline-block;
+    text-align: center;
+    /*float: left;*/
+    /*padding: 5px 10px;*/
+    /*margin: 2px 10px;*/
+    margin: 0 10px;
+    height: 50px;
+    border: 1px solid;
+    min-width: 150px;
+    /*width: 200px;*/
+}
+#search-box .button:hover {
+    background-color: #F5F5F5;
+}
+#large-search-input, .large-search-bar {
+    -moz-box-sizing: border-box;
+    border: 2px #b9d6e2 solid;
+    /*background-image: none;*/
+    /*border-radius: 4px 4px 4px 4px;*/
+    /*font-size: 14px;*/
+    height: 50px;
+    padding-left: 28px;
+    width: 100%;
+}
 #search-box {
-    margin:20px;
+    background-color: #D3E8F2;
+    /*width: 100%;*/
+    padding: 30px 80px;
+    /*margin:20px;*/
+}
+.overflow {
+    background-color: #D3E8F2;
+    margin-right: -100px;
+    margin-left: -100px;
+    padding-left: 100px;
+    padding-right:100px;
+}
+.container {
+    width: 1200px;
 }
 
 #search-box form input {
-    display: inline-block;
-    width: 300px;
-    max-width: 80%;
+    /*display: inline-block;*/
+    min-width: 300px;
+    /*width: 800px;*/
+    /*max-width: 80%;*/
+}
+
+#search form {
+    display:inline-block;
 }
 
 .page-search {
-    display: block;
-    padding: 0;
-    margin-top: 52px;
-    margin-right:-16px;
+    /*float: left;*/
+    /*display: inline-block;*/
+    /*display: block;*/
+    /*padding: 0;*/
+    /*padding-left: 20px; */
+    /*margin-top: 52px;*/
+    /*margin-right:-16px;*/
 }
 
 #search-input {
@@ -972,7 +1065,7 @@ span.username_and_notification .user-name {
 
 .simple-input.search-input {
     background-image: url(/images/non-repeating-sprites.4.png);
-    background-position: -5px -867px;
+    background-position: -2px -856px;
     background-clip: padding-box;
     background-repeat: no-repeat;
     padding-left: 25px;
@@ -2717,7 +2810,9 @@ background: #fafafa;
 /* Homepage styles */
 /* TODO (Maarten:) homepage styles should be in homepage.css... Or else why would it exist? */
 #homepage {
-    background: #FFFFFF;
+    background-color: #d3e8f2;
+    /*background: #FFFFFF;*/
+    /*height: 900px;*/
 }
 
 #homepage hr {
@@ -2963,8 +3058,11 @@ div.arrow-left-shadow {
 
 .site-wide-navigation > ul > li > a {
     /* TODO remove .site-wide-navigation wrapper and just use #navbar? */
-    font-family: "MuseoSans500", Helvetica, Arial, sans-serif;
-    font-size: 1em;
+
+    /*font-family: "MuseoSans500", Helvetica, Arial, sans-serif;*/
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    font-weight: 200px;
+    font-size: 1.3em;
     letter-spacing: -1px;
     text-transform: uppercase;
     display: block;
@@ -2975,9 +3073,13 @@ div.arrow-left-shadow {
 #logo {
     display: inline-block;
     float:left;
-    width: 220px;
-	height: 136px;
-    background-image: url("/images/logo-kahn.png");
+    width: 310px;
+    height: 120px;
+	/*height: 50px;*/
+    /*background-image: url("/images/logos/khan-academie2.png");*/
+    background-image: url("/images/logos/khan-academie-poppetje-darker.png");
+    background-size: 80% 90%;
+    background-repeat: no-repeat;
     left: 0;
     margin-left: 24px;
 }

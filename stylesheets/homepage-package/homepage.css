@@ -193,6 +193,104 @@ td.social-action.gplus {
     width: 60%;
 }
 
+#homepage-content {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+    padding: 0px 60px 10px 60px;
+    min-height: 300px;
+}
+
+#homepage-content > div.focus-box{
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+    padding: 0 10px;
+    /*margin: 10px;*/
+    /*border: 10px transparent;*/
+    /*border-radius: 10px;*/
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+
+#homepage-content {
+    border-bottom: 2px white solid
+}
+
+#homepage-content > div h3 {
+    font-family: "Satisfy", cursive;
+    font-size: 2.5em;
+    color: white;
+    /*border-bottom: 2px white solid;*/
+}
+
+#homepage-content > div p {
+    font-family: "Raleway", sans-serif;
+    /*border-top: 2px white solid;*/
+    color: white;
+}
+
+#kijk {
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: #0776a0; 
+}
+#leer {
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: #3aa6d0;
+}
+#groei {
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: #83cce2;
+}
+
+.mini-footer {
+    margin: 24px auto;
+    margin-bottom: 20px;
+    width: 80%;
+    text-transform: uppercase;
+    /*font-size: 0.7em;*/
+}
+
+.mini-footer-link {
+    color: orange;
+    text-align: center;
+    display: inline-block;
+    width: 24%;
+}
+
+.homepage-sell {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: -200px;
+    margin-left: -200px;
+    padding-right: 200px;
+    padding-left: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    text-align: center;
+    text-shadow: 2px 2px #F7931E;
+    color: #FAFAFA;
+    font-family: "Satisfy", cursive;
+    font-size: 2.0em;
+
+}
+
+img {
+    max-width:100%;
+}
+
+/*#homepage {
+    margin-right: -100px;
+    margin-left: -100px;
+}*/
 /* Responsive stuff */
 
 @media (max-width: 1000px) {

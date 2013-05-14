@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html data-require="NL math word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>De helft van een getal</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+
+    <div class="vars" data-ensure="Type%2==0">
+        <var id="Type">randRange( 1, 20 )</var>
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+                <p>Wat is de helft van <var>Type</var>?</p>
+            </div>
+            <div class="solution" data-type="text"><var>Type/2</var></div>
+        </div>
+    </div>
+
+    <div class="hints">
+	<p>De helft van een getal is hetzelfde als dat getal gedeeld door twee (2).</p>
+	<p>We berekenen dus <var>Type</var>/2</p>
+	<p>De helft van <var>Type</var> is dus <var>Type/2</var></p>
+    </div>
+    </body>
+</html>

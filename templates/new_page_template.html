@@ -203,7 +203,7 @@
 
             <div id="top-header">
                 <div class="top-header-links">
-                    <div id="navbar">
+                    <div id="navbar" class="overflow overflow-white"> {# class="overflow" #}
                         <a id="logo" href="/" title="Naar de homepage!" data-tag="Header">
                             {# <img src="/images/logos/khan-academie2.png"> #}
                         </a>
@@ -299,7 +299,7 @@
                         </div>
                     </div>
 {# TODO (NICHOLAS): REMOVE SEARCH BAR BUTTONS #}
-                <div class="overflow">
+                <div class="overflow "> {# class="overflow" #}
                     <div id="search-box"> {# class="page-ribbon" #}
                         {# <div class="container"> #}
                         <form class="page-search" action="/search">
@@ -345,7 +345,7 @@
 </div>
 <div class="push"></div>
 {% block pagefooter %}
-    {% include "page_footer_short.html" %}
+    {% include "new_page_footer.html" %}
 {% endblock %}
 
 {% block bottompagescript %}

@@ -12,14 +12,14 @@
 {% endblock pagescript %}
 {% block pagetitle %}{% endblock pagetitle %}
 {% block pagecontent %}
-    <article id="homepage" class="overflow">
-    <div id="homepage-content" class="container">
+    <article id="homepage" > {# class="overflow" #}
+    <div id="homepage-content" > {# class="container" #}
         <div class="focus-box">
             <div id="kijk">
             {# <img src="images/icons/iconmonstr-video-icon.png" width='128px' height='128px'> #}
             <img src="images/icons/Oefen.png" width='230px' height='192px'>
             <h3>Oefen</h3>
-            <p>Bekijk uitleg video's</p>
+            <p>Maak oefeningen en bekijk hulpvideo's.</p>
             </div>
         </div>
         <div class="focus-box">
@@ -27,7 +27,7 @@
             {# <img src="images/icons/iconmonstr-livejournal-icon.png" width='128px' height='128px'> #}
             <img src="images/icons/Herhaal.png" width='230px' height='192px'>
             <h3>Herhaal</h3>
-            <p>Maak oefeningen</p>
+            <p>Oefen totdat je het onder die knie hebt.</p>
             </div>
         </div>
         <div class="focus-box">
@@ -35,12 +35,15 @@
             {# <img src="images/icons/iconmonstr-star-5-icon.png" width='128px' height='128px'> #}
             <img src="images/icons/Groei.png" width='230px' height='192px'>
             <h3>Groei</h3>
-            <p>Zie je voortgang en verdien punte</p>
+            <p>Zie je voortgang en verdien punten.</p>
             </div>
         </div>
-        <div class='homepage-sell overflow'>Het digitale oefenboek, speciaal geschreven voor jou.</div>
+        <div class='homepage-sell overflow-white'> {# class="overflow" #}
+            Het digitale oefenboek, speciaal geschreven voor jou.
+        </div> 
     </div>
-    <div>
+    {# MOVE TO ACTUAL FOOTER #}
+{#     <div>
         <div class="mini-footer">
             <div class="mini-footer-link">
                 Help Mee
@@ -55,7 +58,7 @@
                 Wiki
             </div>
         </div>
-    </div>    
+    </div>     #}
     </article>
 
 

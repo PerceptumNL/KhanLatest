@@ -215,7 +215,7 @@ td.social-action.gplus {
 }
 
 #homepage-content {
-    border-bottom: 2px white solid
+    /*border-bottom: 2px white solid*/
 }
 
 #homepage-content > div h3 {
@@ -268,10 +268,10 @@ td.social-action.gplus {
 .homepage-sell {
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-right: -200px;
+/*    margin-right: -200px;
     margin-left: -200px;
     padding-right: 200px;
-    padding-left: 200px;
+    padding-left: 200px;*/
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: white;
@@ -286,6 +286,8 @@ td.social-action.gplus {
 img {
     max-width:100%;
 }
+
+
 
 /*#homepage {
     margin-right: -100px;
@@ -305,6 +307,10 @@ img {
 
 @media (max-width: 767px) {
     /* Kinda small margins for kinda small displays */
+    #homepage-content > div h3 {
+        font-size: 1.5em;
+    }
+
     #homepage-left-col {
         margin-left: 3%;
         margin-right: 3%;
@@ -340,6 +346,9 @@ img {
 
 @media (max-width: 480px) {
     /* No margins for small displays */
+    #homepage-content > div h3 {
+        font-size: 1em;
+    }
     #homepage-left-col {
         margin-left: 0;
         margin-right: 0;

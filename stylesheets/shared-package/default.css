@@ -2306,7 +2306,8 @@ background: #fafafa;
 #module-progress th {
     color: #555;
     vertical-align: bottom;
-    font-size: 90%;
+    /*font-size: 90%;*/
+    font-size: 60%; /*ADDED BY NICK TO FIX BUG 2013-05-16*/
     font-weight: bold;
     background-color: #CCC;
     border: 1px solid #bbb;
@@ -2323,6 +2324,7 @@ background: #fafafa;
 
 #module-progress th div {
     min-width: 85px;
+    max-width: 85px; /*ADDED BY NICK TO FIX BUG 2013-05-16*/
 }
 
 .progress-legend, #module-progress .student-module-status {

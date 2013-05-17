@@ -481,7 +481,7 @@ javascript = {
         "files": [
             "jquery-1.9.1.min.js",
             "bootstrap.js",
-            "problemlog.js",
+           # "problemlog.js",
             "raphael-min.js",
             "popup.js",
         ]

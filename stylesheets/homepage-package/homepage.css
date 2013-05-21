@@ -275,9 +275,11 @@ td.social-action.gplus {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: white;
+    /*background-color: gray;*/
     text-align: center;
-    text-shadow: 2px 2px #F7931E;
-    color: #FAFAFA;
+    /*text-shadow: 2px 2px #F7931E;*/
+    /*color: #FAFAFA;*/
+    color: gray;
     font-family: "Satisfy", cursive;
     font-size: 2.0em;
 

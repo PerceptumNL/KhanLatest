@@ -418,6 +418,11 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     position: static;
 }
 
+/*NEW FOOTER STUFF*/
+.social-media {
+    text-align: center;
+    margin: 10px;
+}
 #footer.short .small-social-links .youtube {
     background-image: url(/images/non-repeating-sprites.4.png);
     background-position: -10px -67px;

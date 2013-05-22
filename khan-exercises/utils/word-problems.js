@@ -450,6 +450,26 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		"jurk",
 		"jas"
 	]);
+
+	var stamheel = KhanUtil.shuffle([
+		["werk", "werken"],
+		["vind", "vinden"],
+		["bel", "bellen"],
+		["loop", "lopen"],
+		["zie", "zien"],
+		["verhuis", "verhuizen"],
+		["verf", "verven"],
+		["dans", "dansen"]
+	]);
+	var stamheelsterk = KhanUtil.shuffle([
+		["heb", "hebben", "hebt", "heeft"],
+		["ben", "zijn", "bent", "is"],
+		["kan", "kunnen", "kunt", "kan"],
+		["mag", "mogen", "mag", "mag"],
+		["moet", "moeten", "moet", "moet"],
+		["zal", "zullen", "zult", "zal"],
+		["wil", "willen", "wilt", "wil"]
+	]);
 	var voltdeel = KhanUtil.shuffle([
 		["zeilen","gezeild", "zeil"],
 		["missen","gemist","mis"],
@@ -736,6 +756,12 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		},
 		deelwoord2: function(i){return voltdeel[i][1];},
 		deelwoord3: function(i){return voltdeel[i][2];},
+		stamteg: function(i){return stamheel[i][0];},
+		heelteg: function(i){return stamheel[i][1];},
+		sterkstam: function(i){return stamheelsterk[i][0];},
+		sterkheel: function(i){return stamheelsterk[i][1];},
+		sterkuvorm: function(i){return stamheelsterk[i][2];},
+		sterkhijvorm: function(i){return stamheelsterk[i][3];},
 		animalStddevLifespan: function( i ) {
 			return animals[i - 1][2];
 		}

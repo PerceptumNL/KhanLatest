@@ -3,13 +3,14 @@
 import optparse
 import os
 import sys
+import json
 # For python2.5 install the unittest2 package
 try:   # Work under either python2.5 or python2.7
     import unittest2 as unittest
 except ImportError:
     import unittest
 
-import xmlrunner
+#import xmlrunner
 
 import appengine_tool_setup
 
@@ -40,7 +41,7 @@ def file_path_to_module(path):
     return path.replace('.py', '').replace(os.sep, '.')
 
 
-def main(test_specs, should_write_xml, max_size, appengine_sdk_dir=None):
+def main(test_specs, html_basefilename, max_size, appengine_sdk_dir=None, filename=None):
     appengine_tool_setup.fix_sys_path(appengine_sdk_dir)
 
     # This import needs to happen after fix_sys_path is run.
@@ -60,13 +61,21 @@ def main(test_specs, should_write_xml, max_size, appengine_sdk_dir=None):
                                     pattern=TEST_FILE_RE,
                                     top_level_dir=os.getcwd())
 
-        if should_write_xml:
-            runner = xmlrunner.XMLTestRunner(verbose=True,
-                                             output='test-reports')
+        if html_basefilename:
+            import HTMLTestRunner
+            fp = file('test_reports/%s.html' % html_basefilename, 'wb')
+            runner = HTMLTestRunner.HTMLTestRunner(stream=fp,
+                                                   title='KhanLatest unit test',
+                                                   description='Refers to file commit %s.' % html_basefilename)
+            runner.STYLESHEET_TMPL = '<link rel="stylesheet" href="my_stylesheet.css" type="text/css">'
+            result = runner.run(suite)
+            fp = file('test_reports/%s.json' % html_basefilename, "wb")
+            json.dump({"wasSuccessful": result.wasSuccessful()}, fp)
+            fp.close()
         else:
             runner = unittest.TextTestRunner(verbosity=2)
+            result = runner.run(suite)
 
-        result = runner.run(suite)
         if not result.wasSuccessful():
             num_errors += 1
 
@@ -82,8 +91,7 @@ if __name__ == '__main__':
                       default='medium',
                       help='run tests this size and smaller ("small", '
                            '"medium", "large")')
-    parser.add_option('--xml', dest='xml', action='store_true',
-                      help='write xUnit XML')
+    parser.add_option('-f', "--base_filename", metavar='FILE', help='write HTML report file into /test_reports')
 
     options, args = parser.parse_args()
 
@@ -92,5 +100,6 @@ if __name__ == '__main__':
     else:
         test_specs = args
 
-    num_errors = main(test_specs, options.xml, options.max_size, options.sdk)
+    num_errors = main(test_specs, options.base_filename, options.max_size, options.sdk)
+    
     sys.exit(min(num_errors, 127))    # exitcode of 128+ means 'signal'

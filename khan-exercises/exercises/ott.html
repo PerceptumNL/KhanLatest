@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html data-require="NL math word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Onvoltooid Tegenwoordige tijd</title>
+    <script src="../khan-exercise.js"></script>
+	<script>
+		function welke(persoon){
+			if(persoon == 1){
+				return "<var>stamteg(Type)</var>"}
+			else if(persoon == 2 || persoon == 3){
+				return "<var>stamteg(Type)</var>t"}
+			else if(persoon == 4){
+				return "<var>heelteg(Type)</var>"};
+		}
+		function welkesterk(persoon){
+			if(persoon == 1){
+				return "<var>sterkstam(Type)</var>"}
+			else if(persoon == 2){
+				return "<var>sterkuvorm(Type)</var>"}
+			else if(persoon ==3){
+				return "<var>sterkhijvorm(Type)</var>"}
+			else if(persoon == 4){
+				return "<var>sterkheel(Type)</var>"};
+		}
+
+		function caps(persoon){
+			return persoon.charAt(0).toUpperCase() + persoon.slice(1);
+		}
+
+		function vorm(persoon){
+			number = (Math.floor(Math.random()*4))+1
+			if(persoon == 1){
+				return "ik"}
+			else if(persoon == 2){
+				return "jij"}
+			else if(persoon == 3){
+				if(number >2){
+					return "hij"}
+				else if(number==2){
+					return "u"}
+				else{
+					return "<var>caps(randFromArray(Calling))</var>"};
+			}
+			else if(persoon == 4){
+				if(number >2){
+					return "wij"}
+				else if(number==2){
+					return "jullie"}
+				else{
+					return "<var>caps(randFromArray(ThirdPlural))</var>"};
+			};
+		}
+		
+		function meervoud(persoon){
+			if(persoon == 4){
+				return "<p>(Let op, meervoud!)</p>";
+			}
+		}
+		
+	</script>
+</head>
+<body>
+	<div class="exercise">
+
+		<div class="vars">
+			<var id="Type">randRange( 1, 3 )</var>
+			<var id="Persoon">randRange(1,4)</var>
+			<var id="Time">["morgen", "volgende week", "over een jaar", "over twee maanden"]</var>
+			<var id="Places">["de bakker", "buiten", "de tuin", "de buren", "het piratenschip"]</var>
+			<var id="Cities">["Amsterdam", "Groningen", "Rotterdam", "Den Haag", "Nijmegen", "Arnhem"]</var>
+			<var id="Viewing">["het schilderij van Van Gogh", "dat oude standbeeld", "zijn fiets", "een konijntje"]</var>
+			<var id="Calling">["de buurman", "het meisje", "de jongen", "de buurvrouw", "de man", "de vrouw", "de dokter", "mijn moeder", "Jennifer", "Amira", "Arnoud", "Jorn", "Sander", "Sanne", "Tijmen", "Ysbrand", "de viking", "de piraat", "de kleuter"]</var>
+			<var id="Working">["het project", "de tekening", "het wiskundehuiswerk", "de voorstelling", "de boomhut", "de presentatie", "ons werkstuk"]</var>
+			<var id="ThirdPlural">["de meisjes", "de jongens", "de buren", "de ouders", "de kleuters", "de volwassenen", "de vikingen", "de piraten"]</var>
+			<var id="Painting">["de muur", "het hek", "mijn grootmoeders vaas", "de schutting van de buurman", "ons fietsenschuurtje", "het piratenschip"]</var>
+			<var id="Having">["het tweede boek van Harry Potter", "een bos rozen gekregen", "geen honger", "jeuk", "een rode broek", "lekker gegeten"]</var>
+			<var id="Verbs">["dansen", "zingen", "knuffelen", "tekenen", "acteren"]</var>
+		</div>
+
+
+		<div class="problems">
+			<div id = "zwak">
+				<p class = "problem">Geef de juiste vervoeging van het werkwoord "<var>heelteg(Type)</var>". </p>
+				<p class = "question"> <var>caps(vorm(Persoon))</var> ...</p>
+				<p class = "solution" data-type="text"><var>welke(Persoon)</var></p>
+				<div class = "hints">
+					<p id = "hintintro">Het werkwoord <b><var>heelteg(Type)</var></b> is een <i>zwak</i> werkwoord.</p>
+					<p id = "hintmv1a" data-if="Persoon==4">We willen hiervan de meervoudsvorm hebben. </p>
+						<p id = "hintmv1b" data-if="Persoon==4">De meervoudsvorm is gewoon het hele werkwoord.</p>
+						<p id = "hintmv1c" data-if="Persoon==4">Het antwoord is dus "<var>heelteg(Type)</var>".</p>
+					<p id = "hintenkelvoud" data-else>We willen hiervan de vorm voor de <var>Persoon</var>e persoon enkelvoud hebben.</p>
+						<p id = "hintev1a" data-if="Persoon==1">Voor de ik-vorm hoeven we alleen de stam te nemen.</p>
+							<p id = "hintev1b" data-if="Persoon==1">De stam van <var>heelteg(Type)</var> is <var>welke(1)</var>.</p>
+							<p id = "hintev1c" data-if="Persoon==1">Het antwoord is dus "<var>welke(Persoon)</var>".</p>
+						<p id = "hintev2a" data-if="Persoon==2">Voor de jij-vorm nemen we de stam plus de letter t.</p>
+						<p id = "hintev3a" data-if="Persoon==3">Voor de hij/zij-vorm nemen we de stam plus de letter t.</p>
+							<p id = "hintev2b" data-if="Persoon==2 || Persoon==3">De stam van <var>heelteg(Type)</var> is <var>welke(1)</var>.</p>
+							<p id = "hintev2c" data-if="Persoon==2 || Persoon==3">Dan krijgen we dus <var>welke(1)</var> + t.</p>
+							<p id = "hintev2d" data-if="Persoon==2 || Persoon==3">Het antwoord is dus "<var>welke(Persoon)</var>".</p>
+						
+					
+					
+				</div>
+			</div>
+
+	
+			<div class="sterk">
+				<p class = "problem">Geef de juiste vervoeging van het werkwoord "<var>sterkheel(Type)</var>".</p>
+				<p class = "question"> <var>caps(vorm(Persoon))</var> ...</p>
+				<p class = "solution" data-type="text"><var>welkesterk(Persoon)</var></p>
+				<div class = "hints">
+					<p id = "hintintro">Het werkwoord "<var>sterkheel(Type)</var>" is een <i>sterk</i> werkwoord. </p>
+					<p id = "hintmv" data-if="Persoon==4">Voor de meervoudsvorm gebruiken we &oacute;&oacute;k het hele werkwoord.</p>
+						<p id = "hintmv2" data-if="Persoon==4">Het antwoord is dus "<var>sterkheel(Type)</var>".</p>
+					<p id = "hint2" data-if="Persoon!=4">Dat betekent dat gewoon de regels volgen niet werkt. </p>
+					<p id = "hint3" data-if="Persoon!=4">Hoe vaker je de woorden tegenkomt, hoe makkelijker je het onthoudt.</p>
+					<p id = "hint4" data-if="Persoon!=4">De <var>Persoon</var>e persoon enkelvoud van "<var>sterkheel(Type)</var>" is "<var>welkesterk(Persoon)</var>".<p>
+				</div>
+			</div>
+		
+			<div class = "verhaalzwak">
+				<p class = "problem">
+					<p data-if="heelteg(Type)=='verhuizen'"> <var>caps(vorm(Persoon))</var> ... <var>randFromArray(Time)</var> naar <var>randFromArray(Cities)</var>. (<var>heelteg(Type)</var>)</p>
+					<p data-if="heelteg(Type)=='lopen'"><var>caps(vorm(Persoon))</var> ... naar <var>randFromArray(Places)</var>. (<var>heelteg(Type)</var>)</p>
+					<p data-if="heelteg(Type)=='zien'"><var>caps(vorm(Persoon))</var> ... <var>randFromArray(Viewing)</var>. (<var>heelteg(Type)</var>)</p>
+					<p data-if="heelteg(Type)=='bellen' || heelteg(Type)=='dansen'"><var>caps(vorm(Persoon))</var> ... met <var>randFromArray(Calling)</var>. (<var>heelteg(Type)</var>)</p>
+					<p data-if="heelteg(Type)=='werken'"><var>caps(vorm(Persoon))</var> ... samen met <var>randFromArray(Calling)</var> aan <var>randFromArray(Working)</var>. (<var>heelteg(Type)</var>)</p>
+					<p data-if="heelteg(Type)=='vinden'"><var>caps(vorm(Persoon))</var> ... <var>randFromArray(Calling)</var> heel erg leuk. (<var>heelteg(Type)</var>)</p>
+					<p data-if="heelteg(Type)=='verven'"><var>caps(vorm(Persoon))</var> ... <var>randFromArray(Painting)</var> samen met <var>randFromArray(Calling)</var>. (<var>heelteg(Type)</var>)</p>
+				<p class = "question">Wat moet er op de plek van de puntjes staan?</p>
+				<p class = "solution" data-type="text"><var>welke(Persoon)</var></p>
+<div class = "hints">
+					<p id = "hintintro">Het werkwoord <b><var>heelteg(Type)</var></b> is een <i>zwak</i> werkwoord.</p>
+					<p id = "hintmv1a" data-if="Persoon==4">We willen hiervan de meervoudsvorm hebben. </p>
+						<p id = "hintmv1b" data-if="Persoon==4">De meervoudsvorm is gewoon het hele werkwoord.</p>
+						<p id = "hintmv1c" data-if="Persoon==4">Het antwoord is dus "<var>heelteg(Type)</var>".</p>
+					<p id = "hintenkelvoud" data-else>We willen hiervan de vorm voor de <var>Persoon</var>e persoon enkelvoud hebben.</p>
+						<p id = "hintev1a" data-if="Persoon==1">Voor de ik-vorm hoeven we alleen de stam te nemen.</p>
+							<p id = "hintev1b" data-if="Persoon==1">De stam van <var>heelteg(Type)</var> is <var>welke(1)</var>.</p>
+							<p id = "hintev1c" data-if="Persoon==1">Het antwoord is dus "<var>welke(Persoon)</var>".</p>
+						<p id = "hintev2a" data-if="Persoon==2">Voor de jij-vorm nemen we de stam plus de letter t.</p>
+						<p id = "hintev3a" data-if="Persoon==3">Voor de hij/zij-vorm nemen we de stam plus de letter t.</p>
+							<p id = "hintev2b" data-if="Persoon==2 || Persoon==3">De stam van <var>heelteg(Type)</var> is <var>welke(1)</var>.</p>
+							<p id = "hintev2c" data-if="Persoon==2 || Persoon==3">Dan krijgen we dus <var>welke(1)</var> + t.</p>
+							<p id = "hintev2d" data-if="Persoon==2 || Persoon==3">Het antwoord is dus "<var>welke(Persoon)</var>".</p>
+					
+				</div>
+			</div>
+
+			<div class = "verhaalsterk">
+				<p class = "problem">
+					<p data-if="sterkheel(Type)=='hebben'"> <var>caps(vorm(Persoon))</var> ... <var>randFromArray(Having)</var>. (<var>sterkheel(Type)</var>)</p>
+					<p data-if="sterkheel(Type)=='zijn'"> <var>caps(vorm(Persoon))</var> ...  blij met <var>randFromArray(Working)</var>. (<var>sterkheel(Type)</var>)</p>
+					<p data-if="sterkheel(Type)=='kunnen'"> <var> caps(vorm(Persoon))</var> ... net zo goed <var>randFromArray(Verbs)</var> als <var>randFromArray(ThirdPlural)</var>. (<var>sterkheel(Type)</var>)</p>
+					<p data-if="sterkheel(Type)=='mogen'"> <var>caps(vorm(Persoon))</var> ...  <var>randFromArray(Verbs)</var> van <var>randFromArray(Calling)</var>. (<var>sterkheel(Type)</var>)</p>
+					<p data-if="sterkheel(Type)=='moeten'"> <var>caps(vorm(Persoon))</var> ... helemaal niks! (<var>sterkheel(Type)</var>)</p>
+					<p data-if="sterkheel(Type)=='zullen'"> <var>caps(vorm(Persoon))</var> ... <var>randFromArray(Time)</var> veel <var>randFromArray(Verbs)</var>. (<var>sterkheel(Type)</var>)</p>
+					<p data-if="sterkheel(Type)=='willen'"> <var>caps(vorm(Persoon))</var> ... heel graag met <var>randFromArray(Calling)</var> <var>randFromArray(Verbs)</var>. (<var>sterkheel(Type)</var>)</p>
+				<p class = "question">Wat moet er op de plek van de puntjes staan?</p>
+				<p class = "solution" data-type="text"><var>welkesterk(Persoon)</var></p>
+<div class = "hints">
+					<p id = "hintintro">Het werkwoord "<var>sterkheel(Type)</var>" is een <i>sterk</i> werkwoord. </p>
+					<p id = "hintmv" data-if="Persoon==4">Voor de meervoudsvorm gebruiken we &oacute;&oacute;k het hele werkwoord.</p>
+						<p id = "hintmv2" data-if="Persoon==4">Het antwoord is dus "<var>sterkheel(Type)</var>".</p>
+					<p id = "hint2" data-if="Persoon!=4">Dat betekent dat gewoon de regels volgen niet werkt. </p>
+					<p id = "hint3" data-if="Persoon!=4">Hoe vaker je de woorden tegenkomt, hoe makkelijker je het onthoudt.</p>
+					<p id = "hint4" data-if="Persoon!=4">De <var>Persoon</var>e persoon enkelvoud van "<var>sterkheel(Type)</var>" is "<var>welkesterk(Persoon)</var>".<p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

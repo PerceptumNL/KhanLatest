@@ -29,6 +29,7 @@ javascript = {
             "jquery.placeholder.js",
             "jquery.hoverflow.js",
             "jquery.qtip.js",
+            "jquery.cookie.js",
             "underscore.js",
             "underscore-extras.js",
             "keyhandling.js",

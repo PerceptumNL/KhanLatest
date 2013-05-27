@@ -62,8 +62,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     {%- endif %}
     <meta name="description" content="{% block meta_description -%}
-	  Leer wat je wil, wanneer je het wil en in je eigen tempo. En ook nog eens gratis.
-	  {%- endblock %}"/>
+      Leer wat je wil, wanneer je het wil en in je eigen tempo. En ook nog eens gratis.
+      {%- endblock %}"/>
     <meta name="keywords"
           content="{% block meta_keywords %}khan academy, leren, videos, taal, rekenen, klokkijken, oefenen, oeningen, vaardigheden{% endblock %}"/>
 
@@ -88,6 +88,8 @@
 
     <link rel="shortcut icon" href="/favicon.ico?leaf">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
 
     {{ js_css_packages.css_package("shared") }}
     {% block pagecss %}{% endblock pagecss %}
@@ -201,8 +203,9 @@
 
             <div id="top-header">
                 <div class="top-header-links">
-                    <div id="navbar">
+                    <div id="navbar" class="overflow overflow-white"> {# class="overflow" #}
                         <a id="logo" href="/" title="Naar de homepage!" data-tag="Header">
+                            {# <img src="/images/logos/khan-academie2.png"> #}
                         </a>
                     <span class="page_links" id="page_auth">
                         <span id="goals-container"></span>
@@ -217,16 +220,7 @@
 
                         <div id="stats">
                         </div>
-                        <div id="search-box">
-                                <form class="page-search" action="/search">
-                                    <input id="search-input"
-				    type="text" placeholder="Zoek op video's en oefeningen"
-                                           name="page_search_query" value='{{ page_search_query|escape }}'
-                                           class="ui-corner-all placeholder simple-input search-input blur-on-esc"/>
-                                    <input
-                                            type="submit" value=" " class="search-submit"/>
-                                </form>
-                            </div>
+
                         <div class="site-wide-navigation">
                             <ul class="links nav-subheader">
                                 <li>
@@ -262,7 +256,7 @@
                                         </a>
                                     </li>
                                 {% endif %}
-                                <li>
+                                {# <li>
                                     <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/contribute"
                                        data-tag="Header"
                                        class="{% if selected_nav_link == 'contribute' %}selected{% endif %} contribute-link{% if user_data.is_demo %} show-demo-dialog{% endif %}">
@@ -285,7 +279,7 @@
                                     <a href="http://wiki.khanacademie.nl/" data-tag="Header" class="about-link">
                                     Wiki
                                     </a>
-                                </li>
+                                </li> #}
                                 <!--
                                 <li>
                                     <a href="{% if user_data.is_demo %}
@@ -296,16 +290,36 @@
                                     </a>
                                 </li>
                                 -->
-                                </span>
+                                {# </span> #}
                             </ul>
-                            
+                        
                             <!-- TODO what is this .clear class all about? -->
                             <div class="clear">
                             </div>
                         </div>
                     </div>
-
-                    <div class="clear"></div>
+{# TODO (NICHOLAS): REMOVE SEARCH BAR BUTTONS #}
+                <div class="overflow "> {# class="overflow" #}
+                    <div id="search-box"> {# class="page-ribbon" #}
+                        {# <div class="container"> #}
+                        <form class="page-search" action="/search">
+                            <input id="large-search-input"
+                                   class="large-search-bar simple-input search-input"
+                                   type="text" placeholder="Zoek op video's en oefeningen"
+                                   name="page_search_query" value='{{ page_search_query|escape }}'
+                                   class="ui-corner-all placeholder simple-input search-input blur-on-esc"/>
+                            <input
+                                    type="submit" value=" " class="search-submit"/>
+                        </form>
+{#                         <div class="main-search-buttons">
+                            <div class="button" id="search-button"><h4>ZOEK</h4></div>
+                            <a href="/browse"><div class="button" id="browse-button"><h4>BLADEREN</h4></div></a>
+                        </div> #}
+                      {# </div>  #}
+                    </div>
+                </div>
+{# END TODO #}
+                    {# <div class="clear"></div> #}
                 </div>
                 <div id="page_sub_nav">
                     <!-- Shows breadcrumbs -->
@@ -315,11 +329,13 @@
                         </b>
                     {% endblock pagesubmenu %}
                 </div>
+                {# <div class="clear"></div> #}
                 {% block pagemessage %}
 
                 {% endblock pagemessage %}
 
             </div>
+            {# <div class="clear"></div> #}
             {% block pagecontent %}
             {% endblock pagecontent %}
             <div id="end-of-page-spacer" style="height: 38px;">&nbsp;</div>
@@ -329,7 +345,7 @@
 </div>
 <div class="push"></div>
 {% block pagefooter %}
-    {% include "page_footer_short.html" %}
+    {% include "new_page_footer.html" %}
 {% endblock %}
 
 {% block bottompagescript %}

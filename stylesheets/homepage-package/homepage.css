@@ -200,8 +200,47 @@ td.social-action.gplus {
     padding: 0px 60px 10px 60px;
     min-height: 300px;
 }
+.item {
+    background: #d3e8f2;
+}
+#focus1 {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+    padding: 0 10px;
+    /*margin: 10px;*/
+    /*border: 10px transparent;*/
+    /*border-radius: 10px;*/
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+#focus2 {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+    padding: 0 10px;
+    /*margin: 10px;*/
+    /*border: 10px transparent;*/
+    /*border-radius: 10px;*/
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+#focus3 {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+    padding: 0 10px;
+    /*margin: 10px;*/
+    /*border: 10px transparent;*/
+    /*border-radius: 10px;*/
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
 
-#homepage-content > div.focus-box{
+.focus-box {
     -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;

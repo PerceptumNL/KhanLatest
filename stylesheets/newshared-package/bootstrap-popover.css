@@ -1,0 +1,106 @@
+/*!
+ * Bootstrap v2.0.4
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+.popover {
+    display: none;
+    left: 0;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    z-index: 1010;
+}
+.popover.top {
+    margin-top: -5px;
+}
+.popover.right {
+    margin-left: 5px;
+}
+.popover.bottom {
+    margin-top: 5px;
+}
+.popover.left {
+    margin-left: -5px;
+}
+.popover.top .arrow {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000;
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+}
+.popover.right .arrow {
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #000;
+    border-top: 5px solid transparent;
+    left: 0;
+    margin-top: -5px;
+    top: 50%;
+}
+.popover.bottom .arrow {
+    border-bottom: 5px solid #000;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    left: 50%;
+    margin-left: -5px;
+    top: 0;
+}
+.popover.left .arrow {
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    border-top: 5px solid transparent;
+    margin-top: -5px;
+    right: 0;
+    top: 50%;
+}
+.popover .arrow {
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+.popover-inner {
+    padding: 3px;
+    max-width: 200px; /* Max with set to 200px so that popover never looks too big */
+    overflow: hidden;
+    background: #000;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 70px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 70px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 70px rgba(0, 0, 0, 0.3);
+}
+.popover-content {
+    padding: 10px;
+    background-color: #fff;
+    /* For radius of the borders */
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.popover h1,
+.popover h2,
+.popover h3,
+.popover h4,
+.popover h5,
+.popover h6,
+.popover-content p,
+.popover-content ul,
+.popover-content ol {
+    margin: 0;
+}
+/* For alignment of content within popover */
+.popover-content p{
+  text-align: left;
+}

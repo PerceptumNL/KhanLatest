@@ -1,0 +1,22 @@
+{
+  "name": "gallery",
+  "repo": "benschwarz/gallery-css",
+  "version": "1.0.0",
+  "main": [
+    "dist/gallery.css",
+    "dist/gallery.min.css",
+    "dist/gallery.prefixed.css",
+    "dist/gallery.prefixed.min.css",
+    "dist/gallery.theme.css"
+  ],
+  "license": "MIT",
+  "gitHead": "2cf1a9c2fcb383fb1c53024dc6199ec71765d603",
+  "readme": "# Gallery.css\n\nGallery.css is *all* CSS. Think: Simple, maintainable and understandable galleries without the use of Javascript. \n\n_What? No script!? Why?_ — Gallery css started as an experiment to build interactive, fluid componentry without the need for jQuery, or a jQuery carousel script. Use this library, or don't — either way, hopefully you'll learn from the techniques used within. \n\n## Installation\n\nThe preferred method to install gallery-css is by using Bower, a package manager for front-end components.\n\n`bower install gallery-css`\n\nOtherwise, if you want to keep it simple, check the [dist directory](/dist).\n\n## Getting started\n\nYou've got a couple options with how you'd like to use gallery.css:\n\n\t* Without autoplaying animation\n\t* With autoplaying animation\n\t* With or without browser prefixes\n\nRead the [getting started guide](http://benschwarz.github.io/gallery-css#getting-started), or checkout the [examples](/examples)\n\n## How does it work? \n\nI've [prepared a screencast](http://benschwarz.github.io/gallery-css) that will take you through how to build something like Gallery-css from scratch, theres tonnes of tiny details that I learnt myself while building it. Its $12, you'll learn and it'll help me keep building for the web. How good is that? \n\n## Browser support\n\n<table width=\"100%\" style=\"text-align: center;\">\n  <thead>\n    <tr>\n      <td>Safari</td>\n      <td>Firefox</td>\n      <td>Chrome</td>\n      <td>IE8</td>\n      <td>IE9</td>\n      <td>IE10</td>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>✔</td>\n      <td>✔</td>\n      <td>✔</td>\n      <td>✖†</td>\n      <td>✔</td>\n      <td>✔</td>\n    </tr>\n  </tbody>\n</table>\n\n† [Absolutely possible](examples/ie-8) using a variety of JS selector shims, although not recommended.\n\n## Build instructions\n\nGallery CSS is built using [grunt](http://gruntjs.com) & RubySASS.\n\nYou'll need:\n\n* Ruby (and sass - `gem install sass`)\n* Run `npm install` from the root directory.\n* To run a build, you'll simply need to run `grunt`.",
+  "readmeFilename": "README.md",
+  "_id": "gallery@1.0.0",
+  "description": "Gallery.css is *all* CSS. Think: Simple, maintainable and understandable galleries without the use of Javascript.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/benschwarz/gallery-css.git"
+  }
+}

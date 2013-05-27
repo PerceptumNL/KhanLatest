@@ -9,35 +9,95 @@
 
 {% block pagescript %}
 <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+<link href='https://s3.amazonaws.com/gallery-css/gallery.css' rel='stylesheet' type='text/css'>
+<link href='https://s3.amazonaws.com/gallery-css/gallery.theme.css' rel='stylesheet' type='text/css'>
 {% endblock pagescript %}
 {% block pagetitle %}{% endblock pagetitle %}
 {% block pagecontent %}
     <article id="homepage" > {# class="overflow" #}
     <div id="homepage-content" > {# class="container" #}
-        <div class="focus-box">
-            <div id="kijk">
-            {# <img src="images/icons/iconmonstr-video-icon.png" width='128px' height='128px'> #}
-            <img src="images/icons/Oefen.png" width='230px' height='192px'>
-            <h3>Oefen</h3>
-            <p>Maak oefeningen en bekijk hulpvideo's.</p>
-            </div>
+        <!-- gallery stuff -->
+        <div class="gallery autoplay items-2" style="background:#d3e8f2">
+          <div id="item-1" class="control-operator"></div>
+          <div id="item-2" class="control-operator"></div>
+          <!-- <div id="item-3" class="control-operator"></div> -->
+
+          <figure class="item" style="background:#d3e8f2">
+            <!-- <h1>1</h1> -->
+                <!-- student icons stuff -->
+                <div id="focus1" class="focus-box">
+                    <a href="/browse">
+                    <div id="kijk">
+                    {# <img src="images/icons/iconmonstr-video-icon.png" width='128px' height='128px'> #}
+                    <img src="images/icons/Oefen.png" width='230px' height='192px'>
+                    <h3>Oefen</h3>
+                    <p>Maak oefeningen en bekijk hulpvideo's.</p>
+                    </div>
+                    </a>
+                </div>
+                <div id="focus2" class="focus-box">
+                    <a href="/browse">
+                    <div id="leer">
+                    {# <img src="images/icons/iconmonstr-livejournal-icon.png" width='128px' height='128px'> #}
+                    <img src="images/icons/Herhaal.png" width='230px' height='192px'>
+                    <h3>Herhaal</h3>
+                    <p>Oefen totdat je het onder die knie hebt.</p>
+                    </div>
+                    </a>
+                </div>
+                <div id="focus3" class="focus-box">
+                    <a href="/browse">
+                    <div id="groei">
+                    {# <img src="images/icons/iconmonstr-star-5-icon.png" width='128px' height='128px'> #}
+                    <img src="images/icons/Groei.png" width='230px' height='192px'>
+                    <h3>Groei</h3>
+                    <p>Zie je voortgang en verdien punten.</p>
+                    </div>
+                    </a>
+                </div>
+                <!-- end student icons stuff -->
+          </figure>
+          <figure class="item style="background:#d3e8f2"">
+            <!-- <h1>2</h1> -->
+            <!-- teachers icons stuff -->
+                <div class="focus-box">
+                    <div id="kijk">
+                    {# <img src="images/icons/iconmonstr-video-icon.png" width='128px' height='128px'> #}
+                    <img src="images/icons/Oefen.png" width='230px' height='192px'>
+                    <h3>Volg</h3>
+                    <p>Maak oefeningen en bekijk hulpvideo's.</p>
+                    </div>
+                </div>
+                <div class="focus-box">
+                    <div id="leer">
+                    {# <img src="images/icons/iconmonstr-livejournal-icon.png" width='128px' height='128px'> #}
+                    <img src="images/icons/Herhaal.png" width='230px' height='192px'>
+                    <h3>Leer</h3>
+                    <p>Oefen totdat je het onder die knie hebt.</p>
+                    </div>
+                </div>
+                <div class="focus-box">
+                    <div id="groei">
+                    {# <img src="images/icons/iconmonstr-star-5-icon.png" width='128px' height='128px'> #}
+                    <img src="images/icons/Groei.png" width='230px' height='192px'>
+                    <h3>Verrijk</h3>
+                    <p>Zie je voortgang en verdien punten.</p>
+                    </div>
+                </div>
+                <!-- end teachers icons stuff -->
+          </figure>
+<!--           <figure class="item">
+            <h1>3</h1>
+          </figure> -->
+
+          <div class="controls">
+            <a href="#item-1" class="control-button">•</a>
+            <a href="#item-2" class="control-button">•</a>
+            <!-- <a href="#item-3" class="control-button">•</a> -->
+          </div>
         </div>
-        <div class="focus-box">
-            <div id="leer">
-            {# <img src="images/icons/iconmonstr-livejournal-icon.png" width='128px' height='128px'> #}
-            <img src="images/icons/Herhaal.png" width='230px' height='192px'>
-            <h3>Herhaal</h3>
-            <p>Oefen totdat je het onder die knie hebt.</p>
-            </div>
-        </div>
-        <div class="focus-box">
-            <div id="groei">
-            {# <img src="images/icons/iconmonstr-star-5-icon.png" width='128px' height='128px'> #}
-            <img src="images/icons/Groei.png" width='230px' height='192px'>
-            <h3>Groei</h3>
-            <p>Zie je voortgang en verdien punten.</p>
-            </div>
-        </div>
+        <!-- end gallery stuff -->
+
         <div class='homepage-sell overflow-white'> {# class="overflow" #}
             Het digitale oefenboek, speciaal geschreven voor jou.
         </div> 

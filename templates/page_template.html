@@ -232,7 +232,7 @@
                                     </a>
                                 </li>
                                 <li class="dropdown topic-browser-dropdown">
-                                    <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/#browse"
+                                    <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/browse"
                                        data-tag="Header"
                                             {% if watch_topic_browser_enabled %}
                                        class="watch-link dropdown-toggle{% if user_data.is_demo %} show-demo-dialog{% endif %}"
@@ -338,7 +338,7 @@
             {# <div class="clear"></div> #}
             {% block pagecontent %}
             {% endblock pagecontent %}
-            <div id="end-of-page-spacer" style="height: 38px;">&nbsp;</div>
+            <!-- <div id="end-of-page-spacer" style="height: 38px;">&nbsp;</div> -->
 
         </div>
     </div>

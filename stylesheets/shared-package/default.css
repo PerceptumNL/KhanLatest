@@ -418,6 +418,14 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     position: static;
 }
 
+.wiki-blurb h6 {
+    font-size: 1.8em;
+}
+
+.zoek-blurb h6 {
+    font-size: 1.8em;
+}
+
 /*NEW FOOTER STUFF*/
 .social-media {
     text-align: center;

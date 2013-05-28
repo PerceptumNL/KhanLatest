@@ -528,7 +528,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     /* TODO what white triangle?, what is its id/class? */
     z-index: 30;
     display: inline-block;
-    margin-left: 200px;
+    /*margin-left: 200px;*/ /*messes with user details*/
     margin-top: 40px;
     margin-right: 10px;
     margin-bottom: 40px: 
@@ -890,7 +890,8 @@ span.username_and_notification .user-name {
 }
 
 #user-info {
-    float: right;
+    /*This is a child of page_links which already has float: right;*/
+    /*float: right;*/ 
     margin-right: 20px;
 }
 
@@ -1048,6 +1049,10 @@ span.username_and_notification .user-name {
 /*OVERFLOW SUGGESTION FROM SE*/
 .overflow-blue { position: relative; }
 .overflow-white { position: relative; }
+.overflow-orange {
+    position: relative;
+    background: #F7931E;
+}
 
 
 .overflow-blue:before,
@@ -1076,6 +1081,19 @@ span.username_and_notification .user-name {
     /*background: #c0ffee;*/
 }
 
+.overflow-orange:before,
+.overflow-orange:after {
+    display: block;
+    content: " ";
+    position: absolute;
+    width: 9999px;
+    top: 0;
+    bottom: 0;
+    background: #F7931E;
+    /*background-color: #D3E8F2;*/
+    /*background: #c0ffee;*/
+}
+
 
 .overflow-blue:before { left: 100%; }
 .overflow-blue:after { right: 100%; }
@@ -1083,10 +1101,16 @@ span.username_and_notification .user-name {
 .overflow-white:before { left: 100%; }
 .overflow-white:after { right: 100%; }
 
+.overflow-orange:before { left: 100%; }
+.overflow-orange:after { right: 100%; }
+
 .container {
     width: 1200px;
 }
 
+#end-of-page-spacer {
+    display: hidden;
+}
 body, html { overflow-x: hidden; }
 /*html, body {height:100%;}*/
 * html .clearfix { height: 1%; }

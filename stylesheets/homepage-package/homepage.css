@@ -365,6 +365,22 @@ img {
     margin-right: -100px;
     margin-left: -100px;
 }*/
+
+.open-source-blurb {
+-webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+      box-sizing: border-box;
+display: inline-block;
+width: 49%;
+background: white;
+height: 275px;
+vertical-align: bottom;
+padding: 15px;
+}
+
+.open-source-blurb h4 {
+    font-size: 1.8em;
+}
 /* Responsive stuff */
 
 @media (max-width: 1000px) {

@@ -253,6 +253,9 @@ td.social-action.gplus {
     display: inline-block;
     width: 33%;
     text-align: center;
+    vertical-align: bottom;
+    /*height: 400px;*/
+    display: table-cell;
 }
 
 #homepage-content {
@@ -273,22 +276,28 @@ td.social-action.gplus {
 }
 
 #kijk {
+    display: table-cell;
     padding: 10px;
     margin: 10px auto;
     border-radius: 10px;
-    background-color: #0776a0; 
+    background-color: #0776a0;
+    vertical-align: bottom;
 }
 #leer {
+    display: table-cell;
     padding: 10px;
     margin: 10px auto;
     border-radius: 10px;
     background-color: #3aa6d0;
+    vertical-align: bottom;
 }
 #groei {
+    display: table-cell;
     padding: 10px;
     margin: 10px auto;
     border-radius: 10px;
     background-color: #83cce2;
+    vertical-align: bottom;
 }
 
 .mini-footer {

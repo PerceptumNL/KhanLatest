@@ -418,15 +418,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     position: static;
 }
 
-.wiki-blurb h6 {
-    font-family: "Raleway", sans-serif;
-    font-size: 0.8em;
-}
 
-.zoek-blurb h6 {
-    font-family: "Raleway", sans-serif;
-    font-size: 0.8em;
-}
 
 /*NEW FOOTER STUFF*/
 .social-media {
@@ -865,7 +857,7 @@ a.about-link.selected:after {
     /*width: 100%;*/
     float: right;
     /*margin: 6px 8px 0 0;*/
-    margin: 40px 10px;
+    margin: 6px 10px;
     z-index: 101;
     /*line-height: 40px;*/
 }
@@ -1046,7 +1038,7 @@ span.username_and_notification .user-name {
 #search-box {
     background-color: #D3E8F2;
     /*width: 100%;*/
-    padding: 30px 80px;
+    padding: 30px 110px 30px 80px;
     /*margin:20px;*/
 }
 ./*overflow {

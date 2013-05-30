@@ -373,9 +373,9 @@ img {
 display: inline-block;
 width: 49%;
 background: white;
-height: 275px;
+/*height: 275px;*/
 vertical-align: bottom;
-padding: 15px;
+padding: 30px;
 }
 
 .open-source-blurb h4 {

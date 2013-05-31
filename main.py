@@ -44,6 +44,8 @@ import homepage
 import old_homepage
 import browsepage # want a page for library_content
 import new_page # example from "how-to"
+import gebruiksvoorwaarden
+import privacybeleid
 import new_homepage
 import helpus
 import rssblog
@@ -901,6 +903,8 @@ application = webapp2.WSGIApplication([
     ('/homepage', homepage.ViewHomePage), #added line
     ('/browsepage', browsepage.ViewBrowsePage), # added line
     ('/newpage', new_page.ViewNewPage),         # added line 
+    ('/gebruiksvoorwaarden', gebruiksvoorwaarden.ViewGebruiksvoorwaardenPage),
+    ('/privacybeleid', privacybeleid.ViewPrivacybeleidPage),
     ('/missingvideos', helpus.ViewMissingVideos),
     ('/about', util_about.ViewAbout),
     ('/about/blog', blog.ViewBlog),

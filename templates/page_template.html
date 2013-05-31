@@ -140,7 +140,6 @@
     </script>
 
     <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>-->
-    <!-- <script src="http://video.khanacademie.nl/js/lib/jquery.cookie.js"></script> -->
     <script>
         function hideCookieMessage() {
             $.cookie("cookieMessage", "read");
@@ -298,28 +297,20 @@
                             </div>
                         </div>
                     </div>
-{# TODO (NICHOLAS): REMOVE SEARCH BAR BUTTONS #}
-                <div class="overflow "> {# class="overflow" #}
-                    <div id="search-box"> {# class="page-ribbon" #}
-                        {# <div class="container"> #}
+
+                <div class="overflow "> 
+                    <div id="search-box">
                         <form class="page-search" action="/search">
                             <input id="large-search-input"
                                    class="large-search-bar simple-input search-input"
                                    type="text" placeholder="Zoek op video's en oefeningen"
                                    name="page_search_query" value='{{ page_search_query|escape }}'
                                    class="ui-corner-all placeholder simple-input search-input blur-on-esc"/>
-                            <input
-                                    type="submit" value=" " class="search-submit"/>
+                            <input type="submit" value=" " class="search-submit"/>
                         </form>
-{#                         <div class="main-search-buttons">
-                            <div class="button" id="search-button"><h4>ZOEK</h4></div>
-                            <a href="/browse"><div class="button" id="browse-button"><h4>BLADEREN</h4></div></a>
-                        </div> #}
-                      {# </div>  #}
                     </div>
                 </div>
-{# END TODO #}
-                    {# <div class="clear"></div> #}
+                {# <div class="clear"></div> #}
                 </div>
                 <div id="page_sub_nav">
                     <!-- Shows breadcrumbs -->

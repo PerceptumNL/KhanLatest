@@ -471,6 +471,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     width: 100px;
     padding: 10px;
     display:inline-block;
+    vertical-align: top;
 }
 
 #footer  ul a {

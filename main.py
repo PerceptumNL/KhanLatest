@@ -427,6 +427,30 @@ class ViewContribute(request_handler.RequestHandler):
             "selected_nav_link": "contribute"
         })
 
+# NEW PAGES ADDED 2013-06
+
+class ViewHelpMee(request_handler.RequestHandler):
+    @user_util.open_access
+    def get(self):
+        self.render_jinja2_template('helpmee.html', {
+            "selected_nav_link" : "contribute"
+            })
+
+class ViewPartners(request_handler.RequestHandler):
+    @user_util.open_access
+    def get(self):
+        self.render_jinja2_template('partners.html', {
+            "selected_nav_link" : "contribute"
+            })
+
+class ViewTraining(request_handler.RequestHandler):
+    @user_util.open_access
+    def get(self):
+        self.render_jinja2_template('training.html', {
+            "selected_nav_link" : "contribute"
+            })
+
+# END NEW PAGES
 
 class ViewCredits(request_handler.RequestHandler):
     @user_util.open_access
@@ -920,6 +944,9 @@ application = webapp2.WSGIApplication([
     ('/about/api-tos', ViewAPITOS),
     ('/about/privacy-policy', ViewPrivacyPolicy),
     ('/about/dmca', ViewDMCA),
+    ('/helpmee', ViewHelpMee),
+    ('/training', ViewTraining),
+    ('/partners', ViewPartners),
     ('/contribute', ViewContribute),
     RedirectRoute('/getinvolved', redirect_to='/contribute'),
     ('/contribute/credits', ViewCredits),

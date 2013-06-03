@@ -1,0 +1,80 @@
+{% extends "page_template.html" %}
+
+{% import 'macros/analytics.html' as analytics %}
+
+{% block meta_page_title %}Contribute | {% endblock meta_page_title %}
+{% block pagecss %}
+<style>
+#accordion h3 {
+  padding: 10px;
+  padding-left: 30px;
+  margin: 5px;
+}
+#partners {
+	max-width: 800px;
+	margin: 0 auto;
+}
+#contribute .section-headline {
+	/*text-align: center;*/
+}
+#contribute ul, ol {
+	list-style: inside;
+}
+#contribute ol {
+	list-style-type: lower-roman;  
+}
+</style>
+    {{ js_css_packages.css_package("bootstrap-grids") }}
+    {{ js_css_packages.css_package("contribute") }}
+{% endblock pagecss %}
+
+{% block pagecontent %}
+    <article id='partners'>
+    	<p>Partner word van Khan</p>
+    	<p>Het is mogelijk om je op verschillende manieren aan Khan te binden. </p>
+    	<h3>Video Makers</h3>
+    	<p>
+    		Binnen de Khan Academie zijn de komende jaren nog heel veel video’s nodig. 
+    		Gelukkig zien we steeds meer mensen al hun eigen instructievideo’s opnemen en deze ook op internet plaatsen. 
+    		Veel van deze video’s komen op Youtube terecht, wat volgens ons geen eindstation is. 
+    		De video’s behalen namelijk nooit het potentiële bereik dat ze hebben en bovendien is er niet direct relevant oefenmateriaal aanwezig. 
+    		Door video’s voor de Khan Academie te maken help je leerlingen bij het onder de knie krijgen van oefeningen waar zij vastlopen.
+    		In plaats van een bepaald probleem steeds opnieuw te moeten geven, kunnen leerlingen jouw instructie juist steeds opnieuw bekijken.
+			Interesse in het maken van video’s? Stuur dan een mailtje naar info@khanacademie.nl en wij nemen contact met je op.
+		</p>
+    	<h3>Pabo’s</h3>
+    	<p>
+    		De verwachting is dat de inbreng van technologie in het onderwijs alleen nog maar gaat toenemen. Sommige leraren zijn hier al veel mee bezig, sommigen niet. 
+    		Wij zijn van mening dat je hier als leerkracht in spe niet vroeg genoeg mee in aanraking kunt komen.
+			Gelukkig bieden veel pabo’s bieden al ICT of Nieuw Media minoren aan waar de leerlingen wordt geleerd hoe zij zelf instructievideo’s kunnen maken. 
+			Zelfs wanneer het kwalitatief hoogstaande video’s zijn, reiken deze video’s vaak niet verder dan het klaslokaal of raken zij in de vergetelheid op Youtube. 
+			Zou het daarom niet mooi zijn als deze video’s gekoppeld kunnen worden aan oefeningen die leerlingen nu al maken op de basisscholen?
+			Wij kunnen helpen met het bieden van relevante opdrachten waar de leerlingen aan kunnen werken waarbij ze ook nog eens relevante werkervaring opdoen en hun video’s al in de praktijk bekeken worden.
+			Is jullie pabo geinteresseerd om video’s voor de Khan Academie te gaan maken? Stuur dan een mailtje naar info@khanacademie.nl.
+		</p>
+    	<h3>Pilot</h3>
+    	<p>
+    		De Khan Academie is gratis beschikbaar en dat zal ook zo blijven. 
+    		We zijn op zoek naar zo veel mogelijk gebruikers om zo meer data te verzamelen waarmee we ons platform uiteindelijk kunnen verbeteren.    		
+			Wil je direct betrokken zijn bij de ontwikkeling van ons platform, stuur dan een mailtje naar info@khanacademie.nl
+		</p>
+    	<h3>Google apps partner</h3>
+    	<p>
+    		Perceptum is ooit begonnen als Google App reseller. 
+    		Hoewel wij nog steeds overtuigd zijn van de vele voordelen die het gebruik van Google Apps for Education biedt, zijn wij gestopt met het implementeren hiervan. 
+    		Doordat hier veel tijd in ging zitten hebben wij besloten om ons hier niet meer op te richten. 
+    		Regelmatig komen wij echter nog scholen tegen die graag gebruik willen maken van deze diensten. 
+    		Inloggen op de Khan Academie gaat bijvoorbeeld veel makkelijker als je gebruik maakt van Google Apps. 
+    		De hele klas heeft dan tenslotte een eigen, soortgelijk, emailadres. 
+    	</p>
+    	<p>
+    		Om aan de vraag van deze scholen te voldoen zijn wij op zoek naar een partner die deze implementatie wil verzorgen. 
+    		Door middel van een nauwe samenwerking kunnen wij zo de scholen nog steeds van een complete service voorzien 
+    	</p>
+    </article>
+
+{% endblock pagecontent %}
+{% block bottompagescript %}
+    {{ js_css_packages.js_package("exercisestats") }}
+    {{ analytics.crazyegg_tracker(False) }}
+{% endblock bottompagescript %}

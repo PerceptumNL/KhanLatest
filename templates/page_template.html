@@ -255,43 +255,7 @@
                                         </a>
                                     </li>
                                 {% endif %}
-                                {# <li>
-                                    <a href="{% if user_data.is_demo %}/logout?continue={% endif %}/contribute"
-                                       data-tag="Header"
-                                       class="{% if selected_nav_link == 'contribute' %}selected{% endif %} contribute-link{% if user_data.is_demo %} show-demo-dialog{% endif %}">
-                                        Help mee
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://blog.khanacademie.nl/" target="_blank" data-tag="Header">
-                                        Blog
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/about/start" data-tag="Header"
-                                       class="{% if selected_nav_link == 'gettingstarted' %}selected{% endif %} about-link{% if user_data.is_demo %} show-demo-dialog{% endif %}"
-                                            >
-                                        Handleiding
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://wiki.khanacademie.nl/" data-tag="Header" class="about-link">
-                                    Wiki
-                                    </a>
-                                </li> #}
-                                <!--
-                                <li>
-                                    <a href="{% if user_data.is_demo %}
-                                                /logout?continue={% endif %}/about" data-tag="Header" class="
-                                                    {% if selected_nav_link == 'about' %}selected{% endif %} about-link
-                                                    {% if user_data.is_demo %} show-demo-dialog{% endif %}">
-                                        Over Ons
-                                    </a>
-                                </li>
-                                -->
-                                {# </span> #}
                             </ul>
-                        
                             <!-- TODO what is this .clear class all about? -->
                             <div class="clear">
                             </div>
@@ -329,8 +293,8 @@
             {# <div class="clear"></div> #}
             {% block pagecontent %}
             {% endblock pagecontent %}
-            <!-- <div id="end-of-page-spacer" style="height: 38px;">&nbsp;</div> -->
-
+            <div id="end-of-page-spacer" style="height: 38px;">&nbsp;</div>
+            <div class="clear"></div>
         </div>
     </div>
 </div>

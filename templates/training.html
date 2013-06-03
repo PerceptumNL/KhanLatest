@@ -1,0 +1,45 @@
+{% extends "page_template.html" %}
+
+{% import 'macros/analytics.html' as analytics %}
+
+{% block meta_page_title %}Contribute | {% endblock meta_page_title %}
+{% block pagecss %}
+<style>
+#accordion h3 {
+  padding: 10px;
+  padding-left: 30px;
+  margin: 5px;
+}
+#training {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 15px;
+}
+#contribute .section-headline {
+	/*text-align: center;*/
+}
+#contribute ul, ol {
+	list-style: inside;
+}
+#contribute ol {
+	list-style-type: lower-roman;  
+}
+</style>
+    {{ js_css_packages.css_package("bootstrap-grids") }}
+    {{ js_css_packages.css_package("contribute") }}
+{% endblock pagecss %}
+
+{% block pagecontent %}
+    <article id="training">
+    	<h2>Training and Ondersteuning</h2>
+    	<p>Een van de doelen van de Khan Academie is om een gratis, toegankelijk en slim leerplatform aan scholen te bieden om zo de leraar te ontlasten en de leerling lessen op maat te kunnen bieden. Het toepassen van digitale middelen brengt natuurlijk wel meer met zich mee dan alleen het gebruiken van een platform. De rol van de leraar veranderd en lessen kunnen anders worden ingedeeld dan voorheen. </p>
+    	<p>Wij helpen u graag in de overstap naar het digitaliseren van uw lessen, zowel fysiek als mentaal. Wij bieden trainingen en workshops aan, waarin wij prangende vragen beantwoorden en onduidelijke zaken verhelderen. Met ons brede netwerk aan experts op gebied van onderwijs en techniek kunnen wij u een training op maat aanbieden. Naast filosofische vraagstukken te behandelen kunnen wij u helpen met het efficiënt inzetten van de Khan academie en andere digitale tools in uw lessen en of lesplannen. Vind het wiel niet opnieuw uit, en laat ons u helpen!</p>
+    	<p>
+    	Wij als organisatie zijn dagelijks bezig met het verbeteren van het inzetten van tools en het ontwikkelen van een duidelijke strategie met betrekking tot kennisdeling en kennisvergaren. Het wordt steeds belangrijker om deze zaken op orde te hebben, en al helemaal in de toekomst. Goede voorbereiding is het halve werk.</p>
+    </article>
+    
+{% endblock pagecontent %}
+{% block bottompagescript %}
+    {{ js_css_packages.js_package("exercisestats") }}
+    {{ analytics.crazyegg_tracker(False) }}
+{% endblock bottompagescript %}

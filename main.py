@@ -944,9 +944,9 @@ application = webapp2.WSGIApplication([
     ('/about/api-tos', ViewAPITOS),
     ('/about/privacy-policy', ViewPrivacyPolicy),
     ('/about/dmca', ViewDMCA),
-    ('/helpmee', ViewHelpMee),
-    ('/training', ViewTraining),
-    ('/partners', ViewPartners),
+    ('/helpmee', ViewHelpMee), #added
+    ('/training', ViewTraining), #added
+    ('/partners', ViewPartners), #added
     ('/contribute', ViewContribute),
     RedirectRoute('/getinvolved', redirect_to='/contribute'),
     ('/contribute/credits', ViewCredits),

@@ -497,7 +497,8 @@ stylesheets = {
     },
     "homepage": {
         "files": [
-            "homepage.css"
+            "homepage.css", 
+            "test.css"
         ]
     },
     "mobile": {

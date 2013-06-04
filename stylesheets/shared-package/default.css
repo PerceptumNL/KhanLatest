@@ -468,7 +468,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .main-links {display: inline-block;}
 .main-links  ul {
     /*color: black;*/
-    width: 200px;
+    width: 220px;
     padding: 10px;
     display:inline-block;
     vertical-align: top;
@@ -496,8 +496,8 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 .dark #top-header #logo #logo-image {
     /* TODO what is this?*/
-    background-image: url(/images/non-repeating-sprites.4.png);
-    background-position: -320px -465px;
+    /*background-image: url(/images/non-repeating-sprites.4.png);
+    background-position: -320px -465px;*/
 }
 
 #cookie-message {

@@ -462,13 +462,13 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 /*NEW FOOTER STUFF*/
 .footer-container {
-    width: 800px;
+    width: 1000px;
     margin:0 auto;
 }
 .main-links {display: inline-block;}
 .main-links  ul {
     /*color: black;*/
-    width: 100px;
+    width: 200px;
     padding: 10px;
     display:inline-block;
     vertical-align: top;
@@ -476,6 +476,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 #footer  ul a {
     color: black;
+    font-size: 1.2em;
 }
 
 .main-links ul li {

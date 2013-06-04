@@ -449,8 +449,13 @@ class ViewTraining(request_handler.RequestHandler):
             "selected_nav_link" : "contribute"
             })
 
-# END NEW PAGES
+class ViewVoorleraren(request_handler.RequestHandler):
+    @user_util.open_access
+    def get(self):
+        self.render_jinja2_template('voorleraren.html', {})
 
+# END NEW PAGES
+ # Many of theses can be removed ->
 class ViewCredits(request_handler.RequestHandler):
     @user_util.open_access
     def get(self):
@@ -930,19 +935,20 @@ application = webapp2.WSGIApplication([
     ('/privacybeleid', privacybeleid.ViewPrivacybeleidPage),
     ('/missingvideos', helpus.ViewMissingVideos),
     ('/about', util_about.ViewAbout),
-    ('/about/blog', blog.ViewBlog),
+    # ('/about/blog', blog.ViewBlog),
     RedirectRoute('/about/blog/schools',
         redirect_to='http://ka-implementations.tumblr.com/',
         defaults={'_permanent': False}),
-    ('/about/blog/.*', blog.ViewBlogPost),
+    # ('/about/blog/.*', blog.ViewBlogPost),
     ('/about/start', util_about.ViewStart),
     RedirectRoute('/about/getting-started',
                   redirect_to='http://khanacademy.desk.com/customer/portal/articles/329323-where-do-i-begin-how-should-i-get-started-'),
     ('/about/contact', util_about.ViewContact),
-    ('/about/tos', ViewTOS),
-    ('/about/api-tos', ViewAPITOS),
-    ('/about/privacy-policy', ViewPrivacyPolicy),
-    ('/about/dmca', ViewDMCA),
+    # ('/about/tos', ViewTOS),
+    # ('/about/api-tos', ViewAPITOS),
+    # ('/about/privacy-policy', ViewPrivacyPolicy),
+    # ('/about/dmca', ViewDMCA),
+    ('/voorleraren', ViewVoorleraren), #added
     ('/helpmee', ViewHelpMee), #added
     ('/training', ViewTraining), #added
     ('/partners', ViewPartners), #added

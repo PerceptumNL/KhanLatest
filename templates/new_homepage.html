@@ -9,15 +9,15 @@
 
 {% block pagescript %}
 <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
-<link href='https://s3.amazonaws.com/gallery-css/gallery.css' rel='stylesheet' type='text/css'>
-<link href='https://s3.amazonaws.com/gallery-css/gallery.theme.css' rel='stylesheet' type='text/css'>
+<!-- <link href='https://s3.amazonaws.com/gallery-css/gallery.css' rel='stylesheet' type='text/css'>
+<link href='https://s3.amazonaws.com/gallery-css/gallery.theme.css' rel='stylesheet' type='text/css'> -->
 <script type="text/javascript">
     $(document).ready(function () {
         $('#slideshow > div:gt(0)').hide();
         setInterval(function () {
             $('#slideshow > div:first')
                 .fadeOut(1000)
-                .delay(1000)
+                // .delay(1000) //seems to work better with this commented
                 .next()
                 .delay(1000)
                 .fadeIn(1000)

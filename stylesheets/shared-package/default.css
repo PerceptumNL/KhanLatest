@@ -320,8 +320,8 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 #footer.short, .push {
-    /*height: 38px;*/
-    height: 80px;
+    height: 38px;
+    /*height: 80px;*/
 }
 
 #footer.short {
@@ -464,14 +464,20 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .footer-container {
     width: 1000px;
     margin:0 auto;
+    padding-top: 30px;
 }
-.main-links {display: inline-block;}
+.main-links {
+    display: inline-block;
+    line-height: 30px;
+}
 .main-links  ul {
     /*color: black;*/
     width: 220px;
     padding: 10px;
     display:inline-block;
     vertical-align: top;
+    font-size: 1.2em;
+    color: #0776A0;
 }
 
 #footer  ul a {
@@ -479,8 +485,22 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     font-size: 1.2em;
 }
 
+#footer ul a:hover {
+    color: #0776A0;
+}
+
 .main-links ul li {
     cursor: auto;
+}
+
+.social-media-banner {
+    /*height:250px;*/
+    height:200px;
+    width:1200px;
+    margin:0 auto;
+    text-align:center;
+    /*padding-top:100px;*/
+    padding-top:80px
 }
 
 /*END NEW FOOTER STUFF*/

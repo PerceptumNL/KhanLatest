@@ -14,8 +14,8 @@ class ViewAbout(AboutRequestHandler):
     @user_util.open_access
     def get(self):
         self.render_jinja2_template('about/about_the_site.html', {
-            "selected_id": "the-site",
-            "approx_vid_count": Video.approx_count(),
+            # "selected_id": "the-site",
+            # "approx_vid_count": Video.approx_count(),
         })
 
 class ViewStart(AboutRequestHandler):

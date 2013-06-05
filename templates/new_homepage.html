@@ -11,22 +11,8 @@
 <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
 <!-- <link href='https://s3.amazonaws.com/gallery-css/gallery.css' rel='stylesheet' type='text/css'>
 <link href='https://s3.amazonaws.com/gallery-css/gallery.theme.css' rel='stylesheet' type='text/css'> -->
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#slideshow > div:gt(0)').hide();
-        setInterval(function () {
-            $('#slideshow > div:first')
-                .fadeOut(1000)
-                // .delay(1000) //seems to work better with this commented
-                .next()
-                .delay(1000)
-                .fadeIn(1000)
-                .end()
-                .appendTo('#slideshow');
 
-        }, 5000);
-    });
-</script>
+
 {% endblock pagescript %}
 {% block pagetitle %}{% endblock pagetitle %}
 {% block pagecontent %}
@@ -46,7 +32,7 @@
                     </a>
                 </div>
                 <div class="focus-box">
-                    <a href="/browse">
+                    <a href="/exercisedashboard">
                     <div id="leer">
                     <img src="/images/icons/Herhaal.png" width='230px' height='192px'>
                     <h3>Herhaal</h3>
@@ -55,7 +41,7 @@
                     </a>
                 </div>
                 <div class="focus-box">
-                    <a href="/browse">
+                    <a href="/profile">
                     <div id="groei">
                     <img src="/images/icons/Groei.png" width='230px' height='192px'>
                     <h3>Groei</h3>
@@ -65,7 +51,7 @@
                 </div>
                 <!-- end student icons stuff -->
           </div>
-          <div class="" style="background:#d3e8f2">
+          <div class="" style="background:#d3e8f2;">
             <!-- <h1>2</h1> -->
             <!-- teachers icons stuff -->
                 <div class="focus-box">
@@ -109,25 +95,29 @@
             <div class='open-source-blurb' style="display: inline-block; background:white; width: 395px;">
               <h4 style="color:orange; font-family:Ralewayl font-size: 1.4em">Khan Academie <strong>open source</strong></h4>
               <p style="color:black; font-family:Raleway; letter-spacing: 1.2px; font-size: 0.8em">
-                De Khan Academie is volledig open source. Dit betekent dat enige enthousiasteling kan meewerken aan dit platform.
+                De Khan Academie is volledig open source. Dit betekent dat elke enthousiasteling kan meewerken aan dit platform.
                 Wij willen graag dat deze Nederlandse Khan Academie groeit met behulp van een community van programmeurs en leraren.
-                Hierdoor kan de Khan Academie gratis bkijven voortbestaan en wordt deze eigendom en ontwikkeled volgens de visie 
+                Hierdoor kan de Khan Academie gratis blijven voortbestaan en wordt deze eigendom en ontwikkeled volgens de visie 
                 van de onderwijs community.</p>
                 <a href="https://github.com/PerceptumNL/KhanLatest">U kunt de code vinden in <strong>GitHub</strong></a>
             </div>
         </div>
-        <div class="sites-blurb overflow-white" style="background: white; padding: 30px;">
-          <div class="wikizoek-blurb" style="display: inline-block; width: 49%; text-align: center; font-size: 1.5em; text-transform: uppercase;">
+        <div class="sites-blurb overflow-white" > <!-- style="background: white; padding: 30px;" -->
+          <div class="wikizoek-blurb"> <!-- style="display: inline-block; width: 49%; text-align: center; font-size: 1.5em; text-transform: uppercase;" -->
+            <a href="http://video.khanacademie.nl">
             <img src="/images/icons/iconmonstr-video-icon.png" height="32px" width="32px">
             <h6>
                 Ga naar de video zoekmachine
             </h6>
+            </a>
           </div>
-          <div class="wikizoek-blurb" style="display: inline-block; width: 49%; text-align: center; font-size: 1.5em; text-transform: uppercase;">
+          <div class="wikizoek-blurb" >
+            <a href="http://wiki.khanacademie.nl">
             <img src="/images/icons/iconmonstr-livejournal-icon.png" height="32px" width="32px">
             <h6>
                 Denk mee over oefeningen op de wiki
             </h6>
+            </a>
           </div>
         </div>
     </div>
@@ -141,6 +131,23 @@
         {{ js_css_packages.js_package("homepage") }}
         {{ js_css_packages.css_package("homepage") }}
     {% endif %}
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#slideshow > div:gt(0)').hide();
+        setInterval(function () {
+            $('#slideshow > div:first')
+                .fadeOut(1000)
+                .delay(1000)
+                .next()
+                .delay(1000)
+                .fadeIn(1000)
+                .end()
+                //.previous()
+                .appendTo('#slideshow');
+
+        }, 6000);
+    });
+</script>
 
     <script type="text/javascript">
         $(function () {

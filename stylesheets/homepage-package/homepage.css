@@ -261,7 +261,8 @@ td.social-action.gplus {
 }
 
 #slideshow {
-    padding-bottom: 100px;
+    /*padding-bottom: 100px;*/
+    padding-bottom: 50px;
     height:350px;
     width: 1040px;
     position: relative;
@@ -296,36 +297,56 @@ td.social-action.gplus {
 #homepage-content > div p {
     font-family: "Raleway", sans-serif;
     /*border-top: 2px white solid;*/
+    font-size: 1em;
     color: white;
+    vertical-align: bottom;
+/*    height: 100px;
+    width: 200px;*/
+}
+
+.focus-box-inner {
+    display: table-cell;
+    padding: 10px 10px 0px 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    vertical-align: top;
+    width: 325px;
+    height: 335px;
 }
 
 #kijk {
-    display: table-cell;
-    padding: 10px;
+    /*display: inline-block;*/
+/*    display: table-cell;
+    padding: 10px 10px 0px 10px;
     margin: 10px auto;
-    border-radius: 10px;
+    border-radius: 10px;*/
     background-color: #0776a0;
-    vertical-align: bottom;
+/*    vertical-align: top;
     width: 325px;
-}
+    height: 335px;
+*/}
 
 #leer {
-    display: table-cell;
-    padding: 10px;
+    /*display: inline-block;*/
+/*    display: table-cell;
+    padding: 10px 10px 0px 10px;
     margin: 10px auto;
-    border-radius: 10px;
+    border-radius: 10px;*/
     background-color: #3aa6d0;
-    vertical-align: bottom;
+/*    vertical-align: top;
     width: 325px;
+    height: 335px;*/
 }
 #groei {
-    display: table-cell;
-    padding: 10px;
+    /*display: inline-block;*/
+/*    display: table-cell;
+    padding: 10px 10px 0px 10px;
     margin: 10px auto;
-    border-radius: 10px;
+    border-radius: 10px;*/
     background-color: #83cce2;
-    vertical-align: bottom;
+/*    vertical-align: top;
     width: 325px;
+    height: 335px;*/
 }
 
 .mini-footer {
@@ -406,6 +427,7 @@ img {
       box-sizing: border-box;
 display: inline-block;
 width: 49%;
+height: 404px;
 background: white;
 /*height: 275px;*/
 vertical-align: bottom;

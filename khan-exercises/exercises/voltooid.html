@@ -76,7 +76,7 @@
 			<var id="Places">["de bakker", "buiten", "de tuin", "de buren", "het piratenschip"]</var>
 			<var id="Cities">["Amsterdam", "Groningen", "Rotterdam", "Den Haag", "Nijmegen", "Arnhem"]</var>
 			<var id="Viewing">["het schilderij van Van Gogh", "dat oude standbeeld", "zijn fiets", "een konijntje"]</var>
-			<var id="Calling">["de buurman", "het meisje", "de jongen", "de buurvrouw", "de man", "de vrouw", "de dokter", "mijn moeder", "Jennifer", "Amira", "Arnoud", "Jorn", "Sander", "Sanne", "Tijmen", "Ysbrand", "de viking", "de piraat", "de kleuter"]</var>
+			<var id="Calling">["de buurman", "het meisje", "de jongen", "de buurvrouw", "de man", "de vrouw", "de dokter", "mijn moeder", "Jennifer", "Amira", "Arnoud", "Jorn", "Sander", "Sanne", "Jan", "Tijmen", "Ysbrand", "Nadine", "Marta", "Sergio", "Jaime", "Wijnand", "Ronald", "Max", "Minke", "de viking", "de piraat", "de kleuter"]</var>
 			<var id="Working">["het project", "de tekening", "het wiskundehuiswerk", "de voorstelling", "de boomhut", "de presentatie", "ons werkstuk"]</var>
 			<var id="ThirdPlural">["de meisjes", "de jongens", "de buren", "de ouders", "de kleuters", "de volwassenen", "de vikingen", "de piraten"]</var>
 			<var id="Painting">["de muur", "het hek", "mijn grootmoeders vaas", "de schutting van de buurman", "ons fietsenschuurtje", "het piratenschip"]</var>
@@ -131,6 +131,41 @@
 					<p id = "hintlaatst"> Het antwoord is dus "<var>voltooid(zwakheel(Type))</var>".</p>
 				</div>
 
+			</div>
+
+
+			<div id = "sterk">
+				<p class = "problem">Geef de voltooide tijd van het werkwoord "<var>sterkheel(Type)</var>".</p>
+				<p class = "question"> <var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> ...</p>
+				<p class = "solution" data-type="text"><var>sterkvoltooid(Type)</var></p>
+				<div class = "hints">
+					<p id = "hintintro">Het werkwoord <b><var>sterkheel(Type)</var></b> is een <i>sterk</i> werkwoord.</p>
+					<p id = "hinttwee">Het kenmerk voor sterke werkwoorden is dat er niet echt een regel voor is, je moet het gewoon kennen.</p>
+					<p id = "hintlaatst">De voltooide tijd van "<var>sterkheel(Type)</var>" is: </p>
+					<p id = "hintallerlaatst"><var>sterkvoltooid(Type)</var></p>
+				</div>
+			</div>
+
+			<div id = "sterkverhaal">
+				<p class = "problem">
+					<span><var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var></span>
+					<span data-if="sterkheel(Type)=='hebben'"> van <var>randFromArray(Calling)</var> <var>randFromArray(Stuff)</var> ... </span>
+					<span data-if="sterkheel(Type)=='lopen'"> <var>randFromArray(Time)</var> <var>randRange(5,20)</var> kilometer ... </span>
+					<span data-if="sterkheel(Type)=='kopen'"> <var>randFromArray(Viewing)</var> ... </span>
+					<span data-if="sterkheel(Type)=='vinden'"> <var>randFromArray(Time)</var> <var>randFromArray(Viewing)</var> ... </span>
+					<span data-if="sterkheel(Type)=='staan'"> <var>randFromArray(Time)</var> <var>randRange(2,10)</var> <var>randFromArray(["uur", "minuten"])</var> in de <var>randFromArray(["regen", "rij", "kou", "zon"])</var> ... </span>
+					<span data-if="sterkheel(Type)=='zien'"> <var>al een heleboel <var>randFromArray(["mooie", "lelijke", "saaie", "interessante"])</var> <var>randFromArray(["mensen", "katten", "honden", "tekeningen", "kunst"])</var> ... </span>
+					<span data-if="sterkheel(Type)=='varen'"><var>randFromArray(Time)</var>, samen met <var>randFromArray(Calling)</var>, op een <var>randFromArray(["boot", "zeilboot", "jacht", "roeiboot", "cruiseschip"])</var> ... </span>
+					<span>(<var>sterkheel(Type)</var>)</span>
+				</p>
+			
+				<p class = "question"> Wat moet er op de puntjes staan?</p>
+				<p class = "solution" data-type="text"><var>sterkvoltooid(Type)</var></p>
+				<div class = "hints">
+					<p id = "hintintro">Het werkwoord <b><var>sterkheel(Type)</var></b> is een <i>sterk</i> werkwoord.</p>
+					<p id = "hinttwee">Het kenmerk voor sterke werkwoorden is dat er niet echt een regel voor is, je moet het gewoon kennen.</p>
+					<p id = "hintlaatst">De voltooide tijd van "<var>sterkheel(Type)</var>" is: </p>
+					<p id = "hintallerlaatst"><var>sterkvoltooid(Type)</var></p>
 				</div>
 			</div>
 	</div>

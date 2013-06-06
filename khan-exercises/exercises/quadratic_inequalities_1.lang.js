@@ -1,6 +1,6 @@
 ({
 	"nl" : {
-		"question1"	: 'For what values of <code>x</code> does',
+		"question1"	: 'Voor welke waarden van <code>x</code> geldt',
 	
 		"hint1"		: 'First, move the term over to the other side of the inequality<br><code><var>plus(XX, (A+B)+X, C)</var> < 0</code>',
 		"hint2"		: 'Now, lets factor the quadratic equation<br><code><var>mult(LEFT, RIGHT)</var> < 0</code>',

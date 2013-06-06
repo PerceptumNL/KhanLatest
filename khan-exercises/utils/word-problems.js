@@ -461,6 +461,24 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		["verf", "verven"],
 		["dans", "dansen"]
 	]);
+
+	var zwak = KhanUtil.shuffle([
+		["werk", "werken"],
+		["bel", "bellen"],
+		["verf", "verven"],
+		["dans", "dansen"],
+		["stap", "stappen"],
+		["mis", "missen"],
+		["bof", "boffen"],
+		["leg", "leggen"],
+		["maai", "maaien"],
+		["duw", "duwen"],
+		["haal", "halen"],
+		["twijfel", "twijfelen"],
+		["kook", "koken"],
+		["leer", "leren"]
+	]);
+
 	var stamheelsterk = KhanUtil.shuffle([
 		["heb", "hebben", "hebt", "heeft"],
 		["ben", "zijn", "bent", "is"],
@@ -762,6 +780,22 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		sterkheel: function(i){return stamheelsterk[i][1];},
 		sterkuvorm: function(i){return stamheelsterk[i][2];},
 		sterkhijvorm: function(i){return stamheelsterk[i][3];},
+		zwakstam: function(i){return zwak[i][0];},
+		zwakheel: function(i){return zwak[i][1];},
+		heb: function(i){
+			if(i == 1){
+				return "heb";			
+			}
+			else if(i==2){
+				return "hebt";
+			}
+			else if(i==3){
+				return "heeft";
+			}
+			else if(i==4){
+				return "hebben";
+			};
+		},
 		animalStddevLifespan: function( i ) {
 			return animals[i - 1][2];
 		}

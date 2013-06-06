@@ -28,35 +28,33 @@
                     <var id="C2">roundTo( 8, A2 * X + B2 * Y )</var>
                     <var id="SIGN_1">A1 * C2 &gt; 0 ? "-" : "+"</var>
                     <var id="SIGN_2">B1 * Y &gt; 0 ? "-" : "+"</var>
-                    <var id="PROBLEM_1">["A group of adults and kids went to see a movie", "A few families took a trip to an amusement park together", ""][INDEX]</var>
-                    <var id="PROBLEM_2">["Find the number of adults and kids in the group", "Find the number of adults and kids on the trip", ""][INDEX]</var>
-                    <var id="UNIT_1">["adults", "adults", "home team fans"][INDEX]</var>
-                    <var id="UNIT_2">["kids", "kids", "away team fans"][INDEX]</var>
+                    <var id="PROBLEM_1">["Een groep van volwassenen en kinderen gingen naar de bioscoop", "Een paar gezinnen gingen samen naar het pretpark", ""][INDEX]</var>
+                    <var id="PROBLEM_2">["Bereken het aantal volwassenen en kinderen in de groep", "Bereken het aantal volwassenen en kinderen op de excursie", ""][INDEX]</var>
+                    <var id="UNIT_1">["volwassenen", "volwassenen", "fans van het thuisteam"][INDEX]</var>
+                    <var id="UNIT_2">["kinderen", "kinderen", "fans van het uitteam"][INDEX]</var>
                 </div>
                 <div class="question">
-                    <p><span data-if="INDEX === 0 || INDEX === 1"><var>PROBLEM_1</var>. Tickets cost $<var>A1.toFixed( 2 )</var> each for adults and $<var>B1.toFixed( 2 )</var> each for kids, and the
-                    group paid $<var>C1.toFixed( 2 )</var> in total. There were <var>abs( C2 )</var> fewer adults than kids in the group.<br /><br /><var>PROBLEM_2</var>.</span><span data-else><var>C1</var> people attended
-                    a baseball game. Everyone there was a fan of either the home team or the away team. The number of home team fans was <var>abs( C2 )</var> less than <var>abs( B2 )</var> times the number of away team fans.<br /><br />How
-                    many home team and away team fans attended the game?</span></p>
+                    <p><span data-if="INDEX === 0 || INDEX === 1"><var>PROBLEM_1</var>. Kaartjes kostten €<var>A1.toFixed( 2 )</var> per volwassene en €<var>B1.toFixed( 2 )</var> per kind en de groep heeft €<var>C1.toFixed( 2 )</var> in totaal betaald. Er waren <var>abs( C2 )</var> volwassenen minder dan kinderen.<br /><br /><var>PROBLEM_2</var>.</span><span data-else><var>C1</var> mensen waren bij
+                    een honkbalwedstrijd. Iedereen was ofwel fan van het huisteam ofwel fan van het uitteam. Het aantal fans van het huisteam was <var>abs( C2 )</var> minder dan <var>abs( B2 )</var> keer het aantal fans van het uitteam.<br /><br />Hoeveel fans van het huisteam en fans van het uitteam waren bij de wedstrijd?</span></p>
                 </div>
                 <div class="solution" data-type="multiple">
-                    <p># of <var>UNIT_1</var> = <span class="sol"><var>X</var></span></p>
-                    <p># of <var>UNIT_2</var> = <span class="sol"><var>Y</var></span></p>
+                    <p># <var>UNIT_1</var> = <span class="sol"><var>X</var></span></p>
+                    <p># <var>UNIT_2</var> = <span class="sol"><var>Y</var></span></p>
                 </div>
                 <div class="hints">
-                    <p>Let <code>x</code> equal the number of <var>UNIT_1</var> and <code>y</code> equal the number of <var>UNIT_2</var>.</p>
+                    <p>Stel <code>x</code> gelijk aan het aantal <var>UNIT_1</var> en <code>y</code> gelijk aan het aantal <var>UNIT_2</var>.</p>
                     <div>
-                        <p>The system of equations is then:</p>
+                        <p>De stelselvergelijking is dan:</p>
                         <p><code>\color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}</code><br />
                         <code class="hint_green">x = <var>expr(["+", ["*", -B2, "y"], C2])</var></code></p>
-                        <p>Solve for <code>x</code> and <code>y</code> using substitution.
+                        <p>Los op voor <code>x</code> en <code>y</code> met substitutie.
                     </div>
                     <div>
-                        <p>Since <code>x</code> has already been solved for, substitute <code class="hint_green"><var>expr(["+", ["*", -B2, "y"], C2])</var></code> for <code>x</code> in the first equation.</p>
+                        <p>Aangezien er voor <code>x</code> al een oplossing is, substitueer <code class="hint_green"><var>expr(["+", ["*", -B2, "y"], C2])</var></code> for <code>x</code> in de eerste vergelijking.</p>
                         <p><code>\color{<var>BLUE</var>}{<span data-if="abs( A1 ) !== 1"><var>A1</var></span><span data-if="A1 === -1">-</span>}\color{<var>GREEN</var>}{(<var>expr(["+", ["*", -B2, "y"], C2])</var>)}\color{<var>BLUE</var>}{+ <var>expr(["*", B1, "y"])</var> = <var>C1</var>}</code></p>
                     </div>
                     <div>
-                        <p>Simplify and solve for <code>y</code>.</p>
+                        <p>Vereenvoudig en los op voor <code>y</code>.</p>
                         <p><code><var>expr(["+", ["*", roundTo( 8, A1 * -B2 ), "y"], roundTo( 8, A1 * C2 )])</var> + <var>expr(["*", B1, "y"])</var> = <var>C1</var></code></p>
                         <p><code><var>expr(["+", ["*", roundTo( 8, A1 * -B2 + B1 ), "y"], roundTo( 8, A1 * C2 )])</var> = <var>C1</var></code></p>
                         <p><code><var>expr(["+", ["*", roundTo( 8, A1 * -B2 + B1 ), "y"], A1 * C2])</var>\color{<var>BLUE</var>}{<var>SIGN_1</var><var>abs( roundTo( 8, A1 * C2 ) )</var>} = <var>C1</var>\color{<var>BLUE</var>}{<var>SIGN_1</var><var>abs( roundTo( 8, A1 * C2 ) )</var>}</code></p>
@@ -65,7 +63,7 @@
                         <p><code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code></p>
                     </div>
                     <div>
-                        <p>Now that you know <code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code>, plug it back into <code>\thinspace \color{<var>GREEN</var>}{x = <var>expr(["+", ["*", -B2, "y"], C2])</var>}\thinspace</code> to find <code>x</code>.</p>
+                        <p>Nu je weet dat <code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code>, vul het terug in in <code>\thinspace \color{<var>GREEN</var>}{x = <var>expr(["+", ["*", -B2, "y"], C2])</var>}\thinspace</code> om <code>x</code> te vinden.</p>
                     </div>
                     <div>
                         <p><code>\color{<var>GREEN</var>}{x = <span data-if="abs( B2 ) !== 1"><var>-B2</var></span><span data-if="B2 === 1">-</span>}\color{<var>ORANGE</var>}{(<var>Y</var>)}\color{<var>GREEN</var>}{ + <var>C2</var>}</code></p>
@@ -73,11 +71,11 @@
                         <p><code>\color{red}{x = <var>X</var>}</code></p>
                     </div>
                     <div>
-                        <p>You can also plug <code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code> into <code>\thinspace \color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}\thinspace</code> and get the same answer for <code>x</code>:</p>
+                        <p>Je kan ook <code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code> invullen in <code>\thinspace \color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}\thinspace</code> en hetzelfde antwoord krijgen voor <code>x</code>:</p>
                         <p><code>\color{<var>BLUE</var>}{<var>expr(["*", A1, "x"])</var> + <span data-if="abs( B1 ) !== 1"><var>B1</var></span><span data-if="B1 === -1">-</span>}\color{<var>ORANGE</var>}{(<var>Y</var>)}\color{<var>BLUE</var>}{= <var>C1</var>}</code></p>
                         <p><code>\color{red}{x = <var>X</var>}</code></p>
                     </div>
-                    <p>There were <var>X</var> <var>UNIT_1</var> and <var>Y</var> <var>UNIT_2</var>.</p>
+                    <p>Er waren <var>X</var> <var>UNIT_1</var> en <var>Y</var> <var>UNIT_2</var>.</p>
                 </div>
             </div>
             <div id="substitution-y">
@@ -95,34 +93,34 @@
                     <var id="C2">roundTo( 8, A2 * X + B2 * Y )</var>
                     <var id="SIGN_1">B1 * C2 &gt; 0 ? "-" : "+"</var>
                     <var id="SIGN_2">A1 * X &gt; 0 ? "-" : "+"</var>
-                    <var id="PROBLEM_1">["The drama club sold bags of candy and cookies to raise money for the spring show", "A local gift shop sold bags of candy and cookies for Halloween", ""][INDEX]</var>
-                    <var id="PROBLEM_2">["Find the number of bags of candy and cookies sold by the drama club", "Find the number of bags of candy and cookies sold by the gift shop", ""][INDEX]</var>
-                    <var id="UNIT_1">["bags of candy", "bags of candy", "angle 1"][INDEX]</var>
-                    <var id="UNIT_2">["bags of cookies", "bags of cookies", "angle 2"][INDEX]</var>
+                    <var id="PROBLEM_1">["De toneelclub heeft zakjes snoep en koekjes verkocht om geld op te halen voor de lentevoorstelling", "Een plaatselijke geschenkwinkel heeft zakjes snoep en koekjes verkocht voor Halloween", ""][INDEX]</var>
+                    <var id="PROBLEM_2">["Bereken het aantal zakjes snoep en koekjes dat de toneelclub heeft verkocht", "Bereken het aantal zakjes snoep en koekjes dat de geschenkwinkel heeft verkocht", ""][INDEX]</var>
+                    <var id="UNIT_1">["zakjes snoep", "zakjes snoep", "angle 1"][INDEX]</var>
+                    <var id="UNIT_2">["zakjes koekjes", "zakjes koekjes", "angle 2"][INDEX]</var>
                 </div>
                 <div class="question">
-                    <p><span data-if="INDEX === 0 || INDEX === 1"><var>PROBLEM_1</var>. Bags of candy cost $<var>A1.toFixed( 2 )</var>, and bags of cookies cost $<var>B1.toFixed( 2 )</var>, and sales equaled $<var>C1.toFixed( 2 )</var> in total. There were <var>C2</var> more bags of cookies than candy sold.<br /><br /><var>PROBLEM_2</var>.</span><span data-else>The sum of two angles' measures is <var>C1</var> degrees. Angle 2 is <var>abs( C2 )</var> degrees smaller than <var>abs( A2 )</var> times angle 1.<br /><br />What are the measures of the two angles in degrees?</span></p>
+                    <p><span data-if="INDEX === 0 || INDEX === 1"><var>PROBLEM_1</var>. Zakjes snoep kosten €<var>A1.toFixed( 2 )</var> en zakjes met koek €<var>B1.toFixed( 2 )</var>en de opbrengst was $<var>C1.toFixed( 2 )</var> in totaal. Er waren <var>C2</var> meer zakjes met koek dan met snoep verkocht.<br /><br /><var>PROBLEM_2</var>.</span><span data-else>De som van de twee hoeken is <var>C1</var> graden. Hoek 2 is <var>abs( C2 )</var> graden kleiner dan <var>abs( A2 )</var> keer hoek 1.<br /><br />Hoe groot zijn de twee hoeken in graden?</span></p>
                 </div>
                 <div class="solution" data-type="multiple">
-                    <p><span data-if="INDEX !== 2"># of </span><var>UNIT_1</var> = <span class="sol"><var>X</var></span></p>
-                    <p><span data-if="INDEX !== 2"># of </span><var>UNIT_2</var> = <span class="sol"><var>Y</var></span></p>
+                    <p><span data-if="INDEX !== 2"># </span><var>UNIT_1</var> = <span class="sol"><var>X</var></span></p>
+                    <p><span data-if="INDEX !== 2"># </span><var>UNIT_2</var> = <span class="sol"><var>Y</var></span></p>
                 </div>
                 <div class="hints">
-                    <p>Let <code>x</code> equal the <span data-if="INDEX !== 2">number</span><span data-else>measure</span> of <var>UNIT_1</var> and <code>y</code> equal the <span data-if="INDEX !== 2">number</span><span data-else>measure</span> of <var>UNIT_2</var>.</p>
+                    <p>Stel <code>x</code> gelijk aan <span data-if="INDEX !== 2">het aantal</span><span data-else>de grootte</span> <var>UNIT_1</var> en stel <code>y</code> gelijk aan <span data-if="INDEX !== 2">het aantal</span><span data-else>grootte</span> of <var>UNIT_2</var>.</p>
                     <div>
-                        <p>The system of equations is then:</p>
+                        <p>De stelselvergelijking is dan:</p>
                         <p><code>\color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}</code><br />
                         <code class="hint_green">y = <var>expr(["+", ["*", -A2, "x"], C2])</var></code></p>
                     </div>
                     <div>
-                        <p>Since we already have solved for <code>y</code> in terms of x, we can use substitution to solve for <code>x</code> and <code>y</code>.
+                        <p>Aangezien we al voor <code>y</code> hebben opgelost in termen van x, kunnen we substitueren om op te lossen voor <code>x</code> en <code>y</code>.
                     </div>
                     <div>
-                        <p>Substitute <code class="hint_green"><var>expr(["+", ["*", -A2, "x"], C2])</var></code> for <code>y</code> in the first equation.</p>
+                        <p>Substitueer <code class="hint_green"><var>expr(["+", ["*", -A2, "x"], C2])</var></code> voor <code>y</code> in de eerste vergelijking.</p>
                         <p><code>\color{<var>BLUE</var>}{<var>expr(["*", A1, "x"])</var> + <span data-if="abs( B1 ) !== 1"><var>B1</var></span><span data-if="B1 === -1">-</span>}\color{<var>GREEN</var>}{(<var>expr(["+", ["*", -A2, "x"], C2])</var>)}\color{<var>BLUE</var>}{= <var>C1</var>}</code></p>
                     </div>
                     <div>
-                        <p>Simplify and solve for <code>x</code>.</p>
+                        <p>Vereenvoudig en los op voor <code>x</code>.</p>
                         <p><code><var>expr(["+", ["*", A1, "x"], ["*", roundTo( 8, B1 * -A2 ), "x"]])</var> + <var>roundTo( 8, B1 * C2 )</var> = <var>C1</var></code></p>
                         <p><code><var>expr(["+", ["*", roundTo( 8, A1 + B1 * -A2 ), "x"], roundTo( 8, B1 * C2 )])</var> = <var>C1</var></code></p>
                         <p><code><var>expr(["+", ["*", roundTo( 8, A1 + B1 * -A2 ), "x"], roundTo( 8, B1 * C2 )])</var>\color{<var>BLUE</var>}{<var>SIGN_1</var><var>abs( roundTo( 8, B1 * C2 ) )</var>} = <var>C1</var>\color{<var>BLUE</var>}{<var>SIGN_1</var><var>abs( roundTo( 8, B1 * C2 ) )</var>}</code></p>
@@ -131,7 +129,7 @@
                         <p><code>\color{red}{x = <var>X</var>}</code></p>
                     </div>
                     <div>
-                        <p>Now that you know <code>\color{red}{x = <var>X</var>}</code>, plug it back into <code>\thinspace \color{<var>GREEN</var>}{y = <var>expr(["+", ["*", -A2, "x"], C2])</var>}\thinspace</code> to find <code>y</code>.</p>
+                        <p>Nu je weet dat <code>\color{red}{x = <var>X</var>}</code>, vul het terug in in <code>\thinspace \color{<var>GREEN</var>}{y = <var>expr(["+", ["*", -A2, "x"], C2])</var>}\thinspace</code> om <code>y</code> te vinden.</p>
                     </div>
                     <div>
                         <p><code>\color{<var>GREEN</var>}{y = <span data-if="abs( A2 ) !== 1"><var>-A2</var></span><span data-if="A2 === 1">-</span>}\color{red}{(<var>X</var>)}\color{<var>GREEN</var>}{ + <var>C2</var>}</code></p>
@@ -139,11 +137,11 @@
                         <p><code class="hint_orange">y = <var>Y</var></code></p>
                     </div>
                     <div>
-                        <p>You can also plug <code>\color{red}{x = <var>X</var>}</code> into <code>\thinspace \color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}\thinspace</code> and get the same answer for <code>y</code>:</p>
+                        <p>Je kan <code>\color{red}{x = <var>X</var>}</code> ook invullen in <code>\thinspace \color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}\thinspace</code> en hetzelfde antwoord krijgen voor <code>y</code>:</p>
                         <p><code>\color{<var>BLUE</var>}{<span data-if="abs( A1 ) !== 1"><var>A1</var></span><span data-if="A1 === -1">-</span>}\color{red}{(<var>X</var>)}\color{<var>BLUE</var>}{ + <var>expr(["*", B1, "y"])</var> = <var>C1</var>}</code></p>
                         <p><code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code></p>
                     </div>
-                    <p><span data-if="INDEX !== 2"><var>X</var> bags of candy and <var>Y</var> bags of cookies were sold.</span><span data-else>The measure of angle 1 is <code><var>X</var>^{\circ}</code> and the measure of angle 2 is <code><var>Y</var>^{\circ}</code>.</span></p>
+                    <p><span data-if="INDEX !== 2"><var>X</var> zakjes snoep en <var>Y</var> zakjes met koekjes waren verkocht.</span><span data-else>Hoek 1 is <code><var>X</var>^{\circ}</code> en hoek 2 is <code><var>Y</var>^{\circ}</code>.</span></p>
                 </div>
             </div>
             <div id="elimination-x">
@@ -171,35 +169,35 @@
                     <var id="SIGN_2">B2 * Y &gt; 0 ? "-" : "+"</var>
                 </div>
                 <div class="question spin">
-                    <p>All of the {3rd|4th|5th} grade teachers and students from <var>school(1)</var> went on a field trip to an {art|archaeology} museum. Tickets were $<var>A1.toFixed( 2 )</var> each for teachers and $<var>B1.toFixed( 2 )</var> each for students, and the
-                    group paid $<var>C1.toFixed( 2 )</var> in total.<br /><br />{A few weeks later|The next month}, the same group visited a {science|natural history} museum where the tickets cost $<var>A2.toFixed( 2 )</var> each for teachers and $<var>B2.toFixed( 2 )</var> each for students, and the
-                    group paid $<var>C2.toFixed( 2 )</var> in total.<br /><br />Find the number of teachers and students on the field trips.</p>
+                    <p>Alle leraren van groep {6|7|8} en leerlingen van <var>school(1)</var> gingen op excursie naar een {kunst|archeologie}museum. Kaartjes waren €<var>A1.toFixed( 2 )</var> per leraar en €<var>B1.toFixed( 2 )</var> per leerling, en de groep
+                    heeft €<var>C1.toFixed( 2 )</var> in totaal betaald.<br /><br />{Een paar weken later|De volgende maand} ging dezelfde groep naar een {wetenschaps|natuur}museum waar de kaartjes €<var>A2.toFixed( 2 )</var> per leraar en €<var>B2.toFixed( 2 )</var> per student kostten en de groep
+                    heeft €<var>C2.toFixed( 2 )</var> betaald in totaal.<br /><br />Bereken hoeveel leraren en leerlingen er op de excursies waren.</p>
                 </div>
                 <div class="solution" data-type="multiple">
                     <p># of teachers = <span class="sol"><var>X</var></span></p>
                     <p># of students = <span class="sol"><var>Y</var></span></p>
                 </div>
                 <div class="hints">
-                    <p>Let <code>x</code> equal the number of teachers and <code>y</code> equal the number of students.</p>
+                    <p>Stel <code>x</code> gelijk aan het aantal leraren en <code>y</code> gelijk aan het aantal leerlingen.</p>
                     <div>
-                        <p>The system of equations is:</p>
+                        <p>De stelselvergelijking is:</p>
                         <p><code>\color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}</code><br />
                         <code class="hint_green"><var>expr(["+", ["*", A2, "x"], ["*", B2, "y"]])</var> = <var>C2</var></code></p>
-                        <p>Solve for <code>x</code> and <code>y</code> using elimination.</p>
+                        <p>Los op voor <code>x</code> en <code>y</code> umet eliminatie.</p>
                     </div>
                     <div data-if="INDEX !== 0">
-                        <p>Multiply the <span data-if="INDEX === 2">bottom</span><span data-else>top</span> equation by <span data-if="INDEX === 2"><code><var>MULT2</var></code></span><span data-else><code><var>MULT1</var></code></span><span data-if="INDEX === 3"> and the bottom equation by <code><var>MULT2</var></code></span>.</p>
+                        <p>Vermenigvuldig de <span data-if="INDEX === 2">onderste</span><span data-else>bovenste</span> vergelijking met <span data-if="INDEX === 2"><code><var>MULT2</var></code></span><span data-else><code><var>MULT1</var></code></span><span data-if="INDEX === 3"> en de onderste vergelijking met <code><var>MULT2</var></code></span>.</p>
                         <p><code>\color{<var>BLUE</var>}{<var>expr(["+", ["*", A1 * MULT1, "x"], ["*", B1 * MULT1, "y"]])</var> = <var>C1 * MULT1</var>}</code><br />
                         <code class="hint_green"><var>expr(["+", ["*", A2 * MULT2, "x"], ["*", B2 * MULT2, "y"]])</var> = <var>C2 * MULT2</var></code></p>
                     </div>
                     <div>
-                        <p>Add the top and bottom equations together.
+                        <p>Tel de bovenste en onderste vergelijking bij elkaar op.
                         <p data-if="( B1 * MULT1 + B2 * MULT2 ) !== 1"><code><var>expr(["*", roundTo( 8, B1 * MULT1 + B2 * MULT2 ), "y"])</var> = <var>roundTo( 8, C1 * MULT1 + C2 * MULT2 )</var></code></p>
                         <p data-if="( B1 * MULT1 + B2 * MULT2 ) !== 1"><code>\dfrac{<var>expr(["*", roundTo( 8, B1 * MULT1 + B2 * MULT2 ), "y"])</var>}{\color{<var>BLUE</var>}{<var>roundTo( 8, B1 * MULT1 + B2 * MULT2 )</var>}} = \dfrac{<var>roundTo( 8, C1 * MULT1 + C2 * MULT2 )</var>}{\color{<var>BLUE</var>}{<var>roundTo( 8, B1 * MULT1 + B2 * MULT2 )</var>}}</code></p>
                         <p><code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code></p>
                     </div>
                     <div>
-                        <p>Now that you know <code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code>, plug it back into <code>\thinspace \color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}\thinspace</code> to find <code>x</code>.</p>
+                        <p>Nu je weet dat <code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code>, vul het terug in in <code>\thinspace \color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}\thinspace</code> om <code>x</code> te vinden.</p>
                     </div>
                     <div>
                         <p><code>\color{<var>BLUE</var>}{<var>expr(["*", A1, "x"])</var> + <span data-if="abs( B1 ) !== 1"><var>B1</var></span><span data-if="B1 === -1">-</span>}\color{<var>ORANGE</var>}{(<var>Y</var>)}\color{<var>BLUE</var>}{= <var>C1</var>}</code></p>
@@ -210,11 +208,11 @@
                         <p><code>\color{red}{x = <var>X</var>}</code></p>
                     </div>
                     <div>
-                        <p>You can also plug <code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code> into <code>\thinspace \color{<var>GREEN</var>}{<var>expr(["+", ["*", A2, "x"], ["*", B2, "y"]])</var> = <var>C2</var>}\thinspace</code> and get the same answer for <code>x</code>:</p>
+                        <p>Je kan ook <code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code> invullen in <code>\thinspace \color{<var>GREEN</var>}{<var>expr(["+", ["*", A2, "x"], ["*", B2, "y"]])</var> = <var>C2</var>}\thinspace</code> hetzelfde antwoord krijgen voor<code>x</code>:</p>
                         <p><code>\color{<var>GREEN</var>}{<var>expr(["*", A2, "x"])</var> + <span data-if="abs( B2 ) !== 1"><var>B2</var></span><span data-if="B2 === -1">-</span>}\color{<var>ORANGE</var>}{(<var>Y</var>)}\color{<var>GREEN</var>}{= <var>C2</var>}</code></p>
                         <p><code>\color{red}{x = <var>X</var>}</code></p>
                     </div>
-                    <p>There were <var>X</var> teachers and <var>Y</var> students on the field trips.</p>
+                    <p>Er waren <var>X</var> leraren en <var>Y</var> leerlingen op de excursie.</p>
                 </div>
             </div>
             <div id="elimination-y">
@@ -240,7 +238,7 @@
                     <var id="SIGN_2">A2 * X &gt; 0 ? "-" : "+"</var>
                 </div>
                 <div class="question">
-                    <p>The sum of two numbers is <var>C1</var>, and their difference is <var>C2</var>. What are the two numbers?</p>
+                    <p>De som van de twee getallen is <var>C1</var> en het verschil is <var>C2</var>. Welke twee getallen zijn het?</p>
                 </div>
 
                 <div class="solution" data-type="set">
@@ -253,27 +251,27 @@
                 </div>
                 <div class="hints">
                     <div>
-                        <p>Let <code>x</code> be the first number, and let <code>y</code> be the second number.</p>
+                        <p>Stel <code>x</code> gelijk aan het eerste getal en stel <code>y</code> gelijk aan het tweede getal.</p>
                     </div>
                     <div>
-                        <p>The system of equations is:</p>
+                        <p>De stelselvergelijking is dan:</p>
                         <p><code>\color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}</code><br />
                         <code class="hint_green"><var>expr(["+", ["*", A2, "x"], ["*", B2, "y"]])</var> = <var>C2</var></code></p>
-                        <p>Solve for <code>x</code> and <code>y</code> using elimination.
+                        <p>Los op voor <code>x</code> en <code>y</code> met eliminatie.
                     </div>
                     <div data-if="INDEX !== 0">
-                        <p>Multiply the <span data-if="INDEX === 2">bottom</span><span data-else>top</span> equation by <span data-if="INDEX === 2"><code><var>MULT2</var></code></span><span data-else><code><var>MULT1</var></code></span><span data-if="INDEX === 3"> and the bottom equation by <code><var>MULT2</var></code></span>.</p>
+                        <p>Vermenigvuldig de <span data-if="INDEX === 2">onderste</span><span data-else>bovenste</span> vergelijking met <span data-if="INDEX === 2"><code><var>MULT2</var></code></span><span data-else><code><var>MULT1</var></code></span><span data-if="INDEX === 3"> en de onderste vergelijking met <code><var>MULT2</var></code></span>.</p>
                         <p><code>\color{<var>BLUE</var>}{<var>expr(["+", ["*", A1 * MULT1, "x"], ["*", B1 * MULT1, "y"]])</var> = <var>C1 * MULT1</var>}</code><br />
                         <code class="hint_green"><var>expr(["+", ["*", A2 * MULT2, "x"], ["*", B2 * MULT2, "y"]])</var> = <var>C2 * MULT2</var></code></p>
                     </div>
                     <div>
-                        <p>Add the top and bottom equations together.
+                        <p>Tel de bovenste en onderste vergelijking bij elkaar op.
                         <p data-if="( A1 * MULT1 + A2 * MULT2 ) !== 1"><code><var>expr(["*", roundTo( 8, A1 * MULT1 + A2 * MULT2 ), "x"])</var> = <var>roundTo( 8, C1 * MULT1 + C2 * MULT2 )</var></code></p>
                         <p data-if="( A1 * MULT1 + A2 * MULT2 ) !== 1"><code>\dfrac{<var>expr(["*", roundTo( 8, A1 * MULT1 + A2 * MULT2 ), "x"])</var>}{\color{<var>BLUE</var>}{<var>roundTo( 8, A1 * MULT1 + A2 * MULT2 )</var>}} = \dfrac{<var>roundTo( 8, C1 * MULT1 + C2 * MULT2 )</var>}{\color{<var>BLUE</var>}{<var>roundTo( 8, A1 * MULT1 + A2 * MULT2 )</var>}}</code></p>
                         <p><code>\color{red}{x = <var>X</var>}</code></p>
                     </div>
                     <div>
-                        <p>Now that you know <code>\color{red}{x = <var>X</var>}</code>, plug it back into <code>\thinspace \color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}\thinspace</code> to find <code>y</code>.</p>
+                        <p>Nu je weet dat <code>\color{red}{x = <var>X</var>}</code>, vul het terug in in <code>\thinspace \color{<var>BLUE</var>}{<var>expr(["+", ["*", A1, "x"], ["*", B1, "y"]])</var> = <var>C1</var>}\thinspace</code> om <code>y</code> te vinden.</p>
                     </div>
                     <div>
                         <p><code>\color{<var>BLUE</var>}{<span data-if="abs( A1 ) !== 1"><var>A1</var></span><span data-if="A1 === -1">-</span>}\color{red}{(<var>X</var>)}\color{<var>BLUE</var>}{ + <var>expr(["*", B1, "y"])</var> = <var>C1</var>}</code></p>
@@ -284,7 +282,7 @@
                         <p><code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code></p>
                     </div>
                     <div>
-                        <p>You can also plug <code>\color{red}{x = <var>X</var>}</code> into <code>\thinspace \color{<var>GREEN</var>}{<var>expr(["+", ["*", A2, "x"], ["*", B2, "y"]])</var> = <var>C2</var>}\thinspace</code> and get the same answer for <code>y</code>:</p>
+                        <p>Je kan ook <code>\color{red}{x = <var>X</var>}</code> invullen in <code>\thinspace \color{<var>GREEN</var>}{<var>expr(["+", ["*", A2, "x"], ["*", B2, "y"]])</var> = <var>C2</var>}\thinspace</code> en hetzelfde antwoord krijgen voor <code>y</code>:</p>
                         <p><code>\color{<var>GREEN</var>}{<span data-if="abs( A2 ) !== 1"><var>A2</var></span><span data-if="A2 === -1">-</span>}\color{red}{(<var>X</var>)}\color{<var>GREEN</var>}{ + <var>expr(["*", B2, "y"])</var> = <var>C2</var>}</code></p>
                         <p><code>\color{<var>ORANGE</var>}{y = <var>Y</var>}</code></p>
                     </div>

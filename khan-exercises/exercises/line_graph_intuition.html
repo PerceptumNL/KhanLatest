@@ -11,13 +11,13 @@
         <div id="graph-slope" data-weight="1">
             <div class="vars">
                 <var id="SLOPE">randFromArray([
-                    "positive", "negative", "zero", "undefined"
+                    "positieve helling", "negatieve helling", "helling van nul", "onbepaalde helling"
                 ])</var>
                 <var id="POINTS">{}</var>
             </div>
 
             <p class="question">
-                Graph a line that has <var>an(SLOPE)</var> slope:
+                Schets een lijn dat een <var>an(SLOPE)</var> heeft:
             </p>
 
             <div class="graphie" id="grid">
@@ -74,8 +74,7 @@
 
             <div class="solution" data-type="custom">
                 <div class="instruction">
-                    Drag the two points to move the line into the correct
-                    position.
+                    Sleep de twee punten om de lijn in de juiste positie te brengen.
                 </div>
                 <div class="guess">
                     [POINTS.pointA.coord, POINTS.pointB.coord]
@@ -90,13 +89,13 @@
                     }
                     var slope = (guess[1][1] - guess[0][1]) /
                         (guess[1][0] - guess[0][0]);
-                    if (SLOPE === "positive") {
+                    if (SLOPE === "positieve helling") {
                         return slope &gt; 0;
-                    } else if (SLOPE === "negative") {
+                    } else if (SLOPE === "negatieve helling") {
                         return slope &lt; 0;
-                    } else if (SLOPE === "zero") {
+                    } else if (SLOPE === "helling van nul") {
                         return abs(slope) &lt; 0.001;
-                    } else if (SLOPE === "undefined") {
+                    } else if (SLOPE === "onbepaalde helling") {
                         return guess[1][0] === guess[0][0];
                     }
                 </div>
@@ -109,31 +108,24 @@
 
             <div class="hints">
                 <p>
-                    The slope of a line is the ratio of the change in
-                    <code>y</code> over the change in <code>x</code>. Also
-                    known as rise over run.
+                    De helling van een lijn is de verhouding tussen de verandering in
+                    <code>y</code> gedeeld door de verandering in <code>x</code>.
                 </p>
-                <p data-if="SLOPE === 'positive'">
-                    For a positive slope, if the change in <code>y</code> from
-                    one point to another is positive then the change in
-                    <code>x</code> should also be positive.
+                <p data-if="SLOPE === 'positieve helling'">
+                    In het geval van een positieve helling moet de verandering in 
+                    <code>x</code> ook positief zijn als de verandering in <code>y</code> van één punt naar een ander positief is.</p>
+                <p data-else-if="SLOPE === 'negatieve helling'">
+                    In het geval van een negatieve helling moet de verandering in <code>x</code> negatief zijn als de verandering van <code>y</code> naar een ander punt positief is.
                 </p>
-                <p data-else-if="SLOPE === 'negative'">
-                    For a negative slope, if the change in <code>y</code> from
-                    one point to another is positive then the change in
-                    <code>x</code> should be negative.
-                </p>
-                <p data-else-if="SLOPE === 'zero'">
-                    For a zero slope, the change in <code>y</code> should be
-                    zero from any point to another point.
+                <p data-else-if="SLOPE === 'helling van nul'">
+                    In het geval van een helling van nul moet de verandering in <code>y</code> nul zijn van elk punt naar een ander punt.
                 </p>
                 <p data-else>
-                    For an undefined slope, the change in <code>x</code> should
-                    be zero from any point to another point.
+                    Voor een onbepaalde helling moet de verandering in <code>x</code> nul zijn van elk punt naar een ander punt.
                 </p>
                 <div>
                     <p>
-                        A line with <var>an(SLOPE)</var> slope looks like:
+                        Een lijn met een <var>an(SLOPE)</var> ziet er zo uit:
                     <p>
                     <div class="graphie" style="margin-left: 30px">
                         graphInit({
@@ -150,19 +142,19 @@
 
                         style({ stroke: ORANGE }, function() {
                             var intercept = randRange(-3, 3);
-                            if (SLOPE === "positive") {
+                            if (SLOPE === "positieve helling") {
                                 plot(function(x) {
                                     return x + intercept;
                                 }, [-6, 6]);
-                            } else if (SLOPE === "negative") {
+                            } else if (SLOPE === "negatieve helling") {
                                 var yInt = randRange(-3, 3);
                                 plot(function(x) {
                                     return -x + intercept;
                                 }, [-6, 6]);
-                            } else if (SLOPE === "zero") {
+                            } else if (SLOPE === "helling van nul") {
                                 var y = randRangeNonZero(-3, 3);
                                 path([[-6, intercept], [6, intercept]]);
-                            } else if (SLOPE === "undefined") {
+                            } else if (SLOPE === "onbepaalde helling") {
                                 var x = randRangeNonZero(-3, 3);
                                 path([[intercept, -6], [intercept, 6]]);
                             }
@@ -177,17 +169,17 @@
                 <var id="SLOPE_N">randRangeNonZero(-5, 5)</var>
                 <var id="SLOPE_D">randRange(1, 5)</var>
                 <var id="Y_INT">randRange(-5, 5)</var>
-                <var id="GOAL">SLOPE_N &lt; 0 ? "negative" : "positive"</var>
-                <var id="CHANGE">randFromArray(["greater", "less"])</var>
+                <var id="GOAL">SLOPE_N &lt; 0 ? "negatieve" : "positieve"</var>
+                <var id="CHANGE">randFromArray(["groter", "kleiner"])</var>
                 <var id="NEW_SLOPE">(function() {
                     if (SLOPE_N &lt; 0) {
-                        if (CHANGE === "greater") {
+                        if (CHANGE === "groter") {
                             return (SLOPE_N / SLOPE_D) / 2;
                         } else {
                             return (SLOPE_N / SLOPE_D) * 2;
                         }
                     } else {
-                        if (CHANGE === "less") {
+                        if (CHANGE === "kleiner") {
                             return (SLOPE_N / SLOPE_D) / 2;
                         } else {
                             return (SLOPE_N / SLOPE_D) * 2;
@@ -196,8 +188,7 @@
                 })()</var>
             </div>
             <p class="question">
-                Graph a line that has a slope that is <em><var>GOAL</var></em>
-                and <em><var>CHANGE</var> than</em> the slope of the blue line.
+                Schets een lijn die een <em><var>GOAL</var></em> helling heeft en <em><var>CHANGE</var></em> is dan de helling van de blauwe lijn.
             </p>
             <div class="graphie" data-update="grid">
                 plot(function(x) {
@@ -209,8 +200,7 @@
 
             <div class="solution" data-type="custom">
                 <div class="instruction">
-                    Drag the two points to move the line into the correct
-                    position.
+                    Sleep de twee punten om de lijn naar de juiste positie te brengen.
                 </div>
                 <div class="guess">
                     [POINTS.pointA.coord, POINTS.pointB.coord]
@@ -225,20 +215,20 @@
                     var slope = (guess[1][1] - guess[0][1]) /
                         (guess[1][0] - guess[0][0]);
 
-                    if (GOAL === "positive" &amp;&amp;
-                            CHANGE === "less") {
+                    if (GOAL === "positieve" &amp;&amp;
+                            CHANGE === "kleiner") {
                         return (slope &gt; 0) &amp;&amp;
                             (slope &lt; SLOPE_N / SLOPE_D);
-                    } else if (GOAL === "positive" &amp;&amp;
-                            CHANGE === "greater") {
+                    } else if (GOAL === "positieve" &amp;&amp;
+                            CHANGE === "groter") {
                         return (slope &gt; 0) &amp;&amp;
                             (slope &gt; SLOPE_N / SLOPE_D);
-                    } else if (GOAL === "negative" &amp;&amp;
-                            CHANGE === "less") {
+                    } else if (GOAL === "negatieve" &amp;&amp;
+                            CHANGE === "kleiner") {
                         return (slope &lt; 0) &amp;&amp;
                             (slope &lt; SLOPE_N / SLOPE_D);
-                    } else if (GOAL === "negative" &amp;&amp;
-                            CHANGE === "greater") {
+                    } else if (GOAL === "negatieve" &amp;&amp;
+                            CHANGE === "groter") {
                         return (slope &lt; 0) &amp;&amp;
                             (slope &gt; SLOPE_N / SLOPE_D);
                     }
@@ -251,50 +241,41 @@
             </div>
             <div class="hints">
                 <p>
-                    The slope of the original line is
-                    <span data-if="SLOPE_N > 0">positive.</span>
-                    <span data-else>negative.</span>
+                    De helling van de oorspronkelijke lijn is
+                    <span data-if="SLOPE_N > 0">positief.</span>
+                    <span data-else>negatief.</span>
                 </p>
-                <div data-if="GOAL === 'negative'">
-                    <div data-if="CHANGE === 'greater'">
+                <div data-if="GOAL === 'negatieve'">
+                    <div data-if="CHANGE === 'groter'">
                         <p>
-                            If the slope of the new line is negative and
-                            greater than the slope of the original line with
-                            negative slope then the new line should be less
-                            steep.
+                            Als de helling van de nieuwe lijn negatief en groter is dan de helling van de oorspronkelijke lijn met een negatieve helling, moet de nieuwe lijn minder steil zijn.
                         </p>
                     </div>
                     <div data-else>
                         <p>
-                            If the slope of the new line is negative and less
-                            than the slope of the original line with negative
-                            slope, then the new line should be steeper.
+                            Als de helling van de nieuwe lijn negatief en kleiner is dan de helling van de oorspronkelijke lijn, moet de nieuwe helling steiler zijn.
                         </p>
                     </div>
                 </div>
                 <div data-else>
-                    <div data-if="CHANGE === 'greater'">
+                    <div data-if="CHANGE === 'groter'">
                         <p>
-                            If the slope of the new line is positive and greater
-                            than the slope of the original line with positive
-                            slope, then the new line should be steeper.
+                            Als de helling van de nieuwe lijn positief en groter is dan de helling van de oorspronkelijke lijn met positieve helling, dan moet de nieuwe lijn steiler zijn.
                         </p>
                     </div>
                     <div data-else>
                         <p>
-                            If the slope of the new line is positive and less
-                            than the slope of the original line with positive
-                            slope, then the new line should be less steep.
+                            Als de helling van de nieuwe lijn positief en kleiner is dan de helling van de oorspronkelijke lijn met positieve helling, dan moet de nieuwe lijn minder steil zijn.
                         </p>
                     </div>
                 </div>
                 <div>
                     <p>
-                        Since the original slope is <code>
-                        <var>fractionReduce(SLOPE_N, SLOPE_D)</var></code>,
-                        the slope of the new line could be <code>
+                        Aangezien de oorspronkelijke helling <code>
+                        <var>fractionReduce(SLOPE_N, SLOPE_D)</var></code> is,
+                        zou de helling van de nieuwe lijn <code>
                         <var>decimalFraction(NEW_SLOPE, true, true)</var>
-                        </code> and could look like this:
+                        </code> kunnen zijn en er zo uitzien:
                     <p>
                     <div class="graphie" style="margin-left: 30px">
                         graphInit({
@@ -339,8 +320,7 @@
             </div>
 
             <p class="question">
-                Adjust the slope and y-intercept until it connects the two
-                points. How do the slope and y-intercept values affect the line?
+                Pas de helling en het startgetal aan totdat de lijn de twee punten verbindt. Hoe wordt de lijn beïnvloed door de helling en het startgetal?
             </p>
 
             <div class="graphie" id="grid">
@@ -403,7 +383,7 @@
             <div class="solution" data-type="custom">
                 <div class="instruction">
                     <div style="clear: left;">
-                        Adjust this equation by clicking on the arrows:
+                        Pas deze vergelijking aan door op de pijltjes te drukken:
                     </div>
                     <div class="graphie">
                         init({

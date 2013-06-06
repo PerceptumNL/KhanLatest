@@ -17,7 +17,7 @@
                 </div>
                 <div>
                     <p class="question">
-                        Factor the following expression:
+                        Ontbind de volgende uitdrukking in factoren:
                     </p>
                     <p>
                         <code><var>SQUARE</var>x^2 + <var>CONSTANT</var></code>
@@ -28,31 +28,31 @@
                     <div class="set-sol" data-type="regex">^\s*\(\s*<var>A</var>\s*[xX]\s*\+\s*<var>B</var>\s*\)\s*\(\s*<var>A</var>\s*[xX]\s*[-\u2212]\s*<var>B</var>\s*\)\s*$</div>
                     <div class="set-sol" data-type="regex">^\s*\(\s*<var>A</var>\s*[xX]\s*[-\u2212]\s*<var>B</var>\s*\)\s*\(\s*<var>A</var>\s*[xX]\s*\+\s*<var>B</var>\s*\)\s*$</div>
                     <div class="input-format"><span class="entry"></span></div>
-                    <div class="example">a factored expression, like <b>(3x+1)(3x+2)</b></div>
+                    <div class="example">Ontbonden in factoren zoals <b>(3x+1)(3x+2)</b></div>
                 </div>
 
                 <div class="hints">
                     <p>
-                        The expression is of the form <code>\color{<var>PINK</var>}{a^2} - \color{<var>BLUE</var>}{b^2}</code>,
-                        which is a difference of two squares so we can factor it as
+                        De uitdrukking heeft de vorm <code>\color{<var>PINK</var>}{a^2} - \color{<var>BLUE</var>}{b^2}</code>,
+                        dat een verschil is tussen twee kwadraten dus we kunnen het als volgt ontbinden
                         <code>(\color{<var>PINK</var>}{a} + \color{<var>BLUE</var>}{b})
                         (\color{<var>PINK</var>}{a} - \color{<var>BLUE</var>}{b})</code>.
                     </p>
                     <p>
-                        What are the values of <code class="hint_pink">a</code> and <code class="hint_blue">b</code>?
+                        Wat zijn de waarden <code class="hint_pink">a</code> en <code class="hint_blue">b</code>?
                     </p>
                     <div>
                         <p><code class="hint_pink">\qquad a = \sqrt{<var>SQUARE</var>x^2} = <var>A</var>x</code></p>
                         <p><code class="hint_blue">\qquad b = \sqrt{<var>B * B</var>} = <var>B</var></code></p>
                     </div>
                     <p>
-                        Use the values we found for <code class="hint_pink">a</code> and <code class="hint_blue">b</code>
-                        to complete the factored expression,
+                        Gebruik de waarden die we hadden gevonden voor <code class="hint_pink">a</code> en <code class="hint_blue">b</code>
+                        om de ontbinding in factoren te voltooien,
                         <code>(\color{<var>PINK</var>}{a} + \color{<var>BLUE</var>}{b})
                         (\color{<var>PINK</var>}{a} - \color{<var>BLUE</var>}{b})</code>.
                     </p>
                     <p class="final_answer">
-                        So we can factor the expression as:
+                        Dus we kunnen de uitdrukking als volgt ontbinden in factoren:
                         <code>(\color{<var>PINK</var>}{<var>A</var>x} + \color{<var>BLUE</var>}{<var>B</var>})
                         (\color{<var>PINK</var>}{<var>A</var>x} - \color{<var>BLUE</var>}{<var>B</var>})</code>
                     </p>

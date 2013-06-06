@@ -56,8 +56,8 @@
                 <var id="Y_HEADER">"y"</var>
             </div>
             <div  data-tt="question1" class="question">
-                <p>Some ordered pairs for a linear function of <span class='hint_orange'><code><var>X_VAR</var></code></span> are given in the table below.</p>
-                <p><b>Which equation was used to generate this table?</b></p>
+                <p>Een paar gesorteerde waarden van een lineaire functie van <span class='hint_orange'><code><var>X_VAR</var></code></span> zijn gegeven in de tabel hieronder.</p>
+                <p><b>Welke vergelijking was gebruikt om deze tabel te maken?</b></p>
             </div>
             <div class="fake_header plug_in">
                 <span class='hint_orange'><var>X_HEADER</var></span>
@@ -74,20 +74,20 @@
                     </li>
             </ul>
             <div class="hints">
-                <p data-tt="hint0" >Take one of the equations and try plugging in the values from the table. If the equality does not hold for at least one set of values, then we can eliminate that answer choice.</p>
+                <p data-tt="hint0" > Kies één van de vergelijkingen en probeer de waarden van de tabel daar in te vullen. Als de gelijkheid niet kloppend blijft voor ten minste één paar waarden, kunnen we dat antwoord elimineren.</p>
                 <div>
-                    <p data-tt="hint1" >For example, consider <code><var>Y_VAR</var> = <var>WRONG_ANSWERS[0].coef</var><var>X_VAR</var> + <var>WRONG_ANSWERS[0].const</var></code>. Substituting in <code>\color{<var>ORANGE</var>}{<var>X_VAR</var> = <var>XVALS[0]</var>}</code> and <code>\color{<var>BLUE</var>}{<var>Y_VAR</var> = <var>XVALS[0] * COEF + CONST</var>}</code> shows that the equality holds for the first row of the table :</p>
+                    <p data-tt="hint1" >Neem bijvoorbeeld <code><var>Y_VAR</var> = <var>WRONG_ANSWERS[0].coef</var><var>X_VAR</var> + <var>WRONG_ANSWERS[0].const</var></code>. Substitueren van <code>\color{<var>ORANGE</var>}{<var>X_VAR</var> = <var>XVALS[0]</var>}</code> en <code>\color{<var>BLUE</var>}{<var>Y_VAR</var> = <var>XVALS[0] * COEF + CONST</var>}</code> toont aan dat de gelijkheid kloppend is voor de eerste rij van de tabel:</p>
                     <p><code>\color{<var>BLUE</var>}{<var>XVALS[0] * COEF + CONST</var>} =  <var>WRONG_ANSWERS[0].coef</var>(\color{<var>ORANGE</var>}{<var>XVALS[0]</var>}) + <var>WRONG_ANSWERS[0].const</var></code></p>
                     <p><code><var>XVALS[0] * COEF + CONST</var> = <var>XVALS[0] * COEF + CONST</var></code></p>
                 </div>
                 <div>
-                    <p data-tt="hint2" >However, plugging in <code>\color{<var>ORANGE</var>}{<var>X_VAR</var> = <var>XVALS[1]</var>}</code> and <code>\color{<var>BLUE</var>}{<var>Y_VAR</var> = <var>XVALS[1] * COEF + CONST</var>}</code> from the second row of the table gives us:</p>
+                    <p data-tt="hint2" >Invullen van <code>\color{<var>ORANGE</var>}{<var>X_VAR</var> = <var>XVALS[1]</var>}</code> en <code>\color{<var>BLUE</var>}{<var>Y_VAR</var> = <var>XVALS[1] * COEF + CONST</var>}</code> van de tweede rij geeft ons echter:</p>
                     <p><code>\color{<var>BLUE</var>}{<var>XVALS[1] * COEF + CONST</var>} =  <var>WRONG_ANSWERS[0].coef</var>(\color{<var>ORANGE</var>}{<var>XVALS[1]</var>}) + <var>WRONG_ANSWERS[0].const</var></code></p>
                     <p><code><var>XVALS[1] * COEF + CONST</var> \ne <var>WRONG_ANSWERS[0].coef * XVALS[1] + WRONG_ANSWERS[0].const</var></code></p>
-                    <p data-tt="hint3" >So we can eliminate <code><var>Y_VAR</var> = <var>WRONG_ANSWERS[0].coef</var><var>X_VAR</var> + <var>WRONG_ANSWERS[0].const</var></code> from consideration and try a different answer choice.</p>
+                    <p data-tt="hint3" >Dus we kunnen <code><var>Y_VAR</var> = <var>WRONG_ANSWERS[0].coef</var><var>X_VAR</var> + <var>WRONG_ANSWERS[0].const</var></code> buiten beschouwing laten en een ander antwoord proberen.</p>
                 </div>
                 <div>
-                    <p data-tt="hint4" >When we try <code><var>Y_VAR</var> = <var>COEF</var><var>X_VAR</var> + <var>CONST</var></code>, we see that it holds up for each set of values in the table.</p>
+                    <p data-tt="hint4" >Wanneer we <code><var>Y_VAR</var> = <var>COEF</var><var>X_VAR</var> + <var>CONST</var></code> proberen, zien we dat de vergelijking kloppend is voor elk paar waarden in de tabel.</p>
                     <table class='plug_hint'>
                         <tr data-each="XVALS as xval">
                             <td>
@@ -100,7 +100,7 @@
                         </tr>
                     </table>
                 </div>
-                <p data-tt="hint5" >The equation that fits this table of values is <code><var>Y_VAR</var> = <var>COEF</var><var>X_VAR</var> + <var>CONST</var></code>.</p>
+                <p data-tt="hint5" >De vergelijking die bij deze waardentabel hoort is <code><var>Y_VAR</var> = <var>COEF</var><var>X_VAR</var> + <var>CONST</var></code>.</p>
             </div>
         </div>
         <div id="grocery" data-type="linear">
@@ -111,7 +111,7 @@
                 <var data-tt="var4" id="Y_HEADER">"Cost (c)"</var>
             </div>
             <div  data-tt="question2" class="question">
-                <p>The data in the table show the cost of buying bulk vegetables per pound, including the fee for the clerk to package the vegetables in boxes.</p>
+                <p>De data in de tabel toont de kosten van massagroenten per pond aan, inclusief het bedrag voor de winkelbediende om de groenten in dozen in te pakken.</p>
                 <p><b>Which equation fits the data?</b></p>
             </div>
             <div class='fake_row plug_in' data-each="XVALS as xval">
@@ -157,19 +157,19 @@
                 <span><var>tableval.yval</var></span>
             </div>
             <div  data-tt="question3" class="question">
-                <p><b>The table below was generated using the following equation:</b><code>\quad f(x) = <var>COEF</var>x + <var>CONST</var></code></p>
-                <p><b>Find the missing values.</b></p>
+                <p><b>De tabel hieronder was gemaakt met de volgende vergelijking:</b><code>\quad f(x) = <var>COEF</var>x + <var>CONST</var></code></p>
+                <p><b>Bereken de ontbrekende waarden</b></p>
             </div>
             <div class="solution" data-each="TABLEVALS as tableval" data-type="multiple">
                 <p data-if="tableval.yval === '&nbsp;'"><code>f(<var>tableval.xval</var>)</code> = <span class="sol"><var>COEF * tableval.xval + CONST</var></span></p>
             </div>
             <div class="hints">
-                <p data-tt="hint6" >Plug the corresponding values of <code class="hint_orange">x</code> into the equation to find the missing values of <code class="hint_blue">f(x)</code>.</p>
+                <p data-tt="hint6" >Vul de overeenkomende waarden voor <code class="hint_orange">x</code> in de vergelijking om de ontbrekende waarden van <code class="hint_blue">f(x)</code> te vinden.</p>
                 <div>
                     <p data-each="TABLEVALS as tableval"><span data-if="tableval.yval === '&nbsp;'"><code>\color{<var>BLUE</var>}{f(<var>tableval.xval</var>)} = <var>COEF</var> \cdot \color{<var>ORANGE</var>}{<var>tableval.xval</var>} + <var>CONST</var> = <var>tableval.xval * COEF</var> + <var>CONST</var> = <var>tableval.xval * COEF + CONST</var></code></span></p>
                 </div>
                 <div>
-                    <p data-tt="hint7" >The missing <span data-if="I === 1">value is</span><span data-else>values are</span>:</p>
+                    <p data-tt="hint7" >De ontbrekende <span data-if="I === 1">waarde is</span><span data-else>waarden zijn</span>:</p>
                     <p data-each="TABLEVALS as tableval"><span data-if="tableval.yval === '&nbsp;'"><code>f(<var>tableval.xval</var>) = <var>tableval.xval * COEF + CONST</var></code></span></p>
                 </div>
             </div>

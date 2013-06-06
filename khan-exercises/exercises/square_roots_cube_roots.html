@@ -15,9 +15,9 @@
         </div>
 
         <div class="hints">
-            <p data-tt="hint1">The best thing is to do a prime factorization of this number and look for groups of numbers.</p>
+            <p data-tt="hint1">Het beste is om dit getal te ontbinden in priemfactoren en naar groepjes van getallen te kijken.</p>
             <div>
-                <p>Let's draw a factor tree.</p>
+                <p>Laten we een boom van factoren tekenen.</p>
                 <div class="graphie" id="factor-tree">
                     init({
                         range: [ [-1, FACTORIZATION.length + 2], [ -2 * FACTORIZATION.length - 1, 1] ],
@@ -45,7 +45,7 @@
                 circle( [cx + 1, y], 0.5);
             </div>
 
-            <p data-tt="hint2">So we found that the prime factorization of <code><var>Q</var></code> is <code><var>PRIMES.join( "\\times " )</var></code>.</p>
+            <p data-tt="hint2">Dus we hebben gezien dat de ontbinding van priemfactoren van <code><var>Q</var></code> <code><var>PRIMES.join( "\\times " )</var></code> is.</p>
         </div>
 
         <div class="problems">
@@ -59,35 +59,35 @@
                     <var id="curr">Q</var>
                 </div>
 
-                <p class="question" data-tt="question1">What is the square root of <code><var>Q</var></code>?</p>
+                <p class="question" data-tt="question1">Wat is de vierkantswortel van <code><var>Q</var></code>?</p>
 
                 <p class="solution"><var>N</var></p>
 
                 <div class="hints" data-apply="appendContents">
 
-                    <p data-tt="hint3">We're looking for the square root of <code><var>Q</var></code>, so we want to split the prime factors into two identical groups.</p>
+                    <p data-tt="hint3">We proberen de wortel van <code><var>Q</var></code> te vinden, dus we willen de priemfactoren in twee gelijke groepen verdelen.</p>
 
                     <div data-if="PRIMES.length === 2" data-unwrap>
 
-                        <p data-tt="hint4">We only have two prime factors, and we want to split them into two groups, so this is easy.</p>
+                        <p data-tt="hint4">We hebben slechts twee priemfactoren en we willen ze opdelen in twee groepen, dus dit is makkelijk.</p>
                         <p><code><var>Q</var> = <var>PRIMES.join( "\\times " )</var></code>, so <code><var>N</var>^2 = <var>Q</var></code>.</p>
 
                     </div><div data-else data-unwrap>
 
                         <div>
-                            <p data-tt="hint5">Notice that we can rearrange the factors like so:</p>
-                            <p><code><var>Q</var> = <var>PRIMES.join(" &times; ")</var> = \left(<var>F_N.join( "\\times " )</var>\right) \times \left(<var>F_N.join(" &times; ")</var>\right)</code></p>
+                            <p data-tt="hint5">Merk op dat we de factoren als volgt kunnen herschikken:</p>
+                            <p><code><var>Q</var> = <var>PRIMES.join(" &times; ")</var> = \left(<var>F_N.join( "\\times " )</var>\right) \times \left(<var>F_N.join(" &times; ")</var> \right)</code></p>
                         </div>
 
                         <p data-if="F_N.length > 1" data-tt="hint6">
-                            So <code>\left(<var>F_N.join( "\\times " )</var>\right)^2 = <var>N</var>^2 = <var>Q</var></code>.
+                            Dus <code> \left(<var>F_N.join( "\\times " )</var> \right)^2 = <var>N</var>^2 = <var>Q</var></code>.
                         </p><p data-else data-tt="hint7">
-                            So <code><var>N</var>^2 = <var>Q</var></code>.
+                            Dus <code><var>N</var>^2 = <var>Q</var></code>.
                         </p>
 
                     </div>
 
-                    <p data-tt="hint8">So the square root of <code><var>Q</var></code> is <code><var>N</var></code>.</p>
+                    <p data-tt="hint8">De wortel van<code><var>Q</var></code> is dus <code><var>N</var></code>.</p>
 
                 </div>
 
@@ -102,35 +102,35 @@
                     <var id="curr">Q</var>
                 </div>
 
-                <p class="question" data-tt="question2">What is the cube root of <code><var>Q</var></code>?</p>
+                <p class="question" data-tt="question2">Wat is de derdemachtswortel van <code><var>Q</var></code>?</p>
 
                 <p class="solution"><var>N</var></p>
 
                 <div class="hints" data-apply="appendContents">
 
-                    <p data-tt="hint9">We're looking for the cube root of <code><var>Q</var></code>, so we want to split the prime factors into three identical groups.</p>
+                    <p data-tt="hint9">We zoeken naar de derdemachtswortel van <code><var>Q</var></code>, dus we willen de priemfactoren verdelen over drie gelijke groepen.</p>
 
                     <div data-if="PRIMES.length === 3" data-unwrap>
 
-                        <p data-tt="hint10">We only have three prime factors, and we want to split them into three groups, so this is easy.</p>
+                        <p data-tt="hint10">We hebben slechts drie priemfactoren en we willen ze opdelen in drie groepen, dus dit is makkelijk.</p>
                         <p><code><var>Q</var> = <var>PRIMES.join( "\\times " )</var></code>, so <code><var>N</var>^3 = <var>Q</var></code>.</p>
 
                     </div><div data-else data-unwrap>
 
                         <div>
-                            <p data-tt="hint11">Notice that we can rearrange the factors like so:</p>
-                            <p><code><var>Q</var> = <var>PRIMES.join( "\\times " )</var> = \left(<var>[ F_N.join( "\\times " ), F_N.join( "\\times " ), F_N.join( "\\times ") ].join( "\\right)\\times\\left(" )</var>\right)</code><p>
+                            <p data-tt="hint11">Merk op dat we de factoren als volgt kunnen herschikken:</p>
+                            <p><code><var>Q</var> = <var>PRIMES.join( "\\times " )</var> = \left(<var>[ F_N.join( "\\times " ), F_N.join( "\\times " ), F_N.join( "\\times ") ].join( "\\right)\\times\\left(" )</var> \right)</code><p>
                         </div>
 
                         <p data-if="F_N.length > 1" data-tt="hint12">
-                            So <code>\left(<var>F_N.join( "\\times " )</var>\right)^3 = <var>N</var>^3 = <var>Q</var></code>.
+                            Dus <code> \left(<var>F_N.join( "\\times " )</var> \right)^3 = <var>N</var>^3 = <var>Q</var></code>.
                         </p><p data-else data-tt="hint13">
-                            So <code><var>N</var>^3 = <var>Q</var></code>.
+                            Dus <code><var>N</var>^3 = <var>Q</var></code>.
                         </p>
 
                     </div>
 
-                    <p data-tt="hint14">So the cube root of <code><var>Q</var></code> is <code><var>N</var></code>.</p>
+                    <p data-tt="hint14">De derdemachtswortel van <code><var>Q</var></code> is dus <code><var>N</var></code>.</p>
 
                 </div>
 

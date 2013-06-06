@@ -48,7 +48,7 @@
         <var id="TEXTS">shuffle([
             "&lt;code&gt;x " + binop(1) + " y = " + TEXT1 + "&lt;/code&gt;",
             "&lt;code&gt;x " + binop(2) + " y = " + TEXT2 + "&lt;/code&gt;"
-        ]).join(" and ")</var>
+        ]).join(" en ")</var>
     </div>
 
     <div class="problems">
@@ -61,12 +61,12 @@
             </div>
 
             <div class="question">
-                <p data-tt="question1" >If <var>TEXTS</var>, find <code><var>X</var> <var>binop(1)</var> (<var>Y</var> <var>binop(2)</var> <var>Z</var>)</code>.</p>
+                <p data-tt="question1" >Als <var>TEXTS</var>, vind <code><var>X</var> <var>binop(1)</var> (<var>Y</var> <var>binop(2)</var> <var>Z</var>)</code>.</p>
             </div>
             <div class="solution"><var>VALU1</var></div>
 
             <div class="hints" data-apply="appendContents">
-                <p data-tt="hint1" ><var>NEED_VALU1 ? "Now, find" : "Find"</var> <code><var>X</var> <var>binop(1)</var> <var>NEED_VALU1 ? VALU2 : "y"</var></code>:</p>
+                <p data-tt="hint1" ><var>NEED_VALU1 ? "Vind nu" : "Vind"</var> <code><var>X</var> <var>binop(1)</var> <var>NEED_VALU1 ? VALU2 : "y"</var></code>:</p>
                 <p><code>\qquad <var>X</var> <var>binop(1)</var> <var>NEED_VALU1 ? VALU2 : "y"</var> = <var>SUBS1</var></code></p>
                 <p><code>\qquad \hphantom{<var>X</var> <var>binop(1)</var> <var>NEED_VALU1 ? VALU2 : "y"</var>} = <var>VALU1</var></code>.</p>
             </div>
@@ -76,16 +76,16 @@
                 <var id="SUBS1">expr(FUN1(A, B, VALU2, X))</var>
                 <var id="VALU1">expr(FUN1(A, B, VALU2, X), true)</var>
                 <var id="NEED_VALU1">!FUN1_YONLY</var>
-                <var id="NEED_VALU1_ONLY">"right"</var>
+                <var id="NEED_VALU1_ONLY">"rechter"</var>
             </div>
 
             <div class="question">
-                <p data-tt="question2" >If <var>TEXTS</var>, find <code>(<var>Y</var> <var>binop(2)</var> <var>Z</var>) <var>binop(1)</var> <var>X</var></code>.</p>
+                <p data-tt="question2" >Als <var>TEXTS</var>, vind <code>(<var>Y</var> <var>binop(2)</var> <var>Z</var>) <var>binop(1)</var> <var>X</var></code>.</p>
             </div>
             <div class="solution"><var>VALU1</var></div>
 
             <div class="hints" data-apply="appendContents">
-                <p data-tt="hint2" ><var>NEED_VALU1 ? "Now, find" : "Find"</var> <code><var>NEED_VALU1 ? VALU2 : "x"</var> <var>binop(1)</var> <var>X</var></code>:</p>
+                <p data-tt="hint2" ><var>NEED_VALU1 ? "Vind nu" : "Vind"</var> <code><var>NEED_VALU1 ? VALU2 : "x"</var> <var>binop(1)</var> <var>X</var></code>:</p>
                 <p><code>\qquad <var>NEED_VALU1 ? VALU2 : "x"</var> <var>binop(1)</var> <var>X</var> = <var>SUBS1</var></code></p>
                 <p><code>\qquad \hphantom{<var>NEED_VALU1 ? VALU2 : "x"</var> <var>binop(1)</var> <var>X</var>} = <var>VALU1</var></code>.</p>
             </div>
@@ -94,12 +94,12 @@
 
     <div class="hints">
         <div data-if="NEED_VALU1" data-unwrap>
-            <p data-tt="hint3" >First, find <code><var>Y</var> <var>binop(2)</var> <var>Z</var></code>:</p>
+            <p data-tt="hint3" >Vind eerst <code><var>Y</var> <var>binop(2)</var> <var>Z</var></code>:</p>
             <p><code>\qquad <var>Y</var> <var>binop(2)</var> <var>Z</var> = <var>SUBS2</var></code></p>
             <p><code>\qquad \hphantom{<var>Y</var> <var>binop(2)</var> <var>Z</var>} = <var>VALU2</var></code>.</p>
         </div>
         <div data-else data-unwrap>
-            <p data-tt="hint4" >We don't need to find <code><var>Y</var> <var>binop(2)</var> <var>Z</var></code> because <code>x <var>binop(1)</var> y</code> depends only on the <var>NEED_VALU1_ONLY</var> operand.</p>
+            <p data-tt="hint4" >We hoeven <code><var>Y</var> <var>binop(2)</var> <var>Z</var></code> niet te vinden, omdat <code>x <var>binop(1)</var> y</code> alleen afhangt van de <var>NEED_VALU1_ONLY</var> operand.</p>
         </div>
     </div>
     </div>

@@ -48,18 +48,18 @@
                     <var id="SIGNS_1">[AB_VALS[0].a &gt; 0 ? "+" : "-", AB_VALS[1].a &gt; 0 ? "+" : "-"]</var>
                     <var id="SIGNS_2">[( AB_VALS[0].a * MULT[0] ) &gt; 0 ? "+" : "-", ( AB_VALS[1].a * MULT[1] ) &gt; 0 ? "+" : "-"]</var>
                 </div>
-                <p class="problem" data-tt="question1">Determine how many solutions exist for the system of equations.</p>
+                <p class="problem" data-tt="question1">Bepaal hoeveel oplossingen er bestaan voor deze stelselvergelijking.</p>
                 <div class="question">
                     <p><code>\color{<var>BLUE</var>}{<var>EQUATIONS[0]</var>}</code><br />
                     <code>\color{<var>GREEN</var>}{<var>EQUATIONS[1]</var>}</code></p>
                 </div>
                 <ul class="choices" data-category="true">
-                    <li data-tt="question2">One solution</li>
-                    <li data-tt="question3">Infinite solutions</li>
-                    <li data-tt="question4">No solutions</li>
+                    <li data-tt="question2">Eén oplossing</li>
+                    <li data-tt="question3">Oneindig aantal oplossingen</li>
+                    <li data-tt="question4">Geen oplossingen</li>
                 </ul>
                 <div class="hints">
-                    <p data-tt="hint1">Convert both equations to slope-intercept form:</p>
+                    <p data-tt="hint1">Zet beide vergelijkingen om tot helling-startgetal vorm:</p>
                     <div data-unwrap>
                         <p data-each="COUNT as INDEX"><code>\color{<span data-if="INDEX === 0"><var>BLUE</var></span><span data-else><var>GREEN</var></span>}{<var>EQUATIONS[INDEX]</var>}</code><br />
                         <span data-if="INDICES[INDEX] === 1"><code>\color{<span data-if="INDEX === 0"><var>BLUE</var></span><span data-else><var>GREEN</var></span>}{y = <var>expr(["+", ["*", AB_VALS[INDEX].a, "x"], AB_VALS[INDEX].b])</var>}</code></span>
@@ -72,7 +72,7 @@
                         <code>\color{<span data-if="INDEX === 0"><var>BLUE</var></span><span data-else><var>GREEN</var></span>}{y = <var>expr(["+", ["*", AB_VALS[INDEX].a, "x"], AB_VALS[INDEX].b])</var>}</code></span></p>
                     </div>
                     <div>
-                        <p data-tt="hint2">Just by looking at both equations in slope-intercept form, what can you determine?</p>
+                        <p data-tt="hint2">Wat kan je bepalen als je alleen kijkt naar beide vergelijkingen in helling-startgetal vorm?</p>
                         <p><code>\color{<var>BLUE</var>}{y = <var>expr(["+", ["*", AB_VALS[0].a, "x"], AB_VALS[0].b])</var>}</code><br />
                         <code>\color{<var>GREEN</var>}{y = <var>expr(["+", ["*", AB_VALS[1].a, "x"], AB_VALS[1].b])</var>}</code></p>
                     </div>
@@ -85,7 +85,7 @@
                 <div class="solution" data-tt="question5">One solution</div>
                 <div class="hints" data-apply="appendContents">
                     <div>
-                        <p data-tt="hint3">The linear equations have different slopes.</p>
+                        <p data-tt="hint3">De lineaire vergelijkingen hebben een verschillende helling.</p>
                         <div class="graphie" id="grid">
                             graphInit({
                                 range: [[-10, 10], [-10, 10]],
@@ -110,7 +110,7 @@
                             });
                         </div>
                     </div>
-                    <p data-tt="hint4">When two equations have different slopes, the lines will intersect once with one solution.</p>
+                    <p data-tt="hint4">Wanneer twee vergelijkingen verschillende helling hebben, zullen de lijnen elkaar éénmaal snijden.</p>
                 </div>
             </div>
             <div id="infinite_solutions" data-type="original">
@@ -120,7 +120,7 @@
                 <div class="solution" data-tt="question6">Infinite solutions</div>
                 <div class="hints" data-apply="appendContents">
                     <div>
-                        <p data-tt="hint5">Both equations have the same slope and the same y-intercept, which means the lines would completely overlap.</p>
+                        <p data-tt="hint5">Beide vergelijkingen hebben dezeflde helling en hetzelfde startgetal, wat betekent dat de vergelijkingen elkaar volledig overlappen.</p>
                         <div class="graphie" id="grid">
                             graphInit({
                                 range: [[-10, 10], [-10, 10]],
@@ -139,7 +139,7 @@
                             });
                         </div>
                     </div>
-                    <p data-tt="hint6">Since any solution of <code>\color{<var>BLUE</var>}{<var>EQUATIONS[0]</var>}</code> is also a solution of <code>\color{<var>GREEN</var>}{<var>EQUATIONS[1]</var>}</code>, there are infinitely many solutions.</p>
+                    <p data-tt="hint6">Aangezien elke oplossing van <code> \color{<var>BLUE</var>}{<var>EQUATIONS[0]</var>}</code> ook een oplossing is van <code> \color{<var>GREEN</var>}{<var>EQUATIONS[1]</var>}</code>, is er een oneindig aantal oplossingen.</p>
                 </div>
             </div>
             <div id="zero_solutions" data-type="original">
@@ -149,7 +149,7 @@
                 <div class="solution" data-tt="question7">No solutions</div>
                 <div class="hints" data-apply="appendContents">
                     <div>
-                        <p data-tt="hint7">Both equations have the same slope with different y-intercepts. This means the equations are parallel.</p>
+                        <p data-tt="hint7">De vergelijkingen hebben dezelfde helling maar een verschillend startgeta. Dit betekent dat de vergelijkingen evenwijdig zijn..</p>
                         <div class="graphie" id="grid">
                             graphInit({
                                 range: [[-10, 10], [-10, 10]],
@@ -174,7 +174,7 @@
                             });
                         </div>
                     </div>
-                    <p data-tt="hint8">Parallel lines never intersect, thus there are NO SOLUTIONS.</p>
+                    <p data-tt="hint8">Evenwijdige lijnen snijden elkaar nooit, dus er zijn geen oplossingen.</p>
                 </div>
             </div>
         </div>

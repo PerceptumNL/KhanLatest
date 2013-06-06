@@ -479,6 +479,17 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		["leer", "leren"]
 	]);
 
+	var sterk = KhanUtil.shuffle([
+		["lopen", "gelopen"],
+		["zien", "gezien"],
+		["vinden", "gevonden"],
+		["kopen", "gekocht"],
+		["hebben", "gehad"],
+		["staan", "gestaan"],
+		["hebben", "gehad"],
+		["varen", "gevaren"]
+	]);
+
 	var stamheelsterk = KhanUtil.shuffle([
 		["heb", "hebben", "hebt", "heeft"],
 		["ben", "zijn", "bent", "is"],
@@ -782,6 +793,8 @@ jQuery.fn[ "word-problemsLoad" ] = function() {
 		sterkhijvorm: function(i){return stamheelsterk[i][3];},
 		zwakstam: function(i){return zwak[i][0];},
 		zwakheel: function(i){return zwak[i][1];},
+		sterkheel: function(i){return sterk[i][0];},
+		sterkvoltooid: function(i){return sterk[i][1];},
 		heb: function(i){
 			if(i == 1){
 				return "heb";			

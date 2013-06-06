@@ -72,21 +72,22 @@
 
                 <div class="hints">
                     <!-- Remind them of L'Hopital's rule -->
-                    <p>L'Hopital's rule states that since evaluating
+                    <p>De regel van L'Hôpital zegt dat omdat het berekenen van
                         <!-- Original problem -->
                         <code>\displaystyle \lim_{x \to <var>APPROACHES_TEXT</var>} \frac{<var>NUMERATOR</var>}{<var>DENOMINATOR</var>} = <var>INDETERMINATE_FORM</var></code>,<br />
                         <!-- Explanation of rule -->
-                        if <code>\displaystyle \lim_{x \to <var>APPROACHES_TEXT</var>} \frac{\frac{d}{dx} (<var>NUMERATOR</var>)}{\frac{d}{dx} (<var>DENOMINATOR</var>)}</code> exists, evaluating it will give us the actual limit.
+                        als <code>\displaystyle \lim_{x \to <var>APPROACHES_TEXT</var>} \frac{\frac{d}{dx} (<var>NUMERATOR</var>)}{\frac{d}{dx} (<var>DENOMINATOR</var>)}</code> bestaat, zal het berekenen hiervan ons het daadwerkelijke limiet geven.
                     </p>
 
                     <!-- Show them the steps of L'Hopital's rule by deriving until the indeterminate form can be resolved -->
                     <div data-each="STEPS as N, STEP" data-unwrap>
                         <div data-if="N != STEPS.length-1">
                             <p data-if="N === 0">
-                                Repeat this process until evaluating the limit will not result in an indeterminate form:
+                                Herhaal dit proces totdat het berekenen van het limiet niet meer uitkomt op een onbepaalde vorm.
                             </p>
                             <p data-else>
-                                Since evaluating the limit at this point still results in <code><var>INDETERMINATE_FORM</var></code>, we must apply L'Hopital's rule again:
+                                Aangezien het berekenen van het limiet op dit punt nog steeds uitkomt op
+                                <code><var>INDETERMINATE_FORM</var></code>, moeten we de Regel van L'Hôpital's opnieuw toepassen:
                             </p>
                             <p>
                                 <code>
@@ -100,7 +101,7 @@
                     <!-- Evaluate the limit and give the solution in both unsimplified and simplified form (if necessary) -->
                     <p>
                         <!-- Restate the problem using the derived, but unevaluated limit-->
-                        Evaluate the limit:
+                        Bereken het limiet:
                         <code>
                             \displaystyle \lim_{x \to <var>APPROACHES_TEXT</var>} \frac{<var>SLN_NUMERATOR_TEXT.text()</var>}{<var>SLN_DENOMINATOR_TEXT.text()</var>}
                             <!-- Show the evaluation of the limit (only necessary for x->0, otherwise evaluation is obvious because all variables will be gone) -->

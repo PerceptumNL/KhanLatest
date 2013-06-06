@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="question">
-                    <p>Find <code>\displaystyle\lim_{x \to <var>PM</var>\infty}\dfrac{<var>NUM.text()</var>}{<var>DEN.text()</var>}</code>.</p>
+                    <p>Vind <code>\displaystyle\lim_{x \to <var>PM</var>\infty}\dfrac{<var>NUM.text()</var>}{<var>DEN.text()</var>}</code>.</p>
                 </div>
 
                 <p class="solution"><code><var>fractionReduce( NUM.getCoefAndDegreeForTerm(0).coef, DEN.getCoefAndDegreeForTerm(0).coef )</var></code></p>
@@ -30,8 +30,8 @@
                 </ul>
 
                 <div class="hints">
-                    <p data-tt="hint1">Look at the leading terms <code><var>expr(NUM.expr()[1])</var></code> and <code><var>expr(DEN.expr()[1])</var></code>.</p>
-                    <p data-tt="hint2">Because they have the same degree <code><var>DEG</var></code>, the limit is equal to the quotient of their coefficients.</p>
+                    <p data-tt="hint1">Kijk naar de termen met de hoogste graad <code><var>expr(NUM.expr()[1])</var></code> en  <code><var>expr(DEN.expr()[1])</var></code>.</p>
+                    <p data-tt="hint2">Omdat ze dezelfde graad <code><var>DEG</var></code> hebben, is het limiet gelijk aan het quotiënt van hun coëfficiënten (deel de getallen voor deze termen door elkaar).</p>
                     <p><code>\displaystyle\lim_{x \to <var>PM</var>\infty}\dfrac{<var>NUM.text()</var>}{<var>DEN.text()</var>} = <var>fractionSimplification( NUM.coefs[DEG], DEN.coefs[DEG] )</var></code></p>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="question">
-                    <p data-tt="question4">Find <code>\displaystyle\lim_{x \to <var>PM</var>\infty}\dfrac{<var>NUM.text()</var>}{<var>DEN.text()</var>}</code>.</p>
+                    <p data-tt="question4">Vind <code>\displaystyle\lim_{x \to <var>PM</var>\infty}\dfrac{<var>NUM.text()</var>}{<var>DEN.text()</var>}</code>.</p>
                 </div>
 
                 <p class="solution"><code>0</code></p>
@@ -58,9 +58,9 @@
                 </ul>
 
                 <div class="hints">
-                    <p data-tt="hint3">Look at the leading terms <code><var>expr(NUM.expr()[1])</var></code> and <code><var>expr(DEN.expr()[1])</var></code>.</p>
-                    <p data-tt="hint4">Because the numerator's degree <code><var>NUM.getCoefAndDegreeForTerm(0).degree</var></code> is less than the denominator's degree <code><var>DEN.getCoefAndDegreeForTerm(0).degree</var></code>, the bottom term dominates as <code>x</code> approaches <code><var>PM</var>\infty</code>.</p>
-                    <p data-tt="hint5">Since the denominator grows faster than the numerator, the limit goes to <code>0</code>.</p>
+                    <p data-tt="hint3">Bekijk de termen met de hoogste graad <code><var>expr(NUM.expr()[1])</var></code> and <code><var>expr(DEN.expr()[1])</var></code>.</p>
+                    <p data-tt="hint4">Omdat de graad van de teller <code><var>NUM.getCoefAndDegreeForTerm(0).degree</var></code> lager is dan de graad van de noemer <code><var>DEN.getCoefAndDegreeForTerm(0).degree</var></code>, domineert de noemer wanneer <code>x</code> <code><var>PM</var>\infty</code> nadert.</p>
+                    <p data-tt="hint5">Omdat de noemer sneller stijgt dan de teller, gaat het limiet naar <code>0</code>.</p>
                 </div>
             </div>
 
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="question">
-                    <p data-tt="question2">Find <code>\displaystyle\lim_{x \to \infty}\dfrac{<var>NUM.text()</var>}{<var>DEN.text()</var>}</code>.</p>
+                    <p data-tt="question2">Vind <code>\displaystyle\lim_{x \to \infty}\dfrac{<var>NUM.text()</var>}{<var>DEN.text()</var>}</code>.</p>
                 </div>
 
                 <p class="solution"><code><var>RIGHT_SIGN</var>\infty</code></p>
@@ -87,12 +87,12 @@
                 </ul>
 
                 <div class="hints">
-                    <p data-tt="hint6">Look at the leading terms <code><var>expr(NUM.expr()[1])</var></code> and <code><var>expr(DEN.expr()[1])</var></code>.</p>
-                    <p data-tt="hint7">As <code>x \to \infty</code>, the numerator approaches <code><var>NUM.getCoefAndDegreeForTerm(0).coef < 0 ? "-" : ""</var>\infty</code> because the coefficient <code><var>NUM.getCoefAndDegreeForTerm(0).coef</var></code> is <var>NUM.getCoefAndDegreeForTerm(0).coef < 0 ? "negative" : "positive"</var>.</p>
-                    <p data-tt="hint8">As <code>x \to \infty</code>, the denominator <var>NUM.getCoefAndDegreeForTerm(0).coef * DEN.getCoefAndDegreeForTerm(0).coef > 0 ? "also " : ""</var>approaches <code><var>DEN.getCoefAndDegreeForTerm(0).coef < 0 ? "-" : ""</var>\infty</code> because the coefficient <code><var>DEN.getCoefAndDegreeForTerm(0).coef</var></code> is <var>DEN.getCoefAndDegreeForTerm(0).coef < 0 ? "negative" : "positive"</var>.</p>
-                    <p data-tt="hint9">Because the numerator's degree <code><var>NUM.getCoefAndDegreeForTerm(0).degree</var></code> is greater than the denominator's degree <code><var>DEN.getCoefAndDegreeForTerm(0).degree</var></code>, the limit diverges.</p>
-                    <p data-tt="hint10" data-if="NUM.getCoefAndDegreeForTerm(0).coef * DEN.getCoefAndDegreeForTerm(0).coef > 0">The numerator and denominator have the same sign as <code>x</code> gets large, so the limit is <code>+\infty</code>.</p>
-                    <p  data-tt="hint11"data-else>The numerator and denominator have differing signs as <code>x</code> gets large, so the limit is <code>-\infty</code>.</p>
+                    <p data-tt="hint6">Kijk naar de termen met de hoogste graad <code><var>expr(NUM.expr()[1])</var></code> en <code><var>expr(DEN.expr()[1])</var></code>.</p>
+                    <p data-tt="hint7">Wanneer <code>x \to \infty</code> nadert de teller <code><var>NUM.getCoefAndDegreeForTerm(0).coef < 0 ? "-" : ""</var>\infty</code>, omdat het coëfficiënt <code><var>NUM.getCoefAndDegreeForTerm(0).coef</var></code> <var>NUM.getCoefAndDegreeForTerm(0).coef < 0 ? "negatief" : "positief"</var> is.</p>
+                    <p data-tt="hint8">Wanneer <code>x \to \infty</code> nadert de noemer <var>NUM.getCoefAndDegreeForTerm(0).coef * DEN.getCoefAndDegreeForTerm(0).coef > 0 ? "ook " : ""</var> <code><var>DEN.getCoefAndDegreeForTerm(0).coef < 0 ? "-" : ""</var>\infty</code>, omdat het coëfficiënt <code><var>DEN.getCoefAndDegreeForTerm(0).coef</var></code> <var>DEN.getCoefAndDegreeForTerm(0).coef < 0 ? "negatief" : "positief"</var> is.</p>
+                    <p data-tt="hint9">Omdat de graad van de teller <code><var>NUM.getCoefAndDegreeForTerm(0).degree</var></code> groter is dan de graad van de noemer <code><var>DEN.getCoefAndDegreeForTerm(0).degree</var></code>, divergeert het limiet.</p>
+                    <p data-tt="hint10" data-if="NUM.getCoefAndDegreeForTerm(0).coef * DEN.getCoefAndDegreeForTerm(0).coef > 0">De teller en de noemer hebben hetzelfde teken wanneer <code>x</code> groot wordt, dus het limiet is <code>+\infty</code>.</p>
+                    <p  data-tt="hint11"data-else>De teller en noemer hebben een verschillend teken wanneer <code>x</code> groot wordt, dus het limiet is <code>-\infty</code>.</p>
                 </div>
             </div>
 
@@ -103,7 +103,7 @@
                 </div>
 
                 <div class="question">
-                    <p>Find <code>\displaystyle\lim_{x \to <var>K</var>}\dfrac{<var>A</var>}{<var>B</var>x + <var>-K</var>}</code>.</p>
+                    <p>Vind <code>\displaystyle\lim_{x \to <var>K</var>}\dfrac{<var>A</var>}{<var>B</var>x + <var>-K</var>}</code>.</p>
                 </div>
 
                 <p class="solution" data-tt="question1">undefined</p>
@@ -116,10 +116,10 @@
                 </ul>
 
                 <div class="hints">
-                    <p data-tt="hint12">Consider the behavior of the function as <code>x \to <var>K</var></code> from each direction.</p>
-                    <p data-tt="hint13">As <code>x</code> approaches <code><var>K</var></code> from the left, <code><var>B</var>x + <var>-K</var></code> starts negative and increases as it approaches <code>0</code>, so <code>\dfrac{<var>A</var>}{<var>B</var>x + <var>-K</var>}</code> approaches <code>-\infty</code>.</p>
-                    <p data-tt="hint14">As <code>x</code> approaches <code><var>K</var></code> from the right, <code><var>B</var>x + <var>-K</var></code> starts positive and decreases as it approaches <code>0</code>, so <code>\dfrac{<var>A</var>}{<var>B</var>x + <var>-K</var>}</code> approaches <code>+\infty</code>.</p>
-                    <p data-tt="hint15">Since the left- and right-hand limits are not equal, the limit is not defined.</p>
+                    <p data-tt="hint12">Beschouw het gedrag van de functie wanneer <code>x \to <var>K</var></code> van beide kanten.</p>
+                    <p data-tt="hint13">Wanneer <code>x</code> <code><var>K</var></code> nadert van links, is <code><var>B</var>x + <var>-K</var></code> eerst negatief en neemt dan toe tot het <code>0</code> nadert, dus <code>\dfrac{<var>A</var>}{<var>B</var>x + <var>-K</var>}</code> nadert <code>-\infty</code>.</p>
+                    <p data-tt="hint14">Wanneer <code>x</code> <code><var>K</var></code> nadert van rechts, is <code><var>B</var>x + <var>-K</var></code> eerst positief en neemt dan af tot het <code>0</code> nadert, dus <code>\dfrac{<var>A</var>}{<var>B</var>x + <var>-K</var>}</code> nadert <code>+\infty</code>.</p>
+                    <p data-tt="hint15">Aangezien de linker- en rechterlimieten niet gelijk zijn, is het limiet onbepaald.</p>
                 </div>
             </div>
 
@@ -132,7 +132,7 @@
                 </div>
 
                 <div class="question">
-                    <p date-tt="question3">Find <code>\displaystyle\lim_{x \to <var>K</var>}\dfrac{<var>A</var>}{(<var>B</var>x + <var>-K</var>\smash{)}^2}</code>.</p>
+                    <p date-tt="question3">Vind <code>\displaystyle\lim_{x \to <var>K</var>}\dfrac{<var>A</var>}{(<var>B</var>x + <var>-K</var>\smash{)}^2}</code>.</p>
                 </div>
 
                 <p class="solution"><code><var>RIGHT_SIGN</var>\infty</code></p>
@@ -145,9 +145,9 @@
                 </ul>
 
                 <div class="hints">
-                    <p data-tt="hint16">Consider the behavior of the function as <code>x \to <var>K</var></code> from each direction.</p>
-                    <p data-tt="hint17">In either direction, <code>(x + <var>-K</var>)^2</code> approaches <code>0</code>, so <code>\dfrac{<var>A</var>}{(<var>B</var>x + <var>-K</var>\smash{)}^2}</code> diverges.</p>
-                    <p data-tt="hint18">Because <code>(x + <var>-K</var>)^2</code> is always positive and <code><var>A</var></code> is <var>A > 0 ? "positive" : "negative"</var>, <code>\dfrac{<var>A</var>}{(<var>B</var>x + <var>-K</var>\smash{)}^2}</code> approaches <code><var>RIGHT_SIGN</var>\infty</code>.</p>
+                    <p data-tt="hint16"> Beschouw het gedrag van de functie wanneer <code>x \to <var>K</var></code> van beide kanten.</p>
+                    <p data-tt="hint17">In beide richtingen nadert <code>(x + <var>-K</var>)^2</code> nul, dus <code>\dfrac{<var>A</var>}{(<var>B</var>x + <var>-K</var>\smash{)}^2}</code> divergeert.</p>
+                    <p data-tt="hint18">Omdat <code>(x + <var>-K</var>)^2</code> altijd positief is en <code><var>A</var></code> <var>A > 0 ? "positief" : "negatief"</var> is, nadert<code>\dfrac{<var>A</var>}{(<var>B</var>x + <var>-K</var>\smash{)}^2}</code> het limiet <code><var>RIGHT_SIGN</var>\infty</code>.</p>
                 </div>
             </div>
         </div>

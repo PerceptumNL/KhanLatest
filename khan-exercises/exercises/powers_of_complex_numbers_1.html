@@ -41,8 +41,8 @@
     <div class="problems">
         <div>
             <p class="question">
-                Determine the value of the following complex number power. Your answer will be plotted in
-                <strong class="hint_orange">orange</strong>.
+                Bepaal de waarde van het volgende macht van het complexe getal. Jouw antwoord wordt weergegeven in
+                <strong class="hint_orange">oranje</strong>.
             </p>
             <code>
                 (\color{<var>BLUE</var>}{<var>BASE_REP</var>}) ^ {<var>EXPONENT</var>}
@@ -71,14 +71,14 @@
             <div class="hints">
                 <div data-if="BASE_ANGLE === 0">
                     <p>
-                        All powers of <code>1</code> are <code>1</code>.
+                        Alle machten van <code>1</code> zijn gelijk aan <code>1</code>.
                     </p>
                 </div>
 
                 <div data-else data-unwrap>
                     <div data-if="!EULER_FORM" data-unwrap>
                         <p>
-                            Let's express our complex number in Euler form first.
+                            Laten we het complexe getal eerst volgens de formule van Euler schrijven.
                         <p>
                         <code>
                             \color{<var>BLUE</var>}{<var>BASE_REP</var>} = \color{<var>BLUE</var>}{<var>BASE_EULER_REP</var>}
@@ -94,16 +94,17 @@
                     </p>
 
                     <p>
-                        The angle of the result is <code><var>EXPONENT</var> \cdot <var>BASE_ANGLE_REP</var></code>,
-                        which is <code><var>ANGLE_MULTIPLE_REP</var></code>.
+                        De hoek van het resultaat is <code><var>EXPONENT</var> \cdot <var>BASE_ANGLE_REP</var></code>,
+                        wat <code><var>ANGLE_MULTIPLE_REP</var></code> is.
                     </p>
 
                     <div data-if="ANGLE_MULTIPLE_NUMERATOR >= DENOMINATOR * 2" data-unwrap>
                         <p>    
-                            <code><var>ANGLE_MULTIPLE_REP</var></code> is more than <code>2 \pi</code>.
-                            It is a common practice to keep complex number angles between <code>0</code> and <code>2 \pi</code>,
-                            because <code>e^{2 \pi i} = (e^{\pi i}) ^ 2 = (-1) ^ 2 = 1</code>.
-                            We will now subtract the nearest multiple of <code>2 \pi</code> from the angle.
+                            <code><var>ANGLE_MULTIPLE_REP</var></code> is meer dan <code>2 \pi</code>.
+                            Het is gangbaar om het complexe getal tussen hoeken van <code>0</code> en <code>2 \pi</code> te houden,
+                            omdat <code>e^{2 \pi i} = (e^{\pi i}) ^ 2 = (-1) ^ 2 = 1</code>.
+                            We trekken nu het dichtsbijzijnde veelvoud van
+                            <code>2 \pi</code> van de hoek.
                         </p>
                         <p>
                             <code>
@@ -118,7 +119,7 @@
                         Our result is <code><var>ANSWER_EULER</var></code>.
                     </p>
                     <p data-if="!EULER_FORM && ANSWER_ANGLE_NUMERATOR !== 0">
-                        Converting this back from Euler form, we get
+                        Als we dit weer terugschrijven vanuit de formule van Euler, krijgen we
                         <code><var>ANSWER</var></code>.
                     </p>
                 </div>

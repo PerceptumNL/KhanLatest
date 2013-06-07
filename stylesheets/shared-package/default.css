@@ -1049,6 +1049,8 @@ span.username_and_notification .user-name {
 }
 #large-search-input, .large-search-bar {
     -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     border: 2px #b9d6e2 solid;
     /*background-image: none;*/
     /*border-radius: 4px 4px 4px 4px;*/
@@ -1060,7 +1062,7 @@ span.username_and_notification .user-name {
 #search-box {
     background-color: #D3E8F2;
     /*width: 100%;*/
-    padding: 30px 110px 30px 80px;
+    padding: 30px 50px 30px 17px;
     /*margin:20px;*/
 }
 ./*overflow {
@@ -3198,6 +3200,30 @@ div.arrow-left-shadow {
     margin: 0px 12px;
     padding: 0 12px;
 }
+
+/*#ATTN*/
+#overons ul {display:none;}
+#overons:hover > ul {
+    display: block;
+}
+
+#overons ul {
+    width: 100px;
+    position: absolute;
+}
+#overons ul li {
+    width: 100%;
+    display: block;
+    padding: 1px 20px 1px 30px;
+    background: white;
+
+}
+
+#overons ul li a {
+        color: orange;
+}
+
+/*###*/
 
 #logo {
     display: inline-block;

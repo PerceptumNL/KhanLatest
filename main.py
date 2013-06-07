@@ -449,6 +449,13 @@ class ViewTraining(request_handler.RequestHandler):
         self.render_jinja2_template('training.html', {
             "selected_nav_link" : "contribute"
             })
+            
+class ViewStichting(request_handler.RequestHandler):
+    @user_util.open_access
+    def get(self):
+        self.render_jinja2_template('stichting.html', {
+
+            })
 
 class ViewVoorleraren(request_handler.RequestHandler):
     @user_util.open_access
@@ -952,6 +959,7 @@ application = webapp2.WSGIApplication([
     ('/voorleraren', ViewVoorleraren), #added
     ('/helpmee', ViewHelpMee), #added
     ('/training', ViewTraining), #added
+    ('/stichting', ViewStichting), #added
     ('/partners', ViewPartners), #added
     ('/contribute', ViewContribute),
     RedirectRoute('/getinvolved', redirect_to='/contribute'),

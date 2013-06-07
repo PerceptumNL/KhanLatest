@@ -256,6 +256,19 @@
                                         </a>
                                     </li>
                                 {% endif %}
+                                <li id="overons">
+                                    <a href="/about">
+                                        Over Ons
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="http://wiki.khanacademie.nl/">Wiki</a></li>
+                                        <li><a href="http://blog.khanacademie.nl/">Blog</a></li>
+                                        <li><a href="/voorleraren">Handleiding</a></li>
+                                    </ul>
+                                    <!-- Note: drop-down behaviour defined in javascript (pageutil.js and the dropdown.js jQuery plugin) -->
+                                    <!-- {{ handlebars_template('shared', 'topic-browser-pulldown', {'topics': templatetags.topic_browser_data()}) }} -->
+                                </li>
                             </ul>
                             <!-- TODO what is this .clear class all about? -->
                             <div class="clear">

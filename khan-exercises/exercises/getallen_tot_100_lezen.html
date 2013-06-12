@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html data-require="math math-format graphie graphie-helpers getallen">
+<head>
+    <meta charset="UTF-8" />
+    <title>Getallen tot 100 lezen</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-ensure="N !== 0">
+        <var id="A">0</var> <!-- randRange( 0, 1 )</var> -->
+        <var id="B">randRange( 0, 9 )</var>
+        <var id="C">randRange( 0, 9 )</var>
+        <var id="N">10 * B + C + A</var>
+        <var id="CorrectAnswer">schrijven( N )</var>
+        <!-- <var id="Answer1">schrijven( 10*A + B + C )</var> -->
+        <var id="Answer1a">schrijven( 10*B )</var>
+        <var id="Answer1b">schrijven( C )</var>
+        <var id="Answer2">schrijven( 10*C + B + A )</var>
+        <!-- <var id="Answer3">schrijven( 10*B + A )</var>
+        <var id="Answer4">schrijven( 10*C + A )</var> -->
+        <var id="Answer5a">schrijven( 10*C )</var>
+        <var id="Answer5b">schrijven( B )</var>
+        <var id="tientallen">10*B</var>
+        <var id="eenheden">C</var>
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+                <p>Lees het getal <code><var>N</var></code> hardop voor en kies je antwoord.</p> <!-- for example "62" -->
+            </div>
+            <p class="solution"><code><var>CorrectAnswer</var></code></p > <!-- for example "tweeënzestig" -->
+            <ul class="choices">
+                <!-- <li><code><var>Answer1</var></code></li> --> <!-- for example "acht" or "achttien" -->
+                <li><code><var>Answer2</var></code></li> <!-- for example "zesentwintig" -->
+                <!-- <li><code><var>Answer3</var></code></li> 
+                <li><code><var>Answer4</var></code></li> -->
+                <li><code><var>Answer1a</var><var>Answer1b</var></code></li> <!-- for example "zestigtwee" -->
+                <li><code><var>Answer1b</var><var>Answer1a</var></code></li> <!-- for example "tweezestig" -->
+                <li><code><var>Answer5b</var><var>Answer5a</var></code></li> 
+            </ul>
+        </div>
+    </div>
+
+    <div class="hints">
+            <p data-tt="hint1">Bij getallen die bestaan uit twee cijfers weet je dat het eerste getal staat voor het aantal tientallen en het tweede getal staat voor het aantal eenheden.</p>
+            <p data-tt="hint2">Het eerste getal is <code><var>B</var></code> en staat voor het aantal tientallen, oftewel <code><var>tientallen</var></code>.</p> 
+                    <p data-tt="hint3">Dit spreek je uit als <code><var>Answer1a</var></code>.</p>
+                    <p data-tt="hint4">Het tweede getal is <code><var>C</var></code> en staat voor het aantal eenheden, oftewel <code><var>eenheden</var></code>.</p>
+                    <p data-tt="hint5">Dit spreek je uit als <code><var>Answer1b</var></code>.</p>
+                    <p data-tt="hint6">In het Nederlands zeg je dus <code><var>CorrectAnswer</var></code>.</p>
+        </div>
+    </div>
+</body>
+</html>

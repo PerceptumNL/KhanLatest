@@ -22,7 +22,7 @@ def get_cookie_value(key):
 
 # TODO(benkomalo): request cache this.
 def get_all_cookies():
-    """Get all cookies sent in the current request.
+    """Get all cookies sent in the current request..
 
     Will always return a Cookie.BaseCookie() object, though it may be empty
     if no cookies are sent, or Cookie.BaseCookie can't parse them (i.e. they're

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-translatable data-require="math graphie graphie-helpers-arithmetic">
+<html data-translatable data-require="math graphie dutchdivider">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Division 3</title>
@@ -34,7 +34,7 @@
             </div>
 
             <div class="graphie" data-update="numbers">
-                drawDigits( [ "\\text{R}" ].concat( integerToDigits( FINAL_REMAINDER ) ), DIVIDEND_DIGITS.length, 1 );
+                drawDigits2( [ "\\text{R"+FINAL_REMAINDER+"}" ],DIVIDEND_DIGITS.length+0.5, 0 );
             </div>
         </div>
     </div>

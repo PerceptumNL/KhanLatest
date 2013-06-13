@@ -44,7 +44,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
         if (deciDivisor !== 0) {
             paddedDivisor = (KhanUtil.padDigitsToNum(digitsDivisor.reverse(), deciDivisor + 1)).reverse();
         }
-		//Location of entire drawing graphie stuff
+		//Location of entire graphie stuff
         graph.init({
             range: [[-1 - paddedDivisor.length, 17], [(digitsDividend.length + (deciDiff > 0 ? deciDiff : 0)) * -2 - 1, 2]],
             scale: [20, 40]
@@ -77,13 +77,13 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
             }
             return;
         }
-
+		//This is true in the beginning, then sets to false
         if (fShowFirstHalf) {
-            value = digitsDividend[index];
-            var quotient = value / divisor;
-            var total = value + remainder;
+            value = digitsDividend[index]; //get the number from the dividend-array?
+            var quotient = value / divisor; //quotient is that number divided by the divisor
+            var total = value + remainder; //total is value + remainder, remainder is 0 at first, later on 10* remainder of prev no.
             highlights = highlights.concat(drawDigits([value], index, 0, KhanUtil.BLUE));
-            if (index !== 0) {
+            if (index !== 0) { //if not at the first digit
                 graph.style({
                     arrows: "->"
                 }, function() {
@@ -92,10 +92,10 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
             }
 
             drawDigits([value], index, -2 * index);
-            var totalDigits = KhanUtil.integerToDigits(total);
+            var totalDigits = KhanUtil.integerToDigits(total); //turn var total into array of digits
             highlights = highlights.concat(drawDigits(totalDigits, index - totalDigits.length + 1, -2 * index, KhanUtil.BLUE));
 
-            graph.label([digitsDividend.length + 0.5, -2 * (index+1)], //question hints go a little before the others
+            graph.label([digitsDividend.length + 0.5, -2 * (index+1)], //question hints go a little higher
                 "\\text{Hoe vaak past }"
                 + divisor
                 + "\\text{ in }"
@@ -103,11 +103,11 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
                 + "\\text{?}", "right");
 
             fShowFirstHalf = false;
-        } else {
-            value += remainder;
-            var quotient = Math.floor(value / divisor);
-            var diff = value - (quotient * divisor);
-            remainder = diff * 10;
+        } else { //once fShowFirstHalf is set to false, this runs, then sets the var back to true
+            value += remainder; //add remainder to var value
+            var quotient = Math.floor(value / divisor); //get the floor of value/divisor 
+            var diff = value - (quotient * divisor); //get leftover no
+            remainder = diff * 10; //assign 10 * leftover to remainder (to switch to the next set of numbers later)
             var quotientLabel = drawDigits2([quotient], index, 0); 
             if (quotient === 0 && fOnlyZeros && digitsDividend.length - deciDividend + deciDivisor > index + 1) {
                 leadingZeros = leadingZeros.concat(quotientLabel);
@@ -116,12 +116,13 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
             }
             highlights = highlights.concat(drawDigits2([quotient], index, 0, KhanUtil.GREEN));
 
-            var product = KhanUtil.integerToDigits(divisor * quotient);
+            var product = KhanUtil.integerToDigits(divisor * quotient); //put divisor * quotient in array of digits
             drawDigits(product, index - product.length + 1, -2 * index - 1);
             highlights = highlights.concat(drawDigits(product, index - product.length + 1, -2 * index - 1, KhanUtil.ORANGE));
 
-            var diffDigits = KhanUtil.integerToDigits(diff);
+            var diffDigits = KhanUtil.integerToDigits(diff); //put leftover in array of digits
             drawDigits(diffDigits, index - diffDigits.length + 1, -2 * index - 2);
+
             graph.label([index - product.length, -2 * index - 1] , "-\\vphantom{0}");
             graph.path([[index - product.length - 0.25, -2 * index - 1.5], [index + 0.5, -2 * index - 1.5]]);
 

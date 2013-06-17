@@ -29,5 +29,19 @@ $.extend(KhanUtil, {
     	"vijfennegentig", "zesennegentig", "zevenennegentig", "achtennegentig",
     	"negenennegentig", "honderd"];
     	return getallen[ num -1 ];
+    },
+
+    isGreater: function(Number1,Number2) {
+        if (Number1 > Number2) {
+           return Number1/*"Vóór";/*Number1*/
+        } else {
+            return Number2/*"Na"/*Number2*/
+        }
+    },
+
+    isSmaller: function(Number1,Number2) {
+        if (Number1 < Number2) {
+            return Number1;
+        } else {return Number2}
     }
 })

@@ -4,6 +4,16 @@ $.extend(KhanUtil, {
         return n < 0 ? "(" + n + ")" : n;
     },
 
+	dutchDec: function(number){
+		var stringify = number.toString();
+		return (stringify.replace(".", ","));
+	},
+
+	dutchSol: function(string){
+		var numbify = string.replace(",",".");
+		return parseFloat(numbify);
+	},
+	
     /* Wrapper for `fraction` which takes a decimal instead of a numerator and
      * denominator. */
     decimalFraction: function(num, defraction, reduce, small, parens) {

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math word-problems getallen">
+<head>
+    <meta charset="UTF-8" />
+    <title>Welk getal is groter?</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars" data-ensure="B !== D && A !== C">
+        <var id="A">randRange( 0, 9 )</var>
+        <var id="B">randRange( 0, 9 )</var>
+        <var id="C">randRange( 0, 9 )</var>
+        <var id="D">randRange( 0, 9 )</var>
+        <var id="Number1">10*A + B</var>
+        <var id="Number2">10*C + D</var>
+        <var id="CorrectAnswer">isGreater( Number1,Number2 )</var>
+        <var id="WrongAnswer">isSmaller( Number1,Number2 )</var>
+    </div>
+        <div class="problems">
+            <div>
+                <p data-tt="question1" class="question">Welk van de getallen <code><var>Number1</var></code> en <code><var>Number2</var></code> is groter?</p>
+                <p class="solution"><code><var>CorrectAnswer</var></code></p>
+                <ul class="choices">
+                    <li><code><var>WrongAnswer</var></code></li>
+                </ul>
+            </div>
+        </div>
+        <div class="hints">
+            <div data-if="A == 0 && C == 0">
+                <div>
+                    <p data-tt="hintA1">Het getal <code><var>Number1</var></code> en het getal <code><var>Number2</var></code> bestaan beide uit één cijfer.</p> 
+                    <p data-tt="hintA2"> Aangezien <code><var>WrongAnswer</var></code> vóór <code><var>CorrectAnswer</var></code></p> komt in de getallenlijn is het antwoord <code><var>CorrectAnswer</var></code>.</p>
+                </div>
+            </div>
+
+            <div data-else-if="A == 0 && C !==0">
+                <p data-tt="hintB1">Het getal <code><var>Number1</var></code> bestaat uit één cijfer en het getal <code><var>Number2</var></code> bestaat uit twee cijfers.
+                </p>
+                <p data-tt="hintB2">Per definitie is <code><var>Number2</var></code> dan groter dan <code><var>Number1</var></code>.
+                </p>
+            </div>
+
+            <div data-else-if="A !==0 && C ==0">
+                <p data-tt="hintC1">Het getal <code><var>Number2</var></code> bestaat uit één cijfer en het getal <code><var>Number1</var></code> bestaat uit twee cijfers.
+                </p>
+                <p data-tt="hintC2">Per definitie is <code><var>Number1</var></code> dan groter dan <code><var>Number2</var></code>.
+                </p>
+            </div>
+
+            <div data-else-if="A !== 0 && A==C">
+                <p data-tt="hintD1">Als we kijken naar de tientallen zien we dat van <code><var>CorrectAnswer</var></code> en <code><var>WrongAnswer</var></code> het eerste cijfer gelijk is aan het tweede cijfer.</p>
+                <p data-tt="hintD2">Nu is het belangrijk om te kijken naar de tweede cijfers. Deze zijn <code><var>B</var></code> en <code><var>D</var></code>.</p>
+                <p data-tt="hintD3">Aangezien <code><var>isGreater(B,D)</var></code> groter is dan <code><var>isSmaller(B,D)</var></code> is het antwoord <code><var>CorrectAnswer</var></code>.</p>
+            </div>
+
+            <div data-else>
+                <p data-tt="hintE1">Als we kijken naar de tientallen zien we dat van <code><var>CorrectAnswer</var></code> en <code><var>WrongAnswer</var></code> het eerste cijfer <code><var>isGreater(A,C)</var></code> groter is.</p>
+                <p data-tt="hintE2">Het maakt niet uit wat de tweede cijfers zijn, want aan de tientallen kun je al zien welke het hoogst is.
+                </p>
+                <p data-tt="hintE3" >Dus <code><var>CorrectAnswer</var></code> is groter.
+            </p>
+            </div>
+        </div>              
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math word-problems getallen">
+<head>
+    <meta charset="UTF-8" />
+    <title>Aanvullen tot 100</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars" data-ensure="A !== 0 && B !== 0">
+        <var id="A">randRange( 0, 9 )</var>
+        <var id="B">randRange( 0, 9 )</var>
+        <var id="Number">10*A + B</var>
+        <var id="plus10">10*(A+1)</var>
+        <var id="Answer">100-Number</var>
+        <var id="firstdif">plus10-Number</var>
+        <var id="seconddif">100-plus10</var>
+    </div>
+        <div class="problems">
+            <div class="ervoor-problems">
+                <p class="question">Vul het getal <code><var>Number</var></code> aan tot 100.</p>
+                <p class="solution"><var>Answer</var></p> 
+                <div class="hints">
+                    <!-- <div data-if="B === 0"> -->
+                    <p>Van <code><var>Number</var></code> tot <code><var>plus10</var></code> is <code><var>plus10</var> - <var>Number</var> = <var>firstdif</var></code>.</p>
+                    <p>Van <code><var>plus10</var></code> tot <code>100</code> is het <code>100 - <var>plus10</var></code> = <var>seconddif</var>.</p>.
+                    <p>Dus van <code><var>Number</var></code> tot <code>100</code> is het <code><var>firstdif</var> + <var>seconddif</var> = <var>Answer</var>.</p>
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

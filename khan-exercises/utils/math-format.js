@@ -3,12 +3,12 @@ $.extend(KhanUtil, {
     negParens: function(n) {
         return n < 0 ? "(" + n + ")" : n;
     },
-
+	/* Turns a floating point number into a string, replaces dot with comma, returns string*/
 	dutchDec: function(number){
 		var stringify = number.toString();
 		return (stringify.replace(".", ","));
 	},
-
+	/* Replaces the comma in a string with a dot, then turns result into a float. */
 	dutchSol: function(string){
 		var numbify = string.replace(",",".");
 		return parseFloat(numbify);

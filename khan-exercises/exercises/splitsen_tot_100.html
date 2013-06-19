@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math word-problems getallen graphie">
+<head>
+    <meta charset="UTF-8" />
+    <title>Splitsen tot 100</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars" data-ensure="(10*A+B > 10*C+D) && ((A !== 0 || B !== 0) && (C !== 0 || D !== 0))">
+        <var id="A">randRange( 0, 9 )</var>
+        <var id="B">randRange( 0, 9 )</var>
+        <var id="C">randRange( 0, 9 )</var>
+        <var id="D">randRange( 0, 9 )</var>
+        <var id="Number1">10*A + B</var>
+        <var id="Number2">10*C + D</var>
+        <var id="Answer">Number1 - Number2</var>
+        <var id="plus10">10*(C+1)</var>
+        <var id="minusX">10*A</var>
+        <var id="firstdif">plus10-Number2</var>
+        <var id="specfirstdif">minusX-Number2</var>
+        <var id="seconddif">minusX - plus10</var>
+        <var id="thirddif">Number1-minusX</var>
+    </div>
+        <div class="problems">
+            <div class="ervoor-problems">
+                <div class="question"><p>Wat moet je invullen op de puntjes?</p>
+                    <div class="graphie">
+                    init({
+                        range: [ [0, 12], [-1, 1] ]
+                    });
+
+                    label( [0, 0],
+                        "\\Huge{\\color{#6495ED}{ <var>Number1</var> } = \\color{#28AE7B}{ <var>Number2</var> } + {...}}",
+                        "right" );
+                    </div>
+                </div>
+                <div class="solution"><var>Answer</var></div> 
+                <div class="hints">
+                    <div data-if="B === 0">
+                        <p>Van <code><var>Number2</var></code> naar <code><var>plus10</var></code> is er <code><var>plus10</var> - <var>Number2</var> = <var>firstdif</var></code> nodig.</p>
+                        <p>Van <code><var>plus10</var></code> naar <code><var>minusX</var></code> is er <code><var>minusX</var> - <var>plus10</var> = <var>seconddif</var></code> nodig.</p>
+                        <p>Dus om <code><var>Number1</var></code> op te splitsen met <code><var>Number2</var></code> hebben we <code><var>firstdif</var> + <var>seconddif</var> = <var>Answer</var></code> nodig.</p>
+                    </div>
+                    <div data-if="D === 0">
+                        <p>Van <code><var>Number2</var></code> naar <code><var>minusX</var></code> is <code><var>minusX</var> - <var>Number2</var> = <var>specfirstdif</var></code>.</p>
+                        <p>Van <code><var>minusX</var></code> naar <code><var>Answer</var></code> is <code><var>Answer</var> - <var>minusX</var> = <var>thirddiff</var></code>.</p>
+                    </div>
+                    <div data-if="A === 0">
+                        <p>Van <code><var>Number2</var></code> naar <code><var>Number1</var></code> is het <code><var>Answer</var></code>.</p>.
+                    </div>
+                    <div data-else>
+                        <p>Van <code><var>Number2</var></code> naar <code><var>plus10</var></code> is er <code><var>plus10</var> - <var>Number2</var> = <var>firstdif</var></code> nodig.</p>
+                        <p>Van <code><var>plus10</var></code> naar <code><var>minusX</var></code> is er <code><var>minusX</var> - <var>plus10</var> = <var>seconddif</var></code> nodig.</p>
+                        <p>Van <code><var>minusX</var></code> naar <code><var>Number1</var></code> is er <code><var>Number1</var> - <var>minusX</var> = <var>thirddif</var></code> nodig.</p>
+                        <p>Dus om <code><var>Number1</var></code> op te splitsen met <code><var>Number2</var></code> hebben we <code><var>firstdif</var> + <var>seconddif</var> + <var>thirddif</var> = <var>Answer</var></code>.</p> 
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

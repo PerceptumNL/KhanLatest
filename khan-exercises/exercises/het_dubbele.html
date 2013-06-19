@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math word-problems getallen graphie">
+<head>
+    <meta charset="UTF-8" />
+    <title>Het dubbele</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+
+        <div class="vars">
+        <var id="Number">randRange( 1, 10 )</var>
+        <var id="Answer">2*Number</var>
+        </div>
+
+        <div class="problems">
+            <div class="problemas extraordinarias">
+                <p class="question">Wat is het dubbele van <code><var>Number</var></code>?</p>
+                <p class="solution"><var>Answer</var></p>
+            </div>
+        </div>
+
+        <div class="hints">
+            <div>Stel je hebt <code><var>Number</var></code> knikker<span data-if="Number !== 1">s</span>.
+                <div class="graphie" id="knikkers">
+                    init({
+                    range: [[-24, 24], [-18, 18]],
+                    scale: [20, 20]
+                    });
+
+                    style({
+                    stroke: "black",
+                    strokeWidth: 2
+                    });
+
+                    for(i=1;i <= <var>Number</var>;i++) {circle([-25+(3*i), 15], 1, {
+                    fill: "purple",
+                    stroke: "red",
+                    strokeWidth: 5,
+                    opacity: 0.6
+                    });
+                    }
+                </div>
+            </div>
+
+        <!-- <div>Daar komen bij het verdubbelen precies <code><var>Number</var></code> knikker<span data-if="Number !== 1">s</span> bij. Nu hebben wij er in totaal:
+            <div class="graphie">
+                    init({
+                    range: [[-24, 24], [-18, 18]],
+                    scale: [20, 20]
+                    });
+
+                    style({
+                    stroke: "black",
+                    strokeWidth: 2
+                    });
+
+                    for(i=1;i <= <var>Number</var>;i++) {circle([-25+(3*i), 15], 1, {
+                    fill: "purple",
+                    stroke: "red",
+                    strokeWidth: 5,
+                    opacity: 0.6
+                    });
+                    }
+
+                    for(i=1;i <= <var>Number</var>;i++) {circle([-25+(3*i), 15], 1, {
+                    fill: "purple",
+                    stroke: "red",
+                    strokeWidth: 5,
+                    opacity: 0.6
+                    });
+                    } 
+            </div>
+        </div> -->
+        
+        <div data-tt="hint3">Door verder te tellen kom je uit op <code><var>Answer</var></code>.
+        </div>
+        </div>            
+    </div>
+</body>
+</html>

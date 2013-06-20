@@ -24,7 +24,7 @@
             <div>Stel je hebt <code><var>Number</var></code> knikker<span data-if="Number !== 1">s</span>.
                 <div class="graphie" id="knikkers">
                     init({
-                    range: [[-24, 24], [-18, 18]],
+                    range: [[-24, 24], [-5, 5]],
                     scale: [20, 20]
                     });
 
@@ -33,7 +33,7 @@
                     strokeWidth: 2
                     });
 
-                    for(i=1;i <= <var>Number</var>;i++) {circle([-25+(3*i), 15], 1, {
+                    for(i=1;i <= <var>Number</var>;i++) {circle([-25+(3*i), 0], 1, {
                     fill: "purple",
                     stroke: "red",
                     strokeWidth: 5,
@@ -46,7 +46,7 @@
             <div>Daar komen bij het verdubbelen precies <code><var>Number</var></code> knikker<span data-if="Number !== 1">s</span> bij. Nu hebben wij er in totaal:
                 <div class="graphie">
                     init({
-                    range: [[-24, 24], [-18, 18]],
+                    range: [[-24, 24], [0, 10]],
                     scale: [20, 20]
                     });
 
@@ -55,25 +55,25 @@
                     strokeWidth: 2
                     });
 
-                    for(i=1;i <= <var>Number</var>;i++) {circle([-25+(3*i), 10], 1, {
+                    for(i=1;i <= <var>Number</var>;i++) {circle([-25+(3*i), 3], 1, {
                     fill: "purple",
                     stroke: "red",
                     strokeWidth: 5,
-                    opacity: 0.2
+                    opacity: 0.6
                     });
                     }
 
-                    for(i=1;i <= <var>Number</var>;i++) {circle([-25+(3*i), 5], 1, {
+                    for(i=1;i <= <var>Number</var>;i++) {circle([-25+(3*i), 8], 1, {
                     fill: "purple",
                     stroke: "red",
                     strokeWidth: 5,
-                    opacity: 0.2
+                    opacity: 0.6
                     });
                     } 
                 </div>
             </div> 
         
-            <div>Door verder te tellen kom je uit op <code><var>Answer</var></code> code><var>Number</var></code> knikker<span data-if="Number !== 1">s</span>.
+            <div>Door verder te tellen kom je uit op <code><var>Answer</var></code> knikker<span data-if="Number !== 1">s</span>.
             </div>
         </div>            
     </div>

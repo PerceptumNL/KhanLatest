@@ -24,7 +24,7 @@
             <div>Stel je hebt <code><var>Number</var></code> knikkers.
                 <div class="graphie">
                     init({
-                    range: [[-24, 24], [-18, 18]],
+                    range: [[-24, 24], [-5, 10]],
                     scale: [20, 20]
                     });
 
@@ -33,11 +33,11 @@
                     strokeWidth: 2
                     });
 
-                    for(i=1;i <= <var>Answer</var>;i++) {circle([-25+(3*i), 10], 1, {
+                    for(i=1;i <= <var>Answer</var>;i++) {circle([-25+(3*i), 0], 1, {
                     fill: "purple",
                     stroke: "red",
                     strokeWidth: 5,
-                    opacity: 0.2
+                    opacity: 0.6
                     });
                     }
 
@@ -45,7 +45,7 @@
                     fill: "purple",
                     stroke: "red",
                     strokeWidth: 5,
-                    opacity: 0.2
+                    opacity: 0.6
                     });
                     } 
                 </div>
@@ -54,7 +54,7 @@
             <div>Door de helft van de knikkers weg te halen hebben we er in totaal:
                 <div class="graphie" id="knikkers">
                     init({
-                    range: [[-24, 24], [-18, 18]],
+                    range: [[-24, 24], [10, 15]],
                     scale: [20, 20]
                     });
 
@@ -63,7 +63,7 @@
                     strokeWidth: 2
                     });
 
-                    for(i=1;i <= <var>Answer</var>;i++) {circle([-25+(3*i), 15], 1, {
+                    for(i=1;i <= <var>Answer</var>;i++) {circle([-25+(3*i), 12], 1, {
                     fill: "purple",
                     stroke: "red",
                     strokeWidth: 5,

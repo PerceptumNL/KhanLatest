@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format getallen">
+<head>
+    <meta charset="UTF-8" />
+    <title>Verhaaltjessommen met optellen en aftrekken</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars" data-ensure="A !== 0 && B !== 0">
+        <var id="A">randRange( 0, 9 )</var>
+        <var id="B">randRange( 0, 9 )</var>
+        <var id="Number">10*A + B</var>
+        <var id="VoorAnswer">Number-1</var>
+        <var id="NaAnswer">Number+1</var>
+    </div>
+        <div class="problems">
+            <div class="optelsom">
+                <p class="question">Welk getal komt er vóór <code><var>Number</var></code>?</p>
+                <p class="solution"><var>VoorAnswer</var></p> <!-- removed code tags -->
+                <div class="hints">
+                    <p>Vóór het getal <code><var>B</var></code> komt het getal <code><var>B-1</var></code>.</p>
+                    <p>Vóór het getal <code><var>Number</var></code> komt dus ook <code><var>VoorAnswer</var></code>.</p>.
+                </div>
+            </div>
+
+            <div class="aftreksom">
+                <p class="question">Welk getal komt er na <code><var>Number</var></code>?</p>
+                <p class="solution"><var>NaAnswer</var></p>
+                <div class="hints">
+                    <p>Na het getal <code><var>B</var></code> komt het getal <code><var>B+1</var></code>.</p>
+                    <p>Na het getal <code><var>Number</var></code> komt dus ook <code><var>NaAnswer</var></code>.</p>.
+                </div>              
+            </div>
+
+            <div class="openaftreksom">
+                <p class="question">Welk getal komt er na <code><var>Number</var></code>?</p>
+                <p class="solution"><var>NaAnswer</var></p>
+                <div class="hints">
+                    <p>Na het getal <code><var>B</var></code> komt het getal <code><var>B+1</var></code>.</p>
+                    <p>Na het getal <code><var>Number</var></code> komt dus ook <code><var>NaAnswer</var></code>.</p>.
+                </div>              
+            </div>
+        </div>
+</body>
+</html>

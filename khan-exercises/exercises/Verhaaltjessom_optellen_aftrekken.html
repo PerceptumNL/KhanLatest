@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-translatable data-require="math math-format getallen">
+<html data-translatable data-require="math math-format getallen spin word-problems">
 <head>
     <meta charset="UTF-8" />
     <title>Verhaaltjessommen met optellen en aftrekken</title>
@@ -7,40 +7,99 @@
 </head>
 <body>
     <div class="exercise">
-        <div class="vars" data-ensure="A !== 0 && B !== 0">
-        <var id="A">randRange( 0, 9 )</var>
-        <var id="B">randRange( 0, 9 )</var>
-        <var id="Number">10*A + B</var>
-        <var id="VoorAnswer">Number-1</var>
-        <var id="NaAnswer">Number+1</var>
-    </div>
+        <!-- Here come the first two addition problems -->
         <div class="problems">
-            <div class="optelsom">
-                <p class="question">Welk getal komt er vóór <code><var>Number</var></code>?</p>
-                <p class="solution"><var>VoorAnswer</var></p> <!-- removed code tags -->
+            <div class="voetbalplaatjes(optellen)">
+                <div class="vars" data-ensure="start + difference <= 100">
+                    <var id="start">randRange( 1, 99 )</var>
+                    <var id="difference">randRange( 1, 99 )</var>
+                    <var id="Answer">start + difference</var>
+                </div>
+
+                <p class="problem">
+                    <var>person( 1 )</var> <!-- change --> spaart voetbalplaatjes en heeft er al <var>start</var> gespaard. <var>He( 1 )</var> heeft deze week <var>difference</var> plaatjes erbij gekregen.
+                </p>
+                <p class="question">Hoeveel plaatjes heeft <var>person( 1 )</var> nu?</p>
+                
+                <p class="solution"><var>Answer</var></p> <!-- removed code tags -->
                 <div class="hints">
-                    <p>Vóór het getal <code><var>B</var></code> komt het getal <code><var>B-1</var></code>.</p>
-                    <p>Vóór het getal <code><var>Number</var></code> komt dus ook <code><var>VoorAnswer</var></code>.</p>.
+                    <p>We willen weten hoeveel voetbalplaatjes <var>person( 1 )</var> <strong>meer</strong> heeft gespaard.</p>
+                    <p>Dit is een optelsom.</p>
+                    <p>Het antwoord is het aantal plaatjes dat <var>person( 1 )</var> al had plus het aantal nieuwe plaatjes, namelijk <var>start</var> + <var>difference</var> = <var>Answer</var>.</p>
                 </div>
             </div>
 
-            <div class="aftreksom">
-                <p class="question">Welk getal komt er na <code><var>Number</var></code>?</p>
-                <p class="solution"><var>NaAnswer</var></p>
+            <div class="supermarkt(aftrekken)">
+                <div class="vars">
+                    <var id="start">randRange(2, 50)</var>
+                    <var id="gemiddeld">randRange(50, 99)</var>
+                    <var id="Answer">gemiddeld - start</var>
+                </div>
+                <p class="problem">De buurtsupermarkt moet weer een nieuwe bestelling plaatsen voor de groenteafdeling. Ze hebben nu <var>start</var> kratten met groente. Gemiddeld verkopen ze <var>gemiddeld</var> kratten met groente in een week.</p>
+                <p class="question">Hoeveel kratten moet de buurtsupermarkt minstens bestellen?</p>
+                <p class="solution"><var>Answer</var></p> <!-- removed code tags -->
                 <div class="hints">
-                    <p>Na het getal <code><var>B</var></code> komt het getal <code><var>B+1</var></code>.</p>
-                    <p>Na het getal <code><var>Number</var></code> komt dus ook <code><var>NaAnswer</var></code>.</p>.
+                    <p>We willen weten hoeveel kratten groente er "missen" (hoeveel er <strong>minder</strong> zijn dan nodig).</p>
+                    <p>Dit is een aftreksom.</p>
+                    <p>Je moet het aantal kratten groente aanvullen tot het gemiddeld aantal verkochte kratten.</p>
+                    <p>Hiervoor trek je de <var>start</var> kratten die je al hebt van het aantal kratten af dat je in totaal moet hebben.</p>
+                    <p>Het antwoord is dus <var>gemiddeld</var> - <var>start</var> = <var>Answer</var>.</p>
+                </div>
+            </div>
+
+            <div class="rekening(aftrekken)">
+                <div class="vars" data-ensure="rekeningnieuw < rekeningoud">
+                    <var id="rekeningoud">randRange(50,99)</var>
+                    <var id="rekeningnieuw">randRange(25,75)</var>
+                    <var id="Answer">rekeningoud - rekeningnieuw</var>
+                </div>
+                <p class="problem">Iedereen thuis helpt mee om energie te besparen, door bijvoorbeeld de verwarming lager te zetten en het licht niet aan te laten staan. Papa en mama hopen ook geld te besparen op de maandelijke energierekening. Vorige maand was de rekening €<var>rekeningoud</var>. Deze maand is de rekening €<var>rekeningnieuw</var>.
+                <p class="question">Hoeveel geld is er thuis bespaard op de rekening?.</p>
+                <p class="solution"><var>Answer</var></p>
+                <div class="hints">
+                    <p>We willen weten hoeveel euro er <strong>minder</strong> is betaald voor de rekening.</p>
+                    <p>Dit is een aftreksom.</p>
+                    <p>Het antwoord krijg je door de nieuwe rekeningskosten af te trekken van de oude.</p?>
+                    <p>Dus het antwoord is <var>rekeningoud</var> - <var>rekeningnieuw</var> = <var>Answer</var>.</p>
+                </div>              
+            </div>
+            
+            <div class="bus(combinatie)uitstappen">
+                <div class="vars">
+                    <var id="start">randRange(10,99)</var>
+                    <var id="end">randRange(10,99)</var>
+                    <var id="erbij">randRange(2,50)</var>
+                    <var id="Answer">start + erbij - end</var>
+                </div>
+                <p class="problem">In een bus zitten <var>start</var> mensen. Na de bushalte zitten er <var>end</var> mensen in de bus. Er zijn <var>erbij</var> mensen ingestapt.</p>
+                <p class="question">Hoeveel mensen zijn er bij de halte uitgestapt?</p>
+                <p class="solution"><var>Answer</var></p>
+                <div class="hints">
+                    <p>Dit is een optel- en een aftreksom.</p>
+                    <p>Als er niemand uitgestapt was, zaten er <var>start</var> + <var>erbij</var>  = <var>start + erbij</var> mensen in de bus.</p>
+                    <p>Er zitten nu <var>end</var> mensen in de bus. Dus er zijn <var>start + erbij</var> - <var>end</var> = <var>Answer</var> mensen uitgestapt.</p>
                 </div>              
             </div>
 
-            <div class="openaftreksom">
-                <p class="question">Welk getal komt er na <code><var>Number</var></code>?</p>
-                <p class="solution"><var>NaAnswer</var></p>
+            <div class="bus(combinatie)instappen">
+                 <div class="vars">
+                    <var id="start">randRange(10,99)</var>
+                    <var id="end">randRange(10,99)</var>
+                    <var id="eraf">randRange(1,50)</var>
+                    <var id="Answer">start - eraf + end</var>
+                </div>
+                <p class="problem">In een bus zitten <var>start</var> mensen. Na de bushalte zitten er <var>end</var> mensen in de bus. Er zijn <var>eraf</var> mensen uitgestapt.</p>
+                </p>
+                <p class="question">Hoeveel mensen zijn er bij de halte ingestapt?</p>
+                <p class="solution"><var>Answer</var></p>
                 <div class="hints">
-                    <p>Na het getal <code><var>B</var></code> komt het getal <code><var>B+1</var></code>.</p>
-                    <p>Na het getal <code><var>Number</var></code> komt dus ook <code><var>NaAnswer</var></code>.</p>.
+                     <p>Dit is een optel- en een aftreksom.</p>
+                    <p>Als er niemand ingestapt was, zaten er <var>start</var> - <var>eraf</var>  = <var>start - eraf</var> mensen in de bus.</p>
+                    <p>Er zitten nu <var>end</var> mensen in de bus. Dus er zijn <var>start - eraf</var> + <var>end</var> = <var>Answer</var> mensen ingestapt.</p>
                 </div>              
             </div>
-        </div>
+            
+        </div>     
+    </div>
 </body>
 </html>

@@ -451,10 +451,10 @@ function Multiplier(a, b, digitsA, digitsB, deciA, deciB) {
         }, function() {
             if (deciA > 0)
                 graph.ellipse([-deciA + 0.5, 1.8], [0.08, 0.04]);
-				graph.arc([- deciA + 0.4, 1.8], 0.2, 270, 360);
+				graph.arc([- deciA + 0.4, 1.8], 0.2, 270, 360); //make dot into comma
             if (deciB > 0)
                 graph.ellipse([-deciB + 0.5, 0.8], [0.08, 0.04]);
-				graph.arc([-deciB + 0.4, 0.8], 0.2, 270, 360);
+				graph.arc([-deciB + 0.4, 0.8], 0.2, 270, 360); //make dot into comma
         });
     };
 
@@ -473,7 +473,7 @@ function Multiplier(a, b, digitsA, digitsB, deciA, deciB) {
             fill: "#000"
         }, function() {
             graph.ellipse([-deciB - deciA + 0.5, -0.2 - digitsB.length], [0.08, 0.04]);
-				graph.arc([-deciB - deciA + 0.4, -0.2 - digitsB.length], 0.2, 270, 360);
+			graph.arc([-deciB - deciA + 0.4, -0.2 - digitsB.length], 0.2, 270, 360);//make dot into comma
         });
     };
 }
@@ -535,11 +535,11 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
         }, function() {
             if (deciDivisor !== 0) {
                 decimals = decimals.concat(graph.ellipse([-1 - deciDivisor, -0.2], [0.08, 0.04]));
-				decimals = decimals.concat(graph.arc([-1 -deciDivisor -0.1, -0.2], 0.2, 270, 360));
+				decimals = decimals.concat(graph.arc([-1 -deciDivisor -0.1, -0.2], 0.2, 270, 360)); //make dot into comma
             }
             if (deciDividend !== 0) {
                 decimals = decimals.concat(graph.ellipse([digitsDividend.length - deciDividend - 0.5, -0.2], [0.08, 0.04]));
-				decimals = decimals.concat(graph.arc([digitsDividend.length - deciDividend - 0.6, -0.2], 0.2, 270, 360));
+				decimals = decimals.concat(graph.arc([digitsDividend.length - deciDividend - 0.6, -0.2], 0.2, 270, 360)); //make dot into comma
             }
         });
 
@@ -647,10 +647,12 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
         graph.style({
                 fill: "#000"
             }, function() {
-                graph.ellipse([digitsDividend.length + deciDiff - 0.5, -0.2], [0.08, 0.04]);
-				graph.arc([digitsDividend.length+deciDiff - 0.6, -0.2], 0.2, 270, 360);
-                graph.ellipse([digitsDividend.length + deciDiff - 0.5, 0.8], [0.08, 0.04]);
-				graph.arc([digitsDividend.length + deciDiff-0.6, -0.2], 0.2, 270, 360);
+                graph.ellipse([digitsDividend.length + deciDiff - 0.5, -0.2], [0.08, 0.04]); //rechtse dot
+				graph.arc([digitsDividend.length+deciDiff - 0.6, -0.2], 0.2, 270, 360); // make dot into comma
+
+                graph.ellipse([2*digitsDividend.length +0.5+  deciDiff, -0.2], [0.08, 0.04]); //bovenste dot
+				graph.arc([2*digitsDividend.length+0.4 +deciDiff, -0.2],0.2,270,360); //make dot into comma
+				//ALMOST WORKS, but sometimes puts the dot in the wrong place for the answer. Not sure yet why.
             });
     }
 
@@ -666,7 +668,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
                 fill: "#000"
             }, function() { //verplaats komma
                 graph.ellipse([-1, -0.2], [0.08, 0.04]);
-				graph.arc([-1.1, -0.2], 0.2, 270, 360);
+				graph.arc([-1.1, -0.2], 0.2, 270, 360); //make dot into comma
             });
         } else {
             graph.label([digitsDividend.length + 0.5, 1.2],

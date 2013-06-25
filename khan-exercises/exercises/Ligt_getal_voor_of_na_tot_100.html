@@ -19,7 +19,7 @@
     </div>
         <div class="problems">
             <div>
-                <p data-tt="question1" class="question">Welk van de getallen <code><var>Number1</var></code> en <code><var>Number2</var></code> is groter?</p>
+                <p data-tt="question1" class="question">Welk van de getallen <var>Number1</var> en <var>Number2</var> is groter?</p>
                 <p class="solution"><code><var>CorrectAnswer</var></code></p>
                 <ul class="choices">
                     <li><code><var>WrongAnswer</var></code></li>
@@ -28,35 +28,35 @@
         </div>
         <div class="hints">
             <div data-if="A == 0 && C == 0">
-                <p>Het getal <code><var>Number1</var></code> en het getal <code><var>Number2</var></code> bestaan beide uit één cijfer.</p> 
-                <p> Aangezien <code><var>WrongAnswer</var></code> vóór <code><var>CorrectAnswer</var></code></p> komt in de getallenlijn is het antwoord <code><var>CorrectAnswer</var></code>.</p>
+                <p>Het getal <var>Number1</var> en het getal <var>Number2</var>< bestaan beide uit één cijfer.</p> 
+                <p>Aangezien <var>WrongAnswer</var> vóór <var>CorrectAnswer</var></p> komt in de getallenlijn is het antwoord <var>CorrectAnswer</var>.</p>
             </div>
 
             <div data-else-if="A == 0 && C !==0">
-                <p data-tt="hintB1">Het getal <code><var>Number1</var></code> bestaat uit één cijfer en het getal <code><var>Number2</var></code> bestaat uit twee cijfers.
+                <p data-tt="hintB1">Het getal <var>Number1</var> bestaat uit één cijfer en het getal <var>Number2</var> bestaat uit twee cijfers.
                 </p>
-                <p data-tt="hintB2">Per definitie is <code><var>Number2</var></code> dan groter dan <code><var>Number1</var></code>.
+                <p data-tt="hintB2">Per definitie is <var>Number2</var> dan groter dan <var>Number1</var>.
                 </p>
             </div>
 
             <div data-else-if="A !==0 && C ==0">
-                <p data-tt="hintC1">Het getal <code><var>Number2</var></code> bestaat uit één cijfer en het getal <code><var>Number1</var></code> bestaat uit twee cijfers.
+                <p data-tt="hintC1">Het getal <var>Number2</var> bestaat uit één cijfer en het getal <var>Number1</var> bestaat uit twee cijfers.
                 </p>
-                <p data-tt="hintC2">Per definitie is <code><var>Number1</var></code> dan groter dan <code><var>Number2</var></code>.
+                <p data-tt="hintC2">Per definitie is <var>Number1</var> dan groter dan <var>Number2</var>.
                 </p>
             </div>
 
             <div data-else-if="A !== 0 && A==C">
-                <p data-tt="hintD1">Als we kijken naar de tientallen zien we dat van <code><var>CorrectAnswer</var></code> en <code><var>WrongAnswer</var></code> het eerste cijfer gelijk is aan het tweede cijfer.</p>
-                <p data-tt="hintD2">Nu is het belangrijk om te kijken naar de tweede cijfers. Deze zijn <code><var>B</var></code> en <code><var>D</var></code>.</p>
-                <p data-tt="hintD3">Aangezien <code><var>isGreater(B,D)</var></code> groter is dan <code><var>isSmaller(B,D)</var></code> is het antwoord <code><var>CorrectAnswer</var></code>.</p>
+                <p data-tt="hintD1">Als we kijken naar de tientallen zien we dat van <var>CorrectAnswer</var> en <var>WrongAnswer</var> het eerste cijfer gelijk is aan het tweede cijfer.</p>
+                <p data-tt="hintD2">Nu is het belangrijk om te kijken naar de tweede cijfers. Deze zijn <var>B</var> en <var>D</var>.</p>
+                <p data-tt="hintD3">Aangezien <var>isGreater(B,D)</var> groter is dan <var>isSmaller(B,D)</var> is het antwoord <var>CorrectAnswer</var>.</p>
             </div>
 
             <div data-else>
-                <p data-tt="hintE1">Als we kijken naar de tientallen zien we dat van <code><var>CorrectAnswer</var></code> en <code><var>WrongAnswer</var></code> het eerste cijfer <code><var>isGreater(A,C)</var></code> groter is.</p>
+                <p data-tt="hintE1">Als we kijken naar de tientallen zien we dat van <var>CorrectAnswer</var> en <var>WrongAnswer</var> het eerste cijfer <var>isGreater(A,C)</var> groter is.</p>
                 <p data-tt="hintE2">Het maakt niet uit wat de tweede cijfers zijn, want aan de tientallen kun je al zien welke het hoogst is.
                 </p>
-                <p data-tt="hintE3" >Dus <code><var>CorrectAnswer</var></code> is groter.
+                <p data-tt="hintE3" >Dus <var>CorrectAnswer</var> is groter.
             </p>
             </div>
         </div>              

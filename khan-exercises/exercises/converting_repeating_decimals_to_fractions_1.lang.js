@@ -1,8 +1,9 @@
 ({
 	"nl" : {
-		"question1"	: 'Rewrite as a simplified fraction.',
+		"question1"	: 'Herschrijf tot een vereenvoudigde breuk.',
 		
-		"hint1"		: 'Let <code>x</code> equal the decimal. Set up two equations such that the digits after the decimal point are identical.',
+		"hint1"		: 'Stel <code>x</code> gelijk aan de decimaal. Stel twee vergelijkingen op zodat de cijfers na de komma
+		gelijk zijn aan elkaar.',
 		"hint2"		: 'Subtracting the two equations, we have:'
 		}
 })

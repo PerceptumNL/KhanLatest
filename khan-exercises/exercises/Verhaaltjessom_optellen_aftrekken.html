@@ -12,7 +12,7 @@
             <div class="voetbalplaatjes(optellen)">
                 <div class="vars" data-ensure="start + difference <= 100">
                     <var id="start">randRange( 1, 99 )</var>
-                    <var id="difference">randRange( 1, 99 )</var>
+                    <var id="difference">randRange( 2, 99 )</var>
                     <var id="Answer">start + difference</var>
                 </div>
 
@@ -53,8 +53,8 @@
                     <var id="rekeningnieuw">randRange(25,75)</var>
                     <var id="Answer">rekeningoud - rekeningnieuw</var>
                 </div>
-                <p class="problem">Iedereen thuis helpt mee om energie te besparen, door bijvoorbeeld de verwarming lager te zetten en het licht niet aan te laten staan. Papa en mama hopen ook geld te besparen op de maandelijke energierekening. Vorige maand was de rekening €<var>rekeningoud</var>. Deze maand is de rekening €<var>rekeningnieuw</var>.
-                <p class="question">Hoeveel geld is er thuis bespaard op de rekening?.</p>
+                <p class="problem">Iedereen thuis helpt mee om energie te besparen door bijvoorbeeld de verwarming lager te zetten en het licht niet aan te laten staan. Papa en mama hopen ook geld te besparen op de maandelijke energierekening. Vorige maand was de rekening €<var>rekeningoud</var>. Deze maand is de rekening €<var>rekeningnieuw</var>.
+                <p class="question">Hoeveel geld is er thuis bespaard op de rekening?</p>
                 <p class="solution"><var>Answer</var></p>
                 <div class="hints">
                     <p>We willen weten hoeveel euro er <strong>minder</strong> is betaald voor de rekening.</p>
@@ -65,7 +65,7 @@
             </div>
             
             <div class="bus(combinatie)uitstappen">
-                <div class="vars">
+                <div class="vars" data-ensure="(Answer <= start) && (start + erbij >= end)">
                     <var id="start">randRange(10,99)</var>
                     <var id="end">randRange(10,99)</var>
                     <var id="erbij">randRange(2,50)</var>
@@ -82,7 +82,7 @@
             </div>
 
             <div class="bus(combinatie)instappen">
-                 <div class="vars">
+                 <div class="vars" data-ensure="(eraf <= start) && (start - eraf <= end)">
                     <var id="start">randRange(10,99)</var>
                     <var id="end">randRange(10,99)</var>
                     <var id="eraf">randRange(1,50)</var>
@@ -95,7 +95,7 @@
                 <div class="hints">
                      <p>Dit is een optel- en een aftreksom.</p>
                     <p>Als er niemand ingestapt was, zaten er <var>start</var> - <var>eraf</var>  = <var>start - eraf</var> mensen in de bus.</p>
-                    <p>Er zitten nu <var>end</var> mensen in de bus. Dus er zijn <var>start - eraf</var> + <var>end</var> = <var>Answer</var> mensen ingestapt.</p>
+                    <p>Er zitten nu <var>end</var> mensen in de bus. Dus er zijn <var>end</var> - <var>start - eraf</var> = <var>Answer</var> mensen ingestapt.</p>
                 </div>              
             </div>
             

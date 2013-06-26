@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math word-problems getallen graphie">
+<head>
+    <meta charset="UTF-8" />
+    <title>Tafels van 12, 25, 50 en 100</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+        <var id="A">randRange( 1, 10 )</var>
+        <var id="B">randFromArray([12,25,50,100])</var>
+        <var id="Answer">A * B</var>
+        </div>
+        <div class="problems">
+                <div class="question"><p>Wat is de uitkomst?</p>
+                    <div class="graphie">
+                    init({
+                        range: [ [0, 12], [-1, 1] ]
+                    });
+
+                    label( [0, 0],
+                        "\\Huge{\\color{#6495ED}{ <var>A</var> } \\times \\color{#28AE7B}{ <var>B</var> } = {?}}",
+                        "right" );
+                    </div>
+                <div class="solution"><var>Answer</var></div> 
+                <div class="hints">
+                     <p>Dit is onderdeel van de tafel van <var>B</var>. Denk aan de tafel van <var>B</var> in je hoofd.
+                    </p>
+                    <div>Dit is de tafel van <var>B</var> op volgorde:
+                        <br>1 x <var>B</var> = <var> 1 * B</var>
+                        <br>2 x <var>B</var> = <var> 2 * B</var>
+                        <br>3 x <var>B</var> = <var> 3 * B</var>
+                        <br>4 x <var>B</var> = <var> 4 * B</var>
+                        <br>5 x <var>B</var> = <var> 5 * B</var>
+                        <br>6 x <var>B</var> = <var> 6 * B</var>
+                        <br>7 x <var>B</var> = <var> 7 * B</var>
+                        <br>8 x <var>B</var> = <var> 8 * B</var>
+                        <br>9 x <var>B</var> = <var> 9 * B</var>
+                        <br>10 x <var>B</var> = <var> 10 * B</var></div>
+                    <div>
+                    <p>Dus het antwoord is <var>A</var> x <var>B</var> = <var> A * B</var>.</p> 
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

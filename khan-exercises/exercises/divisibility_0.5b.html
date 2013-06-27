@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Deelbaarheid 0.5b groep 4</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="problems">
+            <div id="factor">
+                <div class="vars" data-ensure="A <= 100">
+                    <var id="B">randFromArray( [2,3,5,10] )</var>
+                    <var id="FACTOR">floor( randRange( 2,100 ) / B )</var>
+                    <var id="A">FACTOR * B</var>
+                    <var id="FACTORIZATION_A">getPrimeFactorization( A )</var>
+                    <var id="FACTORIZATION_B">getPrimeFactorization( B )</var>
+                    <var id="WRONGFACTORS">
+                    (function() {
+                        var wrongs = [];
+                        var i = 2;
+                        while( i &lt; 15 ) {
+                            if ( A % i !== 0 ) {
+                                wrongs.push( i );
+                            }
+                            i++;
+                        }
+                        
+                        var shuffled = shuffle( wrongs, 4 );
+                        shuffled.push( B );
+                        return shuffled;
+    
+                    })()
+                    </var>
+                    <var id="WRONGFACTORS_SORTED">sortNumbers( WRONGFACTORS )</var>
+                </div>
+                <p class="question" data-tt="question1">Welk van de volgende getallen is een factor van <var>A</var>?
+                </p>
+                <p><code>\large{<var>WRONGFACTORS_SORTED.join( "," )</var>}</code></p>
+                <p class="solution"><code><var>B</var></code></p>
+                <ul class="choices" data-category="true">
+                    <li data-each="WRONGFACTORS_SORTED as index, wrong"><code><var>wrong</var></code></li>
+                </ul>
+                <div class="hints">
+                    <p data-tt="hint1">Per definitie is een factor het getal dat een ander getal gelijk verdeeld. We kunnen beginnen door <code><var>A</var></code> te delen door alle antwoordmogelijkheden.</p>
+                    <div>
+                        <p data-each="WRONGFACTORS_SORTED as WRONG"><code><var>A</var> \div <var>WRONG</var> = <var>floor( A / WRONG )</var><span data-if="A % WRONG !== 0">\text{ rest }<var>( A % WRONG )</var></span></code></p>
+                    </div>
+                    <p data-tt="hint2">Het enige antwoordmogelijkheid dat <code class="hint_blue"><var>A</var></code> deelt zonder een restgetal is <code class="hint_orange"><var>B</var></code>. <code>\quad<var>FACTOR</var></code> * <code class="hint_orange"><var>B</var></code> = <code class="hint_blue"><var>A</var></code>.</p>
+                </div>
+            </div>
+            <div id="multiple">
+                <div class="vars">
+                    <var id="B">randFromArray([ 2,3,5,10 ])</var>
+                    <var id="FACTOR">floor( randRange( 10, 100 ) / B )</var>
+                    <var id="A">FACTOR * B</var>
+                    <var id="FACTORIZATION_A">getPrimeFactorization( A )</var>
+                    <var id="FACTORIZATION_B">getPrimeFactorization( B )</var>
+                    <var id="WRONGMULTIPLES">
+                        (function() {
+                            var wrongs = [];
+                            while( wrongs.length &lt; 4 ) {
+                                var i = randRange( 10, 100 );
+                                if ( i % B !== 0 ) {
+                                    wrongs.push( i );
+                                }
+                            }
+                            
+                            var shuffled = shuffle( wrongs, 4 );
+                            shuffled.push( A );
+                            return shuffled;
+                        })()
+                    </var>
+                    <var id="WRONGMULTIPLES_SORTED">sortNumbers( WRONGMULTIPLES )</var>
+                </div>
+                <p class="question" data-tt="question2">Welk van de volgende getallen is deelbaar door <var>B</var>?</p>
+                <p><code>\large{<var>WRONGMULTIPLES_SORTED.join( "," )</var>}</code></p>
+                <p class="solution"><code><var>A</var></code></p>
+                <ul class="choices" data-category="true">
+                    <li data-each="WRONGMULTIPLES_SORTED as index, wrong"><code><var>wrong</var></code></li>
+                </ul>
+                <div class="hints">
+                    <div>
+                        <p data-tt="hint5">Getallen die deelbaar zijn door <code><var>B</var></code> zijn veelvouden van <code><var>B</var></code>, namelijk <code><var>B</var></code>, <code><var>B*2</var></code>, <code><var>B*3</var></code>, <code><var>B*4</var></code>.....</p>
+                        <p data-tt="hint6">Over het algemeen is elk getal dat geen restgetal oplevert bij delen door <code><var>B</var></code> een veelvoud van <code><var>B</var></code>.</p>
+                    </div>
+                    <div>
+                        <p data-tt="hint7">We kunnen beginnen met elk van onze antwoordmogelijkheden te delen door <code><var>B</var></code>.</p>
+                        <p data-each="WRONGMULTIPLES_SORTED as WRONG"><code><var>WRONG</var> \div <var>B</var> = <var>floor( WRONG / B )</var><span data-if="WRONG % B !== 0">\text{ rest }<var>( WRONG % B )</var></span></code></p>
+                    </div>
+                    <p data-tt="hint8">Het enige antwoordmogelijkheid dat geen restgetal heeft bij deling is het getal <code class="hint_blue"><var>A</var></code>, want  <code>\quad<var>FACTOR</var></code> * <code class="hint_orange"><var>B</var></code> = <code class="hint_blue"><var>A</var></code>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

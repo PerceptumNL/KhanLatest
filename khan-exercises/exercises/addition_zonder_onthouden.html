@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math graphie graphie-helpers-arithmetic word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Addition 1</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-ensure="(Number1 + Number2 <= 100) && (B + D <= 9)"> 
+        <var id="A">randRange( 1, 9 )</var>
+        <var id="B">randRange( 1, 9 )</var>
+        <var id="C">randRange( 1, 9 )</var>
+        <var id="D">randRange( 1, 9 )</var>
+        <var id="Number1">10*A + B</var>
+        <var id="Number2">10*C + D</var>
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+                <div class="graphie">
+                    init({
+                        range: [ [0, 12], [-1, 1] ]
+                    });
+
+                    label( [0, 0],
+                        "\\Huge{\\color{#6495ED}{ <var>Number1</var> } + \\color{#28AE7B}{ <var>Number2</var> } = {?}}",
+                        "right" );
+                </div>
+            </div>
+            <div class="solution" data-forms="integer"><var>Number1 + Number2</var></div>
+            <div class="hints">
+                <div>Eerst tel je de eenheden bij elkaar op. Dat is <var>B</var> + <var>D</var> = <var>B+D</var>.
+                </div>
+                <div>Tel dan de tientallen bij elkaar op. Dat is <var>A*10</var> + <var>C*10</var> = <var>A+C</var>.
+                </div>
+                <div>Nu kun je deze twee getallen bij elkaar optellen
+                </div>
+                <div>Dus het antwoord is <var>B+D</var> + <var>(A+C)*10</var> = <var>Number1 + Number2</var>.
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

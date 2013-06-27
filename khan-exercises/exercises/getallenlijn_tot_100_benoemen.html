@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math graphie word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Getallenlijn tot 100 benoemen</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars">
+        <var id="LOWER_BOUND">randFromArray([0,10,20,30,40,50,60,70,80])</var>
+        <var id="UPPER_BOUND">LOWER_BOUND + 20</var>
+        <var id="NUMBER">randRangeNonZero( LOWER_BOUND + 5, UPPER_BOUND - 5 )</var>
+    </div>
+    <div class="problems">
+        <div>
+            <div class="question">
+                <p data-tt="exercise">Welk getal hoort bij de oranje stip? De afstand tussen de streepjes is 1.</p>
+                <div class="graphie" id="number-line">
+                    init({
+                        range: [ [LOWER_BOUND - 1, UPPER_BOUND + 1], [-1, 1] ]
+                    });
+
+                    line( [ LOWER_BOUND, 0 ], [ UPPER_BOUND, 0 ] );
+                    for ( var x = LOWER_BOUND; x &lt;= UPPER_BOUND; x++ ) {
+                        line( [ x, -0.2 ], [ x, 0.2 ] );
+                    }
+                    style({ stroke: "#6495ED", strokeWidth: 3.5 });
+                    line( [ 0, -0.2], [0, 0.2]);
+                    label( [ 0, -0.53 ],  "0", "center", { color: "#6495ED" });
+
+                    style({ stroke: "#FFA500", fill: "#FFA500" });
+                    graph.orangeDot = circle( [ NUMBER, 0 ], 0.10 );
+                </div>
+            </div>
+            <div class="solution" data-forms="integer"><var>NUMBER</var></div>
+
+            <div class="hints">
+                <p data-tt="hint1">We know where 0 is on the number line because it is labeled.</p>
+                <p data-tt="hint2">Numbers to the left are smaller, and numbers to the right are bigger.</p>
+                <p data-tt="hint3">Numbers smaller than 0 are negative, and numbers bigger than 0 are positive.</p>
+                <div>
+                    <div class="graphie" data-update="number-line">
+                        style({ stroke: "#6495ED", fill: "#6495ED", strokeWidth: 3.5, arrows: "->" });
+                        line( [ 0, 0 ], [ NUMBER, 0 ] );
+                        graph.orangeDot.toFront();
+                    </div>
+                    <p data-tt='hint4'>The orange dot is <var>plural( abs( NUMBER ), "position")</var> to the <span data-if="NUMBER < 0">left</span><span data-else>right</span> of 0.</p>
+                </div>
+                <div>
+                    <div class="graphie" data-update="number-line">
+                        label( [ NUMBER, -0.53 ],  NUMBER, "center", { color: "#FFA500" });
+                    </div>
+                    <p data-tt="hint5">The orange dot represents the number <var>NUMBER</var>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

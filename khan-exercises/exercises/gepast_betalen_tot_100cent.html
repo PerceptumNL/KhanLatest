@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format getallen spin word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Gepast betalen tot 100 cent</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars" data-ensure="(Totaalbedrag <= 100) && (Totaalbedrag !== 0) && !((Aantal2 === 2) && (Aantal1 === 1)) && !((Aantal20 === 2) && (Aantal10 === 1))">
+            <var id="Aantal50">randRange(0,1)</var>
+            <var id="Aantal20">randRange(0,2)</var>
+            <var id="Aantal10">randRange(0,1)</var>
+            <var id="Aantal5">randRange(0,1)</var>
+            <var id="Aantal2">randRange(0,2)</var>
+            <var id="Aantal1">randRange(0,1)</var>
+            <var id="Totaalbedrag">Aantal50 * 50 + Aantal20 * 20 + Aantal10 * 10 + Aantal5 * 5 + Aantal2 * 2 + Aantal1</var>
+            <var id="NICE_TOTAALBEDRAG"> Totaalbedrag > 5 ? Totaalbedrag : "0" + "" + Totaalbedrag</var>
+        </div>
+        <div class="problems">
+            <div>
+                <div class="question">Hoe zou je €0,<var>NICE_TOTAALBEDRAG</var> gepast betalen met zo weinig mogelijk muntjes?
+                </div>
+                <div class="solution" data-type="multiple">
+                    <p><span class="sol"><var>Aantal50</var></span><code>\text{ 50 cent}</code></p>
+                    <p><span class="sol"><var>Aantal20</var></span><code>\text{ 20 cent}</code></p>
+                    <p><span class="sol"><var>Aantal10</var></span><code>\text{ 10 cent}</code></p>
+                    <p><span class="sol"><var>Aantal5</var></span><code>\text{ 5 cent}</code></p>
+                    <p><span class="sol"><var>Aantal2</var></span><code>\text{ 2 cent}</code></p>
+                    <p><span class="sol"><var>Aantal1</var></span><code>\text{ 1 cent}</code></p>
+                </div>
+            </div>
+        </div>
+        <div class="hints">
+                <p>Begin met kijken of het grootste muntje (50 cent) in het bedrag past.</p>
+                <div data-if="Aantal50===1">1 munt van 50 cent past nog in €0,<var>NICE_TOTAALBEDRAG</var>, maar 2 is teveel. We houden dan <var>NICE_TOTAALBEDRAG</var> cent - 50 cent = <var>NICE_TOTAALBEDRAG - 50</var> cent over.
+                </div>
+                <div data-else-if="Aantal50===0">1 munt van 50 cent past niet meer in <var>NICE_TOTAALBEDRAG</var>. Kijk nu of een munt van 20 cent er wel in past.</div>
+                <div data-if="((Aantal50===1) && (Aantal20===2))">Het volgende muntje is 20 cent. Deze past 2 keer in <var>NICE_TOTAALBEDRAG - 50 </var> en dan is er nog <var>NICE_TOTAALBEDRAG - 50 </var> cent - 40 = <var>NICE_TOTAALBEDRAG - 90</var> over.
+                <div data-if="(Aantal50===1) && (Aantal20===2) && ((Aantal5+Aantal2+Aantal1) !== 0)">Van het overgebleven geld moet je kijken of er nog meer muntjes in passen op dezelfde wijze als voorheen.</div>
+                <div data-if="(Aantal50===1) && (Aantal20===2) && (Aantal5 !== 0)">1 munt van 5 cent past nog in <var>NICE_TOTAALBEDRAG - 90</var>, maar 2 is te veel. We houden dan <var>NICE_TOTAALBEDRAG - 90</var> cent - 5 cent = <var>NICE_TOTAALBEDRAG - 95</var> over.</div>
+                <div data-if="(Aantal50===1) && (Aantal20===2) && (Aantal5 !== 0) && (Aantal2 ===2)">In het overgebleven geld passen niet één maar zelfs twee muntjes van 2 cent. We houden <var>NICE_TOTAALBEDRAG - 95</var> cent - 4 cent = <var>NICE_TOTAALBEDRAG - 99</var> over. We hebben dus 1 keer 50 cent, 2 keer 20 cent, 1 keer 5 cent en 2 keer 2 cent gebruikt.</div>
+                <div data-if="(Aantal50===1) && (Aantal20===2) && (Aantal5 !== 0) && (Aantal2 ===1)">In het overgebleven geld past één muntje van 2 cent. We houden <var>NICE_TOTAALBEDRAG - 95</var> cent - 2 cent = <var>NICE_TOTAALBEDRAG - 97</var> over. We hebben dus 1 keer 50 cent, 2 keer 20 cent, 1 keer 5 cent en 1 keer 2 cent gebruikt.</div>
+                <div data-else>Kijk eerst of 50 cent er in past en hoe vaak, dan hoe vaak je nog 20 cent erin kan passen enzovoorts.</div>
+
+     
+    </div>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html data-translatable data-require="math math-format graphie time word-problems">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Telling time</title>
+    <title>Klokkijken heel en half</title>
     <script src="../khan-exercise.js"></script>
     <style type="text/css">
         #answer_area input[type=text] {
@@ -15,7 +15,7 @@
     <div class="vars">
         <var id="HOUR">randRange( 1, 12 )</var>
         <var id="HOUR2">HOUR+12</var>
-        <var id="MINUTE">randRange( 0, 3 ) * 15 </var>
+        <var id="MINUTE">randFromArray([ 0, 30 ])</var>
         <var id="NICE_MINUTE"> MINUTE &gt; 5 ? MINUTE : "0" + "" + MINUTE</var>
         <var id="AM_PM">HOUR >= 7 ? "a.m" : "p.m."</var>
     </div>

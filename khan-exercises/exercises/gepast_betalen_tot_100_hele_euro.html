@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format getallen spin word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Gepast betalen tot 100 hele euro's</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars" data-ensure="(Totaalbedrag <= 100) && (Totaalbedrag !== 0) && !((Aantal2 === 2) && (Aantal1 === 1)) && !((Aantal20 === 2) && (Aantal10 === 1))">
+            <var id="Aantal50">randRange(0,1)</var>
+            <var id="Aantal20">randRange(0,2)</var>
+            <var id="Aantal10">randRange(0,1)</var>
+            <var id="Aantal5">randRange(0,1)</var>
+            <var id="Aantal2">randRange(0,2)</var>
+            <var id="Aantal1">randRange(0,1)</var>
+            <var id="Totaalbedrag">Aantal50 * 50 + Aantal20 * 20 + Aantal10 * 10 + Aantal5 * 5 + Aantal2 * 2 + Aantal1</var>
+            <!-- <var id="NICE_TOTAALBEDRAG"> Totaalbedrag > 5 ? Totaalbedrag : "0" + "" + Totaalbedrag</var> -->
+        </div>
+        <div class="problems">
+            <div>
+                <div class="question">Hoe zou je €<var>Totaalbedrag</var> gepast betalen met zo weinig mogelijk briefjejes?
+                </div>
+                <div class="solution" data-type="multiple">
+                    <p><span class="sol"><var>Aantal50</var></span><code>\text{ 50 euro}</code></p>
+                    <p><span class="sol"><var>Aantal20</var></span><code>\text{ 20 euro}</code></p>
+                    <p><span class="sol"><var>Aantal10</var></span><code>\text{ 10 euro}</code></p>
+                    <p><span class="sol"><var>Aantal5</var></span><code>\text{ 5 euro}</code></p>
+                    <p><span class="sol"><var>Aantal2</var></span><code>\text{ 2 euro}</code></p>
+                    <p><span class="sol"><var>Aantal1</var></span><code>\text{ 1 euro}</code></p>
+                </div>
+            </div>
+        </div>
+        <div class="hints">
+                <p>Begin met kijken of het grootste briefje (50 euro) in het bedrag past.</p>
+                <div data-if="Aantal50===1">1 briefje van 50 euro past nog in €<var>Totaalbedrag</var>, maar 2 is teveel. We houden dan <var>Totaalbedrag</var> euro - 50 euro = <var>Totaalbedrag - 50</var> euro over.
+                </div>
+                <div data-else-if="Aantal50===0">1 briefje van 50 euro past niet meer in <var>Totaalbedrag</var>. Kijk nu of een briefje van 20 euro er wel in past.</div>
+                <div data-if="((Aantal50===1) && (Aantal20===2))">Het volgende briefje is 20 euro. Deze past 2 keer in <var>Totaalbedrag - 50 </var> en dan is er nog <var>Totaalbedrag - 50 </var> euro - 40 = <var>Totaalbedrag - 90</var> over.</div>
+                <div data-if="(Aantal50===1) && (Aantal20===2) && ((Aantal5+Aantal2+Aantal1) !== 0)">Van het overgebleven geld moet je kijken of er nog meer briefjes in passen op dezelfde wijze als voorheen.</div>
+                <div data-if="(Aantal50===1) && (Aantal20===2) && (Aantal5 !== 0)">1 briefje van 5 euro past nog in <var>Totaalbedrag - 90</var>, maar 2 is te veel. We houden dan <var>Totaalbedrag - 90</var> euro - 5 euro = <var>Totaalbedrag - 95</var> over.</div>
+                <div data-if="(Aantal50===1) && (Aantal20===2) && (Aantal5 !== 0) && (Aantal2 ===2)">In het overgebleven geld passen niet één maar zelfs twee muntjes van 2 euro. We houden <var>Totaalbedrag - 95</var> euro - 4 euro = <var>Totaalbedrag - 99</var> over. We hebben dus 1 keer 50 euro, 2 keer 20 euro, 1 keer 5 euro en 2 keer 2 euro gebruikt.</div>
+                <div data-if="(Aantal50===1) && (Aantal20===2) && (Aantal5 !== 0) && (Aantal2 ===1)">In het overgebleven geld past één muntje van 2 euro. We houden <var>Totaalbedrag - 95</var> euro - 2 euro = <var>Totaalbedrag - 97</var> over. We hebben dus 1 keer 50 euro, 2 keer 20 euro, 1 keer 5 euro en 1 keer 2 euro gebruikt.</div>
+                <div data-else>Kijk eerst of 50 euro er in past en hoe vaak, dan hoe vaak je nog 20 euro erin kan passen enzovoorts.</div>
+
+    </div>     
+    </div>
+</body>
+</html>

@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="exercise">
-        <div class="vars" data-ensure="B !== D && A !== C">
+        <div class="vars" data-ensure="!(B === D && A === C)">
         <var id="A">randRange( 0, 9 )</var>
         <var id="B">randRange( 0, 9 )</var>
         <var id="C">randRange( 0, 9 )</var>
@@ -27,39 +27,23 @@
             </div>
         </div>
         <div class="hints">
-            <div data-if="A == 0 && C == 0">
-                <p>Het getal <var>Number1</var> en het getal <var>Number2</var>< bestaan beide uit één cijfer.</p> 
-                <p>Aangezien <var>WrongAnswer</var> vóór <var>CorrectAnswer</var></p> komt in de getallenlijn is het antwoord <var>CorrectAnswer</var>.</p>
-            </div>
+            <div data-if="A === 0 && C === 0">Het getal <var>Number1</var> en het getal <var>Number2</var>< bestaan beide uit één cijfer.</div>
+            <div data-if="A === 0 && C === 0"> Aangezien <var>WrongAnswer</var> vóór <var>CorrectAnswer</var></p> komt in de getallenlijn is het antwoord <var>CorrectAnswer</var>.</div>
 
-            <div data-else-if="A == 0 && C !==0">
-                <p data-tt="hintB1">Het getal <var>Number1</var> bestaat uit één cijfer en het getal <var>Number2</var> bestaat uit twee cijfers.
-                </p>
-                <p data-tt="hintB2">Per definitie is <var>Number2</var> dan groter dan <var>Number1</var>.
-                </p>
-            </div>
+            <div data-if="A === 0 && C !==0">Het getal <var>Number1</var> bestaat uit één cijfer en het getal <var>Number2</var> bestaat uit twee cijfers.</div>
+            <div data-if="A === 0 && C !==0">Per definitie is <var>Number2</var> dan groter dan <var>Number1</var>.</div>
 
-            <div data-else-if="A !==0 && C ==0">
-                <p data-tt="hintC1">Het getal <var>Number2</var> bestaat uit één cijfer en het getal <var>Number1</var> bestaat uit twee cijfers.
-                </p>
-                <p data-tt="hintC2">Per definitie is <var>Number1</var> dan groter dan <var>Number2</var>.
-                </p>
-            </div>
+            <div data-if="A !==0 && C ===0">Het getal <var>Number2</var> bestaat uit één cijfer en het getal <var>Number1</var> bestaat uit twee cijfers.</div>
+            <div data-if="A !==0 && C ===0">Per definitie is <var>Number1</var> dan groter dan <var>Number2</var>.</div>
 
-            <div data-else-if="A !== 0 && A==C">
-                <p data-tt="hintD1">Als we kijken naar de tientallen zien we dat van <var>CorrectAnswer</var> en <var>WrongAnswer</var> het eerste cijfer gelijk is aan het tweede cijfer.</p>
-                <p data-tt="hintD2">Nu is het belangrijk om te kijken naar de tweede cijfers. Deze zijn <var>B</var> en <var>D</var>.</p>
-                <p data-tt="hintD3">Aangezien <var>isGreater(B,D)</var> groter is dan <var>isSmaller(B,D)</var> is het antwoord <var>CorrectAnswer</var>.</p>
-            </div>
+            <div data-if="A !== 0 && A===C">Als we kijken naar de tientallen zien we dat van <var>Number1</var> en <var>Number2</var> allebei het tiental <var>A*10</var> bevatten.</div>
+            <div data-if="A !== 0 && A===C">Nu is het belangrijk om te kijken naar de eenheden. Deze zijn <var>B</var> en <var>D</var>.</div>
+            <div data-if="A !== 0 && A===C"><var>isGreater(B,D)</var> is groter dan <var>isSmaller(B,D)</var>.</div>
 
-            <div data-else>
-                <p data-tt="hintE1">Als we kijken naar de tientallen zien we dat van <var>CorrectAnswer</var> en <var>WrongAnswer</var> het eerste cijfer <var>isGreater(A,C)</var> groter is.</p>
-                <p data-tt="hintE2">Het maakt niet uit wat de tweede cijfers zijn, want aan de tientallen kun je al zien welke het hoogst is.
-                </p>
-                <p data-tt="hintE3" >Dus <var>CorrectAnswer</var> is groter.
-            </p>
-            </div>
-        </div>              
+            <div data-if="A !==0 && A !== C && C!==0">Als we kijken naar de tientallen zien we dat van <var>Number1</var> en <var>Number2</var> het tiental <var>isGreater(A,C)*10</var> groter is.</div>
+            <div data-if="A !==0 && A !== C && C!==0">Het maakt niet uit wat de eenheden zijn, want aan de tientallen kun je al zien welk getal het grootst is.</div>
+            <div>Dus <var>CorrectAnswer</var> is groter.</div>
+        </div>                           
     </div>
 </body>
 </html>

@@ -35,27 +35,27 @@
                     </div>
                 <div class="solution"><var>Answer</var></div> 
                 <div class="hints">
-                    <div data-if="B === 0">
-                        <p data-tt="hint1">Van <var>Number2</var> naar <var>plus10</var> is er <var>plus10</var> - <var>Number2</var> = <var>firstdif</var> nodig.</p>
-                        <p data-tt="hint2">Van <var>plus10</var> naar <var>minusX</var> is er <var>minusX</var> - <var>plus10</var> = <var>seconddif</var> nodig.</p>
-                        <p data-tt="hint3">Dus om <var>Number1</var> op te splitsen met <var>Number2</var> hebben we <var>firstdif</var> + <var>seconddif</var> = <var>Answer</var> nodig.</p>
-                    </div>
-                    <div data-if="D === 0">
-                        <p data-tt="hint1">Van <var>Number2</var> naar <var>minusX</var> is <var>minusX</var> - <var>Number2</var> = <var>specfirstdif</var>.</p>
-                        <p data-tt="hint2">Van <var>minusX</var> naar <var>Answer</var> is <var>Answer</var> - <var>minusX</var> = <var>thirddiff</var>.</p>
-                    </div>
-                    <div data-if="A === 0">
-                        <p>Van <var>Number2</var> naar <var>Number1</var> is het <var>Answer</var>.</p>.
-                    </div>
-                    <div data-else>
-                        <p data-tt="hint1">Van <var>Number2</var> naar <var>plus10</var> is er <var>plus10</var> - <var>Number2</var> = <var>firstdif</var> nodig.</p>
-                        <p data-tt="hint2">Van <var>plus10</var> naar <var>minusX</var> is er <var>minusX</var> - <var>plus10</var> = <var>seconddif</var> nodig.</p>
-                        <p data-tt="hint3">Van <var>minusX</var> naar <var>Number1</var> is er <var>Number1</var> - <var>minusX</var> = <var>thirddif</var> nodig.</p>
-                        <p data-tt="hint4">Dus om <var>Number1</var> op te splitsen met <var>Number2</var> hebben we <var>firstdif</var> + <var>seconddif</var> + <var>thirddif</var> = <var>Answer</var>.</p> 
-                    </div>            
+                    <div data-if="B === 0">Van <var>Number2</var> naar <var>plus10</var> is er <var>plus10</var> - <var>Number2</var> = <var>firstdif</var> nodig.</div>
+                    <div data-if="B === 0">Van <var>plus10</var> naar <var>minusX</var> is er <var>minusX</var> - <var>plus10</var> = <var>seconddif</var> nodig.</div>
+                    <div data-if="B === 0">Dus om <var>Number1</var> op te splitsen met <var>Number2</var> hebben we <var>firstdif</var> + <var>seconddif</var> = <var>Answer</var> nodig.</div>
+                    
+                    <div data-if="D === 0">Van <var>Number2</var> naar <var>minusX</var> is er <var>minusX</var> - <var>Number2</var> = <var>specfirstdif</var> nodig.</div>
+                    <div data-if="D === 0">Van <var>minusX</var> naar <var>Number1</var> is er <var>Number1</var> - <var>minusX</var> = <var>thirddif</var> nodig.</div>
+                    <div data-if="D === 0">Dus om <var>Number1</var> op te splitsen met <var>Number2</var> hebben we <var>specfirstdif</var> + <var>thirddif</var> = <var>Answer</var> nodig.</div> 
+                    
+                    <div data-if="A === 0 || A ===C">Van <var>Number2</var> naar <var>Number1</var> is er <var>Number1</var> - <var>Number2</var> = <var>Answer</var> nodig.</div>.
+
+                    <div data-if="((C+1)===A && D !==0)">Van <var>Number2</var> naar <var>plus10</var> is er <var>plus10</var> - <var>Number2</var> = <var>firstdif</var> nodig.</div>
+                    <div data-if="((C+1)===A && D !==0)">Van <var>plus10</var> naar <var>Number1</var> is er <var>Number1</var> - <var>plus10</var> = <var>thirddif</var> nodig.</div>
+                    <div data-if="((C+1)===A && D !==0)">Dus om <var>Number1</var> op te splitsen met <var>Number2</var> hebben we <var>firstdif</var> + <var>thirddif</var> = <var>Answer</var> nodig.</div>
+
+                    <div data-if="(A !== 0 && B !== 0 && D!==0 && A !==C && A !==C+1)">Van <var>Number2</var> naar <var>plus10</var> is er <var>plus10</var> - <var>Number2</var> = <var>firstdif</var> nodig</div>
+                    <div data-if="(A !== 0 && B !== 0 && D!==0 && A !==C && A !==C+1)">Van <var>plus10</var> naar <var>minusX</var> is er <var>minusX</var> - <var>plus10</var> = <var>seconddif</var> nodig.</div>
+                    <div data-if="(A !== 0 && B !== 0 && D!==0 && A !==C && A !==C+1)">Van <var>minusX</var> naar <var>Number1</var> is er <var>Number1</var> - <var>minusX</var> = <var>thirddif</var> nodig.</div>
+                    <div data-if="(A !== 0 && B !== 0 && D!==0 && A !==C && A !==C+1)">Dus om <var>Number1</var> op te splitsen met <var>Number2</var> hebben we <var>firstdif</var> + <var>seconddif</var> + <var>thirddif</var> = <var>Answer</var> nodig.</div> 
+                </div>            
                 </div>
             </div>
         </div>
-    </div>
 </body>
 </html>

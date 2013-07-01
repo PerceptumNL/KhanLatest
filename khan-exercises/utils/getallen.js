@@ -28,7 +28,7 @@ $.extend(KhanUtil, {
     	"eenennegentig", "tweeënnegentig", "drieënnegentig", "vierenegentig",
     	"vijfennegentig", "zesennegentig", "zevenennegentig", "achtennegentig",
     	"negenennegentig", "honderd"];
-    	return getallen[ num -1 ];
+    	return getallen[ num +1 ];
     },
 
     isGreater: function(Number1,Number2) {
@@ -43,5 +43,10 @@ $.extend(KhanUtil, {
         if (Number1 < Number2) {
             return Number1;
         } else {return Number2}
+    },
+
+    rangtelwoorden: function(rang) {
+        var rangen = ["eerste", "tweede", "derde", "vierde", "vijfde", "zesde", "zevende", "achtste", "negende", "tiende"];
+        return rangen[ rang - 1];
     }
 })

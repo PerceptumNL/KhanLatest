@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format getallen spin word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Optellen van decimeters en centimeters</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="problems">
+            <div class="centimetersandcentimeters">
+                <div class="vars" data-ensure="cm1+cm2 <=100">
+                    <var id="cm1">randRange( 1, 100 )</var>
+                    <var id="cm2">randRange( 1, 100 )</var>
+                    <var id="Answer">cm1+cm2</var>
+                </div>
+
+                <p class="question">Hoeveel centimeter is <var>cm1</var> cm en <var>cm2</var> cm bij elkaar?</p>
+                
+                <p class="solution"><var>Answer</var></p>
+                <div class="hints">
+                    <p>Beide lengtes zijn in centimeter, dus je kunt ze gewoon bij elkaar optellen.</p>
+                    <p>Het antwoord is dus <var>cm1</var> cm + <var>cm2</var> cm = <var>Answer</var> centimeter.</p>
+                </div>
+            </div>
+
+            <div class="decimeteranddecimeter">
+                <div class="vars" data-ensure="(10*dm1 + 10*dm2) <= 100">
+                    <var id="dm1">randRange( 1, 10 )</var>
+                    <var id="dm2">randRange( 1, 10 )</var>
+                    <var id="Answer">10*dm1 + 10*dm2</var>
+                </div>
+                <p class="question">Hoeveel centimeter is <var>dm1</var> dm en <var>dm2</var> dm bij elkaar?</p>
+                <p class="solution"><var>Answer</var></p>
+                <div class="hints">
+                    <p>We willen de lengte in centimeters hebben, dus we moeten het aantal decimeter omrekenen naar centimeter.</p>
+                    <p>We weten dat 1 decimeter 10 centimeter is.</p>
+                    <p>Dus <var>dm1</var> dm is <var>dm1*10</var> cm en <var>dm2</var> dm is <var>dm2*10</var> cm.</p>
+                    <p>Het antwoord is dan <var>dm1*10</var> cm + <var>dm2*10</var> cm = <var>Answer</var> centimeter.</p>
+                </div>
+            </div>
+
+            <div class="decimetersandcentimeters">
+                <div class="vars" data-ensure="(10*dm + cm) <= 100">
+                    <var id="dm">randRange( 1, 10 )</var>
+                    <var id="cm">randRange( 1, 100)</var>
+                    <var id="Answer">dm*10+cm</var>
+                </div>
+
+                <p class="question">Hoeveel centimeter is <var>dm</var> dm en <var>cm</var> cm bij elkaar?</p>
+                
+                <p class="solution"><var>Answer</var></p>
+                <div class="hints">
+                    <p>Je kunt lengtes bij elkaar optellen als ze dezelfde eenheid hebben (allebei dm of allebei cm bijvoorbeeld).</p>
+                    <p>Als 1 decimeter 10 centimeter is, hoeveel centimeter is <var>dm</var> decimeter dan?</p>
+                    <p>Met behulp van omrekenen en optellen kom je dus op het antwoord: <var>dm*10</var> cm + <var>cm</var> cm = <var>Answer</var> centimeter.</p>
+                </div>
+            </div>
+        </div>     
+    </div>
+</body>
+</html>

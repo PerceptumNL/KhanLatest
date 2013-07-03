@@ -66,17 +66,24 @@ def google_request_token_handler(oauth_map):
         # Add google-specific mobile view identifier
         params["btmpl"] = "mobile"
 
-    return redirect("http://www.khanacademy.org/_ah/OAuthAuthorizeToken?%s" %
+    return redirect("http://www.khanacademie.nl/_ah/OAuthAuthorizeToken?%s" %
                     urllib.urlencode(params))
 
 
 def retrieve_google_access_token(oauth_map):
     # Start Google access token process
+    import logging
+    logging.error("import access token")
     google_client = GoogleOAuthClient()
+    logging.error("import access token")
     google_token = google_client.fetch_access_token(oauth_map)
 
+    logging.error("1")
     oauth_map.google_access_token = google_token.key
+    logging.error(google_token.key)
+    logging.error("2")
     oauth_map.google_access_token_secret = google_token.secret
+    logging.error(google_token.secret)
 
     return oauth_map
 

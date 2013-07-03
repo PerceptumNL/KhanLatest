@@ -1,5 +1,5 @@
-application: khan-testing
-version: 49
+application: khan-netherlands
+version: 51
 runtime: python27
 api_version: 1
 default_expiration: "365d"
@@ -59,6 +59,10 @@ handlers:
 - url: /google663128d2a1a65b87.html
   static_files: google663128d2a1a65b87.html
   upload: google663128d2a1a65b87.html
+
+- url: /google013610dae8f72518.html
+  static_files: google013610dae8f72518.html
+  upload: google013610dae8f72518.html
 
 - url: /images/favicon.ico
   static_files: images/favicon.ico

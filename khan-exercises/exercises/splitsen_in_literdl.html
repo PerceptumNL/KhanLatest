@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie graphie-helpers">
+<head>
+    <meta charset="UTF-8" />
+    <title>Splitsen in liters en deciliters</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+            <var id="aantalliter">randRange( 1, 9 )</var>
+            <var id="aantaldeci">randRange( 1, 9 )</var>
+            <var id="totaal">aantalliter*10+aantaldeci</var>
+        </div>
+        <div class="problems">
+            <div>
+                <div class="question">In hoeveel hele liters en deciliters kan je <var>totaal</var> dl opsplitsen?</div>
+                    <div class="graphie">
+                    init({
+                        range: [ [0, 12], [-1, 1] ]
+                    });
+
+                    label( [0, 0],
+                            "\\Huge{\\color{#6495ED}{ <var>totaal</var> \\text{ } dl}= \\color{#28AE7B}{ ... l } + {... dl}}",
+                        "right" );
+                    </div>
+                <div class="solution" data-type="multiple">
+                    <p><span class="sol"><var>aantalliter</var></span><code>\text{ liter}</code></p>
+                    <p><span class="sol"><var>aantaldeci</var></span><code>\text{ deciliter}</code></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hints">
+            <p>Weet je nog dat 10 deciliter 1 liter is?</p>
+            <p><var>totaal</var> dl kan je opsplitsen in <var>aantalliter*10</var> dl en <var>aantaldeci</var> dl.</p>
+            <p><var>aantalliter*10</var> dl is hetzelfde als <var>aantalliter</var> l.</p>
+            <p>Dus je kunt <var>totaal</var> dl opsplitsen in <var>aantalliter</var> l en <var>aantaldeci</var> dl.</p>
+        </div>
+    </div>     
+</body>
+</html>

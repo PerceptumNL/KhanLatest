@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html data-require="math math-format spin getallen word-problems">
+    <head>
+        <title>Maanden van het jaar</title>
+        <script src="../khan-exercise.js"></script>
+    </head>
+        <body>
+            <div class="exercise">
+                <div class="problems">
+                    <div id="eerder">
+                        <div class="vars" data-ensure="((monthnoa < monthno1) && (monthnob > monthno1) && !((randomno1 || randomno2 ) == (monthno1 || (monthnoa || monthnob))))">
+                            <var id="day">randRange(1,28)</var>
+                            <var id="monthno1">randRange(2,11)</var>
+                            <var id="month1">maanden( monthno1 )</var>
+                            <var id="monthnoa">randRange(1,12)</var>
+                            <var id="montha">maanden( monthnoa )</var>
+                            <var id="adiff">monthno1 - monthnoa</var>
+                            <var id="numbermontha"> schrijven( adiff )</var>
+                            <var id="monthnob">randRange(1,12)</var>
+                            <var id="monthb">maanden( monthnob )</var>
+                            <var id="randomno1">randRange(1,12)</var>
+                            <var id="randomno2">randRange(1,12)</var>
+                        </div>
+                
+                      <p class="problem"><var>person( 1 )</var> is op <var>day</var> <var>month1</var> jarig. <var>person( 2 )</var> is precies <var>numbermontha</var> maand<span data-if="adiff !== 1">en</span> eerder jarig.</p>
+                      <p class="question">Wanneer is de verjaardag van <var>person( 2 )</var>?</p>
+                      <p class="solution"><var>day</var> <var>montha</var></p>
+                      <ul class="choices">
+                          <li><var>day</var> <var>monthb</var></li>
+                          <li><var>day</var> <var>maanden( randomno1 )</var></li>
+                          <li><var>day</var> <var>maanden( randomno2 )</var></li>
+                      </ul>
+
+                      <div class="hints">
+                          <p>De maanden van het jaar zijn op volgorde: januari, februari, maart, april, mei, juni, juli, augustus, september, oktober, november en december.</p>
+                          <p>Je moet <var>numbermontha</var> stap<span data-if="adiff !== 1">pen</span> terug doen vanaf <var>month1</var>.</p>
+                          <p>Dus door <var>numbermontha</var> stap<span data-if="adiff !== 1">pen</span> terug te gaan, komt de verjaardag van <var>person( 2 )</var> uit op <var>day</var> <var>montha</var>.</p>
+                      </div>
+                  </div>
+
+                  <div id="later">
+                      <div class="vars" data-ensure="((monthnoa < monthno1) && (monthnob > monthno1) && !((randomno1 || randomno2 ) == (monthno1 || (monthnoa || monthnob))))">
+                            <var id="day">randRange(1,28)</var>
+                            <var id="monthno1">randRange(2,11)</var>
+                            <var id="month1">maanden( monthno1 )</var>
+                            <var id="monthnoa">randRange(1,12)</var>
+                            <var id="montha">maanden( monthnoa )</var>
+                            <var id="monthnob">randRange(1,12)</var>
+                            <var id="monthb">maanden( monthnob )</var>
+                            <var id="bdiff">monthnob - monthno1</var>
+                            <var id="numbermonthb"> schrijven( bdiff )</var>
+                            <var id="randomno1">randRange(1,12)</var>
+                            <var id="randomno2">randRange(1,12)</var>
+                        </div>
+                
+                      <p class="problem"><var>person( 1 )</var> is op <var>day</var> <var>month1</var> jarig. <var>person( 2 )</var> is precies <var>numbermonthb</var> maand<span data-if="bdiff !== 1">en</span> later jarig.</p>
+                      <p class="question">Wanneer is de verjaardag van <var>person( 2 )</var>?</p>
+                      <p class="solution"><var>day</var> <var>monthb</var></p>
+                      <ul class="choices">
+                          <li><var>day</var> <var>montha</var></li>
+                          <li><var>day</var> <var>maanden( randomno1 )</var></li>
+                          <li><var>day</var> <var>maanden( randomno2 )</var></li>
+                      </ul>
+
+                      <div class="hints">
+                          <p>De maanden van het jaar zijn op volgorde: januari, februari, maart, april, mei, juni, juli, augustus, september, oktober, november en december.</p>
+                          <p>Je moet <var>numbermonthb</var> stap<span data-if="bdiff !== 1">pen</span> verder doen vanaf <var>month1</var>.</p>
+                          <p>Dus door <var>numbermonthb</var> stap<span data-if="bdiff !== 1">pen</span> verder te gaan, komt de verjaardag van <var>person( 2 )</var> uit op <var>day</var> <var>monthb</var>.</p>
+                      </div>
+                  </div>
+              
+              </div>
+          </div>
+      </body>
+  </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html data-require="math graphie graphie-helpers getallen">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Getallen in een box aflezen</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars">
+        <var id="A">randRange( 1, 100 )</var>
+        <var id="eenheden">A % 10</var>
+        <var id="tientallen">A - eenheden</var>
+        <var id="aantaltien">tientallen/10</var>
+    </div>
+
+    <div class="problems">
+        <div>
+            <p class="problem">
+                Hieronder zie je een box van 100 bij 100 blokjes. Elk blokje stelt een getal voor. Het blokje linksbovenin is het getal 1, en het blokje rechtsonderin is het getal 100. Bij elke rij die je omlaag gaat, komt er 10 bij, en elke kolom die je naar rechts gaat, komt er 1 bij.
+            </p>
+            <p class="question">
+                Welk getal stelt het blokje voor?
+            </p>
+
+            <div class="graphie" id="tens-graph">
+                init({
+                    range: [ [-1, 11], [-2, 11] ],
+                    scale: 24
+                });
+
+                style({
+                    fill: "#6495ed",
+                    fillOpacity: 0.6,
+                    strokeWidth: 2,
+                    stroke: "#4e74ba"
+                });
+
+                var p;
+                var blocks = [];
+                graph.guess = null;
+                graph.blocks = blocks;
+
+                function select(evt) { 
+                    if (graph.guess) {
+                        blocks[graph.guess].setAttribute("fill", "#6495ed");
+                    }
+                    graph.guess = evt.target.id;
+                    blocks[graph.guess].setAttribute("fill", "orange");
+                }
+
+                for ( var i = 0; i &lt; 10; i++) {
+                    for ( var j = 0; j &lt; 10; j++ ) {
+                        p = path([ [j, i], [j+1, i], [j+1, i - 1], [j, i - 1], true ]);
+                        block = p[0];
+                        block.id = (90-i*10) + j + 1;
+                        block.addEventListener("click", select, false);
+                        blocks[block.id] = block;
+                    }
+                }
+            </div>
+
+            <div class="solution"><var>A</var>
+                </div>
+        </div>
+    </div>
+
+    <div class="hints">
+        <div> De rijen staan voor de tientallen en de kolommen staan voor de eenheden. Weet je hoe groot de tientallen en eenheden zijn voor <var>A</var>?</div>
+        <div data-if="tientallen == 0"><var>A</var> is een getal onder de 10. Kies een blokje uit de bovenste rij.</div>
+        <div data-if="tientallen == 0">Voor het getal <var>A</var> moeten we dus het <code><var>rangtelwoorden( eenheden )</var></code> blokje kiezen.</div>
+        <div data-if="(tientallen !== 0) && (eenheden == 0)">Het getal <var>A</var> is een veelvoud van tien. Het hoort dus in de uiterst rechtse kolom, bij de kolom van de getallen die eindigen op 0.</div>
+        <div data-if="(tientallen !== 0) && (eenheden == 0)">Het getal <var>A</var> is <var>aantaltien</var> keer 10, dus het hoort in de <code><var>rangtelwoorden( aantaltien+1 )</var></code> rij in de laatste kolom.</div>
+        <div data-if="(tientallen !==0) && (eenheden !==0)">Het getal <var>A</var> bestaat uit <var>tientallen</var> en <var>eenheden</var>. Het aantal tientallen kun je gebruiken om te kijken in welke rij <var>A</var> hoort en het aantal eenheden om te kijken in welke kolom <var>A</var> hoort.</div>
+        <div data-if="(tientallen !==0) && (eenheden !==0)">Aangezien het aantal tientallen <var>aantaltien</var> is, moet je de <code><var>rangtelwoorden( aantaltien+1 )</var></code> rij kiezen.</div>
+        <div data-if="(tientallen !==0) && (eenheden !==0)">Aangezien het aantal eenheden <var>eenheden</var> is, moet je het blokje uit de <code><var>rangtelwoorden( aantaltien+1 )</var></code> rij en de <code><var>rangtelwoorden( eenheden )</var></code> kolom kiezen.</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+  <html data-require="math">
+      <head>
+          <title>Ik-vorm maken</title>
+          <script src="../khan-exercise.js"></script>
+			<script>		
+				function ikvorm(word){
+					return word.substring(0, word.length-2); //remove -en
+				}
+
+				function extraletter(word){
+					var snip = ikvorm(word); //remove -en
+					return snip[snip.length-1]; // return the last letter so we know which should be removed
+				}
+				function ikvorm3(word){
+					var snip = ikvorm(word); // remove -en
+					return stam = snip.slice(0,snip.length-2) + snip.slice(snip.length-1); //return the word with the extra letter removed
+					
+				}
+			</script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+				<var id="listofwords">["bakken", "zwemmen", "schrikken", "heffen", "bellen", "willen", "zeggen"]</var>
+				<var id="currentword">randFromArray(listofwords)</var>
+              </div>
+
+              <div class="problems">
+                  <div id="problem-type-or-description">
+                      <p class="problem">Geef de ik-vorm van het onderstaande werkwoord.</p>
+                      <p class="question">Ik ... (<var>currentword</var>)</p>
+                      <p class="solution" data-type="text"><var>ikvorm3(currentword)</var></p>
+                  </div>
+              </div>
+
+              <div class="hints">
+				<p class="hint1">Om de ik-vorm van dit werkwoord te maken, hoef je alleen maar <b>-en</b> eraf te halen en een <b><var>extraletter(currentword)</var></b> weg te halen.</p>
+				<p class="hint2">Als we <b>-en</b> eraf halen, krijgen we <b><var>ikvorm(currentword)</var></b>.
+				<p class="hint3">Nu halen we nog een <b><var>extraletter(currentword)</var></b> weg.</p>
+				<p class="hint4">De ik-vorm van <var>currentword</var> is dus <var>ikvorm3(currentword)</var>.</p>
+              </div>
+          </div>
+      </body>
+  </html>

@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+  <html data-require="math">
+      <head>
+          <title>Ik-vorm maken</title>
+          <script src="../khan-exercise.js"></script>
+			<script>		
+				function ikvorm(word){
+					return word.substring(0, word.length-1); //remove -n
+				}
+
+				function extraletter(word){
+					var snip = ikvorm(word); //remove -n
+					return snip[snip.length-1]; //find the extra letter
+				}
+
+				function ikvorm4(word){
+					var snip = ikvorm(word); //remove -n
+					if(snip[snip.length-1] == snip[snip.length-2]){ //if it's a word like "gaan" or "staan"
+						return snip.slice(0, snip.length-1); //remove one of the extra letters
+					}
+					else{
+						return snip; //for other words, just return the word minus the -n
+					}
+				}
+				
+				function member(word, array){ //check which member the word is a part of
+					if(array.indexOf(word) > -1){ //if it's a part of the array, indexOf returns a number 0 or higher
+						return true; //return a Boolean with value 1 if it's a member
+					}
+					else{
+						return false; //return a Boolean with value 0 if it's not a member
+					}
+				}
+			</script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+				<var id="simplewords">["doen", "zien"]</var>
+				<var id="otherwords">["staan", "gaan"]</var>
+				<var id="listofwords">otherwords.concat(simplewords)</var>
+				<var id="currentword">randFromArray(listofwords)</var>
+              </div>
+
+              <div class="problems">
+                  <div id="problem-type-or-description">
+                      <p class="problem">Geef de ik-vorm van het onderstaande werkwoord. </p>
+                      <p class="question">Ik ... (<var>currentword</var>)</p>
+                      <p class="solution" data-type="text"><var>ikvorm4(currentword)</var></p>
+                  </div>
+              </div>
+
+              <div class="hints">
+				<p class="hint1" data-if="member(currentword, simplewords)">Om de ik-vorm van dit werkwoord te maken, hoef je alleen maar de <b>n</b> eraf te halen.</p> <!-- If the currentword is a simple word, display this hint -->
+				<p class="hint1" data-if="member(currentword, otherwords)">Om de ik-vorm van dit werkwoord te maken, moet je eerst de <b>n</b> eraf halen, en vervolgens de extra <b><var>extraletter(currentword)</var></b>.<p> <!-- If the current word is one of the other words, display this hint -->
+				<p class="hint3">De ik-vorm van <var>currentword</var> is dus <var>ikvorm4(currentword)</var>.</p>
+              </div>
+          </div>
+      </body>
+  </html>

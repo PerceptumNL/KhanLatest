@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="exercise">
-        <div class="vars" data-ensure="A !== 0 && B !== 0">
+        <div class="vars" data-ensure="!(A == 0 && B == 0)">
         <var id="A">randRange( 0, 9 )</var>
         <var id="B">randRange( 0, 9 )</var>
         <var id="Number">10*A + B</var>
@@ -23,12 +23,15 @@
             </div>
         </div>
         <div class="hints">
-            <!-- <div data-if="B === 0"> -->
-            <p>Eerst vullen we <var>Number</var> aan tot het dichtsbijzijnde tiental, namelijk <var>plus10</var>.</p>
-            <p>Van <var>Number</var> tot <var>plus10</var> is dat <var>plus10</var> - <var>Number</var> = <var>firstdif</var>.</p>
-            <p>Van <var>plus10</var> kunnen we aanvullen tot 100.</p>
-            <p>Dat is 100 - <var>plus10</var> = <var>seconddif</var>.</p>.
-            <p>Dus van <var>Number</var> tot 100 is het <var>firstdif</var> + <var>seconddif</var> = <var>Answer</var>.</p>
+            <div data-if="(A !== 9) && (B !== 0)">Eerst vullen we <var>Number</var> aan tot het dichtsbijzijnde tiental, namelijk <var>plus10</var>.</div>
+            <div data-if="(A !== 9) && (B !== 0)">Van <var>Number</var> tot <var>plus10</var> is dat <var>plus10</var> - <var>Number</var> = <var>firstdif</var>.</div>
+            <div data-if="(A !== 9) && (B !== 0)">Van <var>plus10</var> kunnen we aanvullen tot 100.</div>
+            <div data-if="(A !== 9) && (B !== 0)">Dat is 100 - <var>plus10</var> = <var>seconddif</var>.</div>.
+            <div data-if="(A !== 9) && (B !== 0)">Dus van <var>Number</var> tot 100 is het <var>firstdif</var> + <var>seconddif</var> = <var>Answer</var>.</div>
+            <div data-if="A == 9">We kunnen <var>Number</var> in één keer aanvullen tot 100.</div>
+            <div data-if="A == 9">Van <var>Number</var> tot 100 is het 100 - <var>Number</var> = <var>Answer</var>.</div>
+            <div data-if="B == 0"><var>Number</var> is een tiental. Aanvullen tot 100 kan in één keer.</div>
+            <div data-if="B==0">Dus van <var>Number</var> tot 100 is het 100 - <var>Number</var> = <var>Answer</var>.</div>
         </div>            
     </div>
 </body>

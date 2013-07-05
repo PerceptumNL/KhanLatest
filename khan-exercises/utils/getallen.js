@@ -21,14 +21,14 @@ $.extend(KhanUtil, {
     	"eenenzestig", "tweeënzestig", "drieënzestig", "vierenzestig", 
     	"vijfenzestig", "zesenzestig", "zevenenzestig", "achtenzestig",
     	"negenenzestig", "zeventig", "eenenzeventig", "tweeënzeventig", 
-    	"drieënzeventig", "vierenzeventig", "achtenzeventig", 
-    	"negenenzeventig", "tachtig", "eenentachtig", "tweeëntachtig",
-    	"drieëntachtig", "vierentachtig", "vijfentachtig", "zesentachtig",
-    	"zevenentachtig", "achtentachtig", "negenentachtig", "negentig",
-    	"eenennegentig", "tweeënnegentig", "drieënnegentig", "vierenegentig",
-    	"vijfennegentig", "zesennegentig", "zevenennegentig", "achtennegentig",
-    	"negenennegentig", "honderd"];
-    	return getallen[ num -1 ];
+    	"drieënzeventig", "vierenzeventig", "vijfenzeventig", "zesenzeventig", 
+        "zevenenzeventig", "achtenzeventig", "negenenzeventig", "tachtig", 
+        "eenentachtig", "tweeëntachtig", "drieëntachtig", "vierentachtig", 
+        "vijfentachtig", "zesentachtig", "zevenentachtig", "achtentachtig", 
+        "negenentachtig", "negentig", "eenennegentig", "tweeënnegentig", 
+        "drieënnegentig", "vierenegentig", "vijfennegentig", "zesennegentig", 
+        "zevenennegentig", "achtennegentig", "negenennegentig", "honderd"];
+    	return getallen[ num - 1 ];
     },
 
     isGreater: function(Number1,Number2) {

@@ -15,7 +15,7 @@
             <var id="Aantal2">randRange(0,2)</var>
             <var id="Aantal1">randRange(0,1)</var>
             <var id="Totaalbedrag">Aantal50 * 50 + Aantal20 * 20 + Aantal10 * 10 + Aantal5 * 5 + Aantal2 * 2 + Aantal1</var>
-            <var id="NICE_TOTAALBEDRAG"> Totaalbedrag > 5 ? Totaalbedrag : "0" + "" + Totaalbedrag</var>
+            <var id="NICE_TOTAALBEDRAG"> Totaalbedrag > 10 ? Totaalbedrag : "0" + "" + Totaalbedrag</var>
         </div>
         <div class="problems">
             <div>
@@ -32,17 +32,28 @@
             </div>
         </div>
         <div class="hints">
-                <p>Begin met kijken of het grootste muntje (50 cent) in het bedrag past.</p>
-                <div data-if="Aantal50===1">1 munt van 50 cent past nog in €0,<var>NICE_TOTAALBEDRAG</var>, maar 2 is teveel. We houden dan <var>NICE_TOTAALBEDRAG</var> cent - 50 cent = <var>NICE_TOTAALBEDRAG - 50</var> cent over.
-                </div>
-                <div data-else-if="Aantal50===0">1 munt van 50 cent past niet meer in <var>NICE_TOTAALBEDRAG</var>. Kijk nu of een munt van 20 cent er wel in past.</div>
-                <div data-if="((Aantal50===1) && (Aantal20===2))">Het volgende muntje is 20 cent. Deze past 2 keer in <var>NICE_TOTAALBEDRAG - 50 </var> en dan is er nog <var>NICE_TOTAALBEDRAG - 50 </var> cent - 40 = <var>NICE_TOTAALBEDRAG - 90</var> over.</div>
-                <div data-if="(Aantal50===1) && (Aantal20===2) && ((Aantal5+Aantal2+Aantal1) !== 0)">Van het overgebleven geld moet je kijken of er nog meer muntjes in passen op dezelfde wijze als voorheen.</div>
-                <div data-if="(Aantal50===1) && (Aantal20===2) && (Aantal5 !== 0)">1 munt van 5 cent past nog in <var>NICE_TOTAALBEDRAG - 90</var>, maar 2 is te veel. We houden dan <var>NICE_TOTAALBEDRAG - 90</var> cent - 5 cent = <var>NICE_TOTAALBEDRAG - 95</var> over.</div>
-                <div data-if="(Aantal50===1) && (Aantal20===2) && (Aantal5 !== 0) && (Aantal2 ===2)">In het overgebleven geld passen niet één maar zelfs twee muntjes van 2 cent. We houden <var>NICE_TOTAALBEDRAG - 95</var> cent - 4 cent = <var>NICE_TOTAALBEDRAG - 99</var> over. We hebben dus 1 keer 50 cent, 2 keer 20 cent, 1 keer 5 cent en 2 keer 2 cent gebruikt.</div>
-                <div data-if="(Aantal50===1) && (Aantal20===2) && (Aantal5 !== 0) && (Aantal2 ===1)">In het overgebleven geld past één muntje van 2 cent. We houden <var>NICE_TOTAALBEDRAG - 95</var> cent - 2 cent = <var>NICE_TOTAALBEDRAG - 97</var> over. We hebben dus 1 keer 50 cent, 2 keer 20 cent, 1 keer 5 cent en 1 keer 2 cent gebruikt.</div>
-                <div data-else>Kijk eerst of 50 cent er in past en hoe vaak, dan hoe vaak je nog 20 cent erin kan passen enzovoorts.</div>
+                <p>Begin met kijken of het grootste muntje (50 euro) in het bedrag past.</p>
 
+                <div data-if="Aantal50===1">1 muntje van 50 cent past nog in €0,<var>NICE_TOTAALBEDRAG</var>, maar 2 is teveel. We houden dan €0,<var>NICE_TOTAALBEDRAG</var> euro - €0,<var>Aantal50*50</var> euro = €0,<span data-if="Totaalbedrag - Aantal50*50 < 10">0</span><var>Totaalbedrag - Aantal50*50</var> euro over.
+                </div>
+                <div data-else-if="Aantal50===0">1 muntje van 50 cent past niet in €0,<var>NICE_TOTAALBEDRAG</var>. Kijk nu of een muntje van 20 cent er wel in past.</div>
+
+                <div data-if="Aantal20>0">Het volgende muntje is 20 cent. Deze past <var>Aantal20</var> keer in €0,<span data-if="Totaalbedrag - Aantal50*50 < 10">0</span><var>Totaalbedrag - Aantal50*50</var> en dan is er nog €0,<span data-if="Totaalbedrag - Aantal50*50 < 10">0</span><var>Totaalbedrag - Aantal50*50 </var> - €0,<var>Aantal20*20</var> cent = €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20</var> cent over.</div>
+                <div data-else-if="Aantal20===0">1 muntje van 20 cent past niet in €0,<span data-if="Totaalbedrag - Aantal50*50 < 10">0</span><var>Totaalbedrag - Aantal50*50</var>. Kijk nu of een muntje van 10 cent er wel in past.</div>
+
+                <div data-if="Aantal10>0">Het volgende muntje is 10 cent. Deze past <var>Aantal10</var> keer in €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20</var> en dan is er nog €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20</var> cent - €0,<var>Aantal10*10</var> cent = €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10</var> cent over.</div>
+                <div data-else-if="Aantal10===0">1 muntje van 10 cent past niet meer in €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20</var>. Kijk nu of een muntje van 5 cent er wel in past.</div>
+
+                <div data-if="Aantal5>0">Het volgende muntje is 5 cent. Deze past <var>Aantal5</var> keer in €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10</var> en dan is er nog €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10</var> euro - €0,0<var>Aantal5*5</var> euro = €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5< 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5</var> euro over.</div>
+                <div data-else-if="Aantal5===0">1 muntje van 5 cent past niet meer in €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10</var>. Kijk nu of een muntje van 2 cent er wel in past.</div>
+
+                <div data-if="Aantal2>0">Het volgende muntje is 2 cent. Deze past <var>Aantal2</var> keer in €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5</var> en dan is er nog €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5</var> euro - <var>Aantal2*2</var> euro = €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 Aantal2*2 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 - Aantal2*2</var> euro over.</div>
+                <div data-else-if="Aantal2===0">1 muntje van 2 euro past niet meer in €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5< 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5</var>. Kijk nu of een muntje van 1 euro er wel in past.</div>
+
+                <div data-if="Aantal1>0">Het laatste muntje is 1 euro. Deze past <var>Aantal1</var> keer in €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 Aantal2*2 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 - Aantal2*2</var> en dan is er €0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 Aantal2*2 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 - Aantal2*2</var> euro - €0,0<var>Aantal1*1</var> euro = <€0,<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 Aantal2*2 - Aantal1*1 < 10">0</span>var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 - Aantal2*2 - Aantal1*1</var> euro over.</div>
+                <div data-else-if="Aantal1===0">1 muntje van 1 euro past niet meer in €0,0<span data-if="Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 Aantal2*2 < 10">0</span><var>Totaalbedrag - Aantal50*50 - Aantal20*20 - Aantal10*10 - Aantal5*5 - Aantal2*2</var>.</div>
+                
+                <div>Dus om €<var>Totaalbedrag</var> gepast te betalen hebben we <var>Aantal50</var> muntje<span data-if="Aantal50 !== 1">s</span> van 50, <var>Aantal20</var> muntje<span data-if="Aantal20 !== 1">s</span> van 20, <var>Aantal10</var> muntje<span data-if="Aantal10 !== 1">s</span> van 10, <var>Aantal5</var> muntje<span data-if="Aantal5 !== 1">s</span> van 5, <var>Aantal2</var> muntje<span data-if="Aantal2 !== 1">s</span> van 2 en <var>Aantal1</var> muntje<span data-if="Aantal1 !== 1">s</span> van 1 nodig.</div>
      </div>
     </div>
 </body>

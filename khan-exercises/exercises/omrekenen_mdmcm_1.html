@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format getallen spin word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Omrekenen meters, decimeters en centimeters</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="problems">
+            <div class="meterstodecimeters">
+                <div class="vars">
+                    <var id="meters">randRange( 1, 10 )</var>
+                    <var id="Answer">meters*10</var>
+                </div>
+
+                <p class="question">Hoeveel decimeter is <var>meters</var> meter?</p>
+                
+                <p class="solution"><var>Answer</var></p>
+                <div class="hints">
+                    <p>We weten dat 1 meter 10 decimeter is.</p>
+                    <p>Als 1 meter 10 decimeter is, hoeveel decimeter is <var>meters</var> meter dan?</p>
+                    <p>Het antwoord is <var>meters</var> x 10 = <var>meters*10</var> decimeter.</p>
+                </div>
+            </div>
+
+            <div class="meterstocentimeters">
+                <div class="vars">
+                    <var id="meters">randFromArray([0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9,0.95,1])</var>
+                    <var id="Answer">meters*100</var>
+                </div>
+                <p class="question">Hoeveel centimeter is <var>meters</var> meter?</p>
+                <p class="solution"><var>Answer</var></p>
+                <div class="hints">
+                   <p>We weten dat 1 meter 100 centimeter is.</p>
+                    <p>Als 1 meter 100 centimeter is, hoeveel centimeter is <var>meters</var> meter dan?</p>
+                    <p>Het antwoord is <var>meters</var> x 100 = <var>meters*100</var> centimeter.</p>
+                </div>
+            </div>
+
+            <div class="decimeterstocentimeters">
+                <div class="vars">
+                    <var id="decimeters">randRange( 1, 10 )</var>
+                    <var id="Answer">decimeters*10</var>
+                </div>
+
+                <p class="question">Hoeveel centimeter is <var>decimeters</var> decimeter?</p>
+                
+                <p class="solution"><var>Answer</var></p>
+                <div class="hints">
+                    <p>We weten dat 1 decimeter 10 centimeter is.</p>
+                    <p>Als 1 decimeter 10 centimeter is, hoeveel centimeter is <var>decimeters</var> decimeter dan?</p>
+                    <p>Het antwoord is <var>decimeters</var> x 10 = <var>decimeters*10</var> centimeters.</p>
+                </div>
+            </div>
+        </div>     
+    </div>
+</body>
+</html>

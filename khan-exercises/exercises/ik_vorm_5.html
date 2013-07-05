@@ -1,0 +1,87 @@
+ <!DOCTYPE html>
+  <html data-require="math">
+      <head>
+          <title>Ik-vorm maken</title>
+          <script src="../khan-exercise.js"></script>
+			<script>		
+				function ikvorm(word){
+					return word.substring(0, word.length-2); //remove -en
+				}
+				
+				function extraletter(word){
+					var snip = ikvorm(word); //remove -en
+					return snip[snip.length-2]; //return the second-last letter
+				}				
+
+				function letters(word){
+					var snip = ikvorm(word);
+					if(snip[snip.length-1]=="v"){ //if word minus en ends in v
+						return ["v", "f"]; //return an array with v and f
+					}
+					else if(snip[snip.length-1]=="z"){ //if word minus en ends in z
+						return ["z", "s"];	//return an array with z and s
+					}
+				}				
+				
+				function ikvorm5(word, extraletterarr){ //the html vars can't be used, so it needs to be a parameter
+					var snip = ikvorm(word); //remove -en
+					var letter = snip[snip.length-1]; //get the last letter -> is it z or v?
+					if(snip[snip.length-1] == "v"){ //if it is v,
+						var stam = snip.slice(0, snip.length-1) + "f"; //remove the v and add an f
+						if(member(word, extraletterarr)){ //if the word is one of the extra letter words
+							var letteradd = stam[stam.length-2]; //determine which letter should be added
+							return stam.slice(0, stam.length-1) + letteradd + stam.slice(stam.length-1, stam.length); //and add the letter
+						}
+						else{
+							return stam; //if the word is one of the regular words, just return stam
+						}
+					}
+					else if(snip[snip.length-1] == "z"){ //if the last letter is z
+						var stam = snip.slice(0, snip.length-1) + "s"; //remove the z and add an s
+						if(member(word, extraletterarr)){ //if the word is one of the extra letter words
+							var letteradd = stam[stam.length-2]; //determine which letter should be added
+							return stam.slice(0, stam.length-1) + letteradd + stam.slice(stam.length-1, stam.length); //and add the letter
+						}
+						else{
+							return stam; //if the word is one of the regular words, just return stam
+						}
+					}
+				}
+				
+				function member(word, array){ //check which member the word is a part of
+					if(array.indexOf(word) > -1){ //if it's a part of the array, indexOf returns a number 0 or higher
+						return true; //return a Boolean with value 1 if it's a member
+					}
+					else{
+						return false; //return a Boolean with value 0 if it's not a member
+					}
+				}
+			</script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+				<var id="extraletterwords">["lezen", "leven", "geloven", "beloven"]</var> <!--words that get an extra vowel -->
+				<var id="simplewords">["verven", "niezen", "verhuizen"]</var> <!--words that don't get an extra vowel -->
+				<var id="listofwords">extraletterwords.concat(simplewords)</var>
+				<var id="currentword">randFromArray(listofwords)</var>
+              </div>
+
+              <div class="problems">
+                  <div id="problem-type-or-description">
+                      <p class="problem">Geef de ik-vorm van het onderstaande werkwoord.</p>
+                      <p class="question">Ik ... (<var>currentword</var>)</p>
+                      <p class="solution" data-type="text"><var>ikvorm5(currentword, extraletterwords)</var></p>
+                  </div>
+              </div>
+
+              <div class="hints">
+				<p class="hint1">Om de ik-vorm van dit werkwoord te maken, moet je eerst <b>-en</b> eraf halen.</p>
+				<p class="hint2">Vervolgens verander je de <b><var>letters(currentword)[0]</var></b> in een <b><var>letters(currentword)[1]</var></b>.</p>
+				<p class="hint3" data-if="member(currentword, extraletterwords)">Vervolgens voeg je een extra <b><var>extraletter(currentword)</var></b> toe.</p>
+				<p class="hint4">De stam van <var>currentword</var> is dus <var>ikvorm5(currentword, extraletterwords)</var>.</p>
+
+              </div>
+          </div>
+      </body>
+  </html>

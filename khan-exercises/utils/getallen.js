@@ -21,14 +21,14 @@ $.extend(KhanUtil, {
     	"eenenzestig", "tweeënzestig", "drieënzestig", "vierenzestig", 
     	"vijfenzestig", "zesenzestig", "zevenenzestig", "achtenzestig",
     	"negenenzestig", "zeventig", "eenenzeventig", "tweeënzeventig", 
-    	"drieënzeventig", "vierenzeventig", "achtenzeventig", 
-    	"negenenzeventig", "tachtig", "eenentachtig", "tweeëntachtig",
-    	"drieëntachtig", "vierentachtig", "vijfentachtig", "zesentachtig",
-    	"zevenentachtig", "achtentachtig", "negenentachtig", "negentig",
-    	"eenennegentig", "tweeënnegentig", "drieënnegentig", "vierenegentig",
-    	"vijfennegentig", "zesennegentig", "zevenennegentig", "achtennegentig",
-    	"negenennegentig", "honderd"];
-    	return getallen[ num +1 ];
+    	"drieënzeventig", "vierenzeventig", "vijfenzeventig", "zesenzeventig", 
+        "zevenenzeventig", "achtenzeventig", "negenenzeventig", "tachtig", 
+        "eenentachtig", "tweeëntachtig", "drieëntachtig", "vierentachtig", 
+        "vijfentachtig", "zesentachtig", "zevenentachtig", "achtentachtig", 
+        "negenentachtig", "negentig", "eenennegentig", "tweeënnegentig", 
+        "drieënnegentig", "vierenegentig", "vijfennegentig", "zesennegentig", 
+        "zevenennegentig", "achtennegentig", "negenennegentig", "honderd"];
+    	return getallen[ num - 1 ];
     },
 
     isGreater: function(Number1,Number2) {
@@ -46,7 +46,14 @@ $.extend(KhanUtil, {
     },
 
     rangtelwoorden: function(rang) {
-        var rangen = ["eerste", "tweede", "derde", "vierde", "vijfde", "zesde", "zevende", "achtste", "negende", "tiende"];
+        var rangen = ["eerste", "tweede", "derde", "vierde", "vijfde", "zesde",
+        "zevende", "achtste", "negende", "tiende"];
         return rangen[ rang - 1];
+    },
+
+    maanden: function(nummer) {
+        var lijstvanmaanden = ["januari", "februari", "maart", "april", "mei",
+        "juni", "juli", "augustus", "september", "oktober", "november", "december"];
+        return lijstvanmaanden[ nummer - 1];
     }
 })

@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+  <html data-require="math">
+      <head>
+          <title>Ik-vorm maken</title>
+          <script src="../khan-exercise.js"></script>
+			<script>
+				function ikvorm(word){
+					return word.substring(0, word.length-2); //remove -en
+				}
+			</script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+				<var id="listofwords">["barsten", "melken", "dwingen", "worden", "rijden", "antwoorden", "vluchten", "strijden"]</var>
+				<var id="currentword">randFromArray(listofwords)</var>
+              </div>
+
+              <div class="problems">
+                  <div id="problem-type-or-description">
+                      <p class="problem">Geef de ik-vorm van het onderstaande werkwoord.</p>
+                      <p class="question">Ik ... (<var>currentword</var>)</p>
+                      <p class="solution" data-type="text"><var>ikvorm(currentword)</var></p>
+                  </div>
+              </div>
+
+              <div class="hints">
+				<p class="hint1">Om de ik-vorm van dit werkwoord te maken, hoef je alleen maar <b>-en</b> eraf te halen.</p>
+				<p class="hint2">De ik-vorm van <var>currentword</var> is dus <var>ikvorm(currentword)</var>.</p>
+              </div>
+          </div>
+      </body>
+  </html>

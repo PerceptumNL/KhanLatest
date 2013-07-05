@@ -8,17 +8,13 @@
 <body>
     <div class="exercise">
     <div class="vars" data-ensure="N !== 0">
-        <var id="A">0</var> <!-- randRange( 0, 1 )</var> -->
         <var id="B">randRange( 0, 9 )</var>
         <var id="C">randRange( 0, 9 )</var>
-        <var id="N">10 * B + C + A</var>
+        <var id="N">10 * B + C</var>
         <var id="CorrectAnswer">schrijven( N )</var>
-        <!-- <var id="Answer1">schrijven( 10*A + B + C )</var> -->
         <var id="Answer1a">schrijven( 10*B )</var>
         <var id="Answer1b">schrijven( C )</var>
-        <var id="Answer2">schrijven( 10*C + B + A )</var>
-        <!-- <var id="Answer3">schrijven( 10*B + A )</var>
-        <var id="Answer4">schrijven( 10*C + A )</var> -->
+        <var id="Answer2">schrijven( 10*C + B )</var>
         <var id="Answer5a">schrijven( 10*C )</var>
         <var id="Answer5b">schrijven( B )</var>
         <var id="tientallen">10*B</var>
@@ -28,7 +24,7 @@
     <div class="problems">
         <div>
             <div class="question">
-                <p>Lees het getal <code><var>N</var></code> hardop voor en kies je antwoord.</p> <!-- for example "62" -->
+                <p>Lees het getal <var>N</var> hardop voor en kies je antwoord.</p> <!-- for example "62" -->
             </div>
             <p class="solution"><code><var>CorrectAnswer</var></code></p > <!-- for example "tweeënzestig" -->
             <ul class="choices">
@@ -38,7 +34,8 @@
                 <li><code><var>Answer4</var></code></li> -->
                 <li><code><var>Answer1a</var><var>Answer1b</var></code></li> <!-- for example "zestigtwee" -->
                 <li><code><var>Answer1b</var><var>Answer1a</var></code></li> <!-- for example "tweezestig" -->
-                <li><code><var>Answer5b</var><var>Answer5a</var></code></li> 
+                <li><code><var>Answer5b</var><var>Answer5a</var></code></li> <!-- for example "twintigzes" -->
+                <li><code><var>Answer5a</var><var>Answer5b</var></code></li> <!-- for example "zestwintig" -->
             </ul>
         </div>
     </div>

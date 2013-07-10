@@ -389,6 +389,9 @@ javascript = {
             "utils/time.js",
             "utils/unit-circle.js",
             "utils/liesbeth-helpers.js",
+            "utils/dutchadder.js",
+            "utils/dutchdivider.js",
+            "utils/getallen.js",
         ]
     },
     "scratchpads": {

@@ -3236,16 +3236,22 @@ div.arrow-left-shadow {
     /*background-image: url("/images/logos/khan-academie2.png");*/
     background-image: url("/images/logos/khan-academie-poppetje-darker.png");
     /* background-size: 80% 90%; */ /* change to 100% */
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     left: 0;
     /*margin-left: 24px;*/
+    margin-top: 10px;
+    left: 0;
 }
 #stichting {
     display: inline-block;
-    
-    width: 180px;
-    height: 60px;
+    float: left;
+    width: 130px;
+    height: 80px;
     background-image: url("/images/flip-in-de-klas.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    left: 0;
 }
 #navbar a.watch-link:hover,
 #navbar a.watch-link:active,

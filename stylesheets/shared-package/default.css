@@ -3228,17 +3228,24 @@ div.arrow-left-shadow {
 #logo {
     display: inline-block;
     float:left;
-    width: 310px;
-    height: 120px;
+    /*width: 310px;
+    height: 120px;*/
+    width: 150px;
+    height: 60px;
 	/*height: 50px;*/
     /*background-image: url("/images/logos/khan-academie2.png");*/
     background-image: url("/images/logos/khan-academie-poppetje-darker.png");
-    background-size: 80% 90%;
+    /* background-size: 80% 90%; */ /* change to 100% */
     background-repeat: no-repeat;
     left: 0;
-    margin-left: 24px;
+    /*margin-left: 24px;*/
 }
-
+#stichting {
+    display: inline-block;
+    width: 150px;
+    height: 60px;
+    background-image: url("/images/flip-in-de-klas.png");
+}
 #navbar a.watch-link:hover,
 #navbar a.watch-link:active,
 #navbar a.watch-link:focus {

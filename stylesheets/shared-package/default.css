@@ -3242,7 +3242,8 @@ div.arrow-left-shadow {
 }
 #stichting {
     display: inline-block;
-    width: 150px;
+    
+    width: 180px;
     height: 60px;
     background-image: url("/images/flip-in-de-klas.png");
 }

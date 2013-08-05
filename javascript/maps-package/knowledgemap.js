@@ -125,7 +125,7 @@ function KnowledgeMap(params) {
 
     if (typeof google === "undefined") {
         alert("Zorg dat browser extensies of add-on's die google.com blokkeren worden uitgeschakeld,\n" +
-                "dit is nodig om de Khan Academie oefeningen te tonen.\n\nSchakel extensies en add-on's uit en herstart je browser.");
+                "dit is nodig om de Iktel oefeningen te tonen.\n\nSchakel extensies en add-on's uit en herstart je browser.");
         return;
     }
 

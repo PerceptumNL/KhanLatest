@@ -36,7 +36,7 @@ if (typeof Profile !== "undefined") {
                 ],
                 title:"Login om je profiel op te slaan en te personaliseren!",
                 description:"Jouw profielpagina laat je precies zijn welke " +
-                    "voortgang je hebt geboekt op Khan Academie. Als je " +
+                    "voortgang je hebt geboekt op Iktel. Als je " +
                     "inlogt, kun je jouw profiel aanpassen en delen " +
                     "met je vrienden!",
                 overlay:true

@@ -464,15 +464,16 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .footer-container {
     width: 1000px;
     margin:0 auto;
-    padding-top: 30px;
-}
+    }
 .main-links {
     display: inline-block;
     line-height: 30px;
+    padding-top: 54px;
+    margin-left: 89px;
 }
 .main-links  ul {
     /*color: black;*/
-    width: 220px;
+    width: 183px;
     padding: 10px;
     display:inline-block;
     vertical-align: top;
@@ -3232,8 +3233,10 @@ div.arrow-left-shadow {
     height: 120px;*/
     width: 150px;
     text-align: center;
-    font-size: 60px;
+    font-size: 55px;
     color: #459F6F;
+    margin-left: 14px;
+    margin-right: 36px;
 	/*height: 50px;*/
     /*background-image: url("/images/logos/khan-academie2.png");*/
     /*background-image: url("/images/logos/khan-academie-poppetje-darker.png");*/

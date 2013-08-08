@@ -76,7 +76,7 @@
         <meta property="og:title" content="Iktel"/>
         <meta property="og:description"
               content="Leer wat je wil, wanneer je het wil en in je eigen tempo. En ook nog eens gratis."/>
-        <meta property="og:image" content="http://www.khanacademie.nl/images/khan-logo-header.png"/>
+        <meta property="og:image" content="http://www.iktel.nl/images/khan-logo-header.png"/>
         <meta property="fb:page_id" content="123650984422563"/>
     {% endblock meta_facebook_tags %}
 
@@ -111,7 +111,7 @@
     <script type="text/javascript">
         {%- if not hide_analytics -%}
             _gaq.push(['_setAccount', 'UA-28120495-1']);
-            _gaq.push(['_setDomainName', '.khanacademie.nl']);
+            _gaq.push(['_setDomainName', '.iktel.nl']);
             _gaq.push(['_trackPageview']);
             _gaq.push(['_trackPageLoadTime']);
             {% for variable in ga_custom_vars %}
@@ -123,7 +123,7 @@
 
             // For OER Analytics
             _gaq.push(['ht._setAccount', 'UA-28120495-1']);
-            _gaq.push(['ht._setDomainName', '.khanacademie.nl']);
+            _gaq.push(['ht._setDomainName', '.iktel.nl']);
             _gaq.push(['ht._trackPageview']);
 
             // Mixpanel
@@ -212,6 +212,7 @@
             <div id="top-header">
                 <div class="top-header-links">
                     <div id="navbar" class="overflow overflow-white"> {# class="overflow" #}
+                        <a href="/"><div id="logo">iktel.nl</div></a>
                         <!-- Old logo and old name
                         <a id="logo" href="/" title="Naar de homepage!" data-tag="Header">
                             {# <img src="/images/logos/khan-academie2.png"> #}
@@ -274,8 +275,8 @@
                                         <span class="caret"></span>
                                     </a>
                                     <ul>
-                                        <li><a href="http://wiki.khanacademie.nl/">Wiki</a></li>
-                                        <li><a href="http://blog.khanacademie.nl/">Blog</a></li>
+                                        <li><a href="http://wiki.iktel.nl/">Wiki</a></li>
+                                        <li><a href="http://blog.iktel.nl/">Blog</a></li>
                                         <li><a href="/voorleraren">Handleiding</a></li>
                                     </ul>
                                     <!-- Note: drop-down behaviour defined in javascript (pageutil.js and the dropdown.js jQuery plugin) -->
@@ -319,8 +320,9 @@
             {# <div class="clear"></div> #}
             {% block pagecontent %}
             {% endblock pagecontent %}
-            <div id="end-of-page-spacer" style="height: 38px;">&nbsp;</div>
+<!--            
             <div class="clear"></div>
+-->
         </div>
     </div>
 </div>

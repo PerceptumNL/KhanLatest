@@ -52,7 +52,7 @@ var Social = {
             method: "feed",
             name: "Ik heb zojuist de  " + desc + " badge" + (activity ? " in " + activity : "") + " op Iktel!",
             link: url,
-            picture: (icon.substring(0, 7) === "http://" ? icon : "http://www.khanacademie.nl/" + icon),
+            picture: (icon.substring(0, 7) === "http://" ? icon : "http://www.iktel.nl/" + icon),
             caption: url,
             description: "Deze kan je ook verdienen als je " + ext
         });
@@ -63,9 +63,9 @@ var Social = {
         FB.ui({
             method: "feed",
             name: name,
-            link: "http://www.khanacademie.nl/" + url,
-            picture: "http://www.khanacademie.nl/images/handtreehorizontal_facebook.png",
-            caption: "www.khanacademie.nl",
+            link: "http://www.iktel.nl/" + url,
+            picture: "http://www.iktel.nl/images/handtreehorizontal_facebook.png",
+            caption: "www.iktel.nl",
             description: desc,
             message: "Ik heb zojuist " + name + " geleerd op Iktel"
         });
@@ -78,11 +78,11 @@ var Social = {
         FB.ui({
             method: "feed",
             name: amount + " vraag/vragen" + plural + " beantwoord!",
-            link: "http://www.khanacademie.nl/exercisedashboard",
-            picture: "http://www.khanacademie.nl/images/proficient-badge-complete.png",
-            caption: "www.khanacademie.nl",
-            description: "Ik heb zojuist " + amount + "geantwoord" + plural + " " + prof + " " + exer + " op www.khanacademie.nl" ,
-            message: "Ik heb " + exer + " geoefend op http://www.khanacademie.nl"
+            link: "http://www.iktel.nl/exercisedashboard",
+            picture: "http://www.iktel.nl/images/proficient-badge-complete.png",
+            caption: "www.iktel.nl",
+            description: "Ik heb zojuist " + amount + "geantwoord" + plural + " " + prof + " " + exer + " op www.iktel.nl" ,
+            message: "Ik heb " + exer + " geoefend op http://www.iktel.nl"
         });
         return false;
 

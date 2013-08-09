@@ -14,7 +14,7 @@ from app import App
 from about import util_about
 import user_util
 
-TUMBLR_URL = "http://blog.khanacademie.nl"
+TUMBLR_URL = "http://blog.iktel.nl"
 POSTS_PER_PAGE = 5
 
 

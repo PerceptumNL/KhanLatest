@@ -52,7 +52,7 @@ class RSSBlog(db.Model):
     @staticmethod
     def fetch_feed():
 
-        python_wiki_rss_url = "http://blog.khanacademie.nl/feeds/posts/default?alt=rss"
+        python_wiki_rss_url = "http://blog.iktel.nl/feeds/posts/default?alt=rss"
         feed = feedparser.parse(python_wiki_rss_url)
         entries = feed["items"]
 

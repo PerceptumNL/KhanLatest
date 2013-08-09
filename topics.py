@@ -77,7 +77,7 @@ class EditContent(request_handler.RequestHandler):
         layout.update_from_live(edit_version)
         try:
             response = urlfetch.fetch(
-                url="http://www.khanacademie.nl/api/v1/topictree",
+                url="http://www.iktel.nl/api/v1/topictree",
                 deadline=25)
             topictree = json.loads(response.content)
 

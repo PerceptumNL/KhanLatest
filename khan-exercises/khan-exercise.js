@@ -2624,7 +2624,7 @@ var Khan = (function() {
             // to fall back to jsonp.
             $.ajax({
 
-                url: (testMode ? "http://www.khanacademie.nl/" : "/") + "reportissue",
+                url: (testMode ? "http://www.iktel.nl/" : "/") + "reportissue",
                 type: testMode ? "GET" : "POST",
                 data: dataObj,
                     //testMode ? {json: JSON.stringify(dataObj)} :

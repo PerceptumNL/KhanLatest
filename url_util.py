@@ -77,7 +77,7 @@ def secure_url(url):
 
     _, netloc, path, query, fragment = _get_url_parts(url)
 
-    if netloc.lower().endswith(".khanacademie.nl"):
+    if netloc.lower().endswith(".iktel.nl"):
         # Vanity domains can't handle https - but all the ones we own
         # are simple CNAMEs to the default app engine instance.
         # http://code.google.com/p/googleappengine/issues/detail?id=792
@@ -107,7 +107,7 @@ def insecure_url(url):
     if netloc.lower() == "%s" % get_default_version_hostname():
         # https://khan-academy.appspot.com is the HTTPS equivalent of the
         # default appengine instance
-        netloc = "www.khanacademie.nl"
+        netloc = "www.iktel.nl"
 
     return urlparse.urlunsplit(("http", netloc, path, query, fragment))
 
@@ -130,8 +130,8 @@ def opengraph_url(relative_url):
 
     """
     host = os.environ['HTTP_HOST']
-    if App.is_dev_server or not host.endswith(".khanacademie.nl"):
-        return absolute_url(relative_url, host="www.khanacademie.nl")
+    if App.is_dev_server or not host.endswith(".iktel.nl"):
+        return absolute_url(relative_url, host="www.iktel.nl")
     else:
         return absolute_url(relative_url)
 
@@ -143,7 +143,7 @@ def absolute_url(relative_url, host=None):
 
 def static_url(relative_url):
     host = os.environ['HTTP_HOST'].lower()
-    if not get_default_version_hostname() or not host.endswith(".khanacademie.nl"):
+    if not get_default_version_hostname() or not host.endswith(".iktel.nl"):
         return relative_url
     else:
         # when using a wildcard url to serve a nondefault version, ensure
@@ -192,7 +192,7 @@ def is_khanacademy_url(url):
     scheme, netloc, path, query, fragment = urlparse.urlsplit(url)
     # Check all absolute URLs
     if (netloc and
-            not netloc.endswith(".khanacademie.nl") and
+            not netloc.endswith(".iktel.nl") and
             not netloc.endswith(".%s" % get_default_version_hostname()) and
             not netloc == "%s" % get_default_version_hostname()):
         return False

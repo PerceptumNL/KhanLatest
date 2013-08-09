@@ -35,15 +35,15 @@ class TestUrl(unittest.TestCase):
             del os.environ['HTTP_HOST']
 
     def test_url_insecuring_on_normal_url(self):
-        self.stub_server_name('www.khanacademie.nl')
+        self.stub_server_name('www.iktel.nl')
 
         # relative URL
-        self.assertEqual("http://www.khanacademie.nl/postlogin",
+        self.assertEqual("http://www.iktel.nl/postlogin",
                          url_util.insecure_url("/postlogin"))
 
         # absolute URL
-        self.assertEqual("http://www.khanacademie.nl/postlogin",
-                         url_util.insecure_url("https://www.khanacademie.nl/postlogin"))
+        self.assertEqual("http://www.iktel.nl/postlogin",
+                         url_util.insecure_url("https://www.iktel.nl/postlogin"))
         self.restore_server_name()
 
     def test_url_securing_on_appspot_url(self):
@@ -70,15 +70,15 @@ class TestUrl(unittest.TestCase):
         def is_ka_url(url):
             return url_util.is_khanacademy_url(url)
 
-        self.stub_server_name("www.khanacademie.nl")
+        self.stub_server_name("www.iktel.nl")
         print url_util.static_url("/images/foo")
         self.assertTrue(is_ka_url("/relative/url"))
         self.assertTrue(is_ka_url(url_util.absolute_url("/relative/url")))
         self.assertTrue(is_ka_url(url_util.static_url("/images/foo")))
-        self.assertTrue(is_ka_url("http://www.khanacademie.nl"))
-        self.assertTrue(is_ka_url("http://smarthistory.khanacademie.nl"))
-        self.assertTrue(is_ka_url("http://www.khanacademie.nl/"))
-        self.assertTrue(is_ka_url("http://www.khanacademie.nl/foo"))
+        self.assertTrue(is_ka_url("http://www.iktel.nl"))
+        self.assertTrue(is_ka_url("http://smarthistory.iktel.nl"))
+        self.assertTrue(is_ka_url("http://www.iktel.nl/"))
+        self.assertTrue(is_ka_url("http://www.iktel.nl/foo"))
         self.restore_server_name()
 
     def test_detection_of_non_ka_urls(self):
@@ -87,22 +87,22 @@ class TestUrl(unittest.TestCase):
 
     def test_opengraph_url_for_dev_server(self):
         self.stub_server_name("localhost")
-        self.assertEqual("http://www.khanacademie.nl/foo",
+        self.assertEqual("http://www.iktel.nl/foo",
                          url_util.opengraph_url("/foo"))
 
     def test_opengraph_url_for_appspot_url(self):
         self.stub_server_name("non-default.khanacademie.appspot.com")
-        self.assertEqual("http://www.khanacademie.nl/foo",
+        self.assertEqual("http://www.iktel.nl/foo",
                          url_util.opengraph_url("/foo"))
 
     def test_opengraph_url_for_ka_org_url(self):
-        self.stub_server_name("www.khanacademie.nl")
-        self.assertEqual("http://www.khanacademie.nl/foo",
+        self.stub_server_name("www.iktel.nl")
+        self.assertEqual("http://www.iktel.nl/foo",
                          url_util.opengraph_url("/foo"))
 
     def test_opengraph_url_for_subdomain_ka_url(self):
-        self.stub_server_name("beta.wild.khanacademie.nl")
-        self.assertEqual("http://beta.wild.khanacademie.nl/foo",
+        self.stub_server_name("beta.wild.iktel.nl")
+        self.assertEqual("http://beta.wild.iktel.nl/foo",
                          url_util.opengraph_url("/foo"))
 
     def test_iri_to_uri_encodes_to_utf8(self):

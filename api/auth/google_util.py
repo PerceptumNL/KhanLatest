@@ -66,7 +66,7 @@ def google_request_token_handler(oauth_map):
         # Add google-specific mobile view identifier
         params["btmpl"] = "mobile"
 
-    return redirect("http://www.khanacademie.nl/_ah/OAuthAuthorizeToken?%s" %
+    return redirect("http://www.iktel.nl/_ah/OAuthAuthorizeToken?%s" %
                     urllib.urlencode(params))
 
 

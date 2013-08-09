@@ -10,7 +10,7 @@ class RSSBlogTest(gae_model.GAEModelTestCase):
     def test_addentry(self):
         date = datetime.datetime.now()
         title = "test title"
-        link = "blog.khanacademie.nl"
+        link = "blog.iktel.nl"
         entry = RSSBlog(date=date, title=title, link=link)
         entry.put()
         self.assertEqual(1, len(RSSBlog.all()[:1]))

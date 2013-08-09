@@ -2589,7 +2589,7 @@ var Khan = (function() {
 
                 var hintOrVideoMsg = "Klik op de hint knop om onze oplossing te zien of bekijk een video";
                 var refreshOrBrowserMsg = "Probeer te de pagina te vernieuwen (druk Ctrl + Shift + R)" +
-                        " of open Iktel in een andere browser (Bijvoorbeeld Google Chrome of Firefox).";
+                        " of open iktel.nl in een andere browser (Bijvoorbeeld Google Chrome of Firefox).";
                 var suggestion = {
                     "issue-wrong-or-unclear": hintOrVideoMsg,
                     "issue-hard": hintOrVideoMsg,

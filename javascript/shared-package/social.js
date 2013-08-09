@@ -50,7 +50,7 @@ var Social = {
     facebookPostBadge: function(url, desc, icon, ext, activity) {
         FB.ui({
             method: "feed",
-            name: "Ik heb zojuist de  " + desc + " badge" + (activity ? " in " + activity : "") + " op Iktel!",
+            name: "Ik heb zojuist de  " + desc + " badge" + (activity ? " in " + activity : "") + " op iktel.nl!",
             link: url,
             picture: (icon.substring(0, 7) === "http://" ? icon : "http://www.iktel.nl/" + icon),
             caption: url,
@@ -67,7 +67,7 @@ var Social = {
             picture: "http://www.iktel.nl/images/handtreehorizontal_facebook.png",
             caption: "www.iktel.nl",
             description: desc,
-            message: "Ik heb zojuist " + name + " geleerd op Iktel"
+            message: "Ik heb zojuist " + name + " geleerd op iktel.nl"
         });
         return false;
 
@@ -90,7 +90,7 @@ var Social = {
 
     emailBadge: function(url, desc) {
 
-        var subject = "Ik heb zojuist de " + desc + " badge verdiend op Iktel!";
+        var subject = "Ik heb zojuist de " + desc + " badge verdiend op iktel.nl!";
         var body = "Kijk zelf op " + url + "!";
 
         var href = "mailto:?Subject=" + subject + "&amp;Body=" + body;
@@ -101,7 +101,7 @@ var Social = {
     twitterBadge: function(url, desc) {
 
         var text = "Ik heb zojuist de " + desc + " badge verdiend op @khanacademie";
-        var related = "khanacademie:Iktel";
+        var related = "khanacademie:iktel.nl";
 
         var href = "http://twitter.com/share?url=" + encodeURIComponent(url) + "&text=" + text + "&related=" + related;
 

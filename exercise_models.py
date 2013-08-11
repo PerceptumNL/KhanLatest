@@ -43,6 +43,7 @@ import url_util
 import user_models
 import user_util
 import util
+from tincan import TinCan
 
 
 # About 1 out of every N problems in a topic will be a card used for analytics
@@ -1304,7 +1305,7 @@ class ProblemLog(backup_model.BackupModel):
         return util.minutes_between(self.time_started(), self.time_ended())
 
 # commit_problem_log is used by our deferred problem log insertion process
-def commit_problem_log(problem_log_source, user_data=None):
+def commit_problem_log(problem_log_source, user_data=None, async=True):
     try:
         if not problem_log_source or not problem_log_source.key().name:
             logging.critical("Skipping problem log commit due to missing problem_log_source or key().name")
@@ -1318,6 +1319,10 @@ def commit_problem_log(problem_log_source, user_data=None):
         logging.info("Ignoring attempt to write problem log w/ attempts over 1000.")
         return
 
+    #for TinCan
+    user_data = user_models.UserData.get_from_user_id(problem_log_source.user_id)
+    exercise = Exercise.get_by_name(problem_log_source.exercise)
+    user_exercise = user_data.get_or_insert_exercise(exercise)
     # Committing transaction combines existing problem log with any followup attempts
     def txn():
         problem_log = ProblemLog.get_by_key_name(problem_log_source.key().name())
@@ -1345,6 +1350,7 @@ def commit_problem_log(problem_log_source, user_data=None):
 
         # Bump up attempt count
         if problem_log_source.attempts[0] != "hint": # attempt
+            TinCan.create_question(user_data, "answered", exercise, problem_log=problem_log_source)
             if index_attempt < len(problem_log.time_taken_attempts) \
                and problem_log.time_taken_attempts[index_attempt] != -1:
                 # This attempt has already been logged. Ignore this dupe taskqueue execution.
@@ -1370,6 +1376,7 @@ def commit_problem_log(problem_log_source, user_data=None):
                 problem_log_source.earned_proficiency
 
         else: # hint
+            TinCan.create_question(user_data, "interacted", exercise, problem_log=problem_log)
             index_hint = max(0, problem_log_source.count_hints - 1)
 
             if index_hint < len(problem_log.hint_time_taken_list) \
@@ -1393,11 +1400,22 @@ def commit_problem_log(problem_log_source, user_data=None):
         # Correct cannot be changed from False to True after first attempt
         problem_log.correct = (problem_log_source.count_attempts == 1 or problem_log.correct) and problem_log_source.correct and not problem_log.count_hints
 
+        if hasattr(problem_log_source, "completed") and getattr(problem_log_source, "completed"):
+            TinCan.create_question(user_data, "progressed", exercise, user_exercise=user_exercise)
+
+        if user_exercise.progress >= 1.0 and \
+            hasattr(problem_log_source, "explicitly_proficient") and \
+            not getattr(problem_log_source, "explicitly_proficient"):
+            TinCan.create_question(user_data, "completed", exercise, problem_log=problem_log)
+
         logging.info(problem_log.time_ended())
         problem_log.put()
 
-
-    db.run_in_transaction(txn)
+    #for testing purposes
+    if async:
+        db.run_in_transaction(txn)
+    else:
+        txn()
 
 
 # TODO(david): Tests. See how problem logs are tested.

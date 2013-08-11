@@ -49,6 +49,7 @@ import summary_log_models
 import url_util
 import user_models
 import util
+from tincan import TinCan
 
 class Video(search.Searchable, backup_model.BackupModel):
     youtube_id = db.StringProperty()
@@ -660,6 +661,7 @@ class VideoLog(backup_model.BackupModel):
             just_finished_video = True
             user_video.completed = True
             user_data.videos_completed = -1
+            TinCan.create_media(user_data, "completed", video, user_video)
 
             user_data.uservideocss_version += 1
             UserVideoCss.set_completed(user_data, user_video.video, user_data.uservideocss_version)
@@ -678,6 +680,7 @@ class VideoLog(backup_model.BackupModel):
         if video_points_received > 0:
             video_log.points_earned = video_points_received
             user_data.add_points(video_points_received)
+            TinCan.create_media(user_data, "progressed", video, user_video)
 
         db.put([user_video, user_data])
 
@@ -775,6 +778,7 @@ class UserVideo(backup_model.BackupModel):
         key = UserVideo.get_key_name(video, user_data)
 
         if insert_if_missing:
+            TinCan.create_media(user_data, "launched", video)
             return UserVideo.get_or_insert(
                         key_name=key,
                         user=user_data.user,

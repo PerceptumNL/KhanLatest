@@ -25,6 +25,7 @@ import auth.models
 from auth import age_util
 from counters import user_counter
 from discussion import discussion_models
+from tincan import TinCan
 import badges
 import facebook_util
 import gae_bingo.models
@@ -931,6 +932,8 @@ class UserData(gae_bingo.models.GAEBingoIdentityModel,
             if key_user_exercise:
                 userExercise = exercise_models.UserExercise.get(
                     str(key_user_exercise))
+
+            TinCan.create_question(self, "launched", exercise)
 
         if allow_insert and not userExercise:
             userExercise = exercise_models.UserExercise.get_or_insert(

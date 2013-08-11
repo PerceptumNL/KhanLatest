@@ -105,6 +105,10 @@ class Users(object):
             self.user1, exercises_and_videos.exponents.video,
             exercises_and_videos.exponents.video.duration / 2,
             exercises_and_videos.exponents.video.duration / 2 + 2)
+        video_models.VideoLog.add_entry(
+            self.user1, exercises_and_videos.exponents.video,
+            exercises_and_videos.exponents.video.duration / 2,
+            exercises_and_videos.exponents.video.duration + 2)
 
         user_exercise1 = self.user1.get_or_insert_exercise(
             exercises_and_videos.exponents.exercise)
@@ -121,25 +125,49 @@ class Users(object):
                                       False,  # being done in topic/power mode?
                                       "obsolete",   # problem_type
                                       "127.0.0.1",  # ip address
-                                      async_problem_log_put=False)
+                                      {},
+                                      "TEST",
+                                      "TEST",
+                                      1,
+                                      7,
+                                      async_problem_log_put=False,
+                                      async_stack_log_put=False)
         # He's asking for a hint!
         exercise_util.attempt_problem(self.user1, user_exercise1,
                                       1, 2, "hint", "sha1", "random_seed2",
                                       False, 1, 90, False, False,
                                       "obsolete", "127.0.0.1",
-                                      async_problem_log_put=False)
+                                      {},
+                                      "TEST",
+                                      "TEST",
+                                      1,
+                                      7,
+                                      async_problem_log_put=False,
+                                      async_stack_log_put=False)
         # Ten seconds later (or maybe 100?), he gets it right.
         exercise_util.attempt_problem(self.user1, user_exercise1,
                                       1, 2, "two", "sha1", "random_seed2",
                                       True, 1, 100, False, False,
                                       "obsolete", "127.0.0.1",
-                                      async_problem_log_put=False)
+                                      {},
+                                      "TEST",
+                                      "TEST",
+                                      1,
+                                      7,
+                                      async_problem_log_put=False,
+                                      async_stack_log_put=False)
         # Now he's got it! -- the second problem is a breeze.
         exercise_util.attempt_problem(self.user1, user_exercise1,
                                       2, 1, "right", "sha1", "random_seed3",
                                       True, 0, 10, False, False,
                                       "obsolete", "127.0.0.1",
-                                      async_problem_log_put=False)
+                                      {},
+                                      "TEST",
+                                      "TEST",
+                                      1,
+                                      7,
+                                      async_problem_log_put=False,
+                                      async_stack_log_put=False)
 
         user_exercise2 = self.user1.get_or_insert_exercise(
             exercises_and_videos.equations.exercise)
@@ -148,7 +176,13 @@ class Users(object):
                                           i, 1, "firsttry", "sha1", "seed4",
                                           True, 0, (30 - i), False, False,
                                           "obsolete", "127.0.0.1",
-                                          async_problem_log_put=False)
+                                          {},
+                                          "TEST",
+                                          "TEST",
+                                          1,
+                                          7,
+                                          async_problem_log_put=False,
+                                          async_stack_log_put=False)
 
         # TODO(csilvers): test in power mode?  In practice mode?
 

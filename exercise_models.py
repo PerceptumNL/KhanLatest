@@ -1400,13 +1400,15 @@ def commit_problem_log(problem_log_source, user_data=None, async=True):
         # Correct cannot be changed from False to True after first attempt
         problem_log.correct = (problem_log_source.count_attempts == 1 or problem_log.correct) and problem_log_source.correct and not problem_log.count_hints
 
-        if hasattr(problem_log_source, "completed") and getattr(problem_log_source, "completed"):
-            TinCan.create_question(user_data, "progressed", exercise, user_exercise=user_exercise)
 
-        if user_exercise.progress >= 1.0 and \
-            hasattr(problem_log_source, "explicitly_proficient") and \
+        # Only send progressed and completed events when exercise is not proficient and answer has been correct
+        if hasattr(problem_log_source, "explicitly_proficient") and \
             not getattr(problem_log_source, "explicitly_proficient"):
-            TinCan.create_question(user_data, "completed", exercise, problem_log=problem_log)
+            if hasattr(problem_log_source, "completed") and getattr(problem_log_source, "completed"):
+                TinCan.create_question(user_data, "progressed", exercise, user_exercise=user_exercise)
+            if user_exercise.progress >= 1.0:
+                TinCan.create_question(user_data, "completed", exercise, problem_log=problem_log)
+
 
         logging.info(problem_log.time_ended())
         problem_log.put()

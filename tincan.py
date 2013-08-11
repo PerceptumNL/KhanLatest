@@ -112,14 +112,14 @@ class TinCan():
 
     def set_result_extension(self, k, v):
         if not "result" in self.statement:
-            self.statement["result"] = {"extension": { k : v }}
+            self.statement["result"] = {"extensions": { k : v }}
         elif not "extensions" in self.statement["result"]:
-            self.statement["result"]["extension"] = { k : v }
+            self.statement["result"]["extensions"] = { k : v }
         else:
-            self.statement["result"]["extension"][k] = v
+            self.statement["result"]["extensions"][k] = v
 
     def set_progress(self, progress):
-        self.set_result_extension("http://iktel.nl/coach/progress", progress)
+        self.set_result_extension("http://uva.nl/coach/progress", progress)
 
     def set_success(self, result):
         self.statement['result'] = result
@@ -137,9 +137,6 @@ class TinCan():
             tc.set_progress(user_exercise.progress)
 
         if verb == "answered" and problem_log:
-            tc.set_result("success", problem_log.correct)
-
-        if verb == "completed" and problem_log:
             tc.set_result("success", problem_log.correct)
 
         tc.push()

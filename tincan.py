@@ -34,25 +34,6 @@ class TinCan():
             "objectType": "Agent"
         }
 
-    def set_assessment(self, exercise):
-        name = exercise.pretty_display_name or exercise.name, 
-        description = exercise.description or "", 
-        exercise_id = exercise.name
-
-        self.statement["object"] = {
-          "definition": {
-            "type": "http://adlnet.gov/expapi/activities/assessment",
-            "name": {
-              "en-US": name,
-            },
-            "description": {
-              "en-US": description,
-            }
-          },
-          "id": "http://www.iktel.nl/exercise/%s" % exercise_id,
-          "objectType": "Activity"
-        }
-
     def set_question(self, exercise):
         name = exercise.pretty_display_name or exercise.name
         description = exercise.description or ""
@@ -153,7 +134,7 @@ class TinCan():
 
         if verb == "progressed" and userVideo:
             per = float(userVideo.last_second_watched) / userVideo.duration
-            tc.set_result_extension("http://iktel.nl/coach/progress", per)
+            tc.set_progress(per)
 
         tc.push()
         return tc

@@ -54,7 +54,7 @@ class TinCan():
         }
 
     def set_question(self, exercise):
-        name = exercise.pretty_display_name or exercise.name,
+        name = exercise.pretty_display_name or exercise.name
         description = exercise.description or ""
         exercise_id = exercise.name
 
@@ -171,7 +171,10 @@ class TinCan():
         
 
     def push(self):
+
+        self.log_statement()
         logging.error(self.user_email)
+
         if not self.check_email(): 
             return
 
@@ -184,18 +187,14 @@ class TinCan():
 
         tincan_data = json.dumps(self.statement)
         
-        if App.is_dev_server:
-            if self.testMode:
-                self.log_statement()
-            else:
-                res = urlfetch.post(
-                    tincan_url,
-                    headers = tincan_headers,
-                    data = tincan_data
-                )
-                logging.error(res.status)
-                logging.error(res.content)
-                self.log_statement()
+        if App.is_dev_server and not self.testMode:
+            res = urlfetch.post(
+                tincan_url,
+                headers = tincan_headers,
+                data = tincan_data
+            )
+            logging.error(res.status)
+            logging.error(res.content)
         else:
             res = urlfetch.fetch(url=tincan_url,
                 payload=tincan_data,
@@ -203,4 +202,3 @@ class TinCan():
                 headers=tincan_headers)
             logging.error(res.status_code)
             logging.error(res.content) 
-            self.log_statement()

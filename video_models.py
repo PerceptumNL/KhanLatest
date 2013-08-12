@@ -775,9 +775,13 @@ class UserVideo(backup_model.BackupModel):
     def get_for_video_and_user_data(video, user_data, insert_if_missing=False):
         if not user_data:
             return None
-        key = UserVideo.get_key_name(video, user_data)
 
-        if insert_if_missing:
+        key = UserVideo.get_key_name(video, user_data)
+        user_video = UserVideo.get_by_key_name(key)
+
+        if user_video: 
+            return user_video
+        elif insert_if_missing:
             TinCan.create_media(user_data, "launched", video)
             return UserVideo.get_or_insert(
                         key_name=key,
@@ -785,7 +789,7 @@ class UserVideo(backup_model.BackupModel):
                         video=video,
                         duration=video.duration)
         else:
-            return UserVideo.get_by_key_name(key)
+            return None
 
     @staticmethod
     def count_completed_for_user_data(user_data):

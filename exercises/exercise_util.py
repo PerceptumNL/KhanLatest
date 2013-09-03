@@ -171,6 +171,8 @@ def attempt_problem(user_data, user_exercise, problem_number, attempt_number,
                 review_mode=review_mode,
                 topic_mode=topic_mode,
         )
+        #TinCan hack
+        setattr(problem_log, "completed", completed)
 
         first_response = (attempt_number == 1 and count_hints == 0) or (count_hints == 1 and attempt_number == 0)
 
@@ -189,6 +191,8 @@ def attempt_problem(user_data, user_exercise, problem_number, attempt_number,
 
                 proficient = user_data.is_proficient_at(user_exercise.exercise)
                 explicitly_proficient = user_data.is_explicitly_proficient_at(user_exercise.exercise)
+                #TinCan hack
+                setattr(problem_log, "explicitly_proficient", explicitly_proficient)
                 suggested = user_data.is_suggested(user_exercise.exercise)
                 problem_log.suggested = suggested
 
@@ -277,7 +281,7 @@ def attempt_problem(user_data, user_exercise, problem_number, attempt_number,
                            _queue="problem-log-queue",
                            _url="/_ah/queue/deferred_problemlog")
         else:
-            exercise_models.commit_problem_log(problem_log)
+            exercise_models.commit_problem_log(problem_log, async=False)
 
         if user_data is not None and user_data.coaches:
             # Making a separate queue for the log summaries so we can clearly see how much they are getting used

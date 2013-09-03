@@ -11,12 +11,17 @@
     <div class="login-container card-case vertical-shadow" style="text-align:center;">
 
     <div class="providers">
-        <h3>Login op iktel.nl met</h3>
+        {% if login_hint %}
+                <h1>Please log in with your Google account: <br /><br /><b> {{ login_hint }} </b></h1>
+        {% else %}
+                <h3>Login op iktel.nl met</h3>
+        {% endif %}
         {{ login_macros.google_button(google_url) }}
-
         <br>
 
+        {% if not login_hint %}
         {{ login_macros.facebook_button(true) }}
+        {% endif %}
     </div>
 
     </div>

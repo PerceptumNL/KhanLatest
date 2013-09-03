@@ -59,6 +59,8 @@ class Login(request_handler.RequestHandler):
         cont = self.request_continue_url()
         direct = self.request_bool('direct', default=False)
 
+        login_hint = self.request.get("login_hint", None)
+
         user_data = UserData.current()
         if user_data and not user_data.is_phantom:
             # Don't let users see the login page if they're already logged in.
@@ -68,10 +70,15 @@ class Login(request_handler.RequestHandler):
             self.redirect(cont)
             return
 
+        default_email = ""
+        if login_hint:
+            default_email = "&Email=" + login_hint
+
         template_values = {
                            'continue': cont,
                            'direct': direct,
-                           'google_url': users.create_login_url(cont),
+                           'google_url': users.create_login_url(cont + "&login_hint=" + login_hint) + default_email,
+                           'login_hint': login_hint, 
                            }
 
         self.render_jinja2_template('login.html', template_values)
@@ -251,7 +258,16 @@ class PostLogin(request_handler.RequestHandler):
         cont = self.request_continue_url()
 
         self._consume_auth_token()
+
+        login_hint = self.request.get("login_hint", None)
         user_data = UserData.current(create_if_none=True)
+        
+        if login_hint and (not user_data or user_data and login_hint != user_data.email):
+            quoted_cont = urllib.quote_plus(cont)
+            next_url = users.create_logout_url("/login?login_hint=" + login_hint + "&continue=" + quoted_cont)
+            self._finish_and_redirect(next_url)
+            return
+        
         if not user_data:
             # Nobody is logged in - clear any expired Facebook cookies
             # that may be hanging around.

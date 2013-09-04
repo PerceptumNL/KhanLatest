@@ -405,17 +405,20 @@ function updateHintButtonText() {
     var $hintButton = $("#hint");
     var hintsLeft = numHints - hintsUsed;
 
-    if (hintsAreFree) {
+    //if (hintsAreFree) {
+    //    $hintButton.val(hintsUsed ?
+    //            $._("Show next hint (%(hintsLeft)s left)", {hintsLeft: hintsLeft}) :
+    //            $._("Show hints (%(hintsLeft)s available)", {hintsLeft: hintsLeft}));
+    //} else {
         $hintButton.val(hintsUsed ?
-                $._("Show next hint (%(hintsLeft)s left)", {hintsLeft: hintsLeft}) :
-                $._("Show hints (%(hintsLeft)s available)", {hintsLeft: hintsLeft}));
-    } else {
-        $hintButton.val(hintsUsed ?
-                $.ngettext("I'd like another hint (1 hint left)",
-                           "I'd like another hint (%(num)s hints left)",
+                //$.ngettext("I'd like another hint (1 hint left)",
+                //           "I'd like another hint (%(num)s hints left)",
+                //           hintsLeft) :
+                $.ngettext("Geef mij nog een hint (1 hint over)",
+                           "Geef mij nog een hint (%(num)s hint over)",
                            hintsLeft) :
-                $._("I'd like a hint"));
-    }
+                $._("Geef mij een hint"));
+    //}
 }
 
 // Build the data to pass to the server

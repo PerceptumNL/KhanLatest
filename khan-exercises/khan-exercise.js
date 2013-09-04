@@ -57,6 +57,74 @@
       history mode
 */
 
+var Translate = new function(){
+
+	this.langdefault = "en";
+	this.lang = "nl";
+	this.table = {};
+	this.current = null;
+    this.testMode = typeof Exercises === "undefined";
+	this.production = !this.testMode;
+	this.exercisepath = this.production ? "/khan-exercises/exercises/" : "/exercises/";
+	this.globalfile = (this.production ? "/khan-exercises/exercises/" : "/exercises/") + "lang.js";
+
+	this.switchLang = function(map){
+		if(map[this.lang]) {
+			return map[this.lang];
+		} else {
+			return map[this.langdefault];
+		}
+	}
+
+	this.getTranslation = function(url, name){
+        try {
+            if (name in this.table)
+		        return this.table[name];
+            var self = this;
+		    $.ajax({
+		    	type: "GET",
+		    	url: url,
+		    	async:false,
+		    	success: function(data){
+		    		self.table[name] = eval(data);
+		    	}
+		    })
+		    return this.table[name];
+        } catch(err) {
+            return null;
+        }
+	}
+
+    this.compile = function(id, ele) {
+
+		var langfile = this.exercisepath + id + ".lang.js";
+		var translation = Translate.getTranslation(langfile, id);
+		if(translation && translation[Translate.lang]){
+			ele.find('[data-tt]').each(function(){
+				token = $(this).attr('data-tt');
+				if(translation[Translate.lang][token]){
+					$(this).html(translation[Translate.lang][token]);
+				}
+			})
+		}
+    }
+
+    this.compileTitle = function($html) {
+        var globals = this.getTranslation(this.globalfile, "globals")['titles'][this.lang];
+        var $title = $('title');
+        var $extitle = $(".practice-exercise-displayname");
+        if ($extitle.text() in globals) {
+            $extitle.text(globals[$extitle.text()]);
+            var post_title = $title.html().substring($title.html().indexOf('|')-1)
+            $title.html($extitle.text() + post_title);
+        }
+    }
+
+    this.loadGlobals = function() {
+        this.globals = this.getTranslation(this.globalfile, "globals");
+    }
+};
+
 var Khan = (function() {
     // Numbers which are coprime to the number of bins, used for jumping through
     // exercises.  To quickly test a number in python use code like:
@@ -258,6 +326,8 @@ var Khan = (function() {
         // always true
         modules: {},
 
+        exerciseId: exerciseId,
+
         // Map from exercise ID to a list of required modules (data-require),
         // These module names are used in resetModules() and indirectly by
         // runModules(), where $.fn["module-name"], $.fn["module-nameLoad"],
@@ -302,10 +372,12 @@ var Khan = (function() {
         },
 
         warnTimeout: function() {
-            $(Exercises).trigger("warning", [$._("Your internet might be too " +
-                    "slow to see an exercise. Refresh the page or " +
-                    "<a href='' id='warn-report'>report a problem</a>."),
-                    false]);
+            $(Exercises).trigger("warning", ["Je internet verbinding is langzaam waardoor sommige oefeningen niet werken. Vernieuw de pagina " +
+                'of <a href="" id="warn-report">meld een probleem</a>.']);
+            //$(Exercises).trigger("warning", [$._("Your internet might be too " +
+            //        "slow to see an exercise. Refresh the page or " +
+            //        "<a href='' id='warn-report'>report a problem</a>."),
+            //        false]);
             // TODO(alpert): This event binding is kind of gross
             $("#warn-report").click(function(e) {
                 e.preventDefault();
@@ -316,15 +388,17 @@ var Khan = (function() {
         warnFont: function() {
             var warning;
             if ($.browser.msie) {
-                warning = $._("You should " +
-                    "<a href='http://missmarcialee.com/2011/08/" +
-                    "how-to-enable-font-download-in-internet-explorer-8/' " +
-                    "target='_blank'>enable font download</a> " +
-                    "to improve the appearance of math expressions."
-                );
+                //warning = $._("You should " +
+                //    "<a href='http://missmarcialee.com/2011/08/" +
+                //    "how-to-enable-font-download-in-internet-explorer-8/' " +
+                //    "target='_blank'>enable font download</a> " +
+                //    "to improve the appearance of math expressions."
+                //);
+                warning = '<a href="http://missmarcialee.com/2011/08/how-to-enable-font-download-in-internet-explorer-8/"  target="_blank">Sta het downloaden van lettertypes toe</a>';
             } else {
-                warning = $._("You should enable font download in your " +
-                    "browser to improve the appearance of math expressions");
+                //warning = $._("You should enable font download in your " +
+                //    "browser to improve the appearance of math expressions");
+                warning = "het downloaden van bepaalde lettertypes toestaan";
             }
 
             $(Exercises).trigger("warning", [warning, true]);
@@ -513,7 +587,7 @@ var Khan = (function() {
 
                     var makeVisible = function() {
                         $("#scratchpad").show();
-                        $("#scratchpad-show").text($._("Hide scratchpad"));
+                        $("#scratchpad-show").text($._("Verberg kladblok"));
 
                         // If pad has never been created or if it's empty
                         // because it was removed from the DOM, recreate a new
@@ -533,7 +607,7 @@ var Khan = (function() {
                     }
 
                     $("#scratchpad").hide();
-                    $("#scratchpad-show").text($.ngettext("Showwww scratchpad"));
+                    $("#scratchpad-show").text($._("Toon Kladblok"));
                 },
 
                 toggle: function() {
@@ -604,9 +678,10 @@ var Khan = (function() {
         initReportIssueLink: function(selector) {
             selector = selector || "#report";
             $(selector).click(function(e) {
-                var issueIntro = $._("Remember to check the hints and " +
-                        "double check your math. All provided information will " +
-                        "be public. Thanks for your help!");
+                var issueIntro = "Denk eraan om de hints te bekijken en je rekenwerk nogmaals te controleren. Alle beschikbare informatie wordt openbaar gemaakt. Bedankt voor je hulp!";
+                //var issueIntro = $._("Remember to check the hints and " +
+                //        "double check your math. All provided information will " +
+                //        "be public. Thanks for your help!");
 
                 e.preventDefault();
 
@@ -648,6 +723,7 @@ var Khan = (function() {
 
                     type = $("input[name=issue-type]:checked").prop("id"),
                     title = $("#issue-title").val(),
+                    ucontact = $("#issue-email").val(),
 
                     agent = navigator.userAgent,
                     mathjaxInfo = "MathJax is " + (typeof MathJax === "undefined" ? "NOT loaded" :
@@ -663,13 +739,14 @@ var Khan = (function() {
                         "<a href=\"http://github.com/Khan/khan-exercises/issues/new\">GitHub</a>. " +
                         "Please reference exercise: %(exerciseId)s.", {exerciseId: exerciseId}),
                     issueSuccess = function(url, title, suggestion) {
-                        return $._("Thank you for your feedback! " +
-                            "Your issue has been created and can be " +
-                            "found at the following link:" +
-                            "<p><a id=\"issue-link\" href=\"%(issueUrl)s\">%(issueTitle)s</a>" +
-                            "<p>%(suggestion)s</p>",
-                            {issueUrl: url, issueTitle: title, suggestion: suggestion}
-                        );
+                        return "Bedankt voor het melden van een probleem!";
+                        //return $._("Thank you for your feedback! " +
+                        //    "Your issue has been created and can be " +
+                        //    "found at the following link:" +
+                        //    "<p><a id=\"issue-link\" href=\"%(issueUrl)s\">%(issueTitle)s</a>" +
+                        //    "<p>%(suggestion)s</p>",
+                        //    {issueUrl: url, issueTitle: title, suggestion: suggestion}
+                        //);
                     };
 
                 var mathjaxLoadFailures = $.map(MathJax.Ajax.loading, function(info, script) {
@@ -711,16 +788,20 @@ var Khan = (function() {
 
                 if (!type) {
                     $("#issue-status").addClass("error")
-                        .html($._("Please specify the issue type.")).show();
+                        .html("Geef het type probeel weer aub.").show();
+                    //    .html($._("Please specify the issue type.")).show();
                     return;
                 } else {
                     labels.push(type.slice("issue-".length));
 
-                    var hintOrVideoMsg = $._("Please click the hint button above " +
-                        "to see our solution or watch a video for additional help.");
-                    var refreshOrBrowserMsg = $._("Please try a hard refresh " +
-                        "(press Ctrl + Shift + R) or use Khan Academy from a " +
-                        "different browser (such as Chrome or Firefox).");
+                    var hintOrVideoMsg = "Klik op de hint knop om onze oplossing te zien of bekijk een video";
+                    //var hintOrVideoMsg = $._("Please click the hint button above " +
+                    //    "to see our solution or watch a video for additional help.");
+                    var refreshOrBrowserMsg = "Probeer te de pagina te vernieuwen (druk Ctrl + Shift + R)" +
+                        " of open iktel.nl in een andere browser (Bijvoorbeeld Google Chrome of Firefox).";
+                    //var refreshOrBrowserMsg = $._("Please try a hard refresh " +
+                    //    "(press Ctrl + Shift + R) or use Khan Academy from a " +
+                    //    "different browser (such as Chrome or Firefox).");
                     var suggestion = {
                         "issue-wrong-or-unclear": hintOrVideoMsg,
                         "issue-hard": hintOrVideoMsg,
@@ -731,7 +812,8 @@ var Khan = (function() {
 
                 if (title === "") {
                     $("#issue-status").addClass("error")
-                        .html($._("Please provide a valid title for the issue.")).show();
+                        .html("Geef een geldige titel voor het probleem.").show();
+                    //    .html($._("Please provide a valid title for the issue.")).show();
                     return;
                 }
 
@@ -745,12 +827,15 @@ var Khan = (function() {
 
                 var dataObj = {
                     title: issueInfo.pretitle + " - " + title,
-                    body: body,
-                    labels: labels
+//                    body: body,
+//                    labels: labels
+                    ureport: body + labels,
+                    ucontact: ucontact,
+                    utype: type 
                 };
 
                 $.ajax({
-                    url: "/githubpost",
+                    url: "/reportissue",
                     type: "POST",
                     data: JSON.stringify(dataObj),
                     contentType: "application/json",
@@ -1183,6 +1268,13 @@ var Khan = (function() {
 
         problemID = id;
 
+        console.log("bleble")
+        console.log(id)
+        console.log(exerciseId);
+        console.log(problem)
+        console.log(problem.data('name'))
+        console.log(problemBag)
+
         // Find which exercise this problem is from
         exercise = problem.parents("div.exercise").eq(0);
 
@@ -1192,6 +1284,8 @@ var Khan = (function() {
         problem = problem.clone();
 
         debugLog("cloned problem");
+
+        Translate.compile(Khan.exerciseId, problem);
 
         // problem has to be child of visible #workarea for MathJax metrics to all work right
         $("#workarea").append(problem);
@@ -1987,6 +2081,8 @@ var Khan = (function() {
             data = data.replace(/<script(\s)+src=([^<])*<\/script>/, "");
 
             var newContents = $(data).filter(".exercise");
+
+            Translate.compileTitle(newContents);
 
             // Name of the top-most ancestor exercise
             newContents.data("rootName", rootName);

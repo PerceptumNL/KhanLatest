@@ -392,6 +392,15 @@ javascript = {
             "utils/dutchadder.js",
             "utils/dutchdivider.js",
             "utils/getallen.js",
+            "utils/chemistry.js",
+            "utils/cipher.js",
+            "utils/jquery.cursor-position.js",
+            "utils/matrix-input.js",
+            "utils/rational-expressions.js",
+            "utils/test/matrix.js",
+            "utils/tex.js",
+            "utils/visualizing-derivatives.js",
+            "local-only/localeplanet/icu.en-US.js",
         ]
     },
     "scratchpads": {

@@ -3,8 +3,6 @@ $.extend(KhanUtil, {
     updateMean: function(mean) {
         var graph = KhanUtil.currentGraph;
 
-        $(graph.graph.meanValueLabel).html(mean).tmpl();
-
         graph.graph.meanArrow.translate((mean * graph.scale[0]) - graph.graph.meanArrow.attr("translation").x, 0);
         graph.graph.meanValueLabel.remove();
         graph.graph.meanValueLabel = graph.label([mean, 0.8],
@@ -14,7 +12,8 @@ $.extend(KhanUtil, {
         );
 
         graph.graph.meanLabel.remove();
-        graph.graph.meanLabel = graph.label([mean, 1.3], "\\text{gemiddelde}", "above", { color: KhanUtil.BLUE });
+        graph.graph.meanLabel = graph.label([mean, 1.3], $._("\\text{mean}"),
+            "above", { color: KhanUtil.BLUE });
 
         graph.graph.mean = mean;
     },
@@ -32,7 +31,8 @@ $.extend(KhanUtil, {
         );
 
         graph.graph.medianLabel.remove();
-        graph.graph.medianLabel = graph.label([median, -1.7], "\\text{mediaan}", "below", { color: KhanUtil.GREEN });
+        graph.graph.medianLabel = graph.label([median, -1.7],
+            $._("\\text{median}"), "below", { color: KhanUtil.GREEN });
 
         graph.graph.median = median;
     },

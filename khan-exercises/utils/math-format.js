@@ -3,17 +3,7 @@ $.extend(KhanUtil, {
     negParens: function(n) {
         return n < 0 ? "(" + n + ")" : n;
     },
-	/* Turns a floating point number into a string, replaces dot with comma, returns string*/
-	dutchDec: function(number){
-		var stringify = number.toString();
-		return (stringify.replace(".", ","));
-	},
-	/* Replaces the comma in a string with a dot, then turns result into a float. */
-	dutchSol: function(string){
-		var numbify = string.replace(",",".");
-		return parseFloat(numbify);
-	},
-	
+
     /* Wrapper for `fraction` which takes a decimal instead of a numerator and
      * denominator. */
     decimalFraction: function(num, defraction, reduce, small, parens) {
@@ -33,7 +23,7 @@ $.extend(KhanUtil, {
         if (f[1] === 1) {
             return f[0];
         } else {
-            return "\\" + (dfrac ? "d" : "") + "frac{" + f[0] + "}{" + f[1] + "}";
+            return (n < 0 ? "-" : "") + "\\" + (dfrac ? "d" : "") + "frac{" + Math.abs(f[0]) + "}{" + Math.abs(f[1]) + "}";
         }
     },
 
@@ -241,13 +231,27 @@ $.extend(KhanUtil, {
     squareRootCanSimplify: function(n) {
         return KhanUtil.formattedSquareRootOf(n) !== ("\\sqrt{" + n + "}");
     },
-	
 
     // Ported from https://github.com/clojure/clojure/blob/master/src/clj/clojure/pprint/cl_format.clj#L285
+    // TODO(csilvers): I18N: this doesn't work at all outside English.
+    // cf. https://github.com/kslazarev/numbers_and_words (Ruby, sadly).
     cardinal: function(n) {
-        var cardinalScales = ["", "duizend", "miljoen", "biljoen", "triljoen", "biljard", "quintiljoen", "sextiljoen", "septiljoen", "octiljoen", "noniljoen", "deciljoen", "undeciljoen", "duodeciljoen", "tredeciljoen", "quattuordeciljoen", "quindeciljoen", "sexdeciljoen", "septendeciljoen", "octodeciljoen", "novemdeciljoen", "vigintiljoen"];
-        var cardinalUnits = ["nul", "een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen", "tien", "elf", "twaalf", "dertien", "viertien", "vijftien", "zestien", "zeventien", "achttien", "negentien"];
-        var cardinalTens = ["", "", "twintig", "dertig", "veertig", "vijftig", "zestig", "zeventig", "tachtig", "negentig"];
+        var cardinalScales = ["", $._("thousand"), $._("million"),
+            $._("billion"), $._("trillion"), $._("quadrillion"),
+            $._("quintillion"), $._("sextillion"), $._("septillion"),
+            $._("octillion"), $._("nonillion"), $._("decillion"),
+            $._("undecillion"), $._("duodecillion"), $._("tredecillion"),
+            $._("quattuordecillion"), $._("quindecillion"),
+            $._("sexdecillion"), $._("septendecillion"), $._("octodecillion"),
+            $._("novemdecillion"), $._("vigintillion")];
+        var cardinalUnits = [$._("zero"), $._("one"), $._("two"), $._("three"),
+            $._("four"), $._("five"), $._("six"), $._("seven"), $._("eight"),
+            $._("nine"), $._("ten"), $._("eleven"), $._("twelve"),
+            $._("thirteen"), $._("fourteen"), $._("fifteen"), $._("sixteen"),
+            $._("seventeen"), $._("eighteen"), $._("nineteen")];
+        var cardinalTens = ["", "", $._("twenty"), $._("thirty"), $._("forty"),
+            $._("fifty"), $._("sixty"), $._("seventy"), $._("eighty"),
+            $._("ninety")];
         // For formatting numbers less than 1000
         var smallNumberWords = function(n) {
             var hundredDigit = Math.floor(n / 100);
@@ -255,7 +259,8 @@ $.extend(KhanUtil, {
             var str = "";
 
             if (hundredDigit) {
-                str += cardinalUnits[hundredDigit] + " honderd";
+                str += $._("%(unit)s hundred",
+                    {unit: cardinalUnits[hundredDigit]});
             }
 
             if (hundredDigit && rest) {
@@ -269,17 +274,16 @@ $.extend(KhanUtil, {
                     var tenDigit = Math.floor(rest / 10);
                     var unitDigit = rest % 10;
 
-                      if (unitDigit) {
-                        str += cardinalUnits[unitDigit];
+                    if (tenDigit) {
+                        str += cardinalTens[tenDigit];
                     }
 
                     if (tenDigit && unitDigit) {
-                        str += "-en-";
+                        str += "-";
                     }
 
-                  
-			if (tenDigit) {
-                        str += cardinalTens[tenDigit];
+                    if (unitDigit) {
+                        str += cardinalUnits[unitDigit];
                     }
                 }
             }
@@ -288,7 +292,7 @@ $.extend(KhanUtil, {
         };
 
         if (n === 0) {
-            return "nul";
+            return $._("zero");
         } else {
             var neg = false;
             if (n < 0) {
@@ -314,7 +318,7 @@ $.extend(KhanUtil, {
             }
 
             if (neg) {
-                words.unshift("negatief");
+                words.unshift($._("negative"));
             }
 
             return words.join(" ");
@@ -324,6 +328,24 @@ $.extend(KhanUtil, {
     Cardinal: function(n) {
         var card = KhanUtil.cardinal(n);
         return card.charAt(0).toUpperCase() + card.slice(1);
+    },
+
+    // TODO(csilvers): I18N: this is not locale-safe.
+    ordinal: function(n) {
+        if (n <= 9) {
+            return ["zeroth", "first", "second", "third", "fourth", "fifth",
+                    "sixth", "seventh", "eighth", "ninth"][n];
+        } else if (Math.floor(n / 10) % 10 === 1) {
+            // Teens
+            return n + "th";
+        } else {
+            var lastDigit = n % 10;
+            if (1 <= lastDigit && lastDigit <= 3) {
+                return n + ["st", "nd", "rd"][lastDigit - 1];
+            } else {
+                return n + "th";
+            }
+        }
     },
 
     // Depends on expressions.js for expression formatting
@@ -344,8 +366,8 @@ $.extend(KhanUtil, {
         } else if (underRadical[1] === 1) {
             // The absolute value of the number under the radical is a perfect square
 
-            rootString += KhanUtil.fraction(-b + underRadical[0], 2 * a, true, true, true) + ","
-                + KhanUtil.fraction(-b - underRadical[0], 2 * a, true, true, true);
+            rootString += KhanUtil.fraction(-b + underRadical[0], 2 * a, true, true, true) + "," +
+                KhanUtil.fraction(-b - underRadical[0], 2 * a, true, true, true);
         } else {
             // under the radical can be partially simplified
             var divisor = KhanUtil.getGCD(b, 2 * a, underRadical[0]);
@@ -365,16 +387,33 @@ $.extend(KhanUtil, {
     // Thanks to Ghostoy on http://stackoverflow.com/questions/6784894/commafy/6786040#6786040
     commafy: function(num) {
         var str = num.toString().split(".");
+        var thousands = icu.getDecimalFormatSymbols().grouping_separator;
+        var decimal = icu.getDecimalFormatSymbols().decimal_separator;
+
+        // Note that this is not actually the space character. You can find
+        // this character in the icu.XX.js files that use space separators (for
+        // example, icu.fr.js)
+        if (thousands === " ") {
+            thousands = "\\;";
+        }
 
         if (str[0].length >= 5) {
-            str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, "$1{,}");
+            str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g,
+                                    "$1{" + thousands + "}");
         }
 
         if (str[1] && str[1].length >= 5) {
             str[1] = str[1].replace(/(\d{3})(?=\d)/g, "$1\\;");
         }
 
-        return str.join(".");
+        return str.join(decimal);
+    },
+
+    // Rounds num to X places, and uses the proper decimal point.
+    // But does *not* insert thousands separators.
+    localeToFixed: function(num, places) {
+        var decimal = icu.getDecimalFormatSymbols().decimal_separator;
+        return num.toFixed(places).replace(".", decimal);
     },
 
     // Formats strings like "Axy + By + Cz + D" where A, B, and C are variables
@@ -449,7 +488,8 @@ $.extend(KhanUtil, {
     },
 
     randVar: function() {
-        return KhanUtil.randFromArray(["x", "k", "y", "a", "n", "r", "p", "u", "v"]);
+        // NOTE(jeresig): i18n: I assume it's OK to have roman letters here
+        return KhanUtil.randFromArray(["a", "k", "n", "p", "q", "r", "t", "x", "y", "z"]);
     },
 
     eulerFormExponent: function(angle) {
@@ -497,7 +537,7 @@ $.extend(KhanUtil, {
         if (real === 0 && imaginary === 0) {
             return "0";
         } else if (real === 0) {
-            return imaginary + "i";
+            return (imaginary === 1 ? "" : imaginary === -1 ? "-" : imaginary) + "i";
         } else if (imaginary === 0) {
             return real;
         } else {
@@ -537,13 +577,13 @@ $.extend(KhanUtil, {
         var exponent = KhanUtil.scientificExponent(num);
         var factor = Math.pow(10, exponent);
         precision -= 1; // To account for the 1s digit
-        var mantissa = KhanUtil.roundTo(precision, num / factor).toFixed(precision);
+        var mantissa = KhanUtil.roundTo(precision, num / factor);
         return mantissa;
     },
 
     scientific: function(precision, num) {
         var exponent = KhanUtil.scientificExponent(num);
-        var mantissa = KhanUtil.scientificMantissa(precision, num);
+        var mantissa = KhanUtil.localeToFixed(KhanUtil.scientificMantissa(precision, num), precision);
         return "" + mantissa + "\\times 10^{" + exponent + "}";
     }
 });

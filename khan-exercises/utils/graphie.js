@@ -1,6 +1,103 @@
 (function() {
-    var createGraph = function(el) {
+    var Graphie = KhanUtil.Graphie = function() {
+    };
+
+    $.extend(KhanUtil, {
+        unscaledSvgPath: function(points) {
+            return $.map(points, function(point, i) {
+                if (point === true) {
+                    return "z";
+                }
+                return (i === 0 ? "M" : "L") + point[0] + " " + point[1];
+            }).join("");
+        },
+
+        getDistance: function(point1, point2) {
+            var a = point1[0] - point2[0];
+            var b = point1[1] - point2[1];
+            return Math.sqrt(a * a + b * b);
+        },
+
+        /**
+        * Return the difference between two sets of coordinates
+        */
+        coordDiff: function(startCoord, endCoord) {
+            return _.map(endCoord, function(val, i) {
+                return endCoord[i] - startCoord[i];
+            });
+        },
+
+        /**
+        * Round the given coordinates to a given snap value
+        * (e.g., nearest 0.2 increment)
+        */
+        snapCoord: function(coord, snap) {
+            return _.map(coord, function(val, i) {
+                return KhanUtil.roundToNearest(snap[i], val);
+            });
+        },
+
+        // Find the angle between two or three points
+        findAngle: function(point1, point2, vertex) {
+            if (vertex === undefined) {
+                var x = point1[0] - point2[0];
+                var y = point1[1] - point2[1];
+                if (!x && !y) {
+                    return 0;
+                }
+                return (180 + Math.atan2(-y, -x) * 180 / Math.PI + 360) % 360;
+            } else {
+                return KhanUtil.findAngle(point1, vertex) - KhanUtil.findAngle(point2, vertex);
+            }
+        }
+    });
+
+
+    _.extend(Graphie.prototype, {
+        cartToPolar: cartToPolar,
+        polar: polar
+    });
+
+    /* Convert cartesian coordinates [x, y] to polar coordinates [r,
+     * theta], with theta in degrees, or in radians if angleInRadians is
+     * specified.
+     */
+    function cartToPolar(coord, angleInRadians) {
+        var r = Math.sqrt(Math.pow(coord[0], 2) + Math.pow(coord[1], 2));
+        var theta = Math.atan2(coord[1], coord[0]);
+        // convert angle range from [-pi, pi] to [0, 2pi]
+        if (theta < 0) {
+            theta += 2 * Math.PI;
+        }
+        if (!angleInRadians) {
+            theta = theta * 180 / Math.PI;
+        }
+        return [r, theta];
+    }
+
+    function polar(r, th) {
+        if (typeof r === "number") {
+            r = [r, r];
+        }
+        th = th * Math.PI / 180;
+        return [r[0] * Math.cos(th), r[1] * Math.sin(th)];
+    }
+
+    var labelDirections = {
+        "center": [-0.5, -0.5],
+        "above": [-0.5, -1.0],
+        "above right": [0.0, -1.0],
+        "right": [0.0, -0.5],
+        "below right": [0.0, 0.0],
+        "below": [-0.5, 0.0],
+        "below left": [-1.0, 0.0],
+        "left": [-1.0, -0.5],
+        "above left": [-1.0, -1.0]
+    };
+
+    KhanUtil.createGraphie = function(el) {
         var xScale = 40, yScale = 40, xRange, yRange;
+        var needsLabelTypeset = false;
 
         $(el).css("position", "relative");
         var raphael = Raphael(el);
@@ -39,6 +136,32 @@
 
         var unscaleVector = function(point) {
             return [point[0] / xScale, point[1] / yScale];
+        };
+
+        var setLabelMargins = function(span, size) {
+            var $span = $(span);
+            var direction = $span.data("labelDirection");
+            $span.css("visibility", "");
+
+            if (typeof direction === "number") {
+                var x = Math.cos(direction);
+                var y = Math.sin(direction);
+
+                var scale = Math.min(
+                    size[0] / 2 / Math.abs(x),
+                    size[1] / 2 / Math.abs(y));
+
+                $span.css({
+                    marginLeft: (-size[0] / 2) + x * scale,
+                    marginTop: (-size[1] / 2) - y * scale
+                });
+            } else {
+                var multipliers = labelDirections[direction || "center"];
+                $span.css({
+                    marginLeft: Math.round(size[0] * multipliers[0]),
+                    marginTop: Math.round(size[1] * multipliers[1])
+                });
+            }
         };
 
         var svgPath = function(points) {
@@ -119,30 +242,6 @@
             return processed;
         };
 
-        /* Convert cartesian coordinates to polar coordinates (angle in degrees).
-         * - Will return angle in radians if `angleInRadians` is specified as truthy.
-         */
-        var cartToPolar = function(coord, angleInRadians) {
-            var r = Math.sqrt(Math.pow(coord[0], 2) + Math.pow(coord[1], 2));
-            var theta = Math.atan2(coord[1], coord[0]);
-            // convert angle range from [-pi, pi] to [0, 2pi]
-            if (theta < 0) {
-                theta += 2 * Math.PI;
-            }
-            if (!angleInRadians) {
-                theta = theta * 180 / Math.PI;
-            }
-            return [r, theta];
-        };
-
-        var polar = function(r, th) {
-            if (typeof r === "number") {
-                r = [r, r];
-            }
-            th = th * Math.PI / 180;
-            return [r[0] * Math.cos(th), r[1] * Math.sin(th)];
-        };
-
         var addArrowheads = function arrows(path) {
             var type = path.constructor.prototype;
 
@@ -190,6 +289,14 @@
         var drawingTools = {
             circle: function(center, radius) {
                 return raphael.ellipse.apply(raphael, scalePoint(center).concat(scaleVector([radius, radius])));
+            },
+
+            // (x, y) is coordinate of bottom left corner
+            rect: function(x, y, width, height) {
+                // Raphael needs (x, y) to be coordinate of upper left corner
+                var corner = scalePoint([x, y + height]);
+                var dims = scaleVector([width, height]);
+                return raphael.rect.apply(raphael, corner.concat(dims));
             },
 
             ellipse: function(center, radii) {
@@ -248,107 +355,48 @@
             },
 
             label: function(point, text, direction, latex) {
-                var directions = {
-                    "center": [-0.5, -0.5],
-                    "above": [-0.5, -1.0],
-                    "above right": [0.0, -1.0],
-                    "right": [0.0, -0.5],
-                    "below right": [0.0, 0.0],
-                    "below": [-0.5, 0.0],
-                    "below left": [-1.0, 0.0],
-                    "left": [-1.0, -0.5],
-                    "above left": [-1.0, -1.0]
-                };
-
                 latex = (typeof latex === "undefined") || latex;
 
-                var span;
+                var $span = $("<span>").addClass("graphie-label");
 
-                if (latex) {
-                    var code = $("<code>").text(text);
-                    span = $("<span>").append(code);
-                } else {
-                    span = $("<span>").html(text);
+                if (!latex) {
+                    $span.html(text);
                 }
 
-                // function to reposition the label
-                span.setPosition = function(pt) {
-                    var scaled = scalePoint(pt);
+                var pad = currentStyle["label-distance"];
 
-                    var pad = currentStyle["label-distance"];
-                    this.css($.extend({}, currentStyle, {
-                        position: "absolute",
-                        left: scaled[0],
-                        top: scaled[1],
-                        padding: (pad != null ? pad : 7) + "px"
-                    }));
-
-                    return this;
-                };
-
-                span.setPosition(point).appendTo(el);
-
-                if (typeof MathJax !== "undefined" && $.trim(text + "") !== "") {
-                    // Add to the MathJax queue
-                    if (latex) {
-                        $.tmpl.type.code()(code[0]);
-                    }
-                    // Run after MathJax typesetting
-                    MathJax.Hub.Queue(function() {
-                        // Avoid an icky flash
-                        span.css("visibility", "hidden");
-
-                        var setMargins = function(size) {
-                            span.css("visibility", "");
-                            if (typeof direction === "number") {
-                                var x = Math.cos(direction);
-                                var y = Math.sin(direction);
-
-                                var scale = Math.min(
-                                    size[0] / 2 / Math.abs(x),
-                                    size[1] / 2 / Math.abs(y));
-
-                                span.css({
-                                    marginLeft: (-size[0] / 2) + x * scale,
-                                    marginTop: (-size[1] / 2) - y * scale
-                                });
-                            } else {
-                                var multipliers = directions[direction || "center"];
-                                span.css({
-                                    marginLeft: Math.round(size[0] * multipliers[0]),
-                                    marginTop: Math.round(size[1] * multipliers[1])
-                                });
-                            }
-                        };
-
-                        var callback = MathJax.Callback(function() {});
-
-                        // Wait for the browser to render it
-                        var tries = 0;
-                        var size = [span.outerWidth(), span.outerHeight()];
-
-                        if (size[1] > 18) {
-                            setMargins(size);
-                            callback();
-                        } else {
-                            var inter = setInterval(function() {
-                                size = [span.outerWidth(), span.outerHeight()];
-
-                                // Heuristic to guess if the font has kicked in so we have box metrics
-                                // (Magic number ick, but this seems to work mostly-consistently)
-                                if (size[1] > 18 || ++tries >= 10) {
-                                    setMargins(size);
-                                    clearInterval(inter);
-                                    callback();
-                                }
-                            }, 100);
-                        }
-
-                        return callback;
+                // TODO(alpert): Isn't currentStyle applied afterwards
+                // automatically since this is a 'drawing tool'?
+                $span
+                    .css($.extend({}, currentStyle, {
+                            position: "absolute",
+                            padding: (pad != null ? pad : 7) + "px"
+                        }))
+                    .data("labelDirection", direction)
+                    .appendTo(el);
+                $span.setPosition = function(point) {
+                    var scaledPoint = scalePoint(point);
+                    $span.css({
+                        left: scaledPoint[0],
+                        top: scaledPoint[1]
                     });
+                };
+                $span.setPosition(point);
+
+                var span = $span[0];
+                if (latex) {
+                    KhanUtil.processMath(span, text, false, function() {
+                        var width = span.scrollWidth;
+                        var height = span.scrollHeight;
+                        setLabelMargins(span, [width, height]);
+                    });
+                } else {
+                    var width = span.scrollWidth;
+                    var height = span.scrollHeight;
+                    setLabelMargins(span, [width, height]);
                 }
 
-                return span;
+                return $span;
             },
 
             plotParametric: function(fn, range) {
@@ -373,6 +421,7 @@
                         paths.push(this.path(points));
                         // restart the path, excluding this point
                         points = [];
+
                     } else {
                         // otherwise, just add the point to the path
                         points.push(funcVal);
@@ -406,6 +455,54 @@
                 }, range);
             },
 
+            /**
+             * Given a piecewise function, return a Raphael set of paths that
+             * can be used to draw the function, e.g. using style().
+             * Calls plotParametric.
+             *
+             * @param  {[]} fnArray    array of functions which when called
+             *                         with a parameter i return the value of
+             *                         the function at i
+             * @param  {[]} rangeArray array of ranges over which the
+             *                         corresponding functions are defined
+             * @return {Raphael set}
+             */
+            plotPiecewise: function(fnArray, rangeArray) {
+                var paths = raphael.set();
+                var self = this;
+                _.times(fnArray.length, function(i) {
+                    var fn = fnArray[i];
+                    var range = rangeArray[i];
+                    var fnPaths = self.plotParametric(function(x) {
+                        return [x, fn(x)];
+                    }, range);
+                    _.each(fnPaths, function(fnPath) {
+                        paths.push(fnPath);
+                    });
+                });
+
+                return paths;
+            },
+
+            /**
+             * Given an array of coordinates of the form [x, y], create and
+             * return a Raphael set of Raphael circle objects at those
+             * coordinates
+             *
+             * @param  {Array of arrays} endpointArray
+             * @return {Raphael set}
+             */
+            plotEndpointCircles: function(endpointArray) {
+                var circles = raphael.set();
+                var self = this;
+
+                _.each(endpointArray, function(coord, i) {
+                    circles.push(self.circle(coord, 0.15));
+                });
+
+                return circles;
+            },
+
             plotAsymptotes: function(fn, range) {
                 var min = range[0], max = range[1];
                 var step = (max - min) / (currentStyle["plot-points"] || 800);
@@ -428,7 +525,8 @@
             }
         };
 
-        var graphie = {
+        var graphie = new Graphie();
+        _.extend(graphie, {
             raphael: raphael,
 
             init: function(options) {
@@ -447,6 +545,8 @@
 
                 var w = (xRange[1] - xRange[0]) * xScale, h = (yRange[1] - yRange[0]) * yScale;
                 raphael.setSize(w, h);
+
+                this.dimensions = [w, h];
                 $(el).css({
                     "width": w,
                     "height": h
@@ -461,8 +561,9 @@
                 if (typeof fn === "function") {
                     var oldStyle = currentStyle;
                     currentStyle = $.extend({}, currentStyle, processed);
-                    fn.call(graphie);
+                    var result = fn.call(graphie);
                     currentStyle = oldStyle;
+                    return result;
                 } else {
                     $.extend(currentStyle, processed);
                 }
@@ -472,11 +573,8 @@
             scaleVector: scaleVector,
 
             unscalePoint: unscalePoint,
-            unscaleVector: unscaleVector,
-
-            polar: polar,
-            cartToPolar: cartToPolar
-        };
+            unscaleVector: unscaleVector
+        });
 
         $.each(drawingTools, function(name) {
             graphie[name] = function() {
@@ -535,13 +633,13 @@
 
                 // allow options to be specified by a single number for shorthand if
                 // the horizontal and vertical components are the same
-                if (!prop.match(/.*Opacity$/) && prop !== "range"
-                        && typeof val === "number") {
+                if (!prop.match(/.*Opacity$/) && prop !== "range" &&
+                    typeof val === "number") {
                     options[prop] = [val, val];
                 }
 
                 // allow symmetric ranges to be specified by the absolute values
-                if (prop === "range") {
+                if (prop === "range" || prop === "gridRange") {
                     if (val.constructor === Array) {
                         if (val[0].constructor !== Array) {  // but don't mandate symmetric ranges
                             options[prop] = [[-val[0], val[0]], [-val[1], val[1]]];
@@ -554,14 +652,19 @@
             });
 
             var range = options.range || [[-10, 10], [-10, 10]],
+                gridRange = options.gridRange || options.range,
                 scale = options.scale || [20, 20],
-                grid = options.grid || true,
+                grid = options.grid != null ? options.grid : true,
                 gridOpacity = options.gridOpacity || 0.1,
                 gridStep = options.gridStep || [1, 1],
-                axes = options.axes || true,
+                axes = options.axes != null ? options.axes : true,
                 axisArrows = options.axisArrows || "",
                 axisOpacity = options.axisOpacity || 1.0,
-                ticks = options.ticks || true,
+                axisCenter = options.axisCenter || [
+                    Math.min(Math.max(range[0][0], 0), range[0][1]),
+                    Math.min(Math.max(range[1][0], 0), range[1][1])
+                ],
+                ticks = options.ticks != null ? options.ticks : true,
                 tickStep = options.tickStep || [2, 2],
                 tickLen = options.tickLen || [5, 5],
                 tickOpacity = options.tickOpacity || 1.0,
@@ -573,7 +676,17 @@
                 xLabelFormat = options.xLabelFormat || labelFormat,
                 yLabelFormat = options.yLabelFormat || labelFormat,
                 smartLabelPositioning = options.smartLabelPositioning != null ?
-                    options.smartLabelPositioning : true;
+                    options.smartLabelPositioning : true,
+                realRange = [
+                    [range[0][0] - (range[0][0] > 0 ? 1 : 0),
+                     range[0][1] + (range[0][1] < 0 ? 1 : 0)],
+                    [range[1][0] - (range[1][0] > 0 ? 1 : 0),
+                     range[1][1] + (range[1][1] < 0 ? 1 : 0)]
+                ];
+
+            if (!$.isArray(unityLabels)) {
+                unityLabels = [unityLabels, unityLabels];
+            }
 
             if (smartLabelPositioning) {
                 var minusIgnorer = function(lf) { return function(a) {
@@ -585,13 +698,13 @@
             }
 
             this.init({
-                range: range,
+                range: realRange,
                 scale: scale
             });
 
             // draw grid
             if (grid) {
-                this.grid(range[0], range[1], {
+                this.grid(gridRange[0], gridRange[1], {
                     stroke: "#000000",
                     opacity: gridOpacity,
                     step: gridStep
@@ -609,10 +722,14 @@
                         strokeWidth: 2,
                         arrows: "->"
                     }, function() {
-                        this.path([[0, 0], [range[0][0], 0]]);
-                        this.path([[0, 0], [range[0][1], 0]]);
-                        this.path([[0, 0], [0, range[1][0]]]);
-                        this.path([[0, 0], [0, range[1][1]]]);
+                        if (range[1][0] < 0 && range[1][1] > 0) {
+                            this.path([axisCenter, [gridRange[0][0], axisCenter[1]]]);
+                            this.path([axisCenter, [gridRange[0][1], axisCenter[1]]]);
+                        }
+                        if (range[0][0] < 0 && range[0][1] > 0) {
+                            this.path([axisCenter, [axisCenter[0], gridRange[1][0]]]);
+                            this.path([axisCenter, [axisCenter[0], gridRange[1][1]]]);
+                        }
                     });
 
                 // also, we don't support "<-" arrows yet, but why you
@@ -624,8 +741,8 @@
                         strokeWidth: 2,
                         arrows: axisArrows
                     }, function() {
-                        this.path([[range[0][0], 0], [range[0][1], 0]]);
-                        this.path([[0, range[1][0]], [0, range[1][1]]]);
+                        this.path([[gridRange[0][0], axisCenter[1]], [gridRange[0][1], axisCenter[1]]]);
+                        this.path([[axisCenter[0], gridRange[1][0]], [axisCenter[0], gridRange[1][1]]]);
                     });
 
                 }
@@ -642,37 +759,41 @@
 
                     // horizontal axis
                     var step = gridStep[0] * tickStep[0],
-                 len = tickLen[0] / scale[1],
-                 start = range[0][0],
-                 stop = range[0][1];
+                        len = tickLen[0] / scale[1],
+                        start = gridRange[0][0],
+                        stop = gridRange[0][1];
 
-                    for (var x = step; x <= stop; x += step) {
-                        if (x < stop || !axisArrows) {
-                            this.line([x, -len], [x, len]);
+                    if (range[1][0] < 0 && range[1][1] > 0) {
+                        for (var x = step + axisCenter[0]; x <= stop; x += step) {
+                            if (x < stop || !axisArrows) {
+                                this.line([x, -len + axisCenter[1]], [x, len + axisCenter[1]]);
+                            }
                         }
-                    }
 
-                    for (var x = -step; x >= start; x -= step) {
-                        if (x > start || !axisArrows) {
-                            this.line([x, -len], [x, len]);
+                        for (var x = -step + axisCenter[0]; x >= start; x -= step) {
+                            if (x > start || !axisArrows) {
+                                this.line([x, -len + axisCenter[1]], [x, len + axisCenter[1]]);
+                            }
                         }
                     }
 
                     // vertical axis
                     step = gridStep[1] * tickStep[1];
                     len = tickLen[1] / scale[0];
-                    start = range[1][0];
-                    stop = range[1][1];
+                    start = gridRange[1][0];
+                    stop = gridRange[1][1];
 
-                    for (var y = step; y <= stop; y += step) {
-                        if (y < stop || !axisArrows) {
-                            this.line([-len, y], [len, y]);
+                    if (range[0][0] < 0 && range[0][1] > 0) {
+                        for (var y = step + axisCenter[1]; y <= stop; y += step) {
+                            if (y < stop || !axisArrows) {
+                                this.line([-len + axisCenter[0], y], [len + axisCenter[0], y]);
+                            }
                         }
-                    }
 
-                    for (var y = -step; y >= start; y -= step) {
-                        if (y > start || !axisArrows) {
-                            this.line([-len, y], [len, y]);
+                        for (var y = -step + axisCenter[1]; y >= start; y -= step) {
+                            if (y > start || !axisArrows) {
+                                this.line([-len + axisCenter[0], y], [len + axisCenter[0], y]);
+                            }
                         }
                     }
 
@@ -688,41 +809,47 @@
 
                     // horizontal axis
                     var step = gridStep[0] * tickStep[0] * labelStep[0],
-                        start = range[0][0],
-                        stop = range[0][1];
+                        start = gridRange[0][0],
+                        stop = gridRange[0][1],
+                        xAxisPosition = (axisCenter[0] < 0) ? "above" : "below",
+                        yAxisPosition = (axisCenter[0] < 0) ? "right" : "left",
+                        xShowZero = axisCenter[0] === 0 && axisCenter[1] !== 0,
+                        yShowZero = axisCenter[0] !== 0 && axisCenter[1] === 0,
+                        axisOffCenter = axisCenter[0] !== 0 || axisCenter[1] !== 0,
+                        showUnityX = unityLabels[0] || axisOffCenter,
+                        showUnityY = unityLabels[1] || axisOffCenter;
 
                     // positive x-axis
-                    for (var x = step; x <= stop; x += step) {
+                    for (var x = (xShowZero ? 0 : step) + axisCenter[0]; x <= stop; x += step) {
                         if (x < stop || !axisArrows) {
-                            this.label([x, 0], xLabelFormat(x), "below");
+                            this.label([x, axisCenter[1]], xLabelFormat(x), xAxisPosition);
                         }
                     }
 
                     // negative x-axis
-                    for (var x = -step * (unityLabels ? 1 : 2); x >= start; x -= step) {
+                    for (var x = -step * (showUnityX ? 1 : 2) + axisCenter[0]; x >= start; x -= step) {
                         if (x > start || !axisArrows) {
-                            this.label([x, 0], xLabelFormat(x), "below");
+                            this.label([x, axisCenter[1]], xLabelFormat(x), xAxisPosition);
                         }
                     }
 
                     step = gridStep[1] * tickStep[1] * labelStep[1];
-                    start = range[1][0];
-                    stop = range[1][1];
+                    start = gridRange[1][0];
+                    stop = gridRange[1][1];
 
                     // positive y-axis
-                    for (var y = step; y <= stop; y += step) {
+                    for (var y = (yShowZero ? 0 : step) + axisCenter[1]; y <= stop; y += step) {
                         if (y < stop || !axisArrows) {
-                            this.label([0, y], yLabelFormat(y), "left");
+                            this.label([axisCenter[0], y], yLabelFormat(y), yAxisPosition);
                         }
                     }
 
                     // negative y-axis
-                    for (var y = -step * (unityLabels ? 1 : 2); y >= start; y -= step) {
+                    for (var y = -step * (showUnityY ? 1 : 2) + axisCenter[1]; y >= start; y -= step) {
                         if (y > start || !axisArrows) {
-                            this.label([0, y], yLabelFormat(y), "left");
+                            this.label([axisCenter[0], y], yLabelFormat(y), yAxisPosition);
                         }
                     }
-
                 });
             }
 
@@ -732,11 +859,14 @@
     };
 
     $.fn.graphie = function(problem) {
-        return this.find(".graphie, script[type='text/graphie']").andSelf().filter(".graphie, script[type='text/graphie']").each(function() {
+        if (Khan.query.nographie != null) {
+            return;
+        }
+        return this.find(".graphie, script[type='text/graphie']").addBack().filter(".graphie, script[type='text/graphie']").each(function() {
             // Grab code for later execution
             var code = $(this).text(), graphie;
 
-            // Ignore code that isn't really code ;)
+            // Ignore code that isn't really code
             if (code.match(/Created with Rapha\xebl/)) {
                 return;
             }
@@ -759,7 +889,7 @@
                         .attr("id", $(this).attr("id")).insertAfter(this)[0];
                     $(this).remove();
                 }
-                graphie = createGraph(el);
+                graphie = KhanUtil.createGraphie(el);
                 $(el).data("graphie", graphie);
             }
 

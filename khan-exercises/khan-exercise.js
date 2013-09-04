@@ -1268,13 +1268,6 @@ var Khan = (function() {
 
         problemID = id;
 
-        console.log("bleble")
-        console.log(id)
-        console.log(exerciseId);
-        console.log(problem)
-        console.log(problem.data('name'))
-        console.log(problemBag)
-
         // Find which exercise this problem is from
         exercise = problem.parents("div.exercise").eq(0);
 

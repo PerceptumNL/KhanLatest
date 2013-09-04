@@ -3231,12 +3231,12 @@ div.arrow-left-shadow {
     float:left;
     /*width: 310px;
     height: 120px;*/
-    width: 150px;
+    width: 80px;
     text-align: center;
     font-size: 55px;
     color: #459F6F;
-    margin-left: 14px;
-    margin-right: 36px;
+    margin-left: 19px;
+    margin-right: 20px;
 	/*height: 50px;*/
     /*background-image: url("/images/logos/khan-academie2.png");*/
     /*background-image: url("/images/logos/khan-academie-poppetje-darker.png");*/
@@ -3245,7 +3245,7 @@ div.arrow-left-shadow {
     background-repeat: no-repeat;
     left: 0;
     /*margin-left: 24px;*/
-    margin-top: 39px;
+    margin-top: 7px;
     left: 0;
 }
 #stichting {

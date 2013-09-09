@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Khan Academy</title>
+        <title>iktel.nl</title>
         {{ js_css_packages.css_package("shared") }}
         {{ js_css_packages.css_package("bootstrap-grids") }}
         {{ js_css_packages.css_package("login") }}
@@ -9,16 +9,15 @@
     <body>
         <div class="completesignup-container card-case vertical-shadow">
             <div class="completesignup-contents">
-            <img src="/images/hand-tree.png" width="75" height="75" class="tree">
             <h3><strong>Great!</strong>
             {% if user %}
                 {% if user.is_facebook_user %}
-                    Now create your Khan Academy login and we'll connect it to your existing Facebook account.
+                    Now create your iktel.nl login and we'll connect it to your existing Facebook account.
                 {% else %}
-                    Now create your Khan Academy login and we'll connect it to your existing Google account.
+                    Now create your iktel.nl login and we'll connect it to your existing Google account.
                 {% endif %}
             {% else %}
-                Now create your Khan Academy login.
+                Now create your iktel.nl login.
             {% endif %}
             </h3>
 

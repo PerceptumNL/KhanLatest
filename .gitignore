@@ -18,7 +18,7 @@ datastore/*
 sample_data/bulkloader*
 *.DS_Store
 offline/*
-.*.swp
+.*.sw?
 .*.un~
 compiled_templates*
 .git

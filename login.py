@@ -1187,7 +1187,7 @@ class ForgotPassword(request_handler.RequestHandler):
             mail.send_mail(
                     sender="Iktel NL <iktel@perceptum.nl>",
                     to=email,
-                    subject="Khan Academy account recovery",
+                    subject="Iktel NL account recovery",
                     body=body)
 
         template_values =  {

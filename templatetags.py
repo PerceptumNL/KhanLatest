@@ -277,3 +277,6 @@ def to_insecure_url(url):
     """
     
     return url_util.insecure_url(url)
+
+def to_absolute_url(relative_url, host=None):
+    return url_util.absolute_url(relative_url)

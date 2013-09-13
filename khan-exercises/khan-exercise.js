@@ -269,6 +269,7 @@ var Khan = (function() {
     // Bug-hunting "undefined" attempt content
     debugLogLog = ["start of log"],
     debugLog = function(l) {
+    //    console.log(l);
         debugLogLog.push(l);
     },
 
@@ -1926,21 +1927,23 @@ var Khan = (function() {
     function initEvents() {
         // This function gets called as soon as jQuery is loaded -- on the live
         // site, that's immediately upon execution
-        $(Khan)
+        $(Exercises)
             .bind("problemTemplateRendered", prepareSite)
             .bind("readyForNextProblem", function(ev, data) {
                 renderNextProblem(data);
             })
-            .bind("warning", function(ev, data) {
-                warn(data.text, data.showClose);
-            })
+            //.bind("warning", function(ev, data) {
+            //    $(Exercises).trigger("warning", data, true);
+            //})
             .bind("upcomingExercise", function(ev, data) {
-                var userExercise = data.userExercise;
-                startLoadingExercise(
-                        userExercise.exercise,
-                        userExercise.exerciseModel.displayName,
-                        userExercise.exerciseModel.fileName);
+                //var userExercise = data.userExercise;
+                startLoadingExercise(data.exerciseId, data.exerciseName, data.exerciseFile);
+                //startLoadingExercise(
+                //        userExercise.exercise,
+                //        userExercise.exerciseModel.displayName,
+                //        userExercise.exerciseModel.fileName);
             })
+        $(Khan)
             .bind("showHint", function() {
                 showHint();
                 $(Exercises).trigger("hintShown", {
@@ -1975,6 +1978,7 @@ var Khan = (function() {
     }
 
     function setProblemNum(num) {
+        console.trace();
         problemNum = num;
         problemSeed = (seedOffset + jumpNum * (problemNum - 1 + seedsSkipped)) % bins;
         problemBagIndex = (problemNum + problemCount - 1) % problemCount;
@@ -2023,6 +2027,7 @@ var Khan = (function() {
                 LocalStore.get(getSeedsSkippedCacheKey()) || 0);
 
             // Advance to the current problem seed
+            userExercise.totalDone++;
             setProblemNum(userExercise.totalDone + 1);
         }
     }

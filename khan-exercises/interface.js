@@ -13,8 +13,13 @@ _.defaults(Exercises, {
     khanExercisesUrlBase: "/khan-exercises/",
 
     getCurrentFramework: function(userExerciseOverride) {
-        return (userExerciseOverride || userExercise).exerciseModel.fileName ?
-            "khan-exercises" : "perseus";
+        //return (userExerciseOverride || userExercise).exerciseModel.fileName ?
+        
+        
+    
+        //return (userExerciseOverride || userExercise).fileName ?
+        //    "khan-exercises" : "perseus";
+        return "khan-exercises";
     }
 });
 
@@ -127,9 +132,9 @@ function newProblem(e, data) {
 
     canAttempt = true,
     hintsAreFree = false,
-    attempts = data.userExercise ? data.userExercise.lastAttemptNumber : 0;
+    attempts = 0, //data.userExercise ? data.userExercise.lastAttemptNumber : 0;
     numHints = data.numHints;
-    hintsUsed = data.userExercise ? data.userExercise.lastCountHints : 0;
+    hintsUsed = 0; //data.userExercise ? data.userExercise.lastCountHints : 0;
     lastAttemptOrHint = new Date().getTime();
     lastAttemptContent = null;
 
@@ -147,8 +152,8 @@ function newProblem(e, data) {
 
     // Update related videos
     if (data.userExercise) {
-        Exercises.RelatedVideos.render(
-                data.userExercise.exerciseModel.relatedVideos);
+        //Exercises.RelatedVideos.render(
+        //        data.userExercise.exerciseModel.relatedVideos);
     }
 }
 
@@ -480,7 +485,6 @@ function buildAttemptData(correct, attemptNum, attemptContent, timeTaken,
         // Whether the user is opting out of the task
         opt_out: optOut ? 1 : 0
     });
-
     return data;
 }
 
@@ -544,6 +548,7 @@ function request(method, data) {
 
 
 function readyForNextProblem(e, data) {
+
     if (!firstProblem) {
         // As both of the following variables are only used to make sure the
         // client matches the server on pageLoad, we will set them back to 0
@@ -584,7 +589,8 @@ function warning(e, message, showClose) {
 }
 
 function upcomingExercise(e, data) {
-    var framework = Exercises.getCurrentFramework(data.userExercise);
+    //var framework = Exercises.getCurrentFramework(data.userExercise);
+    var framework = Exercises.getCurrentFramework(data);
     if (framework === "perseus") {
         $(PerseusBridge).trigger("upcomingExercise", data);
     } else if (framework === "khan-exercises") {
@@ -655,7 +661,8 @@ function clearExistingProblem() {
     $("#positive-reinforcement").hide();
 
     // Wipe out any previous problem
-    PerseusBridge.cleanupProblem() || Khan.cleanupProblem();
+    //PerseusBridge.cleanupProblem() || Khan.cleanupProblem();
+    Khan.cleanupProblem();
     $("#workarea, #hintsarea, #solutionarea").empty();
 
     // Take off the event handlers for disabling check answer; we'll rebind

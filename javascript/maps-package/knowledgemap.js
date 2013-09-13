@@ -270,7 +270,7 @@ function KnowledgeMap(params) {
 
         // use lazy rendering unless all exercises are showing
         if (!this.filterSettings.get("userShowAll")) {
-            this.getElement(".dashboard-drawer-inner.fancy-scrollbar")
+            this.getElement("dashboard-drawer-inner.fancy-scrollbar")
                 .on("scroll.inflateVisible", $.proxy(this.inflateVisible, this));
         }
 
@@ -286,7 +286,7 @@ function KnowledgeMap(params) {
                 // use a guess because doFilter can't determine this for itself
                 rowHeight = 86;
             }
-            var screenHeight = this.getElement(".dashboard-drawer-inner.fancy-scrollbar").height();
+            var screenHeight = this.getElement("dashboard-drawer-inner.fancy-scrollbar").height();
 
             temporaryDetachElement(this.getElement("exercise-list"), function() {
                 this.doFilter(evt, rowHeight, screenHeight);

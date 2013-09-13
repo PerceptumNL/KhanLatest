@@ -82,7 +82,7 @@ def secure_url(url):
     #    # are simple CNAMEs to the default app engine instance.
     #    # http://code.google.com/p/googleappengine/issues/detail?id=792
     #    netloc = "%s.appspot.com" % get_default_version_hostname()
-    netloc = "iktel.nl"
+    netloc = "www.iktel.nl"
 
     return urlparse.urlunsplit(("https", netloc, path, query, fragment))
 

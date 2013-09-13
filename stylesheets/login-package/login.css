@@ -28,6 +28,7 @@ form.auth-form {
 
 .login-container .providers {
     text-align: center;
+    margin-top: 30px;
 }
 
 .pw-login {
@@ -41,6 +42,7 @@ form.auth-form {
 .pw-login-contents {
     text-align: right;
     width: 430px;
+    display: inline-block;
 }
 
 #page-root .vertical-separator {
@@ -481,7 +483,7 @@ a.signup-link {
 }
 
 .forgot-pw-container .auth-form {
-    text-align: right;
+    text-align: left;
 }
 
 .forgot-pw-container img.tree {
@@ -555,5 +557,9 @@ a.signup-link {
     -moz-background-clip: padding-box;
     border-background-clip: padding-box;
     background: #eee;
+}
+
+article.login {
+    background: none;
 }
 

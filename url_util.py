@@ -77,11 +77,12 @@ def secure_url(url):
 
     _, netloc, path, query, fragment = _get_url_parts(url)
 
-    if netloc.lower().endswith(".iktel.nl"):
-        # Vanity domains can't handle https - but all the ones we own
-        # are simple CNAMEs to the default app engine instance.
-        # http://code.google.com/p/googleappengine/issues/detail?id=792
-        netloc = "%s.appspot.com" % get_default_version_hostname()
+    #if netloc.lower().endswith(".iktel.nl"):
+    #    # Vanity domains can't handle https - but all the ones we own
+    #    # are simple CNAMEs to the default app engine instance.
+    #    # http://code.google.com/p/googleappengine/issues/detail?id=792
+    #    netloc = "%s.appspot.com" % get_default_version_hostname()
+    netloc = "iktel.nl"
 
     return urlparse.urlunsplit(("https", netloc, path, query, fragment))
 

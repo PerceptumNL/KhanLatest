@@ -71,13 +71,15 @@ class Login(request_handler.RequestHandler):
             return
 
         default_email = ""
+        login_hint_param = ""
         if login_hint:
             default_email = "&Email=" + login_hint
+            login_hint_param = "&login_hint=" 
 
         template_values = {
                            'continue': cont,
                            'direct': direct,
-                           'google_url': users.create_login_url(cont + "&login_hint=" + login_hint) + default_email,
+                           'google_url': users.create_login_url(cont + login_hint_param) + default_email,
                            'login_hint': login_hint, 
                            }
 
@@ -612,9 +614,9 @@ class Signup(request_handler.RequestHandler):
 
         if not App.is_dev_server:
             mail.send_mail(
-                    sender='Khan Academy Accounts <no-reply@khanacademy.org>',
+                    sender='Iktel NL <iktel@perceptum.nl>',
                     to=recipient,
-                    subject="Verify your email with Khan Academy",
+                    subject="Verify your email with Iktel NL",
                     body=body)
 
 class ParentSignup(request_handler.RequestHandler):
@@ -1183,9 +1185,9 @@ class ForgotPassword(request_handler.RequestHandler):
 
         if not App.is_dev_server:
             mail.send_mail(
-                    sender="Khan Academy Accounts <no-reply@khanacademy.org>",
+                    sender="Iktel NL <iktel@perceptum.nl>",
                     to=email,
-                    subject="Khan Academy account recovery",
+                    subject="Iktel NL account recovery",
                     body=body)
 
         template_values =  {

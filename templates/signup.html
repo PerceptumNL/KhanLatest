@@ -14,14 +14,14 @@
 {% endblock pagecss %}
 
 {% block pagecontent %}
-<article id="page-root">
+<article id="page-root" class="login">
     <div class="signup-container card-case vertical-shadow">
         <form method="POST" class="auth-form" id="signup-form" action="/signup">
         {% if continue_url %}
         <input type="hidden" name="continue" value="{{ continue_url|escape }}">
         {% endif %}
 
-        <h3>First time using Khan Academy?</h3>
+        <h3>First time using iktel.nl?</h3>
         <div class="pw-signup container">
             <div class="field-container row-fluid">
                 <label class="field-label span4" for="email">Email</label>
@@ -49,7 +49,7 @@
         </div>
 
 
-        <h3>Already using Google or Facebook to login to Khan Academy?</h3>
+        <h3>Already using Google or Facebook to login to iktel.nl?</h3>
         <div class="providers container">
             <h4>Log in with</h4>
             <div class="row-fluid">
@@ -62,7 +62,7 @@
                     {{ login_macros.facebook_button(App.facebook_app_secret) }}
                 </div>
 
-                <div class="providers-info span4">...and then we'll create your Khan Academy username and password for your account.</div>
+                <div class="providers-info span4">...and then we'll create your iktel.nl username and password for your account.</div>
             </div>
         </div>
 

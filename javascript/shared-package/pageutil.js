@@ -296,7 +296,7 @@ Badges.Notifications = Backbone.View.extend({
     },
 
     hide:function (e) {
-        this.$el.animate({top:-1 * this.$el.outerHeight() - 10}, 300,
+        this.$el.animate({top:-1 * this.$el.height() - 13}, 300,
             'easeInOutCubic');
         _.each(this.subviews, function (v) {
             v.hide();

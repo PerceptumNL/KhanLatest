@@ -545,6 +545,7 @@ var Khan = (function() {
 
         // Display error messages
         error: function() {
+            console.trace();
             if (typeof console !== "undefined") {
                 $.each(arguments, function(ix, arg) {
                     console.error(arg);
@@ -2027,7 +2028,6 @@ var Khan = (function() {
                 LocalStore.get(getSeedsSkippedCacheKey()) || 0);
 
             // Advance to the current problem seed
-            userExercise.totalDone++;
             setProblemNum(userExercise.totalDone + 1);
         }
     }

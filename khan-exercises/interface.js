@@ -228,6 +228,7 @@ function handleAttempt(data) {
             stringifiedGuess, timeTaken]);
 
     if (score.correct) {
+        $(Khan).trigger("problemDone");
         $(Exercises).trigger("problemDone", {
             card: Exercises.currentCard,
             attempts: attempts
@@ -613,7 +614,7 @@ function updateUserExercise(e, data) {
     if (framework === "perseus") {
         // TODO(alpert)
     } else if (framework === "khan-exercises") {
-        $(Khan).trigger("updateUserExercise", data);
+        $(Khan).trigger("updateUserExercise", data.userExercise);
     }
 }
 

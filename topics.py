@@ -3,8 +3,10 @@ import request_handler
 import user_util
 import logging
 import layer_cache
+import url_util
 from google.appengine.api import urlfetch
 from knowledgemap import layout
+from app import App
 from youtube_sync import youtube_get_video_data_dict
 
 
@@ -33,23 +35,31 @@ class EditContent(request_handler.RequestHandler):
     def get(self):
 
         version_name = self.request.get('version', 'edit')
+        from_version_name = self.request.get('from_version_name', None)
 
         edit_version = TopicVersion.get_by_id(version_name)
-        if edit_version is None:
-            #invi: should only run when topic tree is empty
-            edit_version = TopicVersion.create_new_version()
-            edit_version.edit = True
-            edit_version.put()
-            create_root(edit_version)
-            edit_version.put()
-            edit_version.edit = False
-            edit_version.default = True
-            edit_version.put()
-            edit_version = TopicVersion.create_new_version()
-            edit_version.edit = True
-            edit_version.put()
-            create_root(edit_version)
-            edit_version.put()
+        if from_version_name:
+            from_version = TopicVersion.get_by_id(from_version_name)
+            edit_version = TopicVersion.create_edit_version(from_version)
+        elif edit_version is None:
+            default_version = TopicVersion.get_default_version()
+            if default_version == None:
+                #invi: should only run when topic tree is empty
+                edit_version = TopicVersion.create_new_version()
+                edit_version.edit = True
+                edit_version.put()
+                create_root(edit_version)
+                edit_version.put()
+                edit_version.edit = False
+                edit_version.default = True
+                edit_version.put()
+                edit_version = TopicVersion.create_new_version()
+                edit_version.edit = True
+                edit_version.put()
+                create_root(edit_version)
+                edit_version.put()
+            else:
+                edit_version = TopicVersion.create_edit_version()
 
         if self.request.get('autoupdate', False):
             self.render_jinja2_template('autoupdate_in_progress.html', {"edit_version": edit_version})
@@ -76,8 +86,12 @@ class EditContent(request_handler.RequestHandler):
     def topic_update_from_live(self, edit_version):
         layout.update_from_live(edit_version)
         try:
+            if App.is_dev_server:
+                topictree_url="http://khan-testing.appspot.com/topictree_test.json"
+            else:
+                topictree_url=url_util.absolute_url("/topictree.json")
             response = urlfetch.fetch(
-                url="http://www.iktel.nl/api/v1/topictree",
+                url=topictree_url,
                 deadline=25)
             topictree = json.loads(response.content)
 

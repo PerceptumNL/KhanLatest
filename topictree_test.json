@@ -1,0 +1,152 @@
+{
+    "backup_timestamp": "2013-09-16T13:14:54Z",
+    "children": [
+        {
+            "backup_timestamp": "2013-09-16T13:14:53Z",
+            "children": [
+                {
+                    "backup_timestamp": "2013-09-16T13:14:41Z",
+                    "children": [
+                        {
+                            "backup_timestamp": "2013-09-16T13:43:05Z",
+                            "covers": [],
+                            "creation_date": "2013-08-07T13:36:19Z",
+                            "description": "",
+                            "display_name": "Absolute waarde",
+                            "file_name": "",
+                            "h_position": 7,
+                            "ka_url": "http://127.0.0.1:8080/exercise/absolute_value",
+                            "kind": "Exercise",
+                            "live": true,
+                            "name": "absolute_value",
+                            "prerequisites": [
+                                "adding_and_subtracting_negative_numbers"
+                            ],
+                            "pretty_display_name": "Absolute waarde",
+                            "related_video_readable_ids": [
+                                "absolute-waarde"
+                            ],
+                            "relative_url": "/exercise/absolute_value",
+                            "seconds_per_fast_problem": 4,
+                            "sha1": "9dded40f6103527e995d9add98be7c4f9b01578d",
+                            "short_display_name": "Abs-w",
+                            "summative": false,
+                            "tags": [],
+                            "v_position": -1,
+                            "video_requests_count": 0
+                        },
+                        {
+                            "backup_timestamp": "2013-09-16T13:43:04Z",
+                            "date_added": "2013-08-07T13:36:06Z",
+                            "description": "Khan academy Nederlands. Absolute waarde.",
+                            "download_urls": null,
+                            "duration": 96,
+                            "extra_properties": null,
+                            "ka_url": "http://127.0.0.1:8080/video/absolute-waarde",
+                            "keywords": "",
+                            "kind": "Video",
+                            "playlists": [],
+                            "readable_id": "absolute-waarde",
+                            "relative_url": "/video/absolute-waarde",
+                            "title": "Absolute waarde",
+                            "url": "https://www.youtube.com/watch?v=LrjhueFM_bo&feature=youtube_gdata_player",
+                            "views": 285,
+                            "youtube_id": "LrjhueFM_bo"
+                        },
+                        {
+                            "backup_timestamp": "2013-09-16T13:43:04Z",
+                            "date_added": "2013-08-07T13:36:06Z",
+                            "description": "Vergelijkingen met absolute waarden oplossen. Kijk ook op http://www.khanacademie.nl voor meer uitlegvideo's en bijbehorende oefeningen.",
+                            "download_urls": null,
+                            "duration": 780,
+                            "extra_properties": null,
+                            "ka_url": "http://127.0.0.1:8080/video/absolute-waarde-vergelijkingen",
+                            "keywords": "",
+                            "kind": "Video",
+                            "playlists": [],
+                            "readable_id": "absolute-waarde-vergelijkingen",
+                            "relative_url": "/video/absolute-waarde-vergelijkingen",
+                            "title": "Absolute waarde vergelijkingen",
+                            "url": "https://www.youtube.com/watch?v=JTGxI6aQYSc&feature=youtube_gdata_player",
+                            "views": 381,
+                            "youtube_id": "JTGxI6aQYSc"
+                        },
+                        {
+                            "backup_timestamp": "2013-09-16T13:43:05Z",
+                            "covers": [],
+                            "creation_date": "2013-08-07T13:36:19Z",
+                            "description": "",
+                            "display_name": "Het vergelijken van absolute waarden",
+                            "file_name": "",
+                            "h_position": 8,
+                            "ka_url": "http://127.0.0.1:8080/exercise/comparing_absolute_values",
+                            "kind": "Exercise",
+                            "live": true,
+                            "name": "comparing_absolute_values",
+                            "prerequisites": [
+                                "absolute_value"
+                            ],
+                            "pretty_display_name": "Het vergelijken van absolute waarden",
+                            "related_video_readable_ids": [
+                                "absolute-waarde-vergelijkingen"
+                            ],
+                            "relative_url": "/exercise/comparing_absolute_values",
+                            "seconds_per_fast_problem": 4,
+                            "sha1": "6139bab2714be5de54b9872dcbead89b37570e1d",
+                            "short_display_name": "Verg-abs-w",
+                            "summative": false,
+                            "tags": [],
+                            "v_position": -1,
+                            "video_requests_count": 0
+                        }
+                    ],
+                    "description": "",
+                    "extended_slug": "wiskunde/absolute-waarde",
+                    "h_position": 0,
+                    "hide": false,
+                    "icon_name": null,
+                    "icon_url": "/images/power-mode/badges/default-40x40.png",
+                    "id": "absolute-waarde",
+                    "ka_url": "http://127.0.0.1:8080/#absolute-waarde",
+                    "kind": "Topic",
+                    "relative_url": "/#absolute-waarde",
+                    "standalone_title": "Absolute waarde",
+                    "tags": [],
+                    "title": "Absolute waarde",
+                    "topic_page_url": "/wiskunde/absolute-waarde",
+                    "v_position": 3
+                }
+            ],
+            "description": "",
+            "extended_slug": "wiskunde",
+            "h_position": 0,
+            "hide": false,
+            "icon_name": null,
+            "icon_url": "/images/power-mode/badges/default-40x40.png",
+            "id": "wiskunde",
+            "ka_url": "http://127.0.0.1:8080/#wiskunde",
+            "kind": "Topic",
+            "relative_url": "/#wiskunde",
+            "standalone_title": "Wiskunde",
+            "tags": [],
+            "title": "Wiskunde",
+            "topic_page_url": "/wiskunde",
+            "v_position": 0
+        }
+    ],
+    "description": "All concepts fit into the root of all knowledge",
+    "extended_slug": "root",
+    "h_position": 0,
+    "hide": false,
+    "icon_name": null,
+    "icon_url": "/images/power-mode/badges/default-40x40.png",
+    "id": "root",
+    "ka_url": "http://127.0.0.1:8080/#root",
+    "kind": "Topic",
+    "relative_url": "/#root",
+    "standalone_title": "The Root of All Knowledge",
+    "tags": [],
+    "title": "The Root of All Knowledge",
+    "topic_page_url": "/root",
+    "v_position": 0
+}

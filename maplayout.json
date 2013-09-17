@@ -1,0 +1,173 @@
+{
+    "polylines": [], 
+    "topics": {
+        "Absolute waarde": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "absolute-waarde", 
+            "standalone_title": "Absolute waarde", 
+            "x": "0", 
+            "y": "3"
+        }, 
+        "Algebra": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "algebra", 
+            "standalone_title": "Algebra", 
+            "x": "-35", 
+            "y": "37"
+        }, 
+        "Breuken": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "breuken", 
+            "standalone_title": "Breuken", 
+            "x": "-6", 
+            "y": "18"
+        }, 
+        "Calculus": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "calculus", 
+            "standalone_title": "Calculus", 
+            "x": "-22", 
+            "y": "51"
+        }, 
+        "Complexe getallen": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "complexe-getalen", 
+            "standalone_title": "Complexe getallen", 
+            "x": "-12", 
+            "y": "40"
+        }, 
+        "Delen en vermenigvuldigen": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "delen-en-vermenigvuldigen", 
+            "standalone_title": "Delen en vermenigvuldigen", 
+            "x": "-8", 
+            "y": "3"
+        }, 
+        "Deler en veelvoud": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "deler-en-veelvoud", 
+            "standalone_title": "Deler en veelvoud", 
+            "x": "-11", 
+            "y": "11"
+        }, 
+        "Driehoeken": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "driehoeken", 
+            "standalone_title": "Driehoeken", 
+            "x": "-24", 
+            "y": "35"
+        }, 
+        "Exponential and logarithmic functions": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "trigonometry", 
+            "standalone_title": "Exponential and logarithmic functions", 
+            "x": "-9", 
+            "y": "-4"
+        }, 
+        "Getalbegrip groep 4": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "getalbegrip", 
+            "standalone_title": "Getalbegrip groep 4", 
+            "x": "-3", 
+            "y": "-3"
+        }, 
+        "Goniometrie": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "goniometrie", 
+            "standalone_title": "Goniometrie", 
+            "x": "-24", 
+            "y": "40"
+        }, 
+        "Hoeken": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "hoeken", 
+            "standalone_title": "Hoeken", 
+            "x": "-20", 
+            "y": "25"
+        }, 
+        "Kansberekening": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "kansberekening", 
+            "standalone_title": "Kansberekening", 
+            "x": "-19", 
+            "y": "17"
+        }, 
+        "Klokkijken": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "klokkijken", 
+            "standalone_title": "Klokkijken", 
+            "x": "10", 
+            "y": "0"
+        }, 
+        "Kommagetallen": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "kommagetallen", 
+            "standalone_title": "Kommagetallen", 
+            "x": "3", 
+            "y": "11"
+        }, 
+        "Machtsverheffen en worteltrekken": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "macht-en-wortel", 
+            "standalone_title": "Machtsverheffen en worteltrekken", 
+            "x": "1", 
+            "y": "18"
+        }, 
+        "Meetkunde": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "meetkunde", 
+            "standalone_title": "Meetkunde", 
+            "x": "-28", 
+            "y": "29"
+        }, 
+        "Optellen en aftrekken": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "getallen", 
+            "standalone_title": "Optellen en aftrekken", 
+            "x": "4", 
+            "y": "-2"
+        }, 
+        "Procenten": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "procenten", 
+            "standalone_title": "Procenten", 
+            "x": "-5", 
+            "y": "25"
+        }, 
+        "Statistiek": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "statistiek", 
+            "standalone_title": "Statistiek", 
+            "x": "-26", 
+            "y": "14"
+        }, 
+        "Stelling van Pythagoras": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "stelling-van-pythagoras", 
+            "standalone_title": "Stelling van Pythagoras", 
+            "x": "-14", 
+            "y": "36"
+        }, 
+        "Vergelijkingen van een lijn": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "vergelijkingen-van-een-lijn", 
+            "standalone_title": "Vergelijkingen van een lijn", 
+            "x": "3", 
+            "y": "41"
+        }, 
+        "Verhoudingen": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "verhoudingen", 
+            "standalone_title": "Verhoudingen", 
+            "x": "-11", 
+            "y": "27"
+        }, 
+        "Volgorde van bewerken": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "volgorde-van-bewerken", 
+            "standalone_title": "Volgorde van bewerken", 
+            "x": "-7", 
+            "y": "14"
+        }
+    }
+}

@@ -1,5 +1,7 @@
 application: khan-netherlands
-version: 51
+#version: lrs
+#version: 1
+version: 57
 runtime: python27
 api_version: 1
 default_expiration: "365d"
@@ -56,6 +58,22 @@ handlers:
   mime_type: image/x-icon
   upload: images/favicon.ico
 
+- url: /topictree.json
+  static_files: topictree.json
+  upload: topictree.json
+
+- url: /topictree_test.json
+  static_files: topictree_test.json
+  upload: topictree_test.json
+
+- url: /maplayout.json
+  static_files: maplayout.json
+  upload: maplayout.json
+
+- url: /maplayout_test.json
+  static_files: maplayout_test.json
+  upload: maplayout_test.json
+
 - url: /google663128d2a1a65b87.html
   static_files: google663128d2a1a65b87.html
   upload: google663128d2a1a65b87.html
@@ -105,6 +123,10 @@ handlers:
   static_files: khan-exercises/khan-exercise.js
   upload: khan-exercises/khan-exercise.js
 
+- url: /khan-exercises/interface.js
+  static_files: khan-exercises/interface.js
+  upload: khan-exercises/interface.js
+
 - url: /khan-exercises/jquery-ui.js
   static_files: khan-exercises/jquery-ui.js
   upload: khan-exercises/jquery-ui.js
@@ -117,6 +139,9 @@ handlers:
 
 - url: /khan-exercises/images
   static_dir: khan-exercises/images
+
+- url: /khan-exercises/local-only
+  static_dir: khan-exercises/local-only
 
 - url: /khan-exercises/(hashed.+\.js)
   static_files: khan-exercises/\1

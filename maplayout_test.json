@@ -1,0 +1,12 @@
+{
+    "polylines": [], 
+    "topics": {
+        "Absolute waarde": {
+            "icon_url": "/images/power-mode/badges/default-40x40.png", 
+            "id": "absolute-waarde", 
+            "standalone_title": "Absolute waarde", 
+            "x": "0", 
+            "y": "3"
+        }    
+    }
+}

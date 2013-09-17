@@ -278,7 +278,8 @@ function handleAttempt(data) {
         updateHintButtonText();
     }
 
-    $(Exercises).trigger("checkAnswer", {
+    $(Khan).trigger("checkAnswer", {
+        pass: score.correct,
         correct: score.correct,
         card: Exercises.currentCard,
         optOut: optOut,
@@ -380,11 +381,11 @@ function onHintShown(e, data) {
     hintsUsed++;
     updateHintButtonText();
 
-    $(Exercises).trigger("hintUsed", data);
+    $(Khan).trigger("hintUsed", data);
     // If there aren't any more hints, disable the get hint button
     if (hintsUsed === numHints) {
         $("#hint").attr("disabled", true);
-        $(Exercises).trigger("allHintsUsed");
+        $(Khan).trigger("allHintsUsed");
     }
 
     var curTime = new Date().getTime();
@@ -537,7 +538,7 @@ function request(method, data) {
             // requests after the error
             attemptHintQueue.clearQueue();
         }).always(function() {
-            $(Exercises).trigger("apiRequestEnded");
+            $(Khan).trigger("apiRequestEnded");
             next();
         });
     });
@@ -545,7 +546,7 @@ function request(method, data) {
     // Trigger an apiRequestStarted event here, and not in the queued function
     // because listeners should know an API request is waiting as soon as it
     // gets queued up.
-    $(Exercises).trigger("apiRequestStarted");
+    $(Khan).trigger("apiRequestStarted");
 
     return deferred.promise();
 }

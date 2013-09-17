@@ -6,12 +6,14 @@ except ImportError:
 
 from google.appengine.ext import db
 
+import url_util
 import layer_cache
 import logging
 import object_property
 import topic_models
 import urllib2
 from api import jsonify
+from app import App
 
 NUM_SUGGESTED_TOPICS = 2
 
@@ -21,7 +23,12 @@ def update_from_live(edit_version):
     site into the edit_version
     """
     logging.info("importing knowledge map layout")
-    request = urllib2.Request("http://www.iktel.nl/api/v1/maplayout")
+    if App.is_dev_server:
+        maplayout_url="http://khan-testing.appspot.com/maplayout_test.json"
+    else:
+        maplayout_url=url_util.absolute_url("/maplayout.json")
+
+    request = urllib2.Request(maplayout_url)
     try:
         opener = urllib2.build_opener()
         f = opener.open(request)
@@ -174,11 +181,24 @@ class MapLayout(db.Model):
 
         return map_layout
 
+    def update_topics_positions(self, version):
+        if self.layout:
+            topics = self.layout['topics']
+            for layout_topic in topics.values():
+                topic = topic_models.Topic.get_by_id(layout_topic["id"], version)
+                if topic:
+                    topic.v_position = int(layout_topic['y'])
+                    topic.h_position = int(layout_topic['x'])
+                    topic.icon_name = layout_topic['icon_url'].split("/")[-1].replace("-40x40.png","")
+                    topic.put()
+
     def put(self):
+
         db.Model.put(self)
 
         # After a MapLayout put we need to bust any memcached version
         MapLayout.get_for_version(self.version, bust_cache=True)
+
 
     @property
     def has_layout(self):

@@ -632,6 +632,147 @@ var Khan = (function() {
             return actions;
         })(),
 
+        relatedVideos: {
+            exercise: null,
+            cache: {},
+
+            getVideos: function() {
+                return this.cache[this.exercise.name] || [];
+            },
+
+            setVideos: function(exercise) {
+
+                if (exercise.relatedVideos) {
+                    this.cache[exercise.name] = exercise.relatedVideos;
+                }
+
+                this.exercise = exercise;
+                this.render();
+            },
+
+            showThumbnail: function(index) {
+                $("#related-video-list .related-video-list li").each(function(i, el) {
+                    if (i === index) {
+                        $(el)
+                            .find("a.related-video-inline").hide().end()
+                            .find(".thumbnail").show();
+                    }
+                    else {
+                        $(el)
+                            .find("a.related-video-inline").show().end()
+                            .find(".thumbnail").hide();
+                    }
+                });
+            },
+
+            // make a link to a related video, appending exercise ID.
+            makeHref: function(video) {
+                return video.relativeUrl + "?exid=" + this.exercise.name;
+            },
+
+            anchorElement: function(video, needComma) {
+                var template = Templates.get("video.related-video-link");
+                return $(template({
+                    href: this.makeHref(video),
+                    video: video,
+                    separator: needComma
+                })).data("video", video);
+            },
+
+            renderInSidebar: function() {
+                var container = $(".related-video-box");
+                var jel = container.find(".related-video-list");
+                jel.empty();
+
+                var template = Templates.get("video.thumbnail");
+                if (this.getVideos().length) {
+		  $(container).find(".watch").show()
+                  _.each(this.getVideos(), function(video, i) {
+                      var thumbnailDiv = $(template({
+                          href: this.makeHref(video),
+                          video: video
+                      })).find("a.related-video").data("video", video).end();
+
+                      var inlineLink = this.anchorElement(video)
+                          .addClass("related-video-inline");
+
+                      var sideBarLi = $("<li>")
+                          .append(inlineLink)
+                          .append(thumbnailDiv);
+
+                      if (i > 0) {
+                          thumbnailDiv.hide();
+                      } else {
+                          inlineLink.hide();
+                      }
+                      jel.append(sideBarLi);
+                  }, this);
+                } else { 
+                    function set_video_requested() {
+                      jel.empty();
+                      jel.append("Bedankt voor je reactie!");
+                    }
+                    if (!this.exercise.videoRequested) {
+                      jel.append("<div type='button' id='request_video' class='simple-button orange full-width pagination-center' style='text-align:center'><span>Geef aan dat je een video <br /> mist bij deze oefening</span></div>");
+                      var self = this;
+                      $("#request_video").click(function() {
+                        $.get("/api/v1/user/exercises/"+self.exercise.name+
+                              "/request_video", function(res) {
+                          if (res.rc) 
+                            set_video_requested();
+                          else
+                            alert("Er is een fout opgetreden, de video was al aangevraagd!");
+
+                        })
+                      });
+                    } else {
+                      set_video_requested();
+                    }
+                }
+
+                //container.toggle(this.getVideos().length > 0);
+                container.toggle(true);
+            },
+
+            hookup: function() {
+                // make caption slide up over the thumbnail on hover
+                var captionHeight = 45;
+                var marginTop = 23;
+                // queue:false to make sure these run simultaneously
+                var options = {duration: 150, queue: false};
+                $(".related-video-box")
+                    .delegate(".thumbnail", "mouseenter mouseleave", function(e) {
+                        var el = $(e.currentTarget);
+                        if (e.type == "mouseenter") {
+                            el.find(".thumbnail_label").animate(
+                                    {marginTop: marginTop},
+                                    options)
+                                .end()
+                                .find(".thumbnail_teaser").animate(
+                                    {height: captionHeight},
+                                    options)
+                                .end();
+                        } else {
+                            el.find(".thumbnail_label").animate(
+                                    {marginTop: marginTop + captionHeight},
+                                    options)
+                                .end()
+                                .find(".thumbnail_teaser").animate(
+                                    {height: 0},
+                                    options)
+                                .end();
+                        }
+                    });
+            },
+
+            render: function() {
+                // don't try to render if templates aren't present (dev mode)
+                if (!window.Templates) return;
+
+                this.renderInSidebar();
+            }
+        },
+
         getSeedInfo: function() {
             return {
                 // A hash representing the exercise version
@@ -1142,6 +1283,9 @@ var Khan = (function() {
 
             // ...and create a new problem bag with problems of our new exercise type.
             problemBag = makeProblemBag(problems, 10);
+
+            // Update related videos
+            Khan.relatedVideos.setVideos(userExercise.exerciseModel);
 
             // Make scratchpad persistent per-user
             if (user) {
@@ -1923,6 +2067,7 @@ var Khan = (function() {
                 // number)
             }
         });
+        Khan.relatedVideos.hookup();
     }
 
     function initEvents() {
@@ -1971,6 +2116,7 @@ var Khan = (function() {
         $(Exercises)
             .bind("newProblem", renderDebugInfo)
             .bind("newProblem", renderExerciseBrowserPreview);
+
     }
 
     function deslugify(name) {

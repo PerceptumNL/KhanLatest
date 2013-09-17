@@ -146,9 +146,9 @@ class TopicVersion(backup_model.BackupModel):
         return TopicVersion.all().filter("default = ", True).get()
 
     @staticmethod
-    @layer_cache.cache_with_key_fxn(
-        lambda *args, **kwargs: "topic_models_edit_version_%s" %
-            setting_model.Setting.topic_tree_version())
+    #@layer_cache.cache_with_key_fxn(
+    #    lambda *args, **kwargs: "topic_models_edit_version_%s" %
+    #        setting_model.Setting.topic_tree_version())
     def get_edit_version():
         return TopicVersion.all().filter("edit = ", True).get()
 
@@ -234,63 +234,71 @@ class TopicVersion(backup_model.BackupModel):
         version = self
 
         # find exercises that are overlapping on the knowledge map
-        logging.info("checking for exercises that are overlapping on the "
-                     "knowledge map")
-        exercises = exercise_models.Exercise.all()
-        exercise_dict = dict((e.key(), e) for e in exercises)
+        #logging.info("checking for exercises that are overlapping on the "
+        #             "knowledge map")
+        #exercises = exercise_models.Exercise.all()
+        #exercise_dict = dict((e.key(), e) for e in exercises)
 
-        location_dict = {}
-        duplicate_positions = list()
-        changes = VersionContentChange.get_updated_content_dict(version)
-        exercise_changes = dict((k, v) for k, v in changes.iteritems()
-                                if v.key() in exercise_dict)
-        exercise_dict.update(exercise_changes)
+        #location_dict = {}
+        #duplicate_positions = list()
+        #changes = VersionContentChange.get_updated_content_dict(version)
+        #exercise_changes = dict((k, v) for k, v in changes.iteritems()
+        #                        if v.key() in exercise_dict)
+        #exercise_dict.update(exercise_changes)
 
-        for exercise in [e for e in exercise_dict.values()
-                         if e.live and not e.summative]:
+        #for exercise in [e for e in exercise_dict.values()
+        #                 if e.live and not e.summative]:
 
-            if exercise.h_position not in location_dict:
-                location_dict[exercise.h_position] = {}
+        #    if exercise.h_position not in location_dict:
+        #        location_dict[exercise.h_position] = {}
 
-            if exercise.v_position in location_dict[exercise.h_position]:
-                location_dict[exercise.h_position][exercise.v_position].append(
-                    exercise)
-                duplicate_positions.append(
-                    location_dict[exercise.h_position][exercise.v_position])
-            else:
-                location_dict[exercise.h_position][exercise.v_position] = \
-                    [exercise]
+        #    if exercise.v_position in location_dict[exercise.h_position]:
+        #        location_dict[exercise.h_position][exercise.v_position].append(
+        #            exercise)
+        #        duplicate_positions.append(
+        #            location_dict[exercise.h_position][exercise.v_position])
+        #    else:
+        #        location_dict[exercise.h_position][exercise.v_position] = \
+        #            [exercise]
 
-        # find videos whose duration is 0
-        logging.info("checking for videos with 0 duration")
-        zero_duration_videos = (video_models.Video.all()
-                                .filter("duration =", 0)
-                                .fetch(10000))
-        zero_duration_dict = dict((v.key(), v) for v in zero_duration_videos)
-        video_changes = dict((k, v) for k, v in changes.iteritems()
-                             if k in zero_duration_dict or
-                             (type(v) == video_models.Video and
-                              v.duration == 0))
-        zero_duration_dict.update(video_changes)
-        zero_duration_videos = [v for v in zero_duration_dict.values()
-                                if v.duration == 0]
+        ## find videos whose duration is 0
+        #logging.info("checking for videos with 0 duration")
+        #zero_duration_videos = (video_models.Video.all()
+        #                        .filter("duration =", 0)
+        #                        .fetch(10000))
+        #zero_duration_dict = dict((v.key(), v) for v in zero_duration_videos)
+        #video_changes = dict((k, v) for k, v in changes.iteritems()
+        #                     if k in zero_duration_dict or
+        #                     (type(v) == video_models.Video and
+        #                      v.duration == 0))
+        #zero_duration_dict.update(video_changes)
+        #zero_duration_videos = [v for v in zero_duration_dict.values()
+        #                        if v.duration == 0]
 
-        # find videos with invalid youtube_ids that would be marked live
-        logging.info("checking for videos with invalid youtube_ids")
-        root = Topic.get_root(version)
-        videos = root.get_videos(include_descendants=True)
-        bad_videos = []
-        for video in videos:
-            if re.search("_DUP_\d*$", video.youtube_id):
-                bad_videos.append(video)
+        ## find videos with invalid youtube_ids that would be marked live
+        #logging.info("checking for videos with invalid youtube_ids")
+        #root = Topic.get_root(version)
+        #videos = root.get_videos(include_descendants=True)
+        #bad_videos = []
+        #for video in videos:
+        #    if re.search("_DUP_\d*$", video.youtube_id):
+        #        bad_videos.append(video)
+
+        #problems = {
+        #    "ExerciseVideos with topicless videos": [],
+        #    #    (exercise_video_model.ExerciseVideo
+        #    #     .get_all_with_topicless_videos(version)),
+        #    "Exercises with colliding positions": list(duplicate_positions),
+        #    "Zero duration videos": zero_duration_videos,
+        #    "Videos with bad youtube_ids": bad_videos}
 
         problems = {
-            "ExerciseVideos with topicless videos":
-                (exercise_video_model.ExerciseVideo
-                 .get_all_with_topicless_videos(version)),
-            "Exercises with colliding positions": list(duplicate_positions),
-            "Zero duration videos": zero_duration_videos,
-            "Videos with bad youtube_ids": bad_videos}
+            "ExerciseVideos with topicless videos": [],
+                #(exercise_video_model.ExerciseVideo
+                # .get_all_with_topicless_videos(version)),
+            "Exercises with colliding positions": [],
+            "Zero duration videos": [],
+            "Videos with bad youtube_ids": []}
 
         return problems
 
@@ -512,12 +520,12 @@ class Topic(search.Searchable, backup_model.BackupModel):
         main_topic = self
         try:
             parent_topic = db.get(self.parent_keys[0])
+            # If the parent is a supertopic, use that instead
+            if parent_topic.id in Topic._super_topic_ids:
+                main_topic = parent_topic
         except:
             logging.error("No parent topic found for %s" % main_topic.id)
 
-        # If the parent is a supertopic, use that instead
-        if parent_topic.id in Topic._super_topic_ids:
-            main_topic = parent_topic
 
         topic_info = main_topic.get_topic_page_data()
 
@@ -1929,7 +1937,7 @@ def _apply_version_content_changes(version_number, run_code):
         change.apply_change()
         logging.info("applied change %i of %i" % (i, num_changes))
     logging.info("applied content changes")
-    _do_set_default_deferred_step(_preload_default_version_data,
+    _do_set_default_deferred_step(_preload_default_version_library_data,
                                   version_number,
                                   run_code)
 
@@ -1941,9 +1949,20 @@ def preload_library_homepage(version):
     library.library_content_html(True, version.number)
     logging.info("preloaded ajax library_content_html")
 
+def _preload_default_version_library_data(version_number, run_code):
+    setting_model.Setting.topic_admin_task_message("Publish: preloading library cache")
+    version = TopicVersion.get_by_id(version_number)
+
+    # Preload library for upcoming version
+    preload_library_homepage(version)
+    _do_set_default_deferred_step(_preload_default_version_topic_data,
+                                  version_number,
+                                  run_code)
+
 
 def preload_topic_pages(version):
     for topic in Topic.get_all_topics(version=version):
+        logging.info("preload topic pages %s" % topic.title)
         topic.get_topic_page_json()
         topic.get_topic_page_html()
         topic.get_topic_page_nav_html()
@@ -1957,18 +1976,24 @@ def preload_topic_browsers(version):
     logging.info("preloaded topic_browsers")
 
 
-def _preload_default_version_data(version_number, run_code):
+
+def _preload_default_version_topic_data(version_number, run_code):
     setting_model.Setting.topic_admin_task_message("Publish: preloading cache")
     version = TopicVersion.get_by_id(version_number)
-
-    # Preload library for upcoming version
-    preload_library_homepage(version)
 
     # Preload topic pages
     preload_topic_pages(version)
 
     # Preload topic browsers
     preload_topic_browsers(version)
+
+    _do_set_default_deferred_step(_preload_default_version_autocomplete_data,
+                                  version_number,
+                                  run_code)
+
+def _preload_default_version_autocomplete_data(version_number, run_code):
+
+    version = TopicVersion.get_by_id(version_number)
     # Preload autocomplete cache
     autocomplete.video_title_dicts(version.number)
     logging.info("preloaded video autocomplete")
@@ -2040,7 +2065,11 @@ def _change_default_version(version_number, run_code):
     edit_version = TopicVersion.create_edit_version(version)
     logging.info("done creating new edit version")
 
-    logging.info("creating maplayout from current version")
+    logging.info("saving topic positions for edit version")
+    default_layout = layout.MapLayout.get_for_version(version)
+    default_layout.update_topics_positions(edit_version)
+
+    logging.info("creating maplayout from edit version")
     map_layout = layout.MapLayout.get_for_version(edit_version)
     map_layout.layout = layout.MapLayout.from_version(version)
     map_layout.put()

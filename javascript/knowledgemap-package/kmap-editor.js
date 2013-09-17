@@ -79,7 +79,11 @@ var KMapEditor = {
             if (change.content.kind === "Exercise") {
                 var exercise = KMapEditor.editVersion.get(change.content.name);
                 $.each(change.content_changes, function(key, val) {
-                    exercise[key] = val;
+                    try {
+                        exercise[key] = val;
+                    } catch(e) {
+                        console.error("Can't find ex: " + change.content.name);
+                    }
                 });
             }
         });
@@ -850,6 +854,10 @@ var KMapEditor = {
     },
 
     addPath: function(src, dst) {
+        if (this.exercises.get(src) === undefined) {   
+            console.error("Can't find ex: " + src);
+            return;
+        }
         var set = this.raphael.set();
         set.push(this.raphael.path(Raphael.format( "M{0},{1}L{2},{3}",
                 (this.exercises.get(src).v_position - this.minV) * this.X_SPACING + (this.LABEL_WIDTH / 2),

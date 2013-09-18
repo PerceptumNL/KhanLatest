@@ -645,7 +645,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
                 + "\\div"
                 + divisor + "="
                 + "\\color{#28AE7B}{" + quotient + "}"
-                + "\\text{ " + $._("or") + " }"
+                + "\\text{ " + $._("of") + " }"
                 + divisor
                 + "\\times"
                 + "\\color{#28AE7B}{" + quotient + "}"

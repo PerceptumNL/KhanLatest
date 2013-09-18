@@ -58,10 +58,8 @@ $.extend(KhanUtil, {
         return digits;
     },
 
-    placesLeftOfDecimal: [$._("one"), $._("ten"), $._("hundred"),
-        $._("thousand")],
-    placesRightOfDecimal: [$._("one"), $._("tenth"), $._("hundredth"),
-        $._("thousandth")],
+    placesLeftOfDecimal: ["eenheid", "tiental", "honderdtal", "duizendtal"],
+    placesRightOfDecimal: ["eenheid", "tiende", "honderdste", "duizendste"],
 
     powerToPlace: function(power) {
         if (power < 0) {

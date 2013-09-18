@@ -120,7 +120,7 @@ function Adder(a, b, digitsA, digitsB) {
                     "\\LARGE{" + decimalPointSymbol + "}", "center", true);
             });
         }
-        this.showSideLabel("\\text{Make sure the decimals are lined up.}");
+        this.showSideLabel("\\text{Zorg er voor dat de kommagetallen op de goede rij staan.}");
     }
 }
 
@@ -263,7 +263,7 @@ function Subtractor(a, b, digitsA, digitsB, decimalPlaces) {
                     "\\LARGE{" + decimalPointSymbol + "}", "center", true);
             });
         }
-        this.showSideLabel("\\text{Make sure the decimals are lined up.}");
+        this.showSideLabel("\\text{Zorg er voor dat de kommagetallen op de goede rij staan.}");
     };
 }
 
@@ -522,14 +522,12 @@ function Multiplier(a, b, digitsA, digitsB, deciA, deciB) {
         var x = -maxNumDigits;
         var y = -Math.max(digitsB.length * digitsA.length, 3 + digitsB.length);
         graph.label([x, y + 2],
-            $.ngettext("\\text{The top number has 1 digit to the right of the decimal.}", "\\text{The top number has %(num)s digits to the right of the decimal.}", deciA), "right");
+            "\\text{Het bovenste getal heeft " + KhanUtil.plural(deciA, "cijfers") + " achter de komma.}", "right");
         graph.label([x, y + 1],
-            $.ngettext("\\text{The bottom number has 1 digit to the right of the decimal.}", "\\text{The bottom number has %(num)s digits to the right of the decimal.}", deciB), "right");
+            "\\text{Het onderste getal heeft " + KhanUtil.plural(deciB, "cijfers") + " cijfers achter de komma.}", "right");
         // TODO(jeresig): i18n: Should this be pluralized?
         graph.label([x, y],
-                    $._("\\text{The product has %(numA)s + %(numB)s = %(numSum)s digits to the right of the decimal.}",
-                        {numA: deciA, numB: deciB, numSum: deciA + deciB}),
-                    "right");
+            "\\text{Het product heeft " + deciA + " + " + deciB + " = " + (deciA + deciB) + "  cijfers achter de komma.}", "right");
         graph.style({
             fill: "#000"
         }, function() {
@@ -613,9 +611,11 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
             highlights = highlights.concat(drawDigits(totalDigits, index - totalDigits.length + 1, -2 * index, KhanUtil.BLUE));
 
             graph.label([digitsDividend.length + 0.5, -2 * index],
-                $._("\\text{How many times does }%(divisor)s" +
-                    "\\text{ go into }\\color{#6495ED}{%(total)s}\\text{?}",
-                    {divisor: divisor, total: total}), "right");
+                "\\text{Hoe vaak past }"
+                + divisor
+                + "\\text{ in }"
+                + "\\color{#6495ED}{" + total + "}"
+                + "\\text{?}", "right");
 
             fShowFirstHalf = false;
         } else {
@@ -665,8 +665,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
         this.addDecimal();
         this.show();
         graph.label([digitsDividend.length, 1],
-            $._("\\text{Write in a decimal and a zero and continue dividing.}"), 
-            "right");
+            "\\text{Schrijf een komma en een nul en ga door met delen.}", "right");
     };
 
     this.getNumHints = function() {
@@ -697,10 +696,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
 
         if (deciDivisor !== 0) {
             graph.label([digitsDividend.length + 1 + (deciDiff > 0 ? deciDiff : 0), 1],
-                        $.ngettext("\\text{Shift the decimal 1 to the right.}",
-                                   "\\text{Shift the decimal %(num)s to the right.}",
-                                   deciDivisor),
-                        "right");
+                "\\text{Verplaats het kommagetal " + deciDivisor + " naar rechts.}", "right");
             graph.style({
                 fill: "#000"
             }, function() {
@@ -710,9 +706,9 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
         } else {
             // TODO(jeresig): i18n: This probably won't work in multiple langs
             graph.label([digitsDividend.length + 0.5, 1.2],
-                $._("\\text{Bring the decimal up into the}"), "right");
+                "\\text{Breng het decimale getal}", "right");
             graph.label([digitsDividend.length + 0.5, 0.8],
-                $._("\\text{answer (the quotient).}"), "right");
+                "\\text{in het antwoord (de quotiënt).}", "right");
         }
 
         this.addDecimal();

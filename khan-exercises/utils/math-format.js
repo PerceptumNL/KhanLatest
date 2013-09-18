@@ -1,4 +1,17 @@
 $.extend(KhanUtil, {
+
+ 	/* Turns a floating point number into a string, replaces dot with comma, returns string*/
+ 	dutchDec: function(number){
+ 		var stringify = number.toString();
+ 		return (stringify.replace(".", ","));
+ 	},
+
+ 	/* Replaces the comma in a string with a dot, then turns result into a float. */
+ 	dutchSol: function(string){
+ 		var numbify = string.replace(",",".");
+ 		return parseFloat(numbify);
+ 	},
+ 	
     /* Wraps a number in paretheses if it's negative. */
     negParens: function(n) {
         return n < 0 ? "(" + n + ")" : n;
@@ -236,22 +249,9 @@ $.extend(KhanUtil, {
     // TODO(csilvers): I18N: this doesn't work at all outside English.
     // cf. https://github.com/kslazarev/numbers_and_words (Ruby, sadly).
     cardinal: function(n) {
-        var cardinalScales = ["", $._("thousand"), $._("million"),
-            $._("billion"), $._("trillion"), $._("quadrillion"),
-            $._("quintillion"), $._("sextillion"), $._("septillion"),
-            $._("octillion"), $._("nonillion"), $._("decillion"),
-            $._("undecillion"), $._("duodecillion"), $._("tredecillion"),
-            $._("quattuordecillion"), $._("quindecillion"),
-            $._("sexdecillion"), $._("septendecillion"), $._("octodecillion"),
-            $._("novemdecillion"), $._("vigintillion")];
-        var cardinalUnits = [$._("zero"), $._("one"), $._("two"), $._("three"),
-            $._("four"), $._("five"), $._("six"), $._("seven"), $._("eight"),
-            $._("nine"), $._("ten"), $._("eleven"), $._("twelve"),
-            $._("thirteen"), $._("fourteen"), $._("fifteen"), $._("sixteen"),
-            $._("seventeen"), $._("eighteen"), $._("nineteen")];
-        var cardinalTens = ["", "", $._("twenty"), $._("thirty"), $._("forty"),
-            $._("fifty"), $._("sixty"), $._("seventy"), $._("eighty"),
-            $._("ninety")];
+        var cardinalScales = ["", "duizend", "miljoen", "biljoen", "triljoen", "biljard", "quintiljoen", "sextiljoen", "septiljoen", "octiljoen", "noniljoen", "deciljoen", "undeciljoen", "duodeciljoen", "tredeciljoen", "quattuordeciljoen", "quindeciljoen", "sexdeciljoen", "septendeciljoen", "octodeciljoen", "novemdeciljoen", "vigintiljoen"];
+        var cardinalUnits = ["nul", "een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen", "tien", "elf", "twaalf", "dertien", "viertien", "vijftien", "zestien", "zeventien", "achttien", "negentien"];
+        var cardinalTens = ["", "", "twintig", "dertig", "veertig", "vijftig", "zestig", "zeventig", "tachtig", "negentig"];
         // For formatting numbers less than 1000
         var smallNumberWords = function(n) {
             var hundredDigit = Math.floor(n / 100);
@@ -259,8 +259,7 @@ $.extend(KhanUtil, {
             var str = "";
 
             if (hundredDigit) {
-                str += $._("%(unit)s hundred",
-                    {unit: cardinalUnits[hundredDigit]});
+                str += cardinalUnits[hundredDigit] + " honderd";
             }
 
             if (hundredDigit && rest) {
@@ -279,7 +278,7 @@ $.extend(KhanUtil, {
                     }
 
                     if (tenDigit && unitDigit) {
-                        str += "-";
+                        str += "-en-";
                     }
 
                     if (unitDigit) {
@@ -292,7 +291,7 @@ $.extend(KhanUtil, {
         };
 
         if (n === 0) {
-            return $._("zero");
+            return "nul";
         } else {
             var neg = false;
             if (n < 0) {
@@ -318,7 +317,7 @@ $.extend(KhanUtil, {
             }
 
             if (neg) {
-                words.unshift($._("negative"));
+                words.unshift("negatief");
             }
 
             return words.join(" ");

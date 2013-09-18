@@ -206,4 +206,4 @@ Divider.numHintsFor = function(divisor, dividend, deciDivisor, deciDividend) {
     return 1 + (digitsDividend.length + Math.max(deciDivisor - deciDividend, 0)) * 2;
 };
 
-
+KhanUtil.Divider = Divider;

@@ -21,16 +21,16 @@
         <input type="hidden" name="continue" value="{{ continue_url|escape }}">
         {% endif %}
 
-        <h3>First time using iktel.nl?</h3>
+        <h3>Maak je voor het eerst gebruik van iktel.nl?</h3>
         <div class="pw-signup container">
             <div class="field-container row-fluid">
-                <label class="field-label span4" for="email">Email</label>
+                <label class="field-label span4" for="email">E-mail</label>
                 <input id="email" name="email" type="email" class="simple-input ui-corner-all span4" value="{{ values['email']|escape }}">
                 <div class="field-error span4" id="error-text"></div>
             </div>
 
             <div class="field-container row-fluid">
-                <label class="field-label span4" for="birthday">Birthday</label>
+                <label class="field-label span4" for="birthday">Geboortedatum</label>
                 <div id="birthday-picker" class="span4" data-date="{{ values['birthdate']|escape }}">{# contents filled by JS #}</div>
 
                 {# Note that the actual name of the field sent to the server is "birthdate"
@@ -39,19 +39,19 @@
 
             <div class="field-container row-fluid">
                 <span class="span8 simple-input-container submit-button-container">
-                    <input type="button" id="submit-button" name="signup" value="Get started" class="simple-button green">
+                    <input type="button" id="submit-button" name="signup" value="Aan de slag" class="simple-button green">
                 </span>
             </div>
         </div>
 
         <div class="horizontal-separator">
-            <span class="separator-text">OR</span>
+            <span class="separator-text">OF</span>
         </div>
 
 
-        <h3>Already using Google or Facebook to login to iktel.nl?</h3>
+        <h3>Heb je al een Google- of Facebook account?</h3>
         <div class="providers container">
-            <h4>Log in with</h4>
+            <h4>Log dan in met:</h4>
             <div class="row-fluid">
                 <div class="span4">
                     {# The google_url has the continue_url already embedded in it #}
@@ -62,7 +62,7 @@
                     {{ login_macros.facebook_button(App.facebook_app_secret) }}
                 </div>
 
-                <div class="providers-info span4">...and then we'll create your iktel.nl username and password for your account.</div>
+                <div class="providers-info span4">...dan maken wij een iktel.nl gebruikersnaam en wachtwoord voor je aan.</div>
             </div>
         </div>
 

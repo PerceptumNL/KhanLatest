@@ -32,23 +32,23 @@
             <img src="/images/hand-tree.png" width="75" height="75" class="tree">
 -->
             <div class="field-container">
-                <label class="field-label" for="identifier">Email or username</label>
+                <label class="field-label" for="identifier">E-mail of gebruikersnaam</label>
                 <input tabindex=1 id="identifier" name="identifier" class="simple-input ui-corner-all" value="{{ identifier|escape }}">
             </div>
 
             <div class="field-container">
-                <label class="field-label password-label" for="password">Password</label>
+                <label class="field-label password-label" for="password">Wachtwoord</label>
                 <input tabindex=2 id="password" name="password" type="password" class="simple-input ui-corner-all">
                 <div>
-                    <a id="forgot-hint" href="{{ templatetags.to_insecure_url('/forgotpw') }}" target="_top">Forgot password?</a>
+                    <a id="forgot-hint" href="{{ templatetags.to_insecure_url('/forgotpw') }}" target="_top">Wachtwoord vergeten?</a>
                 </div>
             </div>
 
             <input tabindex=3 id="submit-button" class="simple-button green" value="Login" type="button">
 
             <div class="signup-prompt-container">
-                <span class="signup-prompt">Don't have an account yet?</span>
-                <a class="signup-link" target="_top" href="{{ templatetags.to_insecure_url('/signup') }}?continue={{continue|urlencode}}">Create one</a>
+                <span class="signup-prompt">Heb je nog geen account?</span>
+                <a class="signup-link" target="_top" href="{{ templatetags.to_insecure_url('/signup') }}?continue={{continue|urlencode}}">Maak er een aan!</a>
             </div>
         </form>
         {{ js_css_packages.js_package("shared") }}

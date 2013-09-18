@@ -17,7 +17,7 @@
                     Now create your iktel.nl login and we'll connect it to your existing Google account.
                 {% endif %}
             {% else %}
-                Now create your iktel.nl login.
+                Super! Maak nu je iktel.nl account aan.
             {% endif %}
             </h3>
 
@@ -28,31 +28,31 @@
 
 
             <div class="field-container row-fluid">
-                <label class="field-label span4" for="email">Email</label>
+                <label class="field-label span4" for="email">E-mail</label>
                 <input id="email" name="email" class="simple-input ui-corner-all span6" value="{{values['email']|escape}}" disabled="true">
             </div>
 
             <div class="field-container row-fluid">
-                <label class="field-label span4" for="nickname">Your name</label>
+                <label class="field-label span4" for="nickname">Je naam</label>
                 <input id="nickname" name="nickname" class="simple-input ui-corner-all span6" value="{{values['nickname']|escape}}">
             </div>
 
             <div class="field-container row-fluid">
-                <label class="field-label span4" for="gender">Male/Female (optional)</label>
+                <label class="field-label span4" for="gender">Man/vrouw (optioneel)</label>
                 <select id="gender" name="gender" class="simple-input ui-corner-all span6">
                     <option value="unspecified" {% if values['gender'] == 'unspecified' %}selected{% endif %}> </option>
-                    <option value="male" {% if values['gender'] == 'male' %}selected{% endif %}>Male</option>
-                    <option value="female" {% if values['gender'] == 'female' %}selected{% endif %}>Female</option>
+                    <option value="male" {% if values['gender'] == 'male' %}selected{% endif %}>man</option>
+                    <option value="female" {% if values['gender'] == 'female' %}selected{% endif %}>vrouw</option>
                 </select>
             </div>
 
             <div class="field-container row-fluid">
-                <label class="field-label span4" for="username">Username</label>
+                <label class="field-label span4" for="username">Gebruikersnaam</label>
                 <input id="username" name="username" class="simple-input ui-corner-all span6" value="{{ values['username']|escape }}">
             </div>
 
             <div class="field-container row-fluid">
-                <label class="field-label span4" for="password">Password</label>
+                <label class="field-label span4" for="password">Wachtwoord</label>
                 <input id="password" name="password" type="password" class="simple-input ui-corner-all span6">
             </div>
 
@@ -64,7 +64,7 @@
             <div class="field-container submit-container row-fluid">
                 <div class="span3">{# spacer #}&nbsp;</div>
                 <div class="span7">
-                    <span class="tos-area">By clicking "Signup", you agree to our <a href="/about/tos" target="_blank" tabindex="1">Terms of Service</a> and <a href="/about/privacy-policy" target="_blank" tabindex="1">Privacy Policy</a></span>
+                    <span class="tos-area">Door op "Aanmelden" te klikken, ga je akkoord met de <a href="/gebruiksvoorwaarden" target="_blank" tabindex="1">Gebruikersvoorwaarden</a> en het <a href="/privacybeleid" target="_blank" tabindex="1">Privacybeleid</a></span>
                     <input type="button" id="submit-button" name="submit-button" value="Signup" class="simple-button green">
                 </div>
             </div>

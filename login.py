@@ -614,9 +614,9 @@ class Signup(request_handler.RequestHandler):
 
         if not App.is_dev_server:
             mail.send_mail(
-                    sender='Iktel NL <iktel@perceptum.nl>',
+                    sender='Iktel.nl <iktel@perceptum.nl>',
                     to=recipient,
-                    subject="Verify your email with Iktel NL",
+                    subject="Bevestig je e-mailadres voor iktel.nl",
                     body=body)
 
 class ParentSignup(request_handler.RequestHandler):
@@ -1185,9 +1185,9 @@ class ForgotPassword(request_handler.RequestHandler):
 
         if not App.is_dev_server:
             mail.send_mail(
-                    sender="Iktel NL <iktel@perceptum.nl>",
+                    sender="Iktel.nl <iktel@perceptum.nl>",
                     to=email,
-                    subject="Iktel NL account recovery",
+                    subject="Iktel.nl account herstel",
                     body=body)
 
         template_values =  {

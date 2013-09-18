@@ -249,12 +249,25 @@ function handleAttempt(data) {
         $("#positive-reinforcement").show();
         $("#skip-question-button").prop("disabled", true);
         $("#opt-out-button").prop("disabled", true);
+        if (!hintsAreFree) {
+            hintsAreFree = true;
+            $(".hint-box")
+                .css("position", "relative")
+                .animate({top: -10}, 250)
+                .find(".info-box-header")
+                    .slideUp(250)
+                    .end()
+                .find("#hint")
+                    .removeClass("orange")
+                    .addClass("green");
+            //updateHintButtonText();
+        }
     } else {
         // Wrong answer. Enable all the input elements
 
         $("#check-answer-button")
             .parent()  // .check-answer-wrapper makes shake behave
-            .effect("shake", {times: 3, distance: 5}, 480)
+            .effect("shake", {times: 3, distance: 5}, 100)
             .val($._("Try Again"));
 
         if (framework === "perseus") {
@@ -264,19 +277,6 @@ function handleAttempt(data) {
         }
     }
 
-    if (!hintsAreFree) {
-        hintsAreFree = true;
-        $(".hint-box")
-            .css("position", "relative")
-            .animate({top: -10}, 250)
-            .find(".info-box-header")
-                .slideUp(250)
-                .end()
-            .find("#hint")
-                .removeClass("orange")
-                .addClass("green");
-        updateHintButtonText();
-    }
 
     $(Khan).trigger("checkAnswer", {
         pass: score.correct,

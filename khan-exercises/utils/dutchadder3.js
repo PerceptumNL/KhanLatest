@@ -585,16 +585,16 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
         //Code to add a bar on the right, if decimals are added 
         //the previous bar needs to be overwritten with a white stroke 
         if(decimals.length > 0){
-          graph.style({stroke:"white", strokeWidth:3});
+          graph.style({stroke:"#F8F8F8", strokeWidth:3});
           graph.path([[digitsDividend.length-1 + (deciDiff > 0 ? deciDiff : 0) - 0.25, 0.5], [digitsDividend.length-1 + (deciDiff > 0 ? deciDiff : 0),-0.5]]);
-          graph.style({stroke:"black", strokeWidth:2});
+          graph.style({stroke:"#444", strokeWidth:2});
           graph.path([[digitsDividend.length + (deciDiff > 0 ? deciDiff : 0) - 0.25, 0.5], [digitsDividend.length + (deciDiff > 0 ? deciDiff : 0),-0.5]]);          
-          graph.path([[-1, -0.5], [-0.75, 0.5]]);
+          graph.path([[-0.8, -0.5], [-0.3, 0.5]]);
 
         } else {
-        graph.style({stroke:"black"});
+        graph.style({stroke:"#444"});
         graph.path([[digitsDividend.length + (deciDiff > 0 ? deciDiff : 0) - 0.25, 0.5], [digitsDividend.length + (deciDiff > 0 ? deciDiff : 0),-0.5]]);
-        graph.path([[-1, -0.5], [-0.75, 0.5]]);
+        graph.path([[-0.8, -0.5], [-0.3, 0.5]]);
         }
     };
 

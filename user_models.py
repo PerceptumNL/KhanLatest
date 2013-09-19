@@ -88,6 +88,7 @@ class UserData(gae_bingo.models.GAEBingoIdentityModel,
 
     moderator = db.BooleanProperty(default=False)
     developer = db.BooleanProperty(default=False)
+    coach_project = db.BooleanProperty(default=False)
 
     # Account creation date in UTC
     joined = db.DateTimeProperty(auto_now_add=True)
@@ -189,6 +190,7 @@ class UserData(gae_bingo.models.GAEBingoIdentityModel,
         'converting_mixed_numbers_and_improper_fractions'])
     conversion_test_easy_exercises = set([
         'counting_1', 'significant_figures_1', 'subtraction_1'])
+
 
     @property
     def nickname(self):
@@ -1571,6 +1573,7 @@ class UnverifiedUser(db.Model):
 
     # used as a token sent in an e-mail verification link.
     randstring = db.StringProperty(indexed=True)
+    coach_project = db.BooleanProperty(default=False)
 
     @staticmethod
     def get_or_insert_for_value(email, birthdate, continue_url):

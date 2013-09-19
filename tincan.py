@@ -18,6 +18,7 @@ class TinCan():
     testMode = False
     def __init__(self):
         self.user_email = None
+        self.coach_project = False
         self.statement = {
           "verb": {},
           "version": "1.0.0",
@@ -28,6 +29,7 @@ class TinCan():
 
     def set_actor_from_user(self, user):
         self.user_email = user.user_email
+        self.coach_project = user.coach_project.
         self.statement["actor"] = {
             "mbox": "mailto:%s" % user.user_email,
             "name": user.user_nickname,
@@ -140,7 +142,7 @@ class TinCan():
         return tc
 
     def log_statement(self):
-        logging.error(json.dumps(self.statement,sort_keys=True,
+        logging.info(json.dumps(self.statement,sort_keys=True,
                                  indent=4, separators=(',', ': ')))
 
     def check_email(self):
@@ -153,11 +155,15 @@ class TinCan():
 
     def push(self):
 
-        self.log_statement()
-        logging.error(self.user_email)
+        #self.log_statement()
+        #logging.error(self.user_email)
 
-        if not self.check_email(): 
+        #if not self.check_email(): 
+        #    return
+        if not self.coach_project:
             return
+
+        self.log_statement()
 
         auth_token = base64.b64encode("%s:%s" % (tincan_user, tincan_pw))
         tincan_headers = {

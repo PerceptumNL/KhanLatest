@@ -72,15 +72,18 @@ class Login(request_handler.RequestHandler):
 
         default_email = ""
         login_hint_param = ""
+        user_email = None
         if login_hint:
             default_email = "&Email=" + login_hint
             login_hint_param = "&login_hint=" 
+            user_email = UserData.get_from_user_input_email(login_hint)
 
         template_values = {
                            'continue': cont,
                            'direct': direct,
                            'google_url': users.create_login_url(cont + login_hint_param) + default_email,
                            'login_hint': login_hint, 
+                           'user_email': user_email
                            }
 
         self.render_jinja2_template('login.html', template_values)
@@ -479,6 +482,8 @@ class Signup(request_handler.RequestHandler):
         else:
             continue_url = self.request_continue_url(default=None)
 
+        #trick
+        parent_email = self.request_string("login_hint", None)
         continue_param = ""
         if continue_url:
             continue_param = "&continue=%s" % urllib.quote_plus(continue_url)
@@ -927,7 +932,8 @@ class CompleteSignup(request_handler.RequestHandler):
                         username,
                         password,
                         birthdate=unverified_user.birthdate,
-                        gender=gender)
+                        gender=gender,
+                        coach_project=unverified_user.coach_project)
 
                 if not user_data:
                     self.render_json({'errors': {'username': "That username isn't available."}},

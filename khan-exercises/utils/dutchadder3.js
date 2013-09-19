@@ -583,18 +583,18 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
         drawDigits(paddedDivisor, -0.5 - paddedDivisor.length, 0);
         drawDigits(digitsDividend, 0, 0);
         //Code to add a bar on the right, if decimals are added 
-        //the previous bar needs to be overwritten with a white stroke 
+        //the previous bar needs to be overwritten with a 'white' stroke 
         if(decimals.length > 0){
           graph.style({stroke:"#F8F8F8", strokeWidth:3});
-          graph.path([[digitsDividend.length-1 + (deciDiff > 0 ? deciDiff : 0) - 0.25, 0.5], [digitsDividend.length-1 + (deciDiff > 0 ? deciDiff : 0),-0.5]]);
+          graph.path([[digitsDividend.length-1.5 + (deciDiff > 0 ? deciDiff : 0) +0, 0.5], [digitsDividend.length-1.5 + (deciDiff > 0 ? deciDiff : 0)+0.25,-0.5]]);
           graph.style({stroke:"#444", strokeWidth:2});
-          graph.path([[digitsDividend.length + (deciDiff > 0 ? deciDiff : 0) - 0.25, 0.5], [digitsDividend.length + (deciDiff > 0 ? deciDiff : 0),-0.5]]);          
-          graph.path([[-0.8, -0.5], [-0.3, 0.5]]);
+          graph.path([[digitsDividend.length-0.5 + (deciDiff > 0 ? deciDiff : 0) + 0, 0.5], [digitsDividend.length-0.5 + (deciDiff > 0 ? deciDiff : 0)+0.25,-0.5]]);          
+          graph.path([[-0.8, -0.5], [-0.3, 0.5]]); //left
 
         } else {
         graph.style({stroke:"#444"});
-        graph.path([[digitsDividend.length + (deciDiff > 0 ? deciDiff : 0) - 0.25, 0.5], [digitsDividend.length + (deciDiff > 0 ? deciDiff : 0),-0.5]]);
-        graph.path([[-0.8, -0.5], [-0.3, 0.5]]);
+        graph.path([[digitsDividend.length-0.5 + (deciDiff > 0 ? deciDiff : 0) + 0, 0.5], [digitsDividend.length-0.5 + (deciDiff > 0 ? deciDiff : 0)+0.25,-0.5]]);
+        graph.path([[-0.8, -0.5], [-0.3, 0.5]]); //left
         }
     };
 

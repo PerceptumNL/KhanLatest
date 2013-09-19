@@ -273,16 +273,16 @@ $.extend(KhanUtil, {
                     var tenDigit = Math.floor(rest / 10);
                     var unitDigit = rest % 10;
 
-                    if (tenDigit) {
-                        str += cardinalTens[tenDigit];
+                    if (unitDigit) {
+                        str += cardinalUnits[unitDigit];
                     }
 
                     if (tenDigit && unitDigit) {
                         str += "-en-";
                     }
 
-                    if (unitDigit) {
-                        str += cardinalUnits[unitDigit];
+                    if (tenDigit) {
+                        str += cardinalTens[tenDigit];
                     }
                 }
             }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math graphie graphie-helpers-arithmetic">
+<head>
+    <meta charset="UTF-8" />
+    <title>Adding decimals</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars">
+            <var id="A">randRange(1,10) *100</var>
+            <var id="A2">A/100</var>
+		<var id="B">randRange(1,10)* 10</var>
+		<var id="B2">B/10</var>
+		<var id="C">randRange(1,10)</var>
+		<var id="D">(A+B+C)/100</var>
+            <var id="F">randRange(1,10) *100</var>
+            <var id="F2">F/100</var>
+		<var id="G">randRange(1,10)* 10</var>
+		<var id="G2">G/10</var>
+		<var id="H">randRange(1,10)</var>
+		<var id="E">(F+G+H)/100</var>
+        </div>
+
+    <div class="problems">
+        <div>
+            <p class="question"><var>A2</var>,<var>B2</var><var>C</var> + <var>F2</var>,<var>G2</var><var>H</var> = <var>D+E</var></p>
+            <div class="solution" data-type="decimal"><var>(D+E).toFixed(3)</var></div>
+        
+    </div>
+    </div>
+</body>
+</html>

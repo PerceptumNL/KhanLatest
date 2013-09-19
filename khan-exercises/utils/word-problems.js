@@ -144,6 +144,7 @@ jQuery.extend( KhanUtil, {
 			'pinguin':'pinguins',
 			'leeuw' : 'leeuwen',
 			'zit' : 'zitten' ,
+			'cijfer' : 'cijfers',
 		};
 
 		var pluralizeWord = function(word) {

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie graphie-helpers graphie-helpers-arithmetic word-problems interactive">
+<head>
+    <meta charset="UTF-8" />
+    <title>Getallenlijn 1</title>
+    <script src="../khan-exercise.js"></script>
+    
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-ensure ="(C<A && A<B)||(C>A && A>B)">
+        <var id="A">randRange(2,9)</var>
+	<var id ="B" data-ensure="B!=A">randRange(1,10)</var>
+	<var id ="C" data-ensure="B!=C && C!=A">randRange(1,10)</var>
+    </div>
+    <div class="problems">
+        <div>
+            <div class="question">
+                <p data-tt="exercise"> <var>A</var> is groter dan welk van deze getallen: <var>B</var> of <var>C</var>?</p>
+		
+                <div class="graphie" id="number-line">
+                    init({
+                        range: [ [LOWER_BOUND - 1, UPPER_BOUND + 1], [-1, 1] ]
+                    });
+
+                    line( [ LOWER_BOUND, 0 ], [ UPPER_BOUND, 0 ] );
+                    for ( var x = LOWER_BOUND; x &lt;= UPPER_BOUND; x++ ) {
+                        line( [ x, -0.2 ], [ x, 0.2 ] );
+                    }
+                    style({ stroke: "#6495ED", strokeWidth: 3.5 });
+                    line( [ 0, -0.2], [0, 0.2]);
+                    label( [ 0, -0.53 ],  "0", "center", { color: "#6495ED" });
+                    
+                    style({ stroke: "#FFA500", fill: "#FFA500" });
+                    graph.orangeDot = circle( [ NUMBER, 0 ], 0.10 );
+                </div>
+            </div>
+                <div class="solution">
+                <div data-if="B<A && C>A" class="sol" data-type="decimal"><var>B</var></div>
+		<div data-if="B>A && C<A" class="sol" data-type="decimal"><var>C</var></div>
+           	 </div>
+
+            
+        </div>
+    </div>
+
+</body>
+</html>

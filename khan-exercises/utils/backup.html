@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html data-require="NL math word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Onvoltooid Tegenwoordige tijd</title>
+    <script src="../khan-exercise.js"></script>
+	<script>
+
+
+		function caps(persoon){
+			return persoon.charAt(0).toUpperCase() + persoon.slice(1);
+		}
+		function nocaps(persoon){
+			return persoon.charAt(0).toLowerCase() + persoon.slice(1);
+		}
+
+		function vorm(persoon){
+			number = (Math.floor(Math.random()*4))+1
+			if(persoon == 1){
+				return "ik"}
+			else if(persoon == 2){
+				return "jij"}
+			else if(persoon == 3){
+				if(number >2){
+					return "hij"}
+				else if(number==2){
+					return "u"}
+				else{
+					return "<var>caps(randFromArray(Calling))</var>"};
+			}
+			else if(persoon == 4){
+				if(number >2){
+					return "wij"}
+				else if(number==2){
+					return "jullie"}
+				else{
+					return "<var>caps(randFromArray(ThirdPlural))</var>"};
+			};
+		}
+
+		var kofschiparray = ["k", "f", "s", "c", "h", "p", "x"];
+	
+		function kofschip(werkwoord){
+			var backway = werkwoord.split("").reverse().join("");
+			if(kofschiparray.indexOf(backway[0]) > -1){
+				return true;
+			}
+			else{
+				return false;
+			};
+		}
+
+		function voltooid(werkwoord){
+
+			var backway = werkwoord.split("").reverse().join("");
+			if(kofschiparray.indexOf(backway[0]) > -1){
+				return "ge"+werkwoord+"t"
+				}
+			else{
+				return "ge"+werkwoord+"d"
+				};
+			}
+
+	</script>
+</head>
+<body>
+	<div class="exercise">
+
+		<div class="vars">
+			<var id="Type">randRange( 1, 3 )</var>
+			<var id="Persoon">randRange(1,4)</var>
+			<var id="Time">["gisteren", "vorige week", "een jaar geleden", "twee maanden terug"]</var>
+			<var id="Places">["de bakker", "buiten", "de tuin", "de buren", "het piratenschip"]</var>
+			<var id="Cities">["Amsterdam", "Groningen", "Rotterdam", "Den Haag", "Nijmegen", "Arnhem"]</var>
+			<var id="Viewing">["het schilderij van Van Gogh", "dat oude standbeeld", "zijn fiets", "een konijntje"]</var>
+			<var id="Calling">["de buurman", "het meisje", "de jongen", "de buurvrouw", "de man", "de vrouw", "de dokter", "mijn moeder", "Jennifer", "Amira", "Arnoud", "Jorn", "Sander", "Sanne", "Tijmen", "Ysbrand", "de viking", "de piraat", "de kleuter"]</var>
+			<var id="Working">["het project", "de tekening", "het wiskundehuiswerk", "de voorstelling", "de boomhut", "de presentatie", "ons werkstuk"]</var>
+			<var id="ThirdPlural">["de meisjes", "de jongens", "de buren", "de ouders", "de kleuters", "de volwassenen", "de vikingen", "de piraten"]</var>
+			<var id="Painting">["de muur", "het hek", "mijn grootmoeders vaas", "de schutting van de buurman", "ons fietsenschuurtje", "het piratenschip"]</var>
+			<var id="Having">["het tweede boek van Harry Potter", "een bos rozen gekregen", "geen honger", "jeuk", "een rode broek", "lekker gegeten"]</var>
+			<var id="Verbs">["dansen", "zingen", "knuffelen", "tekenen", "acteren"]</var>
+			<var id="Learning">["de toets", "het tentamen", "het examen", "de schriftelijke overhoring", "het proefwerk"]</var>
+			<var id="Stuff">["het boek", "de blikjes", "de tekening", "de foto's", "de laptop"]</var>
+			<var id="Kook">["spaghetti", "soep", "risotto", "boontjes", "een stoofpot", "Hongaarse goulash", "lekker"]</var>
+		</div>
+
+
+		<div class="problems">
+			<!--<div id = "zwak">
+				<p class = "problem">Geef de voltooide tijd van het werkwoord "<var>zwakheel(Type)</var>". </p>
+				<p class = "question"> <var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> ...</p>
+				<p class = "solution" data-type="text"><var>voltooid(zwakstam(Type))</var></p>
+				<div class = "hints">
+					<p id = "hintintro">Het werkwoord <b><var>zwakheel(Type)</var></b> is een <i>zwak</i> werkwoord.</p>
+					<p id = "hinttwee" data-if="kofschip(zwakstam(Type))==true">Het werkwoord zit in het kofschip.</p>
+					<p id = "hintdrie" data-if="kofschip(zwakstam(Type))==false">Het werkwoord zit niet in het kofschip. </p>
+					<p id = "hintvier" data-if="kofschip(zwakstam(Type))==true">De voltooide vorm maak je dus door er "ge" voor, en "t" achter te zetten.</p>
+					<p id = "hintvijf" data-if="kofschip(zwakstam(Type))==false">De voltooide vorm maak je dus door er "ge" voor, en "d" achter te zetten.</p>
+					<p id = "hintlaatst"> Het antwoord is dus "<var>voltooid(zwakstam(Type))</var>".</p>
+				</div>
+			</div>-->
+
+		<div class = "verhaalzwak">
+				<p class = "problem">
+					<span><var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var></span>
+					<span data-if="(zwakheel(Type) =='werken' || zwakheel(Type)=='dansen' || zwakheel(Type)=='bellen' || zwakheel(Type)=='stappen')"><var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> <var>randFromArray(Time)</var>  met <var>randFromArray(Calling)</var> .... (<var>zwakheel(Type)</var>)</p>
+					<span data-if="zwakheel(Type) == 'twijfelen'"> <var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> hier heel lang over ... . (<var>zwakheel(Type)</var>)</p>
+					<span data-if="zwakheel(Type)=='boffen'"> <var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> heel erg ... met <var>randFromArray(Calling)</var>. (<var>zwakheel(Type)</var>)</p>
+					<span data-if="zwakheel(Type)=='verven'"> <var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> <var>randFromArray(Time)</var> met <var>randFromArray(Calling)</var> <var>randFromArray(Painting)</var> .... (<var>zwakheel(Type)</var>)</p>
+					<span data-if="zwakheel(Type)=='halen'"><var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> voor <var>randFromArray(Calling)</var> wat te eten ... . (<var>zwakheel(Type)</var>)</p>
+					<span data-if="zwakheel(Type)=='leren'"><var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> hard ... voor <var>randFromArray(Learning)</var>. (<var>zwakheel(Type)</var>)</p>
+					<span data-if="zwakheel(Type)=='leggen'"><var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> <var>randFromArray(Stuff)</var> op tafel ... . (<var>zwakheel(Type)</var>)</p>
+					<span data-if="zwakheel(Type)=='koken'"><var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> <var>randFromArray(Kook)</var> voor <var>randFromArray(ThirdPlural)</var> ... . (<var>zwakheel(Type)</var>)</p>
+					<span data-if="zwakheel(Type)=='missen'"><var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> <var>randFromArray(Calling)</var> ... .  (<var>zwakheel(Type)</var>)</p>
+					<span data-if="zwakheel(Type)=='maaien'"><var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> ons <var>randFromArray(["gazon", "gras", "grasveldje"])</var> ... . (<var>zwakheel(Type)</var>)</p>
+					<span data-if="zwakheel(Type)=='duwen'"><var>caps(vorm(Persoon))</var> <var>heb(Persoon)</var> <var>randFromArray(Calling)</var> <var>randFromArray(["op de grond", "op het gras", "uit de kamer", "van hem af", "uit het schip"])</var> ... . (<var>zwakheel(Type)</var>)</p>
+				<p class = "question">Wat moet er op de plek van de puntjes staan? </p>
+				<p class = "solution" data-type="text"><var>voltooid(zwakstam(Type))</var></p>
+
+				</div>
+			</div>
+	</div>
+	
+</body>
+</html>

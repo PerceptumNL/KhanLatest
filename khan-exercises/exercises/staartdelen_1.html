@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math graphie graphie-helpers-arithmetic">
+<head>
+    <meta charset="UTF-8" />
+    <title>Delen 4</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars" data-ensure="GETAL%DEELDOOR==0">
+            <var id="DEELDOOR" data-ensure="DEELDOOR%10!==0">randRange( 10, 30 )</var>
+            <var id="GETAL">randRange( 1000, 10000 )</var>
+			<var id="GETALARRAY"> GETAL.toString()</var>
+			<var id="ANTWOORD">GETAL/DEELDOOR</var>
+			<var id="ANTWOORDARRAY">[]</var>
+			<var id="EEN">GETALARRAY[0]</var>
+			<var id="TWEE">GETALARRAY[1]</var>
+			<var id="DRIE">GETALLARRAY[2]</var>
+			<var id="VIER">GETALARRAY[3]</var>
+
+        </div>
+
+        <div class="problems">
+			<div id="delen">
+			<p class="problem">Wat is <var>GETAL</var>/<var>DEELDOOR</var></p>
+			<p class="question">Gebruik staartdelingen om het probleem op te lossen.<var>ANTWOORD</var></p>
+			<p class="solution"><var>ANTWOORD</var></p>
+            </div>
+        </div>
+        <div class="hints">
+			<p id="hint1">Een staartdeling schrijf je als volgt op:</p>
+			<p id="hint2"><b> <var>DEELDOOR</var> / <var>GETAL</var> \ </b> </p>
+			<p id="hint3">Vervolgens neem je  het eerste cijfer van het getal dat je gaat delen, en je kijkt hoe vaak het getal waar je door deelt daarin past.</p>
+			<p id="hint4">Dus dan krijgen we <var>EEN</var>, hoe vaak past <var>DEELDOOR</var> daarin?</p>
+			<p id="hint5">Dat is <var>Math.floor(parseInt(EEN)/DEELDOOR)</var> keer, met een rest van <var>(EEN)%DEELDOOR</var>. 
+			<p id="hint6">Schrijf het aantal keer achter de tweede streep. Vervolgens pak je de rest, en plak je daar het eerstvolgende cijfer achter. Daarna herhaal je de vorige stappen.</p>
+			<p id="hint7">De hele procedure, in stappen:</p>
+			<p id="hint8"><b><var>DEELDOOR</var>/<var>GETAL</var>\</b></p>
+			<p id="hint9"><var>Math.floor(parseInt(EEN)/DEELDOOR)</var>* <var>DEELDOOR</var>=<var>Math.floor(parseInt(EEN)/DEELDOOR)*DEELDOOR</var></p>
+			<p id="hint10"><var>(EEN)</var>-<var>Math.floor(parseInt(EEN)/DEELDOOR)*DEELDOOR</var>=<var>(EEN)%DEELDOOR</var></p>
+			<p id="hint11"><b><var>DEELDOOR</var>/<var>GETAL</var>\<var>Math.floor(parseInt(EEN)/DEELDOOR)</var></b></p>
+			<p id="hint12"><var>Math.floor(parseInt(EEN+TWEE)/DEELDOOR)</var>* <var>DEELDOOR</var>=<var>Math.floor(parseInt(EEN+TWEE)/DEELDOOR)*DEELDOOR</var></p>
+			<p id="hint13"><var>(EEN+TWEE)</var>-<var>Math.floor(parseInt(EEN+TWEE)/DEELDOOR)*DEELDOOR</var>=<var>(EEN+TWEE)%DEELDOOR</var></p>
+        </div>
+    </div>
+</body>
+</html>

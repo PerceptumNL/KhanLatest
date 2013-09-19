@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math graphie graphie-helpers-arithmetic word-problems">
+<head>
+    <meta charset="UTF-8" />
+    <title>Oefenen met tafels</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+        <div class="vars" data-ensure="(A4*B)<10">
+            <var id="A1">randRange( 1, 9 )</var>
+            <var id="A2">randRange(1,9)</var>
+	    <var id="A3">randRange(1,9)</var>
+	    <var id="A4">randRange(1,9)</var>
+	    <var id="B">randRange(1,10)</var>
+
+        </div>
+
+        <div class="problems">
+            <div>
+                <div class ="question"><var>A1</var><var>A2</var><var>A3</var><var>A4</var></div>
+                <div class="solution" data-forms="integer"><var>A * B</var></div>
+            </div>
+        </div>
+        <div class="hints">
+            <div data-if="B > 0" data-unwrap>
+                <div>
+                    <div class="graphie" data-update="numbers" data-tt="exercise">
+                        label( [ 0, B - 1 ], "\\text{We hebben " + plural( A, C ) + ".}", "right" );
+                        drawRow( A, B - 3, "#6495ED", 1 );
+                    </div>
+                </div>
+                <div>
+                    <div class="graphie" data-update="numbers" data-tt="hint1">
+                    label( [ 0, B - 2 ], "\\text{"
+                            + "Als er " +  A + ( A === 1 ? " is " : " zijn " ) 
+                            + " met elk " + B  
+                            + ", hoeveel zijn er dan in totaal?"
+                            + "}",
+                            "right" );
+                        for ( var i = 1; i &lt; B; i++ ) {
+                            drawRow( A, B - 3 - i, "#28AE7B", A * i + 1 );
+                        }
+                    </div>
+                </div>
+            </div>
+            
+    </div>
+</body>
+</html>

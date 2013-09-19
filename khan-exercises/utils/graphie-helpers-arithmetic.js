@@ -515,9 +515,9 @@ function Multiplier(a, b, digitsA, digitsB, deciA, deciB) {
         var y = -digitsB.length * digitsA.length;
 
         graph.label([x, y + 2],
-            "\\text{Het bovenste getal heeft " + KhanUtil.plural(deciA, "cijfers") + " achter de komma.}", "right");
+            "\\text{Het bovenste getal heeft " + KhanUtil.plural(deciA, "cijfer") + " achter de komma.}", "right");
         graph.label([x, y + 1],
-            "\\text{Het onderste getal heeft " + KhanUtil.plural(deciB, "cijfers") + " cijfers achter de komma.}", "right");
+            "\\text{Het onderste getal heeft " + KhanUtil.plural(deciB, "cijfer") + " achter de komma.}", "right");
         graph.label([x, y],
             "\\text{Het product heeft " + deciA + " + " + deciB + " = " + (deciA + deciB)
              + "  cijfers achter de komma.}", "right");

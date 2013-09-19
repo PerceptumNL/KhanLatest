@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+  <html data-require="math word-problems">
+      <head>
+          <title>Verhaaltjessommen: optellen</title>
+          <script src="../khan-exercise.js"></script>
+      </head>
+      <body>
+          <div class="exercise">
+              <div class="vars">
+                  <var id ="EEN">randRange(1,10)</var>
+		  <var id ="TWEE">randRange(1,10)</var>
+		  <var id ="PLEK">randRange(0,4)</var>
+		  <var id ="plekken">["de school", "het restaurant", "de dierentuin", "het pretpark", "de kinderopvang"]</var>
+		  <var id ="aanwezigen">["leerlingen", "obers", "tijgers", "kinderen", "peuters"]</var>
+		  <var id="naam">randFromArray(["Jennifer", "Martha", "Nadine", "Eveline"])</var>
+              </div>
+
+              <div class="problems">
+                  <div id="problem-type-or-description">
+                      <p class="problem"> <var>naam</var> gaat vandaag naar <var>plekken[PLEK]</var> in haar straat. Er zijn <var>EEN</var> <var>aanwezigen[PLEK]</var> als ze aankomt. Na een uur zijn er nog <var>TWEE</var> <var>aanwezigen[PLEK]</var> bijgekomen. </p>
+                      <p class="question">Hoeveel <var>aanwezigen[PLEK]</var> zijn er in totaal in <var>plekken[PLEK]</var>?</p>
+                      <p class="solution"><var>EEN+TWEE</var></p>
+                  </div>
+              </div>
+
+              <div class="hints">
+                  <p id="hint1">Er zijn al <var>EEN</var> <var>aanwezigen[PLEK]</var> in <var>plekken[PLEK]</var> als <var>naam</var> daar aankomt. Na een uur komen er nog <var>TWEE</var> bij. </p>
+		  <p id ="hint2">Om deze vraag te beantwoorden hoef je dus alleen <var>EEN</var> en <var>TWEE</var> bij elkaar op te tellen.</p>
+		  <p id="hint3"><var>EEN</var>+<var>TWEE</var>=</p>
+		  <p id="hint4"><var>EEN+TWEE</var></p>
+              </div>
+          </div>
+      </body>
+  </html>

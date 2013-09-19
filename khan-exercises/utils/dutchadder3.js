@@ -582,7 +582,8 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
 
         drawDigits(paddedDivisor, -0.5 - paddedDivisor.length, 0);
         drawDigits(digitsDividend, 0, 0);
-        //Code to add a bar on the right, the previous bar needs to be overwritten with a white stroke 
+        //Code to add a bar on the right, if decimals are added 
+        //the previous bar needs to be overwritten with a white stroke 
         if(decimals.length > 0){
           graph.style({stroke:"white", strokeWidth:3});
           graph.path([[digitsDividend.length-1 + (deciDiff > 0 ? deciDiff : 0) - 0.25, 0.5], [digitsDividend.length-1 + (deciDiff > 0 ? deciDiff : 0),-0.5]]);
@@ -623,7 +624,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
             var totalDigits = KhanUtil.integerToDigits(total);
             highlights = highlights.concat(drawDigits(totalDigits, index - totalDigits.length + 1, -2 * index, KhanUtil.BLUE));
 
-            graph.label([digitsDividend.length+1 + 0.5, -2 * index],
+            graph.label([digitsDividend.length+1 + 0.5, -2 * index-1],
                 "\\text{Hoe vaak past }"
                 + divisor
                 + "\\text{ in }"
@@ -636,7 +637,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
             var quotient = Math.floor(value / divisor);
             var diff = value - (quotient * divisor);
             remainder = diff * 10;
-            var quotientLabel = drawDigits([quotient], index, 1);
+            var quotientLabel = drawDigits([quotient], index+5, 0);
             if (quotient === 0 && fOnlyZeros && digitsDividend.length - deciDividend + deciDivisor > index + 1) {
                 leadingZeros = leadingZeros.concat(quotientLabel);
             } else {
@@ -653,7 +654,7 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
             graph.label([index - product.length, -2 * index - 1] , "-\\vphantom{0}");
             graph.path([[index - product.length - 0.25, -2 * index - 1.5], [index + 0.5, -2 * index - 1.5]]);
 
-            graph.label([digitsDividend.length + 0.5, -2 * index - 1],
+            graph.label([digitsDividend.length + 0.5, -2 * index - 2],
                 "\\color{#6495ED}{" + value + "}"
                 + "\\div"
                 + divisor + "="
@@ -695,9 +696,9 @@ function Divider(divisor, dividend, deciDivisor, deciDividend) {
         graph.style({
                 fill: "#000"
             }, function() {
-                graph.label([digitsDividend.length + deciDiff - 0.5, -0.1],
+                graph.label([digitsDividend.length + deciDiff +4.5, -0.1],
                     "\\LARGE{" + decimalPointSymbol + "}", "center", true);
-                graph.label([digitsDividend.length + deciDiff - 0.5, 0.9],
+                graph.label([digitsDividend.length + deciDiff - 0.5, -0.1],
                     "\\LARGE{" + decimalPointSymbol + "}", "center", true);
             });
     }

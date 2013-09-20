@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-translatable data-require="math math-format graphie word-problems">
+<html data-require="math math-format graphie word-problems">
 <head>
     <meta charset="UTF-8" />
     <title>Staafdiagrammen lezen 2</title>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="problem">
-            <p data-tt="problem1" >Gebruik de volgende grafiek om de vraag hieronder te beantwoorden:</p>
+            <p data-tt="problem1">Gebruik de volgende grafiek om de vraag hieronder te beantwoorden:</p>
             <div class="graphie" id="barchart">
                 init({
                     range: [ [ -2, 17 ], [ -3, 11 ] ],
@@ -94,7 +94,7 @@
                             <p data-tt="hint1" >De staaf voor <var>person( INDEX + 1 )</var>'s eindexamen is hoger dan die voor <var>his( INDEX + 1 )</var>
                             tussentijdse, dus <var>person( INDEX + 1 )</var> heeft <var>his( INDEX + 1 )</var> score verbeterd. <var>His( INDEX + 1 )</var> score voor het tussentijdse examen was
                             <code><var>MIDTERM[ INDEX ]</var></code> en voor <var>his( INDEX + 1 )</var> eindexamen was de score <code><var>FINAL[ INDEX ]</var></code>, dus
-                            <var>he( INDEX + 1 )</var> heeft <var>his( INDEX + 1 )</var> score verberted.</p>
+                            <var>he( INDEX + 1 )</var> heeft <var>his( INDEX + 1 )</var> score verbeterd.</p>
                             <div class="graphie" data-update="barchart">
                                 style({ stroke: GREEN, strokeWidth: 2, arrows: "-&gt;" });
                                 line( [ INDEX * 3 + 1.5, MIDTERM[ INDEX ] / 10 ], [ INDEX * 3 + 2.5, FINAL[ INDEX ] / 10 ] );
@@ -104,7 +104,7 @@
                         </div>
                         <div data-else-if="IMPROVEMENT[ INDEX ] < 0">
                             <p data-tt="hint2" >De staaf voor <var>person( INDEX + 1 )</var>'s eindexamen is lager dan die voor <var>his( INDEX + 1 )</var>
-                            tussentijdse, dus <var>person( INDEX + 1 )</var> heeft <var>his( INDEX + 1 )</var> score verbeterd.</p>
+                            tussentijdse, dus <var>person( INDEX + 1 )</var> heeft <var>his( INDEX + 1 )</var> score niet verbeterd.</p>
                             <div class="graphie" data-update="barchart">
                                 style({ stroke: "grey", strokeWidth: 2, arrows: "-&gt;" });
                                 line( [ INDEX * 3 + 1.5, MIDTERM[ INDEX ] / 10 ], [ INDEX * 3 + 2.5, FINAL[ INDEX ] / 10 ] );
@@ -117,7 +117,7 @@
                     </div>
                     <p data-tt="hint4" >
                         <var>MOST_IMPROVED</var> heeft <var>his( MOST_IMPROVED_IDX + 1 )</var> score het meest verbeterd, met <code><var>BEST_IMPROVEMENT</var></code> punten meer
-                        op <var>his( MOST_IMPROVED_IDX + 1 )</var> eindexamen dan op <var>his( MOST_IMPROVED_IDX + 1 )</var> tussentijdse.
+                        op <var>his( MOST_IMPROVED_IDX + 1 )</var> eindexamen dan op <var>his( MOST_IMPROVED_IDX + 1 )</var> tussentijdse examen.
                     </p>
                 </div>
             </div>
@@ -204,14 +204,14 @@
                         </div>
                     </div>
                     <div>
-                        <p data-tt="hint11" >Gebruik de toets om erachter te komen welke van de twee staven de score toont voor <var>TEST</var>.</p>
+                        <p data-tt="hint11" >Gebruik de legenda om erachter te komen welke van de twee staven de score toont voor <var>TEST</var>.</p>
                         <div class="graphie" data-update="barchart">
                             style({ stroke: PINK, fill: "none", strokeWidth: 2 });
                             ellipse( [ COLUMN * 3 + 1.2, -2.25 ], [ 1.5, 0.5 ] );
                         </div>
                     </div>
                     <div>
-                        <p data-tt="hint12" >Vergelijk de hoogte van<var>STUDENT</var>'s <span data-if="COLUMN === 0">blauwe</span><span data-else>orange</span> balk met de schaal aan de linkerkant.</p>
+                        <p data-tt="hint12" >Vergelijk de hoogte van <var>STUDENT</var>'s <span data-if="COLUMN === 0">blauwe</span><span data-else>oranje</span> balk met de schaal aan de linkerkant.</p>
                         <div class="graphie" data-update="barchart">
                             style({ stroke: PINK, strokeWidth: 2, arrows: "-&gt;", strokeDasharray: "-" });
                             line( [ INDEX * 3 + 1 + COLUMN, ANSWER / 10 ], [ 0, ANSWER / 10 ] );
@@ -251,7 +251,7 @@
                             tussentijdse, dus <var>person( INDEX + 1 )</var> heeft <var>his( INDEX + 1 )</var> score niet verbeterd.</p>
                         </div>
                     </div>
-                    <p data-tt="hint18" >Tel het aantal leerlingen dat zijn scores verbeterd heeft.</p>
+                    <p data-tt="hint18" >Tel het aantal leerlingen wiens scores verbeterd zijn.</p>
                     <p data-tt="hint19" ><code><var>NUM_IMPROVED</var></code> leerlingen hebben hun scores verbeterd van het tussentijdse tot het eindexamen.</p>
                 </div>
             </div>

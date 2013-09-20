@@ -94,7 +94,7 @@
         "left": [-1.0, -0.5],
         "above left": [-1.0, -1.0]
     };
-
+    
     KhanUtil.createGraphie = function(el) {
         var xScale = 40, yScale = 40, xRange, yRange;
         var needsLabelTypeset = false;
@@ -353,7 +353,6 @@
 
                 return set;
             },
-
             label: function(point, text, direction, latex) {
                 latex = (typeof latex === "undefined") || latex;
 
@@ -395,7 +394,6 @@
                     var height = span.scrollHeight;
                     setLabelMargins(span, [width, height]);
                 }
-
                 return $span;
             },
 

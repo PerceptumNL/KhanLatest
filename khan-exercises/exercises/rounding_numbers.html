@@ -8,9 +8,7 @@
 <body>
     <div class="exercise">
 
-    <div class="problems">
-        <div data-weight="2">
-         
+    <div class="problems">         
         <div data-weight="3">
             <div class="vars">
                 <var id="DIGITS">shuffle( [1, 2, 3, 4, 5, 6, 7, 8, 9], 6 )</var>
@@ -39,7 +37,7 @@
                     numberLine( floorTo( PLACE , NUM   ), ceilTo( PLACE , NUM ) +  pow( 10,- (PLACE+2 ))  , pow( 10,- (PLACE+1) ) );
                     style({ stroke: "#FFA500", fill: "#FFA500", strokeWidth: 3.5 });
                     ellipse( [  10 * pow(10,- (PLACE+1)) * (NUM -  floorTo( PLACE , NUM   ))/pow(10,- (PLACE) ), 0 ], [pow(10, -PLACE) / 100, 0.15]);
-                    label( [  10 * pow(10, -( PLACE+1 )) * ( NUM -  floorTo( PLACE , NUM ))/pow(10, -(PLACE) )], NUM, "below");
+                    label( [  10 * pow(10, -( PLACE+1 )) * ( NUM -  floorTo( PLACE , NUM ))/pow(10, -(PLACE) )], tryComma(NUM), "below");
                     style({ stroke: "#6495ED", "fill": "none", strokeWidth: 3.5 });
                     if ( DIGITS[ 2 + PLACE ] >= 5 ) {
                         ellipse( [ pow( 10, -PLACE ), -0.55 ], [pow( 10, - PLACE - 0.5 ) / 6.5, 0.35] );

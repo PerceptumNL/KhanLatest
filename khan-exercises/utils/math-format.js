@@ -391,7 +391,7 @@ $.extend(KhanUtil, {
 
       var scr = document.getElementById('problem-and-answer'); //only thing left to add is to find the correct place
       scr.appendChild(newcontent);
-      scr.insertBefore(newcontent,);
+      //scr.insertBefore(newcontent,document.getElementById('problem-and-answer'));
       //scr.insertBefore(newcontent, scr);
       //scr.innerHTML = ne;
     },

@@ -1,6 +1,4 @@
 (function() {
-
-var decimalPointSymbol = icu.getDecimalFormatSymbols().decimal_separator;
 var decimalPointSymbol = icu.getDecimalFormatSymbols().grouping_separator;
 
 function Adder(a, b, digitsA, digitsB) {

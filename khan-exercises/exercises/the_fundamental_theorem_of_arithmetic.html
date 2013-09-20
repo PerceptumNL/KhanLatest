@@ -2,7 +2,7 @@
 <html data-require="math math-format word-problems graphie interactive">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>De hoofdstelling van de rekenkunde</title>
+    <title>The fundamental theorem of arithmetic</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
@@ -28,7 +28,7 @@
                     }, false)
                 </var>
                 <var id="EXPONENT_HINT">_.map(EXPONENTS, function(num, prime) {
-                        return cardinal(num) + " &lt;code&gt;" + prime + "&lt;/code&gt;" + (num === 1 ? "" : "s");
+                        return cardinalThrough20(num) + " &lt;code&gt;" + prime + "&lt;/code&gt;" + (num === 1 ? "" : "s");
                     })
                 </var>
                 <var id="SOLUTION">_.reduce(PRIMES, function(factors, prime) {
@@ -55,7 +55,7 @@
 
             <div class="problem">
                 <p>
-                   Gebruik de pijlen om de macht van elk priemgetal hieronder aan te passen om de ontbinding in priemgetallen te vinden.
+                    Gebruik de pijlen om de macht van elk priemgetal hieronder aan te passen om de ontbinding in priemgetallen te vinden.
                 </p>
                 <div class="graphie">
                     // Save a reference to KhanUtil.currentGraph.graph to workaround the issue
@@ -90,10 +90,6 @@
                             }
                             return answer;
                         }, []).join("\\cdot");
-                        answerPreview += " = " + graph.computeTotal();
-
-                        //$("#answer-preview code").text(answerPreview);
-                        //MathJax.Hub.Queue(["Reprocess", MathJax.Hub, $("#answer-preview")[0]]);
                         answerPreview += " = " + graph.computeTotal();
 
                         KhanUtil.processMath($("#answer-preview code")[0], answerPreview, true);
@@ -171,7 +167,7 @@
 
             <div class="solution" data-type="custom">
                 <div class="instruction">
-                    Klik op de oranje pijlen om je antwoord te veranderen.
+                    <p>Klik op de oranje pijlen om je antwoord te veranderen.</p>
                     <p id="answer-preview"><code>=1</code></p>
                 </div>
                 <div class="guess">GRAPHIE.computeTotal()</div>
@@ -218,8 +214,7 @@
                 });
                 label([graph.cx + 1, graph.y], graph.curr);
             </div>
-            <p style="height: 60px">We kunnen een boomdiagram met factoren gebruiken om <code><var>NUMBER</var></code> te ontbinden.  
-            Door welke priemgetallen kun je <code><var>NUMBER</var></code> delen?</p>
+            <p style="height: 60px">We kunnen een boomdiagram met factoren gebruiken om <code><var>NUMBER</var></code> te ontbinden. Door welke priemgetallen kun je <code><var>NUMBER</var></code> delen?</p>
         </div>
         <div data-each="FACTORIZATION.slice(0, -1) as I, FACTOR">
             <div class="graphie" data-update="factor-tree">
@@ -245,14 +240,24 @@
             </div>
             <p>
                 <code class="hint_blue"><var>FACTORIZATION[FACTORIZATION.length-1]</var></code>
-                 is een priemgetal, dus we zijn klaar met ontbinden.
+                is een priemgetal, dus we zijn klaar met ontbinden.
             </p>
         </div>
         <div>
             <p>
-                De ontbinding in priemgetallen van <code><var>NUMBER</var></code> is:
-                <code>(\color{<var>BLUE</var>}{<var>SOLUTION</var> = <var>NUMBER</var>})</code>
+               De ontbinding in priemgetallen van <code><var>NUMBER</var></code> is:
             </p>
+            <p><code class="hint_blue">
+                \qquad<var>FACTORIZATION.join("\\space\\color{black}{\\cdot}\\space")</var>
+            </code></p>
+            <div data-if="HAS_EXPONENTS">
+                <p data-if="FACTORIZATION[0] === FACTORIZATION[1]">
+                    Omdat er meer dan &eacute;&eacute;n
+                    <var>FACTORIZATION[0]</var> is, kunnen we exponenten gebruiken om de ontbinding in priemgetallen weer te geven:
+                </p><p data-else="">
+                    Omdat meer dan &eacute;&eacute;n keer hetzelfde nummer gebruikt is, kunnen we exponenten gebruiken om de ontbinding in priemgetallen weer te geven:
+                </p>
+                <p><code>\qquad\blue{<var>SOLUTION</var>} = <var>NUMBER</var></code></p>
             </div>
         </div>
     </div>

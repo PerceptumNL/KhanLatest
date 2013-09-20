@@ -382,6 +382,19 @@ $.extend(KhanUtil, {
         }
         return rootString;
     },
+    displayComma: function(num) {
+      var str = num.toString();
+      var ne = str.replace(".",",");
+      var newcontent = document.createElement('span');
+      newcontent.id = 'thiscontent';
+      newcontent.appendChild(document.createTextNode(ne));
+
+      var scr = document.getElementById('problem-and-answer'); //only thing left to add is to find the correct place
+      scr.appendChild(newcontent);
+      scr.insertBefore(newcontent,);
+      //scr.insertBefore(newcontent, scr);
+      //scr.innerHTML = ne;
+    },
 
     // Thanks to Ghostoy on http://stackoverflow.com/questions/6784894/commafy/6786040#6786040
     commafy: function(num) {
@@ -392,7 +405,7 @@ $.extend(KhanUtil, {
         // Note that this is not actually the space character. You can find
         // this character in the icu.XX.js files that use space separators (for
         // example, icu.fr.js)
-        if (thousands === " ") {
+        if (thousands === " ") {
             thousands = "\\;";
         }
 

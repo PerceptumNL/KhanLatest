@@ -1,6 +1,6 @@
 ({
 	"nl" : {
-		"exercise1"	: 'Rond <code><var> tryStringComma("\small{18.00}") </var></code> af op de/het dichtsbijzijnde <var>TPLACE</var>.',
+		"exercise1"	: 'Rond <code><var> tryComma(NUM) </var></code> af op de/het dichtsbijzijnde <var>TPLACE</var>.',
 		"exercise2"	: 'Rond <code><var> tryComma(NUM) </var></code> af op de dichtsbijzijnde <var>TPLACE</var>.',
 		"hint1"		: 'Er zijn twee manieren om dit probleem aan te pakken.',
 		"hint2"		: 'Eerste manier: Kijk naar het getal dat op de plaats van de <var>placesLeftOfDecimal[ -1 - PLACE ]</var>len staat, in dit geval het getal <code><var>DIGITS[ 5 + PLACE ]</var></code> om te bepalen of je naar boven of naar beneden af moet ronden.',

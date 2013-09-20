@@ -119,7 +119,7 @@ function Adder(a, b, digitsA, digitsB) {
                     "\\LARGE{" + decimalPointSymbol + "}", "center", true);
             });
         }
-        this.showSideLabel("\\text{Zorg er voor dat de kommagetallen op de goede rij staan.}");
+        this.showSideLabel("\\text{Zet de kommagetallen recht onder elkaar.}\\");
     }
 }
 
@@ -262,7 +262,7 @@ function Subtractor(a, b, digitsA, digitsB, decimalPlaces) {
                     "\\LARGE{" + decimalPointSymbol + "}", "center", true);
             });
         }
-        this.showSideLabel("\\text{Zorg er voor dat de kommagetallen op de goede rij staan.}");
+        this.showSideLabel("\\text{Zet de kommagetallen recht onder elkaar.}\\");
     };
 }
 

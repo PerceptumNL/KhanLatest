@@ -386,7 +386,14 @@ $.extend(KhanUtil, {
     tryComma: function(num) {
       var str=num.toString();
       var ne = str.replace(".",",");
+      console.log("trycomma: "+ne);
       return ne;
+    },
+    tryStringComma: function(str) {
+    var newestStr = str.replace("\small","");
+    var newStr = newestStr.replace(".", ",");
+    console.log("new str is: " + newStr);
+    return newStr;
     },
     displayComma: function(num) {
       var str = num.toString();

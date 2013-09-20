@@ -23,20 +23,25 @@ function numberLine(start, end, step, x, y, denominator) {
             if (! (Math.abs(Math.round(frac * denominator)) === denominator || Math.round(frac * denominator) === 0)) {
                 if (base === 0) {
                     lab = KhanUtil.fraction(Math.round(frac * denominator), denominator, false, false, true);
+                    console.log("lab is: " + lab);
                 }
                 else {
                     lab = base + "\\frac{" + Math.abs(Math.round(frac * denominator)) + "}{" + denominator + "}";
+                    console.log("lab is: " + lab);
                 }
             }
             var label = graph.label([x + i, y - 0.2], "\\small{" + lab + "}",
                 "below", { labelDistance: 3 });
+                console.log("lab1 is: " + lab);
             set.labels.push(label);
             set.push(label);
         }
         else {
+        var test = KhanUtil.localeToFixed(start + i, decPlaces);
             var label = graph.label([x + i, y - 0.2],
-                "\\small{" + KhanUtil.localeToFixed(start + i, decPlaces) + "}",
+                "\\small{" + test.replace(".",",") + "}",
                 "below", { labelDistance: 3 });
+                console.log(test.replace(".",","));
             set.labels.push(label);
             set.push(label);
         }

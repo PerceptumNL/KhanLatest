@@ -382,6 +382,12 @@ $.extend(KhanUtil, {
         }
         return rootString;
     },
+    
+    tryComma: function(num) {
+      var str=num.toString();
+      var ne = str.replace(".",",");
+      return ne;
+    },
     displayComma: function(num) {
       var str = num.toString();
       var ne = str.replace(".",",");
@@ -389,7 +395,7 @@ $.extend(KhanUtil, {
       newcontent.id = 'thiscontent';
       newcontent.appendChild(document.createTextNode(ne));
 
-      var scr = document.getElementById('problem-and-answer'); //only thing left to add is to find the correct place
+      var scr = document.getElementsByClassName('question')[0]; //only thing left to add is to find the correct place
       scr.appendChild(newcontent);
       //scr.insertBefore(newcontent,document.getElementById('problem-and-answer'));
       //scr.insertBefore(newcontent, scr);

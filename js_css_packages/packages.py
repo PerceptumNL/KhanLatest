@@ -335,6 +335,7 @@ javascript = {
         "files": [
             "local-only/jed.js",
             "local-only/i18n.js",
+            #"local-only/localeplanet/icu.nl-NL.js",
             "local-only/localeplanet/icu.en-US.js",
             "local-only/underscore.js",
             "interface.js",
@@ -394,8 +395,7 @@ javascript = {
             "utils/time.js",
             "utils/unit-circle.js",
             "utils/liesbeth-helpers.js",
-            "utils/dutchadder.js",
-            "utils/dutchdivider.js",
+            "utils/dutchadder3.js",
             "utils/getallen.js",
             "utils/chemistry.js",
             "utils/cipher.js",

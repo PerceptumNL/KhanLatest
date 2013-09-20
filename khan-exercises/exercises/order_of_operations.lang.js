@@ -1,5 +1,5 @@
 ({
 	"nl" : {
-		"question1"	: 'Vereenvoudig en los op.'
+		"question1"	: 'Los de vergelijking op.'
 		}
 })

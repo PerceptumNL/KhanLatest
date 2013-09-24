@@ -1,7 +1,16 @@
 (function() {
 var decimalPointSymbol = icu.getDecimalFormatSymbols().grouping_separator;
 
-function Adder(a, b, digitsA, digitsB) {
+function padWithZero(shortArray, desLength){
+  if(shortArray.length < desLength){
+  var amountZeroes = desLength - shortArray.length;
+    for(var i = 0; i < amountZeroes; i++){
+      shortArray.push(0);
+    }
+  }
+  return shortArray;
+}
+function AdderTwo(a, b, digitsA, digitsB) {
     var graph = KhanUtil.currentGraph;
     digitsA = digitsA || KhanUtil.digits(a);
     digitsB = digitsB || KhanUtil.digits(b);
@@ -16,7 +25,7 @@ function Adder(a, b, digitsA, digitsB) {
         sideY: 1.5 };
 
     var index = 0;
-    var numHints = Adder.numHintsFor(a, b);
+    var numHints = AdderTwo.numHintsFor(a, b);
 
     this.show = function() {
         graph.init({
@@ -26,6 +35,8 @@ function Adder(a, b, digitsA, digitsB) {
 
         drawDigits(digitsA.slice(0).reverse(), pos.max - digitsA.length + 1, pos.first);
         drawDigits(digitsB.slice(0).reverse(), pos.max - digitsB.length + 1, pos.second);
+
+        digitsA = padWithZero(digitsA, digitsB.length);
 
         graph.path([[-0.5, pos.second - 0.5], [pos.max + 0.5, pos.second - 0.5]]);
         graph.label([0, 1] , "\\LARGE{+\\vphantom{0}}");
@@ -123,7 +134,7 @@ function Adder(a, b, digitsA, digitsB) {
     }
 }
 
-Adder.numHintsFor = function(a, b) {
+AdderTwo.numHintsFor = function(a, b) {
     return KhanUtil.digits(a + b).length + 1;
 };
 
@@ -270,7 +281,7 @@ Subtractor.numHintsFor = function(a, b) {
     return KhanUtil.digits(a).length + 1;
 };
 
-// convert Adder -> DecimalAdder and Subtractor -> DecimalSubtractor
+// convert AdderTwo -> DecimalAdderTwo and Subtractor -> DecimalSubtractor
 (function() {
     var decimate = function(drawer) {
         var news = function(a, aDecimal, b, bDecimal) {
@@ -314,7 +325,7 @@ Subtractor.numHintsFor = function(a, b) {
     };
 
     // I hate global variables
-    KhanUtil.DecimalAdder = decimate(Adder);
+    KhanUtil.DecimalAdderTwo = decimate(AdderTwo);
     KhanUtil.DecimalSubtractor = decimate(Subtractor);
 })();
 
@@ -771,7 +782,7 @@ function squareFractions(nom, den, perLine, spacing, size) {
     return arr;
 }
 
-KhanUtil.Adder = Adder;
+KhanUtil.AdderTwo = AdderTwo;
 KhanUtil.Subtractor = Subtractor;
 KhanUtil.Multiplier = Multiplier;
 KhanUtil.Divider = Divider;

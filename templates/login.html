@@ -10,19 +10,28 @@
 <article id="page-root" class="login">
     <div class="login-container card-case vertical-shadow" style="text-align:center;">
     {% if login_hint %}
-            <h1>Please log in with your Google account: <br /><br /><b> {{ login_hint }} </b></h1>
+            <h1>Please log in with your account: <br /><br /><b> {{ login_hint }} </b></h1>
     {% else %}
             <h1>Login op iktel.nl met</h1>
     {% endif %}
 
     <div class="providers">
+        {% if login_hint and (not user_email) %}
+                <div class="signup-prompt-container2">
+                    <span class="signup-prompt">Heb je nog geen account?</span>
+                    <a class="signup-link" target="_top" href="{{ templatetags.to_insecure_url('/signup') }}?continue={{continue|urlencode}}">Maak er een aan!</a>
+                </div>
+        {% endif %}
+        {% if (not login_hint) or (user_email and user_email.is_google_user) %}
         {{ login_macros.google_button(google_url) }}
+        {% endif %}
         <br>
 
         {% if not login_hint %}
         {{ login_macros.facebook_button(true) }}
         {% endif %}
     </div>
+    {% if (not login_hint) or (user_email and user_email.has_password()) %}
     <div class="pw-login-contents">
         <form method="POST" class="auth-form" id="login-form" action="/login?continue={{continue|urlencode}}">
             {# Use a whitespace to force the div to be non-empty and take space in the layout #}
@@ -33,7 +42,7 @@
 -->
             <div class="field-container">
                 <label class="field-label" for="identifier">E-mail of gebruikersnaam</label>
-                <input tabindex=1 id="identifier" name="identifier" class="simple-input ui-corner-all" value="{{ identifier|escape }}">
+                <input tabindex=1 id="identifier" name="identifier" class="simple-input ui-corner-all" value="{% if login_hint %}{{ login_hint }}{% else %}{{ identifier|escape }}{% endif %}" {% if login_hint %} disabled {% endif %} >
             </div>
 
             <div class="field-container">
@@ -48,7 +57,7 @@
 
             <div class="signup-prompt-container">
                 <span class="signup-prompt">Heb je nog geen account?</span>
-                <a class="signup-link" target="_top" href="{{ templatetags.to_insecure_url('/signup') }}?continue={{continue|urlencode}}">Maak er een aan!</a>
+                <a class="signup-link" target="_top" href="{{ templatetags.to_insecure_url('/signup') }}?continue={{continue|urlencode}}{% if login_hint %}&login_hint={{login_hint}}{%endif%}">Maak er een aan!</a>
             </div>
         </form>
         {{ js_css_packages.js_package("shared") }}
@@ -61,6 +70,7 @@
           });
         </script>
     </div>
+    {% endif %}
     </div>
 </article>
 {% endblock pagecontent %}

@@ -42,7 +42,7 @@
 -->
             <div class="field-container">
                 <label class="field-label" for="identifier">E-mail of gebruikersnaam</label>
-                <input tabindex=1 id="identifier" name="identifier" class="simple-input ui-corner-all" value="{% if login_hint %}{{ login_hint }}{% else %}{{ identifier|escape }}{% endif %}" {% if login_hint %} disabled {% endif %} >
+                <input tabindex=1 id="identifier" name="identifier" class="simple-input ui-corner-all" value="{% if login_hint %}{{ login_hint }}{% else %}{{ identifier|escape }}{% endif %}" {% if login_hint %} readonly {% endif %} >
             </div>
 
             <div class="field-container">

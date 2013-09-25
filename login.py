@@ -266,11 +266,20 @@ class PostLogin(request_handler.RequestHandler):
 
         login_hint = self.request.get("login_hint", None)
         user_data = UserData.current(create_if_none=True)
+        logging.error("login_hint: %s" % login_hint)
+        logging.error(user_data)
+        if user_data:
+            logging.error(user_data.email)
         
         if login_hint and (not user_data or user_data and login_hint != user_data.email):
+            logging.error("Redirect")
             quoted_cont = urllib.quote_plus(cont)
-            next_url = users.create_logout_url("/login?login_hint=" + login_hint + "&continue=" + quoted_cont)
-            self._finish_and_redirect(next_url)
+            cont = "/login?login_hint=" + login_hint + "&continue=" + quoted_cont
+            Logout.delete_all_identifying_cookies(self)
+            if user_data and user_data.is_google_user:
+                cont = users.create_logout_url(cont)
+
+            self._finish_and_redirect(cont)
             return
         
         if not user_data:
@@ -921,6 +930,8 @@ class CompleteSignup(request_handler.RequestHandler):
 
         else:
             # Converting unverified_user to a full UserData.
+            logging.error("Non existing user")
+            logging.error(unverified_user.coach_project)
             num_tries = 0
             user_data = None
             while not user_data and num_tries < 2:
@@ -1052,9 +1063,9 @@ class PasswordChange(request_handler.RequestHandler):
     @user_util.manual_access_checking
     def get(self):
         # Always render on https.
-        if self.request.scheme != "https" and not App.is_dev_server:
-            self.redirect(self.secure_url_with_token(self.request.uri))
-            return
+        #if self.request.scheme != "https" and not App.is_dev_server:
+        #    self.redirect(self.secure_url_with_token(self.request.uri))
+        #    return
 
         if self.request_bool("success", default=False):
             self.render_form(message="Password changed", success=True)

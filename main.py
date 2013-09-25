@@ -4,6 +4,8 @@ import urllib
 import logging
 import re
 import time
+
+
 # use json in Python 2.7, fallback to simplejson for Python 2.5
 try:
     import json
@@ -99,7 +101,7 @@ import badges.custom_badge_handlers
 import badges.handlers
 from mailing_lists import util_mailing_lists
 import profiles.handlers
-from custom_exceptions import MissingVideoException, PageNotFoundException
+from custom_exceptions import MissingVideoException, PageNotFoundException, MissingExerciseException
 from oauth_provider import apps as oauth_apps
 from phantom_users.cloner import Clone
 from image_cache import ImageCache

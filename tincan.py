@@ -85,7 +85,7 @@ class TinCan():
 
     def set_timestamp(self):
         #self.statement['timestamp'] = time.strftime("%Y-%m-%d %H:%M:%S.000000%z")
-        self.statement['timestamp'] = datetime.datetime.today().isoformat()
+        self.statement['timestamp'] = datetime.datetime.today().isoformat() + "Z"
 
 
     def set_result(self, k, v):

@@ -29,7 +29,7 @@ class TinCan():
 
     def set_actor_from_user(self, user):
         self.user_email = user.user_email
-        self.coach_project = user.coach_project.
+        self.coach_project = user.coach_project
         self.statement["actor"] = {
             "mbox": "mailto:%s" % user.user_email,
             "name": user.user_nickname,
@@ -110,6 +110,10 @@ class TinCan():
     #change problem_log and user_exercise directly by progress and correct
     @classmethod
     def create_question(cls, user, verb, exercise, problem_log=None, user_exercise=None):
+        if exercise == None:
+            logging.error("TinCan: Can't find exercise")
+            return
+
         tc = cls()
         tc.set_actor_from_user(user)
         tc.set_question(exercise)
@@ -155,11 +159,6 @@ class TinCan():
 
     def push(self):
 
-        #self.log_statement()
-        #logging.error(self.user_email)
-
-        #if not self.check_email(): 
-        #    return
         if not self.coach_project:
             return
 
@@ -178,14 +177,16 @@ class TinCan():
             res = urlfetch.post(
                 tincan_url,
                 headers = tincan_headers,
+                deadline = 60,
                 data = tincan_data
             )
-            logging.error(res.status)
-            logging.error(res.content)
+            logging.info(res.status)
+            logging.info(res.content)
         else:
             res = urlfetch.fetch(url=tincan_url,
                 payload=tincan_data,
                 method=urlfetch.POST,
+                deadline=60,
                 headers=tincan_headers)
-            logging.error(res.status_code)
-            logging.error(res.content) 
+            logging.info(res.status_code)
+            logging.info(res.content) 

@@ -1322,6 +1322,8 @@ def commit_problem_log(problem_log_source, user_data=None, async=True):
     #for TinCan
     user_data = user_models.UserData.get_from_user_id(problem_log_source.user_id)
     exercise = Exercise.get_by_name(problem_log_source.exercise)
+    if exercise == None:
+        logging.error("TinCan: Can't find exercise %s" % problem_log_source.exercise)
     user_exercise = user_data.get_or_insert_exercise(exercise)
     # Committing transaction combines existing problem log with any followup attempts
     def txn():

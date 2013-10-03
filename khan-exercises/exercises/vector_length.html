@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie matrix">
+<head>
+    <meta charset="UTF-8" />
+    <title>Vector Length</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars">
+        <var id="LEN">randRange(2,5)</var>
+        <var id="VA">genVector(LEN)</var>
+        <var id="DOT">dotProduct(VA,VA)</var>
+        <var id="VLEN">Math.round(Math.sqrt(DOT)*100)/100</var> 
+
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+
+                <p data-tt="question1">Given the vector <code>\color{#6495ED}{\vec a} = <var>writeVector(VA)</var> </code>, what is the length of <code>\color{#6495ED}{\vec a} </code>? </p><p>Round to 2 decimals.</p>
+
+            </div>
+            <div class = "solution" data-type="decimal"><var>VLEN</var></div>
+
+        </div>
+    </div>
+
+    <div class="hints">
+        <p data-tt="hint1">To calculate the length of a vector, we first calculate the dot product of the vector with itself by multiplying each element in <code>\color{#6495ED}{\vec a}</code> with itself, then we sum all the products. <br>The length of the vector is the square root of that sum.</p>
+
+        <div>
+            <p>Thus, we do <code> \sum\limits_{i=0}^{n} \color{#6495ED}{\vec a}_i \times \color{#6495ED}{\vec a}_i </code> where <code> n = </code> vector length. </p>
+        </div>
+        <div>
+            <p>For <code>\color{#6495ED}{\vec a}</code> that is <code><var>showDot(VA,VA)</var> </code>
+        </div>
+		<div>
+			<p>That is <code> <var>showHalfdot(VA,VA)</var> </code></p>
+		</div>
+
+		<div>
+			<p><code>= <var>DOT</var></code></p>
+		</div>
+		     <p>The only thing left to determine the length of the vector is taking the square root of <var>DOT</var></p>
+             <p>The square root of <var>DOT</var> is <var>VLEN</var></p>               
+        </div>
+    </div>
+    </div>
+</body>
+</html>

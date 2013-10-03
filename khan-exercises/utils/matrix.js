@@ -103,6 +103,9 @@ $.extend(KhanUtil, {
         }, mat);
     },
 
+     printVec: function(vector){
+       return "<code>\begin{array}" + vector[0] + "&" + vector[1] + "\end{array}</code>";
+     },
     /**
      * Format the rows or columns of the given matrix with the colors in the
      * given colors array, and return the LaTeX code for rendering the matrix.
@@ -222,5 +225,82 @@ $.extend(KhanUtil, {
     // find the dot-product of two 3d vectors
     vectorDot: function(a, b) {
         return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+    },
+    
+    lengthVec: function(v){
+      var thisLong = 0;
+      for(var i=0; i<v.length; i++){
+        thisLong = thisLong + (v[i]*v[i]);
+      }
+      return Math.sqrt(thisLong);      
+    },
+    
+    //Written by Elise, will generate a vector of length len
+    genVector: function(len){
+      var vector = [];
+      for(var i = 0; i < len; i++){
+        var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+        var worth = Math.floor((Math.random()*9)+1);
+        vector.push(worth*plusOrMinus);
+      }  
+      return vector;
+    },
+    
+    //Written by Elise, will format a vector to look like the linear algebra book
+    writeVector: function(vector){
+
+      var beginString = "<code>\\left[ \\begin{array}{rr}";
+
+      var endString = "\\end{array} \\right]</code>";
+
+      var middleString = "";
+
+      for(var i=0; i < vector.length; i++){
+        var el = vector[i].toString();
+        middleString = middleString.concat(el + " \\\\ ");
+        console.log("el is: " + el + "\n middlestring is: " + middleString);
+        console.log(middleString);
+      }
+      return beginString + middleString + endString;
+    },
+    
+    //Written by Elise, will show complete calculation of dotproduct
+    showDot: function(a,b){
+      var formula = "";
+      for(var i=0; i < a.length; i++){
+        formula = formula.concat("<code>(\\color{#6495ED}{" + a[i] + "} \\times \\color{#28AE7B}{" + b[i] + "})</code>");
+        if(i < a.length-1){
+          formula = formula.concat(" + " );
+        }
+      }    
+      return formula;
+    },
+    //Written by Else, will show halfway calculation of dotproduct
+    showHalfdot: function(a, b){
+      var formula = "";
+      for(var i=0; i < a.length; i++){
+        formula = formula.concat("<code>" + a[i]*b[i] + "</code>");
+        if(i < a.length-1){
+          formula = formula.concat( " + ");
+        }  
+      }  
+      return formula;
+    },
+    
+    //Written by Elise, can calculate dot product for arbitrary length of vectors
+    dotProduct: function(a,b){
+      var scalar = 0;
+      if(a.length === b.length){
+
+        for(var i = 0; i < a.length; i++){
+          var ax = a[i];
+          var bx = b[i];
+          scalar = scalar + ( ax*bx);
+        }
+        return scalar;
+      } else {
+        console.log("Vectors are not the same length. \n First vector is: " + a.length + "\n Second vector is: " + b.length);
+        return 0;
+      }
     }
 });

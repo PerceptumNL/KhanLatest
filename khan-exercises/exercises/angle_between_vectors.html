@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie matrix">
+<head>
+    <meta charset="UTF-8" />
+    <title>Angle between vectors</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars">
+        <var id="LEN">randRange(2,5)</var>
+        <var id="VA">genVector(LEN)</var>
+        <var id="VB">genVector(LEN)</var>
+        <var id="DOT">dotProduct(VA,VB)</var>
+
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+
+                <p data-tt="question1">Given the vectors <code>\color{#6495ED}{\vec a} = <var>writeVector(VA)</var> </code> and <code> \color{#28AE7B}{\vec b} = <var>writeVector(VB)</var></code>, what is the cosine of the angle between <code>\color{#6495ED}{\vec a} </code> and <code>\color{#28AE7B}{\vec b}</code>?</p>
+
+            </div>
+            <div class = "solution" data-type="decimal"><var>DOT</var></div>
+
+        </div>
+    </div>
+
+    <div class="hints">
+        <p data-tt="hint1">To calculate the angle between two vectors, we use the formula <code>\cos(\theta) =  \frac{\vec x \cdot \vec y}{||\vec x|| \hspace{1 pt} ||\vec y||} </code>
+        
+        <div>
+            <p>Thus, we do <code> \sum\limits_{i=0}^{n} \color{#6495ED}{\vec a}_i \times \color{#28AE7B}{\vec b}_i </code> where <code> n = </code> vector length. </p>
+        </div>
+        <div>
+            <p>For <code>\color{#6495ED}{\vec a}</code> and <code>\color{#28AE7B}{\vec b}</code>, that is <code><var>showDot(VA,VB)</var> </code>
+        </div>
+		<div>
+			<p>That is <code> <var>showHalfdot(VA,VB)</var> </code></p>
+		</div>
+
+		<div>
+			<p><code>= <var>DOT</var></code></p>
+		</div>
+                            
+        </div>
+    </div>
+    </div>
+</body>
+</html>

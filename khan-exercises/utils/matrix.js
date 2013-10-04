@@ -246,6 +246,7 @@ $.extend(KhanUtil, {
       return vector;
     },
     
+    
     //Written by Elise, will format a vector to look like the linear algebra book
     writeVector: function(vector){
 
@@ -258,8 +259,6 @@ $.extend(KhanUtil, {
       for(var i=0; i < vector.length; i++){
         var el = vector[i].toString();
         middleString = middleString.concat(el + " \\\\ ");
-        console.log("el is: " + el + "\n middlestring is: " + middleString);
-        console.log(middleString);
       }
       return beginString + middleString + endString;
     },

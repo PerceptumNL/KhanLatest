@@ -202,7 +202,7 @@
 
                 <div class="solution" data-type="custom">
                     <div class="instruction">
-                        Sleep de twee wijzers zo dat je van de klok <var>HOUR</var>:<var>NICE_MINUTE</var> afleest.
+                        Sleep de twee wijzers zo dat de klok <var>HOUR</var>:<var>NICE_MINUTE</var> aanwijst.
                     </div>
                     <div class="guess">
                         [ minutePoint.coord, hourPoint.coord ]
@@ -248,10 +248,10 @@
 
                     <div>
                         <p data-if="MINUTE_IS_ZERO">
-                            Omdat het <code><var>HOUR</var></code> uur<code><var>plural(HOUR)</var></code> en <code>0</code> minuten is, moet de uurwijzer precies op de markering van <code class="hint_blue"><var>HOUR</var></code> uur zijn.
+                            Omdat het <code><var>HOUR</var></code> uur en <code>0</code> minuten is, moet de uurwijzer precies op de markering van <code class="hint_blue"><var>HOUR</var></code> uur zijn.
                         </p>
                         <p data-else>
-                            Omdat het <code><var>HOUR</var></code> uur<var>plural(HOUR)</var> en <code><var>MINUTE</var></code> minuten is, moet de uurwijzer op <code class="hint_blue"><var>fraction(MINUTE, 60)</var> = <var>fraction(MINUTE, 60, false, true)</var></code> voorbij de <code class="hint_blue"><var>HOUR</var></code> uurmarkering zijn.
+                            Omdat het <code><var>HOUR</var></code> uur en <code><var>MINUTE</var></code> minuten is, moet de uurwijzer op <code class="hint_blue"><var>fraction(MINUTE, 60)</var> = <var>fraction(MINUTE, 60, false, true)</var></code> voorbij de <code class="hint_blue"><var>HOUR</var></code> uurmarkering zijn.
                         </p>
                     </div>
 

@@ -26,7 +26,7 @@
 
     "dependencies": {
         "uglify-js" : "1.2.x",
-        "handlebars" : "1.0.x",
+        "handlebars" : "4.4.x",
         "cssmin" : "0.x.x",
         "less": "1.3.x"
     }

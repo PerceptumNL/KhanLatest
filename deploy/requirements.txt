@@ -1,6 +1,6 @@
 # Required to deploy
 ez-setup==0.9
-Django==1.4.2
+Django==1.11.29
 Jinja2==2.6
 PyYAML==5.1
 WebOb==0.9

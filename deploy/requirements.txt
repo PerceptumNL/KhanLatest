@@ -1,7 +1,7 @@
 # Required to deploy
 ez-setup==0.9
 Django==1.11.29
-Jinja2==2.6
+Jinja2==2.11.3
 PyYAML==5.1
 WebOb==0.9
 antlr-python-runtime==3.1.3
